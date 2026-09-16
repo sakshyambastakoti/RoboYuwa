@@ -4,29 +4,73 @@
    ========================================================================== */
 
 :root {
-    --primary-color: #D10000;
-    --primary-dark: #8B0000;
-    --primary-gradient: linear-gradient(135deg, #E31818 0%, #A80000 100%);
-    --amber-500: #E59819;
-    --amber-600: #CB8412;
-    --amber-gradient: linear-gradient(135deg, #E59819 0%, #CB8412 100%);
-    --sage-card: #376856;
-    --sage-dark: #274E40;
+    /* -------------------------------------------------------------
+       RoboYuwa Logo Core Identity
+       ------------------------------------------------------------- */
+    --ry-crimson: #E52525;
+    --ry-crimson-dark: #A31010;
+    --ry-crimson-glow: #FF3B30;
+    --ry-crimson-gradient: linear-gradient(135deg, #FF2E2E 0%, #B31414 100%);
+    --ry-crimson-shadow: 0 10px 28px rgba(229, 37, 37, 0.38);
+
+    /* -------------------------------------------------------------
+       Industrial Dark & Surface Hierarchy
+       ------------------------------------------------------------- */
+    --ry-dark-bg: #08090C;
+    --ry-dark-surface: #12141A;
+    --ry-dark-surface-glass: rgba(18, 20, 26, 0.92);
+    --ry-dark-border: #222631;
+
+    /* -------------------------------------------------------------
+       Circuit Amber Accent
+       ------------------------------------------------------------- */
+    --ry-amber: #E59819;
+    --ry-amber-hover: #F5A623;
+    --ry-amber-dark: #CB8412;
+    --ry-amber-gradient: linear-gradient(135deg, #F5A623 0%, #CB8412 100%);
+    --ry-amber-shadow: 0 8px 24px rgba(229, 152, 25, 0.38);
+
+    /* -------------------------------------------------------------
+       Mission Impact Sage
+       ------------------------------------------------------------- */
+    --ry-sage: #376856;
+    --ry-sage-dark: #274E40;
+
+    /* -------------------------------------------------------------
+       Canvas Light & Typography
+       ------------------------------------------------------------- */
+    --ry-white: #FFFFFF;
+    --ry-platinum: #F6F8FA;
+    --ry-gray-100: #F1F3F7;
+    --ry-gray-600: #4B5262;
+    --ry-gray-900: #101217;
+
+    /* -------------------------------------------------------------
+       Semantic Aliases
+       ------------------------------------------------------------- */
+    --primary-color: var(--ry-crimson);
+    --primary-dark: var(--ry-crimson-dark);
+    --primary-gradient: var(--ry-crimson-gradient);
+    --amber-500: var(--ry-amber);
+    --amber-600: var(--ry-amber-dark);
+    --amber-gradient: var(--ry-amber-gradient);
+    --sage-card: var(--ry-sage);
+    --sage-dark: var(--ry-sage-dark);
     --font-serif: 'Playfair Display', Georgia, serif;
     --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
-    --text-main: #000000;
-    --text-light: #3F3F3F;
-    --gray-100: #F6F6F6;
-    --gray-300: #D3D3D3;
-    --gray-700: #2A2A2A;
+    --text-main: var(--ry-gray-900);
+    --text-light: var(--ry-gray-600);
+    --gray-100: var(--ry-platinum);
+    --gray-300: #D3D8E2;
+    --gray-700: #2A2E39;
     --bg-light: #FFFFFF;
-    --bg-dark: #000000;
+    --bg-dark: var(--ry-dark-bg);
     --white: #FFFFFF;
-    --black: #000000;
-    --border-color: #D10000;
+    --black: #08090C;
+    --border-color: var(--ry-crimson);
     --transition: all 0.3s ease;
-    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.2);
-    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.35);
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.15);
+    --shadow-md: 0 6px 18px rgba(0, 0, 0, 0.25);
 }
 
 * {
@@ -628,7 +672,7 @@ strong {
 
 .hero-content {
     position: relative;
-    max-width: 640px;
+    max-width: 700px;
     margin-left: 0;
     padding-top: 60px;
     animation: heroTextIn 0.85s cubic-bezier(0.16, 1, 0.3, 1) forwards;
@@ -703,13 +747,18 @@ strong {
 }
 
 .hero-title {
-    font-size: clamp(2.8rem, 5.6vw, 4.8rem);
+    font-size: clamp(2.3rem, 4.6vw, 4.3rem);
     font-weight: 700;
-    line-height: 1.08;
+    line-height: 1.1;
     color: #FFFFFF;
     letter-spacing: -0.5px;
     margin-bottom: 1.25rem;
     text-shadow: 0 4px 25px rgba(0, 0, 0, 0.6);
+}
+
+.title-line {
+    display: inline-block;
+    white-space: nowrap;
 }
 
 .hero-desc {
@@ -729,24 +778,25 @@ strong {
 }
 
 .btn-hero-pill {
-    background: var(--amber-gradient);
+    background: var(--ry-crimson-gradient);
     color: #ffffff !important;
     padding: 0.95rem 2.4rem;
     border-radius: 9999px;
     font-size: 1.05rem;
     font-weight: 600;
     text-decoration: none;
-    box-shadow: 0 8px 26px rgba(229, 152, 25, 0.38);
+    box-shadow: 0 10px 28px rgba(229, 37, 37, 0.4);
     transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    letter-spacing: 0.3px;
 }
 
 .btn-hero-pill:hover {
-    background: linear-gradient(135deg, #f0a325 0%, #ba760d 100%);
+    background: linear-gradient(135deg, #FF3838 0%, #990B0B 100%);
     transform: translateY(-2px);
-    box-shadow: 0 14px 34px rgba(229, 152, 25, 0.5);
+    box-shadow: 0 16px 36px rgba(229, 37, 37, 0.55);
 }
 
 .hero-video-btn {
@@ -765,13 +815,13 @@ strong {
 
 .hero-video-btn:hover .play-icon-circle {
     transform: scale(1.1);
-    border-color: var(--amber-500);
+    border-color: var(--ry-amber);
     background: rgba(229, 152, 25, 0.2);
-    box-shadow: 0 0 20px rgba(229, 152, 25, 0.4);
+    box-shadow: 0 0 20px rgba(229, 152, 25, 0.45);
 }
 
 .hero-video-btn:hover .video-btn-text {
-    color: var(--amber-500);
+    color: var(--ry-amber);
 }
 
 .play-icon-circle {
@@ -812,7 +862,7 @@ strong {
     height: 52px;
     border-radius: 50%;
     border: 1.5px solid rgba(255, 255, 255, 0.7);
-    background: rgba(10, 10, 10, 0.3);
+    background: rgba(8, 9, 12, 0.4);
     backdrop-filter: blur(6px);
     color: #ffffff;
     display: inline-flex;
@@ -824,11 +874,11 @@ strong {
 }
 
 .slider-arrow:hover {
-    border-color: #ffffff;
-    background: #ffffff;
-    color: #000000;
+    border-color: var(--ry-crimson);
+    background: var(--ry-crimson);
+    color: #ffffff;
     transform: scale(1.08);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 8px 24px rgba(229, 37, 37, 0.45);
 }
 
 /* ==========================================================================
@@ -1544,8 +1594,8 @@ strong {
     }
 
     .hero-title {
-        font-size: 2.5rem;
-        line-height: 1.12;
+        font-size: clamp(1.75rem, 6.2vw, 2.35rem);
+        line-height: 1.15;
     }
 
     .hero-desc {

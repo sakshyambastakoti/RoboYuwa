@@ -1082,7 +1082,7 @@ strong {
    ========================================================================== */
 .hero-impact-card {
     position: absolute;
-    bottom: 0;
+    bottom: 48px;
     right: 0;
     z-index: 10;
     background-color: var(--sage-card);
@@ -1090,9 +1090,9 @@ strong {
     display: flex;
     align-items: center;
     gap: 1.4rem;
-    padding: 1.6rem 3rem 1.6rem 2.2rem;
-    border-top-left-radius: 36px;
-    box-shadow: -8px -8px 30px rgba(0, 0, 0, 0.3);
+    padding: 1.4rem 2.8rem 1.4rem 2rem;
+    border-top-left-radius: 32px;
+    box-shadow: -8px -8px 30px rgba(0, 0, 0, 0.35);
     transition: transform 0.3s ease, background-color 0.3s ease;
     animation: impactCardFloat 4.5s ease-in-out infinite alternate;
 }
@@ -1150,20 +1150,23 @@ strong {
 }
 
 /* ==========================================================================
-   Capabilities & Features Infinite Marquee Ticker
+   Hero Section Bottom Floating Infinite Marquee (RoboYuwa Context)
    ========================================================================== */
-.marquee-section {
-    position: relative;
+.hero-marquee {
+    position: absolute;
+    bottom: 0;
+    left: 0;
     width: 100%;
-    background-color: #F3F4F6;
-    border-top: 1px solid #E5E7EB;
-    border-bottom: 1px solid #E5E7EB;
-    padding: 1.1rem 0;
+    z-index: 9;
+    background: rgba(8, 9, 12, 0.82);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 0.8rem 0;
     overflow: hidden;
-    z-index: 5;
 }
 
-.marquee-wrapper {
+.hero-marquee .marquee-wrapper {
     position: relative;
     display: flex;
     width: 100%;
@@ -1171,80 +1174,80 @@ strong {
     user-select: none;
 }
 
-.marquee-wrapper::before,
-.marquee-wrapper::after {
+.hero-marquee .marquee-wrapper::before,
+.hero-marquee .marquee-wrapper::after {
     content: '';
     position: absolute;
     top: 0;
-    width: clamp(35px, 6vw, 85px);
+    width: clamp(35px, 6vw, 90px);
     height: 100%;
     z-index: 2;
     pointer-events: none;
 }
 
-.marquee-wrapper::before {
+.hero-marquee .marquee-wrapper::before {
     left: 0;
-    background: linear-gradient(to right, #F3F4F6 0%, transparent 100%);
+    background: linear-gradient(to right, rgba(8, 9, 12, 0.95) 0%, transparent 100%);
 }
 
-.marquee-wrapper::after {
+.hero-marquee .marquee-wrapper::after {
     right: 0;
-    background: linear-gradient(to left, #F3F4F6 0%, transparent 100%);
+    background: linear-gradient(to left, rgba(8, 9, 12, 0.95) 0%, transparent 100%);
 }
 
-.marquee-track {
+.hero-marquee .marquee-track {
     display: flex;
     align-items: center;
     flex-shrink: 0;
-    animation: marqueeScroll 34s linear infinite;
+    animation: heroMarqueeScroll 32s linear infinite;
     gap: 1.8rem;
     padding-right: 1.8rem;
     will-change: transform;
 }
 
-.marquee-wrapper:hover .marquee-track {
+.hero-marquee .marquee-wrapper:hover .marquee-track {
     animation-play-state: paused;
 }
 
-.marquee-item {
+.hero-marquee .marquee-item {
     display: inline-flex;
     align-items: center;
     gap: 0.65rem;
     font-family: var(--font-sans);
-    font-size: 0.82rem;
+    font-size: 0.8rem;
     font-weight: 600;
-    color: #374151;
-    letter-spacing: 1.2px;
+    color: rgba(255, 255, 255, 0.88);
+    letter-spacing: 1.4px;
     text-transform: uppercase;
     white-space: nowrap;
     transition: color 0.25s ease;
     cursor: default;
 }
 
-.marquee-item:hover {
-    color: var(--ry-crimson);
+.hero-marquee .marquee-item:hover {
+    color: var(--amber-500);
 }
 
-.marquee-icon {
+.hero-marquee .marquee-icon {
     font-size: 1.05rem;
-    color: #1F2937;
+    color: var(--amber-500);
     transition: color 0.25s ease, transform 0.25s ease;
 }
 
-.marquee-item:hover .marquee-icon {
+.hero-marquee .marquee-item:hover .marquee-icon {
     color: var(--ry-crimson);
-    transform: scale(1.15);
+    transform: scale(1.2);
 }
 
-.marquee-dot {
+.hero-marquee .marquee-dot {
     display: inline-block;
-    color: #9CA3AF;
+    color: var(--ry-crimson);
     font-size: 0.95rem;
     user-select: none;
     line-height: 1;
 }
 
-@keyframes marqueeScroll {
+@keyframes heroMarqueeScroll {
     0% {
         transform: translateX(0);
     }
@@ -1941,9 +1944,10 @@ strong {
     }
 
     .hero-impact-card {
-        padding: 1rem 1.5rem;
-        border-top-left-radius: 24px;
-        gap: 1rem;
+        bottom: 42px;
+        padding: 0.9rem 1.4rem;
+        border-top-left-radius: 20px;
+        gap: 0.85rem;
     }
 
     .impact-card-icon {

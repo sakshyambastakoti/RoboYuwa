@@ -1529,9 +1529,14 @@ strong {
         min-height: 760px;
     }
 
+    .hero-container {
+        padding: 0 1.5rem;
+    }
+
     .hero-content {
         padding-top: 100px;
         padding-bottom: 110px;
+        max-width: 100%;
     }
 
     .hero-eyebrow {

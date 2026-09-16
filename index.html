@@ -97,15 +97,24 @@
       <div class="navbar" id="navbar">
         <div class="container nav-container">
           <a href="#home" class="logo">
-            <img
-              src="assets/roboyuwalogo.jpg"
-              alt="RoboYuwa Logo"
-              loading="eager"
-              decoding="async"
-              onerror="
-                this.outerHTML = `<i class='fa-duotone fa-microchip' style='font-size: 2rem; color: var(--amber-500); display: flex; align-items: center;'></i>`
-              "
-            />
+            <div class="logo-emblem">
+              <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" class="logo-icon-svg">
+                <rect x="2" y="2" width="40" height="40" rx="12" stroke="url(#amberGrad)" stroke-width="2.2" fill="rgba(229,152,25,0.12)"/>
+                <!-- Robotic circuit nodes and synergy star -->
+                <circle cx="22" cy="22" r="5" fill="url(#amberGrad)"/>
+                <path d="M22 8V17M22 27V36M8 22H17M27 22H36" stroke="url(#amberGrad)" stroke-width="2" stroke-linecap="round"/>
+                <circle cx="22" cy="8" r="2.5" fill="#FFFFFF"/>
+                <circle cx="22" cy="36" r="2.5" fill="#FFFFFF"/>
+                <circle cx="8" cy="22" r="2.5" fill="#FFFFFF"/>
+                <circle cx="36" cy="22" r="2.5" fill="#FFFFFF"/>
+                <defs>
+                  <linearGradient id="amberGrad" x1="4" y1="4" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#F5A623"/>
+                    <stop offset="1" stop-color="#D0021B"/>
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
             <div class="logo-text">
               <span class="brand-name font-serif">RoboYuwa</span>
               <span class="brand-tagline">Youth Innovation &amp; Robotics</span>

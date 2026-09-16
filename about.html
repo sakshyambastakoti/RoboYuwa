@@ -111,42 +111,44 @@
 
     <!-- Who We Are / About Section — Full Viewport Split Screen (50/50 Sharp Edges, 1 Screen Frame) -->
     <section class="about-split-screen" aria-label="Who We Are - RoboYuwa Story">
-        <!-- Left Column: 50% Full-Bleed Framed Visual (Sharp Edges) -->
+        <!-- Left Column: Precision Framed Visual (Sharp Edges) -->
         <div class="about-split-media reveal">
-            <img
-                src="assets/IMG_2757.JPG.jpeg"
-                alt="RoboYuwa Team collaborating on robotics and hardware"
-                loading="lazy"
-                decoding="async"
-                onerror="this.outerHTML=`<i class='fa-duotone fa-image' style='font-size: 2.5rem; color: var(--gray-400); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;'></i>`"
-            />
-            <div class="about-split-overlay" aria-hidden="true"></div>
+            <div class="about-media-inner">
+                <img
+                    src="assets/IMG_2751.JPG.jpeg"
+                    alt="RoboYuwa Team collaborating on robotics and hardware"
+                    loading="lazy"
+                    decoding="async"
+                    onerror="this.outerHTML=`<i class='fa-duotone fa-image' style='font-size: 2.5rem; color: var(--gray-400); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;'></i>`"
+                />
+                <div class="about-split-overlay" aria-hidden="true"></div>
 
-            <!-- Sharp Architectural HUD Corner Brackets -->
-            <div class="sharp-hud-corner top-left" aria-hidden="true"></div>
-            <div class="sharp-hud-corner top-right" aria-hidden="true"></div>
-            <div class="sharp-hud-corner bottom-left" aria-hidden="true"></div>
-            <div class="sharp-hud-corner bottom-right" aria-hidden="true"></div>
+                <!-- Sharp Architectural HUD Corner Brackets -->
+                <div class="sharp-hud-corner top-left" aria-hidden="true"></div>
+                <div class="sharp-hud-corner top-right" aria-hidden="true"></div>
+                <div class="sharp-hud-corner bottom-left" aria-hidden="true"></div>
+                <div class="sharp-hud-corner bottom-right" aria-hidden="true"></div>
 
-            <!-- Sharp Floating Top Tag -->
-            <div class="about-sharp-tag">
-                <span class="sharp-pulse-dot"></span>
-                <span class="sharp-tag-text">EST. JUNE 2024 &bull; KATHMANDU, NEPAL</span>
-            </div>
-
-            <!-- Sharp Floating Bottom Stat Banner -->
-            <div class="about-sharp-banner">
-                <div class="sharp-stat-group">
-                    <div class="sharp-stat-icon">
-                        <i class="fa-solid fa-microchip"></i>
-                    </div>
-                    <div>
-                        <span class="sharp-stat-big">1,200+</span>
-                        <span class="sharp-stat-label">Youth Empowered Across Nepal</span>
-                    </div>
+                <!-- Sharp Floating Top Tag -->
+                <div class="about-sharp-tag">
+                    <span class="sharp-pulse-dot"></span>
+                    <span class="sharp-tag-text">EST. JUNE 2024 &bull; KATHMANDU, NEPAL</span>
                 </div>
-                <div class="sharp-stat-badge">
-                    <i class="fa-solid fa-trophy" style="margin-right: 4px;"></i> Technoxian Finalists
+
+                <!-- Sharp Floating Bottom Stat Banner -->
+                <div class="about-sharp-banner">
+                    <div class="sharp-stat-group">
+                        <div class="sharp-stat-icon">
+                            <i class="fa-solid fa-microchip"></i>
+                        </div>
+                        <div>
+                            <span class="sharp-stat-big">1,200+</span>
+                            <span class="sharp-stat-label">Youth Empowered Across Nepal</span>
+                        </div>
+                    </div>
+                    <div class="sharp-stat-badge">
+                        <i class="fa-solid fa-trophy" style="margin-right: 4px;"></i> Technoxian Finalists
+                    </div>
                 </div>
             </div>
         </div>
@@ -169,40 +171,31 @@
             <p class="about-sharp-lead">
                 Founded in June 2024, <strong>RoboYuwa</strong> is a youth-driven non-governmental organization entirely dedicated to robotics, technology, research, and hands-on innovation across Nepal.
             </p>
-            <p class="about-sharp-body">
-                Our journey began with a singular mission: to develop a generation of practical, fearless problem solvers. Just months after inception, our team represented Nepal at the Technoxian World Robotics Championship in August 2024. Today, we have expanded our reach across multiple districts, empowering over 1,200 young minds through 40+ structured hardware, PCB, and robotics workshops.
-            </p>
 
-            <!-- 3 Sharp Value Pillars -->
-            <div class="about-sharp-pillars">
-                <div class="about-sharp-pillar crimson">
-                    <div class="sharp-pillar-icon crimson">
-                        <i class="fa-duotone fa-shield-check"></i>
+            <!-- Mission & Vision Dual Cards (Fits Professionally in 1 Screen Frame) -->
+            <div class="about-sharp-mv-grid">
+                <div class="about-sharp-mv-card mission">
+                    <div class="mv-card-header">
+                        <div class="mv-icon-box crimson">
+                            <i class="fa-duotone fa-rocket"></i>
+                        </div>
+                        <h4>Our Mission</h4>
                     </div>
-                    <div class="sharp-pillar-text">
-                        <h4>Transparency &amp; Accountability</h4>
-                        <p>100% open governance, ethical stewardship, and complete public accountability.</p>
-                    </div>
+                    <p>
+                        To empower youth with technology skills, creative problem-solving, and leadership to transform communities.
+                    </p>
                 </div>
 
-                <div class="about-sharp-pillar amber">
-                    <div class="sharp-pillar-icon amber">
-                        <i class="fa-duotone fa-users-gear"></i>
+                <div class="about-sharp-mv-card vision">
+                    <div class="mv-card-header">
+                        <div class="mv-icon-box amber">
+                            <i class="fa-duotone fa-eye"></i>
+                        </div>
+                        <h4>Our Vision</h4>
                     </div>
-                    <div class="sharp-pillar-text">
-                        <h4>Equality &amp; Inclusiveness</h4>
-                        <p>Opening equal STEM pathways for youth of all backgrounds and genders nationwide.</p>
-                    </div>
-                </div>
-
-                <div class="about-sharp-pillar sage">
-                    <div class="sharp-pillar-icon sage">
-                        <i class="fa-duotone fa-microchip"></i>
-                    </div>
-                    <div class="sharp-pillar-text">
-                        <h4>Ethical Tech &amp; Community Impact</h4>
-                        <p>Engineering practical technology solutions targeted at local and humanitarian challenges.</p>
-                    </div>
+                    <p>
+                        A society where ethical technology and innovation are driven by capable, confident, and united youth creating sustainable community impact.
+                    </p>
                 </div>
             </div>
 

@@ -1371,7 +1371,7 @@ strong {
     width: 100%;
     min-height: 100vh;
     display: grid;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 44% 56%;
     background: #FFFFFF;
     overflow: hidden;
 }
@@ -1384,30 +1384,43 @@ strong {
 }
 
 /* -------------------------------------------------------------
-   Left Column: 50% Full-Bleed Framed Visual (Sharp Edges)
+   Left Column: Precision Framed Visual (Proportioned & Sharp)
    ------------------------------------------------------------- */
 .about-split-media {
     position: relative;
     width: 100%;
     height: 100%;
-    overflow: hidden;
+    padding: clamp(1.6rem, 3.8vh, 3.2rem) clamp(1.6rem, 2.8vw, 2.8rem);
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background: var(--ry-dark-bg);
     border-right: 2px solid #14171E;
+    box-sizing: border-box;
 }
 
-.about-split-media img {
+.about-media-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border: 1px solid rgba(229, 152, 25, 0.35);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(255, 255, 255, 0.06);
+}
+
+.about-media-inner img {
     position: absolute;
     inset: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center 30%;
+    object-position: center 25%;
     border-radius: 0 !important;
     display: block;
     transition: transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.about-split-media:hover img {
+.about-media-inner:hover img {
     transform: scale(1.035);
 }
 
@@ -1430,8 +1443,8 @@ strong {
 /* Sharp Technical Corner Brackets */
 .sharp-hud-corner {
     position: absolute;
-    width: 28px;
-    height: 28px;
+    width: 24px;
+    height: 24px;
     border-color: var(--ry-amber);
     border-style: solid;
     pointer-events: none;
@@ -1439,39 +1452,39 @@ strong {
 }
 
 .sharp-hud-corner.top-left {
-    top: 28px;
-    left: 28px;
+    top: 16px;
+    left: 16px;
     border-width: 2px 0 0 2px;
 }
 
 .sharp-hud-corner.top-right {
-    top: 28px;
-    right: 28px;
+    top: 16px;
+    right: 16px;
     border-width: 2px 2px 0 0;
 }
 
 .sharp-hud-corner.bottom-left {
-    bottom: 28px;
-    left: 28px;
+    bottom: 16px;
+    left: 16px;
     border-width: 0 0 2px 2px;
 }
 
 .sharp-hud-corner.bottom-right {
-    bottom: 28px;
-    right: 28px;
+    bottom: 16px;
+    right: 16px;
     border-width: 0 2px 2px 0;
 }
 
 /* Sharp Floating Top Tag */
 .about-sharp-tag {
     position: absolute;
-    top: 36px;
-    left: 36px;
+    top: 22px;
+    left: 22px;
     z-index: 5;
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    padding: 8px 16px;
+    padding: 7px 14px;
     background: rgba(8, 9, 12, 0.92);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
@@ -1491,9 +1504,9 @@ strong {
 }
 
 .sharp-tag-text {
-    font-size: 0.72rem;
+    font-size: 0.7rem;
     font-weight: 700;
-    letter-spacing: 1.5px;
+    letter-spacing: 1.4px;
     color: var(--white);
     text-transform: uppercase;
 }
@@ -1501,15 +1514,15 @@ strong {
 /* Sharp Floating Bottom Stat Banner */
 .about-sharp-banner {
     position: absolute;
-    bottom: 36px;
-    left: 36px;
-    right: 36px;
+    bottom: 22px;
+    left: 22px;
+    right: 22px;
     z-index: 5;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 1.5rem;
-    padding: 16px 22px;
+    gap: 1.2rem;
+    padding: 13px 18px;
     background: rgba(8, 9, 12, 0.92);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
@@ -1647,6 +1660,78 @@ strong {
     line-height: 1.65;
     color: var(--text-light);
     margin-bottom: 1.15rem;
+}
+
+/* Mission & Vision Dual Cards in Single Screen Frame */
+.about-sharp-mv-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.1rem;
+    margin-bottom: 1.25rem;
+}
+
+.about-sharp-mv-card {
+    background: var(--ry-platinum, #F6F8FA);
+    border: 1px solid rgba(34, 38, 49, 0.1);
+    border-radius: 0 !important;
+    padding: 1.05rem 1.2rem;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.about-sharp-mv-card.mission {
+    border-top: 3px solid var(--ry-crimson);
+}
+
+.about-sharp-mv-card.vision {
+    border-top: 3px solid var(--ry-amber);
+}
+
+.about-sharp-mv-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+}
+
+.mv-card-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 0.5rem;
+}
+
+.mv-icon-box {
+    width: 32px;
+    height: 32px;
+    border-radius: 0 !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.95rem;
+    flex-shrink: 0;
+}
+
+.mv-icon-box.crimson {
+    background: rgba(229, 37, 37, 0.12);
+    color: var(--ry-crimson);
+}
+
+.mv-icon-box.amber {
+    background: rgba(229, 152, 25, 0.14);
+    color: var(--ry-amber);
+}
+
+.mv-card-header h4 {
+    font-size: 0.98rem;
+    font-weight: 700;
+    color: var(--black);
+    margin-bottom: 0;
+    letter-spacing: -0.2px;
+}
+
+.about-sharp-mv-card p {
+    font-size: 0.84rem;
+    line-height: 1.5;
+    color: var(--text-light);
+    margin-bottom: 0;
 }
 
 /* Sharp Value Pillars */

@@ -69,13 +69,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Trigger smooth content animation on entering active slide
             if (isActive) {
-                const content = slide.querySelector('.hero-content');
-                if (content) {
-                    content.style.animation = 'none';
-                    // Trigger reflow
-                    void content.offsetWidth;
-                    content.style.animation = 'heroTextIn 0.85s cubic-bezier(0.16, 1, 0.3, 1) forwards';
-                }
+                const animatedElements = slide.querySelectorAll('.hero-eyebrow, .title-line, .hero-desc, .hero-actions');
+                animatedElements.forEach((el) => {
+                    el.style.animation = 'none';
+                    void el.offsetWidth; // Trigger reflow
+                    el.style.animation = '';
+                });
 
                 // Update bottom-right Sage Green Impact Card
                 const statLabel = slide.getAttribute('data-stat-label');

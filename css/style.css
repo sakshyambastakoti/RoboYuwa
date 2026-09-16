@@ -325,6 +325,25 @@ strong {
     border: 2px solid rgba(229, 152, 25, 0.5);
 }
 
+.logo-emblem {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.logo:hover .logo-emblem {
+    transform: scale(1.08) rotate(3deg);
+}
+
+.logo-icon-svg {
+    width: 44px;
+    height: 44px;
+}
+
 .logo-text {
     display: flex;
     flex-direction: column;

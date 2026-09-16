@@ -1150,6 +1150,110 @@ strong {
 }
 
 /* ==========================================================================
+   Capabilities & Features Infinite Marquee Ticker
+   ========================================================================== */
+.marquee-section {
+    position: relative;
+    width: 100%;
+    background-color: #F3F4F6;
+    border-top: 1px solid #E5E7EB;
+    border-bottom: 1px solid #E5E7EB;
+    padding: 1.1rem 0;
+    overflow: hidden;
+    z-index: 5;
+}
+
+.marquee-wrapper {
+    position: relative;
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+    user-select: none;
+}
+
+.marquee-wrapper::before,
+.marquee-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: clamp(35px, 6vw, 85px);
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.marquee-wrapper::before {
+    left: 0;
+    background: linear-gradient(to right, #F3F4F6 0%, transparent 100%);
+}
+
+.marquee-wrapper::after {
+    right: 0;
+    background: linear-gradient(to left, #F3F4F6 0%, transparent 100%);
+}
+
+.marquee-track {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    animation: marqueeScroll 34s linear infinite;
+    gap: 1.8rem;
+    padding-right: 1.8rem;
+    will-change: transform;
+}
+
+.marquee-wrapper:hover .marquee-track {
+    animation-play-state: paused;
+}
+
+.marquee-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+    font-family: var(--font-sans);
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: #374151;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    transition: color 0.25s ease;
+    cursor: default;
+}
+
+.marquee-item:hover {
+    color: var(--ry-crimson);
+}
+
+.marquee-icon {
+    font-size: 1.05rem;
+    color: #1F2937;
+    transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.marquee-item:hover .marquee-icon {
+    color: var(--ry-crimson);
+    transform: scale(1.15);
+}
+
+.marquee-dot {
+    display: inline-block;
+    color: #9CA3AF;
+    font-size: 0.95rem;
+    user-select: none;
+    line-height: 1;
+}
+
+@keyframes marqueeScroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+/* ==========================================================================
    Modals (Video Showcase & Quick Search)
    ========================================================================== */
 .modal-backdrop {

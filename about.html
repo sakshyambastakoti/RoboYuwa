@@ -109,28 +109,131 @@
         </div>
     </section>
 
-    <!-- Detailed About Section -->
-    <section class="section-padding">
-        <div class="container">
-            <div class="about-grid">
-                <div class="reveal">
-                    <div class="section-title" style="margin-bottom: 1.5rem;">
-                        <h2>Our Story</h2>
-                        <div class="divider"></div>
+    <!-- Who We Are / About Section — Full Viewport Split Screen (50/50 Sharp Edges, 1 Screen Frame) -->
+    <section class="about-split-screen" aria-label="Who We Are - RoboYuwa Story">
+        <!-- Left Column: 50% Full-Bleed Framed Visual (Sharp Edges) -->
+        <div class="about-split-media reveal">
+            <img
+                src="assets/group photo.jpeg"
+                alt="RoboYuwa Team collaborating on robotics and hardware"
+                loading="lazy"
+                decoding="async"
+                onerror="this.outerHTML=`<i class='fa-duotone fa-image' style='font-size: 2.5rem; color: var(--gray-400); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;'></i>`"
+            />
+            <div class="about-split-overlay" aria-hidden="true"></div>
+
+            <!-- Sharp Architectural HUD Corner Brackets -->
+            <div class="sharp-hud-corner top-left" aria-hidden="true"></div>
+            <div class="sharp-hud-corner top-right" aria-hidden="true"></div>
+            <div class="sharp-hud-corner bottom-left" aria-hidden="true"></div>
+            <div class="sharp-hud-corner bottom-right" aria-hidden="true"></div>
+
+            <!-- Sharp Floating Top Tag -->
+            <div class="about-sharp-tag">
+                <span class="sharp-pulse-dot"></span>
+                <span class="sharp-tag-text">EST. JUNE 2024 &bull; KATHMANDU, NEPAL</span>
+            </div>
+
+            <!-- Sharp Floating Bottom Stat Banner -->
+            <div class="about-sharp-banner">
+                <div class="sharp-stat-group">
+                    <div class="sharp-stat-icon">
+                        <i class="fa-solid fa-microchip"></i>
                     </div>
-                    <p class="about-story">
-                        Founded in June 2024, <strong>RoboYuwa</strong> is a youth-driven non-governmental organization entirely dedicated to robotics, technology, research, and innovation. We emerged from a shared vision to provide a technical platform exclusively for youth, enabling them to explore their potential without barriers.
-                    </p>
-                    <p class="about-story">
-                        Our journey began with a singular goal: to develop a generation of practical problem solvers. Just months after our inception, we proudly represented Nepal at the Technoxian World Robotics Championship in August 2024. Since then, we have expanded our reach to multiple districts, impacting over 1,200 young minds through 40+ structured workshops.
-                    </p>
-                    <p class="about-story">
-                        At RoboYuwa, we operate purely on the core values of <strong>Transparency, Accountability, Equality, Inclusiveness, and Ethical Technology Use</strong>.
-                    </p>
+                    <div>
+                        <span class="sharp-stat-big">1,200+</span>
+                        <span class="sharp-stat-label">Youth Empowered Across Nepal</span>
+                    </div>
                 </div>
-                <div class="about-image reveal delay-1">
-                    <img src="assets/group photo.jpeg" alt="RoboYuwa Team collaborating" loading="lazy" decoding="async" onerror="this.outerHTML=`<i class='fa-duotone fa-image' style='font-size: 2rem; color: var(--gray-400); width: 100%; display: flex; align-items: center; justify-content: center; min-height: 100px;'></i>`">
+                <div class="sharp-stat-badge">
+                    <i class="fa-solid fa-trophy" style="margin-right: 4px;"></i> Technoxian Finalists
                 </div>
+            </div>
+        </div>
+
+        <!-- Right Column: 50% Precision Content Frame (Fits Exactly to One Screen Frame) -->
+        <div class="about-split-content reveal delay-1">
+            <!-- Sharp Eyebrow Badge -->
+            <div class="about-sharp-eyebrow">
+                <i class="fa-solid fa-gear fa-spin" style="--fa-animation-duration: 12s;"></i>
+                <span>WHO WE ARE &amp; OUR STORY</span>
+            </div>
+
+            <!-- Sharp Headline -->
+            <h2 class="about-sharp-headline">
+                Empowering Youth Through Robotics, Research &amp; <span class="text-gradient-crimson">Ethical Innovation</span>
+            </h2>
+            <div class="about-sharp-divider"></div>
+
+            <!-- Concise Narrative Story -->
+            <p class="about-sharp-lead">
+                Founded in June 2024, <strong>RoboYuwa</strong> is a youth-driven non-governmental organization entirely dedicated to robotics, technology, research, and hands-on innovation across Nepal.
+            </p>
+            <p class="about-sharp-body">
+                Our journey began with a singular mission: to develop a generation of practical, fearless problem solvers. Just months after inception, our team represented Nepal at the Technoxian World Robotics Championship in August 2024. Today, we have expanded our reach across multiple districts, empowering over 1,200 young minds through 40+ structured hardware, PCB, and robotics workshops.
+            </p>
+
+            <!-- 3 Sharp Value Pillars -->
+            <div class="about-sharp-pillars">
+                <div class="about-sharp-pillar crimson">
+                    <div class="sharp-pillar-icon crimson">
+                        <i class="fa-duotone fa-shield-check"></i>
+                    </div>
+                    <div class="sharp-pillar-text">
+                        <h4>Transparency &amp; Accountability</h4>
+                        <p>100% open governance, ethical stewardship, and complete public accountability.</p>
+                    </div>
+                </div>
+
+                <div class="about-sharp-pillar amber">
+                    <div class="sharp-pillar-icon amber">
+                        <i class="fa-duotone fa-users-gear"></i>
+                    </div>
+                    <div class="sharp-pillar-text">
+                        <h4>Equality &amp; Inclusiveness</h4>
+                        <p>Opening equal STEM pathways for youth of all backgrounds and genders nationwide.</p>
+                    </div>
+                </div>
+
+                <div class="about-sharp-pillar sage">
+                    <div class="sharp-pillar-icon sage">
+                        <i class="fa-duotone fa-microchip"></i>
+                    </div>
+                    <div class="sharp-pillar-text">
+                        <h4>Ethical Tech &amp; Community Impact</h4>
+                        <p>Engineering practical technology solutions targeted at local and humanitarian challenges.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sharp Milestone Metrics Strip -->
+            <div class="about-sharp-metrics">
+                <div class="sharp-metric-box">
+                    <span class="sharp-metric-num">40+</span>
+                    <span class="sharp-metric-lbl">Grassroots Workshops</span>
+                </div>
+                <div class="sharp-metric-sep"></div>
+                <div class="sharp-metric-box">
+                    <span class="sharp-metric-num">1,200+</span>
+                    <span class="sharp-metric-lbl">Students Reached</span>
+                </div>
+                <div class="sharp-metric-sep"></div>
+                <div class="sharp-metric-box">
+                    <span class="sharp-metric-num">Global</span>
+                    <span class="sharp-metric-lbl">World Championship</span>
+                </div>
+            </div>
+
+            <!-- Sharp Action Buttons -->
+            <div class="about-sharp-actions">
+                <a href="programs.html" class="btn-sharp btn-primary">
+                    <span>Explore Our Programs</span>
+                    <i class="fa-light fa-arrow-right"></i>
+                </a>
+                <a href="team.html" class="btn-sharp btn-outline-dark">
+                    <span>Meet The Team</span>
+                    <i class="fa-light fa-users"></i>
+                </a>
             </div>
         </div>
     </section>

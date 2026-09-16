@@ -1359,28 +1359,532 @@ strong {
     transform: translateY(0);
 }
 
-/* About Section */
-.about-grid {
+/* ==========================================================================
+   Who We Are / About Section — Full Viewport Split Screen (50/50 Sharp Edges)
+   Left: 50% Full-Bleed Image Frame with Technical HUD Accents
+   Right: 50% Content Frame with Precision Sharp Geometry
+   Fits Exactly to One Screen Frame (100vh on Desktop)
+   ========================================================================== */
+
+.about-split-screen {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
+    grid-template-columns: 50% 50%;
+    background: #FFFFFF;
+    overflow: hidden;
+}
+
+@media (min-width: 992px) {
+    .about-split-screen {
+        height: 100vh;
+        max-height: 100vh;
+    }
+}
+
+/* -------------------------------------------------------------
+   Left Column: 50% Full-Bleed Framed Visual (Sharp Edges)
+   ------------------------------------------------------------- */
+.about-split-media {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: var(--ry-dark-bg);
+    border-right: 2px solid #14171E;
+}
+
+.about-split-media img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 30%;
+    border-radius: 0 !important;
+    display: block;
+    transition: transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.about-split-media:hover img {
+    transform: scale(1.035);
+}
+
+/* Sharp Technical Cyber Gradient Overlay */
+.about-split-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, 
+        rgba(8, 9, 12, 0.48) 0%, 
+        transparent 35%, 
+        rgba(8, 9, 12, 0.25) 60%, 
+        rgba(8, 9, 12, 0.85) 100%),
+        linear-gradient(90deg, 
+        transparent 65%, 
+        rgba(8, 9, 12, 0.55) 100%);
+    pointer-events: none;
+    z-index: 2;
+}
+
+/* Sharp Technical Corner Brackets */
+.sharp-hud-corner {
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    border-color: var(--ry-amber);
+    border-style: solid;
+    pointer-events: none;
+    z-index: 4;
+}
+
+.sharp-hud-corner.top-left {
+    top: 28px;
+    left: 28px;
+    border-width: 2px 0 0 2px;
+}
+
+.sharp-hud-corner.top-right {
+    top: 28px;
+    right: 28px;
+    border-width: 2px 2px 0 0;
+}
+
+.sharp-hud-corner.bottom-left {
+    bottom: 28px;
+    left: 28px;
+    border-width: 0 0 2px 2px;
+}
+
+.sharp-hud-corner.bottom-right {
+    bottom: 28px;
+    right: 28px;
+    border-width: 0 2px 2px 0;
+}
+
+/* Sharp Floating Top Tag */
+.about-sharp-tag {
+    position: absolute;
+    top: 36px;
+    left: 36px;
+    z-index: 5;
+    display: inline-flex;
     align-items: center;
+    gap: 10px;
+    padding: 8px 16px;
+    background: rgba(8, 9, 12, 0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(229, 152, 25, 0.45);
+    border-left: 4px solid var(--ry-crimson);
+    border-radius: 0 !important;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45);
 }
 
-.core-values {
-    margin-top: 1.5rem;
-    padding-left: 1.5rem;
-    border-left: 3px solid var(--primary-color);
+.sharp-pulse-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 0;
+    background: var(--ry-amber);
+    box-shadow: 0 0 0 3px rgba(229, 152, 25, 0.35);
+    animation: pulseGlowAmber 2.2s infinite;
 }
 
-.core-values li {
-    margin-bottom: 0.5rem;
-    color: var(--text-main);
+.sharp-tag-text {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: var(--white);
+    text-transform: uppercase;
 }
 
-.about-image img {
-    border-radius: 8px;
-    box-shadow: var(--shadow-md);
+/* Sharp Floating Bottom Stat Banner */
+.about-sharp-banner {
+    position: absolute;
+    bottom: 36px;
+    left: 36px;
+    right: 36px;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    padding: 16px 22px;
+    background: rgba(8, 9, 12, 0.92);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-left: 4px solid var(--ry-amber);
+    border-radius: 0 !important;
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.55);
+    color: var(--white);
+}
+
+.sharp-stat-group {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.sharp-stat-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 0 !important;
+    background: rgba(229, 152, 25, 0.15);
+    border: 1px solid rgba(229, 152, 25, 0.35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    color: var(--ry-amber);
+    flex-shrink: 0;
+}
+
+.sharp-stat-big {
+    display: block;
+    font-size: 1.45rem;
+    font-weight: 800;
+    line-height: 1.1;
+    color: var(--white);
+    letter-spacing: -0.5px;
+}
+
+.sharp-stat-label {
+    display: block;
+    font-size: 0.75rem;
+    color: #D3D8E2;
+    font-weight: 500;
+}
+
+.sharp-stat-badge {
+    padding: 6px 12px;
+    border-radius: 0 !important;
+    background: rgba(229, 37, 37, 0.18);
+    border: 1px solid rgba(229, 37, 37, 0.4);
+    color: #FF6666;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+/* -------------------------------------------------------------
+   Right Column: 50% Content Frame (Fitted to 1 Screen Frame)
+   ------------------------------------------------------------- */
+.about-split-content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: clamp(2rem, 3.8vh, 3.8rem) clamp(2.5rem, 4.8vw, 5.2rem);
+    background: #FFFFFF;
+    overflow-y: auto;
+}
+
+/* Sharp Eyebrow */
+.about-sharp-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 5px 14px;
+    border-radius: 0 !important;
+    background: rgba(229, 152, 25, 0.09);
+    border: 1px solid rgba(229, 152, 25, 0.3);
+    border-left: 3px solid var(--ry-amber);
+    color: var(--ry-amber-dark, #CB8412);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1.6px;
+    margin-bottom: 0.75rem;
+    width: fit-content;
+    text-transform: uppercase;
+}
+
+.about-sharp-eyebrow i {
+    font-size: 0.8rem;
+    color: var(--ry-amber);
+}
+
+/* Headline */
+.about-sharp-headline {
+    font-size: clamp(1.6rem, 2.2vw, 2.25rem);
+    font-weight: 800;
+    line-height: 1.2;
+    color: var(--black);
+    margin-bottom: 0.65rem;
+    letter-spacing: -0.5px;
+}
+
+.text-gradient-crimson {
+    background: linear-gradient(135deg, #E52525 0%, #A31010 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Accent Line */
+.about-sharp-divider {
+    width: 48px;
+    height: 3px;
+    border-radius: 0 !important;
+    background: var(--primary-gradient);
+    margin-bottom: 0.9rem;
+}
+
+/* Narrative Story */
+.about-sharp-lead {
+    font-size: 0.98rem;
+    line-height: 1.65;
+    color: var(--ry-gray-900, #101217);
+    font-weight: 500;
+    margin-bottom: 0.55rem;
+}
+
+.about-sharp-body {
+    font-size: 0.92rem;
+    line-height: 1.65;
+    color: var(--text-light);
+    margin-bottom: 1.15rem;
+}
+
+/* Sharp Value Pillars */
+.about-sharp-pillars {
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+    margin-bottom: 1.15rem;
+}
+
+.about-sharp-pillar {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.95rem;
+    padding: 0.75rem 1rem;
+    background: var(--ry-platinum, #F6F8FA);
+    border: 1px solid rgba(34, 38, 49, 0.08);
+    border-radius: 0 !important;
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.about-sharp-pillar.crimson { border-left: 3px solid var(--ry-crimson); }
+.about-sharp-pillar.amber   { border-left: 3px solid var(--ry-amber); }
+.about-sharp-pillar.sage    { border-left: 3px solid var(--ry-sage); }
+
+.about-sharp-pillar:hover {
+    transform: translateX(3px);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+}
+
+.sharp-pillar-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 0 !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.05rem;
+    flex-shrink: 0;
+}
+
+.sharp-pillar-icon.crimson {
+    background: rgba(229, 37, 37, 0.12);
+    color: var(--ry-crimson);
+}
+
+.sharp-pillar-icon.amber {
+    background: rgba(229, 152, 25, 0.14);
+    color: var(--ry-amber);
+}
+
+.sharp-pillar-icon.sage {
+    background: rgba(55, 104, 86, 0.14);
+    color: var(--ry-sage);
+}
+
+.sharp-pillar-text h4 {
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: var(--black);
+    margin-bottom: 0.15rem;
+    line-height: 1.25;
+}
+
+.sharp-pillar-text p {
+    font-size: 0.82rem;
+    line-height: 1.45;
+    color: var(--text-light);
+    margin-bottom: 0;
+}
+
+/* Sharp Milestone Metrics Strip */
+.about-sharp-metrics {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.85rem;
+    padding: 0.85rem 1.25rem;
+    background: #FFFFFF;
+    border: 1px solid rgba(34, 38, 49, 0.11);
+    border-radius: 0 !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+    margin-bottom: 1.25rem;
+}
+
+.sharp-metric-box {
+    text-align: center;
+    flex: 1;
+}
+
+.sharp-metric-num {
+    display: block;
+    font-size: 1.22rem;
+    font-weight: 800;
+    color: var(--ry-crimson);
+    line-height: 1.1;
+}
+
+.sharp-metric-lbl {
+    display: block;
+    font-size: 0.7rem;
+    color: var(--text-light);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 2px;
+}
+
+.sharp-metric-sep {
+    width: 1px;
+    height: 28px;
+    background: rgba(34, 38, 49, 0.12);
+}
+
+/* Sharp Action Buttons */
+.about-sharp-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    flex-wrap: wrap;
+}
+
+.btn-sharp {
+    border-radius: 0 !important;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0.78rem 1.6rem;
+    font-size: 0.92rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.btn-sharp.btn-primary {
+    background: var(--primary-gradient);
+    color: var(--white);
+    border: 2px solid transparent;
+    box-shadow: 0 6px 18px rgba(229, 37, 37, 0.25);
+}
+
+.btn-sharp.btn-primary:hover {
+    background: linear-gradient(135deg, #EC2A2A 0%, #8E0000 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(229, 37, 37, 0.35);
+}
+
+.btn-sharp.btn-outline-dark {
+    color: var(--black);
+    background: transparent;
+    border: 2px solid rgba(8, 9, 12, 0.3);
+}
+
+.btn-sharp.btn-outline-dark:hover {
+    border-color: var(--black);
+    background: var(--black);
+    color: var(--white);
+    transform: translateY(-2px);
+}
+
+@keyframes pulseGlowAmber {
+    0%, 100% {
+        box-shadow: 0 0 0 0 rgba(229, 152, 25, 0.55);
+    }
+    50% {
+        box-shadow: 0 0 0 6px rgba(229, 152, 25, 0);
+    }
+}
+
+/* Responsive Handling for Viewports < 992px */
+@media (max-width: 991px) {
+    .about-split-screen {
+        grid-template-columns: 1fr;
+        height: auto;
+        min-height: 100vh;
+    }
+
+    .about-split-media {
+        height: 50vh;
+        min-height: 360px;
+        border-right: none;
+        border-bottom: 2px solid #14171E;
+    }
+
+    .about-split-content {
+        height: auto;
+        padding: 3rem 1.5rem;
+    }
+
+    .sharp-hud-corner.top-left { top: 16px; left: 16px; }
+    .sharp-hud-corner.top-right { top: 16px; right: 16px; }
+    .sharp-hud-corner.bottom-left { bottom: 16px; left: 16px; }
+    .sharp-hud-corner.bottom-right { bottom: 16px; right: 16px; }
+
+    .about-sharp-tag {
+        top: 20px;
+        left: 20px;
+    }
+
+    .about-sharp-banner {
+        bottom: 20px;
+        left: 20px;
+        right: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .about-split-media {
+        height: 44vh;
+        min-height: 300px;
+    }
+
+    .about-sharp-banner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        padding: 12px 16px;
+    }
+
+    .about-sharp-metrics {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+
+    .sharp-metric-sep {
+        width: 60px;
+        height: 1px;
+    }
+
+    .about-sharp-actions {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .btn-sharp {
+        width: 100%;
+        justify-content: center;
+    }
 }
 
 /* Mission & Vision */

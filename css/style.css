@@ -629,10 +629,13 @@ strong {
 }
 
 .hero-bg img {
+    position: absolute;
+    top: 0;
+    left: clamp(25px, 6vw, 90px);
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: 74% center;
+    object-position: 86% center;
     opacity: 0.85;
     filter: brightness(0.9);
     transform: scale(1.04);
@@ -1579,6 +1582,11 @@ strong {
 
     .hero {
         min-height: 760px;
+    }
+
+    .hero-bg img {
+        left: 0;
+        object-position: center;
     }
 
     .hero-container {

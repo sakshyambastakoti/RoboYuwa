@@ -319,4 +319,4 @@ document.addEventListener('DOMContentLoaded', () => {
     );
 
     allRevealElements.forEach((el) => observer.observe(el));
-});
+});

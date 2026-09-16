@@ -633,9 +633,10 @@ strong {
     height: 100%;
     object-fit: cover;
     object-position: 74% center;
+    opacity: 0.65;
     filter: brightness(0.85);
     transform: scale(1.04);
-    transition: transform 7s ease-out;
+    transition: transform 7s ease-out, opacity 0.5s ease;
 }
 
 .hero-slide.active .hero-bg img {

@@ -97,24 +97,13 @@
       <div class="navbar" id="navbar">
         <div class="container nav-container">
           <a href="#home" class="logo">
-            <div class="logo-emblem">
-              <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" class="logo-icon-svg">
-                <rect x="2" y="2" width="40" height="40" rx="12" stroke="url(#amberGrad)" stroke-width="2.2" fill="rgba(229,152,25,0.12)"/>
-                <!-- Robotic circuit nodes and synergy star -->
-                <circle cx="22" cy="22" r="5" fill="url(#amberGrad)"/>
-                <path d="M22 8V17M22 27V36M8 22H17M27 22H36" stroke="url(#amberGrad)" stroke-width="2" stroke-linecap="round"/>
-                <circle cx="22" cy="8" r="2.5" fill="#FFFFFF"/>
-                <circle cx="22" cy="36" r="2.5" fill="#FFFFFF"/>
-                <circle cx="8" cy="22" r="2.5" fill="#FFFFFF"/>
-                <circle cx="36" cy="22" r="2.5" fill="#FFFFFF"/>
-                <defs>
-                  <linearGradient id="amberGrad" x1="4" y1="4" x2="40" y2="40" gradientUnits="userSpaceOnUse">
-                    <stop stop-color="#F5A623"/>
-                    <stop offset="1" stop-color="#D0021B"/>
-                  </linearGradient>
-                </defs>
-              </svg>
-            </div>
+            <img
+              src="assets/roboyuwa-logo-BLCCIWUS.jpg"
+              alt="RoboYuwa Logo"
+              class="logo-img"
+              loading="eager"
+              decoding="async"
+            />
             <div class="logo-text">
               <span class="brand-name font-serif">RoboYuwa</span>
               <span class="brand-tagline">Youth Innovation &amp; Robotics</span>
@@ -160,7 +149,7 @@
       </div>
     </header>
 
-    <!-- Hero Section (Reference Layout) -->
+    <!-- Hero Section (Reference Layout - Left-Aligned Rich Aesthetic) -->
     <section id="home" class="hero" aria-label="Hero Showcase">
       <div class="hero-slider" id="heroSlider">
         <!-- Slide 1 (Active) -->
@@ -175,20 +164,26 @@
             />
             <div class="overlay"></div>
           </div>
-          <div class="container hero-content">
-            <span class="hero-eyebrow font-serif-italic">Raising Hope</span>
-            <h1 class="hero-title font-serif">To The Next Tech<br />Generation</h1>
-            <p class="hero-desc">
-              Empowering youth across Nepal through hands-on robotics, technical research, and creative problem-solving to build real-world sustainable solutions.
-            </p>
-            <div class="hero-actions">
-              <a href="programs.html" class="btn btn-hero-pill">Join Us Now</a>
-              <button class="hero-video-btn" id="openHeroVideoBtn" aria-label="Watch showcase video">
-                <span class="play-icon-circle">
-                  <i class="fa-solid fa-play"></i>
-                </span>
-                <span class="video-btn-text">Watch The Video</span>
-              </button>
+          <div class="hero-container">
+            <div class="hero-content">
+              <div class="hero-badge">
+                <span class="badge-pulse"></span>
+                <span>Youth Innovation NGO</span>
+              </div>
+              <span class="hero-eyebrow font-serif-italic">Raising Hope</span>
+              <h1 class="hero-title font-serif">To The Next Tech<br />Generation</h1>
+              <p class="hero-desc">
+                Empowering youth across Nepal through hands-on robotics, technical research, and creative problem-solving to build real-world sustainable solutions.
+              </p>
+              <div class="hero-actions">
+                <a href="programs.html" class="btn btn-hero-pill">Join Us Now</a>
+                <button class="hero-video-btn" id="openHeroVideoBtn" aria-label="Watch showcase video">
+                  <span class="play-icon-circle">
+                    <i class="fa-solid fa-play"></i>
+                  </span>
+                  <span class="video-btn-text">Watch The Video</span>
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -204,20 +199,26 @@
             />
             <div class="overlay"></div>
           </div>
-          <div class="container hero-content">
-            <span class="hero-eyebrow font-serif-italic">Inspiring Young Minds</span>
-            <h1 class="hero-title font-serif">Building Nepal's<br />Future Roboticists</h1>
-            <p class="hero-desc">
-              From grassroots community workshops to international championship arenas, turning curiosity into world-class competitive capability.
-            </p>
-            <div class="hero-actions">
-              <a href="about.html" class="btn btn-hero-pill">Discover More</a>
-              <button class="hero-video-btn" aria-label="Watch showcase video">
-                <span class="play-icon-circle">
-                  <i class="fa-solid fa-play"></i>
-                </span>
-                <span class="video-btn-text">Watch The Video</span>
-              </button>
+          <div class="hero-container">
+            <div class="hero-content">
+              <div class="hero-badge">
+                <span class="badge-pulse"></span>
+                <span>Robotics &amp; AI Education</span>
+              </div>
+              <span class="hero-eyebrow font-serif-italic">Inspiring Young Minds</span>
+              <h1 class="hero-title font-serif">Building Nepal's<br />Future Roboticists</h1>
+              <p class="hero-desc">
+                From grassroots community workshops to international championship arenas, turning curiosity into world-class competitive capability.
+              </p>
+              <div class="hero-actions">
+                <a href="about.html" class="btn btn-hero-pill">Discover More</a>
+                <button class="hero-video-btn" aria-label="Watch showcase video">
+                  <span class="play-icon-circle">
+                    <i class="fa-solid fa-play"></i>
+                  </span>
+                  <span class="video-btn-text">Watch The Video</span>
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -233,20 +234,26 @@
             />
             <div class="overlay"></div>
           </div>
-          <div class="container hero-content">
-            <span class="hero-eyebrow font-serif-italic">Transforming Communities</span>
-            <h1 class="hero-title font-serif">Pioneering Research<br />&amp; Innovation</h1>
-            <p class="hero-desc">
-              Equipping aspiring engineers with microcontrollers, lab facilities, and dedicated mentorship to create homegrown technology solutions.
-            </p>
-            <div class="hero-actions">
-              <a href="programs.html" class="btn btn-hero-pill">Explore Programs</a>
-              <button class="hero-video-btn" aria-label="Watch showcase video">
-                <span class="play-icon-circle">
-                  <i class="fa-solid fa-play"></i>
-                </span>
-                <span class="video-btn-text">Watch The Video</span>
-              </button>
+          <div class="hero-container">
+            <div class="hero-content">
+              <div class="hero-badge">
+                <span class="badge-pulse"></span>
+                <span>Research &amp; Competitions</span>
+              </div>
+              <span class="hero-eyebrow font-serif-italic">Transforming Communities</span>
+              <h1 class="hero-title font-serif">Pioneering Research<br />&amp; Innovation</h1>
+              <p class="hero-desc">
+                Equipping aspiring engineers with microcontrollers, lab facilities, and dedicated mentorship to create homegrown technology solutions.
+              </p>
+              <div class="hero-actions">
+                <a href="programs.html" class="btn btn-hero-pill">Explore Programs</a>
+                <button class="hero-video-btn" aria-label="Watch showcase video">
+                  <span class="play-icon-circle">
+                    <i class="fa-solid fa-play"></i>
+                  </span>
+                  <span class="video-btn-text">Watch The Video</span>
+                </button>
+              </div>
             </div>
           </div>
         </div>

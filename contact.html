@@ -12,53 +12,9 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600;1,700&display=swap"
         rel="stylesheet">
-    <style>
-        /* Specific Styles for About Page to complement global css */
-        .page-header {
-            padding: 160px 0 80px;
-            background: var(--black);
-            color: var(--white);
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .page-header-bg {
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: linear-gradient(135deg, rgba(209, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.9) 100%), url('assets/homepage.jpg') center/cover;
-            opacity: 0.4;
-            z-index: 0;
-        }
-
-        .page-header .container {
-            position: relative;
-            z-index: 1;
-        }
-        
-        .page-header h1 {
-            color: var(--white);
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            margin-bottom: 1rem;
-        }
-        
-        .page-header p {
-            font-size: 1.2rem;
-            color: var(--gray-300);
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .about-story {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: var(--text-light);
-            margin-bottom: 2rem;
-        }
-    </style>
     <script src="https://zenithkandel.com.np/fontawesome/zenith-icons.js"></script>
 </head>
-<body>
+<body class="contact-page">
 
     <!-- Header (Top Utility Bar + Transparent Navbar) -->
     <header class="header" id="header">
@@ -135,80 +91,170 @@
             </div>
         </div>
     </header>
-    <!-- Page Header -->
-    <section class="page-header">
-        <div class="page-header-bg"></div>
-        <div class="container fade-in-up">
-            <h1 style="font-size: clamp(2.5rem, 5vw, 3.5rem); margin-bottom: 1rem;">Contact Us</h1>
-            <p style="color: var(--gray-300); max-width: 600px; margin: 0 auto; font-size: 1.1rem;">Have questions, want to partner, or join our community? We’d love to hear from you.</p>
-        </div>
-    </section>
+    <!-- Executive Contact Showcase (Reference Split-Screen Layout) -->
+    <main class="contact-exec-wrapper" id="contactMain">
+        <!-- Subtle High-Tech Background Orbit Accent from Reference -->
+        <div class="contact-orbit-deco" aria-hidden="true"></div>
+        <div class="contact-ambient-glow" aria-hidden="true"></div>
 
-    <!-- Contact Form & Info Section -->
-    <section class="contact-section section-padding bg-light" style="padding: 5rem 0;">
-        <div class="container">
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem;">
-                
-                <!-- Contact Info -->
-                <div class="contact-info" style="background: white; padding: 3rem; border-radius: 12px; box-shadow: var(--shadow-sm); border: 1px solid var(--gray-100);">
-                    <h2 style="color: var(--primary-color); margin-bottom: 1.5rem;">Get In Touch</h2>
-                    <p style="color: var(--gray-600); margin-bottom: 2.5rem; line-height: 1.8;">Our Legalities, PR, and Outreach departments are ready to assist you. Reach out through the channels below.</p>
-                    
-                    <ul style="list-style: none; padding: 0;">
-                        <li style="display: flex; align-items: center; margin-bottom: 2rem; color: var(--gray-700);">
-                            <i class="fa-light fa-phone"></i>
-                            <span style="font-size: 1.1rem;">+977 9749464658</span>
-                        </li>
-                        <li style="display: flex; align-items: center; margin-bottom: 2rem; color: var(--gray-700);">
-                            <i class="fa-light fa-envelope"></i>
-                            <span style="font-size: 1.1rem;">roboyuwa@gmail.com</span>
-                        </li>
-                        <li style="display: flex; align-items: center; color: var(--gray-700);">
-                            <i class="fa-light fa-location-dot"></i>
-                            <span style="font-size: 1.1rem;">Kathmandu, Nepal</span>
-                        </li>
-                    </ul>
+        <div class="container contact-exec-container">
+            <!-- Left Column: Identity, HQ, Provincial Hubs & Direct Channels -->
+            <div class="contact-exec-left">
+                <div class="contact-org-label">
+                    <span>ROBOYUWA NEPAL, NGO</span>
+                </div>
 
-                    <div style="margin-top: 3rem;">
-                        <h3 style="font-size: 1.2rem; margin-bottom: 1rem;">Operating Hours</h3>
-                        <p style="color: var(--gray-600); line-height: 1.8;">Sunday - Friday:<br>10:00 AM - 5:00 PM</p>
+                <h1 class="contact-main-title">
+                    CONTACT US
+                </h1>
+
+                <!-- Headquarters Block -->
+                <div class="contact-block">
+                    <h2 class="contact-sub-title">HEADQUARTERS</h2>
+                    <div class="contact-address-lines">
+                        <p class="addr-line1">RoboYuwa Innovation Lab &amp; Research Center</p>
+                        <p class="addr-line2">Kathmandu Metropolitan City - 16, Bagmati Province</p>
+                        <p class="addr-line3">Kathmandu 44600, Nepal</p>
+                    </div>
+                    <a href="https://maps.google.com/?q=Kathmandu,Nepal" target="_blank" rel="noopener noreferrer" class="contact-map-link">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>View on Google Maps</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+                </div>
+
+                <!-- Satellite / Provincial Chapters -->
+                <div class="contact-block">
+                    <h2 class="contact-sub-title">SATELLITE OFFICES</h2>
+                    <p class="contact-hub-cities">
+                        Pokhara <span>|</span> Chitwan <span>|</span> Biratnagar <span>|</span> Butwal
+                    </p>
+                    <p class="contact-hub-note">Active student STEM clubs and technical training centers across all 7 provinces of Nepal.</p>
+                </div>
+
+                <!-- Direct Communication Channels -->
+                <div class="contact-direct-strip">
+                    <a href="tel:+9779749464658" class="direct-item">
+                        <i class="fa-solid fa-mobile-screen"></i>
+                        <span>+977 9749464658</span>
+                    </a>
+                    <a href="mailto:roboyuwa@gmail.com" class="direct-item">
+                        <i class="fa-solid fa-envelope"></i>
+                        <span>roboyuwa@gmail.com</span>
+                    </a>
+                    <div class="direct-item hours">
+                        <i class="fa-solid fa-clock"></i>
+                        <span>Mon - Fri / 9:00 AM - 6:00 PM</span>
                     </div>
                 </div>
+            </div>
 
-                <!-- Contact Form -->
-                <div class="contact-form" style="background: white; padding: 3rem; border-radius: 12px; box-shadow: var(--shadow-sm); border: 1px solid var(--gray-100);">
-                    <h2 style="margin-bottom: 1.5rem; color: var(--black);">Send a Message</h2>
-                    <form action="#" method="POST" id="contact-form">
-                        <div style="margin-bottom: 1.5rem;">
-                            <label for="name" style="display: block; margin-bottom: 0.5rem; font-weight: 500; color: var(--gray-700);">Full Name</label>
-                            <input type="text" id="name" name="name" required style="width: 100%; padding: 0.8rem 1rem; border: 1px solid var(--gray-300); border-radius: 6px; font-family: inherit; font-size: 1rem;">
-                        </div>
-                        <div style="margin-bottom: 1.5rem;">
-                            <label for="email" style="display: block; margin-bottom: 0.5rem; font-weight: 500; color: var(--gray-700);">Email Address</label>
-                            <input type="email" id="email" name="email" required style="width: 100%; padding: 0.8rem 1rem; border: 1px solid var(--gray-300); border-radius: 6px; font-family: inherit; font-size: 1rem;">
-                        </div>
-                        <div style="margin-bottom: 1.5rem;">
-                            <label for="subject" style="display: block; margin-bottom: 0.5rem; font-weight: 500; color: var(--gray-700);">Subject</label>
-                            <select id="subject" name="subject" required style="width: 100%; padding: 0.8rem 1rem; border: 1px solid var(--gray-300); border-radius: 6px; font-family: inherit; font-size: 1rem; color: var(--gray-700);">
-                                <option value="" disabled selected>Select an inquiry type...</option>
-                                <option value="membership">Membership Inquiry</option>
-                                <option value="partnership">Partnership / Sponsorship</option>
-                                <option value="event">Event Participation</option>
-                                <option value="support">Technical Support</option>
-                                <option value="other">Other</option>
-                            </select>
-                        </div>
-                        <div style="margin-bottom: 2rem;">
-                            <label for="message" style="display: block; margin-bottom: 0.5rem; font-weight: 500; color: var(--gray-700);">Message</label>
-                            <textarea id="message" name="message" rows="6" required style="width: 100%; padding: 0.8rem 1rem; border: 1px solid var(--gray-300); border-radius: 6px; font-family: inherit; font-size: 1rem; resize: vertical;"></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary" style="width: 100%; padding: 1rem; font-size: 1.1rem; justify-content: center;">Send Message</button>
-                    </form>
+            <!-- Right Column: Context Statement & Executive High-Tech Form -->
+            <div class="contact-exec-right">
+                <!-- Top Right Editorial Statement (from reference layout) -->
+                <div class="contact-top-statement">
+                    <p>
+                        RoboYuwa is Nepal's premier youth-led robotics catalyst bridging academic and technological frontiers for public students across all 7 provinces.
+                    </p>
                 </div>
 
+                <!-- Executive Contact Form -->
+                <form class="contact-exec-form" id="executiveContactForm" novalidate>
+                    <!-- Field 1: Project / Inquiry Type (Full Width Select) -->
+                    <div class="exec-form-group">
+                        <label for="projectType" class="exec-label">PROJECT TYPE</label>
+                        <div class="select-wrapper">
+                            <select id="projectType" name="projectType" class="exec-select" required>
+                                <option value="" disabled selected>please select</option>
+                                <option value="stem-mentorship">STEM Mentorship &amp; Hands-On Coaching</option>
+                                <option value="school-workshop">School / College Robotics Workshop</option>
+                                <option value="institutional-partnership">Institutional &amp; NGO Partnership</option>
+                                <option value="sponsorship-donation">Corporate Sponsorship &amp; Grants</option>
+                                <option value="combat-bots-team">Combat Bots &amp; Competition League</option>
+                                <option value="media-general">Media, PR &amp; General Inquiry</option>
+                            </select>
+                            <i class="fa-solid fa-chevron-down select-chevron" aria-hidden="true"></i>
+                        </div>
+                    </div>
+
+                    <!-- Row 2: First Name & Last Name -->
+                    <div class="exec-form-row">
+                        <div class="exec-form-group">
+                            <label for="firstName" class="exec-label">FIRST NAME</label>
+                            <input type="text" id="firstName" name="firstName" class="exec-input" required autocomplete="given-name" />
+                        </div>
+                        <div class="exec-form-group">
+                            <label for="lastName" class="exec-label">LAST NAME</label>
+                            <input type="text" id="lastName" name="lastName" class="exec-input" required autocomplete="family-name" />
+                        </div>
+                    </div>
+
+                    <!-- Row 3: Email & Phone -->
+                    <div class="exec-form-row">
+                        <div class="exec-form-group">
+                            <label for="emailAddr" class="exec-label">EMAIL</label>
+                            <input type="email" id="emailAddr" name="emailAddr" class="exec-input" required autocomplete="email" />
+                        </div>
+                        <div class="exec-form-group">
+                            <label for="phoneNum" class="exec-label">PHONE</label>
+                            <input type="tel" id="phoneNum" name="phoneNum" class="exec-input" required autocomplete="tel" />
+                        </div>
+                    </div>
+
+                    <!-- Row 4: Province Located & How Heard -->
+                    <div class="exec-form-row">
+                        <div class="exec-form-group">
+                            <label for="provinceLocation" class="exec-label">STATE WHERE YOU'RE LOCATED</label>
+                            <div class="select-wrapper">
+                                <select id="provinceLocation" name="provinceLocation" class="exec-select" required>
+                                    <option value="" disabled selected>please select</option>
+                                    <option value="bagmati">Bagmati Province (Kathmandu Valley)</option>
+                                    <option value="gandaki">Gandaki Province (Pokhara)</option>
+                                    <option value="koshi">Koshi Province (Biratnagar / Dharan)</option>
+                                    <option value="lumbini">Lumbini Province (Butwal / Bhairahawa)</option>
+                                    <option value="madhesh">Madhesh Province (Janakpur / Birgunj)</option>
+                                    <option value="karnali">Karnali Province (Surkhet)</option>
+                                    <option value="sudurpashchim">Sudurpashchim Province (Dhangadhi)</option>
+                                    <option value="international">International / Global Diaspora</option>
+                                </select>
+                                <i class="fa-solid fa-chevron-down select-chevron" aria-hidden="true"></i>
+                            </div>
+                        </div>
+
+                        <div class="exec-form-group">
+                            <label for="hearAbout" class="exec-label">HOW DID YOU HEAR ABOUT ROBOYUWA?</label>
+                            <div class="select-wrapper">
+                                <select id="hearAbout" name="hearAbout" class="exec-select" required>
+                                    <option value="" disabled selected>please select</option>
+                                    <option value="social-media">Social Media (Instagram / Facebook / LinkedIn)</option>
+                                    <option value="workshop-bootcamp">Robotics Bootcamp / School Event</option>
+                                    <option value="technoxian-competition">Robotics Competition (Technoxian / Aavishkar)</option>
+                                    <option value="news-media">News, Press or Online Article</option>
+                                    <option value="peer-referral">Friend / Community Referral</option>
+                                    <option value="other">Other</option>
+                                </select>
+                                <i class="fa-solid fa-chevron-down select-chevron" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Field 5: Message Details -->
+                    <div class="exec-form-group">
+                        <label for="messageText" class="exec-label">TELL US HOW WE CAN HELP YOU?</label>
+                        <textarea id="messageText" name="messageText" class="exec-textarea" rows="4" required></textarea>
+                    </div>
+
+                    <!-- Submit Action with Underline Styling from Reference -->
+                    <div class="exec-submit-container">
+                        <button type="submit" class="exec-submit-btn" id="execSubmitBtn">
+                            <span>SUBMIT</span>
+                        </button>
+                        <div id="contactFormStatus" class="form-status-msg" aria-live="polite"></div>
+                    </div>
+                </form>
             </div>
         </div>
-    </section>
+    </main>
     <!-- Footer (Executive High-Tech Minimalist Layout) -->
     <footer class="footer" id="footer">
         <!-- Tri-Color Brand Top Accent Line -->

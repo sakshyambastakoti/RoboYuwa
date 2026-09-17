@@ -377,4 +377,56 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+
+    // ==========================================================================
+    // Executive Contact Form Submission Handler
+    // ==========================================================================
+    const execContactForm = document.getElementById('executiveContactForm');
+    const contactFormStatus = document.getElementById('contactFormStatus');
+    const execSubmitBtn = document.getElementById('execSubmitBtn');
+
+    if (execContactForm) {
+        execContactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const projectType = document.getElementById('projectType');
+            const firstName = document.getElementById('firstName');
+            const lastName = document.getElementById('lastName');
+            const emailAddr = document.getElementById('emailAddr');
+            const messageText = document.getElementById('messageText');
+
+            if (!projectType?.value || !firstName?.value || !lastName?.value || !emailAddr?.value || !messageText?.value) {
+                if (contactFormStatus) {
+                    contactFormStatus.className = 'form-status-msg error';
+                    contactFormStatus.textContent = 'Please fill in all required fields before submitting.';
+                }
+                return;
+            }
+
+            if (execSubmitBtn) {
+                const origBtnHtml = execSubmitBtn.innerHTML;
+                execSubmitBtn.disabled = true;
+                execSubmitBtn.innerHTML = '<span>TRANSMITTING...</span> <i class="fa-solid fa-spinner fa-spin"></i>';
+
+                setTimeout(() => {
+                    execContactForm.reset();
+                    execSubmitBtn.disabled = false;
+                    execSubmitBtn.innerHTML = '<span>SENT</span> <i class="fa-solid fa-check" style="color: #34D399;"></i>';
+
+                    if (contactFormStatus) {
+                        contactFormStatus.className = 'form-status-msg success';
+                        contactFormStatus.textContent = 'Thank you! Your message has been routed to our leadership team. We will be in touch shortly.';
+                    }
+
+                    setTimeout(() => {
+                        execSubmitBtn.innerHTML = origBtnHtml;
+                        if (contactFormStatus) {
+                            contactFormStatus.className = 'form-status-msg';
+                            contactFormStatus.textContent = '';
+                        }
+                    }, 5000);
+                }, 750);
+            }
+        });
+    }
 });

@@ -2150,6 +2150,443 @@ strong {
 }
 
 /* ==========================================================================
+   EXECUTIVE DARK-MODE CONTACT SHOWCASE (Reference Split-Screen Layout)
+   ========================================================================== */
+.contact-page .header,
+body:has(.contact-exec-wrapper) .header {
+    background-color: rgba(8, 9, 12, 0.95);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.contact-exec-wrapper {
+    position: relative;
+    background-color: var(--ry-dark-bg);
+    color: #FFFFFF;
+    min-height: 100vh;
+    overflow: hidden;
+    padding-top: 180px; /* Generous clearance preventing any header overlap */
+    padding-bottom: 6.5rem;
+}
+
+/* Background Ambient Glow & Yellow/Amber Orbital Accent from Reference */
+.contact-ambient-glow {
+    position: absolute;
+    top: 15%;
+    left: -10%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(229, 37, 37, 0.07) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.contact-orbit-deco {
+    position: absolute;
+    top: 18%;
+    right: -130px;
+    width: 480px;
+    height: 480px;
+    border: 2px dashed rgba(229, 152, 25, 0.45);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 1;
+    animation: rotateOrbit 90s linear infinite;
+}
+
+@keyframes rotateOrbit {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.contact-exec-container {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1fr 1.35fr;
+    gap: 5.5rem;
+    align-items: flex-start;
+}
+
+/* Left Column: Identity, HQ, Provincial Hubs & Quick Direct Channels */
+.contact-exec-left {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-org-label {
+    font-family: var(--font-sans);
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 2.2px;
+    text-transform: uppercase;
+    color: #8C93A3;
+    margin-bottom: 0.9rem;
+}
+
+.contact-main-title {
+    font-family: var(--font-sans);
+    font-size: clamp(2.8rem, 5.2vw, 4.2rem);
+    font-weight: 900;
+    line-height: 1.05;
+    letter-spacing: -1px;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    margin-bottom: 3.2rem;
+}
+
+.contact-block {
+    margin-bottom: 2.8rem;
+}
+
+.contact-sub-title {
+    font-family: var(--font-sans);
+    font-size: 1.35rem;
+    font-weight: 800;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+    color: var(--ry-amber);
+    margin-bottom: 0.85rem;
+}
+
+.contact-address-lines {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    margin-bottom: 0.8rem;
+}
+
+.contact-address-lines p {
+    font-size: 0.96rem;
+    line-height: 1.6;
+    color: #CBD5E1;
+    margin: 0;
+}
+
+.contact-address-lines .addr-line1 {
+    color: #FFFFFF;
+    font-weight: 600;
+}
+
+.contact-map-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    font-size: 0.84rem;
+    font-weight: 600;
+    letter-spacing: 0.6px;
+    color: var(--ry-amber);
+    text-decoration: none;
+    transition: color 0.2s ease, transform 0.2s ease;
+    margin-top: 0.4rem;
+}
+
+.contact-map-link:hover {
+    color: #FFFFFF;
+    transform: translateX(3px);
+}
+
+.contact-map-link i {
+    font-size: 0.76rem;
+}
+
+.contact-hub-cities {
+    font-size: 1.22rem;
+    font-weight: 500;
+    color: #FFFFFF;
+    line-height: 1.6;
+    margin-bottom: 0.45rem;
+}
+
+.contact-hub-cities span {
+    color: rgba(229, 152, 25, 0.7);
+    margin: 0 0.35rem;
+    font-weight: 300;
+}
+
+.contact-hub-note {
+    font-size: 0.88rem;
+    color: #94A3B8;
+    line-height: 1.55;
+    margin: 0;
+}
+
+.contact-direct-strip {
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+    margin-top: 1rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.contact-direct-strip .direct-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.85rem;
+    font-size: 1.05rem;
+    color: #E2E8F0;
+    text-decoration: none;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.contact-direct-strip .direct-item:hover:not(.hours) {
+    color: var(--ry-amber);
+    transform: translateX(4px);
+}
+
+.contact-direct-strip .direct-item i {
+    width: 22px;
+    color: var(--ry-amber);
+    font-size: 1.15rem;
+    text-align: center;
+}
+
+.contact-direct-strip .direct-item.hours {
+    color: #94A3B8;
+    font-size: 0.92rem;
+}
+
+/* Right Column: Context Statement & High-Tech Form */
+.contact-exec-right {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-top-statement {
+    text-align: right;
+    margin-bottom: 2rem;
+}
+
+.contact-top-statement p {
+    font-size: 0.88rem;
+    color: #94A3B8;
+    line-height: 1.65;
+    max-width: 440px;
+    margin-left: auto;
+    margin-bottom: 0;
+}
+
+.contact-exec-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.exec-form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.35rem;
+}
+
+.exec-label {
+    font-family: var(--font-sans);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    margin-bottom: 0.55rem;
+}
+
+.exec-input,
+.exec-select,
+.exec-textarea {
+    width: 100%;
+    background-color: #0C0E14;
+    border: 1px solid #1F2432;
+    border-radius: 4px;
+    color: #FFFFFF;
+    font-family: var(--font-sans);
+    font-size: 0.92rem;
+    padding: 0.85rem 1rem;
+    outline: none;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+}
+
+.exec-input:focus,
+.exec-select:focus,
+.exec-textarea:focus {
+    border-color: var(--ry-amber);
+    box-shadow: 0 0 14px rgba(229, 152, 25, 0.25);
+    background-color: #12151F;
+}
+
+.exec-input::placeholder,
+.exec-textarea::placeholder {
+    color: #4B5563;
+}
+
+.select-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.select-wrapper .exec-select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    padding-right: 2.5rem;
+    cursor: pointer;
+}
+
+.select-wrapper .exec-select option {
+    background-color: #12141A;
+    color: #FFFFFF;
+    padding: 0.5rem;
+}
+
+.select-chevron {
+    position: absolute;
+    right: 1rem;
+    pointer-events: none;
+    font-size: 0.72rem;
+    color: #8C93A3;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.select-wrapper:focus-within .select-chevron {
+    color: var(--ry-amber);
+}
+
+.exec-form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.35rem;
+}
+
+.exec-textarea {
+    min-height: 115px;
+    resize: vertical;
+    line-height: 1.55;
+}
+
+/* Submit Area matching Reference Underline Style */
+.exec-submit-container {
+    margin-top: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.8rem;
+}
+
+.exec-submit-btn {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #FFFFFF;
+    font-family: var(--font-sans);
+    font-size: 0.88rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    padding: 0.7rem 0.2rem;
+    position: relative;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    transition: color 0.2s ease;
+}
+
+.exec-submit-btn::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, var(--ry-crimson) 0%, var(--ry-amber) 100%);
+    border-radius: 1px;
+    transition: height 0.25s ease, box-shadow 0.25s ease;
+}
+
+.exec-submit-btn:hover {
+    color: var(--ry-amber);
+}
+
+.exec-submit-btn:hover::after {
+    height: 3px;
+    box-shadow: 0 0 12px rgba(229, 152, 25, 0.6);
+}
+
+.exec-submit-btn:active {
+    transform: translateY(1px);
+}
+
+.form-status-msg {
+    font-size: 0.88rem;
+    line-height: 1.5;
+    padding: 0.5rem 0;
+    display: none;
+}
+
+.form-status-msg.success {
+    display: block;
+    color: #34D399;
+}
+
+.form-status-msg.error {
+    display: block;
+    color: #F87171;
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 1024px) {
+    .contact-exec-wrapper {
+        padding-top: 165px;
+    }
+
+    .contact-exec-container {
+        grid-template-columns: 1fr;
+        gap: 3.5rem;
+    }
+
+    .contact-top-statement {
+        text-align: left;
+    }
+
+    .contact-top-statement p {
+        margin-left: 0;
+        max-width: 100%;
+    }
+
+    .contact-orbit-deco {
+        width: 320px;
+        height: 320px;
+        right: -80px;
+        top: 40%;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-exec-wrapper {
+        padding-top: 120px;
+    }
+}
+
+@media (max-width: 640px) {
+    .contact-exec-wrapper {
+        padding-top: 110px;
+        padding-bottom: 5rem;
+    }
+
+    .contact-main-title {
+        font-size: 2.6rem;
+        margin-bottom: 2.4rem;
+    }
+
+    .exec-form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .contact-hub-cities {
+        font-size: 1.1rem;
+    }
+}
+
+/* ==========================================================================
    EXECUTIVE HIGH-TECH FOOTER (RoboYuwa Brand Palette & Design System)
    Matching User's Reference Layout: Top Tri-Color Accent, 4 Columns,
    Minimalist Headings with Cyan Bars, Clean Links, Rectangular Newsletter,

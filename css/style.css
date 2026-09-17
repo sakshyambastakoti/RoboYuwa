@@ -421,18 +421,8 @@ strong {
     transition: color 0.25s ease;
 }
 
-.nav-caret {
-    font-size: 0.72rem;
-    opacity: 0.65;
-    transition: transform 0.2s ease;
-}
-
 .nav-links a.nav-item:hover {
     color: var(--amber-500);
-}
-
-.nav-links a.nav-item:hover .nav-caret {
-    transform: translateY(2px);
 }
 
 .nav-links a.nav-item.active {

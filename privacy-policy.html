@@ -191,68 +191,173 @@
         </div>
     </section>
 
+    <!-- Footer (Premium Architectural Dark Aesthetic) -->
     <footer class="footer" id="footer">
-        <div class="container footer-content">
-            <div class="footer-brand">
-                <div class="footer-logo">
-                    <img src="assets/roboyuwalogo.jpg" alt="RoboYuwa Logo" loading="lazy" decoding="async" onerror="this.outerHTML=`<i class='fa-duotone fa-image' style='font-size: 2rem; color: var(--gray-400); width: 100%; display: flex; align-items: center; justify-content: center; min-height: 100px;'></i>`">
-                    <span>RoboYuwa</span>
+        <!-- Top Decorative Gradient Glow Line -->
+        <div class="footer-top-accent" aria-hidden="true"></div>
+
+        <div class="container">
+            <!-- Pre-Footer Newsletter & Innovation Banner -->
+            <div class="footer-newsletter-banner">
+                <div class="footer-newsletter-text">
+                    <span class="footer-newsletter-eyebrow font-serif-italic">Stay Connected With Innovation</span>
+                    <h3 class="footer-newsletter-title font-serif">Powering Nepal's Next Generation of Roboticists</h3>
+                    <p class="footer-newsletter-desc">
+                        Subscribe to our community newsletter for technical workshops, hardware research releases, and national hackathon announcements.
+                    </p>
                 </div>
-                <p class="footer-description">Student-led technical community from Nepal dedicated to robotics, artificial intelligence, embedded systems, and emerging technologies.</p>
-                <div class="footer-socials">
-                    <a href="https://www.instagram.com/robo__yuwa/" target="_blank" rel="noopener noreferrer" aria-label="RoboYuwa on Instagram" class="social-btn">
-                        <i class="fa-brands fa-instagram"></i>
-                    </a>
-                    <a href="https://www.facebook.com/profile.php?id=61563808928659" target="_blank" rel="noopener noreferrer" aria-label="RoboYuwa on Facebook" class="social-btn">
-                        <i class="fa-brands fa-facebook"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/company/roboyuwa/posts/?feedView=all" target="_blank" rel="noopener noreferrer" aria-label="RoboYuwa on LinkedIn" class="social-btn">
-                        <i class="fa-brands fa-linkedin"></i>
-                    </a>
+                <div class="footer-newsletter-action">
+                    <form class="footer-newsletter-form" id="footerNewsletterForm" onsubmit="return false;">
+                        <div class="newsletter-input-group">
+                            <i class="fa-light fa-envelope newsletter-input-icon"></i>
+                            <input type="email" class="newsletter-input" id="newsletterEmailInput" placeholder="Enter your email address..." required autocomplete="email" aria-label="Your email address" />
+                            <button type="submit" class="btn btn-pill-amber newsletter-submit-btn" id="newsletterSubmitBtn">
+                                <span>Subscribe</span>
+                                <i class="fa-light fa-paper-plane"></i>
+                            </button>
+                        </div>
+                        <div class="newsletter-privacy-notice">
+                            <i class="fa-solid fa-lock"></i> No spam, ever. Unsubscribe at any time.
+                        </div>
+                    </form>
                 </div>
             </div>
 
-            
+            <!-- Main 4-Column Footer Grid -->
+            <div class="footer-grid">
+                <!-- Column 1: Brand & Identity -->
+                <div class="footer-col footer-col-brand">
+                    <a href="index.html" class="footer-brand-link">
+                        <div class="footer-logo-wrap">
+                            <img src="assets/roboyuwa-logo-BLCCIWUS.jpg" alt="RoboYuwa Official Logo" class="footer-logo-img" loading="lazy" decoding="async" />
+                        </div>
+                        <div class="footer-brand-info">
+                            <span class="footer-brand-name font-serif">RoboYuwa</span>
+                            <span class="footer-brand-tagline">Youth Innovation &amp; Robotics</span>
+                        </div>
+                    </a>
+                    <p class="footer-about-text">
+                        Nepal's premier youth-driven non-profit technical ecosystem. Empowering aspiring engineers, researchers, and creators through hands-on robotics, embedded systems, and sustainable hardware innovations.
+                    </p>
+                    <div class="footer-ngo-badge">
+                        <i class="fa-solid fa-award"></i>
+                        <span>Registered Non-Profit Technical Initiative &bull; Nepal</span>
+                    </div>
+                    <div class="footer-social-links" aria-label="Social Media Profiles">
+                        <a href="https://www.facebook.com/profile.php?id=61563808928659" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="RoboYuwa Facebook">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="RoboYuwa Twitter/X">
+                            <i class="fa-brands fa-x-twitter"></i>
+                        </a>
+                        <a href="https://www.instagram.com/robo__yuwa/" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="RoboYuwa Instagram">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/company/roboyuwa/posts/?feedView=all" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="RoboYuwa LinkedIn">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="RoboYuwa YouTube">
+                            <i class="fa-brands fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
 
-            <div class="footer-links">
-                <h4>Legal &amp; Policies</h4>
-                <ul>
-                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
-                    <li><a href="cookie-policy.html">Cookie Policy</a></li>
-                    <li><a href="terms-of-service.html">Terms of Service</a></li>
+                <!-- Column 2: Navigation Links -->
+                <div class="footer-col footer-col-links">
+                    <h4 class="footer-col-title font-serif">Navigation</h4>
+                    <ul class="footer-nav-list">
+                        <li><a href="index.html"><i class="fa-light fa-angle-right"></i> Home Overview</a></li>
+                        <li><a href="about.html"><i class="fa-light fa-angle-right"></i> About Our Story</a></li>
+                        <li><a href="programs.html"><i class="fa-light fa-angle-right"></i> Flagship Programs</a></li>
+                        <li><a href="team.html"><i class="fa-light fa-angle-right"></i> Leadership &amp; Team</a></li>
+                        <li><a href="contact.html"><i class="fa-light fa-angle-right"></i> Contact &amp; Inquiries</a></li>
+                        <li><a href="contact.html" class="footer-highlight-link"><i class="fa-solid fa-heart"></i> Support &amp; Donate</a></li>
                     </ul>
-            </div>
+                </div>
 
-            <div class="footer-contact">
-                <h4>Contact Info</h4>
-                <ul class="contact-list">
-                    <li>
-                        <span class="contact-icon">
-                            <i class="fa-light fa-phone"></i>
-                        </span>
-                        <span>+977 9749464658</span>
-                    </li>
-                    <li>
-                        <span class="contact-icon">
-                            <i class="fa-light fa-envelope"></i>
-                        </span>
-                        <a href="mailto:roboyuwa@gmail.com">roboyuwa@gmail.com</a>
-                    </li>
-                    <li>
-                        <span class="contact-icon">
-                            <i class="fa-light fa-location-dot"></i>
-                        </span>
-                        <span>Kathmandu, Nepal</span>
-                    </li>
-                </ul>
+                <!-- Column 3: Initiatives & Labs -->
+                <div class="footer-col footer-col-programs">
+                    <h4 class="footer-col-title font-serif">Initiatives &amp; Labs</h4>
+                    <ul class="footer-nav-list">
+                        <li><a href="programs.html"><i class="fa-light fa-angle-right"></i> RoboLearn STEM Outreach</a></li>
+                        <li><a href="programs.html"><i class="fa-light fa-angle-right"></i> InnovatYouth Hackathons</a></li>
+                        <li><a href="programs.html"><i class="fa-light fa-angle-right"></i> Combat &amp; Soccer Bots</a></li>
+                        <li><a href="programs.html"><i class="fa-light fa-angle-right"></i> PCB Design &amp; Fabrication</a></li>
+                        <li><a href="programs.html"><i class="fa-light fa-angle-right"></i> Technoxian World Championship</a></li>
+                        <li><a href="programs.html"><i class="fa-light fa-angle-right"></i> Open-Source Hardware Projects</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: Contact & HQ Map -->
+                <div class="footer-col footer-col-contact">
+                    <h4 class="footer-col-title font-serif">Kathmandu HQ</h4>
+                    <ul class="footer-contact-items">
+                        <li>
+                            <div class="footer-contact-icon">
+                                <i class="fa-light fa-location-dot"></i>
+                            </div>
+                            <div class="footer-contact-text">
+                                <div class="footer-hq-status">
+                                    <span class="footer-status-dot"></span>
+                                    <span class="footer-status-label">Headquarters Active</span>
+                                </div>
+                                <span>Kathmandu, Bagmati Province, Nepal</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="footer-contact-icon">
+                                <i class="fa-light fa-phone"></i>
+                            </div>
+                            <div class="footer-contact-text">
+                                <span class="footer-label-sub">Direct Line</span>
+                                <a href="tel:+9779749464658" class="footer-contact-link">+977 9749464658</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="footer-contact-icon">
+                                <i class="fa-light fa-envelope"></i>
+                            </div>
+                            <div class="footer-contact-text">
+                                <span class="footer-label-sub">General Inquiries</span>
+                                <a href="mailto:roboyuwa@gmail.com" class="footer-contact-link">roboyuwa@gmail.com</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="footer-contact-icon">
+                                <i class="fa-light fa-clock"></i>
+                            </div>
+                            <div class="footer-contact-text">
+                                <span class="footer-label-sub">Working Hours</span>
+                                <span>Mon &ndash; Fri / 9:00 AM &ndash; 6:00 PM NPT</span>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <div class="footer-map-card" role="region" aria-label="RoboYuwa Kathmandu Location Map">
+                        <iframe title="RoboYuwa location in Kathmandu"
+                            src="https://maps.google.com/maps?q=Kathmandu%2C%20Nepal&t=&z=13&ie=UTF8&iwloc=&output=embed" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <div class="footer-bottom">
-            <div class="container text-center" style="position: relative;">
-                <p>&copy; 2026 RoboYuwa. All rights reserved.</p>
-                <a href="#header" class="back-to-top" aria-label="Back to top">
-                    <i class="fa-light fa-chevron-up"></i>
+        <!-- Bottom Sub-Footer Bar -->
+        <div class="footer-bottom-bar">
+            <div class="container footer-bottom-container">
+                <div class="footer-copyright">
+                    <p>&copy; 2026 <strong>RoboYuwa</strong>. All rights reserved. Dedicated to youth empowerment and technological leadership in Nepal.</p>
+                </div>
+                <div class="footer-legal-links">
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <span class="footer-legal-sep">&bull;</span>
+                    <a href="cookie-policy.html">Cookie Policy</a>
+                    <span class="footer-legal-sep">&bull;</span>
+                    <a href="terms-of-service.html">Terms of Service</a>
+                </div>
+                <a href="#header" class="footer-back-to-top" id="backToTopBtn" aria-label="Scroll back to top">
+                    <span class="btt-text">Top</span>
+                    <i class="fa-light fa-arrow-up"></i>
                 </a>
             </div>
         </div>

@@ -342,4 +342,39 @@ document.addEventListener('DOMContentLoaded', () => {
     );
 
     allRevealElements.forEach((el) => observer.observe(el));
+
+    // ==========================================================================
+    // Footer Newsletter & Back-to-Top Handlers
+    // ==========================================================================
+    const newsletterForm = document.getElementById('footerNewsletterForm');
+    if (newsletterForm) {
+        newsletterForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const emailInput = document.getElementById('newsletterEmailInput');
+            const submitBtn = document.getElementById('newsletterSubmitBtn');
+            if (emailInput && emailInput.value) {
+                const originalHtml = submitBtn.innerHTML;
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = '<i class="fa-solid fa-check"></i>';
+                submitBtn.style.background = '#10b981';
+                emailInput.value = '';
+                setTimeout(() => {
+                    submitBtn.innerHTML = originalHtml;
+                    submitBtn.style.background = '';
+                    submitBtn.disabled = false;
+                }, 3000);
+            }
+        });
+    }
+
+    const backToTopBtn = document.getElementById('backToTopBtn');
+    if (backToTopBtn) {
+        backToTopBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
 });

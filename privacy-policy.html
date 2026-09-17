@@ -3,17 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="icon" type="image/jpeg" href="assets/roboyuwa-logo-BLCCIWUS.jpg" />
     <title>Privacy Policy | RoboYuwa Legalities Department</title>
-    <meta name="description" content="Meet the dedicated team, department heads, advisors, and members driving RoboYuwa's mission of empowering youth through robotics and innovation.">
+    <meta name="description" content="Comprehensive details on how RoboYuwa collects, uses, and protects your personal data and privacy.">
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600;1,700&display=swap"
+        rel="stylesheet">
     <style>
-        /* Specific Styles for About Page to complement global css */
+        /* Specific Styles for Legal / Policy Pages */
         .page-header {
-            padding: 160px 0 80px;
+            padding: 160px 0 70px;
             background: var(--black);
             color: var(--white);
             text-align: center;
@@ -25,7 +27,7 @@
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
             background: linear-gradient(135deg, rgba(209, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.9) 100%), url('assets/group photo.jpeg') center/cover;
-            opacity: 0.4;
+            opacity: 0.3;
             z-index: 0;
         }
 
@@ -46,42 +48,63 @@
             max-width: 600px;
             margin: 0 auto;
         }
-
-        .about-story {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: var(--text-light);
-            margin-bottom: 2rem;
-        }
     </style>
     <script src="https://zenithkandel.com.np/fontawesome/zenith-icons.js"></script>
 </head>
 <body>
 
-    <!-- Header -->
+    <!-- Header (Top Utility Bar + Transparent Navbar) -->
     <header class="header" id="header">
         <div class="top-bar">
             <div class="container top-bar-container">
                 <div class="top-info">
-                    <span class="info-item">
+                    <a href="tel:+9779749464658" class="info-item">
+                        <i class="fa-light fa-phone"></i>
+                        <span>+977 9749464658</span>
+                    </a>
+                    <a href="mailto:roboyuwa@gmail.com" class="info-item">
                         <i class="fa-light fa-envelope"></i>
-                        roboyuwa@gmail.com
-                    </span>
+                        <span>roboyuwa@gmail.com</span>
+                    </a>
                     <span class="info-item">
-                        <i class="fa-light fa-location-dot"></i>
-                        Kathmandu, Nepal
+                        <i class="fa-light fa-clock"></i>
+                        <span>Mon-Fri / 9:00 AM - 6:00 PM</span>
                     </span>
+                </div>
+                <div class="top-socials">
+                    <a href="https://www.facebook.com/profile.php?id=61563808928659" target="_blank" rel="noopener noreferrer"
+                        aria-label="Facebook" class="top-social-link">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                    <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter"
+                        class="top-social-link">
+                        <i class="fa-brands fa-x-twitter"></i>
+                    </a>
+                    <a href="https://www.instagram.com/robo__yuwa/" target="_blank" rel="noopener noreferrer"
+                        aria-label="Instagram" class="top-social-link">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/company/roboyuwa/posts/?feedView=all" target="_blank"
+                        rel="noopener noreferrer" aria-label="LinkedIn" class="top-social-link">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube"
+                        class="top-social-link">
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
                 </div>
             </div>
         </div>
 
+        <!-- Main Navigation Bar -->
         <div class="navbar" id="navbar">
             <div class="container nav-container">
                 <a href="index.html" class="logo">
-                    <img src="assets/roboyuwalogo.jpg" alt="RoboYuwa Logo" loading="eager" decoding="async" onerror="this.outerHTML=`<i class='fa-duotone fa-image' style='font-size: 2rem; color: var(--gray-400); width: 100%; display: flex; align-items: center; justify-content: center; min-height: 100px;'></i>`">
+                    <img src="assets/roboyuwa-logo-BLCCIWUS.jpg" alt="RoboYuwa Logo" class="logo-img" loading="eager"
+                        decoding="async" />
                     <div class="logo-text">
-                        <span class="brand-name">RoboYuwa</span>
-                        <span class="brand-tagline">Youth Innovation</span>
+                        <span class="brand-name font-serif">RoboYuwa</span>
+                        <span class="brand-tagline">Youth Innovation &amp; Robotics</span>
                     </div>
                 </a>
                 <button class="mobile-toggle" aria-label="Toggle Navigation" aria-expanded="false" aria-controls="nav-links">
@@ -89,18 +112,25 @@
                 </button>
                 <nav id="nav-links" class="nav-links">
                     <ul>
-                        <li><a href="index.html#home" class="nav-item">Home</a></li>
-                        <li><a href="about.html" class="nav-item">About</a></li>
-                        <li><a href="programs.html" class="nav-item">Programs</a></li>
+                        <li><a href="index.html" class="nav-item">Home <i class="fa-light fa-angle-down nav-caret"></i></a></li>
+                        <li><a href="about.html" class="nav-item">About Us</a></li>
+                        <li><a href="programs.html" class="nav-item">Programs <i class="fa-light fa-angle-down nav-caret"></i></a></li>
+                        <li><a href="team.html" class="nav-item">Our Team</a></li>
                         <li><a href="contact.html" class="nav-item">Contact</a></li>
-                        <li><a href="team.html" class="btn btn-primary btn-sm">Our Team</a></li>
                     </ul>
                 </nav>
+                <div class="nav-actions">
+                    <button class="nav-search-btn" id="openSearchBtn" aria-label="Search" title="Search website">
+                        <i class="fa-light fa-magnifying-glass"></i>
+                    </button>
+                    <a href="contact.html" class="btn btn-pill-amber">Donate</a>
+                </div>
             </div>
         </div>
     </header>
     <!-- Page Header -->
-    <section class="page-header" style="padding: 140px 0 60px; background: var(--dark); color: white; text-align: center;">
+    <section class="page-header">
+        <div class="page-header-bg"></div>
         <div class="container fade-in-up">
             <h1 style="font-size: clamp(2.5rem, 5vw, 3.5rem); margin-bottom: 1rem;">Privacy Policy</h1>
             <p style="color: var(--gray-300); max-width: 600px; margin: 0 auto; font-size: 1.1rem;">Comprehensive details on how we collect, use, and protect your data.</p>
@@ -227,6 +257,26 @@
             </div>
         </div>
     </footer>
+
+    <!-- Quick Search Modal -->
+    <div class="modal-backdrop" id="searchModal" aria-hidden="true" role="dialog" aria-label="Search RoboYuwa">
+        <div class="search-modal-dialog">
+            <button class="modal-close" id="closeSearchModal" aria-label="Close search">&times;</button>
+            <div class="search-modal-header">
+                <i class="fa-light fa-magnifying-glass search-icon"></i>
+                <input type="search" id="siteSearchInput" placeholder="Search programs, workshops, research, team..."
+                    aria-label="Search query" autocomplete="off" />
+            </div>
+            <div class="search-quick-tags">
+                <span>Popular:</span>
+                <a href="programs.html" class="search-tag">RoboLearn</a>
+                <a href="programs.html" class="search-tag">InnovatYouth</a>
+                <a href="about.html" class="search-tag">Our Vision</a>
+                <a href="team.html" class="search-tag">Advisors &amp; Leads</a>
+                <a href="contact.html" class="search-tag">Partner With Us</a>
+            </div>
+        </div>
+    </div>
 
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script src="js/email-handler.js"></script>

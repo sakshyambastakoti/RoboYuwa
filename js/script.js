@@ -29,10 +29,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Header Scroll Effect & Parallax
     window.addEventListener('scroll', () => {
-        if (window.scrollY > 30) {
-            header.classList.add('scrolled');
-        } else {
-            header.classList.remove('scrolled');
+        if (header) {
+            if (window.scrollY > 30) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
         }
 
         // Subtle parallax depth on active hero background image
@@ -251,9 +253,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // ==========================================================================
-    // Active navigation link based on current section in viewport
+    // Active navigation link based on current section in viewport (Home page only)
     // ==========================================================================
     const setActiveNavLink = () => {
+        const heroSection = document.getElementById('home');
+        if (!heroSection || sections.length === 0) return;
+
         let currentId = 'home';
         const offset = 140;
 
@@ -266,19 +271,37 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         navItems.forEach(item => {
-            const target = item.getAttribute('href')?.replace('#', '');
-            item.classList.toggle('active', target === currentId);
+            const href = item.getAttribute('href');
+            if (href && (href.startsWith('#') || href === 'index.html')) {
+                const target = href === 'index.html' ? 'home' : href.replace('#', '');
+                item.classList.toggle('active', target === currentId);
+            }
         });
     };
 
     window.addEventListener('scroll', setActiveNavLink);
     setActiveNavLink();
 
+    // Smooth scroll to top when on home page and clicking logo or Home nav link
+    const isHomePage = !!document.getElementById('home') || window.location.pathname.endsWith('index.html') || window.location.pathname.endsWith('/') || window.location.pathname === '';
+    if (isHomePage) {
+        document.querySelectorAll('.logo, .nav-links a[href="index.html"], .nav-links a[href="#home"]').forEach(link => {
+            link.addEventListener('click', (e) => {
+                if (window.location.pathname.endsWith('index.html') || window.location.pathname.endsWith('/') || !window.location.pathname.includes('.html')) {
+                    if (window.scrollY > 20) {
+                        e.preventDefault();
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }
+                }
+            });
+        });
+    }
+
     // Smooth Scrolling for Anchor Links (Accessibility improvements)
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             const targetId = this.getAttribute('href');
-            if (targetId === '#') return;
+            if (targetId === '#' || targetId.length <= 1) return;
 
             const targetElement = document.querySelector(targetId);
             if (targetElement) {

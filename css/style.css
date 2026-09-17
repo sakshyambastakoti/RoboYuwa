@@ -2175,25 +2175,25 @@ strong {
     border-top: none;
 }
 
-/* Tri-Color Top Accent Line (Red #E52525 -> Amber #E59819 -> Blue #2563EB) */
+/* Tri-Color Top Accent Line (RoboYuwa Brand: Crimson #E52525 -> Amber #E59819 -> Sage #376856) */
 .footer-top-accent {
     width: 100%;
-    height: 4px;
+    height: 3px;
     background: linear-gradient(90deg, 
-        #E52525 0%, 
-        #E52525 33.333%, 
-        #E59819 33.333%, 
-        #E59819 66.666%, 
-        #2563EB 66.666%, 
-        #2563EB 100%
+        var(--ry-crimson) 0%, 
+        var(--ry-crimson) 33.333%, 
+        var(--ry-amber) 33.333%, 
+        var(--ry-amber) 66.666%, 
+        var(--ry-sage) 66.666%, 
+        var(--ry-sage) 100%
     );
-    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 1px 8px rgba(229, 37, 37, 0.25);
     z-index: 10;
 }
 
 .footer-main-container {
-    padding-top: 5rem;
-    padding-bottom: 3.5rem;
+    padding-top: 4.8rem;
+    padding-bottom: 3.2rem;
 }
 
 /* 4-Column High-Tech Grid */
@@ -2218,13 +2218,14 @@ strong {
     background: #FFFFFF;
     padding: 3px;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6);
-    margin-bottom: 1.4rem;
+    margin-bottom: 1.35rem;
     transition: transform 0.25s ease, box-shadow 0.25s ease;
+    border: 1px solid rgba(229, 152, 25, 0.4);
 }
 
 .footer-logo-badge:hover {
     transform: scale(1.06);
-    box-shadow: 0 6px 20px rgba(229, 152, 25, 0.35);
+    box-shadow: 0 6px 20px rgba(229, 152, 25, 0.4);
 }
 
 .footer-logo-circle {
@@ -2236,6 +2237,7 @@ strong {
 }
 
 .footer-mission-text {
+    font-family: var(--font-sans);
     font-size: 0.9rem;
     line-height: 1.65;
     color: #9CA3AF;
@@ -2247,7 +2249,7 @@ strong {
 .footer-social-boxes {
     display: flex;
     align-items: center;
-    gap: 0.75rem;
+    gap: 0.65rem;
 }
 
 .social-box-btn {
@@ -2267,31 +2269,33 @@ strong {
 
 .social-box-btn:hover {
     color: #FFFFFF;
-    border-color: #E59819;
-    background: rgba(229, 152, 25, 0.12);
+    border-color: var(--ry-crimson);
+    background: rgba(229, 37, 37, 0.16);
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(229, 152, 25, 0.25);
+    box-shadow: 0 4px 12px rgba(229, 37, 37, 0.35);
 }
 
-/* Column Headings & Vibrant Cyan Underline Bar */
+/* Column Headings & RoboYuwa Brand Underline Bar */
 .footer-col-header {
-    font-size: 0.95rem;
+    font-family: var(--font-sans);
+    font-size: 0.94rem;
     font-weight: 700;
     color: #FFFFFF;
-    letter-spacing: 1.2px;
+    letter-spacing: 1.4px;
     text-transform: uppercase;
     margin-bottom: 0;
 }
 
 .footer-title-bar {
-    width: 26px;
-    height: 2px;
-    background: #00D2D3;
+    width: 28px;
+    height: 2.5px;
+    background: linear-gradient(90deg, var(--ry-crimson) 0%, var(--ry-amber) 100%);
     margin: 0.55rem 0 1.45rem 0;
-    border-radius: 1px;
+    border-radius: 2px;
+    box-shadow: 0 1px 6px rgba(229, 152, 25, 0.3);
 }
 
-/* Clean Nav Links */
+/* Clean Nav Links (Shortcuts) */
 .footer-clean-links {
     list-style: none;
     padding: 0;
@@ -2302,35 +2306,44 @@ strong {
 }
 
 .footer-clean-links li a {
+    font-family: var(--font-sans);
     color: #9CA3AF;
-    font-size: 0.92rem;
+    font-size: 0.91rem;
     text-decoration: none;
     transition: color 0.2s ease, transform 0.2s ease;
     display: inline-flex;
     align-items: center;
     font-weight: 400;
+    line-height: 1.5;
 }
 
 .footer-clean-links li a:hover {
     color: #FFFFFF;
-    transform: translateX(3px);
+    transform: translateX(4px);
 }
 
 .footer-link-discord {
-    color: #60A5FA !important;
+    color: var(--ry-amber) !important;
+    font-weight: 500 !important;
 }
 
 .footer-link-discord i {
-    font-size: 0.76rem;
+    font-size: 0.8rem;
     margin-left: 6px;
-    color: #FFFFFF;
-    opacity: 0.92;
+    color: var(--ry-amber);
+    opacity: 0.95;
+    transition: transform 0.2s ease;
+}
+
+.footer-link-discord:hover i {
+    transform: scale(1.15);
 }
 
 /* Column 4: Newsletter */
 .footer-newsletter-intro {
+    font-family: var(--font-sans);
     font-size: 0.88rem;
-    line-height: 1.55;
+    line-height: 1.6;
     color: #9CA3AF;
     margin-bottom: 1.35rem;
     max-width: 320px;
@@ -2348,8 +2361,8 @@ strong {
 }
 
 .footer-newsletter-box:focus-within {
-    border-color: #2563EB;
-    box-shadow: 0 0 14px rgba(37, 99, 235, 0.35);
+    border-color: var(--ry-crimson);
+    box-shadow: 0 0 14px rgba(229, 37, 37, 0.35);
 }
 
 .newsletter-dark-input {
@@ -2360,7 +2373,7 @@ strong {
     padding: 0.75rem 0.95rem;
     color: #FFFFFF;
     font-size: 0.88rem;
-    font-family: inherit;
+    font-family: var(--font-sans);
     min-width: 0;
 }
 
@@ -2369,7 +2382,7 @@ strong {
 }
 
 .newsletter-dark-btn {
-    background: #2563EB;
+    background: var(--ry-crimson);
     border: none;
     outline: none;
     padding: 0 1.25rem;
@@ -2379,12 +2392,13 @@ strong {
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: background 0.2s ease, transform 0.15s ease;
+    transition: background 0.25s ease, transform 0.15s ease, box-shadow 0.25s ease;
     flex-shrink: 0;
 }
 
 .newsletter-dark-btn:hover {
-    background: #1D4ED8;
+    background: var(--ry-crimson-dark);
+    box-shadow: 0 0 14px rgba(229, 37, 37, 0.45);
 }
 
 .newsletter-dark-btn:active {

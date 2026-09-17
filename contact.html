@@ -15,6 +15,15 @@
     <script src="https://zenithkandel.com.np/fontawesome/zenith-icons.js"></script>
 </head>
 <body class="contact-page">
+    <script>
+        (function() {
+            try {
+                if (localStorage.getItem('roboyuwa-theme') === 'light') {
+                    document.body.classList.add('light-theme');
+                }
+            } catch (e) {}
+        })();
+    </script>
 
     <!-- Header (Top Utility Bar + Transparent Navbar) -->
     <header class="header" id="header">
@@ -85,6 +94,10 @@
                 <div class="nav-actions">
                     <button class="nav-search-btn" id="openSearchBtn" aria-label="Search" title="Search website">
                         <i class="fa-light fa-magnifying-glass"></i>
+                    </button>
+                    <button class="theme-toggle-btn" id="themeToggleBtn" aria-label="Toggle light or dark theme" title="Toggle Light/Dark Theme">
+                        <i class="fa-solid fa-sun theme-icon-sun"></i>
+                        <i class="fa-solid fa-moon theme-icon-moon"></i>
                     </button>
                     <a href="contact.html" class="btn btn-pill-amber">Donate</a>
                 </div>

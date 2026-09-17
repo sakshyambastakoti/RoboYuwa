@@ -429,4 +429,32 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    // ==========================================================================
+    // Light / Dark Theme Toggle (Contact Page & Site)
+    // ==========================================================================
+    const themeToggleBtn = document.getElementById('themeToggleBtn');
+    try {
+        const savedTheme = localStorage.getItem('roboyuwa-theme');
+        if (savedTheme === 'light' && !document.body.classList.contains('light-theme')) {
+            document.body.classList.add('light-theme');
+        }
+    } catch (e) {}
+
+    if (themeToggleBtn) {
+        const isCurrentlyLight = document.body.classList.contains('light-theme');
+        themeToggleBtn.setAttribute('title', isCurrentlyLight ? 'Switch to Dark Mode' : 'Switch to Light Mode');
+        themeToggleBtn.setAttribute('aria-label', isCurrentlyLight ? 'Switch to Dark Mode' : 'Switch to Light Mode');
+
+        themeToggleBtn.addEventListener('click', () => {
+            const isLight = document.body.classList.toggle('light-theme');
+            try {
+                localStorage.setItem('roboyuwa-theme', isLight ? 'light' : 'dark');
+            } catch (err) {
+                console.error('Could not save theme preference:', err);
+            }
+            themeToggleBtn.setAttribute('title', isLight ? 'Switch to Dark Mode' : 'Switch to Light Mode');
+            themeToggleBtn.setAttribute('aria-label', isLight ? 'Switch to Dark Mode' : 'Switch to Light Mode');
+        });
+    }
 });

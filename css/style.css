@@ -452,7 +452,8 @@ strong {
     gap: 1rem;
 }
 
-.nav-search-btn {
+.nav-search-btn,
+.theme-toggle-btn {
     width: 44px;
     height: 44px;
     border-radius: 50%;
@@ -466,9 +467,11 @@ strong {
     font-size: 1.05rem;
     cursor: pointer;
     transition: all 0.25s ease;
+    outline: none;
 }
 
-.nav-search-btn:hover {
+.nav-search-btn:hover,
+.theme-toggle-btn:hover {
     background: rgba(255, 255, 255, 0.25);
     border-color: rgba(255, 255, 255, 0.6);
     transform: scale(1.05);
@@ -2630,6 +2633,226 @@ body:has(.contact-exec-wrapper) .header {
 }
 
 /* ==========================================================================
+   LIGHT MODE STYLING (Contact Page & Site Components)
+   ========================================================================== */
+body.light-theme {
+    background-color: #F8FAFC;
+    color: #0F172A;
+}
+
+/* Light Header */
+body.light-theme.contact-page .header,
+body.light-theme .header.scrolled {
+    background-color: rgba(255, 255, 255, 0.94);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+body.light-theme .top-bar {
+    background-color: rgba(248, 250, 252, 0.95);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    color: #475569;
+}
+
+body.light-theme .top-info .info-item {
+    color: #475569;
+}
+
+body.light-theme .top-info .info-item:hover {
+    color: var(--ry-amber);
+}
+
+body.light-theme .top-social-link {
+    color: #64748B;
+}
+
+body.light-theme .top-social-link:hover {
+    color: #0F172A;
+    background: rgba(0, 0, 0, 0.08);
+}
+
+body.light-theme .brand-name {
+    color: #0F172A !important;
+}
+
+body.light-theme .brand-tagline {
+    color: #64748B;
+}
+
+body.light-theme .nav-links a.nav-item {
+    color: #334155;
+}
+
+body.light-theme .nav-links a.nav-item:hover,
+body.light-theme .nav-links a.nav-item.active {
+    color: var(--ry-amber);
+}
+
+body.light-theme .nav-search-btn,
+body.light-theme .theme-toggle-btn {
+    background: rgba(0, 0, 0, 0.06);
+    border-color: rgba(0, 0, 0, 0.14);
+    color: #1E293B;
+}
+
+body.light-theme .nav-search-btn:hover,
+body.light-theme .theme-toggle-btn:hover {
+    background: rgba(0, 0, 0, 0.1);
+    border-color: rgba(0, 0, 0, 0.25);
+    color: var(--ry-amber);
+}
+
+/* Light Theme Toggle Icon Switch */
+.theme-icon-moon {
+    display: none;
+}
+
+.theme-icon-sun {
+    display: inline-block;
+    color: #F59E0B;
+}
+
+body.light-theme .theme-icon-sun {
+    display: none;
+}
+
+body.light-theme .theme-icon-moon {
+    display: inline-block;
+    color: #4338CA;
+}
+
+/* Light Mode Contact Wrapper & Scenic Himalayan Background */
+body.light-theme .contact-exec-wrapper {
+    background-color: #F8FAFC;
+    color: #0F172A;
+}
+
+body.light-theme .contact-bg-img {
+    opacity: 0.5;
+    filter: brightness(1.02) contrast(1.05) saturate(1.1);
+}
+
+body.light-theme .contact-bg-overlay {
+    background: linear-gradient(180deg, 
+        rgba(248, 250, 252, 0.88) 0%, 
+        rgba(248, 250, 252, 0.45) 30%, 
+        rgba(248, 250, 252, 0.68) 65%, 
+        rgba(248, 250, 252, 0.96) 100%
+    );
+}
+
+body.light-theme .contact-orbit-deco {
+    border-color: rgba(229, 152, 25, 0.55);
+}
+
+/* Light Mode Left Column */
+body.light-theme .contact-org-label {
+    color: #64748B;
+    text-shadow: none;
+}
+
+body.light-theme .contact-main-title {
+    color: #0F172A;
+    text-shadow: 0 2px 10px rgba(255, 255, 255, 0.8);
+}
+
+body.light-theme .contact-sub-title {
+    color: #D97706;
+    text-shadow: none;
+}
+
+body.light-theme .contact-address-lines p {
+    color: #334155;
+    text-shadow: none;
+}
+
+body.light-theme .contact-address-lines .addr-line1 {
+    color: #0F172A;
+}
+
+body.light-theme .contact-hub-cities {
+    color: #0F172A;
+    text-shadow: none;
+}
+
+body.light-theme .contact-hub-cities span {
+    color: #D97706;
+}
+
+body.light-theme .contact-hub-note {
+    color: #64748B;
+    text-shadow: none;
+}
+
+body.light-theme .contact-direct-strip {
+    border-top-color: rgba(0, 0, 0, 0.12);
+}
+
+body.light-theme .contact-direct-strip .direct-item {
+    color: #1E293B;
+    text-shadow: none;
+}
+
+body.light-theme .contact-direct-strip .direct-item:hover:not(.hours) {
+    color: #D97706;
+}
+
+body.light-theme .contact-direct-strip .direct-item.hours {
+    color: #64748B;
+}
+
+/* Light Mode Right Column & Form */
+body.light-theme .contact-top-statement p {
+    color: #475569;
+    text-shadow: none;
+}
+
+body.light-theme .exec-label {
+    color: #0F172A;
+    text-shadow: none;
+}
+
+body.light-theme .exec-input,
+body.light-theme .exec-select,
+body.light-theme .exec-textarea {
+    background-color: rgba(255, 255, 255, 0.92);
+    border: 1px solid #CBD5E1;
+    color: #0F172A;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+body.light-theme .exec-input:focus,
+body.light-theme .exec-select:focus,
+body.light-theme .exec-textarea:focus {
+    border-color: #D97706;
+    background-color: #FFFFFF;
+    box-shadow: 0 0 14px rgba(217, 119, 6, 0.25);
+}
+
+body.light-theme .exec-input::placeholder,
+body.light-theme .exec-textarea::placeholder {
+    color: #94A3B8;
+}
+
+body.light-theme .select-wrapper .exec-select option {
+    background-color: #FFFFFF;
+    color: #0F172A;
+}
+
+body.light-theme .select-chevron {
+    color: #64748B;
+}
+
+body.light-theme .exec-submit-btn {
+    color: #0F172A;
+}
+
+body.light-theme .exec-submit-btn:hover {
+    color: #D97706;
+}
+
+/* ==========================================================================
    EXECUTIVE HIGH-TECH FOOTER (RoboYuwa Brand Palette & Design System)
    Matching User's Reference Layout: Top Tri-Color Accent, 4 Columns,
    Minimalist Headings with Cyan Bars, Clean Links, Rectangular Newsletter,
@@ -3019,7 +3242,8 @@ body:has(.contact-exec-wrapper) .header {
         font-size: 0.85rem;
     }
 
-    .nav-search-btn {
+    .nav-search-btn,
+    .theme-toggle-btn {
         width: 38px;
         height: 38px;
         font-size: 0.95rem;

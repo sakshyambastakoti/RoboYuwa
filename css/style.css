@@ -2435,6 +2435,39 @@ strong {
     margin: 0;
 }
 
+.footer-copy-dev {
+    font-size: 0.82rem;
+    color: #8C93A3;
+    margin: 0.25rem 0 0 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    letter-spacing: 0.2px;
+}
+
+.footer-copy-dev .developer-link {
+    color: var(--ry-amber);
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.28rem;
+    transition: color 0.2s ease;
+}
+
+.footer-copy-dev .developer-link:hover {
+    color: #FFFFFF;
+}
+
+.footer-copy-dev .developer-link i {
+    font-size: 0.68rem;
+    transition: transform 0.2s ease;
+}
+
+.footer-copy-dev .developer-link:hover i {
+    transform: translate(1px, -1px);
+}
+
 .footer-bottom-nav {
     display: flex;
     align-items: center;

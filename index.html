@@ -704,65 +704,95 @@
     </div>
   </section>
 
-  <!-- Programs & Initiatives -->
-  <section id="programs" class="programs section-padding">
-    <div class="container">
-      <div class="section-title">
-        <h2>Major Initiatives</h2>
-        <div class="divider"></div>
+  <!-- Major Initiatives Showcase Section (Directly Matching Reference: Breadcrumb + Serif Title + Subtitle + Action Button + 3-Chamfer Gallery) -->
+  <section id="programs" class="initiatives-showcase-section" aria-label="RoboYuwa Major Initiatives">
+    <div class="container initiatives-container">
+      
+      <!-- Centered Header & Narrative -->
+      <div class="initiatives-header reveal">
+        <!-- Breadcrumb / Eyebrow Tag -->
+        <div class="initiatives-breadcrumb">
+          <i class="fa-solid fa-house-chimney" aria-hidden="true"></i>
+          <span>Home / <strong>Major Initiatives</strong></span>
+        </div>
+
+        <!-- Main Title: Serif with Crimson Gradient Accent -->
+        <h2 class="initiatives-main-title font-serif">
+          Pioneering Robotics, <span class="text-gradient-crimson">Shaping Futures</span>
+        </h2>
+
+        <!-- Subtitle Narrative -->
+        <p class="initiatives-subtitle">
+          At RoboYuwa, every initiative begins with purpose and is driven by passion. We don't just teach technology &mdash; we ignite curiosity, mentor future engineers, and build real-world robotic solutions that empower youth and communities across Nepal.
+        </p>
+
+        <!-- Centered Action Button -->
+        <div class="initiatives-action-wrap">
+          <a href="programs.html" class="btn-initiatives-action">
+            <span>Explore Initiatives</span>
+          </a>
+        </div>
       </div>
-      <div class="programs-grid">
-        <article class="program-card">
-          <div class="program-img">
-            <img src="assets/workshop.png" alt="RoboLearn Initiative" loading="lazy" decoding="async" onerror="
-                  this.outerHTML = `<i class='fa-duotone fa-image' style='font-size: 2rem; color: var(--gray-400); width: 100%; display: flex; align-items: center; justify-content: center; min-height: 100px;'></i>`
-                " />
+
+      <!-- 3-Frame Chamfered Photo Gallery Showcase -->
+      <div class="initiatives-gallery-grid reveal delay-1">
+        
+        <!-- Left Frame: RoboLearn Initiative (Top-Left & Bottom-Right Chamfers) -->
+        <div class="init-gallery-col left-col">
+          <div class="init-chamfer-frame frame-diagonal-1">
+            <img src="assets/workshop (2).png" 
+                 alt="RoboLearn Grassroots School Robotics Curriculum" 
+                 loading="lazy" decoding="async" />
+            <div class="init-frame-overlay">
+              <span class="init-frame-badge">RoboLearn Initiative</span>
+              <p class="init-frame-desc">Grassroots STEM &amp; hands-on school labs</p>
+            </div>
           </div>
-          <div class="program-content">
-            <h3>RoboLearn Initiative</h3>
-            <p>
-              A structured 12-week robotics curriculum specifically designed
-              for underserved schools, bringing essential tech education to
-              communities that need it most.
-            </p>
+        </div>
+
+        <!-- Center Frame: InnovatYouth Summit (Top-Right & Bottom-Left Chamfers with Play Button + Offset Backing Card) -->
+        <div class="init-gallery-col center-col">
+          <div class="init-center-wrapper">
+            <!-- Decorative Backing Offset Frame -->
+            <div class="init-backing-frame" aria-hidden="true"></div>
+            
+            <!-- Main Hero Frame -->
+            <div class="init-chamfer-frame frame-diagonal-2">
+              <img src="assets/IMG_2016.JPG (1).jpeg" 
+                   alt="InnovatYouth National Robotics Summit &amp; Hackathon Showcase" 
+                   loading="lazy" decoding="async" />
+              
+              <!-- Video Play Button -->
+              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" 
+                 class="init-play-btn" aria-label="Watch InnovatYouth Summit Video" title="Watch InnovatYouth Summit Video">
+                <span class="play-icon-circle">
+                  <i class="fa-solid fa-play"></i>
+                </span>
+              </a>
+
+              <div class="init-frame-overlay center-overlay">
+                <span class="init-frame-badge highlight">InnovatYouth Summit</span>
+                <p class="init-frame-desc">National youth engineering solutions &amp; innovation arena</p>
+              </div>
+            </div>
           </div>
-        </article>
-        <article class="program-card">
-          <div class="program-img">
-            <img src="assets/hackathon radar 2026.jpeg" alt="InnovatYouth Summit" loading="lazy" decoding="async"
-              onerror="
-                  this.outerHTML = `<i class='fa-duotone fa-image' style='font-size: 2rem; color: var(--gray-400); width: 100%; display: flex; align-items: center; justify-content: center; min-height: 100px;'></i>`
-                " />
+        </div>
+
+        <!-- Right Frame: RoboEmpower & Competitions (Top-Left & Bottom-Right Chamfers) -->
+        <div class="init-gallery-col right-col">
+          <div class="init-chamfer-frame frame-diagonal-1">
+            <img src="assets/hackathon radar 2026.jpeg" 
+                 alt="RoboEmpower Hardware Prototyping &amp; Robotics Competitions" 
+                 loading="lazy" decoding="async" />
+            <div class="init-frame-overlay">
+              <span class="init-frame-badge">RoboEmpower</span>
+              <p class="init-frame-desc">Hardware prototyping &amp; national championships</p>
+            </div>
           </div>
-          <div class="program-content">
-            <h3>InnovatYouth Summit</h3>
-            <p>
-              An annual youth solution showcase focusing on empowering young
-              creators. Participants present innovative projects judged by
-              industry experts.
-            </p>
-          </div>
-        </article>
-        <article class="program-card">
-          <div class="program-img">
-            <img src="assets/socoor bot.jpeg" alt="Tech4Community" loading="lazy" decoding="async" onerror="
-                  this.outerHTML = `<i class='fa-duotone fa-image' style='font-size: 2rem; color: var(--gray-400); width: 100%; display: flex; align-items: center; justify-content: center; min-height: 100px;'></i>`
-                " />
-          </div>
-          <div class="program-content">
-            <h3>Tech4Community</h3>
-            <p>
-              Empowering youth to design and develop low-cost technical
-              solutions addressing the immediate needs of local organizations
-              and the community.
-            </p>
-          </div>
-        </article>
+        </div>
+
       </div>
-    </div>
-    <div style="text-align: center; margin-top: 3rem">
-      <a href="programs.html" class="btn btn-primary" style="padding: 0.8rem 2rem; border-radius: 30px">Explore All
-        Programs &amp; Initiatives</a>
+
     </div>
   </section>
 

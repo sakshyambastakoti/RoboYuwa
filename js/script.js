@@ -595,34 +595,51 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ==========================================================================
-    // Light / Dark Theme Toggle (Scoped to pages with themeToggleBtn)
+    // Light / Dark Theme Controller (Universal Across All Pages)
     // ==========================================================================
-    const themeToggleBtn = document.getElementById('themeToggleBtn');
-    
-    // Pages with hero showcase (such as index.html) always retain original dark hero branding
-    if (document.querySelector('.hero')) {
-        document.body.classList.remove('light-theme');
-    } else if (themeToggleBtn) {
+    const themeToggleBtns = document.querySelectorAll('.theme-toggle-btn, #themeToggleBtn');
+    if (themeToggleBtns.length > 0) {
+        let savedTheme = null;
         try {
-            const savedTheme = localStorage.getItem('roboyuwa-theme');
-            if (savedTheme === 'light' && !document.body.classList.contains('light-theme')) {
+            savedTheme = localStorage.getItem('roboyuwa-theme');
+        } catch (e) {
+            console.warn('LocalStorage not accessible for theme persistence:', e);
+        }
+
+        // Default to 'light' if not explicitly saved as 'dark'
+        const initialTheme = savedTheme === 'dark' ? 'dark' : 'light';
+
+        function applyTheme(theme) {
+            if (theme === 'dark') {
+                document.body.classList.add('dark-theme');
+                document.body.classList.remove('light-theme');
+                themeToggleBtns.forEach(btn => {
+                    btn.setAttribute('title', 'Switch to Light Mode');
+                    btn.setAttribute('aria-label', 'Switch to Light Mode');
+                });
+            } else {
+                document.body.classList.remove('dark-theme');
                 document.body.classList.add('light-theme');
+                themeToggleBtns.forEach(btn => {
+                    btn.setAttribute('title', 'Switch to Dark Mode');
+                    btn.setAttribute('aria-label', 'Switch to Dark Mode');
+                });
             }
-        } catch (e) {}
+        }
 
-        const isCurrentlyLight = document.body.classList.contains('light-theme');
-        themeToggleBtn.setAttribute('title', isCurrentlyLight ? 'Switch to Dark Mode' : 'Switch to Light Mode');
-        themeToggleBtn.setAttribute('aria-label', isCurrentlyLight ? 'Switch to Dark Mode' : 'Switch to Light Mode');
+        applyTheme(initialTheme);
 
-        themeToggleBtn.addEventListener('click', () => {
-            const isLight = document.body.classList.toggle('light-theme');
-            try {
-                localStorage.setItem('roboyuwa-theme', isLight ? 'light' : 'dark');
-            } catch (err) {
-                console.error('Could not save theme preference:', err);
-            }
-            themeToggleBtn.setAttribute('title', isLight ? 'Switch to Dark Mode' : 'Switch to Light Mode');
-            themeToggleBtn.setAttribute('aria-label', isLight ? 'Switch to Dark Mode' : 'Switch to Light Mode');
+        themeToggleBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const isCurrentlyDark = document.body.classList.contains('dark-theme');
+                const newTheme = isCurrentlyDark ? 'light' : 'dark';
+                applyTheme(newTheme);
+                try {
+                    localStorage.setItem('roboyuwa-theme', newTheme);
+                } catch (err) {
+                    console.error('Could not save theme preference:', err);
+                }
+            });
         });
     }
 });

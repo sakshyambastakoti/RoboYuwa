@@ -3420,23 +3420,42 @@ body.light-theme:has(.hero) .nav-search-btn:hover {
     color: #FFFFFF !important;
 }
 
-/* Light Theme Toggle Icon Switch */
-.theme-icon-moon {
+/* ==========================================================================
+   Light / Dark Theme Toggle Icon Switch States
+   Default / Light: Show Moon Icon (Amber), Hide Sun Icon
+   Dark Theme: Show Sun Icon (Amber), Hide Moon Icon
+   ========================================================================== */
+.theme-icon-sun {
     display: none;
+    color: #F59E0B;
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), color 0.25s ease;
 }
 
-.theme-icon-sun {
+.theme-icon-moon {
     display: inline-block;
     color: #F59E0B;
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), color 0.25s ease;
+}
+
+body.dark-theme .theme-icon-sun {
+    display: inline-block !important;
+}
+
+body.dark-theme .theme-icon-moon {
+    display: none !important;
 }
 
 body.light-theme .theme-icon-sun {
-    display: none;
+    display: none !important;
 }
 
 body.light-theme .theme-icon-moon {
-    display: inline-block;
-    color: #4338CA;
+    display: inline-block !important;
+}
+
+.theme-toggle-btn:hover .theme-icon-moon,
+.theme-toggle-btn:hover .theme-icon-sun {
+    transform: rotate(20deg) scale(1.15);
 }
 
 /* Light Mode Contact Wrapper & Scenic Himalayan Background */
@@ -5467,4 +5486,414 @@ body.light-theme .exec-submit-btn:hover {
         clip-path: polygon(42px 0%, 100% 0%, 100% 100%, 0% 100%, 0% 42px);
         min-height: 280px;
     }
+}
+
+/* ==========================================================================
+   Comprehensive Dark Theme Mode (body.dark-theme)
+   Applies an executive, futuristic, high-contrast dark aesthetic across
+   all light sections (About, Objectives, Initiatives, Testimonials,
+   Contact, and CTA).
+   ========================================================================== */
+
+/* Universal Dark Canvas */
+body.dark-theme {
+    background-color: #08090C !important;
+    color: #E2E8F0 !important;
+}
+
+body.dark-theme .header.scrolled {
+    background-color: rgba(8, 9, 12, 0.96) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+/* --------------------------------------------------------------------------
+   1. About Showcase Section (#about)
+   -------------------------------------------------------------------------- */
+body.dark-theme .about-showcase-section {
+    background: #08090C !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+body.dark-theme .about-eyebrow {
+    color: #CBD5E1 !important;
+}
+
+body.dark-theme .about-showcase-title {
+    color: #FFFFFF !important;
+}
+
+body.dark-theme .about-showcase-desc {
+    color: #94A3B8 !important;
+}
+
+body.dark-theme .about-showcase-desc strong {
+    color: #FFFFFF !important;
+}
+
+body.dark-theme .feature-icon-box {
+    background: rgba(229, 37, 37, 0.14) !important;
+    border-color: rgba(229, 37, 37, 0.32) !important;
+    color: #FF5252 !important;
+}
+
+body.dark-theme .dual-feature-item:hover .feature-icon-box {
+    background: var(--ry-crimson) !important;
+    color: #FFFFFF !important;
+    box-shadow: 0 6px 20px rgba(229, 37, 37, 0.45) !important;
+}
+
+body.dark-theme .feature-title {
+    color: #FFFFFF !important;
+}
+
+body.dark-theme .feature-desc {
+    color: #94A3B8 !important;
+}
+
+body.dark-theme .btn-ref-pill {
+    background: linear-gradient(135deg, #181D29 0%, #242D3F 100%) !important;
+    border: 1px solid rgba(255, 255, 255, 0.14) !important;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45) !important;
+    color: #FFFFFF !important;
+}
+
+body.dark-theme .btn-ref-pill:hover {
+    background: linear-gradient(135deg, #E52525 0%, #B81414 100%) !important;
+    border-color: #E52525 !important;
+    box-shadow: 0 10px 28px rgba(229, 37, 37, 0.45) !important;
+}
+
+body.dark-theme .about-stats-ribbon {
+    background: #11141D !important;
+    border-color: rgba(255, 255, 255, 0.08) !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45) !important;
+}
+
+body.dark-theme .about-stats-ribbon:hover {
+    box-shadow: 0 14px 40px rgba(0, 0, 0, 0.6) !important;
+    border-color: rgba(229, 152, 25, 0.35) !important;
+}
+
+body.dark-theme .ribbon-icon {
+    color: #CBD5E1 !important;
+}
+
+body.dark-theme .stat-ribbon-item:hover .ribbon-icon {
+    color: var(--ry-amber) !important;
+}
+
+body.dark-theme .ribbon-number {
+    color: #FFFFFF !important;
+}
+
+body.dark-theme .ribbon-label {
+    color: #94A3B8 !important;
+}
+
+body.dark-theme .collage-card {
+    background: #141722 !important;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.5) !important;
+    filter: drop-shadow(0 10px 24px rgba(0, 0, 0, 0.45)) !important;
+}
+
+/* --------------------------------------------------------------------------
+   2. Key Objectives Showcase Section (#objectives)
+   -------------------------------------------------------------------------- */
+body.dark-theme .objectives-showcase-section {
+    background: #0C0E14 !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+body.dark-theme .obj-eyebrow {
+    color: #CBD5E1 !important;
+}
+
+body.dark-theme .obj-main-title {
+    color: #FFFFFF !important;
+}
+
+body.dark-theme .obj-header-lead {
+    color: #94A3B8 !important;
+}
+
+body.dark-theme .chamfer-card {
+    background: rgba(255, 255, 255, 0.08) !important;
+    filter: drop-shadow(0 6px 22px rgba(0, 0, 0, 0.35)) !important;
+}
+
+body.dark-theme .chamfer-card:hover {
+    background: linear-gradient(135deg, var(--ry-amber) 0%, var(--ry-crimson) 100%) !important;
+    filter: drop-shadow(0 18px 40px rgba(229, 152, 25, 0.28)) !important;
+}
+
+body.dark-theme .chamfer-card .card-inner {
+    background: #11141D !important;
+}
+
+body.dark-theme .chamfer-card:hover .card-inner {
+    background: #141824 !important;
+}
+
+body.dark-theme .card-big-num {
+    color: #242A38 !important;
+}
+
+body.dark-theme .chamfer-card:hover .card-big-num {
+    color: var(--ry-amber) !important;
+}
+
+body.dark-theme .card-title {
+    color: #FFFFFF !important;
+}
+
+body.dark-theme .chamfer-card:hover .card-title {
+    color: #FF5A5A !important;
+}
+
+body.dark-theme .card-desc {
+    color: #94A3B8 !important;
+}
+
+/* --------------------------------------------------------------------------
+   3. Major Initiatives Showcase Section (#programs)
+   -------------------------------------------------------------------------- */
+body.dark-theme .initiatives-showcase-section {
+    background: #08090C !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+body.dark-theme .initiatives-eyebrow {
+    color: #CBD5E1 !important;
+}
+
+body.dark-theme .initiatives-main-title {
+    color: #FFFFFF !important;
+}
+
+body.dark-theme .initiatives-subtitle {
+    color: #94A3B8 !important;
+}
+
+body.dark-theme .initiatives-breadcrumb {
+    color: #94A3B8 !important;
+}
+
+body.dark-theme .initiatives-breadcrumb strong {
+    color: #FFFFFF !important;
+}
+
+body.dark-theme .init-backing-frame {
+    background: #1C2230 !important;
+}
+
+body.dark-theme .init-chamfer-frame {
+    background: #11141D !important;
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* --------------------------------------------------------------------------
+   4. Community Testimonials Showcase Section (#testimonials)
+   -------------------------------------------------------------------------- */
+body.dark-theme .testimonials-showcase-section {
+    background: #0C0E14 !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+body.dark-theme .testi-eyebrow {
+    color: #CBD5E1 !important;
+}
+
+body.dark-theme .testi-main-title {
+    color: #FFFFFF !important;
+}
+
+body.dark-theme .testi-subtitle {
+    color: #94A3B8 !important;
+}
+
+body.dark-theme .testi-nav-btn.prev {
+    background-color: #1A1F2C !important;
+    border-color: rgba(255, 255, 255, 0.12) !important;
+    color: #FFFFFF !important;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3) !important;
+}
+
+body.dark-theme .testi-nav-btn.prev:hover {
+    background-color: #252C3D !important;
+    border-color: rgba(255, 255, 255, 0.25) !important;
+    box-shadow: 0 6px 22px rgba(0, 0, 0, 0.45) !important;
+}
+
+body.dark-theme .testi-showcase-card {
+    background: rgba(255, 255, 255, 0.08) !important;
+    filter: drop-shadow(0 12px 36px rgba(0, 0, 0, 0.5)) !important;
+}
+
+body.dark-theme .testi-showcase-card:hover {
+    background: rgba(229, 152, 25, 0.45) !important;
+    filter: drop-shadow(0 18px 46px rgba(229, 152, 25, 0.2)) !important;
+}
+
+body.dark-theme .testi-card-inner {
+    background: #11141D !important;
+}
+
+body.dark-theme .testi-quote {
+    color: #E2E8F0 !important;
+}
+
+body.dark-theme .testi-author-name {
+    color: #FFFFFF !important;
+}
+
+body.dark-theme .testi-author-role {
+    color: #94A3B8 !important;
+}
+
+body.dark-theme .testi-photo-frame {
+    background: #181C26 !important;
+}
+
+body.dark-theme .testi-dot {
+    background: rgba(255, 255, 255, 0.2) !important;
+}
+
+body.dark-theme .testi-dot.active {
+    background: var(--ry-amber) !important;
+}
+
+/* --------------------------------------------------------------------------
+   5. Home Contact Showcase Section (#contact)
+   -------------------------------------------------------------------------- */
+body.dark-theme .home-contact-section {
+    background: #08090C !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+body.dark-theme .contact-eyebrow {
+    color: #FF5A5A !important;
+}
+
+body.dark-theme .home-contact-title,
+body.dark-theme .home-contact-section .contact-main-title {
+    color: #FFFFFF !important;
+}
+
+body.dark-theme .contact-main-subtitle {
+    color: #94A3B8 !important;
+}
+
+body.dark-theme .contact-form-card {
+    background: #11141D !important;
+    border-color: rgba(255, 255, 255, 0.08) !important;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45) !important;
+}
+
+body.dark-theme .contact-form-card:hover {
+    border-color: var(--ry-amber) !important;
+    box-shadow: 0 18px 44px rgba(229, 152, 25, 0.2) !important;
+}
+
+body.dark-theme .contact-card-title {
+    color: #FFFFFF !important;
+}
+
+body.dark-theme .contact-form-label {
+    color: #CBD5E1 !important;
+}
+
+body.dark-theme .contact-form-input,
+body.dark-theme .contact-form-textarea {
+    background: #181C26 !important;
+    border-color: rgba(255, 255, 255, 0.12) !important;
+    color: #FFFFFF !important;
+}
+
+body.dark-theme .contact-form-input::placeholder,
+body.dark-theme .contact-form-textarea::placeholder {
+    color: #64748B !important;
+}
+
+body.dark-theme .contact-form-input:focus,
+body.dark-theme .contact-form-textarea:focus {
+    background: #1E2330 !important;
+    border-color: var(--ry-crimson) !important;
+    box-shadow: 0 0 0 3px rgba(229, 37, 37, 0.25) !important;
+}
+
+body.dark-theme .contact-terms-group label,
+body.dark-theme .contact-terms-text {
+    color: #94A3B8 !important;
+}
+
+body.dark-theme .contact-terms-group a {
+    color: var(--ry-amber) !important;
+}
+
+body.dark-theme .contact-chamfer-media {
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* --------------------------------------------------------------------------
+   6. Call to Action Showcase Section (#cta)
+   -------------------------------------------------------------------------- */
+body.dark-theme .cta-showcase-section {
+    background: #08090C !important;
+}
+
+body.dark-theme .cta-chamfer-card {
+    background: #11141D !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    filter: drop-shadow(0 16px 42px rgba(0, 0, 0, 0.55)) !important;
+}
+
+body.dark-theme .cta-oct-badge {
+    background: rgba(255, 255, 255, 0.12) !important;
+}
+
+body.dark-theme .cta-oct-badge::after {
+    background: #11141D !important;
+}
+
+body.dark-theme .cta-eyebrow {
+    color: #CBD5E1 !important;
+}
+
+body.dark-theme .cta-main-title {
+    color: #FFFFFF !important;
+}
+
+body.dark-theme .cta-subtitle {
+    color: #94A3B8 !important;
+}
+
+body.dark-theme .btn-cta-secondary {
+    background: rgba(255, 255, 255, 0.06) !important;
+    border-color: rgba(255, 255, 255, 0.22) !important;
+    color: #FFFFFF !important;
+}
+
+body.dark-theme .btn-cta-secondary:hover {
+    background: rgba(255, 255, 255, 0.16) !important;
+    border-color: #FFFFFF !important;
+    color: #FFFFFF !important;
+}
+
+/* --------------------------------------------------------------------------
+   7. Card & Component Surfaces Across Other Pages
+   -------------------------------------------------------------------------- */
+body.dark-theme .team-card,
+body.dark-theme .program-card {
+    background: #11141D !important;
+    border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+body.dark-theme .team-card h3,
+body.dark-theme .program-card h3 {
+    color: #FFFFFF !important;
+}
+
+body.dark-theme .team-card .member-role {
+    color: #94A3B8 !important;
 }

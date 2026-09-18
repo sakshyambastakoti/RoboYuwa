@@ -4489,73 +4489,73 @@ body.light-theme .exec-submit-btn:hover {
 }
 
 /* ==========================================================================
-   Home Contact Showcase Section (Screen-Frame Optimized & Brand Palette)
+   Home Contact Showcase Section (Balanced Medium Scale & Brand Palette)
    ========================================================================== */
 
 .home-contact-section {
     position: relative;
     width: 100%;
-    padding: clamp(2.4rem, 4vh, 3.6rem) 0;
+    padding: clamp(3.5rem, 5.5vh, 4.8rem) 0;
     background: #FFFFFF;
     overflow: hidden;
 }
 
 .home-contact-container {
     width: 100%;
-    max-width: 1140px;
+    max-width: 1180px;
     margin: 0 auto;
     padding: 0 1.5rem;
 }
 
 /* -------------------------------------------------------------
-   Centered Header (Screen-Frame Compact & Brand Typography)
+   Centered Header (Balanced Typography)
    ------------------------------------------------------------- */
 .home-contact-header {
     text-align: center;
-    max-width: 680px;
-    margin: 0 auto clamp(1.2rem, 2.4vh, 1.8rem);
+    max-width: 700px;
+    margin: 0 auto clamp(1.8rem, 3vh, 2.6rem);
 }
 
 .contact-eyebrow {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
+    gap: 9px;
     font-family: var(--font-sans);
-    font-size: 0.78rem;
+    font-size: 0.8rem;
     font-weight: 700;
     letter-spacing: 1.8px;
     color: var(--ry-crimson);
     text-transform: uppercase;
-    margin-bottom: 0.45rem;
+    margin-bottom: 0.55rem;
 }
 
 .contact-main-title {
     font-family: var(--font-serif);
-    font-size: clamp(1.9rem, 2.6vw, 2.5rem);
+    font-size: clamp(2.1rem, 3.1vw, 2.9rem);
     font-weight: 700;
     color: #101217;
     letter-spacing: -0.02em;
-    margin-bottom: 0.5rem;
-    line-height: 1.18;
+    margin-bottom: 0.65rem;
+    line-height: 1.2;
 }
 
 .contact-main-subtitle {
     font-family: var(--font-sans);
-    font-size: clamp(0.88rem, 0.95vw, 0.95rem);
-    line-height: 1.55;
+    font-size: clamp(0.92rem, 1vw, 1.02rem);
+    line-height: 1.62;
     color: #525968;
     margin-bottom: 0;
 }
 
 /* -------------------------------------------------------------
-   2-Column Grid: Single-Screen Frame Proportions
+   2-Column Grid: Proportional Medium Scale
    ------------------------------------------------------------- */
 .home-contact-grid {
     display: grid;
-    grid-template-columns: 0.95fr 1.05fr;
-    gap: clamp(1.5rem, 2.8vw, 2.6rem);
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(2rem, 3.2vw, 3rem);
     align-items: stretch;
-    max-width: 1080px;
+    max-width: 1180px;
     margin: 0 auto;
 }
 
@@ -4569,33 +4569,33 @@ body.light-theme .exec-submit-btn:hover {
 .contact-chamfer-media {
     position: relative;
     width: 100%;
-    min-height: 380px;
-    max-height: 440px;
+    min-height: 450px;
+    max-height: 485px;
     height: 100%;
     /* Top-left angled cut corner (Chamfer) matching reference */
-    clip-path: polygon(52px 0%, 100% 0%, 100% 100%, 0% 100%, 0% 52px);
-    border-radius: 0 24px 24px 24px;
+    clip-path: polygon(55px 0%, 100% 0%, 100% 100%, 0% 100%, 0% 55px);
+    border-radius: 0 26px 26px 26px;
     overflow: hidden;
     background: #F5EBE1;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 14px 36px -10px rgba(0, 0, 0, 0.07);
     transition: filter 0.35s ease, transform 0.35s ease;
 }
 
 .contact-chamfer-media:hover {
-    filter: drop-shadow(0 14px 34px rgba(229, 152, 25, 0.18));
+    filter: drop-shadow(0 16px 38px rgba(229, 152, 25, 0.2));
 }
 
 .contact-chamfer-media img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center 30%;
+    object-position: center 25%;
     display: block;
     transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .contact-chamfer-media:hover img {
-    transform: scale(1.05);
+    transform: scale(1.04);
 }
 
 /* Right Column: Clean White Form Card with Brand Accents */
@@ -4608,10 +4608,10 @@ body.light-theme .exec-submit-btn:hover {
 .contact-form-card {
     width: 100%;
     background: #FFFFFF;
-    border: 1.5px solid rgba(229, 152, 25, 0.22);
-    border-radius: 20px;
-    padding: clamp(1.4rem, 2vw, 1.8rem) clamp(1.6rem, 2.4vw, 2.2rem);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+    border: 1.5px solid rgba(229, 152, 25, 0.25);
+    border-radius: 22px;
+    padding: clamp(1.8rem, 2.6vw, 2.4rem) clamp(1.8rem, 2.5vw, 2.4rem);
+    box-shadow: 0 14px 36px -10px rgba(0, 0, 0, 0.05);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -4620,33 +4620,33 @@ body.light-theme .exec-submit-btn:hover {
 
 .contact-form-card:hover {
     border-color: var(--ry-amber);
-    box-shadow: 0 16px 36px rgba(229, 152, 25, 0.12);
+    box-shadow: 0 18px 40px rgba(229, 152, 25, 0.14);
 }
 
 .contact-card-title {
     font-family: var(--font-serif);
-    font-size: clamp(1.35rem, 1.8vw, 1.55rem);
+    font-size: clamp(1.5rem, 2vw, 1.75rem);
     font-weight: 700;
     color: #101217;
-    margin-bottom: 0.85rem;
+    margin-bottom: 1.25rem;
     letter-spacing: -0.3px;
 }
 
 .home-contact-form {
     display: flex;
     flex-direction: column;
-    gap: 0.72rem;
+    gap: 0.92rem;
 }
 
 .contact-form-group {
     display: flex;
     flex-direction: column;
-    gap: 0.22rem;
+    gap: 0.28rem;
 }
 
 .contact-form-label {
     font-family: var(--font-sans);
-    font-size: 0.8rem;
+    font-size: 0.85rem;
     font-weight: 600;
     color: #334155;
     letter-spacing: -0.1px;
@@ -4657,10 +4657,10 @@ body.light-theme .exec-submit-btn:hover {
     width: 100%;
     background: #FAFAF9;
     border: 1.5px solid #E2E8F0;
-    border-radius: 8px;
-    padding: 0.54rem 0.85rem;
+    border-radius: 9px;
+    padding: 0.7rem 0.95rem;
     font-family: var(--font-sans);
-    font-size: 0.88rem;
+    font-size: 0.91rem;
     color: #101217;
     transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
     outline: none;
@@ -4681,26 +4681,26 @@ body.light-theme .exec-submit-btn:hover {
 
 .contact-form-textarea {
     resize: vertical;
-    min-height: 65px;
-    height: 65px;
+    min-height: 85px;
+    height: 85px;
 }
 
 /* Terms Checkbox */
 .contact-terms-group {
-    margin-top: 0.1rem;
+    margin-top: 0.15rem;
 }
 
 .contact-checkbox-label {
     display: inline-flex;
     align-items: center;
-    gap: 0.55rem;
+    gap: 0.6rem;
     cursor: pointer;
     user-select: none;
 }
 
 .contact-checkbox {
-    width: 16px;
-    height: 16px;
+    width: 17px;
+    height: 17px;
     accent-color: var(--ry-crimson);
     cursor: pointer;
     border-radius: 4px;
@@ -4708,14 +4708,14 @@ body.light-theme .exec-submit-btn:hover {
 
 .terms-text {
     font-family: var(--font-sans);
-    font-size: 0.82rem;
+    font-size: 0.84rem;
     color: #64748B;
     font-weight: 500;
 }
 
 /* Submit Button Row: Brand Color Palette */
 .contact-submit-row {
-    margin-top: 0.35rem;
+    margin-top: 0.45rem;
     display: flex;
     align-items: center;
 }
@@ -4723,28 +4723,28 @@ body.light-theme .exec-submit-btn:hover {
 .btn-brand-submit {
     background: linear-gradient(135deg, var(--ry-crimson) 0%, #B81B1B 100%);
     border: 1px solid rgba(229, 37, 37, 0.5);
-    border-radius: 8px;
+    border-radius: 9px;
     color: #FFFFFF;
     font-family: var(--font-sans);
-    font-size: 0.9rem;
+    font-size: 0.93rem;
     font-weight: 600;
     letter-spacing: 0.3px;
-    padding: 0.62rem 1.75rem;
+    padding: 0.72rem 1.95rem;
     cursor: pointer;
     outline: none;
-    box-shadow: 0 4px 14px rgba(229, 37, 37, 0.28);
+    box-shadow: 0 5px 16px rgba(229, 37, 37, 0.28);
     transition: background-color 0.25s ease, transform 0.15s ease, box-shadow 0.25s ease;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 8px;
-    min-width: 105px;
+    min-width: 110px;
 }
 
 .btn-brand-submit:hover {
     background: linear-gradient(135deg, #FF3838 0%, #D41A1A 100%);
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(229, 37, 37, 0.4);
+    box-shadow: 0 8px 22px rgba(229, 37, 37, 0.38);
 }
 
 .btn-brand-submit:active {
@@ -4752,25 +4752,25 @@ body.light-theme .exec-submit-btn:hover {
 }
 
 .form-status-msg {
-    margin-top: 0.65rem;
-    font-size: 0.82rem;
+    margin-top: 0.7rem;
+    font-size: 0.84rem;
     font-weight: 500;
-    line-height: 1.45;
+    line-height: 1.48;
     padding: 0;
-    border-radius: 6px;
+    border-radius: 7px;
     transition: all 0.25s ease;
 }
 
 .form-status-msg.error {
     color: #DC2626;
-    padding: 0.55rem 0.75rem;
+    padding: 0.6rem 0.8rem;
     background: #FEF2F2;
     border: 1px solid #FECACA;
 }
 
 .form-status-msg.success {
     color: #059669;
-    padding: 0.55rem 0.75rem;
+    padding: 0.6rem 0.8rem;
     background: #ECFDF5;
     border: 1px solid #A7F3D0;
 }
@@ -4778,15 +4778,15 @@ body.light-theme .exec-submit-btn:hover {
 /* -------------------------------------------------------------
    Responsive Breakpoints for Home Contact Section
    ------------------------------------------------------------- */
-@media (max-width: 920px) {
+@media (max-width: 991px) {
     .home-contact-grid {
         grid-template-columns: 1fr;
-        gap: 1.8rem;
+        gap: 2.2rem;
     }
 
     .contact-chamfer-media {
-        min-height: 320px;
-        max-height: 360px;
+        min-height: 350px;
+        max-height: 400px;
     }
 }
 
@@ -4796,12 +4796,12 @@ body.light-theme .exec-submit-btn:hover {
     }
 
     .contact-main-title {
-        font-size: 1.85rem;
+        font-size: 1.9rem;
     }
 
     .contact-form-card {
-        padding: 1.5rem 1.2rem;
-        border-radius: 16px;
+        padding: 1.6rem 1.3rem;
+        border-radius: 18px;
     }
 
     .contact-chamfer-media {

@@ -4,61 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/jpeg" href="assets/roboyuwa-logo-BLCCIWUS.jpg" />
-    <title>About Us | RoboYuwa | Empowering Youth Through Innovation</title>
-    <meta name="description" content="Learn more about RoboYuwa, a youth-driven NGO focused on robotics, technology, research, and innovation. Discover our mission, vision, history, and the team driving change.">
+    <title>About Us | RoboYuwa | Pioneering Youth Robotics in Nepal</title>
+    <meta name="description" content="Learn more about RoboYuwa, Nepal's youth-driven NGO dedicated to robotics, STEAM education, research, and innovation. Discover our mission, vision, history, and how we work.">
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600;1,700&display=swap"
-        rel="stylesheet">
-    <style>
-        /* Specific Styles for About Page to complement global css */
-        .page-header {
-            padding: 160px 0 80px;
-            background: var(--black);
-            color: var(--white);
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .page-header-bg {
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: linear-gradient(135deg, rgba(209, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.9) 100%), url('assets/workshop.png') center/cover;
-            opacity: 0.4;
-            z-index: 0;
-        }
-
-        .page-header .container {
-            position: relative;
-            z-index: 1;
-        }
-        
-        .page-header h1 {
-            color: var(--white);
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            margin-bottom: 1rem;
-        }
-        
-        .page-header p {
-            font-size: 1.2rem;
-            color: var(--gray-300);
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .about-story {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: var(--text-light);
-            margin-bottom: 2rem;
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600;1,700&display=swap" rel="stylesheet">
     <script src="https://zenithkandel.com.np/fontawesome/zenith-icons.js"></script>
 </head>
-<body>
+<body class="about-page">
 
     <!-- Header (Top Utility Bar + Transparent Navbar) -->
     <header class="header" id="header">
@@ -107,8 +61,7 @@
         <div class="navbar" id="navbar">
             <div class="container nav-container">
                 <a href="index.html" class="logo">
-                    <img src="assets/roboyuwa-logo-BLCCIWUS.jpg" alt="RoboYuwa Logo" class="logo-img" loading="eager"
-                        decoding="async" />
+                    <img src="assets/roboyuwa-logo-BLCCIWUS.jpg" alt="RoboYuwa Logo" class="logo-img" loading="eager" decoding="async" />
                     <div class="logo-text">
                         <span class="brand-name font-serif">RoboYuwa</span>
                         <span class="brand-tagline">Youth Innovation &amp; Robotics</span>
@@ -135,252 +88,280 @@
                         <i class="fa-solid fa-sun theme-icon-sun"></i>
                         <i class="fa-solid fa-moon theme-icon-moon"></i>
                     </button>
-                    <a href="contact.html" class="btn btn-pill-amber">Donate</a>
+                    <a href="donate.html" class="btn btn-pill-amber">Donate</a>
                 </div>
             </div>
         </div>
     </header>
 
-    <!-- Page Header -->
-    <section class="page-header">
-        <div class="page-header-bg"></div>
-        <div class="container fade-in-up">
-            <h1>About RoboYuwa</h1>
-            <p>Empowering the next generation of tech leaders in Nepal through hands-on robotics, research, and innovation.</p>
-        </div>
-    </section>
-
-    <!-- Who We Are / About Section — Full Viewport Split Screen (50/50 Sharp Edges, 1 Screen Frame) -->
-    <section class="about-split-screen" aria-label="Who We Are - RoboYuwa Story">
-        <!-- Left Column: Precision Framed Visual (Sharp Edges) -->
-        <div class="about-split-media reveal">
-            <div class="about-media-inner">
-                <img
-                    src="assets/IMG_2751.JPG.jpeg"
-                    alt="RoboYuwa Team collaborating on robotics and hardware"
-                    loading="lazy"
-                    decoding="async"
-                    onerror="this.outerHTML=`<i class='fa-duotone fa-image' style='font-size: 2.5rem; color: var(--gray-400); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;'></i>`"
-                />
-                <div class="about-split-overlay" aria-hidden="true"></div>
-
-                <!-- Sharp Architectural HUD Corner Brackets -->
-                <div class="sharp-hud-corner top-left" aria-hidden="true"></div>
-                <div class="sharp-hud-corner top-right" aria-hidden="true"></div>
-                <div class="sharp-hud-corner bottom-left" aria-hidden="true"></div>
-                <div class="sharp-hud-corner bottom-right" aria-hidden="true"></div>
-
-                <!-- Sharp Floating Top Tag -->
-                <div class="about-sharp-tag">
-                    <span class="sharp-pulse-dot"></span>
-                    <span class="sharp-tag-text">EST. JUNE 2024 &bull; KATHMANDU, NEPAL</span>
-                </div>
-
-                <!-- Sharp Floating Bottom Stat Banner -->
-                <div class="about-sharp-banner">
-                    <div class="sharp-stat-group">
-                        <div class="sharp-stat-icon">
-                            <i class="fa-solid fa-microchip"></i>
+    <main>
+        <!-- =====================================================================
+             1. HERO SECTION (Reference Image 1: Breadcrumb + Headline + Visual)
+             ===================================================================== -->
+        <section class="about-hero-ref" aria-label="About RoboYuwa Introduction">
+            <div class="container">
+                <div class="about-hero-grid">
+                    <!-- Left: Headline & Narrative -->
+                    <div class="about-ref-left reveal">
+                        <div class="about-ref-breadcrumb" aria-label="Breadcrumb navigation">
+                            <span class="breadcrumb-bracket">[</span>
+                            <a href="index.html" class="breadcrumb-link">Home</a>
+                            <span class="breadcrumb-slash">/</span>
+                            <span class="breadcrumb-active">About</span>
+                            <span class="breadcrumb-bracket">]</span>
                         </div>
-                        <div>
-                            <span class="sharp-stat-big">1,200+</span>
-                            <span class="sharp-stat-label">Youth Empowered Across Nepal</span>
+                        <h1 class="about-ref-title font-serif">
+                            Crafting Excellence Together
+                        </h1>
+                        <p class="about-ref-lead">
+                            At RoboYuwa we believe in the power of collaboration to achieve outstanding results. With a team of skilled young innovators, mentors, and an unwavering commitment to engineering quality, we work hand-in-hand with schools, universities, and partners across Nepal to bring their ideas to life. Together, we create spaces, hardware systems, and robotics solutions that stand the test of time.
+                        </p>
+                        <div class="about-ref-hero-actions">
+                            <a href="#how-we-work" class="btn btn-pill-amber">
+                                <span>How We Work</span>
+                                <i class="fa-solid fa-arrow-down" aria-hidden="true"></i>
+                            </a>
+                            <a href="team.html" class="btn-outline-clean">
+                                <span>Meet The Team</span>
+                                <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                            </a>
                         </div>
                     </div>
-                    <div class="sharp-stat-badge">
-                        <i class="fa-solid fa-trophy" style="margin-right: 4px;"></i> Technoxian Finalists
+
+                    <!-- Right: Large Rounded Visual + Rotating Circular Badge -->
+                    <div class="about-ref-right reveal delay-1">
+                        <div class="about-ref-visual-frame">
+                            <img src="assets/group photo.jpeg" alt="RoboYuwa Team of young engineers and mentors" class="about-ref-visual-img" loading="eager" decoding="async">
+                            
+                            <!-- Rotating Circular Badge with Curving Text & Gold Arrow -->
+                            <div class="about-circular-badge-wrap" aria-hidden="true" title="RoboYuwa Nepal &bull; Est. 2024">
+                                <svg class="circular-text-svg" viewBox="0 0 160 160">
+                                <path id="badgeCirclePath" d="M 80, 80 m -58, 0 a 58,58 0 1,1 116,0 a 58,58 0 1,1 -116,0" fill="none" />
+                                <text class="circular-text">
+                                    <textPath href="#badgeCirclePath" textLength="345" lengthAdjust="spacing">
+                                        &bull; ROBOYUWA &bull; NEPAL &bull; INNOVATION &bull;
+                                    </textPath>
+                                </text>
+                            </svg>
+                                <div class="circular-badge-center">
+                                    <i class="fa-solid fa-arrow-up-right"></i>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <!-- Right Column: 50% Precision Content Frame (Fits Exactly to One Screen Frame) -->
-        <div class="about-split-content reveal delay-1">
-            <!-- Sharp Eyebrow Badge -->
-            <div class="about-sharp-eyebrow">
-                <i class="fa-solid fa-gear fa-spin" style="--fa-animation-duration: 12s;"></i>
-                <span>WHO WE ARE &amp; OUR STORY</span>
-            </div>
-
-            <!-- Sharp Headline -->
-            <h2 class="about-sharp-headline">
-                Empowering Youth Through Robotics, Research &amp; <span class="text-gradient-crimson">Ethical Innovation</span>
-            </h2>
-            <div class="about-sharp-divider"></div>
-
-            <!-- Concise Narrative Story -->
-            <p class="about-sharp-lead">
-                Founded in June 2024, <strong>RoboYuwa</strong> is a youth-driven non-governmental organization entirely dedicated to robotics, technology, research, and hands-on innovation across Nepal.
-            </p>
-
-            <!-- Mission & Vision Dual Cards (Fits Professionally in 1 Screen Frame) -->
-            <div class="about-sharp-mv-grid">
-                <div class="about-sharp-mv-card mission">
-                    <div class="mv-card-header">
-                        <div class="mv-icon-box crimson">
-                            <i class="fa-duotone fa-rocket"></i>
-                        </div>
-                        <h4>Our Mission</h4>
-                    </div>
-                    <p>
-                        To empower youth with technology skills, creative problem-solving, and leadership to transform communities.
+        <!-- =====================================================================
+             2. MANIFESTO & COUNTER METRICS (Reference Image 1 - Bottom)
+             ===================================================================== -->
+        <section class="about-manifesto-section" aria-label="Our Mission Manifesto and Impact">
+            <div class="container">
+                <div class="manifesto-wrapper reveal">
+                    <p class="manifesto-statement">
+                        At RoboYuwa we are committed to revolutionizing robotics education and youth innovation in Nepal with innovative, sustainable, and cost-effective solutions. With a proven track record of delivering exceptional youth initiatives, we combine <span class="manifesto-highlight">state-of-the-art technology</span>, <span class="manifesto-faded">skilled expertise, and student-centric approaches to bring visions to life.</span>
                     </p>
                 </div>
 
-                <div class="about-sharp-mv-card vision">
-                    <div class="mv-card-header">
-                        <div class="mv-icon-box amber">
-                            <i class="fa-duotone fa-eye"></i>
-                        </div>
-                        <h4>Our Vision</h4>
+                <!-- 4-Column Stat Counters Row -->
+                <div class="about-stats-row reveal delay-1">
+                    <div class="about-stat-item">
+                        <div class="stat-big-num">150+</div>
+                        <div class="stat-sub-label">Complete Projects</div>
                     </div>
-                    <p>
-                        A society where ethical technology and innovation are driven by capable, confident, and united youth creating sustainable community impact.
+                    <div class="about-stat-item">
+                        <div class="stat-big-num">100+</div>
+                        <div class="stat-sub-label">Team Members</div>
+                    </div>
+                    <div class="about-stat-item">
+                        <div class="stat-big-num">200+</div>
+                        <div class="stat-sub-label">Client Reviews</div>
+                    </div>
+                    <div class="about-stat-item">
+                        <div class="stat-big-num">30</div>
+                        <div class="stat-sub-label">Winning Awards</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =====================================================================
+             3. OUR MISSION (Reference Image 2 - Top)
+             ===================================================================== -->
+        <section class="about-feature-section" id="mission" aria-label="Our Mission">
+            <div class="container">
+                <div class="about-feature-grid">
+                    <!-- Left: Dual Overlapping Image Collage -->
+                    <div class="about-collage-wrap pos-right reveal">
+                        <img src="assets/workshop.png" alt="RoboYuwa Hands-on Workshop and Lab" class="collage-main-img" loading="lazy">
+                        <img src="assets/IMG_2757.JPG.jpeg" alt="Young students assembling circuit components" class="collage-overlap-img" loading="lazy">
+                    </div>
+
+                    <!-- Right: Content & Checkmarks -->
+                    <div class="about-feature-content reveal delay-1">
+                        <h2 class="section-bold-title font-serif">Our Mission</h2>
+                        <p class="section-lead-paragraph">
+                            To provide exceptional robotics education and research opportunities that exceed youth expectations through innovation, quality craftsmanship, and a commitment to sustainability. We aim to build lasting learning ecosystems and create spaces that inspire and improve the lives of our students and communities. Through precision, expertise, and a customer-centric approach, we strive to exceed expectations in every project. Our dedication to integrity and excellence drives us to build lasting relationships and a legacy of trust.
+                        </p>
+                        <ul class="about-feature-checklist">
+                            <li>
+                                <span class="checklist-icon"><i class="fa-solid fa-check"></i></span>
+                                <span>Fostering Sustainable Growth and Green Development</span>
+                            </li>
+                            <li>
+                                <span class="checklist-icon"><i class="fa-solid fa-check"></i></span>
+                                <span>Innovating for a Sustainable Future</span>
+                            </li>
+                            <li>
+                                <span class="checklist-icon"><i class="fa-solid fa-check"></i></span>
+                                <span>Customer-Centric Approach</span>
+                            </li>
+                            <li>
+                                <span class="checklist-icon"><i class="fa-solid fa-check"></i></span>
+                                <span>Building Stronger Communities</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =====================================================================
+             4. OUR VISION (Reference Image 2 - Bottom: Zig-Zag Alternating)
+             ===================================================================== -->
+        <section class="about-feature-section alt-bg" id="vision" aria-label="Our Vision">
+            <div class="container">
+                <div class="about-feature-grid">
+                    <!-- Left: Content & Checkmarks -->
+                    <div class="about-feature-content reveal">
+                        <h2 class="section-bold-title font-serif">Our Vision</h2>
+                        <p class="section-lead-paragraph">
+                            At RoboYuwa, our vision is to redefine the future of youth robotics and technical education through innovation, sustainability, and excellence. We aim to create platforms that not only inspire but also contribute to the well-being of communities and the environment. By embracing cutting-edge technology and eco-friendly practices, we strive to lead the industry toward a greener, smarter future. Our focus is on delivering value, quality, and longevity in every project we undertake. Together, we envision a world where innovation empowers progress and transforms lives.
+                        </p>
+                        <ul class="about-feature-checklist">
+                            <li>
+                                <span class="checklist-icon"><i class="fa-solid fa-check"></i></span>
+                                <span>Inspiring Modern Architecture</span>
+                            </li>
+                            <li>
+                                <span class="checklist-icon"><i class="fa-solid fa-check"></i></span>
+                                <span>Pioneering Sustainable Construction</span>
+                            </li>
+                            <li>
+                                <span class="checklist-icon"><i class="fa-solid fa-check"></i></span>
+                                <span>Empowering Communities Through Innovation</span>
+                            </li>
+                            <li>
+                                <span class="checklist-icon"><i class="fa-solid fa-check"></i></span>
+                                <span>Leading the Future of Building Solutions</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Right: Dual Overlapping Image Collage -->
+                    <div class="about-collage-wrap pos-left reveal delay-1">
+                        <img src="assets/world robotics competion.png" alt="RoboYuwa Team at Robotics Championship" class="collage-main-img" loading="lazy">
+                        <img src="assets/socoor bot.jpeg" alt="Autonomous Soccer Bot Hardware" class="collage-overlap-img" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =====================================================================
+             5. OUR HISTORY (Reference Image 3 - Top)
+             ===================================================================== -->
+        <section class="about-feature-section" id="history" aria-label="Our History">
+            <div class="container">
+                <div class="about-feature-grid">
+                    <!-- Left: Dual Overlapping Image Collage -->
+                    <div class="about-collage-wrap pos-right reveal">
+                        <img src="assets/group photo.jpeg" alt="RoboYuwa Founding Team" class="collage-main-img" loading="lazy">
+                        <img src="assets/hackathon radar 2026.jpeg" alt="National Hackathon Radar Victory" class="collage-overlap-img" loading="lazy">
+                    </div>
+
+                    <!-- Right: Content & Checkmarks -->
+                    <div class="about-feature-content reveal delay-1">
+                        <h2 class="section-bold-title font-serif">Our History</h2>
+                        <p class="section-lead-paragraph">
+                            Founded on a commitment to quality and innovation, RoboYuwa began as a small team with a big vision. Over the years, we have grown into a trusted name in youth robotics and STEAM education, delivering exceptional projects that stand the test of time. Our journey is marked by milestones of success, driven by passion and a dedication to excellence. From humble beginnings to national recognition and global competitions, we remain focused on building strong relationships and impactful spaces. Our history is the foundation of our future, inspiring us to keep raising the bar.
+                        </p>
+                        <ul class="about-feature-checklist">
+                            <li>
+                                <span class="checklist-icon"><i class="fa-solid fa-check"></i></span>
+                                <span>Humble Beginnings</span>
+                            </li>
+                            <li>
+                                <span class="checklist-icon"><i class="fa-solid fa-check"></i></span>
+                                <span>Milestones and Achievements</span>
+                            </li>
+                            <li>
+                                <span class="checklist-icon"><i class="fa-solid fa-check"></i></span>
+                                <span>Building a Legacy of Trust</span>
+                            </li>
+                            <li>
+                                <span class="checklist-icon"><i class="fa-solid fa-check"></i></span>
+                                <span>Shaping the Future, Rooted in the Past</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =====================================================================
+             6. HOW WE WORK (Reference Image 3 - Bottom: Video Showcase Banner)
+             ===================================================================== -->
+        <section class="how-we-work-section" id="how-we-work" aria-label="How We Work">
+            <div class="container">
+                <div class="section-center-header reveal">
+                    <h2 class="section-center-title font-serif">How We do Work</h2>
+                    <p class="section-center-sub">
+                        We follow a collaborative and transparent process, ensuring clear communication and expert execution at every stage of the project. From initial concept to final delivery.
                     </p>
                 </div>
-            </div>
 
-            <!-- Sharp Milestone Metrics Strip -->
-            <div class="about-sharp-metrics">
-                <div class="sharp-metric-box">
-                    <span class="sharp-metric-num">40+</span>
-                    <span class="sharp-metric-lbl">Grassroots Workshops</span>
-                </div>
-                <div class="sharp-metric-sep"></div>
-                <div class="sharp-metric-box">
-                    <span class="sharp-metric-num">1,200+</span>
-                    <span class="sharp-metric-lbl">Students Reached</span>
-                </div>
-                <div class="sharp-metric-sep"></div>
-                <div class="sharp-metric-box">
-                    <span class="sharp-metric-num">Global</span>
-                    <span class="sharp-metric-lbl">World Championship</span>
+                <!-- Full-Width Video Showcase Banner with Glowing Play Button -->
+                <div class="video-banner-container reveal delay-1 hero-video-btn" id="aboutVideoBanner" role="button" tabindex="0" aria-label="Play RoboYuwa Robotics Showcase Video">
+                    <img src="assets/workshop (2).png" alt="RoboYuwa Team in the robotics laboratory" class="video-banner-img" loading="lazy">
+                    <div class="video-banner-overlay" aria-hidden="true"></div>
+                    <button class="banner-play-btn" aria-label="Play Video" tabindex="-1">
+                        <span class="play-pulse-ring" aria-hidden="true"></span>
+                        <span class="play-btn-circle">
+                            <i class="fa-solid fa-play"></i>
+                        </span>
+                    </button>
                 </div>
             </div>
+        </section>
 
-            <!-- Sharp Action Buttons -->
-            <div class="about-sharp-actions">
-                <a href="programs.html" class="btn-sharp btn-primary">
-                    <span>Explore Our Programs</span>
-                    <i class="fa-light fa-arrow-right"></i>
-                </a>
-                <a href="team.html" class="btn-sharp btn-outline-dark">
-                    <span>Meet The Team</span>
-                    <i class="fa-light fa-users"></i>
-                </a>
+        <!-- =====================================================================
+             7. CALL TO ACTION (Get Involved & Membership)
+             ===================================================================== -->
+        <section class="about-cta-section" aria-label="Get Involved Call to Action">
+            <div class="container">
+                <div class="about-cta-box reveal">
+                    <div class="about-cta-content">
+                        <h3 class="font-serif">Be Part of Nepal's Robotics Revolution</h3>
+                        <p>
+                            Whether you are an aspiring student builder, educator, or institutional sponsor, join hands with RoboYuwa to build world-class technological excellence.
+                        </p>
+                    </div>
+                    <div class="about-cta-actions">
+                        <a href="membership.html" class="btn btn-pill-amber">
+                            <i class="fa-solid fa-id-card"></i>
+                            <span>Join As Member</span>
+                        </a>
+                        <a href="team.html" class="btn-outline-clean">
+                            <span>Meet Our Team</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <!-- Core Objectives -->
-    <section class="section-padding bg-light">
-        <div class="container">
-            <div class="section-title text-center reveal">
-                <h2>Our Governance & Focus</h2>
-                <div class="divider center"></div>
-                <p class="mt-3" style="max-width: 800px; margin-left: auto; margin-right: auto;">Our organization is built on a strong foundation of clear roles and a steadfast commitment to our technical community.</p>
-            </div>
-
-            <div class="objectives-grid mt-5 reveal delay-1">
-                <div class="objective-item">
-                    <span class="obj-number">01</span>
-                    <h3>Technical Excellence</h3>
-                    <p>Building an innovative mindset and advancing technical research through our dedicated Technical & Research Department.</p>
-                </div>
-                <div class="objective-item">
-                    <span class="obj-number">02</span>
-                    <h3>Community Outreach</h3>
-                    <p>Bridging the gap between technology and society by organizing workshops for underserved schools and local communities.</p>
-                </div>
-                <div class="objective-item">
-                    <span class="obj-number">03</span>
-                    <h3>Skill Development</h3>
-                    <p>Cultivating youth leadership, confidence, and creative problem-solving skills beyond just writing code or building circuits.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Leadership Structure -->
-    <section class="section-padding">
-        <div class="container">
-            <div class="section-title text-center reveal">
-                <h2>Our Leadership Structure</h2>
-                <div class="divider center"></div>
-                <p class="mt-3">A dedicated executive board guiding the vision and operations of RoboYuwa.</p>
-            </div>
-            
-            <div class="team-grid reveal delay-1">
-                <div class="team-card">
-                    <div class="team-avatar">
-                        <i class="fa-duotone fa-user"></i>
-                    </div>
-                    <h3>President</h3>
-                    <p>Vision & Direction</p>
-                </div>
-                <div class="team-card">
-                    <div class="team-avatar">
-                        <i class="fa-duotone fa-users"></i>
-                    </div>
-                    <h3>Vice President</h3>
-                    <p>Internal Operations</p>
-                </div>
-                <div class="team-card">
-                    <div class="team-avatar">
-                        <i class="fa-duotone fa-file-lines"></i>
-                    </div>
-                    <h3>Secretariat</h3>
-                    <p>Administration</p>
-                </div>
-                <div class="team-card">
-                    <div class="team-avatar">
-                        <i class="fa-duotone fa-dollar-sign"></i>
-                    </div>
-                    <h3>Treasurer</h3>
-                    <p>Financial Transparency</p>
-                </div>
-                <div class="team-card">
-                    <div class="team-avatar">
-                        <i class="fa-duotone fa-microchip"></i>
-                    </div>
-                    <h3>Technical Head</h3>
-                    <p>Research & Engineering</p>
-                </div>
-                <div class="team-card">
-                    <div class="team-avatar">
-                        <i class="fa-duotone fa-users"></i>
-                    </div>
-                    <h3>Outreach Head</h3>
-                    <p>Partnerships & Relations</p>
-                </div>
-                <div class="team-card">
-                    <div class="team-avatar">
-                        <i class="fa-duotone fa-pen-nib"></i>
-                    </div>
-                    <h3>Creative Head</h3>
-                    <p>Branding & Content</p>
-                </div>
-                <div class="team-card">
-                    <div class="team-avatar">
-                        <i class="fa-duotone fa-calendar-days"></i>
-                    </div>
-                    <h3>Event Planner</h3>
-                    <p>Logistics & Execution</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Call to Action -->
-    <section class="cta section-padding" style="background: var(--primary-gradient); color: white; text-align: center;">
-        <div class="container reveal">
-            <h2 style="color: white; margin-bottom: 1rem;">Be Part of the Journey</h2>
-            <p style="color: rgba(255,255,255,0.9); font-size: 1.1rem; margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">
-                We are constantly looking for passionate members, volunteers, and partners to help us build an innovative future. 
-            </p>
-            <a href="mailto:roboyuwa@gmail.com" class="btn btn-secondary">Get Involved Today</a>
-        </div>
-    </section>
     <!-- Footer (Executive High-Tech Minimalist Layout) -->
     <footer class="footer" id="footer">
         <!-- Tri-Color Brand Top Accent Line -->
@@ -485,6 +466,19 @@
         </div>
     </footer>
 
+    <!-- Interactive Video Showcase Modal (Wired to "How We Work" Play Button) -->
+    <div class="modal-backdrop" id="videoModal" aria-hidden="true" role="dialog" aria-label="Showcase Video">
+        <div class="modal-dialog">
+            <button class="modal-close" id="closeVideoModal" aria-label="Close video">&times;</button>
+            <div class="video-container">
+                <iframe id="videoIframe" src=""
+                    title="RoboYuwa Robotics Documentary"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
     <!-- Quick Search Modal -->
     <div class="modal-backdrop" id="searchModal" aria-hidden="true" role="dialog" aria-label="Search RoboYuwa">
         <div class="search-modal-dialog">
@@ -511,6 +505,3 @@
     <script src="js/script.js"></script>
 </body>
 </html>
-
-
-

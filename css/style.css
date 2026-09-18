@@ -488,7 +488,16 @@ strong {
 .nav-links ul {
     display: flex;
     align-items: center;
-    gap: 2.2rem;
+    gap: 1.85rem;
+}
+
+@media (max-width: 1120px) and (min-width: 769px) {
+    .nav-links ul {
+        gap: 1.15rem;
+    }
+    .nav-links a.nav-item {
+        font-size: 0.9rem;
+    }
 }
 
 .nav-links a.nav-item {
@@ -4084,7 +4093,7 @@ body.light-theme .exec-submit-btn:hover {
     }
 
     .nav-links.active {
-        max-height: 440px;
+        max-height: 480px;
         opacity: 1;
         padding: 1.2rem 1.5rem;
         transform: translateY(0);

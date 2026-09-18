@@ -2424,7 +2424,9 @@ strong {
     margin-bottom: clamp(3.2rem, 5.5vh, 4.5rem);
 }
 
-.obj-eyebrow {
+.obj-eyebrow,
+.about-eyebrow,
+.initiatives-eyebrow {
     display: inline-flex;
     align-items: center;
     gap: 9px;
@@ -4853,7 +4855,7 @@ body.light-theme .exec-submit-btn:hover {
 .cta-showcase-section {
     position: relative;
     width: 100%;
-    padding: clamp(3.2rem, 5.5vh, 4.8rem) 0 clamp(1rem, 2vh, 2rem);
+    padding: clamp(3.5rem, 6vh, 5rem) 0;
     background: #FFFFFF;
 }
 

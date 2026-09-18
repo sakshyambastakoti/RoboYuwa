@@ -2894,7 +2894,7 @@ body:has(.contact-exec-wrapper) .header {
     text-shadow: 0 2px 10px rgba(0, 0, 0, 0.85);
 }
 
-.contact-main-title {
+.contact-exec-left .contact-main-title {
     font-family: var(--font-sans);
     font-size: clamp(2.8rem, 5.2vw, 4.2rem);
     font-weight: 900;
@@ -4529,7 +4529,8 @@ body.light-theme .exec-submit-btn:hover {
     margin-bottom: 0.55rem;
 }
 
-.contact-main-title {
+.home-contact-title,
+.home-contact-section .contact-main-title {
     font-family: var(--font-serif);
     font-size: clamp(2.1rem, 3.1vw, 2.9rem);
     font-weight: 700;
@@ -4537,6 +4538,14 @@ body.light-theme .exec-submit-btn:hover {
     letter-spacing: -0.02em;
     margin-bottom: 0.65rem;
     line-height: 1.2;
+    text-shadow: none !important;
+    text-transform: none !important;
+    filter: none !important;
+}
+
+.home-contact-section .text-gradient-crimson {
+    text-shadow: none !important;
+    filter: none !important;
 }
 
 .contact-main-subtitle {

@@ -285,6 +285,7 @@ strong {
     .section-pulse-divider .pulse-left {
         flex: 0 0 68%;
     }
+
     .section-pulse-divider.pulse-left-side .pulse-left {
         flex: 0 0 32%;
     }
@@ -5964,4 +5965,4 @@ body.dark-theme .team-card .member-role {
 
 body.dark-theme .section-pulse-divider {
     --pulse-divider-color: rgba(255, 255, 255, 0.22);
-}
+}

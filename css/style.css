@@ -1407,16 +1407,18 @@ strong {
 
 .collage-card {
     position: relative;
-    border-radius: 18px;
+    clip-path: polygon(36px 0%, 100% 0%, 100% 100%, 0% 100%, 0% 36px);
+    border-radius: 0 18px 18px 18px;
     overflow: hidden;
     background: #12141A;
     box-shadow: 0 10px 26px rgba(0, 0, 0, 0.07);
-    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+    filter: drop-shadow(0 10px 24px rgba(0, 0, 0, 0.08));
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), filter 0.4s ease;
 }
 
 .collage-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.14);
+    filter: drop-shadow(0 16px 36px rgba(0, 0, 0, 0.14));
 }
 
 .collage-card img {
@@ -1424,6 +1426,8 @@ strong {
     height: 100%;
     object-fit: cover;
     display: block;
+    clip-path: polygon(36px 0%, 100% 0%, 100% 100%, 0% 100%, 0% 36px);
+    border-radius: 0 18px 18px 18px;
     transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
 }
 

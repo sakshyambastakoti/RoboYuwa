@@ -4489,6 +4489,291 @@ body.light-theme .exec-submit-btn:hover {
 }
 
 /* ==========================================================================
+   Call to Action (CTA) Showcase Section (Directly Matching Reference Image)
+   ========================================================================== */
+
+.cta-showcase-section {
+    position: relative;
+    width: 100%;
+    padding: clamp(3.2rem, 5.5vh, 4.8rem) 0 clamp(1rem, 2vh, 2rem);
+    background: #FFFFFF;
+}
+
+.cta-container {
+    width: 100%;
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+/* Chamfered Card: Top-Left & Bottom-Right Diagonal Cut Geometry */
+.cta-chamfer-card {
+    position: relative;
+    background: #F3EFEB;
+    padding: clamp(3.2rem, 5.5vh, 4.8rem) clamp(2rem, 4.5vw, 4.2rem);
+    clip-path: polygon(
+        78px 0%, 
+        calc(100% - 18px) 0%, 
+        100% 18px, 
+        100% calc(100% - 78px), 
+        calc(100% - 78px) 100%, 
+        18px 100%, 
+        0% calc(100% - 18px), 
+        0% 78px
+    );
+    filter: drop-shadow(0 14px 35px rgba(0, 0, 0, 0.04));
+    overflow: hidden;
+}
+
+/* Watermark Decorative Corner Badges (3 Chamfered Badges Row) */
+.cta-badge-group {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.cta-badge-group.top-right {
+    top: 24px;
+    right: 36px;
+}
+
+.cta-badge-group.bottom-left {
+    bottom: 24px;
+    left: 36px;
+}
+
+.cta-oct-badge {
+    width: 58px;
+    height: 48px;
+    position: relative;
+    background: rgba(255, 255, 255, 0.72);
+    clip-path: polygon(11px 0, calc(100% - 11px) 0, 100% 11px, 100% calc(100% - 11px), calc(100% - 11px) 100%, 11px 100%, 0 calc(100% - 11px), 0 11px);
+    transition: transform 0.3s ease;
+}
+
+.cta-oct-badge::after {
+    content: '';
+    position: absolute;
+    inset: 2.5px;
+    background: #F3EFEB;
+    clip-path: polygon(10px 0, calc(100% - 10px) 0, 100% 10px, 100% calc(100% - 10px), calc(100% - 10px) 100%, 10px 100%, 0 calc(100% - 10px), 0 10px);
+}
+
+/* Centered Content */
+.cta-card-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+/* Eyebrow */
+.cta-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 1.6px;
+    color: #555D6E;
+    text-transform: uppercase;
+    margin-bottom: 0.85rem;
+}
+
+.cta-eyebrow .eyebrow-square {
+    width: 11px;
+    height: 11px;
+    border-radius: 2px;
+    background: linear-gradient(135deg, var(--ry-amber) 0%, var(--ry-amber-hover) 100%);
+    box-shadow: 0 2px 8px rgba(229, 152, 25, 0.45);
+    display: inline-block;
+}
+
+/* Main Title: Clean Serif Brand Typography */
+.cta-main-title {
+    font-family: var(--font-serif);
+    font-size: clamp(2.2rem, 3.8vw, 3.3rem);
+    font-weight: 700;
+    color: #101217;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.95rem;
+    text-shadow: none !important;
+    text-transform: none !important;
+    filter: none !important;
+}
+
+.cta-main-title .text-gradient-crimson {
+    text-shadow: none !important;
+    filter: none !important;
+}
+
+/* Subtitle Narrative */
+.cta-subtitle {
+    font-family: var(--font-sans);
+    font-size: clamp(0.94rem, 1.05vw, 1.04rem);
+    line-height: 1.68;
+    color: #525968;
+    max-width: 670px;
+    margin: 0 auto clamp(1.8rem, 3vh, 2.4rem);
+}
+
+/* Dual Action Buttons Group */
+.cta-btn-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.15rem;
+    flex-wrap: wrap;
+}
+
+/* Primary Button: Circuit Amber Warm Solid */
+.btn-cta-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #E59819 0%, #D4840D 100%);
+    color: #FFFFFF !important;
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+    font-weight: 600;
+    padding: 0.8rem 2.2rem;
+    border-radius: 12px;
+    text-decoration: none;
+    box-shadow: 0 4px 16px rgba(229, 152, 25, 0.28);
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    border: none;
+    cursor: pointer;
+}
+
+.btn-cta-primary:hover {
+    background: linear-gradient(135deg, #F0A526 0%, #E59819 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(229, 152, 25, 0.42);
+    color: #FFFFFF !important;
+}
+
+/* Secondary Button: Frosted Grey Surface */
+.btn-cta-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.07);
+    color: #2D3748 !important;
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+    font-weight: 600;
+    padding: 0.8rem 2.2rem;
+    border-radius: 12px;
+    text-decoration: none;
+    border: 1px solid rgba(0, 0, 0, 0.09);
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    cursor: pointer;
+}
+
+.btn-cta-secondary:hover {
+    background: rgba(0, 0, 0, 0.12);
+    color: #101217 !important;
+    transform: translateY(-2px);
+    border-color: rgba(0, 0, 0, 0.16);
+}
+
+/* Responsive Media Queries for CTA */
+@media (max-width: 991px) {
+    .cta-chamfer-card {
+        padding: 3.2rem 2.2rem;
+        clip-path: polygon(
+            55px 0%, 
+            100% 0%, 
+            100% calc(100% - 55px), 
+            calc(100% - 55px) 100%, 
+            0% 100%, 
+            0% 55px
+        );
+    }
+
+    .cta-oct-badge {
+        width: 48px;
+        height: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .cta-badge-group {
+        opacity: 0.45;
+    }
+
+    .cta-badge-group.top-right {
+        top: 16px;
+        right: 20px;
+        gap: 6px;
+    }
+
+    .cta-badge-group.bottom-left {
+        bottom: 16px;
+        left: 20px;
+        gap: 6px;
+    }
+
+    .cta-oct-badge {
+        width: 38px;
+        height: 32px;
+    }
+
+    .cta-chamfer-card {
+        padding: 3rem 1.6rem;
+        clip-path: polygon(
+            40px 0%, 
+            100% 0%, 
+            100% calc(100% - 40px), 
+            calc(100% - 40px) 100%, 
+            0% 100%, 
+            0% 40px
+        );
+    }
+}
+
+@media (max-width: 576px) {
+    .cta-showcase-section {
+        padding: 2.5rem 0 1rem;
+    }
+
+    .cta-badge-group {
+        display: none;
+    }
+
+    .cta-chamfer-card {
+        padding: 2.6rem 1.25rem;
+        clip-path: polygon(
+            30px 0%, 
+            100% 0%, 
+            100% calc(100% - 30px), 
+            calc(100% - 30px) 100%, 
+            0% 100%, 
+            0% 30px
+        );
+        border-radius: 16px;
+    }
+
+    .cta-btn-group {
+        flex-direction: column;
+        width: 100%;
+        gap: 0.85rem;
+    }
+
+    .btn-cta-primary,
+    .btn-cta-secondary {
+        width: 100%;
+        padding: 0.75rem 1.5rem;
+    }
+}
+
+/* ==========================================================================
    Home Contact Showcase Section (Balanced Medium Scale & Brand Palette)
    ========================================================================== */
 

@@ -3251,7 +3251,7 @@ body:has(.contact-exec-wrapper) .header {
         padding-bottom: 5rem;
     }
 
-    .contact-main-title {
+    .contact-exec-wrapper .contact-main-title {
         font-size: 2.6rem;
         margin-bottom: 2.4rem;
     }
@@ -3462,7 +3462,7 @@ body.light-theme .contact-org-label {
     text-shadow: none;
 }
 
-body.light-theme .contact-main-title {
+body.light-theme .contact-exec-wrapper .contact-main-title {
     color: #0F172A;
     text-shadow: 0 2px 10px rgba(255, 255, 255, 0.8);
 }
@@ -4804,7 +4804,8 @@ body.light-theme .exec-submit-btn:hover {
         padding: 3.5rem 0;
     }
 
-    .contact-main-title {
+    .home-contact-title,
+    .home-contact-section .contact-main-title {
         font-size: 1.9rem;
     }
 

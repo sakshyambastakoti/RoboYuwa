@@ -4573,15 +4573,22 @@ body.light-theme .exec-submit-btn:hover {
 }
 
 /* ==========================================================================
-   Institutional Charter & Purpose Section (Text-Only Manifesto Based On Docs)
+   Institutional Charter & Purpose Section (Single Screen Frame Viewport)
+   Compact, architectural typography layout fitting within a single screen
    ========================================================================== */
 
 .charter-showcase-section {
     position: relative;
     width: 100%;
-    padding: clamp(5.5rem, 9vh, 7.5rem) 0;
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: clamp(2.4rem, 4.5vh, 3.8rem) 0;
     background: #F6F8FA;
     overflow: hidden;
+    box-sizing: border-box;
 }
 
 .charter-container {
@@ -4589,272 +4596,244 @@ body.light-theme .exec-submit-btn:hover {
     max-width: 1240px;
     margin: 0 auto;
     padding: 0 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: clamp(1.2rem, 2.4vh, 1.8rem);
 }
 
 /* -------------------------------------------------------------
-   Top Split Header Row
+   Compact Top Row: Left Title & Eyebrow, Right Constitutional Quote
    ------------------------------------------------------------- */
-.charter-header-row {
+.charter-top-row {
     display: grid;
-    grid-template-columns: 1.15fr 0.85fr;
-    gap: clamp(2rem, 5vw, 4.5rem);
-    align-items: flex-end;
-    margin-bottom: clamp(3rem, 5vh, 4rem);
+    grid-template-columns: 1fr 1.08fr;
+    gap: clamp(1.5rem, 3.5vw, 3rem);
+    align-items: center;
 }
 
 .charter-eyebrow {
     display: inline-flex;
     align-items: center;
-    gap: 9px;
+    gap: 8px;
     font-family: var(--font-sans);
-    font-size: 0.82rem;
+    font-size: 0.78rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.12em;
     color: var(--ry-amber, #E59819);
-    margin-bottom: 0.9rem;
+    margin-bottom: 0.45rem;
 }
 
 .charter-main-title {
-    font-size: clamp(2.2rem, 3.8vw, 3.1rem);
-    line-height: 1.18;
+    font-size: clamp(1.85rem, 2.7vw, 2.45rem);
+    line-height: 1.2;
     color: var(--ry-gray-900, #101217);
     font-weight: 700;
     letter-spacing: -0.02em;
+    margin: 0;
 }
 
-.charter-lead {
-    font-size: 1.05rem;
-    line-height: 1.75;
-    color: var(--ry-gray-600, #4B5262);
-    font-weight: 400;
-}
-
-/* -------------------------------------------------------------
-   Constitutional Preamble Banner Card (Exact Text From Constitution)
-   ------------------------------------------------------------- */
-.charter-preamble-card {
-    position: relative;
+.charter-quote-card {
     background: #FFFFFF;
     border: 1px solid rgba(16, 18, 23, 0.08);
-    clip-path: polygon(32px 0%, 100% 0%, 100% calc(100% - 32px), calc(100% - 32px) 100%, 0% 100%, 0% 32px);
-    padding: clamp(2.2rem, 4vh, 3.2rem) clamp(2rem, 4vw, 3.5rem);
-    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.04);
-    margin-bottom: clamp(2.5rem, 4.5vh, 3.5rem);
-    border-left: 4px solid var(--ry-crimson, #E52525);
+    border-left: 3.5px solid var(--ry-crimson, #E52525);
+    clip-path: polygon(18px 0, 100% 0, 100% calc(100% - 18px), calc(100% - 18px) 100%, 0 100%, 0 18px);
+    padding: 1.1rem 1.4rem;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.03);
 }
 
-.preamble-badge-row {
+.charter-quote-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 1.4rem;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-
-.preamble-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: rgba(229, 37, 37, 0.08);
-    color: var(--ry-crimson, #E52525);
-    padding: 5px 14px;
-    font-size: 0.76rem;
+    margin-bottom: 0.55rem;
+    font-size: 0.74rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.08em;
-    border-radius: 4px;
+    color: var(--ry-crimson, #E52525);
 }
 
-.preamble-reference {
-    font-size: 0.82rem;
+.charter-quote-ref {
+    font-weight: 600;
     color: var(--text-light, #8C93A3);
-    font-weight: 600;
-    letter-spacing: 0.04em;
+    font-size: 0.72rem;
 }
 
-.preamble-quote {
+.charter-quote-text {
     font-family: var(--font-serif);
-    font-size: clamp(1.15rem, 1.9vw, 1.42rem);
-    line-height: 1.6;
+    font-size: clamp(0.92rem, 1.25vw, 1.05rem);
+    line-height: 1.5;
     color: var(--ry-gray-900, #101217);
-    font-weight: 600;
     font-style: italic;
-    margin-bottom: 1.2rem;
+    margin: 0 0 0.55rem 0;
 }
 
-.preamble-meta {
+.charter-quote-footer {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    padding-top: 1.2rem;
-    border-top: 1px solid rgba(16, 18, 23, 0.06);
-    font-size: 0.88rem;
+    font-size: 0.76rem;
     color: var(--ry-gray-600, #4B5262);
+    border-top: 1px solid rgba(16, 18, 23, 0.06);
+    padding-top: 0.5rem;
+    gap: 10px;
     flex-wrap: wrap;
-    gap: 12px;
 }
 
-.preamble-pillars-list {
+.charter-quote-values {
     display: flex;
-    gap: 18px;
-    flex-wrap: wrap;
+    gap: 12px;
     font-weight: 600;
-    font-size: 0.82rem;
     color: var(--ry-gray-900, #101217);
 }
 
-.preamble-pillar-item {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-}
-
-.preamble-pillar-item i {
+.charter-quote-values span i {
     color: var(--ry-crimson, #E52525);
-    font-size: 0.75rem;
+    margin-right: 3px;
+    font-size: 0.7rem;
 }
 
 /* -------------------------------------------------------------
-   3 Pillars Grid ("Why RoboYuwa Matters")
+   3 Compact Pillar Cards
    ------------------------------------------------------------- */
-.charter-pillars-grid {
+.charter-pillars-row {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: clamp(1.2rem, 2.5vw, 1.8rem);
-    margin-bottom: clamp(2.5rem, 4.5vh, 3.5rem);
+    gap: clamp(1rem, 1.8vw, 1.4rem);
 }
 
-.charter-pillar-card {
+.charter-card-compact {
     background: #FFFFFF;
     border: 1px solid rgba(16, 18, 23, 0.08);
-    clip-path: polygon(26px 0%, 100% 0%, 100% 100%, 0% 100%, 0% 26px);
-    padding: clamp(1.8rem, 3vh, 2.4rem);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.03);
+    clip-path: polygon(20px 0, 100% 0, 100% 100%, 0 100%, 0 20px);
+    padding: clamp(1.2rem, 2vh, 1.6rem);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.03);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.35s ease;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
-.charter-pillar-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.08);
+.charter-card-compact:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.07);
     border-color: rgba(229, 37, 37, 0.3);
 }
 
-.pillar-header {
-    margin-bottom: 1.2rem;
-}
-
-.pillar-index {
-    display: inline-block;
-    font-size: 0.76rem;
+.compact-tag {
+    font-size: 0.7rem;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.09em;
     color: var(--ry-amber, #E59819);
-    margin-bottom: 0.6rem;
+    margin-bottom: 0.35rem;
+    display: block;
 }
 
-.pillar-title {
+.compact-title {
     font-family: var(--font-serif);
-    font-size: clamp(1.3rem, 2vw, 1.55rem);
-    line-height: 1.3;
+    font-size: clamp(1.1rem, 1.5vw, 1.25rem);
+    line-height: 1.25;
     color: var(--ry-gray-900, #101217);
     font-weight: 700;
-    margin-bottom: 0.85rem;
+    margin-bottom: 0.55rem;
 }
 
-.pillar-desc {
-    font-size: 0.94rem;
-    line-height: 1.65;
+.compact-desc {
+    font-size: 0.86rem;
+    line-height: 1.55;
     color: var(--ry-gray-600, #4B5262);
-    margin-bottom: 1.4rem;
+    margin-bottom: 0.9rem;
 }
 
-.pillar-highlight {
+.compact-stat {
     display: flex;
     align-items: center;
-    gap: 10px;
-    padding: 10px 14px;
+    gap: 8px;
+    padding: 7px 11px;
     background: #F6F8FA;
-    border-radius: 6px;
-    font-size: 0.82rem;
+    border-radius: 5px;
+    font-size: 0.78rem;
     font-weight: 600;
     color: var(--ry-gray-900, #101217);
-    border-left: 3px solid var(--ry-crimson, #E52525);
+    border-left: 2.5px solid var(--ry-crimson, #E52525);
 }
 
 /* -------------------------------------------------------------
-   4-Card Institutional Governance Strip
+   4-Item Streamlined Governance Strip
    ------------------------------------------------------------- */
-.charter-gov-strip {
+.charter-gov-compact {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 14px;
+    gap: 10px;
     background: #FFFFFF;
     border: 1px solid rgba(16, 18, 23, 0.08);
-    padding: clamp(1.4rem, 2.5vh, 2rem);
-    border-radius: 12px;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.03);
+    padding: 0.9rem 1.2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.02);
 }
 
-.gov-item {
-    padding: 0.5rem 1rem;
+.gov-col {
+    padding: 0 0.75rem;
     border-right: 1px solid rgba(16, 18, 23, 0.07);
 }
 
-.gov-item:last-child {
+.gov-col:last-child {
     border-right: none;
 }
 
-.gov-num {
-    font-size: 1.1rem;
+.gov-col-num {
+    font-size: 0.78rem;
     font-weight: 800;
     color: var(--ry-crimson, #E52525);
-    font-family: var(--font-sans);
-    margin-bottom: 0.35rem;
+    margin-bottom: 0.15rem;
 }
 
-.gov-title {
-    font-size: 0.96rem;
+.gov-col-title {
+    font-size: 0.85rem;
     font-weight: 700;
     color: var(--ry-gray-900, #101217);
-    margin-bottom: 0.4rem;
+    margin-bottom: 0.2rem;
 }
 
-.gov-text {
-    font-size: 0.84rem;
-    line-height: 1.55;
+.gov-col-text {
+    font-size: 0.76rem;
+    line-height: 1.45;
     color: var(--ry-gray-600, #4B5262);
+    margin: 0;
 }
 
 @media (max-width: 991px) {
-    .charter-header-row {
+    .charter-showcase-section {
+        min-height: auto;
+        padding: 4.5rem 0;
+    }
+    .charter-top-row {
         grid-template-columns: 1fr;
         gap: 1.5rem;
     }
-    .charter-pillars-grid {
+    .charter-pillars-row {
         grid-template-columns: 1fr;
+        gap: 1.2rem;
     }
-    .charter-gov-strip {
+    .charter-gov-compact {
         grid-template-columns: 1fr 1fr;
-        gap: 20px;
+        gap: 14px;
     }
-    .gov-item {
+    .gov-col {
         border-right: none;
         border-bottom: 1px solid rgba(16, 18, 23, 0.07);
-        padding-bottom: 1rem;
+        padding: 0 0 0.6rem 0;
     }
 }
 
 @media (max-width: 576px) {
-    .charter-gov-strip {
+    .charter-gov-compact {
         grid-template-columns: 1fr;
     }
 }
+
 
 /* ==========================================================================
    Testimonials Section (Chamfered Showcase Card Reference Design)
@@ -6272,68 +6251,69 @@ body.dark-theme .charter-lead {
     color: #94A3B8 !important;
 }
 
-body.dark-theme .charter-preamble-card {
+body.dark-theme .charter-quote-card {
     background: #11141D !important;
     border-color: rgba(255, 255, 255, 0.08) !important;
     border-left-color: var(--ry-crimson) !important;
-    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45) !important;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4) !important;
 }
 
-body.dark-theme .preamble-reference {
+body.dark-theme .charter-quote-ref {
     color: #64748B !important;
 }
 
-body.dark-theme .preamble-quote {
+body.dark-theme .charter-quote-text {
     color: #FFFFFF !important;
 }
 
-body.dark-theme .preamble-meta {
+body.dark-theme .charter-quote-footer {
     border-top-color: rgba(255, 255, 255, 0.08) !important;
     color: #94A3B8 !important;
 }
 
-body.dark-theme .preamble-pillars-list {
+body.dark-theme .charter-quote-values {
     color: #CBD5E1 !important;
 }
 
-body.dark-theme .charter-pillar-card {
+body.dark-theme .charter-card-compact {
     background: #11141D !important;
     border-color: rgba(255, 255, 255, 0.08) !important;
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4) !important;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.4) !important;
 }
 
-body.dark-theme .charter-pillar-card:hover {
+body.dark-theme .charter-card-compact:hover {
     border-color: var(--ry-crimson) !important;
-    box-shadow: 0 18px 44px rgba(229, 37, 37, 0.22) !important;
+    box-shadow: 0 16px 36px rgba(229, 37, 37, 0.22) !important;
 }
 
-body.dark-theme .pillar-title {
+body.dark-theme .compact-title {
     color: #FFFFFF !important;
 }
 
-body.dark-theme .pillar-desc {
+body.dark-theme .compact-desc {
     color: #94A3B8 !important;
 }
 
-body.dark-theme .pillar-highlight {
+body.dark-theme .compact-stat {
     background: #181C26 !important;
     color: #E2E8F0 !important;
 }
 
-body.dark-theme .charter-gov-strip {
+body.dark-theme .charter-gov-compact {
     background: #11141D !important;
     border-color: rgba(255, 255, 255, 0.08) !important;
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4) !important;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.4) !important;
 }
 
-body.dark-theme .gov-item {
+body.dark-theme .gov-col {
     border-right-color: rgba(255, 255, 255, 0.08) !important;
 }
 
-body.dark-theme .gov-title {
+body.dark-theme .gov-col-title {
     color: #FFFFFF !important;
 }
 
-body.dark-theme .gov-text {
+body.dark-theme .gov-col-text {
     color: #94A3B8 !important;
-}
+}
+

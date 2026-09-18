@@ -4118,47 +4118,59 @@ body.light-theme .exec-submit-btn:hover {
 }
 
 /* ==========================================================================
-   Major Initiatives Showcase Section (Single Screen Frame Calibration)
+   Major Initiatives Showcase Section (Exact Screen Frame 100vh Viewport)
    ========================================================================== */
 
 .initiatives-showcase-section {
     position: relative;
     width: 100%;
-    padding: clamp(2.4rem, 4vh, 3.2rem) 0;
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: clamp(2.8rem, 5.5vh, 4.5rem) 0;
     background: #FFFFFF;
     overflow: hidden;
+    scroll-margin-top: 80px;
+    box-sizing: border-box;
 }
 
 .initiatives-container {
     width: 100%;
-    max-width: 1160px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 0 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 /* -------------------------------------------------------------
-   Header & Action Area (Calibrated for Single-Screen Comfort)
+   Header & Action Area (Generous Reference Scale)
    ------------------------------------------------------------- */
 .initiatives-header {
     text-align: center;
-    max-width: 720px;
-    margin: 0 auto clamp(1.4rem, 2.4vh, 2rem);
+    max-width: 760px;
+    margin: 0 auto clamp(1.6rem, 3.2vh, 2.6rem);
 }
 
 .initiatives-breadcrumb {
     display: inline-flex;
     align-items: center;
-    gap: 7px;
+    gap: 8px;
     font-family: var(--font-sans);
-    font-size: 0.78rem;
+    font-size: 0.82rem;
     color: #64748B;
     font-weight: 500;
-    margin-bottom: 0.45rem;
+    margin-bottom: 0.5rem;
 }
 
 .initiatives-breadcrumb i {
     color: var(--ry-amber);
-    font-size: 0.88rem;
+    font-size: 0.92rem;
 }
 
 .initiatives-breadcrumb strong {
@@ -4168,12 +4180,12 @@ body.light-theme .exec-submit-btn:hover {
 
 .initiatives-main-title {
     font-family: var(--font-serif);
-    font-size: clamp(1.85rem, 2.7vw, 2.5rem);
+    font-size: clamp(2.1rem, 3.4vw, 3.2rem);
     font-weight: 700;
     color: #101217;
     line-height: 1.18;
     letter-spacing: -0.02em;
-    margin-bottom: 0.55rem;
+    margin-bottom: 0.65rem;
     text-shadow: none !important;
     text-transform: none !important;
     filter: none !important;
@@ -4186,11 +4198,11 @@ body.light-theme .exec-submit-btn:hover {
 
 .initiatives-subtitle {
     font-family: var(--font-sans);
-    font-size: clamp(0.88rem, 0.95vw, 0.96rem);
-    line-height: 1.55;
+    font-size: clamp(0.92rem, 1.05vw, 1.02rem);
+    line-height: 1.62;
     color: #525968;
-    max-width: 640px;
-    margin: 0 auto clamp(0.85rem, 1.5vh, 1.25rem);
+    max-width: 680px;
+    margin: 0 auto clamp(1.1rem, 2.2vh, 1.6rem);
 }
 
 .initiatives-action-wrap {
@@ -4206,12 +4218,12 @@ body.light-theme .exec-submit-btn:hover {
     background: linear-gradient(135deg, #E59819 0%, #D4840D 100%);
     color: #FFFFFF !important;
     font-family: var(--font-sans);
-    font-size: 0.88rem;
+    font-size: 0.94rem;
     font-weight: 600;
-    padding: 0.65rem 2rem;
-    border-radius: 10px;
+    padding: 0.74rem 2.3rem;
+    border-radius: 12px;
     text-decoration: none;
-    box-shadow: 0 4px 14px rgba(229, 152, 25, 0.28);
+    box-shadow: 0 4px 16px rgba(229, 152, 25, 0.3);
     transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
     border: none;
     cursor: pointer;
@@ -4220,19 +4232,20 @@ body.light-theme .exec-submit-btn:hover {
 .btn-initiatives-action:hover {
     background: linear-gradient(135deg, #F0A526 0%, #E59819 100%);
     transform: translateY(-2px);
-    box-shadow: 0 7px 20px rgba(229, 152, 25, 0.42);
+    box-shadow: 0 8px 24px rgba(229, 152, 25, 0.45);
     color: #FFFFFF !important;
 }
 
 /* -------------------------------------------------------------
-   3-Frame Chamfered Photo Gallery (Compact Viewport Scale)
+   3-Frame Chamfered Photo Gallery (Full Screen Frame Presence)
    ------------------------------------------------------------- */
 .initiatives-gallery-grid {
     display: grid;
-    grid-template-columns: 1fr 1.28fr 1fr;
-    gap: clamp(1.1rem, 1.8vw, 1.8rem);
+    grid-template-columns: 1fr 1.35fr 1fr;
+    gap: clamp(1.2rem, 2.2vw, 2.2rem);
     align-items: center;
-    max-width: 1140px;
+    max-width: 1180px;
+    width: 100%;
     margin: 0 auto;
 }
 
@@ -4244,31 +4257,31 @@ body.light-theme .exec-submit-btn:hover {
 /* Diagonal 1: Top-Left & Bottom-Right Chamfers (Left & Right Frames) */
 .frame-diagonal-1 {
     clip-path: polygon(
-        48px 0%, 
-        calc(100% - 14px) 0%, 
-        100% 14px, 
-        100% calc(100% - 48px), 
-        calc(100% - 48px) 100%, 
-        14px 100%, 
-        0% calc(100% - 14px), 
-        0% 48px
+        52px 0%, 
+        calc(100% - 15px) 0%, 
+        100% 15px, 
+        100% calc(100% - 52px), 
+        calc(100% - 52px) 100%, 
+        15px 100%, 
+        0% calc(100% - 15px), 
+        0% 52px
     );
-    height: clamp(240px, 26vh, 285px);
+    height: clamp(280px, 32vh, 345px);
 }
 
 /* Diagonal 2: Top-Right & Bottom-Left Chamfers (Center Hero Frame) */
 .frame-diagonal-2 {
     clip-path: polygon(
-        14px 0%, 
-        calc(100% - 60px) 0%, 
-        100% 60px, 
-        100% calc(100% - 14px), 
-        calc(100% - 14px) 100%, 
-        60px 100%, 
-        0% calc(100% - 60px), 
-        0% 14px
+        15px 0%, 
+        calc(100% - 66px) 0%, 
+        100% 66px, 
+        100% calc(100% - 15px), 
+        calc(100% - 15px) 100%, 
+        66px 100%, 
+        0% calc(100% - 66px), 
+        0% 15px
     );
-    height: clamp(310px, 34vh, 365px);
+    height: clamp(360px, 42vh, 435px);
 }
 
 .init-chamfer-frame {
@@ -4276,7 +4289,7 @@ body.light-theme .exec-submit-btn:hover {
     width: 100%;
     overflow: hidden;
     background: #1A1D24;
-    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.07);
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.08);
 }
 
 .init-chamfer-frame img {
@@ -4299,17 +4312,17 @@ body.light-theme .exec-submit-btn:hover {
 
 .init-backing-frame {
     position: absolute;
-    inset: -7px;
+    inset: -8px;
     background: #ECE7E1;
     clip-path: polygon(
-        18px 0%, 
-        calc(100% - 65px) 0%, 
-        100% 65px, 
-        100% calc(100% - 18px), 
-        calc(100% - 18px) 100%, 
-        65px 100%, 
-        0% calc(100% - 65px), 
-        0% 18px
+        20px 0%, 
+        calc(100% - 72px) 0%, 
+        100% 72px, 
+        100% calc(100% - 20px), 
+        calc(100% - 20px) 100%, 
+        72px 100%, 
+        0% calc(100% - 72px), 
+        0% 20px
     );
     z-index: 0;
     transition: background 0.35s ease, transform 0.35s ease;
@@ -4336,28 +4349,28 @@ body.light-theme .exec-submit-btn:hover {
 }
 
 .play-icon-circle {
-    width: 56px;
-    height: 56px;
+    width: 62px;
+    height: 62px;
     border-radius: 50%;
     background: rgba(0, 0, 0, 0.42);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    border: 2px solid rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 2.5px solid rgba(255, 255, 255, 0.92);
     display: flex;
     align-items: center;
     justify-content: center;
     color: #FFFFFF;
-    font-size: 1.1rem;
+    font-size: 1.25rem;
     padding-left: 3px;
-    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.35);
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.35);
     transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .init-play-btn:hover .play-icon-circle {
     background: var(--ry-crimson);
     border-color: #FFFFFF;
-    transform: scale(1.12);
-    box-shadow: 0 8px 28px rgba(229, 37, 37, 0.55);
+    transform: scale(1.14);
+    box-shadow: 0 10px 32px rgba(229, 37, 37, 0.55);
 }
 
 /* Frame Caption Overlays */
@@ -4366,7 +4379,7 @@ body.light-theme .exec-submit-btn:hover {
     bottom: 0;
     left: 0;
     right: 0;
-    padding: 1.4rem 1.1rem 0.85rem;
+    padding: 1.8rem 1.3rem 1.1rem;
     background: linear-gradient(to top, rgba(16, 18, 23, 0.92) 0%, rgba(16, 18, 23, 0.48) 60%, transparent 100%);
     z-index: 3;
     pointer-events: none;
@@ -4376,12 +4389,12 @@ body.light-theme .exec-submit-btn:hover {
 .init-frame-badge {
     display: inline-block;
     font-family: var(--font-sans);
-    font-size: 0.74rem;
+    font-size: 0.78rem;
     font-weight: 700;
-    letter-spacing: 0.8px;
+    letter-spacing: 0.9px;
     text-transform: uppercase;
     color: var(--ry-amber);
-    margin-bottom: 0.2rem;
+    margin-bottom: 0.25rem;
 }
 
 .init-frame-badge.highlight {
@@ -4390,9 +4403,9 @@ body.light-theme .exec-submit-btn:hover {
 
 .init-frame-desc {
     font-family: var(--font-sans);
-    font-size: 0.8rem;
-    line-height: 1.35;
-    color: rgba(255, 255, 255, 0.88);
+    font-size: 0.84rem;
+    line-height: 1.4;
+    color: rgba(255, 255, 255, 0.9);
     margin: 0;
 }
 
@@ -4400,26 +4413,34 @@ body.light-theme .exec-submit-btn:hover {
    Responsive Breakpoints
    ------------------------------------------------------------- */
 @media (max-width: 991px) {
+    .initiatives-showcase-section {
+        min-height: auto;
+        padding: 4.5rem 0;
+    }
+
     .initiatives-gallery-grid {
         grid-template-columns: 1fr;
-        max-width: 520px;
-        gap: 1.5rem;
+        max-width: 560px;
+        gap: 2rem;
+    }
+
+    .frame-diagonal-1,
+    .frame-diagonal-2 {
+        height: 320px;
     }
 
     .frame-diagonal-1 {
-        height: 250px;
         clip-path: polygon(
-            38px 0%, 
+            42px 0%, 
             100% 0%, 
-            100% calc(100% - 38px), 
-            calc(100% - 38px) 100%, 
+            100% calc(100% - 42px), 
+            calc(100% - 42px) 100%, 
             0% 100%, 
-            0% 38px
+            0% 42px
         );
     }
 
     .frame-diagonal-2 {
-        height: 300px;
         clip-path: polygon(
             0% 0%, 
             calc(100% - 42px) 0%, 
@@ -4433,27 +4454,24 @@ body.light-theme .exec-submit-btn:hover {
 
 @media (max-width: 576px) {
     .initiatives-showcase-section {
-        padding: 2.4rem 0;
+        padding: 3.5rem 0;
     }
 
-    .frame-diagonal-1 {
-        height: 220px;
-    }
-
+    .frame-diagonal-1,
     .frame-diagonal-2 {
-        height: 260px;
+        height: 270px;
     }
 
     .play-icon-circle {
-        width: 50px;
-        height: 50px;
-        font-size: 0.95rem;
+        width: 52px;
+        height: 52px;
+        font-size: 1.05rem;
     }
 
     .btn-initiatives-action {
         width: 100%;
-        max-width: 250px;
-        padding: 0.62rem 1.4rem;
+        max-width: 270px;
+        padding: 0.7rem 1.6rem;
     }
 }
 

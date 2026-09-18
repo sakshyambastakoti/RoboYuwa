@@ -911,16 +911,111 @@
     </div>
   </section>
 
-  <!-- Call to Action -->
-  <section id="contact" class="cta section-padding">
-    <div class="container text-center">
-      <h2>Join the Robotics Revolution</h2>
-      <p>
-        Whether you're a student looking to learn, an expert wanting to
-        mentor, or an organization aiming to partner, there is a place for you
-        at RoboYuwa.
-      </p>
-      <a href="mailto:roboyuwa@gmail.com" class="btn btn-primary mt-3">Partner With Us</a>
+  <!-- Contact Showcase Section (Directly Matching Reference: Centered Header + Chamfered Media + Clean Form Card) -->
+  <section id="contact" class="home-contact-section" aria-label="Contact RoboYuwa">
+    <div class="container home-contact-container">
+      
+      <!-- Centered Header (Reference: Amber chip + Title + Subtitle) -->
+      <div class="home-contact-header reveal">
+        <div class="contact-eyebrow">
+          <span class="eyebrow-square" aria-hidden="true"></span>
+          <span>Contact With Us</span>
+        </div>
+        <h2 class="contact-main-title font-serif">
+          Start Your <span class="text-gradient-crimson">Project With Us</span>
+        </h2>
+        <p class="contact-main-subtitle">
+          Let's turn your vision into reality. Whether you're planning a robotics workshop, school lab partnership, hardware prototyping, or youth mentorship, our team is ready to guide you every step of the way.
+        </p>
+      </div>
+
+      <!-- 2-Column Grid: Chamfered Image (Left) + Clean Form Card (Right) -->
+      <div class="home-contact-grid">
+        
+        <!-- Left Column: Chamfered Image Showcase -->
+        <div class="contact-chamfer-wrapper reveal delay-1">
+          <div class="contact-chamfer-media">
+            <img src="assets/workshop.png" 
+                 alt="RoboYuwa hands-on robotics workshop and engineering mentorship" 
+                 loading="lazy" decoding="async" />
+          </div>
+        </div>
+
+        <!-- Right Column: Clean White Form Card -->
+        <div class="contact-card-wrapper reveal delay-2">
+          <div class="contact-form-card">
+            <h3 class="contact-card-title">Send a message</h3>
+
+            <form class="home-contact-form" id="homeContactForm" novalidate>
+              <!-- Field 1: Full Name -->
+              <div class="contact-form-group">
+                <label for="homeContactName" class="contact-form-label">Enter your full name</label>
+                <input type="text" 
+                       id="homeContactName" 
+                       name="fullName" 
+                       class="contact-form-input" 
+                       placeholder="Jahidul Islam Jidan" 
+                       required 
+                       autocomplete="name" />
+              </div>
+
+              <!-- Field 2: Email Address -->
+              <div class="contact-form-group">
+                <label for="homeContactEmail" class="contact-form-label">Enter your email address</label>
+                <input type="email" 
+                       id="homeContactEmail" 
+                       name="email" 
+                       class="contact-form-input" 
+                       placeholder="demo@gmail.com" 
+                       required 
+                       autocomplete="email" />
+              </div>
+
+              <!-- Field 3: Phone Number -->
+              <div class="contact-form-group">
+                <label for="homeContactPhone" class="contact-form-label">Enter your phone number</label>
+                <input type="tel" 
+                       id="homeContactPhone" 
+                       name="phone" 
+                       class="contact-form-input" 
+                       placeholder="+800 1234 567 890" 
+                       autocomplete="tel" />
+              </div>
+
+              <!-- Field 4: Message -->
+              <div class="contact-form-group">
+                <label for="homeContactMessage" class="contact-form-label">Message</label>
+                <textarea id="homeContactMessage" 
+                          name="message" 
+                          class="contact-form-textarea" 
+                          rows="4" 
+                          placeholder="Type Here" 
+                          required></textarea>
+              </div>
+
+              <!-- Terms of Service Checkbox -->
+              <div class="contact-terms-group">
+                <label class="contact-checkbox-label">
+                  <input type="checkbox" id="homeContactTerms" class="contact-checkbox" required />
+                  <span class="checkbox-custom" aria-hidden="true"></span>
+                  <span class="terms-text">I agree to the terms of service.</span>
+                </label>
+              </div>
+
+              <!-- Submit Button & Live Feedback Status -->
+              <div class="contact-submit-row">
+                <button type="submit" class="btn-ref-submit" id="homeContactSubmitBtn">
+                  <span>Submit</span>
+                </button>
+              </div>
+
+              <div id="homeContactStatus" class="form-status-msg" aria-live="polite"></div>
+            </form>
+          </div>
+        </div>
+
+      </div>
+
     </div>
   </section>
     <!-- Footer (Executive High-Tech Minimalist Layout) -->

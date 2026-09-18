@@ -4487,3 +4487,319 @@ body.light-theme .exec-submit-btn:hover {
         box-shadow: 0 0 0 0 rgba(209, 0, 0, 0);
     }
 }
+
+/* ==========================================================================
+   Home Contact Showcase Section (Matching Reference Design)
+   ========================================================================== */
+
+.home-contact-section {
+    position: relative;
+    width: 100%;
+    padding: clamp(5.5rem, 9vh, 7.5rem) 0;
+    background: #FFFFFF;
+    overflow: hidden;
+}
+
+.home-contact-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+/* -------------------------------------------------------------
+   Centered Header (Reference: Amber chip + Title + Subtitle)
+   ------------------------------------------------------------- */
+.home-contact-header {
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto clamp(3rem, 5vh, 4.2rem);
+}
+
+.contact-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    font-family: var(--font-sans);
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 1.6px;
+    color: #525968;
+    text-transform: uppercase;
+    margin-bottom: 0.85rem;
+}
+
+.contact-main-title {
+    font-size: clamp(2.2rem, 3.4vw, 3.25rem);
+    font-weight: 700;
+    color: #101217;
+    letter-spacing: -0.02em;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.contact-main-subtitle {
+    font-size: clamp(0.98rem, 1.05vw, 1.06rem);
+    line-height: 1.72;
+    color: #64748B;
+    margin-bottom: 0;
+}
+
+/* -------------------------------------------------------------
+   2-Column Grid: Chamfered Image (Left) + Form Card (Right)
+   ------------------------------------------------------------- */
+.home-contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(2rem, 3.8vw, 3.6rem);
+    align-items: stretch;
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+/* Left Column: Chamfered Media Frame */
+.contact-chamfer-wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.contact-chamfer-media {
+    position: relative;
+    width: 100%;
+    min-height: 520px;
+    height: 100%;
+    /* Top-left angled cut corner (Chamfer) matching reference */
+    clip-path: polygon(65px 0%, 100% 0%, 100% 100%, 0% 100%, 0% 65px);
+    border-radius: 0 28px 28px 28px;
+    overflow: hidden;
+    background: #E8D3BA;
+    filter: drop-shadow(0 10px 32px rgba(0, 0, 0, 0.06));
+    transition: filter 0.35s ease;
+}
+
+.contact-chamfer-media:hover {
+    filter: drop-shadow(0 18px 44px rgba(0, 0, 0, 0.12));
+}
+
+.contact-chamfer-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.contact-chamfer-media:hover img {
+    transform: scale(1.05);
+}
+
+/* Right Column: Clean White Form Card */
+.contact-card-wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.contact-form-card {
+    width: 100%;
+    background: #FFFFFF;
+    border: 1.5px solid #E2E8F0;
+    border-radius: 24px;
+    padding: clamp(2.2rem, 3.5vw, 3.2rem);
+    box-shadow: 0 10px 32px rgba(0, 0, 0, 0.04);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form-card:hover {
+    border-color: rgba(229, 152, 25, 0.35);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.06);
+}
+
+.contact-card-title {
+    font-family: var(--font-sans);
+    font-size: clamp(1.5rem, 2vw, 1.85rem);
+    font-weight: 700;
+    color: #101217;
+    margin-bottom: 1.6rem;
+    letter-spacing: -0.4px;
+}
+
+.home-contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.15rem;
+}
+
+.contact-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.42rem;
+}
+
+.contact-form-label {
+    font-family: var(--font-sans);
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: #475569;
+    letter-spacing: -0.1px;
+}
+
+.contact-form-input,
+.contact-form-textarea {
+    width: 100%;
+    background: #FFFFFF;
+    border: 1px solid #D1D5DB;
+    border-radius: 10px;
+    padding: 0.78rem 1rem;
+    font-family: var(--font-sans);
+    font-size: 0.94rem;
+    color: #101217;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    outline: none;
+}
+
+.contact-form-input::placeholder,
+.contact-form-textarea::placeholder {
+    color: #94A3B8;
+    font-weight: 400;
+}
+
+.contact-form-input:focus,
+.contact-form-textarea:focus {
+    border-color: var(--ry-amber);
+    box-shadow: 0 0 0 3px rgba(229, 152, 25, 0.16);
+}
+
+.contact-form-textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* Terms Checkbox */
+.contact-terms-group {
+    margin-top: 0.15rem;
+}
+
+.contact-checkbox-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+    cursor: pointer;
+    user-select: none;
+}
+
+.contact-checkbox {
+    width: 17px;
+    height: 17px;
+    accent-color: var(--ry-amber);
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.terms-text {
+    font-family: var(--font-sans);
+    font-size: 0.88rem;
+    color: #64748B;
+    font-weight: 500;
+}
+
+/* Submit Button Row */
+.contact-submit-row {
+    margin-top: 0.4rem;
+    display: flex;
+    align-items: center;
+}
+
+.btn-ref-submit {
+    background: #EDF0F5;
+    border: 1px solid #D6DCE5;
+    border-radius: 8px;
+    color: #101217;
+    font-family: var(--font-sans);
+    font-size: 0.92rem;
+    font-weight: 600;
+    padding: 0.68rem 1.85rem;
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-width: 95px;
+}
+
+.btn-ref-submit:hover {
+    background: #E2E8F0;
+    border-color: #CBD5E1;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.btn-ref-submit:active {
+    transform: translateY(0);
+}
+
+.form-status-msg {
+    margin-top: 0.85rem;
+    font-size: 0.86rem;
+    font-weight: 500;
+    line-height: 1.5;
+    padding: 0;
+    border-radius: 8px;
+    transition: all 0.25s ease;
+}
+
+.form-status-msg.error {
+    color: #DC2626;
+    padding: 0.65rem 0.85rem;
+    background: #FEF2F2;
+    border: 1px solid #FECACA;
+}
+
+.form-status-msg.success {
+    color: #059669;
+    padding: 0.65rem 0.85rem;
+    background: #ECFDF5;
+    border: 1px solid #A7F3D0;
+}
+
+/* -------------------------------------------------------------
+   Responsive Breakpoints for Home Contact Section
+   ------------------------------------------------------------- */
+@media (max-width: 920px) {
+    .home-contact-grid {
+        grid-template-columns: 1fr;
+        gap: 2.2rem;
+    }
+
+    .contact-chamfer-media {
+        min-height: 380px;
+        max-height: 440px;
+    }
+}
+
+@media (max-width: 576px) {
+    .home-contact-section {
+        padding: 4rem 0;
+    }
+
+    .contact-main-title {
+        font-size: 1.95rem;
+    }
+
+    .contact-form-card {
+        padding: 1.8rem 1.4rem;
+        border-radius: 18px;
+    }
+
+    .contact-chamfer-media {
+        clip-path: polygon(45px 0%, 100% 0%, 100% 100%, 0% 100%, 0% 45px);
+        min-height: 300px;
+    }
+}

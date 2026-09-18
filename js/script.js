@@ -536,6 +536,65 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ==========================================================================
+    // Home Contact Form Submission Handler (Matching Reference Design)
+    // ==========================================================================
+    const homeContactForm = document.getElementById('homeContactForm');
+    const homeContactStatus = document.getElementById('homeContactStatus');
+    const homeContactSubmitBtn = document.getElementById('homeContactSubmitBtn');
+
+    if (homeContactForm) {
+        homeContactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const fullName = document.getElementById('homeContactName');
+            const email = document.getElementById('homeContactEmail');
+            const message = document.getElementById('homeContactMessage');
+            const terms = document.getElementById('homeContactTerms');
+
+            if (!fullName?.value.trim() || !email?.value.trim() || !message?.value.trim()) {
+                if (homeContactStatus) {
+                    homeContactStatus.className = 'form-status-msg error';
+                    homeContactStatus.textContent = 'Please complete all required fields before submitting.';
+                }
+                return;
+            }
+
+            if (terms && !terms.checked) {
+                if (homeContactStatus) {
+                    homeContactStatus.className = 'form-status-msg error';
+                    homeContactStatus.textContent = 'Please agree to the terms of service to continue.';
+                }
+                return;
+            }
+
+            if (homeContactSubmitBtn) {
+                const originalHtml = homeContactSubmitBtn.innerHTML;
+                homeContactSubmitBtn.disabled = true;
+                homeContactSubmitBtn.innerHTML = '<span>Sending...</span> <i class="fa-solid fa-spinner fa-spin"></i>';
+
+                setTimeout(() => {
+                    homeContactForm.reset();
+                    homeContactSubmitBtn.disabled = false;
+                    homeContactSubmitBtn.innerHTML = '<span>Sent!</span> <i class="fa-solid fa-check" style="color: #10B981;"></i>';
+
+                    if (homeContactStatus) {
+                        homeContactStatus.className = 'form-status-msg success';
+                        homeContactStatus.textContent = 'Thank you! Your message has been received. Our team will reach out to you shortly.';
+                    }
+
+                    setTimeout(() => {
+                        homeContactSubmitBtn.innerHTML = originalHtml;
+                        if (homeContactStatus) {
+                            homeContactStatus.className = 'form-status-msg';
+                            homeContactStatus.textContent = '';
+                        }
+                    }, 5000);
+                }, 800);
+            }
+        });
+    }
+
+    // ==========================================================================
     // Light / Dark Theme Toggle (Scoped to pages with themeToggleBtn)
     // ==========================================================================
     const themeToggleBtn = document.getElementById('themeToggleBtn');

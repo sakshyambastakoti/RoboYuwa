@@ -474,163 +474,234 @@
     </div>
   </section>
 
-  <!-- Who We Are / About Section — Full Viewport Split Screen (50/50 Sharp Edges, 1 Screen Frame) -->
-  <section id="about" class="about-split-screen" aria-label="Who We Are - RoboYuwa">
-    <!-- Left Column: Precision Framed Visual (Sharp Edges) -->
-    <div class="about-split-media reveal">
-      <div class="about-media-inner">
-        <img src="assets/IMG_2751.JPG.jpeg" alt="RoboYuwa Team, Innovators and Youth Robotics Community" loading="lazy"
-          decoding="async"
-          onerror="this.outerHTML=`<i class='fa-duotone fa-image' style='font-size: 2.5rem; color: var(--gray-400); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;'></i>`" />
-        <div class="about-split-overlay" aria-hidden="true"></div>
+  <!-- About Showcase Section (Directly Matching 4-Photo Collage & Stats Banner Reference) -->
+  <section id="about" class="about-showcase-section" aria-label="About RoboYuwa - Who We Are">
+    <div class="container about-showcase-container">
+      
+      <!-- Top Showcase Row: 4-Photo Asymmetric Collage (Left) & Content/Features (Right) -->
+      <div class="about-showcase-main">
+        
+        <!-- Left Column: 4-Photo Asymmetric Collage Grid -->
+        <div class="about-collage-col reveal">
+          <div class="about-collage-grid">
+            <!-- Sub-column 1 (Left): Top portrait + Bottom compact -->
+            <div class="collage-subcol left-subcol">
+              <div class="collage-card card-top-left">
+                <img src="assets/IMG_1869.JPG.jpeg" 
+                     alt="RoboYuwa youth innovator working on robotics prototype" 
+                     loading="lazy" decoding="async" />
+              </div>
+              <div class="collage-card card-bottom-left">
+                <img src="assets/IMG_2751.JPG.jpeg" 
+                     alt="RoboYuwa student leader with engineering project" 
+                     loading="lazy" decoding="async" />
+              </div>
+            </div>
 
-        <!-- Sharp Architectural HUD Corner Brackets -->
-        <div class="sharp-hud-corner top-left" aria-hidden="true"></div>
-        <div class="sharp-hud-corner top-right" aria-hidden="true"></div>
-        <div class="sharp-hud-corner bottom-left" aria-hidden="true"></div>
-        <div class="sharp-hud-corner bottom-right" aria-hidden="true"></div>
-
-        <!-- Sharp Floating Top Tag -->
-        <div class="about-sharp-tag">
-          <span class="sharp-pulse-dot"></span>
-          <span class="sharp-tag-text">EST. JUNE 2024 &bull; KATHMANDU, NEPAL</span>
+            <!-- Sub-column 2 (Right): Top wide + Bottom wide collaboration -->
+            <div class="collage-subcol right-subcol">
+              <div class="collage-card card-top-right">
+                <img src="assets/IMG_2016.JPG (1).jpeg" 
+                     alt="Hands-on robotics laboratory and team collaboration" 
+                     loading="lazy" decoding="async" />
+              </div>
+              <div class="collage-card card-bottom-right">
+                <img src="assets/group photo.jpeg" 
+                     alt="RoboYuwa workshop participants and young roboticists" 
+                     loading="lazy" decoding="async" />
+              </div>
+            </div>
+          </div>
         </div>
 
-        <!-- Sharp Floating Bottom Stat Banner -->
-        <div class="about-sharp-banner">
-          <div class="sharp-stat-group">
-            <div class="sharp-stat-icon">
-              <i class="fa-solid fa-microchip"></i>
-            </div>
-            <div>
-              <span class="sharp-stat-big">1,200+</span>
-              <span class="sharp-stat-label">Youth Empowered Across Nepal</span>
-            </div>
-          </div>
-          <div class="sharp-stat-badge">
-            <i class="fa-solid fa-trophy" style="margin-right: 4px;"></i> Technoxian Finalists
-          </div>
-        </div>
-      </div>
-    </div>
+        <!-- Right Column: Headline, Narrative Copy, Dual Features, & CTA -->
+        <div class="about-narrative-col reveal delay-1">
+          <!-- Main Headline (Matching Hero Section Playfair Display font) -->
+          <h2 class="about-showcase-title font-serif">
+            A Leading &amp; Pioneer Youth Robotics &amp; <span class="text-gradient-crimson">Innovation Hub</span> in Nepal.
+          </h2>
 
-    <!-- Right Column: 50% Precision Content Frame (Fits Exactly to One Screen Frame) -->
-    <div class="about-split-content reveal delay-1">
-      <!-- Sharp Eyebrow Badge -->
-      <div class="about-sharp-eyebrow">
-        <i class="fa-solid fa-gear fa-spin" style="--fa-animation-duration: 12s;"></i>
-        <span>WHO WE ARE</span>
-      </div>
-
-      <!-- Sharp Headline -->
-      <h2 class="about-sharp-headline">
-        Pioneering Youth Robotics, Hardware Engineering &amp; <span class="text-gradient-crimson">Ethical
-          Innovation</span>
-      </h2>
-      <div class="about-sharp-divider"></div>
-
-      <!-- Concise Narrative Lead -->
-      <p class="about-sharp-lead">
-        Founded in June 2024, <strong>RoboYuwa</strong> is Nepal's premier youth-driven non-governmental organization dedicated to democratizing robotics, hardware engineering, and applied research.
-      </p>
-
-      <!-- Mission & Vision Dual Cards (Fits Professionally in 1 Screen Frame) -->
-      <div class="about-sharp-mv-grid">
-        <div class="about-sharp-mv-card mission">
-          <div class="mv-card-header">
-            <div class="mv-icon-box crimson">
-              <i class="fa-duotone fa-rocket"></i>
-            </div>
-            <h4>Our Mission</h4>
-          </div>
-          <p>
-            To empower youth with technology skills, creative problem-solving, and leadership to transform communities.
+          <!-- Descriptive Narrative Copy -->
+          <p class="about-showcase-desc">
+            Founded in June 2024, <strong>RoboYuwa</strong> is Nepal's premier youth-driven non-governmental organization dedicated to democratizing robotics, embedded systems, and applied research. We equip aspiring innovators with state-of-the-art lab access, hands-on hardware prototyping, and national-to-global championship mentorship to build homegrown technological solutions.
           </p>
-        </div>
 
-        <div class="about-sharp-mv-card vision">
-          <div class="mv-card-header">
-            <div class="mv-icon-box amber">
-              <i class="fa-duotone fa-eye"></i>
+          <!-- Dual Feature / Value-Add Columns (Matching Reference Side-by-Side Items) -->
+          <div class="about-dual-features">
+            <!-- Feature 1: Hands-on Robotics Labs -->
+            <div class="dual-feature-item">
+              <div class="feature-icon-box">
+                <i class="fa-light fa-box-open"></i>
+              </div>
+              <div class="feature-content">
+                <h3 class="feature-title">Hands-on Labs</h3>
+                <p class="feature-desc">
+                  Direct access to 3D printers, sensors, microcontrollers, and PCB prototyping tools.
+                </p>
+              </div>
             </div>
-            <h4>Our Vision</h4>
+
+            <!-- Feature 2: Global Mentorship -->
+            <div class="dual-feature-item">
+              <div class="feature-icon-box">
+                <i class="fa-light fa-shield-halved"></i>
+              </div>
+              <div class="feature-content">
+                <h3 class="feature-title">Global Mentorship</h3>
+                <p class="feature-desc">
+                  Preparing competitive youth teams to innovate and excel in national and world championships.
+                </p>
+              </div>
+            </div>
           </div>
-          <p>
-            A society where ethical technology and innovation are driven by capable, confident, and united youth creating sustainable community impact.
-          </p>
+
+          <!-- Rounded Pill Action Button (Reference "Contact Us →") -->
+          <div class="about-showcase-action">
+            <a href="contact.html" class="btn-ref-pill">
+              <span>Contact Us</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bottom Row: Floating 4-Metric Stats Ribbon (Directly matching Reference Image Bottom Card) -->
+      <div class="about-stats-ribbon reveal">
+        <!-- Stat 1: Experience / Labs (Star Icon) -->
+        <div class="stat-ribbon-item">
+          <div class="ribbon-icon">
+            <i class="fa-light fa-star"></i>
+          </div>
+          <div class="ribbon-info">
+            <span class="ribbon-number">40+</span>
+            <span class="ribbon-label">Grassroots Workshops</span>
+          </div>
+        </div>
+
+        <!-- Stat 2: Youth Reached (Cube Icon) -->
+        <div class="stat-ribbon-item">
+          <div class="ribbon-icon">
+            <i class="fa-light fa-cube"></i>
+          </div>
+          <div class="ribbon-info">
+            <span class="ribbon-number">1,200+</span>
+            <span class="ribbon-label">Youth Empowered</span>
+          </div>
+        </div>
+
+        <!-- Stat 3: Projects (Heart Icon) -->
+        <div class="stat-ribbon-item">
+          <div class="ribbon-icon">
+            <i class="fa-light fa-heart"></i>
+          </div>
+          <div class="ribbon-info">
+            <span class="ribbon-number">35+</span>
+            <span class="ribbon-label">Robotics Projects</span>
+          </div>
+        </div>
+
+        <!-- Stat 4: World Finals (Circle Check Icon) -->
+        <div class="stat-ribbon-item">
+          <div class="ribbon-icon">
+            <i class="fa-light fa-circle-check"></i>
+          </div>
+          <div class="ribbon-info">
+            <span class="ribbon-number">Global</span>
+            <span class="ribbon-label">Championship Finalists</span>
+          </div>
         </div>
       </div>
 
-      <!-- Sharp Milestone Metrics Strip -->
-      <div class="about-sharp-metrics">
-        <div class="sharp-metric-box">
-          <span class="sharp-metric-num">40+</span>
-          <span class="sharp-metric-lbl">Grassroots Workshops</span>
-        </div>
-        <div class="sharp-metric-sep"></div>
-        <div class="sharp-metric-box">
-          <span class="sharp-metric-num">1,200+</span>
-          <span class="sharp-metric-lbl">Students Reached</span>
-        </div>
-        <div class="sharp-metric-sep"></div>
-        <div class="sharp-metric-box">
-          <span class="sharp-metric-num">Global</span>
-          <span class="sharp-metric-lbl">World Finals Finalists</span>
-        </div>
-      </div>
-
-      <!-- Sharp Action Buttons -->
-      <div class="about-sharp-actions">
-        <a href="about.html" class="btn-sharp btn-primary">
-          <span>Discover Our Story</span>
-          <i class="fa-light fa-arrow-right"></i>
-        </a>
-        <a href="team.html" class="btn-sharp btn-outline-dark">
-          <span>Meet Executive Board</span>
-          <i class="fa-light fa-users"></i>
-        </a>
-      </div>
     </div>
   </section>
 
-  <!-- Key Objectives Section -->
-  <section id="objectives" class="objectives section-padding bg-light">
-    <div class="container">
-      <div class="section-title text-center">
-        <h2>Key Objectives</h2>
-        <div class="divider center"></div>
-      </div>
-        <div class="objectives-grid">
-          <div class="objective-item">
-            <span class="obj-number">01</span>
-            <p>
-              Promote hands-on learning, innovation, and creativity in
-              robotics and technology.
-            </p>
+  <!-- Key Objectives Section (Redesigned to Match Reference: Split Header + Chamfered Geometric Cards) -->
+  <section id="objectives" class="objectives-showcase-section" aria-label="RoboYuwa Key Objectives">
+    <div class="container objectives-showcase-container">
+      
+      <!-- Top Split Header Row (Reference: Eyebrow + Large Title on Left, Narrative Lead on Right) -->
+      <div class="obj-header-row reveal">
+        <div class="obj-header-left">
+          <div class="obj-eyebrow">
+            <span class="eyebrow-square" aria-hidden="true"></span>
+            <span>Key Objectives</span>
           </div>
-          <div class="objective-item">
-            <span class="obj-number">02</span>
-            <p>
-              Develop leadership, teamwork, and problem-solving through
-              projects, workshops, and community programs.
-            </p>
-          </div>
-          <div class="objective-item">
-            <span class="obj-number">03</span>
-            <p>
-              Unite young minds for science and technology collaboration and
-              foster an ethical approach.
-            </p>
-          </div>
-          <div class="objective-item">
-            <span class="obj-number">04</span>
-            <p>
-              Build robotics & technology projects and actively participate in
-              national and international competitions.
-            </p>
-          </div>
+          <h2 class="obj-main-title font-serif">
+            Our 4 Core Objectives to <span class="text-gradient-crimson">Empower Nepal's Next Generation</span>.
+          </h2>
+        </div>
+        <div class="obj-header-right">
+          <p class="obj-header-lead">
+            At RoboYuwa, we don't just teach robotics — we ignite technological leadership. Every initiative we launch is driven by ethical engineering, hands-on fabrication, and sustainable community impact across Nepal.
+          </p>
         </div>
       </div>
+
+      <!-- 4 Architectural Chamfered Cards Grid (Reference: Alternating Angled Cut Corners & Large Top-Right Numerals) -->
+      <div class="objectives-chamfer-grid">
+        <!-- Card 01: Top-Left Chamfer -->
+        <article class="chamfer-card chamfer-top-left reveal delay-1">
+          <div class="card-inner">
+            <div class="card-num-row">
+              <span class="card-big-num font-serif">01</span>
+            </div>
+            <div class="card-content-bottom">
+              <h3 class="card-title">Hands-On STEM Innovation</h3>
+              <p class="card-desc">
+                Promote experiential learning, creative problem-solving, and rapid hardware prototyping in robotics and emerging technologies.
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 02: Top-Right Chamfer -->
+        <article class="chamfer-card chamfer-top-right reveal delay-2">
+          <div class="card-inner">
+            <div class="card-num-row">
+              <span class="card-big-num font-serif">02</span>
+            </div>
+            <div class="card-content-bottom">
+              <h3 class="card-title">Leadership &amp; Teamwork</h3>
+              <p class="card-desc">
+                Develop leadership, analytical thinking, and youth mentorship through grassroots workshops, bootcamps, and real-world projects.
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 03: Top-Left Chamfer -->
+        <article class="chamfer-card chamfer-top-left reveal delay-3">
+          <div class="card-inner">
+            <div class="card-num-row">
+              <span class="card-big-num font-serif">03</span>
+            </div>
+            <div class="card-content-bottom">
+              <h3 class="card-title">Ethical Tech Collaboration</h3>
+              <p class="card-desc">
+                Unite young innovators across Nepal for scientific collaboration, fostering an open-source, ethical, and inclusive culture.
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 04: Top-Right Chamfer -->
+        <article class="chamfer-card chamfer-top-right reveal delay-4">
+          <div class="card-inner">
+            <div class="card-num-row">
+              <span class="card-big-num font-serif">04</span>
+            </div>
+            <div class="card-content-bottom">
+              <h3 class="card-title">Global Arena Competitions</h3>
+              <p class="card-desc">
+                Build combat, soccer, and autonomous robotics to actively represent Nepal on national and international championship stages.
+              </p>
+            </div>
+          </div>
+        </article>
+      </div>
+
+    </div>
   </section>
 
   <!-- Programs & Initiatives -->
@@ -692,6 +763,151 @@
     <div style="text-align: center; margin-top: 3rem">
       <a href="programs.html" class="btn btn-primary" style="padding: 0.8rem 2rem; border-radius: 30px">Explore All
         Programs &amp; Initiatives</a>
+    </div>
+  </section>
+
+  <!-- Testimonials Section (Directly Matching Reference: Centered Header + Chamfered Card + Slider Arrows) -->
+  <section id="testimonials" class="testimonials-showcase-section" aria-label="Community Testimonials">
+    <div class="container testimonials-container">
+      
+      <!-- Centered Section Header -->
+      <div class="testi-header-center reveal">
+        <div class="testi-eyebrow">
+          <span class="eyebrow-square" aria-hidden="true"></span>
+          <span>Testimonials</span>
+        </div>
+        <h2 class="testi-main-title font-serif">
+          What Our <span class="text-gradient-crimson">Community Says</span>
+        </h2>
+        <p class="testi-subtitle">
+          We're proud to empower students, mentors, and partner schools across Nepal. Here's what they have to say about working with our team and the results we deliver.
+        </p>
+      </div>
+
+      <!-- Slider Wrapper (Card Flanked by Prev / Next Navigation Buttons) -->
+      <div class="testi-slider-wrapper reveal delay-1">
+        <!-- Prev Arrow Button -->
+        <button class="testi-nav-btn prev" id="testiPrevBtn" aria-label="Previous Testimonial" title="Previous Testimonial">
+          <i class="fa-solid fa-arrow-left"></i>
+        </button>
+
+        <!-- Main Chamfered Showcase Card -->
+        <div class="testi-showcase-card">
+          <!-- Slide Track -->
+          <div class="testi-slides-track" id="testiTrack">
+            
+            <!-- Slide 1 -->
+            <div class="testi-slide active">
+              <div class="testi-card-inner">
+                <!-- Left: Chamfered Photo Frame -->
+                <div class="testi-photo-col">
+                  <div class="testi-photo-frame">
+                    <img src="assets/vice preseident.png" 
+                         alt="Aayush Sharma - Robotics Participant and Team Lead" 
+                         loading="lazy" decoding="async" />
+                  </div>
+                </div>
+
+                <!-- Right: Content & Review -->
+                <div class="testi-content-col">
+                  <div class="testi-stars" aria-label="Rating: 5 out of 5 stars">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star-half-stroke"></i>
+                  </div>
+                  <blockquote class="testi-quote">
+                    &ldquo;From the first grassroots workshop to the national championship arena, the RoboYuwa team exceeded our expectations. They were dedicated, transparent, and truly committed to hands-on hardware training. Our autonomous robot was completed and competition-ready on time.&rdquo;
+                  </blockquote>
+                  <div class="testi-author-meta">
+                    <h3 class="testi-author-name font-serif">Aayush Sharma</h3>
+                    <span class="testi-author-role">Robotics Participant &amp; Combat Bot Lead</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="testi-slide">
+              <div class="testi-card-inner">
+                <!-- Left: Chamfered Photo Frame -->
+                <div class="testi-photo-col">
+                  <div class="testi-photo-frame">
+                    <img src="assets/advsior.png" 
+                         alt="Sneha Shrestha - STEM Workshop Coordinator" 
+                         loading="lazy" decoding="async" />
+                  </div>
+                </div>
+
+                <!-- Right: Content & Review -->
+                <div class="testi-content-col">
+                  <div class="testi-stars" aria-label="Rating: 5 out of 5 stars">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                  </div>
+                  <blockquote class="testi-quote">
+                    &ldquo;RoboYuwa's research-first mentorship completely transformed how our high school approached robotics. Students who had never touched a microcontroller before built functional line-followers and sensor modules within weeks.&rdquo;
+                  </blockquote>
+                  <div class="testi-author-meta">
+                    <h3 class="testi-author-name font-serif">Sneha Shrestha</h3>
+                    <span class="testi-author-role">STEM Educator &amp; Workshop Coordinator</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="testi-slide">
+              <div class="testi-card-inner">
+                <!-- Left: Chamfered Photo Frame -->
+                <div class="testi-photo-col">
+                  <div class="testi-photo-frame">
+                    <img src="assets/jitendra adivisor.png" 
+                         alt="Er. Jitendra Kandel - Senior Technical Advisor" 
+                         loading="lazy" decoding="async" />
+                  </div>
+                </div>
+
+                <!-- Right: Content & Review -->
+                <div class="testi-content-col">
+                  <div class="testi-stars" aria-label="Rating: 5 out of 5 stars">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                  </div>
+                  <blockquote class="testi-quote">
+                    &ldquo;What sets RoboYuwa apart is their relentless focus on engineering integrity and youth empowerment. They are cultivating the next generation of engineers who understand both mechanical rigor and community impact.&rdquo;
+                  </blockquote>
+                  <div class="testi-author-meta">
+                    <h3 class="testi-author-name font-serif">Er. Jitendra Kandel</h3>
+                    <span class="testi-author-role">Senior Technical Advisor &amp; Industry Mentor</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Next Arrow Button -->
+        <button class="testi-nav-btn next" id="testiNextBtn" aria-label="Next Testimonial" title="Next Testimonial">
+          <i class="fa-solid fa-arrow-right"></i>
+        </button>
+      </div>
+
+      <!-- Slide Indicator Dots -->
+      <div class="testi-dots" id="testiDots" aria-label="Slide navigation">
+        <button class="testi-dot active" data-index="0" aria-label="Go to slide 1"></button>
+        <button class="testi-dot" data-index="1" aria-label="Go to slide 2"></button>
+        <button class="testi-dot" data-index="2" aria-label="Go to slide 3"></button>
+      </div>
+
     </div>
   </section>
 

@@ -1353,10 +1353,393 @@ strong {
 }
 
 /* ==========================================================================
+   Landing Page: About Showcase Section (4-Photo Collage + Stats Ribbon Reference)
+   ========================================================================== */
+
+.about-showcase-section {
+    position: relative;
+    width: 100%;
+    padding: clamp(5rem, 8.5vh, 7rem) 0;
+    background: #FFFFFF;
+    overflow: hidden;
+}
+
+.about-showcase-container {
+    width: 100%;
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+/* -------------------------------------------------------------
+   Top Row: Main Grid (Left 4-Photo Collage, Right Content & Features)
+   ------------------------------------------------------------- */
+.about-showcase-main {
+    display: grid;
+    grid-template-columns: 1.02fr 1.08fr;
+    align-items: center;
+    gap: clamp(2.5rem, 5vw, 5.5rem);
+}
+
+/* -------------------------------------------------------------
+   Left Column: 4-Photo Asymmetric Collage Grid
+   ------------------------------------------------------------- */
+.about-collage-col {
+    position: relative;
+    width: 100%;
+}
+
+.about-collage-grid {
+    display: grid;
+    grid-template-columns: 0.92fr 1.28fr;
+    gap: 16px;
+    align-items: stretch;
+    width: 100%;
+    max-width: 530px;
+    margin: 0 auto;
+}
+
+.collage-subcol {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.collage-card {
+    position: relative;
+    border-radius: 18px;
+    overflow: hidden;
+    background: #12141A;
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.07);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+}
+
+.collage-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.14);
+}
+
+.collage-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.collage-card:hover img {
+    transform: scale(1.06);
+}
+
+/* Specific heights matching the reference image asymmetry */
+.card-top-left {
+    height: 235px;
+}
+
+.card-top-left img {
+    object-position: center 20%;
+}
+
+.card-bottom-left {
+    height: 175px;
+}
+
+.card-bottom-left img {
+    object-position: center 25%;
+}
+
+.card-top-right {
+    height: 185px;
+}
+
+.card-top-right img {
+    object-position: center 30%;
+}
+
+.card-bottom-right {
+    height: 225px;
+}
+
+.card-bottom-right img {
+    object-position: center 25%;
+}
+
+/* -------------------------------------------------------------
+   Right Column: Headline, Narrative Copy, Dual Features, & CTA
+   ------------------------------------------------------------- */
+.about-narrative-col {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Bold Headline (Matching Hero Section Playfair Display Serif Typography) */
+.about-showcase-title {
+    font-family: var(--font-serif);
+    font-size: clamp(2.2rem, 3.2vw, 3.15rem);
+    line-height: 1.18;
+    font-weight: 700;
+    color: #101217;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.25rem;
+}
+
+/* Narrative Body */
+.about-showcase-desc {
+    font-size: clamp(0.98rem, 1.05vw, 1.06rem);
+    line-height: 1.72;
+    color: #525968;
+    margin-bottom: 2rem;
+    max-width: 580px;
+}
+
+.about-showcase-desc strong {
+    color: #101217;
+    font-weight: 700;
+}
+
+/* Dual Features Grid (Reference 2 Column side-by-side with line icons) */
+.about-dual-features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.85rem;
+    margin-bottom: 2.25rem;
+}
+
+.dual-feature-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+}
+
+.feature-icon-box {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: rgba(229, 37, 37, 0.08);
+    border: 1.5px solid rgba(229, 37, 37, 0.18);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.35rem;
+    color: var(--ry-crimson);
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+}
+
+.dual-feature-item:hover .feature-icon-box {
+    background: var(--ry-crimson);
+    color: #FFFFFF;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(229, 37, 37, 0.28);
+}
+
+.feature-content {
+    flex: 1;
+}
+
+.feature-title {
+    font-size: 1.08rem;
+    font-weight: 700;
+    color: #101217;
+    margin-bottom: 0.35rem;
+    letter-spacing: -0.2px;
+}
+
+.feature-desc {
+    font-size: 0.86rem;
+    line-height: 1.55;
+    color: #6D7586;
+    margin-bottom: 0;
+}
+
+/* Rounded Pill Button with Arrow (Reference "Contact Us →") */
+.about-showcase-action {
+    display: flex;
+    align-items: center;
+}
+
+.btn-ref-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0.88rem 2.2rem;
+    border-radius: 9999px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    letter-spacing: 0.4px;
+    color: #FFFFFF !important;
+    background: linear-gradient(135deg, #10141E 0%, #1D2433 100%);
+    box-shadow: 0 8px 22px rgba(16, 20, 30, 0.25);
+    border: none;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-ref-pill i {
+    font-size: 0.88rem;
+    transition: transform 0.25s ease;
+}
+
+.btn-ref-pill:hover {
+    background: linear-gradient(135deg, #E52525 0%, #B81414 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 28px rgba(229, 37, 37, 0.38);
+}
+
+.btn-ref-pill:hover i {
+    transform: translateX(4px);
+}
+
+/* -------------------------------------------------------------
+   Bottom Row: Floating 4-Metric Stats Ribbon (Reference Light Card)
+   ------------------------------------------------------------- */
+.about-stats-ribbon {
+    margin-top: clamp(3.2rem, 5.5vh, 4.8rem);
+    background: #F6F8FA;
+    border: 1px solid rgba(34, 38, 49, 0.08);
+    border-radius: 20px;
+    padding: clamp(1.8rem, 3vw, 2.4rem) clamp(2rem, 4vw, 3.5rem);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    align-items: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.about-stats-ribbon:hover {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+}
+
+.stat-ribbon-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: transform 0.25s ease;
+}
+
+.stat-ribbon-item:hover {
+    transform: translateY(-2px);
+}
+
+.ribbon-icon {
+    font-size: 1.85rem;
+    color: #4A5A72;
+    flex-shrink: 0;
+    transition: color 0.3s ease, transform 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.stat-ribbon-item:hover .ribbon-icon {
+    color: var(--ry-crimson);
+    transform: scale(1.12);
+}
+
+.ribbon-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.ribbon-number {
+    display: block;
+    font-size: clamp(1.4rem, 1.85vw, 1.8rem);
+    font-weight: 800;
+    color: #101217;
+    line-height: 1.15;
+    letter-spacing: -0.5px;
+}
+
+.ribbon-label {
+    display: block;
+    font-size: 0.82rem;
+    color: #6D7586;
+    font-weight: 600;
+    margin-top: 3px;
+}
+
+/* -------------------------------------------------------------
+   Responsive Breakpoints
+   ------------------------------------------------------------- */
+@media (max-width: 991px) {
+    .about-showcase-main {
+        grid-template-columns: 1fr;
+        gap: 3.5rem;
+    }
+
+    .about-collage-grid {
+        max-width: 480px;
+    }
+
+    .about-narrative-col {
+        text-align: left;
+    }
+
+    .about-showcase-desc {
+        max-width: 100%;
+    }
+
+    .about-stats-ribbon {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem 1.5rem;
+        padding: 2rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .about-showcase-section {
+        padding: 3.8rem 0;
+    }
+
+    .about-showcase-title {
+        font-size: 1.85rem;
+    }
+
+    .about-collage-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+    }
+
+    .card-top-left {
+        height: 170px;
+    }
+
+    .card-bottom-left {
+        height: 130px;
+    }
+
+    .card-top-right {
+        height: 140px;
+    }
+
+    .card-bottom-right {
+        height: 160px;
+    }
+
+    .about-dual-features {
+        grid-template-columns: 1fr;
+        gap: 1.35rem;
+    }
+
+    .about-stats-ribbon {
+        grid-template-columns: 1fr;
+        gap: 1.4rem;
+        padding: 1.5rem;
+    }
+
+    .btn-ref-pill {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* ==========================================================================
    Who We Are / About Section — Full Viewport Split Screen (50/50 Sharp Edges)
-   Left: 50% Full-Bleed Image Frame with Technical HUD Accents
-   Right: 50% Content Frame with Precision Sharp Geometry
-   Fits Exactly to One Screen Frame (100vh on Desktop)
+   (Maintained for About Us page and subpages)
    ========================================================================== */
 
 .about-split-screen {
@@ -1421,14 +1804,14 @@ strong {
 .about-split-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, 
-        rgba(8, 9, 12, 0.48) 0%, 
-        transparent 35%, 
-        rgba(8, 9, 12, 0.25) 60%, 
-        rgba(8, 9, 12, 0.85) 100%),
-        linear-gradient(90deg, 
-        transparent 65%, 
-        rgba(8, 9, 12, 0.55) 100%);
+    background: linear-gradient(180deg,
+            rgba(8, 9, 12, 0.48) 0%,
+            transparent 35%,
+            rgba(8, 9, 12, 0.25) 60%,
+            rgba(8, 9, 12, 0.85) 100%),
+        linear-gradient(90deg,
+            transparent 65%,
+            rgba(8, 9, 12, 0.55) 100%);
     pointer-events: none;
     z-index: 2;
 }
@@ -1746,9 +2129,17 @@ strong {
     transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-.about-sharp-pillar.crimson { border-left: 3px solid var(--ry-crimson); }
-.about-sharp-pillar.amber   { border-left: 3px solid var(--ry-amber); }
-.about-sharp-pillar.sage    { border-left: 3px solid var(--ry-sage); }
+.about-sharp-pillar.crimson {
+    border-left: 3px solid var(--ry-crimson);
+}
+
+.about-sharp-pillar.amber {
+    border-left: 3px solid var(--ry-amber);
+}
+
+.about-sharp-pillar.sage {
+    border-left: 3px solid var(--ry-sage);
+}
 
 .about-sharp-pillar:hover {
     transform: translateX(3px);
@@ -1886,9 +2277,12 @@ strong {
 }
 
 @keyframes pulseGlowAmber {
-    0%, 100% {
+
+    0%,
+    100% {
         box-shadow: 0 0 0 0 rgba(229, 152, 25, 0.55);
     }
+
     50% {
         box-shadow: 0 0 0 6px rgba(229, 152, 25, 0);
     }
@@ -1914,10 +2308,25 @@ strong {
         padding: 3rem 1.5rem;
     }
 
-    .sharp-hud-corner.top-left { top: 16px; left: 16px; }
-    .sharp-hud-corner.top-right { top: 16px; right: 16px; }
-    .sharp-hud-corner.bottom-left { bottom: 16px; left: 16px; }
-    .sharp-hud-corner.bottom-right { bottom: 16px; right: 16px; }
+    .sharp-hud-corner.top-left {
+        top: 16px;
+        left: 16px;
+    }
+
+    .sharp-hud-corner.top-right {
+        top: 16px;
+        right: 16px;
+    }
+
+    .sharp-hud-corner.bottom-left {
+        bottom: 16px;
+        left: 16px;
+    }
+
+    .sharp-hud-corner.bottom-right {
+        bottom: 16px;
+        right: 16px;
+    }
 
     .about-sharp-tag {
         top: 20px;
@@ -1985,7 +2394,227 @@ strong {
     margin-bottom: 1rem;
 }
 
-/* Objectives */
+/* ==========================================================================
+   Key Objectives Section (Architectural Chamfered Cards Reference Design)
+   ========================================================================== */
+
+.objectives-showcase-section {
+    position: relative;
+    width: 100%;
+    padding: clamp(5.5rem, 9vh, 7.5rem) 0;
+    background: #F6F8FA;
+    overflow: hidden;
+}
+
+.objectives-showcase-container {
+    width: 100%;
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+/* -------------------------------------------------------------
+   Top Split Header (Left Eyebrow & Title, Right Narrative Lead)
+   ------------------------------------------------------------- */
+.obj-header-row {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: clamp(2rem, 5vw, 4.5rem);
+    align-items: flex-end;
+    margin-bottom: clamp(3.2rem, 5.5vh, 4.5rem);
+}
+
+.obj-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    font-family: var(--font-sans);
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 1.6px;
+    color: #525968;
+    text-transform: uppercase;
+    margin-bottom: 0.85rem;
+}
+
+.eyebrow-square {
+    width: 11px;
+    height: 11px;
+    border-radius: 2px;
+    background: linear-gradient(135deg, var(--ry-amber) 0%, var(--ry-amber-hover) 100%);
+    box-shadow: 0 2px 6px rgba(229, 152, 25, 0.4);
+    display: inline-block;
+}
+
+.obj-main-title {
+    font-size: clamp(2.1rem, 3.2vw, 3.1rem);
+    font-weight: 700;
+    color: #101217;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    margin-bottom: 0;
+}
+
+.obj-header-lead {
+    font-size: clamp(0.98rem, 1.05vw, 1.08rem);
+    line-height: 1.75;
+    color: #505767;
+    margin-bottom: 0.5rem;
+}
+
+/* -------------------------------------------------------------
+   4 Architectural Chamfered Cards Grid (Alternating Chamfer Corners)
+   ------------------------------------------------------------- */
+.objectives-chamfer-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: clamp(1rem, 1.6vw, 1.5rem);
+}
+
+/* Base Chamfer Card Shell */
+.chamfer-card {
+    position: relative;
+    background: rgba(34, 38, 49, 0.12);
+    padding: 1.5px;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), background 0.4s ease, filter 0.4s ease;
+    filter: drop-shadow(0 4px 18px rgba(0, 0, 0, 0.04));
+}
+
+/* Card 01 & 03: Chamfer Top-Left Corner (45-degree angled cut) */
+.chamfer-card.chamfer-top-left {
+    clip-path: polygon(36px 0%, 100% 0%, 100% calc(100% - 16px), calc(100% - 16px) 100%, 0% 100%, 0% 36px);
+}
+
+/* Card 02 & 04: Chamfer Top-Right Corner (45-degree angled cut) */
+.chamfer-card.chamfer-top-right {
+    clip-path: polygon(0% 0%, calc(100% - 36px) 0%, 100% 36px, 100% calc(100% - 16px), calc(100% - 16px) 100%, 0% 100%);
+}
+
+.chamfer-card:hover {
+    transform: translateY(-8px);
+    background: linear-gradient(135deg, var(--ry-amber) 0%, var(--ry-crimson) 100%);
+    filter: drop-shadow(0 18px 38px rgba(229, 152, 25, 0.18));
+}
+
+/* Card Interior Content Container */
+.chamfer-card .card-inner {
+    position: relative;
+    background: #FFFFFF;
+    width: 100%;
+    height: 100%;
+    padding: 2.2rem 1.75rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 310px;
+    clip-path: inherit;
+    transition: background 0.35s ease;
+}
+
+.chamfer-card:hover .card-inner {
+    background: #FFFFFF;
+}
+
+/* Top Numeral Row (Reference: Massive light numerals in top right) */
+.card-num-row {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+.card-big-num {
+    display: block;
+    font-size: clamp(3.4rem, 4.2vw, 4.3rem);
+    font-weight: 800;
+    line-height: 0.95;
+    letter-spacing: -2.5px;
+    color: #D7D0C7;
+    transition: color 0.35s ease, transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.chamfer-card:hover .card-big-num {
+    color: var(--ry-amber);
+    transform: scale(1.08) translateY(-2px);
+}
+
+/* Bottom Card Narrative */
+.card-content-bottom {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-title {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: #101217;
+    margin-bottom: 0.65rem;
+    line-height: 1.3;
+    letter-spacing: -0.3px;
+    transition: color 0.3s ease;
+}
+
+.chamfer-card:hover .card-title {
+    color: var(--ry-crimson-dark, #A31010);
+}
+
+.card-desc {
+    font-size: 0.88rem;
+    line-height: 1.65;
+    color: #5F6777;
+    margin-bottom: 0;
+}
+
+/* -------------------------------------------------------------
+   Responsive Breakpoints for Key Objectives
+   ------------------------------------------------------------- */
+@media (max-width: 1024px) {
+    .objectives-chamfer-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+
+    .chamfer-card .card-inner {
+        min-height: 270px;
+    }
+}
+
+@media (max-width: 768px) {
+    .obj-header-row {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .obj-header-lead {
+        margin-bottom: 0;
+    }
+}
+
+@media (max-width: 576px) {
+    .objectives-showcase-section {
+        padding: 4rem 0;
+    }
+
+    .obj-main-title {
+        font-size: 1.85rem;
+    }
+
+    .objectives-chamfer-grid {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+
+    .chamfer-card .card-inner {
+        padding: 1.8rem 1.4rem;
+        min-height: auto;
+    }
+
+    .card-big-num {
+        font-size: 3.2rem;
+    }
+}
+
+/* Objectives (Legacy - Maintained for About Page) */
 .objectives-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -2168,7 +2797,8 @@ body:has(.contact-exec-wrapper) .header {
     color: #FFFFFF;
     min-height: 100vh;
     overflow: hidden;
-    padding-top: 180px; /* Generous clearance preventing any header overlap */
+    padding-top: 180px;
+    /* Generous clearance preventing any header overlap */
     padding-bottom: 6.5rem;
 }
 
@@ -2196,12 +2826,11 @@ body:has(.contact-exec-wrapper) .header {
 .contact-bg-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, 
-        rgba(8, 9, 12, 0.88) 0%, 
-        rgba(8, 9, 12, 0.58) 35%, 
-        rgba(8, 9, 12, 0.72) 70%, 
-        rgba(8, 9, 12, 0.94) 100%
-    );
+    background: linear-gradient(180deg,
+            rgba(8, 9, 12, 0.88) 0%,
+            rgba(8, 9, 12, 0.58) 35%,
+            rgba(8, 9, 12, 0.72) 70%,
+            rgba(8, 9, 12, 0.94) 100%);
 }
 
 /* Background Ambient Glow & Yellow/Amber Orbital Accent from Reference */
@@ -2230,8 +2859,13 @@ body:has(.contact-exec-wrapper) .header {
 }
 
 @keyframes rotateOrbit {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 .contact-exec-container {
@@ -2640,67 +3274,144 @@ body.light-theme {
     color: #0F172A;
 }
 
-/* Light Header */
-body.light-theme.contact-page .header,
-body.light-theme .header.scrolled {
+/* Light Header (Scoped strictly to Contact page) */
+body.light-theme.contact-page .header {
     background-color: rgba(255, 255, 255, 0.94);
     backdrop-filter: blur(16px);
     border-bottom: 1px solid rgba(0, 0, 0, 0.08);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
 }
 
-body.light-theme .top-bar {
+body.light-theme.contact-page .top-bar {
     background-color: rgba(248, 250, 252, 0.95);
     border-bottom: 1px solid rgba(0, 0, 0, 0.06);
     color: #475569;
 }
 
-body.light-theme .top-info .info-item {
+body.light-theme.contact-page .top-info .info-item {
     color: #475569;
 }
 
-body.light-theme .top-info .info-item:hover {
+body.light-theme.contact-page .top-info .info-item:hover {
     color: var(--ry-amber);
 }
 
-body.light-theme .top-social-link {
+body.light-theme.contact-page .top-social-link {
     color: #64748B;
 }
 
-body.light-theme .top-social-link:hover {
+body.light-theme.contact-page .top-social-link:hover {
     color: #0F172A;
     background: rgba(0, 0, 0, 0.08);
 }
 
-body.light-theme .brand-name {
+body.light-theme.contact-page .brand-name {
     color: #0F172A !important;
 }
 
-body.light-theme .brand-tagline {
+body.light-theme.contact-page .brand-tagline {
     color: #64748B;
 }
 
-body.light-theme .nav-links a.nav-item {
+body.light-theme.contact-page .nav-links a.nav-item {
     color: #334155;
 }
 
-body.light-theme .nav-links a.nav-item:hover,
-body.light-theme .nav-links a.nav-item.active {
+body.light-theme.contact-page .nav-links a.nav-item:hover,
+body.light-theme.contact-page .nav-links a.nav-item.active {
     color: var(--ry-amber);
 }
 
-body.light-theme .nav-search-btn,
-body.light-theme .theme-toggle-btn {
+body.light-theme.contact-page .nav-search-btn,
+body.light-theme.contact-page .theme-toggle-btn {
     background: rgba(0, 0, 0, 0.06);
     border-color: rgba(0, 0, 0, 0.14);
     color: #1E293B;
 }
 
-body.light-theme .nav-search-btn:hover,
-body.light-theme .theme-toggle-btn:hover {
+body.light-theme.contact-page .nav-search-btn:hover,
+body.light-theme.contact-page .theme-toggle-btn:hover {
     background: rgba(0, 0, 0, 0.1);
     border-color: rgba(0, 0, 0, 0.25);
     color: var(--ry-amber);
+}
+
+/* Guarantee Header & Top Bar over the Hero Section ALWAYS remain original high-contrast dark with white text */
+body:has(.hero) .top-bar,
+body.light-theme:has(.hero) .top-bar {
+    background-color: rgba(10, 10, 10, 0.75) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+    color: rgba(255, 255, 255, 0.9) !important;
+}
+
+body:has(.hero) .top-info .info-item,
+body.light-theme:has(.hero) .top-info .info-item {
+    color: rgba(255, 255, 255, 0.85) !important;
+}
+
+body:has(.hero) .top-info .info-item i,
+body.light-theme:has(.hero) .top-info .info-item i {
+    color: var(--ry-amber) !important;
+}
+
+body:has(.hero) .top-social-link,
+body.light-theme:has(.hero) .top-social-link {
+    color: #FFFFFF !important;
+    background: transparent !important;
+}
+
+body:has(.hero) .top-social-link:hover,
+body.light-theme:has(.hero) .top-social-link:hover {
+    color: var(--ry-amber) !important;
+    background: rgba(255, 255, 255, 0.15) !important;
+}
+
+body:has(.hero) .navbar,
+body.light-theme:has(.hero) .navbar {
+    background-color: transparent !important;
+}
+
+body:has(.hero) .header.scrolled,
+body.light-theme:has(.hero) .header.scrolled {
+    background-color: rgba(12, 12, 14, 0.94) !important;
+    backdrop-filter: blur(16px) !important;
+    border-bottom: 1px solid #222631 !important;
+}
+
+body:has(.hero) .brand-name,
+body.light-theme:has(.hero) .brand-name {
+    color: #FFFFFF !important;
+}
+
+body:has(.hero) .brand-tagline,
+body.light-theme:has(.hero) .brand-tagline {
+    color: rgba(255, 255, 255, 0.7) !important;
+}
+
+body:has(.hero) .nav-links a.nav-item,
+body.light-theme:has(.hero) .nav-links a.nav-item {
+    color: rgba(255, 255, 255, 0.92) !important;
+}
+
+body:has(.hero) .nav-links a.nav-item:hover,
+body:has(.hero) .nav-links a.nav-item.active,
+body.light-theme:has(.hero) .nav-links a.nav-item:hover,
+body.light-theme:has(.hero) .nav-links a.nav-item.active {
+    color: var(--ry-amber) !important;
+}
+
+body:has(.hero) .nav-search-btn,
+body.light-theme:has(.hero) .nav-search-btn {
+    color: #FFFFFF !important;
+    border-color: rgba(255, 255, 255, 0.2) !important;
+    background: rgba(255, 255, 255, 0.08) !important;
+}
+
+body:has(.hero) .nav-search-btn:hover,
+body.light-theme:has(.hero) .nav-search-btn:hover {
+    background: rgba(255, 255, 255, 0.25) !important;
+    border-color: rgba(255, 255, 255, 0.6) !important;
+    color: #FFFFFF !important;
 }
 
 /* Light Theme Toggle Icon Switch */
@@ -2734,12 +3445,11 @@ body.light-theme .contact-bg-img {
 }
 
 body.light-theme .contact-bg-overlay {
-    background: linear-gradient(180deg, 
-        rgba(248, 250, 252, 0.88) 0%, 
-        rgba(248, 250, 252, 0.45) 30%, 
-        rgba(248, 250, 252, 0.68) 65%, 
-        rgba(248, 250, 252, 0.96) 100%
-    );
+    background: linear-gradient(180deg,
+            rgba(248, 250, 252, 0.88) 0%,
+            rgba(248, 250, 252, 0.45) 30%,
+            rgba(248, 250, 252, 0.68) 65%,
+            rgba(248, 250, 252, 0.96) 100%);
 }
 
 body.light-theme .contact-orbit-deco {
@@ -2872,14 +3582,13 @@ body.light-theme .exec-submit-btn:hover {
 .footer-top-accent {
     width: 100%;
     height: 3px;
-    background: linear-gradient(90deg, 
-        var(--ry-crimson) 0%, 
-        var(--ry-crimson) 33.333%, 
-        var(--ry-amber) 33.333%, 
-        var(--ry-amber) 66.666%, 
-        var(--ry-sage) 66.666%, 
-        var(--ry-sage) 100%
-    );
+    background: linear-gradient(90deg,
+            var(--ry-crimson) 0%,
+            var(--ry-crimson) 33.333%,
+            var(--ry-amber) 33.333%,
+            var(--ry-amber) 66.666%,
+            var(--ry-sage) 66.666%,
+            var(--ry-sage) 100%);
     box-shadow: 0 1px 8px rgba(229, 37, 37, 0.25);
     z-index: 10;
 }
@@ -3405,6 +4114,332 @@ body.light-theme .exec-submit-btn:hover {
         animation: none !important;
         transition: none !important;
         scroll-behavior: auto !important;
+    }
+}
+
+/* ==========================================================================
+   Testimonials Section (Chamfered Showcase Card Reference Design)
+   ========================================================================== */
+
+.testimonials-showcase-section {
+    position: relative;
+    width: 100%;
+    padding: clamp(5.5rem, 9vh, 7.5rem) 0;
+    background: #F8F9FB;
+    overflow: hidden;
+}
+
+.testimonials-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+/* -------------------------------------------------------------
+   Centered Header
+   ------------------------------------------------------------- */
+.testi-header-center {
+    text-align: center;
+    max-width: 680px;
+    margin: 0 auto clamp(3.2rem, 5.5vh, 4.5rem);
+}
+
+.testi-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    font-family: var(--font-sans);
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 1.6px;
+    color: #525968;
+    text-transform: uppercase;
+    margin-bottom: 0.85rem;
+}
+
+.testi-main-title {
+    font-size: clamp(2.2rem, 3.4vw, 3.25rem);
+    font-weight: 700;
+    color: #101217;
+    letter-spacing: -0.02em;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.testi-subtitle {
+    font-size: clamp(0.98rem, 1.05vw, 1.06rem);
+    line-height: 1.72;
+    color: #64748B;
+    margin-bottom: 0;
+}
+
+/* -------------------------------------------------------------
+   Slider Wrapper & Navigation
+   ------------------------------------------------------------- */
+.testi-slider-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(1rem, 2.5vw, 2.8rem);
+    position: relative;
+    max-width: 1080px;
+    margin: 0 auto;
+}
+
+.testi-nav-btn {
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    cursor: pointer;
+    flex-shrink: 0;
+    outline: none;
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.25s ease, box-shadow 0.25s ease;
+    z-index: 5;
+}
+
+/* Left button: Light warm-sand (Reference) */
+.testi-nav-btn.prev {
+    background-color: #EFECE6;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    color: #101217;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+}
+
+.testi-nav-btn.prev:hover {
+    background-color: #E5E0D7;
+    transform: scale(1.08);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Right button: Warm Amber (Reference) */
+.testi-nav-btn.next {
+    background: linear-gradient(135deg, #F8CD96 0%, #E59819 100%);
+    border: 1px solid rgba(229, 152, 25, 0.4);
+    color: #101217;
+    box-shadow: 0 4px 18px rgba(229, 152, 25, 0.3);
+}
+
+.testi-nav-btn.next:hover {
+    background: linear-gradient(135deg, #FFB338 0%, #F5A623 100%);
+    transform: scale(1.08);
+    box-shadow: 0 8px 24px rgba(229, 152, 25, 0.45);
+}
+
+/* -------------------------------------------------------------
+   Main Chamfered Showcase Card
+   ------------------------------------------------------------- */
+.testi-showcase-card {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    background: rgba(34, 38, 49, 0.1);
+    padding: 1.5px;
+    border-radius: 0 28px 28px 28px;
+    /* Top-left angled cut corner (Chamfer) */
+    clip-path: polygon(55px 0%, 100% 0%, 100% 100%, 0% 100%, 0% 55px);
+    filter: drop-shadow(0 10px 32px rgba(0, 0, 0, 0.06));
+    transition: filter 0.35s ease, background-color 0.35s ease;
+}
+
+.testi-showcase-card:hover {
+    background: rgba(229, 152, 25, 0.35);
+    filter: drop-shadow(0 18px 44px rgba(229, 152, 25, 0.14));
+}
+
+.testi-slides-track {
+    position: relative;
+    width: 100%;
+    clip-path: inherit;
+    border-radius: inherit;
+}
+
+.testi-slide {
+    display: none;
+    opacity: 0;
+}
+
+.testi-slide.active {
+    display: block;
+    animation: testiFadeIn 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes testiFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.testi-card-inner {
+    background: #FFFFFF;
+    padding: clamp(2.2rem, 4vw, 3.6rem) clamp(2rem, 3.8vw, 3.4rem);
+    display: grid;
+    grid-template-columns: 0.88fr 1.12fr;
+    gap: clamp(2rem, 3.8vw, 3.4rem);
+    align-items: center;
+    min-height: 380px;
+    clip-path: inherit;
+    border-radius: inherit;
+}
+
+/* -------------------------------------------------------------
+   Left Column: Chamfered Photo Frame
+   ------------------------------------------------------------- */
+.testi-photo-col {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.testi-photo-frame {
+    position: relative;
+    width: 100%;
+    max-width: 320px;
+    height: 320px;
+    /* Matching top-left cut corner */
+    clip-path: polygon(42px 0%, 100% 0%, 100% 100%, 0% 100%, 0% 42px);
+    border-radius: 0 20px 20px 20px;
+    background: #E8D3BA;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.testi-photo-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+    transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.testi-card-inner:hover .testi-photo-frame img {
+    transform: scale(1.05);
+}
+
+/* -------------------------------------------------------------
+   Right Column: Content & Review
+   ------------------------------------------------------------- */
+.testi-content-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.testi-stars {
+    display: flex;
+    gap: 5px;
+    font-size: 1.3rem;
+    color: var(--ry-amber);
+    margin-bottom: 1.35rem;
+}
+
+.testi-quote {
+    font-size: clamp(1.02rem, 1.18vw, 1.18rem);
+    line-height: 1.72;
+    color: #101217;
+    font-weight: 500;
+    margin-bottom: 1.85rem;
+    font-style: normal;
+}
+
+.testi-author-meta {
+    display: flex;
+    flex-direction: column;
+}
+
+.testi-author-name {
+    font-size: 1.48rem;
+    font-weight: 700;
+    color: #101217;
+    margin-bottom: 0.25rem;
+    letter-spacing: -0.3px;
+}
+
+.testi-author-role {
+    font-size: 0.88rem;
+    color: #6D7586;
+    font-weight: 500;
+}
+
+/* -------------------------------------------------------------
+   Slide Indicator Dots
+   ------------------------------------------------------------- */
+.testi-dots {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    margin-top: 2rem;
+}
+
+.testi-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #D6CEC5;
+    border: none;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    padding: 0;
+}
+
+.testi-dot.active {
+    width: 28px;
+    border-radius: 12px;
+    background-color: var(--ry-amber);
+}
+
+/* -------------------------------------------------------------
+   Responsive Breakpoints for Testimonials
+   ------------------------------------------------------------- */
+@media (max-width: 860px) {
+    .testi-slider-wrapper {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .testi-nav-btn {
+        display: none;
+    }
+
+    .testi-card-inner {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 2.2rem 1.8rem;
+    }
+
+    .testi-photo-frame {
+        max-width: 280px;
+        height: 280px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 576px) {
+    .testimonials-showcase-section {
+        padding: 4rem 0;
+    }
+
+    .testi-main-title {
+        font-size: 1.95rem;
+    }
+
+    .testi-quote {
+        font-size: 0.98rem;
+        line-height: 1.65;
+    }
+
+    .testi-author-name {
+        font-size: 1.25rem;
     }
 }
 

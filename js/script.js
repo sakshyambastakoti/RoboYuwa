@@ -431,17 +431,126 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ==========================================================================
-    // Light / Dark Theme Toggle (Contact Page & Site)
+    // Testimonials Showcase Slider (Reference Design Controller)
+    // ==========================================================================
+    const testiSlides = document.querySelectorAll('.testi-slide');
+    const testiPrevBtn = document.getElementById('testiPrevBtn');
+    const testiNextBtn = document.getElementById('testiNextBtn');
+    const testiDots = document.querySelectorAll('.testi-dot');
+    const testiCard = document.querySelector('.testi-showcase-card');
+
+    if (testiSlides.length > 0) {
+        let currentTesti = 0;
+        let testiAutoTimer = null;
+        const testiIntervalTime = 6500; // 6.5s auto advance
+
+        function showTestimonial(index) {
+            currentTesti = (index + testiSlides.length) % testiSlides.length;
+
+            testiSlides.forEach((slide, idx) => {
+                const isActive = idx === currentTesti;
+                slide.classList.toggle('active', isActive);
+            });
+
+            testiDots.forEach((dot, idx) => {
+                dot.classList.toggle('active', idx === currentTesti);
+            });
+        }
+
+        function nextTestimonial() {
+            showTestimonial(currentTesti + 1);
+        }
+
+        function prevTestimonial() {
+            showTestimonial(currentTesti - 1);
+        }
+
+        if (testiNextBtn) {
+            testiNextBtn.addEventListener('click', () => {
+                nextTestimonial();
+                resetTestiTimer();
+            });
+        }
+
+        if (testiPrevBtn) {
+            testiPrevBtn.addEventListener('click', () => {
+                prevTestimonial();
+                resetTestiTimer();
+            });
+        }
+
+        testiDots.forEach((dot) => {
+            dot.addEventListener('click', (e) => {
+                const targetIdx = parseInt(e.currentTarget.getAttribute('data-index'), 10);
+                if (!isNaN(targetIdx)) {
+                    showTestimonial(targetIdx);
+                    resetTestiTimer();
+                }
+            });
+        });
+
+        // Touch swipe support for mobile devices
+        if (testiCard) {
+            let touchStartX = 0;
+            let touchEndX = 0;
+
+            testiCard.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+            }, { passive: true });
+
+            testiCard.addEventListener('touchend', (e) => {
+                touchEndX = e.changedTouches[0].screenX;
+                const swipeDiff = touchEndX - touchStartX;
+                if (Math.abs(swipeDiff) > 40) {
+                    if (swipeDiff < 0) {
+                        nextTestimonial();
+                    } else {
+                        prevTestimonial();
+                    }
+                    resetTestiTimer();
+                }
+            }, { passive: true });
+
+            // Pause autoplay on mouse hover
+            testiCard.addEventListener('mouseenter', () => {
+                if (testiAutoTimer) clearInterval(testiAutoTimer);
+            });
+
+            testiCard.addEventListener('mouseleave', () => {
+                startTestiTimer();
+            });
+        }
+
+        function startTestiTimer() {
+            if (testiAutoTimer) clearInterval(testiAutoTimer);
+            testiAutoTimer = setInterval(nextTestimonial, testiIntervalTime);
+        }
+
+        function resetTestiTimer() {
+            if (testiAutoTimer) clearInterval(testiAutoTimer);
+            startTestiTimer();
+        }
+
+        // Initialize autoplay
+        startTestiTimer();
+    }
+
+    // ==========================================================================
+    // Light / Dark Theme Toggle (Scoped to pages with themeToggleBtn)
     // ==========================================================================
     const themeToggleBtn = document.getElementById('themeToggleBtn');
-    try {
-        const savedTheme = localStorage.getItem('roboyuwa-theme');
-        if (savedTheme === 'light' && !document.body.classList.contains('light-theme')) {
-            document.body.classList.add('light-theme');
-        }
-    } catch (e) {}
+    
+    // Pages with hero showcase (such as index.html) always retain original dark hero branding
+    if (document.querySelector('.hero')) {
+        document.body.classList.remove('light-theme');
+    } else if (themeToggleBtn) {
+        try {
+            const savedTheme = localStorage.getItem('roboyuwa-theme');
+            if (savedTheme === 'light' && !document.body.classList.contains('light-theme')) {
+                document.body.classList.add('light-theme');
+            }
+        } catch (e) {}
 
-    if (themeToggleBtn) {
         const isCurrentlyLight = document.body.classList.contains('light-theme');
         themeToggleBtn.setAttribute('title', isCurrentlyLight ? 'Switch to Dark Mode' : 'Switch to Light Mode');
         themeToggleBtn.setAttribute('aria-label', isCurrentlyLight ? 'Switch to Dark Mode' : 'Switch to Light Mode');

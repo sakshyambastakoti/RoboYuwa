@@ -104,10 +104,11 @@
 
     <main>
         <!-- =====================================================================
-             1. HERO SECTION (Reference Image 1: Breadcrumb + Headline + Visual)
+             1. HERO SECTION & INTEGRATED MANIFESTO DECK (Fits in Single Screen Frame)
              ===================================================================== -->
         <section class="about-hero-ref" aria-label="About RoboYuwa Introduction">
-            <div class="container">
+            <div class="container about-hero-container">
+                <!-- Top Split: Headline & Narrative (Left) + Visual Showcase (Right) -->
                 <div class="about-hero-grid">
                     <!-- Left: Headline & Narrative -->
                     <div class="about-ref-left reveal">
@@ -119,7 +120,7 @@
                             <span class="breadcrumb-bracket">]</span>
                         </div>
                         <h1 class="about-ref-title font-serif">
-                            Crafting Excellence Together
+                            Crafting Excellence <span class="text-gradient-crimson">Together</span>
                         </h1>
                         <p class="about-ref-lead">
                             At RoboYuwa we believe in the power of collaboration to achieve outstanding results. With a
@@ -140,7 +141,7 @@
                         </div>
                     </div>
 
-                    <!-- Right: Large Rounded Visual + Rotating Circular Badge -->
+                    <!-- Right: Large Chamfered Visual + Rotating Circular Badge -->
                     <div class="about-ref-right reveal delay-1">
                         <div class="about-ref-visual-frame">
                             <div class="about-ref-visual-media">
@@ -167,42 +168,47 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
 
-        <!-- =====================================================================
-             2. MANIFESTO & COUNTER METRICS (Reference Image 1 - Bottom)
-             ===================================================================== -->
-        <section class="about-manifesto-section" aria-label="Our Mission Manifesto and Impact">
-            <div class="container">
-                <div class="manifesto-wrapper reveal">
-                    <p class="manifesto-statement font-serif">
-                        At RoboYuwa we are committed to revolutionizing robotics education and youth innovation in Nepal
-                        with innovative, sustainable, and cost-effective solutions. With a proven track record of
-                        delivering exceptional youth initiatives, we combine <span
-                            class="manifesto-highlight">state-of-the-art technology</span>, <span
-                            class="manifesto-faded">skilled expertise, and student-centric approaches to bring visions
-                            to life.</span>
-                    </p>
-                </div>
+                <!-- Bottom Deck: Integrated Manifesto & 4-Metric Counters -->
+                <div class="about-hero-deck reveal delay-2">
+                    <!-- Manifesto Card (Left) -->
+                    <div class="about-deck-manifesto">
+                        <div class="deck-card-inner">
+                            <div class="manifesto-pill">
+                                <span class="manifesto-pill-dot" aria-hidden="true"></span>
+                                <span>Our Commitment</span>
+                            </div>
+                            <p class="manifesto-statement font-serif">
+                                At RoboYuwa we are committed to revolutionizing robotics education and youth innovation in Nepal
+                                with innovative, sustainable, and cost-effective solutions. With a proven track record of
+                                delivering exceptional youth initiatives, we combine <span
+                                    class="manifesto-highlight">state-of-the-art technology</span>, <span
+                                    class="manifesto-faded">skilled expertise, and student-centric approaches to bring visions
+                                    to life.</span>
+                            </p>
+                        </div>
+                    </div>
 
-                <!-- 4-Column Stat Counters Row -->
-                <div class="about-stats-row reveal delay-1">
-                    <div class="about-stat-item">
-                        <div class="stat-big-num font-serif">150+</div>
-                        <div class="stat-sub-label">Complete Projects</div>
-                    </div>
-                    <div class="about-stat-item">
-                        <div class="stat-big-num font-serif">100+</div>
-                        <div class="stat-sub-label">Team Members</div>
-                    </div>
-                    <div class="about-stat-item">
-                        <div class="stat-big-num font-serif">200+</div>
-                        <div class="stat-sub-label">Client Reviews</div>
-                    </div>
-                    <div class="about-stat-item">
-                        <div class="stat-big-num font-serif">30</div>
-                        <div class="stat-sub-label">Winning Awards</div>
+                    <!-- 4-Metric Impact Counters (Right) -->
+                    <div class="about-deck-stats">
+                        <div class="deck-card-inner">
+                            <div class="about-stat-item">
+                                <div class="stat-big-num font-serif">150+</div>
+                                <div class="stat-sub-label">Complete Projects</div>
+                            </div>
+                            <div class="about-stat-item">
+                                <div class="stat-big-num font-serif">100+</div>
+                                <div class="stat-sub-label">Team Members</div>
+                            </div>
+                            <div class="about-stat-item">
+                                <div class="stat-big-num font-serif">200+</div>
+                                <div class="stat-sub-label">Client Reviews</div>
+                            </div>
+                            <div class="about-stat-item">
+                                <div class="stat-big-num font-serif">30</div>
+                                <div class="stat-sub-label">Winning Awards</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -376,11 +376,7 @@ body.dark-theme .section-pulse-divider {
     left: 0;
     width: 100%;
     z-index: 1000;
-    background-color: rgba(10, 12, 16, 0.96);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    background-color: transparent;
     transition: background-color 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
 }
 
@@ -3443,26 +3439,24 @@ body.light-theme {
 }
 
 /* ==========================================================================
-   Universal Constant Black Header & Navbar (All Pages, Light & Dark Themes)
-   The navigation bar ALWAYS remains sleek, executive black with white typography
-   and amber accents. It NEVER turns white on any page or theme.
+   Universal Constant Black Header & Navbar (All Inner Pages, Light & Dark Themes)
+   The navigation bar on all inner pages (About, Donate, Membership, Team, Contact,
+   Legal pages) ALWAYS remains sleek, executive black with white typography.
    ========================================================================== */
-.header,
-header.header,
-body .header,
-body.light-theme .header,
-body.dark-theme .header,
+body:not(.home-page):not(:has(.hero)) .header,
 body.contact-page .header,
 body.about-page .header,
 body.donate-page .header,
 body.membership-page .header,
 body.team-page .header,
+body.legal-page .header,
+body.light-theme:not(.home-page):not(:has(.hero)) .header,
 body.light-theme.contact-page .header,
 body.light-theme.about-page .header,
 body.light-theme.donate-page .header,
 body.light-theme.membership-page .header,
 body.light-theme.team-page .header,
-body.light-theme:has(.hero) .header,
+body.light-theme.legal-page .header,
 body.light-theme:has(.contact-exec-wrapper) .header {
     background-color: rgba(10, 12, 16, 0.96) !important;
     backdrop-filter: blur(16px) !important;
@@ -3471,24 +3465,102 @@ body.light-theme:has(.contact-exec-wrapper) .header {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4) !important;
 }
 
-.header.scrolled,
-body .header.scrolled,
-body.light-theme .header.scrolled,
-body.dark-theme .header.scrolled {
+body:not(.home-page):not(:has(.hero)) .header.scrolled,
+body.contact-page .header.scrolled,
+body.about-page .header.scrolled,
+body.donate-page .header.scrolled,
+body.membership-page .header.scrolled,
+body.team-page .header.scrolled,
+body.legal-page .header.scrolled,
+body.light-theme:not(.home-page):not(:has(.hero)) .header.scrolled {
     background-color: rgba(8, 10, 14, 0.98) !important;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.55) !important;
 }
 
-.top-bar,
-body .top-bar,
-body.light-theme .top-bar,
-body.dark-theme .top-bar,
-body.light-theme.contact-page .top-bar,
-body.light-theme.about-page .top-bar,
-body.light-theme:has(.hero) .top-bar {
+body:not(.home-page):not(:has(.hero)) .top-bar,
+body.contact-page .top-bar,
+body.about-page .top-bar,
+body.donate-page .top-bar,
+body.membership-page .top-bar,
+body.team-page .top-bar,
+body.legal-page .top-bar,
+body.light-theme:not(.home-page):not(:has(.hero)) .top-bar {
     background-color: rgba(6, 7, 10, 0.92) !important;
     border-bottom: 1px solid rgba(255, 255, 255, 0.07) !important;
     color: rgba(255, 255, 255, 0.9) !important;
+}
+
+/* ==========================================================================
+   Home Page Hero Navbar (Restored Previous Design)
+   Transparent floating header over hero slider at scroll = 0, with frosted top-bar,
+   transitioning cleanly to frosted dark executive bar on scroll with hidden top-bar.
+   ========================================================================== */
+body.home-page .header:not(.scrolled),
+body:has(.hero) .header:not(.scrolled),
+body.light-theme.home-page .header:not(.scrolled),
+body.light-theme:has(.hero) .header:not(.scrolled),
+body.dark-theme.home-page .header:not(.scrolled),
+body.dark-theme:has(.hero) .header:not(.scrolled) {
+    background-color: transparent !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    border-bottom: none !important;
+    box-shadow: none !important;
+}
+
+body.home-page .header:not(.scrolled) .top-bar,
+body:has(.hero) .header:not(.scrolled) .top-bar,
+body.light-theme.home-page .header:not(.scrolled) .top-bar,
+body.light-theme:has(.hero) .header:not(.scrolled) .top-bar,
+body.dark-theme.home-page .header:not(.scrolled) .top-bar,
+body.dark-theme:has(.hero) .header:not(.scrolled) .top-bar {
+    background-color: rgba(10, 10, 10, 0.75) !important;
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+    color: rgba(255, 255, 255, 0.9) !important;
+    height: auto !important;
+    opacity: 1 !important;
+    overflow: visible !important;
+    padding: 0.45rem 0 !important;
+}
+
+body.home-page .header:not(.scrolled) .navbar,
+body:has(.hero) .header:not(.scrolled) .navbar {
+    background-color: transparent !important;
+    padding: 1rem 0 !important;
+}
+
+body.home-page .header.scrolled,
+body:has(.hero) .header.scrolled,
+body.light-theme.home-page .header.scrolled,
+body.light-theme:has(.hero) .header.scrolled,
+body.dark-theme.home-page .header.scrolled,
+body.dark-theme:has(.hero) .header.scrolled {
+    background-color: rgba(12, 12, 14, 0.94) !important;
+    backdrop-filter: blur(16px) !important;
+    -webkit-backdrop-filter: blur(16px) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45) !important;
+}
+
+body.home-page .header.scrolled .top-bar,
+body:has(.hero) .header.scrolled .top-bar,
+body.light-theme.home-page .header.scrolled .top-bar,
+body.light-theme:has(.hero) .header.scrolled .top-bar,
+body.dark-theme.home-page .header.scrolled .top-bar,
+body.dark-theme:has(.hero) .header.scrolled .top-bar {
+    height: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    opacity: 0 !important;
+    border: none !important;
+}
+
+body.home-page .header.scrolled .navbar,
+body:has(.hero) .header.scrolled .navbar {
+    background-color: transparent !important;
+    padding: 0.65rem 0 !important;
 }
 
 .top-info .info-item,

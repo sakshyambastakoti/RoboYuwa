@@ -2982,8 +2982,8 @@ body:has(.contact-exec-wrapper) .header {
     height: 100%;
     object-fit: cover;
     object-position: center 25%;
-    opacity: 0.44;
-    filter: brightness(0.86) contrast(1.1) saturate(1.12);
+    opacity: 0.22;
+    filter: brightness(0.82) contrast(1.05) saturate(1.05);
     transform: scale(1.02);
 }
 
@@ -2991,10 +2991,10 @@ body:has(.contact-exec-wrapper) .header {
     position: absolute;
     inset: 0;
     background: linear-gradient(180deg,
-            rgba(8, 9, 12, 0.88) 0%,
-            rgba(8, 9, 12, 0.58) 35%,
-            rgba(8, 9, 12, 0.72) 70%,
-            rgba(8, 9, 12, 0.94) 100%);
+            rgba(8, 9, 12, 0.92) 0%,
+            rgba(8, 9, 12, 0.72) 35%,
+            rgba(8, 9, 12, 0.82) 70%,
+            rgba(8, 9, 12, 0.96) 100%);
 }
 
 /* Background Ambient Glow & Yellow/Amber Orbital Accent from Reference */
@@ -3111,21 +3111,22 @@ body:has(.contact-exec-wrapper) .header {
     gap: 0.45rem;
     font-size: 0.84rem;
     font-weight: 600;
-    letter-spacing: 0.6px;
-    color: var(--ry-amber);
+    letter-spacing: 0.5px;
+    color: #FF4D4D;
     text-decoration: none;
     transition: color 0.2s ease, transform 0.2s ease;
-    margin-top: 0.4rem;
+    margin-top: 0.45rem;
     text-shadow: 0 2px 8px rgba(0, 0, 0, 0.85);
 }
 
 .contact-map-link:hover {
-    color: #FFFFFF;
+    color: #FFA5A5;
     transform: translateX(3px);
 }
 
 .contact-map-link i {
-    font-size: 0.76rem;
+    font-size: 0.78rem;
+    color: #FF4D4D;
 }
 
 .contact-hub-cities {
@@ -3734,16 +3735,16 @@ body.light-theme .contact-exec-wrapper {
 }
 
 body.light-theme .contact-bg-img {
-    opacity: 0.5;
-    filter: brightness(1.02) contrast(1.05) saturate(1.1);
+    opacity: 0.15;
+    filter: brightness(1.0) contrast(1.02) saturate(0.95);
 }
 
 body.light-theme .contact-bg-overlay {
     background: linear-gradient(180deg,
-            rgba(248, 250, 252, 0.88) 0%,
-            rgba(248, 250, 252, 0.45) 30%,
-            rgba(248, 250, 252, 0.68) 65%,
-            rgba(248, 250, 252, 0.96) 100%);
+            rgba(248, 250, 252, 0.93) 0%,
+            rgba(248, 250, 252, 0.76) 35%,
+            rgba(248, 250, 252, 0.86) 70%,
+            rgba(248, 250, 252, 0.98) 100%);
 }
 
 body.light-theme .contact-orbit-deco {
@@ -3773,6 +3774,21 @@ body.light-theme .contact-address-lines p {
 
 body.light-theme .contact-address-lines .addr-line1 {
     color: #0F172A;
+}
+
+body.light-theme .contact-map-link {
+    color: #E52525;
+    text-shadow: none;
+    font-weight: 600;
+}
+
+body.light-theme .contact-map-link:hover {
+    color: #B91C1C;
+    transform: translateX(3px);
+}
+
+body.light-theme .contact-map-link i {
+    color: #E52525;
 }
 
 body.light-theme .contact-hub-cities {

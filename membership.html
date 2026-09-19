@@ -974,93 +974,7 @@
             margin-top: 0.15rem;
         }
 
-        /* ---- BOTTOM CALL TO ACTION ---- */
-        .mem-bottom-cta {
-            position: relative;
-            background: #08090C;
-            padding: clamp(5rem, 9vh, 7rem) 0;
-            text-align: center;
-            overflow: hidden;
-            border-top: 1px solid rgba(255, 255, 255, 0.06);
-        }
-        .mem-bottom-cta-bg {
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(ellipse 75% 85% at 50% 50%, rgba(229, 37, 37, 0.16) 0%, transparent 65%),
-                        radial-gradient(ellipse 60% 70% at 85% 85%, rgba(229, 152, 25, 0.1) 0%, transparent 60%);
-            z-index: 0;
-        }
-        .mem-bottom-cta .container {
-            position: relative;
-            z-index: 1;
-            max-width: 740px;
-            margin: 0 auto;
-            padding: 0 1.5rem;
-        }
-        .mem-bottom-cta h2 {
-            font-family: var(--font-serif);
-            font-size: clamp(2rem, 3.8vw, 3rem);
-            font-weight: 800;
-            color: #FFFFFF;
-            letter-spacing: -0.02em;
-            line-height: 1.2;
-            margin-bottom: 1rem;
-        }
-        .mem-bottom-cta p {
-            font-size: 1.05rem;
-            line-height: 1.75;
-            color: rgba(255, 255, 255, 0.72);
-            margin-bottom: 2.2rem;
-        }
-        .cta-btn-row {
-            display: flex;
-            gap: 14px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        .btn-amber-chamfer {
-            padding: 0.95rem 2.2rem;
-            background: var(--ry-amber-gradient);
-            color: #101217;
-            border: none;
-            clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
-            font-family: var(--font-sans);
-            font-size: 0.96rem;
-            font-weight: 700;
-            cursor: pointer;
-            text-decoration: none;
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-            box-shadow: 0 8px 24px rgba(229, 152, 25, 0.35);
-            display: inline-flex;
-            align-items: center;
-            gap: 9px;
-        }
-        .btn-amber-chamfer:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 14px 34px rgba(229, 152, 25, 0.5);
-            filter: brightness(1.05);
-        }
-        .btn-outline-white-chamfer {
-            padding: 0.95rem 2.2rem;
-            background: transparent;
-            color: #FFFFFF;
-            border: 1.5px solid rgba(255, 255, 255, 0.3);
-            clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
-            font-family: var(--font-sans);
-            font-size: 0.96rem;
-            font-weight: 600;
-            cursor: pointer;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 9px;
-        }
-        .btn-outline-white-chamfer:hover {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: rgba(255, 255, 255, 0.65);
-            transform: translateY(-2px);
-        }
+
 
         /* =====================================================
            DARK THEME OVERRIDES (100% Contrast & Color Fidelity)
@@ -1347,15 +1261,7 @@
             .apply-form-card {
                 padding: 1.8rem 1.3rem;
             }
-            .cta-btn-row {
-                flex-direction: column;
-            }
-            .btn-amber-chamfer,
-            .btn-outline-white-chamfer {
-                width: 100%;
-                justify-content: center;
-                box-sizing: border-box;
-            }
+
         }
     </style>
 </head>
@@ -1866,15 +1772,56 @@
     <div class="pulse-line pulse-right"></div>
 </div>
 
-<!-- BOTTOM CTA -->
-<section class="mem-bottom-cta" aria-label="Join Now CTA">
-    <div class="mem-bottom-cta-bg"></div>
-    <div class="container">
-        <h2 class="font-serif">Ready to Build <span class="text-gradient-crimson">Nepal's Tech Future?</span></h2>
-        <p>Join 120+ innovators in Nepal's fastest-growing youth robotics community. Applications are reviewed year-round.</p>
-        <div class="cta-btn-row">
-            <a href="#apply" class="btn-amber-chamfer"><i class="fa-light fa-id-badge"></i> Apply for Membership</a>
-            <a href="donate.html" class="btn-outline-white-chamfer"><i class="fa-light fa-heart"></i> Support Our Mission</a>
+<!-- Call To Action Section (Matching Home Page: Chamfered Card + Watermark Corner Badges + Brand Typography) -->
+<section id="cta" class="cta-showcase-section" aria-label="Call to Action">
+    <div class="container cta-container">
+        <div class="cta-chamfer-card reveal">
+
+            <!-- Top-Right Watermark Badges (3 Chamfered Badges) -->
+            <div class="cta-badge-group top-right" aria-hidden="true">
+                <span class="cta-oct-badge"></span>
+                <span class="cta-oct-badge"></span>
+                <span class="cta-oct-badge"></span>
+            </div>
+
+            <!-- Bottom-Left Watermark Badges (3 Chamfered Badges) -->
+            <div class="cta-badge-group bottom-left" aria-hidden="true">
+                <span class="cta-oct-badge"></span>
+                <span class="cta-oct-badge"></span>
+                <span class="cta-oct-badge"></span>
+            </div>
+
+            <!-- Card Content -->
+            <div class="cta-card-content">
+                <!-- Eyebrow: Amber Square + "Call To Action" -->
+                <div class="cta-eyebrow">
+                    <span class="eyebrow-square" aria-hidden="true"></span>
+                    <span>Join RoboYuwa</span>
+                </div>
+
+                <!-- Main Title: Playfair Display Serif with Crimson Gradient Accent -->
+                <h2 class="cta-main-title font-serif">
+                    Ready to Build <span class="text-gradient-crimson">Nepal's Tech Future?</span>
+                </h2>
+
+                <!-- Subtitle / Narrative Copy -->
+                <p class="cta-subtitle">
+                    Join 120+ innovators in Nepal's fastest-growing youth robotics community. Whether you want to master hardware prototyping, lead open-source R&amp;D, or represent Nepal on the global stage, your journey starts here.
+                </p>
+
+                <!-- Dual Buttons Group: Apply (Amber) + Donate (Frosted) -->
+                <div class="cta-btn-group">
+                    <a href="#apply" class="btn-cta-primary">
+                        <i class="fa-solid fa-id-card" style="margin-right: 8px;"></i>
+                        <span>Apply for Membership</span>
+                    </a>
+                    <a href="donate.html" class="btn-cta-secondary">
+                        <i class="fa-solid fa-heart" style="margin-right: 8px;"></i>
+                        <span>Support Our Mission</span>
+                    </a>
+                </div>
+            </div>
+
         </div>
     </div>
 </section>

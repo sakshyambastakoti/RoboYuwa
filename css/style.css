@@ -8430,13 +8430,13 @@ body.dark-theme .team-card-role {
 }
 
 .team-card-responsibilities {
-    font-size: 0.88rem;
-    line-height: 1.6;
+    font-size: 0.9rem;
+    line-height: 1.65;
     color: #555D6E;
-    margin-bottom: 1.25rem;
+    margin-bottom: 0.5rem;
     flex-grow: 1;
     display: -webkit-box;
-    -webkit-line-clamp: 3;
+    -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
     overflow: hidden;
 }

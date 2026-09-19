@@ -6473,11 +6473,12 @@ body:not(.light-theme) .about-hero-ref {
 }
 
 .about-ref-title {
+    font-family: var(--font-serif);
     font-size: clamp(2.4rem, 4.5vw, 4.2rem);
-    font-weight: 800;
+    font-weight: 700;
     line-height: 1.12;
     color: #0F172A;
-    letter-spacing: -0.025em;
+    letter-spacing: -0.02em;
     margin-bottom: 1.5rem;
 }
 
@@ -6667,11 +6668,12 @@ body:not(.light-theme) .about-manifesto-section {
 }
 
 .manifesto-statement {
+    font-family: var(--font-serif);
     font-size: clamp(1.35rem, 2.4vw, 1.95rem);
-    font-weight: 500;
-    line-height: 1.6;
+    font-weight: 400;
+    line-height: 1.65;
     color: #1E293B;
-    letter-spacing: -0.015em;
+    letter-spacing: -0.01em;
 }
 
 body:not(.light-theme) .manifesto-statement {
@@ -6714,11 +6716,11 @@ body:not(.light-theme) .manifesto-faded {
 
 .stat-big-num {
     font-size: clamp(2.4rem, 4vw, 3.4rem);
-    font-weight: 800;
-    font-family: var(--font-sans);
+    font-weight: 700;
+    font-family: var(--font-serif);
     color: #0F172A;
     line-height: 1.1;
-    letter-spacing: -0.03em;
+    letter-spacing: -0.02em;
 }
 
 body:not(.light-theme) .stat-big-num {
@@ -6875,11 +6877,12 @@ body:not(.light-theme) .collage-overlap-frame {
 
 /* Content Column */
 .section-bold-title {
+    font-family: var(--font-serif);
     font-size: clamp(2.2rem, 3.8vw, 3.2rem);
-    font-weight: 800;
+    font-weight: 700;
     color: #0F172A;
     line-height: 1.15;
-    letter-spacing: -0.025em;
+    letter-spacing: -0.02em;
     margin-bottom: 1.4rem;
 }
 
@@ -6958,8 +6961,9 @@ body:not(.light-theme) .how-we-work-section {
 }
 
 .section-center-title {
+    font-family: var(--font-serif);
     font-size: clamp(2.2rem, 3.8vw, 3.2rem);
-    font-weight: 800;
+    font-weight: 700;
     color: #0F172A;
     line-height: 1.15;
     letter-spacing: -0.02em;
@@ -7122,9 +7126,11 @@ body:not(.light-theme) .about-cta-box {
 }
 
 .about-cta-content h3 {
+    font-family: var(--font-serif);
     font-size: clamp(1.8rem, 3.2vw, 2.5rem);
-    font-weight: 800;
+    font-weight: 700;
     color: #0F172A;
+    letter-spacing: -0.02em;
     margin-bottom: 0.8rem;
 }
 

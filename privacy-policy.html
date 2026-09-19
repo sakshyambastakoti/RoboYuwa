@@ -12,43 +12,6 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600;1,700&display=swap"
         rel="stylesheet">
-    <style>
-        /* Specific Styles for Legal / Policy Pages */
-        .page-header {
-            padding: 160px 0 70px;
-            background: var(--black);
-            color: var(--white);
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .page-header-bg {
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: linear-gradient(135deg, rgba(209, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.9) 100%), url('assets/group photo.jpeg') center/cover;
-            opacity: 0.3;
-            z-index: 0;
-        }
-
-        .page-header .container {
-            position: relative;
-            z-index: 1;
-        }
-        
-        .page-header h1 {
-            color: var(--white);
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            margin-bottom: 1rem;
-        }
-        
-        .page-header p {
-            font-size: 1.2rem;
-            color: var(--gray-300);
-            max-width: 600px;
-            margin: 0 auto;
-        }
-    </style>
     <script src="https://zenithkandel.com.np/fontawesome/zenith-icons.js"></script>
 </head>
 <body>
@@ -129,68 +92,581 @@
             </div>
         </div>
     </header>
-    <!-- Page Header -->
-    <section class="page-header">
-        <div class="page-header-bg"></div>
-        <div class="container fade-in-up">
-            <h1 style="font-size: clamp(2.5rem, 5vw, 3.5rem); margin-bottom: 1rem;">Privacy Policy</h1>
-            <p style="color: var(--gray-300); max-width: 600px; margin: 0 auto; font-size: 1.1rem;">Comprehensive details on how we collect, use, and protect your data.</p>
+    <!-- Page Hero -->
+    <section class="legal-hero">
+        <div class="legal-hero-bg"></div>
+        <div class="legal-hero-overlay"></div>
+        <div class="legal-hero-grid"></div>
+        <div class="container">
+            <div class="legal-hero-badge">
+                <i class="fa-solid fa-shield-halved badge-icon"></i>
+                <span>Official Policy Document &bull; Legalities Department</span>
+            </div>
+            <h1 class="legal-hero-title">
+                Privacy Policy &amp; <span class="gradient-text">Data Protection</span>
+            </h1>
+            <p class="legal-hero-sub">
+                Comprehensive details on how RoboYuwa Nepal collects, processes, and protects personal data with strict ethical governance, youth-first safety protocols, and statutory compliance under Nepal's Privacy Act 2075.
+            </p>
+            <div class="legal-meta-strip">
+                <span class="legal-meta-pill">
+                    <i class="fa-light fa-calendar-check"></i>
+                    <span>Effective: April 19, 2026</span>
+                </span>
+                <span class="legal-meta-pill">
+                    <i class="fa-light fa-scale-balanced"></i>
+                    <span>Jurisdiction: Nepal (Privacy Act 2075)</span>
+                </span>
+                <span class="legal-meta-pill">
+                    <i class="fa-light fa-file-contract"></i>
+                    <span>Doc ID: RY-LEG-POL-01</span>
+                </span>
+                <span class="legal-meta-pill">
+                    <i class="fa-light fa-clock"></i>
+                    <span>6 min read</span>
+                </span>
+                <span class="legal-meta-pill verified">
+                    <span class="pulse-dot"></span>
+                    <span>Active &amp; Legally Binding</span>
+                </span>
+            </div>
         </div>
     </section>
 
-    <!-- Legal Document Section -->
-    <section class="legal-section section-padding bg-light" style="padding: 4rem 0;">
-        <div class="container bg-white p-5" style="border-radius: 12px; box-shadow: var(--shadow-sm); border: 1px solid var(--gray-100);">
-            
-        <div class="legal-content" style="max-width: 900px; margin: 0 auto; line-height: 1.8; color: var(--gray-700);">
-            <p><strong>Last Updated:</strong> April 19, 2026</p>
-            
-            <h2 style="color: var(--primary-color); margin-top: 2.5rem; font-size: 1.5rem;">1. Introduction</h2>
-            <p>Welcome to RoboYuwa. The privacy and security of your personal data are of paramount importance to us. This Privacy Policy ("Policy") explains how RoboYuwa ("we", "our", or "us"), guided by our Legalities Department, collects, processes, and protects information when you visit our website, apply for membership, or participate in our programs and events.</p>
-            
-            <h2 style="color: var(--primary-color); margin-top: 2.5rem; font-size: 1.5rem;">2. Information We Collect</h2>
-            <p>We may collect and process the following categories of personal data:</p>
-            <ul style="margin-left: 1.5rem;">
-                <li><strong>Personal Identification Information:</strong> Name, email address, phone number, date of birth, and mailing address.</li>
-                <li><strong>Educational and Professional Data:</strong> Institution name, academic major, technical skills, and organizational affiliations.</li>
-                <li><strong>Usage Data:</strong> Information about how you navigate our website, including IP addresses, browser types, and device information (automatically collected).</li>
-            </ul>
-
-            <h2 style="color: var(--primary-color); margin-top: 2.5rem; font-size: 1.5rem;">3. How We Use Your Information</h2>
-            <p>Your data is strictly used for legitimate organizational purposes, including but not limited to:</p>
-            <ul style="margin-left: 1.5rem;">
-                <li>Processing membership applications and maintaining centralized human resource records.</li>
-                <li>Communicating updates regarding workshops, hackathons, and RoboYuwa initiatives.</li>
-                <li>Managing event logistics, volunteer coordination, and interdepartmental communications.</li>
-                <li>Improving our digital platforms and tailoring content to user preferences.</li>
-                <li>Ensuring compliance with governing laws and our internal legal and administrative frameworks.</li>
-            </ul>
-
-            <h2 style="color: var(--primary-color); margin-top: 2.5rem; font-size: 1.5rem;">4. Data Sharing and Disclosure</h2>
-            <p>We do not sell, trade, or rent your personal information. We may share your data only under the following circumstances:</p>
-            <ul style="margin-left: 1.5rem;">
-                <li><strong>Service Providers:</strong> With trusted third-party platforms (e.g., event platforms, email providers) operating under strict confidentiality agreements.</li>
-                <li><strong>Legal Obligations:</strong> If required to do so by law, or to protect the safety, rights, and property of RoboYuwa and its members.</li>
-                <li><strong>Partnerships:</strong> Aggregated, non-personally identifiable data may be shared with sponsors and partners to demonstrate organizational impact.</li>
-            </ul>
-
-            <h2 style="color: var(--primary-color); margin-top: 2.5rem; font-size: 1.5rem;">5. Data Security</h2>
-            <p>In accordance with our Data Privacy & Confidentiality Policy, we enforce strict procedural and technical safeguards. We utilize secure servers, restricted access protocols, and encryption to protect your data against unauthorized access, alteration, or destruction.</p>
-
-            <h2 style="color: var(--primary-color); margin-top: 2.5rem; font-size: 1.5rem;">6. Data Retention</h2>
-            <p>We retain your personal data only for as long as is necessary to fulfill the purposes outlined in this Policy, or as required by applicable laws and our internal documentation frameworks.</p>
-
-            <h2 style="color: var(--primary-color); margin-top: 2.5rem; font-size: 1.5rem;">7. Your Rights</h2>
-            <p>You have the right to request access to the personal data we hold about you, to request corrections to any inaccuracies, and to request the deletion of your data (subject to certain legal limitations). To exercise these rights, please contact our Legalities Department.</p>
-
-            <h2 style="color: var(--primary-color); margin-top: 2.5rem; font-size: 1.5rem;">8. Changes to This Privacy Policy</h2>
-            <p>We may update this Policy periodically. We will notify you of significant changes by posting the new Policy on this page and updating the "Last Updated" date.</p>
-
-            <h2 style="color: var(--primary-color); margin-top: 2.5rem; font-size: 1.5rem;">9. Contact Us</h2>
-            <p>For questions or concerns regarding this Privacy Policy, please contact us at: <a href="mailto:roboyuwa@gmail.com" style="color: var(--primary-color); text-decoration: underline;">roboyuwa@gmail.com</a></p>
+    <!-- Multi-Document Switcher Navigation Bar -->
+    <nav class="legal-nav-strip" aria-label="Legal Suite Document Switcher">
+        <div class="legal-nav-container">
+            <div class="legal-nav-tabs">
+                <a href="privacy-policy.html" class="legal-nav-tab active" aria-current="page">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <span>Privacy Policy</span>
+                </a>
+                <a href="terms-of-service.html" class="legal-nav-tab">
+                    <i class="fa-solid fa-scale-balanced"></i>
+                    <span>Terms of Service</span>
+                </a>
+                <a href="cookie-policy.html" class="legal-nav-tab">
+                    <i class="fa-solid fa-cookie-bite"></i>
+                    <span>Cookie Policy</span>
+                </a>
+            </div>
+            <div class="legal-nav-quick-actions">
+                <button class="btn-nav-action" onclick="printPolicyDocument()" title="Print this document (Ctrl+P)">
+                    <i class="fa-light fa-print"></i>
+                    <span>Print</span>
+                </button>
+                <button class="btn-nav-action" onclick="copyPolicyLink()" title="Copy direct link to clipboard">
+                    <i class="fa-light fa-share-nodes"></i>
+                    <span>Share</span>
+                </button>
+            </div>
         </div>
+    </nav>
+
+    <!-- Main Legal Documentation Container -->
+    <main class="legal-main" id="legalMain">
+        <div class="container">
+            <div class="legal-grid">
+
+                <!-- Sticky Navigation & Helpdesk Sidebar (Left) -->
+                <aside class="legal-sidebar" aria-label="Document Navigation Sidebar">
+                    
+                    <!-- Table of Contents Card -->
+                    <div class="legal-sidebar-card">
+                        <div class="sidebar-card-header">
+                            <span class="sidebar-card-title">
+                                <i class="fa-solid fa-list-ul"></i>
+                                <span>Contents</span>
+                            </span>
+                            <span class="sidebar-card-tag">10 SECTIONS</span>
+                        </div>
+                        <ul class="legal-toc-list" id="legalTocList">
+                            <li class="legal-toc-item">
+                                <a href="#intro" class="legal-toc-link active">
+                                    <span class="toc-badge">01</span>
+                                    <span>Introduction &amp; Scope</span>
+                                </a>
+                            </li>
+                            <li class="legal-toc-item">
+                                <a href="#collection" class="legal-toc-link">
+                                    <span class="toc-badge">02</span>
+                                    <span>Information We Collect</span>
+                                </a>
+                            </li>
+                            <li class="legal-toc-item">
+                                <a href="#usage" class="legal-toc-link">
+                                    <span class="toc-badge">03</span>
+                                    <span>How We Use Your Data</span>
+                                </a>
+                            </li>
+                            <li class="legal-toc-item">
+                                <a href="#sharing" class="legal-toc-link">
+                                    <span class="toc-badge">04</span>
+                                    <span>Sharing &amp; Disclosures</span>
+                                </a>
+                            </li>
+                            <li class="legal-toc-item">
+                                <a href="#security" class="legal-toc-link">
+                                    <span class="toc-badge">05</span>
+                                    <span>Data Security Safeguards</span>
+                                </a>
+                            </li>
+                            <li class="legal-toc-item">
+                                <a href="#retention" class="legal-toc-link">
+                                    <span class="toc-badge">06</span>
+                                    <span>Data Retention &amp; Erasure</span>
+                                </a>
+                            </li>
+                            <li class="legal-toc-item">
+                                <a href="#rights" class="legal-toc-link">
+                                    <span class="toc-badge">07</span>
+                                    <span>Your Data Subject Rights</span>
+                                </a>
+                            </li>
+                            <li class="legal-toc-item">
+                                <a href="#minors" class="legal-toc-link">
+                                    <span class="toc-badge">08</span>
+                                    <span>Youth &amp; Student Privacy</span>
+                                </a>
+                            </li>
+                            <li class="legal-toc-item">
+                                <a href="#amendments" class="legal-toc-link">
+                                    <span class="toc-badge">09</span>
+                                    <span>Governance &amp; Amendments</span>
+                                </a>
+                            </li>
+                            <li class="legal-toc-item">
+                                <a href="#contact" class="legal-toc-link">
+                                    <span class="toc-badge">10</span>
+                                    <span>Contact &amp; Grievances</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Legal Helpdesk & SLA Card -->
+                    <div class="sidebar-help-card">
+                        <div class="sidebar-help-title">
+                            <i class="fa-solid fa-headset"></i>
+                            <span>Legal Help Desk</span>
+                        </div>
+                        <p class="sidebar-help-desc">
+                            Have privacy inquiries or wish to request personal data export or deletion?
+                        </p>
+                        <a href="mailto:roboyuwa@gmail.com?subject=Privacy%20Inquiry%20-%20RoboYuwa" class="sidebar-contact-link">
+                            <i class="fa-light fa-envelope"></i>
+                            <span>roboyuwa@gmail.com</span>
+                        </a>
+                        <a href="tel:+9779749464658" class="sidebar-contact-link">
+                            <i class="fa-light fa-phone"></i>
+                            <span>+977 9749464658</span>
+                        </a>
+                        <div class="sidebar-sla">
+                            <i class="fa-solid fa-bolt"></i>
+                            <span>Response SLA: Within 48 hours</span>
+                        </div>
+                    </div>
+
+                </aside>
+
+                <!-- Document Main Body Flow (Right) -->
+                <article class="legal-content-flow">
+
+                    <!-- Executive Summary & Core Data Pledge -->
+                    <div class="legal-summary-card">
+                        <div class="summary-card-header">
+                            <i class="fa-solid fa-shield-check"></i>
+                            <h2 class="summary-card-title">Executive Summary &amp; Core Data Pledge</h2>
+                        </div>
+                        <p class="summary-card-text">
+                            RoboYuwa is dedicated to empowering Nepal's youth through robotics, open-source technology, and STEM innovation. We believe privacy is an inherent human right. We **never sell, broker, or monetize** student, volunteer, or member personal information. Every byte of information collected serves our non-profit educational mission and is shielded under strict technical and procedural safeguards.
+                        </p>
+                    </div>
+
+                    <!-- Section 01: Introduction & Legal Mandate -->
+                    <section class="legal-card" id="intro">
+                        <div class="legal-card-header">
+                            <span class="legal-card-num">01</span>
+                            <div class="legal-card-title-group">
+                                <h2 class="legal-card-title">Introduction &amp; Scope</h2>
+                                <p class="legal-card-subtitle">Organizational mandate, governing bodies, and policy application</p>
+                            </div>
+                        </div>
+                        <div class="legal-prose">
+                            <p>
+                                Welcome to <strong>RoboYuwa Nepal</strong>. The confidentiality and ethical management of personal data are cornerstones of our organizational governance. This Privacy Policy ("Policy") outlines how RoboYuwa ("we", "our", or "us"), supervised by our <strong>Office of Legalities &amp; Governance</strong>, collects, processes, stores, and safeguards data across our digital portals, community events, educational bootcamps, and membership registries.
+                            </p>
+                            <p>
+                                This Policy applies to all individuals who interact with our ecosystem, including website visitors, student applicants, active club members, mentors, partner institution representatives, and donors throughout the 7 provinces of Nepal and internationally.
+                            </p>
+                            <div class="legal-callout">
+                                <i class="fa-solid fa-landmark"></i>
+                                <div class="legal-callout-text">
+                                    <strong>Statutory Framework:</strong> This Policy has been formulated in strict accordance with the <strong>Individual Privacy Act 2075 (2018)</strong>, the <strong>Electronic Transactions Act 2063 (2008)</strong> of the Federal Democratic Republic of Nepal, and international data protection standards.
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Section 02: Information We Collect -->
+                    <section class="legal-card" id="collection">
+                        <div class="legal-card-header">
+                            <span class="legal-card-num">02</span>
+                            <div class="legal-card-title-group">
+                                <h2 class="legal-card-title">Information We Collect</h2>
+                                <p class="legal-card-subtitle">Categories of personal, academic, and technical telemetry data</p>
+                            </div>
+                        </div>
+                        <div class="legal-prose">
+                            <p>
+                                To deliver our programs, coordinate bootcamps, and facilitate member development, we collect necessary data through transparent interactions:
+                            </p>
+
+                            <div class="legal-table-wrap">
+                                <table class="legal-data-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Data Category</th>
+                                            <th>Specific Elements</th>
+                                            <th>Collection Method</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><strong>Personal Identifiers</strong></td>
+                                            <td>Full legal name, email address, mobile phone number, date of birth, permanent district &amp; province.</td>
+                                            <td>Membership application, contact inquiries, event registration forms.</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Academic &amp; Professional</strong></td>
+                                            <td>Enrolled school/college, engineering major/grade, technical skillsets, GitHub/LinkedIn URLs, portfolio links.</td>
+                                            <td>RoboLearn enrollment, hackathon applications, core team recruitment.</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Hardware &amp; Project Data</strong></td>
+                                            <td>Project repositories, hardware bill of materials (BOM), CAD designs submitted for fabrication grants.</td>
+                                            <td>Innovation challenges, incubator grant submissions.</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Automated Device Telemetry</strong></td>
+                                            <td>IP address, browser type, operating system version, page view timestamps, referrer URL headers.</td>
+                                            <td>Standard secure server logs and anonymized analytical cookies.</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="legal-callout amber-callout">
+                                <i class="fa-solid fa-circle-exclamation"></i>
+                                <div class="legal-callout-text">
+                                    <strong>Zero Sensitive Data Requirement:</strong> RoboYuwa does <em>not</em> collect biometric data, philosophical beliefs, credit card credentials, or financial account passwords on our public servers. Online donations are processed solely through accredited payment gateways (such as eSewa, Khalti, or bank transfers) under PCI-DSS compliance.
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Section 03: How We Use Your Data -->
+                    <section class="legal-card" id="usage">
+                        <div class="legal-card-header">
+                            <span class="legal-card-num">03</span>
+                            <div class="legal-card-title-group">
+                                <h2 class="legal-card-title">Purpose &amp; Legal Basis of Processing</h2>
+                                <p class="legal-card-subtitle">Legitimate organizational objectives driving data utilization</p>
+                            </div>
+                        </div>
+                        <div class="legal-prose">
+                            <p>
+                                We process collected data strictly to achieve our non-profit educational objectives and fulfill organizational commitments:
+                            </p>
+
+                            <div class="legal-feature-grid">
+                                <div class="legal-mini-card">
+                                    <div class="mini-card-icon">
+                                        <i class="fa-solid fa-microchip"></i>
+                                    </div>
+                                    <h3 class="mini-card-title">Admissions &amp; Bootcamps</h3>
+                                    <p class="mini-card-desc">Reviewing student suitability for specialized robotics kits, mentorship tracks, and laboratory workstations.</p>
+                                </div>
+                                <div class="legal-mini-card">
+                                    <div class="mini-card-icon amber-bg">
+                                        <i class="fa-solid fa-trophy"></i>
+                                    </div>
+                                    <h3 class="mini-card-title">Competition Logistics</h3>
+                                    <p class="mini-card-desc">Issuing accredited participation certificates, assigning team badges, and arranging regional travel logistics.</p>
+                                </div>
+                                <div class="legal-mini-card">
+                                    <div class="mini-card-icon sage-bg">
+                                        <i class="fa-solid fa-bullhorn"></i>
+                                    </div>
+                                    <h3 class="mini-card-title">Community Updates</h3>
+                                    <p class="mini-card-desc">Circulating our monthly executive newsletter, urgent hardware workshop alerts, and hackathon schedules.</p>
+                                </div>
+                                <div class="legal-mini-card">
+                                    <div class="mini-card-icon">
+                                        <i class="fa-solid fa-gavel"></i>
+                                    </div>
+                                    <h3 class="mini-card-title">Governance &amp; Audits</h3>
+                                    <p class="mini-card-desc">Maintaining accurate registers required by Nepali NGO regulatory authorities and social welfare councils.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Section 04: Data Sharing & Third-Party Disclosures -->
+                    <section class="legal-card" id="sharing">
+                        <div class="legal-card-header">
+                            <span class="legal-card-num">04</span>
+                            <div class="legal-card-title-group">
+                                <h2 class="legal-card-title">Data Sharing &amp; Disclosures</h2>
+                                <p class="legal-card-subtitle">Strict confidentiality protocols and partner oversight</p>
+                            </div>
+                        </div>
+                        <div class="legal-prose">
+                            <p>
+                                <strong>RoboYuwa maintains an unconditional zero-sale policy:</strong> We do not sell, license, lease, or commercially trade personally identifiable information to advertisers, third-party data aggregators, or unauthorized corporate entities.
+                            </p>
+                            <p>We disclose information only under narrow, defined operational contexts:</p>
+                            <ul class="legal-bullets">
+                                <li class="legal-bullet-item">
+                                    <i class="fa-solid fa-check sage-check"></i>
+                                    <div><strong>Accredited Service Providers:</strong> Trusted cloud infrastructure vendors, email delivery networks, and event management platforms working under bound non-disclosure and data protection contracts.</div>
+                                </li>
+                                <li class="legal-bullet-item">
+                                    <i class="fa-solid fa-check sage-check"></i>
+                                    <div><strong>Statutory &amp; Law Enforcement Compliance:</strong> When compelled by valid legal subpoenas, court decrees, or statutory obligations enacted under the laws of Nepal.</div>
+                                </li>
+                                <li class="legal-bullet-item">
+                                    <i class="fa-solid fa-check sage-check"></i>
+                                    <div><strong>Aggregated Impact Metrics:</strong> Fully anonymized statistical summaries (e.g., "750+ students trained in Bagmati Province") provided to educational grants and institutional donors.</div>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <!-- Section 05: Data Security Safeguards -->
+                    <section class="legal-card" id="security">
+                        <div class="legal-card-header">
+                            <span class="legal-card-num">05</span>
+                            <div class="legal-card-title-group">
+                                <h2 class="legal-card-title">Data Security Safeguards</h2>
+                                <p class="legal-card-subtitle">Technical, administrative, and physical defenses</p>
+                            </div>
+                        </div>
+                        <div class="legal-prose">
+                            <p>
+                                RoboYuwa enforces defense-in-depth protocols adhering to modern cybersecurity best practices:
+                            </p>
+                            <ul class="legal-bullets">
+                                <li class="legal-bullet-item">
+                                    <i class="fa-solid fa-lock"></i>
+                                    <div><strong>Cryptographic Transport:</strong> All digital web traffic is enforced through HTTPS utilizing TLS 1.3 encryption with modern cipher suites.</div>
+                                </li>
+                                <li class="legal-bullet-item">
+                                    <i class="fa-solid fa-key"></i>
+                                    <div><strong>Least-Privilege Access Control:</strong> Member database access is restricted strictly to verified Executive Board and Legalities officers requiring information for verified tasks.</div>
+                                </li>
+                                <li class="legal-bullet-item">
+                                    <i class="fa-solid fa-shield-virus"></i>
+                                    <div><strong>Regular Vulnerability Audits:</strong> Continual vulnerability assessments, perimeter logging, and automated threat detection on all cloud endpoints.</div>
+                                </li>
+                            </ul>
+                            <div class="legal-callout">
+                                <i class="fa-solid fa-bell"></i>
+                                <div class="legal-callout-text">
+                                    <strong>Breach Response SLA:</strong> In the improbable event of an unauthorized security incident impacting personal data, our Legalities Department will dispatch notice to affected users and pertinent authorities within <strong>72 hours</strong> of formal verification.
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Section 06: Data Retention & Erasure -->
+                    <section class="legal-card" id="retention">
+                        <div class="legal-card-header">
+                            <span class="legal-card-num">06</span>
+                            <div class="legal-card-title-group">
+                                <h2 class="legal-card-title">Data Retention &amp; Erasure</h2>
+                                <p class="legal-card-subtitle">Lifecycle management and disposal timelines</p>
+                            </div>
+                        </div>
+                        <div class="legal-prose">
+                            <p>
+                                We retain personal information only for the duration required to satisfy the purposes specified in this Policy:
+                            </p>
+                            <ul class="legal-bullets">
+                                <li class="legal-bullet-item">
+                                    <i class="fa-solid fa-clock"></i>
+                                    <div><strong>Active Club Members:</strong> Preserved during active affiliation plus 3 years following transition to our Alumni Network for certification verification.</div>
+                                </li>
+                                <li class="legal-bullet-item">
+                                    <i class="fa-solid fa-clock"></i>
+                                    <div><strong>Event Registrants &amp; Applicants:</strong> Maintained for 12 months post-event to facilitate follow-up curriculum access and workshop feedback.</div>
+                                </li>
+                                <li class="legal-bullet-item">
+                                    <i class="fa-solid fa-clock"></i>
+                                    <div><strong>General Web Inquiries:</strong> Retained for 6 months after ticket resolution unless ongoing legal correspondence requires an extension.</div>
+                                </li>
+                            </ul>
+                            <p>
+                                Upon expiration of the designated period, records are purged through permanent cryptographic wiping or complete irreversibility anonymization.
+                            </p>
+                        </div>
+                    </section>
+
+                    <!-- Section 07: Your Data Subject Rights -->
+                    <section class="legal-card" id="rights">
+                        <div class="legal-card-header">
+                            <span class="legal-card-num">07</span>
+                            <div class="legal-card-title-group">
+                                <h2 class="legal-card-title">Your Data Subject Rights</h2>
+                                <p class="legal-card-subtitle">Full autonomy over your personal information</p>
+                            </div>
+                        </div>
+                        <div class="legal-prose">
+                            <p>
+                                Under the Individual Privacy Act 2075 of Nepal, you possess enforceable rights regarding your personal records:
+                            </p>
+
+                            <div class="legal-feature-grid">
+                                <div class="legal-mini-card">
+                                    <div class="mini-card-icon amber-bg">
+                                        <i class="fa-solid fa-eye"></i>
+                                    </div>
+                                    <h3 class="mini-card-title">Right to Access</h3>
+                                    <p class="mini-card-desc">Request an export of all personal dossiers, workshop records, and applications linked to your identity.</p>
+                                </div>
+                                <div class="legal-mini-card">
+                                    <div class="mini-card-icon">
+                                        <i class="fa-solid fa-pen-to-square"></i>
+                                    </div>
+                                    <h3 class="mini-card-title">Right to Rectification</h3>
+                                    <p class="mini-card-desc">Promptly update or correct any outdated phone numbers, institutional affiliations, or spelling errors.</p>
+                                </div>
+                                <div class="legal-mini-card">
+                                    <div class="mini-card-icon sage-bg">
+                                        <i class="fa-solid fa-trash-can"></i>
+                                    </div>
+                                    <h3 class="mini-card-title">Right to Erasure</h3>
+                                    <p class="mini-card-desc">Request the deletion of your account and records when you cease participation in RoboYuwa initiatives.</p>
+                                </div>
+                                <div class="legal-mini-card">
+                                    <div class="mini-card-icon amber-bg">
+                                        <i class="fa-solid fa-ban"></i>
+                                    </div>
+                                    <h3 class="mini-card-title">Right to Object</h3>
+                                    <p class="mini-card-desc">Opt-out at any time from newsletters, promotional bulletins, or non-essential communications.</p>
+                                </div>
+                            </div>
+                            <p>
+                                To exercise any of these privileges, submit a formal request to our Legalities Department at <a href="mailto:roboyuwa@gmail.com" style="color:var(--ry-crimson); font-weight:600; text-decoration:underline;">roboyuwa@gmail.com</a>. We fulfill verified requests without fee within <strong>14 working days</strong>.
+                            </p>
+                        </div>
+                    </section>
+
+                    <!-- Section 08: Youth & Minor Protection -->
+                    <section class="legal-card" id="minors">
+                        <div class="legal-card-header">
+                            <span class="legal-card-num">08</span>
+                            <div class="legal-card-title-group">
+                                <h2 class="legal-card-title">Youth &amp; Student Privacy</h2>
+                                <p class="legal-card-subtitle">Dedicated protections for participants under 18 years of age</p>
+                            </div>
+                        </div>
+                        <div class="legal-prose">
+                            <p>
+                                As a student-centric robotics movement, RoboYuwa frequently welcomes young innovators under the age of 18 into our foundational labs and STEAM competitions:
+                            </p>
+                            <ul class="legal-bullets">
+                                <li class="legal-bullet-item">
+                                    <i class="fa-solid fa-user-shield sage-check"></i>
+                                    <div><strong>Guardian Consent:</strong> For students under 16 enrolling in intensive hardware bootcamps or multi-day competitions, parental or school administrative consent is required.</div>
+                                </li>
+                                <li class="legal-bullet-item">
+                                    <i class="fa-solid fa-camera-slash"></i>
+                                    <div><strong>Media Publication Consent:</strong> Event photographs and video interviews featuring identifiable students are collected and published strictly under transparent opt-in media release authorizations.</div>
+                                </li>
+                                <li class="legal-bullet-item">
+                                    <i class="fa-solid fa-ban"></i>
+                                    <div><strong>Zero Behavioral Profiling:</strong> We maintain strict bans on automated psychological or behavioral profiling of minor participants.</div>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <!-- Section 09: Governance & Amendments -->
+                    <section class="legal-card" id="amendments">
+                        <div class="legal-card-header">
+                            <span class="legal-card-num">09</span>
+                            <div class="legal-card-title-group">
+                                <h2 class="legal-card-title">Governance &amp; Amendments</h2>
+                                <p class="legal-card-subtitle">Periodic evaluation and formal update protocols</p>
+                            </div>
+                        </div>
+                        <div class="legal-prose">
+                            <p>
+                                RoboYuwa reserves the right to amend this Privacy Policy periodically to reflect evolving legal frameworks, organizational scaling, or updated laboratory infrastructures.
+                            </p>
+                            <p>
+                                When revisions occur, the revised document will be published with an updated <em>"Effective Date"</em> at the top. For substantial shifts in how personal data is managed, a prominent announcement banner will be placed on the home portal or distributed directly via email digest.
+                            </p>
+                        </div>
+                    </section>
+
+                    <!-- Section 10: Contact & Grievances -->
+                    <section class="legal-card" id="contact">
+                        <div class="legal-card-header">
+                            <span class="legal-card-num">10</span>
+                            <div class="legal-card-title-group">
+                                <h2 class="legal-card-title">Contact &amp; Grievances</h2>
+                                <p class="legal-card-subtitle">Official communication channels for legal and privacy inquiries</p>
+                            </div>
+                        </div>
+                        <div class="legal-prose">
+                            <p>
+                                For questions, formal notices, or grievances regarding our privacy practices, please contact our designated Privacy and Legal Compliance Officer:
+                            </p>
+                            <ul class="legal-bullets">
+                                <li class="legal-bullet-item">
+                                    <i class="fa-solid fa-building-columns"></i>
+                                    <div><strong>Department:</strong> Office of Legalities &amp; Governance, RoboYuwa Nepal</div>
+                                </li>
+                                <li class="legal-bullet-item">
+                                    <i class="fa-solid fa-envelope"></i>
+                                    <div><strong>Email:</strong> <a href="mailto:roboyuwa@gmail.com" style="color:var(--ry-crimson); text-decoration:underline;">roboyuwa@gmail.com</a></div>
+                                </li>
+                                <li class="legal-bullet-item">
+                                    <i class="fa-solid fa-phone"></i>
+                                    <div><strong>Hotline:</strong> <a href="tel:+9779749464658" style="color:var(--ry-crimson); text-decoration:underline;">+977 9749464658</a> (Sun-Fri: 9:00 AM - 6:00 PM NPT)</div>
+                                </li>
+                                <li class="legal-bullet-item">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                    <div><strong>Registered Location:</strong> Kathmandu / Pokhara, Nepal</div>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <!-- Official Verification Seal Block -->
+                    <div class="legal-seal-card">
+                        <img src="assets/roboyuwa-logo-BLCCIWUS.jpg" alt="Official RoboYuwa Seal" class="legal-seal-img" loading="lazy" />
+                        <div class="legal-seal-content">
+                            <div class="legal-seal-org">Official Governance Attestation</div>
+                            <h3 class="legal-seal-title">RoboYuwa Legalities &amp; Ethics Board</h3>
+                            <p class="legal-seal-desc">
+                                This policy has been verified by RoboYuwa Nepal's interdepartmental council in compliance with national youth non-profit bylaws and data privacy legislation.
+                            </p>
+                            <div class="legal-seal-meta">
+                                <span>Status: <strong>Active &amp; Certified</strong></span>
+                                <span>Bylaw Ref: <strong>RY-DOC-2026-POL-01</strong></span>
+                                <span>Audit Date: <strong>April 2026</strong></span>
+                            </div>
+                        </div>
+                    </div>
+
+                </article>
+
+            </div>
         </div>
-    </section>
+    </main>
     <!-- Footer (Executive High-Tech Minimalist Layout) -->
     <footer class="footer" id="footer">
         <!-- Tri-Color Brand Top Accent Line -->
@@ -315,6 +791,7 @@
 
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script src="js/email-handler.js"></script>
+    <script src="js/legal-suite.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html>

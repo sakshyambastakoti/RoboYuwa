@@ -682,4 +682,73 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+
+    // ==========================================================================
+    // Programs Page Category Filtering Logic
+    // ==========================================================================
+    const progFilterNav = document.getElementById('progFilterNav');
+    if (progFilterNav) {
+        const filterBtns = progFilterNav.querySelectorAll('.prog-filter-btn');
+        const progCards = document.querySelectorAll('.prog-card-ref');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const filter = btn.getAttribute('data-filter');
+
+                filterBtns.forEach(b => {
+                    b.classList.remove('active');
+                    b.setAttribute('aria-selected', 'false');
+                });
+                btn.classList.add('active');
+                btn.setAttribute('aria-selected', 'true');
+
+                progCards.forEach(card => {
+                    const cardCategory = card.getAttribute('data-category');
+                    if (filter === 'all' || cardCategory === filter) {
+                        card.classList.remove('hidden');
+                        card.classList.add('visible');
+                        card.style.opacity = '0';
+                        card.style.transform = 'translateY(12px)';
+                        setTimeout(() => {
+                            card.style.opacity = '1';
+                            card.style.transform = 'translateY(0)';
+                        }, 20);
+                    } else {
+                        card.classList.add('hidden');
+                    }
+                });
+            });
+        });
+    }
+
+    // ==========================================================================
+    // Syllabus Modal Handlers
+    // ==========================================================================
+    const openSyllabusBtns = document.querySelectorAll('.open-syllabus-btn, #openSyllabusBtn');
+    const syllabusModal = document.getElementById('syllabusModal');
+    const closeSyllabusModal = document.getElementById('closeSyllabusModal');
+
+    if (syllabusModal) {
+        openSyllabusBtns.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                syllabusModal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        if (closeSyllabusModal) {
+            closeSyllabusModal.addEventListener('click', () => {
+                syllabusModal.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        }
+
+        syllabusModal.addEventListener('click', (e) => {
+            if (e.target === syllabusModal) {
+                syllabusModal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+    }
 });

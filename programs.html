@@ -19,59 +19,6 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600;1,700&display=swap"
       rel="stylesheet"
     />
-    <style>
-      /* Specific Styles for About Page to complement global css */
-      .page-header {
-        padding: 160px 0 80px;
-        background: var(--black);
-        color: var(--white);
-        text-align: center;
-        position: relative;
-        overflow: hidden;
-      }
-
-      .page-header-bg {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background:
-          linear-gradient(
-            135deg,
-            rgba(209, 0, 0, 0.2) 0%,
-            rgba(0, 0, 0, 0.9) 100%
-          ),
-          url("assets/hackathon radar 2026.jpeg") center/cover;
-        opacity: 0.4;
-        z-index: 0;
-      }
-
-      .page-header .container {
-        position: relative;
-        z-index: 1;
-      }
-
-      .page-header h1 {
-        color: var(--white);
-        font-size: clamp(2.5rem, 5vw, 4rem);
-        margin-bottom: 1rem;
-      }
-
-      .page-header p {
-        font-size: 1.2rem;
-        color: var(--gray-300);
-        max-width: 600px;
-        margin: 0 auto;
-      }
-
-      .about-story {
-        font-size: 1.1rem;
-        line-height: 1.8;
-        color: var(--text-light);
-        margin-bottom: 2rem;
-      }
-    </style>
     <script src="https://zenithkandel.com.np/fontawesome/zenith-icons.js"></script>
   </head>
   <body>
@@ -156,194 +103,617 @@
       </div>
     </header>
 
-    <section class="page-header">
-      <div class="page-header-bg"></div>
-      <div class="container fade-in-up">
-        <h1>Programs & Initiatives</h1>
-        <p>
-          Empowering youth through hands-on robotics, technical research, and
-          impactful community events.
-        </p>
-      </div>
-    </section>
-
-    <!-- Past Events & Achievements -->
-    <section class="section-padding bg-light">
+    <!-- Main Programs Hero Section (Editorial Split Design) -->
+    <section class="prog-hero-ref" id="programsHero">
       <div class="container">
-        <div class="section-title reveal">
-          <h2>Past Events & Achievements</h2>
-          <div class="divider"></div>
+        <!-- Top Split Header matching Site Editorial Standards -->
+        <div class="prog-hero-grid reveal">
+          <div class="prog-ref-left">
+            <div class="prog-hero-eyebrow">
+              <span class="eyebrow-square-ref" aria-hidden="true"></span>
+              <span>Programs &amp; Initiatives</span>
+            </div>
+            <h1 class="prog-ref-title font-serif">Engineering Nepal's Next-Gen Robotics</h1>
+          </div>
+          <div class="prog-ref-right">
+            <p class="prog-ref-lead">
+              From 12-week hands-on school curricula to international arenas at the Technoxian World Robotics Championship, RoboYuwa builds tangible engineering competence, leadership, and ethical innovation across Nepal.
+            </p>
+            <a href="#programsGrid" class="btn-outline-pill">
+              <span>Explore All Initiatives</span>
+              <i class="fa-solid fa-arrow-down" aria-hidden="true" style="font-size: 0.8rem;"></i>
+            </a>
+          </div>
         </div>
-        <div class="programs-grid reveal">
-          <article class="program-card">
-            <div class="program-img">
-              <img
-                src="assets/world robotics competion.png"
-                alt="Technoxian Championship"
-                loading="lazy"
-                decoding="async"
-                onerror="
-                  this.outerHTML = `<i class='fa-duotone fa-image' style='font-size: 2rem; color: var(--gray-400); width: 100%; display: flex; align-items: center; justify-content: center; min-height: 100px;'></i>`
-                "
-              />
-            </div>
-            <div class="program-content">
-              <h3>Technoxian World Robotics Championship</h3>
-              <p>
-                In August 2024, RoboYuwa proudly represented Nepal on the
-                international stage at the Technoxian World Robotics
-                Championship.
-              </p>
-            </div>
-          </article>
-          <article class="program-card">
-            <div class="program-img">
-              <img
-                src="assets/competetion.png"
-                alt="Aavishkar Competition"
-                loading="lazy"
-                decoding="async"
-                onerror="
-                  this.outerHTML = `<i class='fa-duotone fa-image' style='font-size: 2rem; color: var(--gray-400); width: 100%; display: flex; align-items: center; justify-content: center; min-height: 100px;'></i>`
-                "
-              />
-            </div>
-            <div class="program-content">
-              <h3>Aavishkar Competition</h3>
-              <p>
-                Secured second prize in May 2025, demonstrating strong technical
-                abilities and creative problem-solving from our team.
-              </p>
-            </div>
-          </article>
-          <article class="program-card">
-            <div class="program-img">
-              <img
-                src="assets/workshop (2).png"
-                alt="School Workshops"
-                loading="lazy"
-                decoding="async"
-                onerror="
-                  this.outerHTML = `<i class='fa-duotone fa-image' style='font-size: 2rem; color: var(--gray-400); width: 100%; display: flex; align-items: center; justify-content: center; min-height: 100px;'></i>`
-                "
-              />
-            </div>
-            <div class="program-content">
-              <h3>Robotics Bootcamps</h3>
-              <p>
-                Organized over 40 structured workshops and bootcamps, expanding
-                to 3 new districts and empowering over 1,200 youth by November
-                2024.
-              </p>
-            </div>
-          </article>
-        </div>
-      </div>
 
-      <!-- Section Pulse Divider Line (Matching Reference Design) -->
-      <div class="section-pulse-divider" aria-hidden="true">
-        <div class="pulse-line pulse-left"></div>
-        <svg class="pulse-peak-svg" viewBox="0 0 38 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <polyline points="0,18 19,4 38,18" />
-        </svg>
-        <div class="pulse-line pulse-right"></div>
-      </div>
-    </section>
+        <!-- Impact Counter Ribbon (Official Documented Metrics) -->
+        <div class="prog-stats-ribbon reveal delay-1">
+          <div class="prog-stat-item">
+            <div class="prog-stat-icon-box" aria-hidden="true">
+              <i class="fa-solid fa-user-graduate"></i>
+            </div>
+            <div class="prog-stat-details">
+              <span class="prog-stat-num">1,200+</span>
+              <span class="prog-stat-lbl">Youth Trained</span>
+            </div>
+          </div>
 
-    <!-- Upcoming Agendas & Initiatives -->
-    <section class="section-padding">
-      <div class="container">
-        <div class="section-title reveal">
-          <h2>Upcoming Agendas & Core Initiatives</h2>
-          <div class="divider"></div>
+          <div class="prog-stat-item">
+            <div class="prog-stat-icon-box" aria-hidden="true">
+              <i class="fa-solid fa-microchip"></i>
+            </div>
+            <div class="prog-stat-details">
+              <span class="prog-stat-num">40+</span>
+              <span class="prog-stat-lbl">Workshops &amp; Bootcamps</span>
+            </div>
+          </div>
+
+          <div class="prog-stat-item">
+            <div class="prog-stat-icon-box" aria-hidden="true">
+              <i class="fa-solid fa-map-location-dot"></i>
+            </div>
+            <div class="prog-stat-details">
+              <span class="prog-stat-num">3+</span>
+              <span class="prog-stat-lbl">Provincial Districts</span>
+            </div>
+          </div>
+
+          <div class="prog-stat-item">
+            <div class="prog-stat-icon-box" aria-hidden="true">
+              <i class="fa-solid fa-code-fork"></i>
+            </div>
+            <div class="prog-stat-details">
+              <span class="prog-stat-num">100%</span>
+              <span class="prog-stat-lbl">Open-Source Toolkits</span>
+            </div>
+          </div>
         </div>
-        <div class="programs-grid reveal">
-          <article class="program-card">
-            <div class="program-img">
-              <img
-                src="assets/hackathon radar 2026.jpeg"
-                alt="RADAR27"
-                loading="lazy"
-                decoding="async"
-                onerror="
-                  this.outerHTML = `<i class='fa-duotone fa-image' style='font-size: 2rem; color: var(--gray-400); width: 100%; display: flex; align-items: center; justify-content: center; min-height: 100px;'></i>`
-                "
-              />
-            </div>
-            <div class="program-content">
-              <h3>RADAR27</h3>
-              <p>
-                Our premier annual planning and event milestone scheduled for
-                January 2027. Setting the stage for the next year of youth
-                innovation.
-              </p>
-            </div>
-          </article>
-          <article class="program-card">
-            <div class="program-img">
+
+        <!-- Category Filter Navigation Tabs -->
+        <div class="prog-filter-nav reveal delay-2" id="progFilterNav" role="tablist" aria-label="Program category filters">
+          <button type="button" class="prog-filter-btn active" data-filter="all" role="tab" aria-selected="true">
+            All Initiatives (7)
+          </button>
+          <button type="button" class="prog-filter-btn" data-filter="flagship" role="tab" aria-selected="false">
+            Flagship Programs (3)
+          </button>
+          <button type="button" class="prog-filter-btn" data-filter="competition" role="tab" aria-selected="false">
+            Competition Arenas (2)
+          </button>
+          <button type="button" class="prog-filter-btn" data-filter="community" role="tab" aria-selected="false">
+            Community Outreach (2)
+          </button>
+        </div>
+
+        <!-- 3-Column Program Cards Grid -->
+        <div class="prog-grid-ref" id="programsGrid">
+
+          <!-- 01: RoboLearn Initiative -->
+          <article class="prog-card-ref reveal" data-category="flagship">
+            <div class="prog-card-media">
+              <span class="prog-badge amber">12-Week Curriculum</span>
               <img
                 src="assets/workshop.png"
-                alt="RoboLearn Initiative"
+                alt="RoboLearn 12-Week School Curriculum"
+                class="prog-card-img"
                 loading="lazy"
                 decoding="async"
-                onerror="
-                  this.outerHTML = `<i class='fa-duotone fa-image' style='font-size: 2rem; color: var(--gray-400); width: 100%; display: flex; align-items: center; justify-content: center; min-height: 100px;'></i>`
-                "
+                onerror="this.src='assets/roboyuwa-logo-BLCCIWUS.jpg'"
               />
             </div>
-            <div class="program-content">
-              <h3>RoboLearn Initiative</h3>
-              <p>
-                A structured 12-week robotics curriculum designed for
-                underserved schools, bringing vital tech education to those who
-                need it most.
+            <div class="prog-card-body">
+              <h3 class="prog-card-title">RoboLearn Initiative</h3>
+              <p class="prog-card-desc">
+                A structured 12-week modular robotics curriculum delivered in underserved community schools, introducing microcontroller coding, circuit design, sensor logic, and capstone robotics builds.
               </p>
+              <ul class="prog-card-meta" aria-label="Program Highlights">
+                <li><i class="fa-solid fa-clock" aria-hidden="true"></i> 12 Weeks (Weekly 3-Hour Labs)</li>
+                <li><i class="fa-solid fa-microchip" aria-hidden="true"></i> Arduino Uno, Sensors &amp; Motor Drivers</li>
+                <li><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i> Grades 8–12 &amp; Technical Students</li>
+              </ul>
+              <div class="prog-card-actions">
+                <span class="prog-tag-pill">STEM Education</span>
+                <button type="button" class="prog-btn-link open-syllabus-btn" aria-label="View syllabus outline for RoboLearn">
+                  <span>View Syllabus</span>
+                  <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                </button>
+              </div>
             </div>
           </article>
-          <article class="program-card">
-            <div class="program-img">
+
+          <!-- 02: RADAR Annual Milestone & Hackathon -->
+          <article class="prog-card-ref reveal delay-1" data-category="flagship">
+            <div class="prog-card-media">
+              <span class="prog-badge crimson">Annual Flagship</span>
+              <img
+                src="assets/hackathon radar 2026.jpeg"
+                alt="RADAR Annual Planning and Hackathon"
+                class="prog-card-img"
+                loading="lazy"
+                decoding="async"
+                onerror="this.src='assets/roboyuwa-logo-BLCCIWUS.jpg'"
+              />
+            </div>
+            <div class="prog-card-body">
+              <h3 class="prog-card-title">RADAR Hackathon &amp; Planning</h3>
+              <p class="prog-card-desc">
+                RoboYuwa's premier annual planning summit and hardware sprint. Uniting youth builders across Nepal to prototype solutions in 48-hour sprints, conduct elections, and chart the yearly roadmap.
+              </p>
+              <ul class="prog-card-meta" aria-label="Program Highlights">
+                <li><i class="fa-solid fa-calendar-check" aria-hidden="true"></i> Annual Event (Jan 2026 / 2027)</li>
+                <li><i class="fa-solid fa-trophy" aria-hidden="true"></i> Hardware &amp; IoT Sprint Arenas</li>
+                <li><i class="fa-solid fa-users" aria-hidden="true"></i> 300+ Competitors &amp; Mentors</li>
+              </ul>
+              <div class="prog-card-actions">
+                <span class="prog-tag-pill">Hackathon &amp; AGM</span>
+                <a href="contact.html" class="prog-btn-link" aria-label="Pre-register for RADAR">
+                  <span>Pre-Register</span>
+                  <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 03: Technoxian World Robotics Championship -->
+          <article class="prog-card-ref reveal delay-2" data-category="competition">
+            <div class="prog-card-media">
+              <span class="prog-badge blue">International Milestone</span>
+              <img
+                src="assets/world robotics competion.png"
+                alt="Technoxian World Robotics Championship Nepal Team"
+                class="prog-card-img"
+                loading="lazy"
+                decoding="async"
+                onerror="this.src='assets/roboyuwa-logo-BLCCIWUS.jpg'"
+              />
+            </div>
+            <div class="prog-card-body">
+              <h3 class="prog-card-title">Technoxian World Championship</h3>
+              <p class="prog-card-desc">
+                Representing Nepal on the global stage at the Technoxian World Championship in August 2024. RoboYuwa's elite R&amp;D engineering squad deployed combat bots and soccer bots against international teams.
+              </p>
+              <ul class="prog-card-meta" aria-label="Program Highlights">
+                <li><i class="fa-solid fa-earth-asia" aria-hidden="true"></i> Global International Stage</li>
+                <li><i class="fa-solid fa-robot" aria-hidden="true"></i> Combat Robotics &amp; Soccer Bots</li>
+                <li><i class="fa-solid fa-award" aria-hidden="true"></i> Official National Delegation</li>
+              </ul>
+              <div class="prog-card-actions">
+                <span class="prog-tag-pill">Global Tournament</span>
+                <a href="about.html" class="prog-btn-link" aria-label="Read Technoxian case study">
+                  <span>Read Case Study</span>
+                  <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 04: Aavishkar National Competition -->
+          <article class="prog-card-ref reveal" data-category="competition">
+            <div class="prog-card-media">
+              <span class="prog-badge green">Silver Distinction</span>
+              <img
+                src="assets/competetion.png"
+                alt="Aavishkar National Robotics Competition"
+                class="prog-card-img"
+                loading="lazy"
+                decoding="async"
+                onerror="this.src='assets/roboyuwa-logo-BLCCIWUS.jpg'"
+              />
+            </div>
+            <div class="prog-card-body">
+              <h3 class="prog-card-title">Aavishkar National Tournament</h3>
+              <p class="prog-card-desc">
+                Secured Second Prize in May 2025 at the prestigious national Aavishkar tournament, showcasing high-precision autonomous line tracking, ultrasonic maze navigation, and structural engineering.
+              </p>
+              <ul class="prog-card-meta" aria-label="Program Highlights">
+                <li><i class="fa-solid fa-medal" aria-hidden="true"></i> 2nd Prize National Winner</li>
+                <li><i class="fa-solid fa-microchip" aria-hidden="true"></i> Autonomous Obstacle Traversal</li>
+                <li><i class="fa-solid fa-flag" aria-hidden="true"></i> National Engineering Recognition</li>
+              </ul>
+              <div class="prog-card-actions">
+                <span class="prog-tag-pill">National Arena</span>
+                <a href="about.html" class="prog-btn-link" aria-label="View tournament recap">
+                  <span>Tournament Recap</span>
+                  <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 05: InnovatYouth National Summit -->
+          <article class="prog-card-ref reveal delay-1" data-category="flagship">
+            <div class="prog-card-media">
+              <span class="prog-badge amber">Annual Pitch Forum</span>
               <img
                 src="assets/homepage.jpg"
-                alt="InnovatYouth Summit"
+                alt="InnovatYouth National Solution Summit"
+                class="prog-card-img"
                 loading="lazy"
                 decoding="async"
-                onerror="
-                  this.outerHTML = `<i class='fa-duotone fa-image' style='font-size: 2rem; color: var(--gray-400); width: 100%; display: flex; align-items: center; justify-content: center; min-height: 100px;'></i>`
-                "
+                onerror="this.src='assets/roboyuwa-logo-BLCCIWUS.jpg'"
               />
             </div>
-            <div class="program-content">
-              <h3>InnovatYouth Summit</h3>
-              <p>
-                An annual youth solution showcase empowering young creators to
-                present projects assessed by industry experts.
+            <div class="prog-card-body">
+              <h3 class="prog-card-title">InnovatYouth National Summit</h3>
+              <p class="prog-card-desc">
+                An annual innovation showcase where student teams present hardware and IoT prototypes solving real-world community challenges, evaluated by academic scholars and venture leaders.
               </p>
+              <ul class="prog-card-meta" aria-label="Program Highlights">
+                <li><i class="fa-solid fa-lightbulb" aria-hidden="true"></i> Youth Social Innovation Showcase</li>
+                <li><i class="fa-solid fa-handshake" aria-hidden="true"></i> Mentorship &amp; Seed Support</li>
+                <li><i class="fa-solid fa-user-tie" aria-hidden="true"></i> Assessed by Industry Experts</li>
+              </ul>
+              <div class="prog-card-actions">
+                <span class="prog-tag-pill">Innovation Summit</span>
+                <a href="membership.html" class="prog-btn-link" aria-label="Submit project to InnovatYouth">
+                  <span>Submit Project</span>
+                  <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                </a>
+              </div>
             </div>
           </article>
-          <article class="program-card">
-            <div class="program-img">
+
+          <!-- 06: Tech4Community -->
+          <article class="prog-card-ref reveal delay-2" data-category="community">
+            <div class="prog-card-media">
+              <span class="prog-badge green">Social Impact</span>
               <img
                 src="assets/socoor bot.jpeg"
-                alt="Tech4Community"
+                alt="Tech4Community Service-Learning Project"
+                class="prog-card-img"
                 loading="lazy"
                 decoding="async"
-                onerror="
-                  this.outerHTML = `<i class='fa-duotone fa-image' style='font-size: 2rem; color: var(--gray-400); width: 100%; display: flex; align-items: center; justify-content: center; min-height: 100px;'></i>`
-                "
+                onerror="this.src='assets/roboyuwa-logo-BLCCIWUS.jpg'"
               />
             </div>
-            <div class="program-content">
-              <h3>Tech4Community</h3>
-              <p>
-                Enabling youth to design low-cost technical solutions tailored
-                to address the immediate needs of local organizations and
-                communities.
+            <div class="prog-card-body">
+              <h3 class="prog-card-title">Tech4Community Initiative</h3>
+              <p class="prog-card-desc">
+                A service-learning project where youth engineers deploy low-cost automated irrigation, water-level sensors, and assistive technology for local NGOs, public schools, and community centers.
               </p>
+              <ul class="prog-card-meta" aria-label="Program Highlights">
+                <li><i class="fa-solid fa-heart-pulse" aria-hidden="true"></i> Community-Driven Tech Solutions</li>
+                <li><i class="fa-solid fa-wrench" aria-hidden="true"></i> Low-Cost Open Hardware Deployed</li>
+                <li><i class="fa-solid fa-school" aria-hidden="true"></i> 10+ Public Centers Supported</li>
+              </ul>
+              <div class="prog-card-actions">
+                <span class="prog-tag-pill">Community Tech</span>
+                <a href="contact.html" class="prog-btn-link" aria-label="Request lab support for your community">
+                  <span>Request Support</span>
+                  <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                </a>
+              </div>
             </div>
           </article>
+
+          <!-- 07: STEAM District Outreach Bootcamps -->
+          <article class="prog-card-ref reveal" data-category="community">
+            <div class="prog-card-media">
+              <span class="prog-badge blue">District Expansion</span>
+              <img
+                src="assets/workshop (2).png"
+                alt="STEAM Regional Mobile Lab Bootcamps"
+                class="prog-card-img"
+                loading="lazy"
+                decoding="async"
+                onerror="this.src='assets/roboyuwa-logo-BLCCIWUS.jpg'"
+              />
+            </div>
+            <div class="prog-card-body">
+              <h3 class="prog-card-title">STEAM District Bootcamps</h3>
+              <p class="prog-card-desc">
+                Mobile hardware laboratories travelling beyond the Kathmandu valley to remote district schools, bringing breadboards, sensors, and microcontrollers to students who have never built hardware before.
+              </p>
+              <ul class="prog-card-meta" aria-label="Program Highlights">
+                <li><i class="fa-solid fa-bus" aria-hidden="true"></i> Traveling Mobile Robotics Labs</li>
+                <li><i class="fa-solid fa-box-open" aria-hidden="true"></i> Complete Hardware Kits Provided</li>
+                <li><i class="fa-solid fa-chalkboard-user" aria-hidden="true"></i> 100% Free for District Schools</li>
+              </ul>
+              <div class="prog-card-actions">
+                <span class="prog-tag-pill">Outreach Tour</span>
+                <a href="contact.html" class="prog-btn-link" aria-label="Invite RoboYuwa to your district">
+                  <span>Invite Our Team</span>
+                  <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+          </article>
+
         </div>
       </div>
     </section>
+
+    <!-- 12-Week RoboLearn Curriculum Deep Dive -->
+    <section class="curriculum-section" id="curriculumSection">
+      <div class="container">
+        <div class="section-title text-center reveal">
+          <div class="prog-hero-eyebrow" style="justify-content: center;">
+            <span class="eyebrow-square-ref" aria-hidden="true"></span>
+            <span>RoboLearn Architecture</span>
+          </div>
+          <h2 class="font-serif" style="font-size: clamp(2rem, 3.5vw, 2.8rem); font-weight: 800; margin-bottom: 1rem;">
+            The 12-Week Learning Progression
+          </h2>
+          <div class="divider center"></div>
+          <p style="max-width: 720px; margin: 1.2rem auto 0; font-size: 1.05rem; line-height: 1.7; color: var(--text-light);">
+            A rigorous, project-based engineering pathway designed to transform complete novices into autonomous robotics creators capable of competing on national stages.
+          </p>
+        </div>
+
+        <div class="curriculum-phase-grid">
+          <!-- Phase 1 -->
+          <div class="curriculum-phase-card reveal">
+            <div class="phase-header">
+              <span class="phase-step-pill">Phase 01</span>
+              <span class="phase-duration">Weeks 1 – 3</span>
+            </div>
+            <h3 class="phase-title">Circuit Physics &amp; Logic</h3>
+            <p class="phase-desc">
+              Fundamental electronics, understanding voltage, current, Ohm's law, breadboard prototyping, LED arrays, and essential workshop safety.
+            </p>
+            <ul class="phase-modules-list" aria-label="Phase 1 Modules">
+              <li><i class="fa-solid fa-check" aria-hidden="true"></i> Resistor color codes &amp; Ohm's law</li>
+              <li><i class="fa-solid fa-check" aria-hidden="true"></i> Breadboard circuit wiring</li>
+              <li><i class="fa-solid fa-check" aria-hidden="true"></i> Transistors &amp; relay switching</li>
+            </ul>
+            <div class="phase-deliverable-box">
+              <span>Capstone: Light-Activated Automatic Circuit</span>
+            </div>
+          </div>
+
+          <!-- Phase 2 -->
+          <div class="curriculum-phase-card reveal delay-1">
+            <div class="phase-header">
+              <span class="phase-step-pill">Phase 02</span>
+              <span class="phase-duration">Weeks 4 – 6</span>
+            </div>
+            <h3 class="phase-title">Microcontrollers &amp; C++</h3>
+            <p class="phase-desc">
+              Transitioning into programmable hardware with Arduino Uno and C++. Learning GPIO registers, serial telemetry, analog inputs, and PWM motor drivers.
+            </p>
+            <ul class="phase-modules-list" aria-label="Phase 2 Modules">
+              <li><i class="fa-solid fa-check" aria-hidden="true"></i> Arduino IDE setup &amp; C++ syntax</li>
+              <li><i class="fa-solid fa-check" aria-hidden="true"></i> H-Bridge L298N motor drivers</li>
+              <li><i class="fa-solid fa-check" aria-hidden="true"></i> Serial monitoring &amp; debugging</li>
+            </ul>
+            <div class="phase-deliverable-box">
+              <span>Capstone: Dual-Motor Wheeled Chassis</span>
+            </div>
+          </div>
+
+          <!-- Phase 3 -->
+          <div class="curriculum-phase-card reveal delay-2">
+            <div class="phase-header">
+              <span class="phase-step-pill">Phase 03</span>
+              <span class="phase-duration">Weeks 7 – 9</span>
+            </div>
+            <h3 class="phase-title">Sensors &amp; PID Algorithms</h3>
+            <p class="phase-desc">
+              Integrating environmental perception using ultrasonic sonar, infrared arrays, and implementing closed-loop PID control loops for high-speed tracking.
+            </p>
+            <ul class="phase-modules-list" aria-label="Phase 3 Modules">
+              <li><i class="fa-solid fa-check" aria-hidden="true"></i> 5-Array IR line tracking sensor</li>
+              <li><i class="fa-solid fa-check" aria-hidden="true"></i> Ultrasonic obstacle avoidance</li>
+              <li><i class="fa-solid fa-check" aria-hidden="true"></i> PID steering correction logic</li>
+            </ul>
+            <div class="phase-deliverable-box">
+              <span>Capstone: Autonomous Line Follower</span>
+            </div>
+          </div>
+
+          <!-- Phase 4 -->
+          <div class="curriculum-phase-card reveal delay-3">
+            <div class="phase-header">
+              <span class="phase-step-pill">Phase 04</span>
+              <span class="phase-duration">Weeks 10 – 12</span>
+            </div>
+            <h3 class="phase-title">Arena Combat &amp; Showcase</h3>
+            <p class="phase-desc">
+              Mechanical structural reinforcement, wireless Bluetooth/RF manual override, arena battle tactics, and final tournament judging before external mentors.
+            </p>
+            <ul class="phase-modules-list" aria-label="Phase 4 Modules">
+              <li><i class="fa-solid fa-check" aria-hidden="true"></i> Chassis torque &amp; wheel traction</li>
+              <li><i class="fa-solid fa-check" aria-hidden="true"></i> Bluetooth mobile remote control</li>
+              <li><i class="fa-solid fa-check" aria-hidden="true"></i> Live arena combat tournament</li>
+            </ul>
+            <div class="phase-deliverable-box">
+              <span>Capstone: Tournament-Ready Combat Robot</span>
+            </div>
+          </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 3.5rem;" class="reveal">
+          <button type="button" class="btn btn-pill-amber open-syllabus-btn" style="padding: 0.85rem 2.2rem; font-size: 0.95rem;">
+            <span>Open Complete Week-by-Week Syllabus</span>
+            <i class="fa-solid fa-file-lines" style="margin-left: 8px;"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Financial Transparency & Resource Allocation (Treasurer's Report) -->
+    <section class="resource-alloc-section" id="resourceAlloc">
+      <div class="container">
+        <div class="section-title text-center reveal">
+          <div class="prog-hero-eyebrow" style="justify-content: center;">
+            <span class="eyebrow-square-ref" aria-hidden="true"></span>
+            <span>Financial Governance</span>
+          </div>
+          <h2 class="font-serif" style="font-size: clamp(2rem, 3.5vw, 2.8rem); font-weight: 800; margin-bottom: 1rem;">
+            Resource Transparency &amp; Allocation
+          </h2>
+          <div class="divider center"></div>
+          <p style="max-width: 720px; margin: 1.2rem auto 0; font-size: 1.05rem; line-height: 1.7; color: var(--text-light);">
+            As documented in the official RoboYuwa Constitution and Treasurer's Audit, every grant, sponsorship, and donation is stewarded with dual-signature banking controls and 51% board approval.
+          </p>
+        </div>
+
+        <div class="resource-alloc-grid">
+          <!-- 50% Programs -->
+          <div class="alloc-card reveal">
+            <span class="alloc-pct">50%</span>
+            <div class="alloc-bar-track">
+              <div class="alloc-bar-fill" style="width: 50%;"></div>
+            </div>
+            <h3 class="alloc-title">Direct Student Programs</h3>
+            <p class="alloc-desc">
+              Directly funds school workshops, hands-on hardware starter toolkits, competition registration, and student mentorship subsidies across community districts.
+            </p>
+          </div>
+
+          <!-- 25% Equipment -->
+          <div class="alloc-card reveal delay-1">
+            <span class="alloc-pct">25%</span>
+            <div class="alloc-bar-track">
+              <div class="alloc-bar-fill" style="width: 25%;"></div>
+            </div>
+            <h3 class="alloc-title">Lab Equipment &amp; R&amp;D Tools</h3>
+            <p class="alloc-desc">
+              Procures high-performance microcontrollers, precision soldering stations, combat robotics arenas, sensors, and 3D printing prototyping resources.
+            </p>
+          </div>
+
+          <!-- 25% Operations -->
+          <div class="alloc-card reveal delay-2">
+            <span class="alloc-pct">25%</span>
+            <div class="alloc-bar-track">
+              <div class="alloc-bar-fill" style="width: 25%;"></div>
+            </div>
+            <h3 class="alloc-title">Operations &amp; Outreach</h3>
+            <p class="alloc-desc">
+              Supports traveling district logistics, safe transit of equipment, tournament venues, legal compliance reporting, and volunteer training clinics.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- High-Impact Call to Action -->
+    <section class="cta section-padding" style="background: linear-gradient(135deg, #0A0C10 0%, #151922 100%); color: white; text-align: center; border-top: 1px solid rgba(229, 152, 25, 0.2); position: relative; overflow: hidden;">
+      <div class="container reveal">
+        <span class="team-card-dept-tag" style="position: static; display: inline-block; margin-bottom: 1.2rem; background: rgba(229, 152, 25, 0.15); color: var(--ry-amber); border: 1px solid rgba(229, 152, 25, 0.3);">
+          Bring Robotics To Your School
+        </span>
+        <h2 class="font-serif" style="color: white; font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 800; margin-bottom: 1rem;">
+          Empower Your Students With Next-Gen Robotics
+        </h2>
+        <p style="color: rgba(255,255,255,0.8); font-size: 1.1rem; margin-bottom: 2.2rem; max-width: 650px; margin-left: auto; margin-right: auto; line-height: 1.7;">
+          Partner with RoboYuwa to bring hands-on robotics workshops, mobile STEM laboratories, and hackathons directly to your institution.
+        </p>
+        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+          <a href="contact.html" class="btn btn-pill-amber" style="padding: 0.85rem 2.2rem; font-size: 1rem;">Partner With Us</a>
+          <a href="membership.html" class="btn-outline-pill" style="border-color: rgba(255,255,255,0.3); color: white;">Become a Member</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Syllabus Modal -->
+    <div class="modal-backdrop" id="syllabusModal" aria-hidden="true" role="dialog" aria-label="RoboLearn 12-Week Syllabus">
+      <div class="syllabus-modal-dialog">
+        <button class="modal-close" id="closeSyllabusModal" aria-label="Close syllabus">&times;</button>
+        <div class="prog-hero-eyebrow">
+          <span class="eyebrow-square-ref" aria-hidden="true"></span>
+          <span>Curriculum Details</span>
+        </div>
+        <h2 class="font-serif" style="font-size: 1.8rem; margin-bottom: 0.6rem;">RoboLearn 12-Week Syllabus Outline</h2>
+        <p style="font-size: 0.92rem; color: #64748B; margin-bottom: 1.5rem;">
+          Designed for schools and youth clubs across Nepal. All necessary hardware and components provided by RoboYuwa.
+        </p>
+
+        <div style="overflow-x: auto;">
+          <table class="syllabus-table">
+            <thead>
+              <tr>
+                <th>Week</th>
+                <th>Topic &amp; Domain</th>
+                <th>Hardware &amp; Tools</th>
+                <th>Milestone Deliverable</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>W01</strong></td>
+                <td>Electronics &amp; Circuit Physics</td>
+                <td>Breadboard, LEDs, 330Ω/10kΩ Resistors</td>
+                <td>Series &amp; parallel circuit testing</td>
+              </tr>
+              <tr>
+                <td><strong>W02</strong></td>
+                <td>Sensors &amp; Analog Triggers</td>
+                <td>LDR (Light sensor), POT, Transistors</td>
+                <td>Automatic night-lamp circuit</td>
+              </tr>
+              <tr>
+                <td><strong>W03</strong></td>
+                <td>Relays &amp; Actuators</td>
+                <td>5V Relays, DC Motors, Diodes</td>
+                <td>High-current motor switching</td>
+              </tr>
+              <tr>
+                <td><strong>W04</strong></td>
+                <td>Microcontrollers &amp; Arduino</td>
+                <td>Arduino Uno, USB Telemetry, IDE</td>
+                <td>Digital output &amp; blink pattern logic</td>
+              </tr>
+              <tr>
+                <td><strong>W05</strong></td>
+                <td>Motor Drivers &amp; H-Bridges</td>
+                <td>L298N Driver, 12V Battery Pack</td>
+                <td>Forward, reverse, and pivot steering</td>
+              </tr>
+              <tr>
+                <td><strong>W06</strong></td>
+                <td>PWM Speed Modulation</td>
+                <td>Arduino PWM pins, optical encoders</td>
+                <td>Smooth acceleration &amp; brake tuning</td>
+              </tr>
+              <tr>
+                <td><strong>W07</strong></td>
+                <td>Infrared Arrays &amp; Line Tracking</td>
+                <td>TCRT5000 IR Sensor Array</td>
+                <td>Black-line following calibration</td>
+              </tr>
+              <tr>
+                <td><strong>W08</strong></td>
+                <td>Ultrasonic Radar &amp; Obstacles</td>
+                <td>HC-SR04 Sonar, Servo Mount</td>
+                <td>Real-time distance threshold braking</td>
+              </tr>
+              <tr>
+                <td><strong>W09</strong></td>
+                <td>Closed-Loop PID Control</td>
+                <td>PID Algorithm tuning in C++</td>
+                <td>High-speed wobble-free navigation</td>
+              </tr>
+              <tr>
+                <td><strong>W10</strong></td>
+                <td>Chassis CAD &amp; Structural Armor</td>
+                <td>Acrylic chassis, zip-ties, spacers</td>
+                <td>Rigid combat-proof assembly</td>
+              </tr>
+              <tr>
+                <td><strong>W11</strong></td>
+                <td>Bluetooth Remote Overrides</td>
+                <td>HC-05 Module, Smartphone App</td>
+                <td>Dual mode: Autonomous &amp; Manual</td>
+              </tr>
+              <tr>
+                <td><strong>W12</strong></td>
+                <td>Grand Arena Championship</td>
+                <td>RoboYuwa Competition Arena</td>
+                <td>Live tournament, judging &amp; awards</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div style="margin-top: 2rem; display: flex; gap: 1rem; justify-content: flex-end; flex-wrap: wrap;">
+          <a href="contact.html" class="btn btn-pill-amber" style="padding: 0.65rem 1.6rem; font-size: 0.9rem;">
+            Enroll Your School
+          </a>
+        </div>
+      </div>
+    </div>
     <!-- Footer (Executive High-Tech Minimalist Layout) -->
     <footer class="footer" id="footer">
         <!-- Tri-Color Brand Top Accent Line -->

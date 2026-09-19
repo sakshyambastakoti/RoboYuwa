@@ -128,12 +128,6 @@
             </p>
             <div class="hero-actions">
               <a href="programs.html" class="btn btn-hero-pill">Join Us Now</a>
-              <button class="hero-video-btn" id="openHeroVideoBtn" aria-label="Watch showcase video">
-                <span class="play-icon-circle">
-                  <i class="fa-solid fa-play"></i>
-                </span>
-                <span class="video-btn-text">Watch The Video</span>
-              </button>
             </div>
           </div>
         </div>
@@ -156,12 +150,6 @@
             </p>
             <div class="hero-actions">
               <a href="about.html" class="btn btn-hero-pill">Discover More</a>
-              <button class="hero-video-btn" aria-label="Watch showcase video">
-                <span class="play-icon-circle">
-                  <i class="fa-solid fa-play"></i>
-                </span>
-                <span class="video-btn-text">Watch The Video</span>
-              </button>
             </div>
           </div>
         </div>
@@ -185,12 +173,6 @@
             </p>
             <div class="hero-actions">
               <a href="programs.html" class="btn btn-hero-pill">Explore Programs</a>
-              <button class="hero-video-btn" aria-label="Watch showcase video">
-                <span class="play-icon-circle">
-                  <i class="fa-solid fa-play"></i>
-                </span>
-                <span class="video-btn-text">Watch The Video</span>
-              </button>
             </div>
           </div>
         </div>
@@ -214,12 +196,6 @@
             </p>
             <div class="hero-actions">
               <a href="programs.html" class="btn btn-hero-pill">Join Our Labs</a>
-              <button class="hero-video-btn" aria-label="Watch showcase video">
-                <span class="play-icon-circle">
-                  <i class="fa-solid fa-play"></i>
-                </span>
-                <span class="video-btn-text">Watch The Video</span>
-              </button>
             </div>
           </div>
         </div>
@@ -567,9 +543,9 @@
 
           <!-- Rounded Pill Action Button (Reference "Contact Us →") -->
           <div class="about-showcase-action">
-            <a href="contact.html" class="btn-ref-pill">
+            <a href="contact.html" class="btn-ref-pill btn-about-contact" aria-label="Contact RoboYuwa">
               <span>Contact Us</span>
-              <i class="fa-solid fa-arrow-right"></i>
+              <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
             </a>
           </div>
         </div>
@@ -788,14 +764,6 @@
               <img src="assets/IMG_2016.JPG (1).jpeg" 
                    alt="InnovatYouth National Robotics Summit &amp; Hackathon Showcase" 
                    loading="lazy" decoding="async" />
-              
-              <!-- Video Play Button -->
-              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" 
-                 class="init-play-btn" aria-label="Watch InnovatYouth Summit Video" title="Watch InnovatYouth Summit Video">
-                <span class="play-icon-circle">
-                  <i class="fa-solid fa-play"></i>
-                </span>
-              </a>
 
               <div class="init-frame-overlay center-overlay">
                 <span class="init-frame-badge highlight">InnovatYouth Summit</span>
@@ -832,11 +800,11 @@
     </div>
   </section>
 
-  <!-- Institutional Charter & Philosophy Section (Text-Only Single Screen Frame) -->
+  <!-- Institutional Charter & Philosophy Section -->
   <section id="charter" class="charter-showcase-section" aria-label="Institutional Charter &amp; Purpose">
     <div class="container charter-container">
       
-      <!-- Top Row: Eyebrow + Main Title (Left) and Constitutional Preamble Card (Right) -->
+      <!-- Top Split Header Row: Eyebrow + Title + Narrative (Left) and Constitutional Preamble Card (Right) -->
       <div class="charter-top-row reveal">
         <div class="charter-title-col">
           <div class="charter-eyebrow">
@@ -846,88 +814,91 @@
           <h2 class="charter-main-title font-serif">
             Why RoboYuwa Matters: <span class="text-gradient-crimson">Our Purpose &amp; Governance Code</span>
           </h2>
+          <p class="charter-lead-narrative">
+            Founded on democratic youth bylaws, 100% audited fiscal integrity, and community-first innovation — RoboYuwa bridges the critical divide between rote classroom theory and real-world technological leadership across Nepal.
+          </p>
         </div>
 
         <div class="charter-quote-card">
           <div class="charter-quote-header">
-            <span><i class="fa-light fa-scroll"></i> Constitutional Preamble</span>
+            <span class="preamble-pill"><i class="fa-solid fa-scroll"></i> Constitutional Preamble</span>
             <span class="charter-quote-ref">Constitution 2082 B.S. / 2025 A.D.</span>
           </div>
-          <blockquote class="charter-quote-text">
+          <blockquote class="charter-quote-text font-serif">
             "United by passion for robotics, we foster youth exploration, experimentation, and responsible innovation — upholding transparency, accountability, and equality for national progress."
           </blockquote>
           <div class="charter-quote-footer">
-            <span>RoboYuwa General Assembly • SWC Reg.</span>
+            <span class="charter-assembly-tag">RoboYuwa General Assembly • SWC Reg.</span>
             <div class="charter-quote-values">
-              <span><i class="fa-light fa-check"></i> Transparency</span>
-              <span><i class="fa-light fa-check"></i> Accountability</span>
-              <span><i class="fa-light fa-check"></i> Inclusiveness</span>
+              <span><i class="fa-solid fa-check"></i> Transparency</span>
+              <span><i class="fa-solid fa-check"></i> Accountability</span>
+              <span><i class="fa-solid fa-check"></i> Inclusiveness</span>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Middle Row: 3 Compact Directives -->
+      <!-- 3 Generous Architectural Directive Cards (Matching Chamfer System of Site) -->
       <div class="charter-pillars-row">
-        <article class="charter-card-compact reveal">
-          <div>
-            <span class="compact-tag">Directive 01</span>
-            <h3 class="compact-title">Bridging The Skills Gap</h3>
-            <p class="compact-desc">Replacing rote theoretical learning with hands-on microcontroller engineering, sensor integration, and competitive combat/soccer robotics.</p>
-          </div>
-          <div class="compact-stat">
-            <i class="fa-light fa-microchip text-gradient-crimson"></i>
-            <span>40+ STEAM Bootcamps Delivered</span>
-          </div>
-        </article>
-
-        <article class="charter-card-compact reveal">
-          <div>
-            <span class="compact-tag">Directive 02</span>
-            <h3 class="compact-title">Eliminating Opportunity Voids</h3>
-            <p class="compact-desc">Decentralizing hardware toolkits and mentorship across regional schools, opening direct championship pathways to national &amp; world stages.</p>
-          </div>
-          <div class="compact-stat">
-            <i class="fa-light fa-globe text-gradient-crimson"></i>
-            <span>1,200+ Regional Innovators Mobilized</span>
+        <!-- Directive 01: Top-Left Chamfer -->
+        <article class="charter-card chamfer-top-left reveal delay-1">
+          <div class="charter-card-inner">
+            <div class="charter-card-header">
+              <span class="directive-badge">Directive 01</span>
+              <span class="charter-card-num font-serif">01</span>
+            </div>
+            <div class="charter-card-body">
+              <h3 class="charter-card-title">Bridging The Skills Gap</h3>
+              <p class="charter-card-desc">
+                Replacing rote theoretical learning with hands-on microcontroller engineering, sensor integration, custom circuit design, and competitive combat and soccer robotics.
+              </p>
+            </div>
+            <div class="charter-card-pill">
+              <i class="fa-solid fa-microchip"></i>
+              <span>40+ STEAM Bootcamps Delivered</span>
+            </div>
           </div>
         </article>
 
-        <article class="charter-card-compact reveal">
-          <div>
-            <span class="compact-tag">Directive 03</span>
-            <h3 class="compact-title">Transforming Into Creators</h3>
-            <p class="compact-desc">Empowering youth to build low-cost civic hardware solutions through our Tech4Community initiative, solving tangible grassroots community needs.</p>
-          </div>
-          <div class="compact-stat">
-            <i class="fa-light fa-rocket-launch text-gradient-crimson"></i>
-            <span>Youth-Led Community Engineering</span>
+        <!-- Directive 02: Top-Right Chamfer -->
+        <article class="charter-card chamfer-top-right reveal delay-2">
+          <div class="charter-card-inner">
+            <div class="charter-card-header">
+              <span class="directive-badge">Directive 02</span>
+              <span class="charter-card-num font-serif">02</span>
+            </div>
+            <div class="charter-card-body">
+              <h3 class="charter-card-title">Eliminating Opportunity Voids</h3>
+              <p class="charter-card-desc">
+                Decentralizing hardware toolkits and direct mentorship across regional schools, opening accessible tournament and championship pathways from grassroots to world stages.
+              </p>
+            </div>
+            <div class="charter-card-pill">
+              <i class="fa-solid fa-earth-americas"></i>
+              <span>1,200+ Regional Innovators Mobilized</span>
+            </div>
           </div>
         </article>
-      </div>
 
-      <!-- Bottom Row: 4-Item Compact Governance Strip -->
-      <div class="charter-gov-compact reveal">
-        <div class="gov-col">
-          <div class="gov-col-num">01. DEMOCRACY</div>
-          <div class="gov-col-title">1-Vote Assembly</div>
-          <p class="gov-col-text">51% board consensus required on all major policy and expenditures.</p>
-        </div>
-        <div class="gov-col">
-          <div class="gov-col-num">02. FISCAL INTEGRITY</div>
-          <div class="gov-col-title">100% PAN Billing</div>
-          <p class="gov-col-text">Every transaction audited progressively with verified legal records.</p>
-        </div>
-        <div class="gov-col">
-          <div class="gov-col-num">03. SYNERGY</div>
-          <div class="gov-col-title">Cross-Departmental</div>
-          <p class="gov-col-text">Seamless alignment across Technical, Outreach, Event, Creative &amp; Legal.</p>
-        </div>
-        <div class="gov-col">
-          <div class="gov-col-num">04. DELIVERABLES</div>
-          <div class="gov-col-title">Tenure Milestones</div>
-          <p class="gov-col-text">Mandated 12 annual bootcamps, 10 open-source R&amp;D projects &amp; RADAR.</p>
-        </div>
+        <!-- Directive 03: Top-Left Chamfer -->
+        <article class="charter-card chamfer-top-left reveal delay-3">
+          <div class="charter-card-inner">
+            <div class="charter-card-header">
+              <span class="directive-badge">Directive 03</span>
+              <span class="charter-card-num font-serif">03</span>
+            </div>
+            <div class="charter-card-body">
+              <h3 class="charter-card-title">Democratic &amp; Civic Impact</h3>
+              <p class="charter-card-desc">
+                Governed by an audited 1-vote assembly with 51% consensus rules and 100% PAN billing, empowering youth to build low-cost open hardware that solves tangible community needs.
+              </p>
+            </div>
+            <div class="charter-card-pill">
+              <i class="fa-solid fa-scale-balanced"></i>
+              <span>1-Vote Assembly • 100% PAN Audited</span>
+            </div>
+          </div>
+        </article>
       </div>
 
     </div>

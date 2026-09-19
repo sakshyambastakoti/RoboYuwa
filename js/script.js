@@ -1,3 +1,50 @@
+// ============================================================
+//  Rounded Favicon Generator (canvas clip with border-radius)
+// ============================================================
+(function applyRoundedFavicon() {
+    const size = 64;
+    const radius = size * 0.22; // ~22% corner radius — Apple-style squircle
+    const imgSrc = document.querySelector('link[rel="icon"]')?.href;
+    if (!imgSrc) return;
+
+    const img = new Image();
+    img.crossOrigin = 'anonymous';
+    img.onload = function () {
+        const canvas = document.createElement('canvas');
+        canvas.width = size;
+        canvas.height = size;
+        const ctx = canvas.getContext('2d');
+
+        // Draw rounded clipping mask
+        ctx.beginPath();
+        ctx.moveTo(radius, 0);
+        ctx.lineTo(size - radius, 0);
+        ctx.quadraticCurveTo(size, 0, size, radius);
+        ctx.lineTo(size, size - radius);
+        ctx.quadraticCurveTo(size, size, size - radius, size);
+        ctx.lineTo(radius, size);
+        ctx.quadraticCurveTo(0, size, 0, size - radius);
+        ctx.lineTo(0, radius);
+        ctx.quadraticCurveTo(0, 0, radius, 0);
+        ctx.closePath();
+        ctx.clip();
+
+        ctx.drawImage(img, 0, 0, size, size);
+
+        // Replace favicon link
+        let link = document.querySelector('link[rel="icon"]');
+        if (!link) {
+            link = document.createElement('link');
+            link.rel = 'icon';
+            document.head.appendChild(link);
+        }
+        link.type = 'image/png';
+        link.href = canvas.toDataURL('image/png');
+    };
+    img.onerror = () => {}; // Silently fail if image can't load
+    img.src = imgSrc;
+})();
+
 document.addEventListener('DOMContentLoaded', () => {
     // Navigation Toggle for Mobile
     const toggleBtn = document.querySelector('.mobile-toggle');

@@ -13,172 +13,1349 @@
     <script src="https://zenithkandel.com.np/fontawesome/zenith-icons.js"></script>
     <style>
         /* =====================================================
-           MEMBERSHIP PAGE STYLES
+           ROBOYUWA MEMBERSHIP PAGE - BRAND DESIGN SYSTEM
            ===================================================== */
-        .mem-hero { position:relative; padding:170px 0 100px; background:var(--ry-dark-bg); overflow:hidden; }
-        .mem-hero-bg { position:absolute; inset:0; background:radial-gradient(ellipse 60% 80% at 15% 40%,rgba(229,37,37,.16) 0%,transparent 60%),radial-gradient(ellipse 50% 60% at 85% 70%,rgba(229,152,25,.08) 0%,transparent 55%),url('assets/workshop.png') center/cover no-repeat; opacity:.2; z-index:0; }
-        .mem-hero-overlay { position:absolute; inset:0; background:linear-gradient(160deg,rgba(8,9,12,.96) 0%,rgba(8,9,12,.8) 55%,rgba(229,37,37,.08) 100%); z-index:1; }
-        .mem-hero-grid { position:absolute; inset:0; background-image:linear-gradient(rgba(229,37,37,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(229,37,37,.04) 1px,transparent 1px); background-size:48px 48px; z-index:1; }
-        .mem-hero .container { position:relative; z-index:2; max-width:1200px; margin:0 auto; padding:0 1.5rem; display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:center; }
-        .mem-hero-eyebrow { display:inline-flex; align-items:center; gap:9px; font-size:.8rem; font-weight:700; text-transform:uppercase; letter-spacing:.14em; color:var(--ry-amber); margin-bottom:1.2rem; }
-        .mem-hero-eyebrow .eyebrow-square { width:8px; height:8px; background:var(--ry-amber); display:inline-block; flex-shrink:0; }
-        .mem-hero-title { font-family:var(--font-serif); font-size:clamp(2.2rem,4.5vw,3.8rem); font-weight:800; line-height:1.12; color:#FFF; letter-spacing:-.02em; margin-bottom:1.2rem; }
-        .mem-hero-title .gradient-line { background:linear-gradient(135deg,#FF4040 0%,#E59819 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
-        .mem-hero-sub { font-size:1.05rem; line-height:1.72; color:rgba(255,255,255,.7); margin-bottom:2rem; }
-        .mem-hero-stats { display:grid; grid-template-columns:repeat(3,1fr); gap:1.2rem; }
-        .mem-hero-stat { background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.1); border-radius:8px; padding:1.1rem 1.2rem; text-align:center; backdrop-filter:blur(10px); }
-        .mem-hero-stat-num { font-family:var(--font-serif); font-size:1.5rem; font-weight:800; color:var(--ry-amber); margin-bottom:.2rem; }
-        .mem-hero-stat-label { font-size:.72rem; font-weight:600; text-transform:uppercase; letter-spacing:.07em; color:rgba(255,255,255,.55); }
-
-        /* Quick Join Card on Hero Right */
-        .mem-quick-card { background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.12); backdrop-filter:blur(16px); border-radius:12px; padding:2rem; }
-        .mem-quick-card-title { font-family:var(--font-serif); font-size:1.3rem; font-weight:700; color:#FFF; margin-bottom:.4rem; }
-        .mem-quick-card-sub { font-size:.84rem; color:rgba(255,255,255,.6); margin-bottom:1.6rem; }
-        .mem-quick-field { width:100%; padding:.78rem 1rem; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.15); border-radius:7px; font-family:var(--font-sans); font-size:.9rem; color:#FFF; outline:none; margin-bottom:.75rem; transition:border-color .2s; }
-        .mem-quick-field::placeholder { color:rgba(255,255,255,.4); }
-        .mem-quick-field:focus { border-color:var(--ry-amber); background:rgba(255,255,255,.12); }
-        .mem-quick-select { appearance:none; -webkit-appearance:none; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='rgba(255,255,255,0.5)' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat:no-repeat; background-position:right 12px center; padding-right:2.2rem; }
-        .mem-quick-select option { background:#1A1D27; color:#FFF; }
-        .mem-quick-btn { width:100%; padding:.92rem 1.5rem; background:var(--ry-amber-gradient); color:#1A0A00; border:none; border-radius:7px; font-family:var(--font-sans); font-size:.95rem; font-weight:700; letter-spacing:.03em; cursor:pointer; transition:all .3s ease; box-shadow:0 8px 24px rgba(229,152,25,.35); display:flex; align-items:center; justify-content:center; gap:8px; margin-top:.5rem; }
-        .mem-quick-btn:hover { transform:translateY(-2px); box-shadow:0 14px 32px rgba(229,152,25,.5); }
-
-        /* Membership Tiers */
-        .mem-tiers { background:var(--ry-platinum); padding:5.5rem 0; }
-        .mem-tiers .container { max-width:1200px; margin:0 auto; padding:0 1.5rem; }
-        .sec-eyebrow { display:inline-flex; align-items:center; gap:8px; font-size:.78rem; font-weight:700; text-transform:uppercase; letter-spacing:.12em; color:var(--ry-amber); margin-bottom:.6rem; }
-        .sec-eyebrow .eyebrow-square { width:7px; height:7px; background:var(--ry-amber); display:inline-block; }
-        .sec-title { font-family:var(--font-serif); font-size:clamp(1.6rem,3vw,2.3rem); font-weight:700; color:var(--ry-gray-900); line-height:1.25; }
-        .section-header-center { text-align:center; max-width:620px; margin:0 auto 3.5rem; }
-        .tiers-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.6rem; }
-
-        .tier-card { background:#FFF; border:1.5px solid rgba(16,18,23,.08); clip-path:polygon(20px 0,100% 0,100% calc(100% - 20px),calc(100% - 20px) 100%,0 100%,0 20px); padding:2.2rem; display:flex; flex-direction:column; gap:1.4rem; position:relative; transition:transform .3s cubic-bezier(.16,1,.3,1),box-shadow .3s ease; }
-        .tier-card:hover { transform:translateY(-6px); box-shadow:0 20px 50px rgba(0,0,0,.1); }
-        .tier-card.featured { background:#FFF; border-color:var(--ry-crimson); box-shadow:0 12px 40px rgba(229,37,37,.15); }
-        .tier-card.featured:hover { box-shadow:0 24px 60px rgba(229,37,37,.25); }
-        .tier-featured-badge { position:absolute; top:-1px; right:24px; background:var(--ry-crimson-gradient); color:#FFF; font-size:.72rem; font-weight:700; text-transform:uppercase; letter-spacing:.1em; padding:.35rem .9rem; border-radius:0 0 8px 8px; }
-        .tier-icon { width:50px; height:50px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:1.3rem; margin-bottom:.2rem; }
-        .tier-icon-associate { background:rgba(229,152,25,.12); color:var(--ry-amber); }
-        .tier-icon-member { background:rgba(229,37,37,.1); color:var(--ry-crimson); }
-        .tier-icon-core { background:rgba(55,104,86,.12); color:var(--ry-sage); }
-        .tier-name { font-size:.75rem; font-weight:700; text-transform:uppercase; letter-spacing:.12em; color:var(--ry-gray-600); margin-bottom:.3rem; }
-        .tier-title { font-family:var(--font-serif); font-size:1.5rem; font-weight:700; color:var(--ry-gray-900); margin-bottom:.5rem; }
-        .tier-price { display:flex; align-items:baseline; gap:5px; margin-bottom:.6rem; }
-        .tier-price-num { font-family:var(--font-serif); font-size:2rem; font-weight:800; color:var(--ry-gray-900); }
-        .tier-price-period { font-size:.85rem; color:var(--ry-gray-600); }
-        .tier-free { font-family:var(--font-serif); font-size:1.6rem; font-weight:800; color:var(--ry-sage); }
-        .tier-desc { font-size:.88rem; line-height:1.65; color:var(--ry-gray-600); padding-top:.6rem; border-top:1px solid rgba(16,18,23,.06); }
-        .tier-perks { display:flex; flex-direction:column; gap:.7rem; flex:1; }
-        .tier-perk { display:flex; align-items:flex-start; gap:10px; font-size:.86rem; color:var(--ry-gray-600); line-height:1.5; }
-        .tier-perk i { color:var(--ry-crimson); margin-top:.15rem; flex-shrink:0; font-size:.82rem; }
-        .tier-perk.disabled { opacity:.45; }
-        .tier-perk.disabled i { color:var(--ry-gray-600); }
-        .tier-cta { width:100%; padding:.9rem 1.5rem; background:var(--ry-crimson-gradient); color:#FFF; border:none; border-radius:7px; font-family:var(--font-sans); font-size:.92rem; font-weight:700; cursor:pointer; transition:all .3s ease; box-shadow:0 6px 18px rgba(229,37,37,.28); text-decoration:none; display:flex; align-items:center; justify-content:center; gap:8px; text-align:center; }
-        .tier-cta:hover { transform:translateY(-2px); box-shadow:0 12px 28px rgba(229,37,37,.38); }
-        .tier-cta.amber-cta { background:var(--ry-amber-gradient); color:#1A0A00; box-shadow:0 6px 18px rgba(229,152,25,.28); }
-        .tier-cta.amber-cta:hover { box-shadow:0 12px 28px rgba(229,152,25,.42); }
-        .tier-cta.sage-cta { background:linear-gradient(135deg,#376856 0%,#274E40 100%); box-shadow:0 6px 18px rgba(55,104,86,.28); }
-        .tier-cta.sage-cta:hover { box-shadow:0 12px 28px rgba(55,104,86,.42); }
-
-        /* Benefits Grid */
-        .mem-benefits { background:#FFF; padding:5.5rem 0; }
-        .mem-benefits .container { max-width:1200px; margin:0 auto; padding:0 1.5rem; }
-        .benefits-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.4rem; margin-top:3.5rem; }
-        .benefit-card { padding:2rem; background:var(--ry-platinum); border:1px solid rgba(16,18,23,.07); clip-path:polygon(16px 0,100% 0,100% 100%,0 100%,0 16px); transition:transform .25s ease,box-shadow .25s ease; }
-        .benefit-card:hover { transform:translateY(-4px); box-shadow:0 12px 32px rgba(0,0,0,.07); }
-        .benefit-icon { width:46px; height:46px; background:rgba(229,37,37,.08); border-radius:9px; display:flex; align-items:center; justify-content:center; color:var(--ry-crimson); font-size:1.2rem; margin-bottom:1.1rem; }
-        .benefit-title { font-size:1rem; font-weight:700; color:var(--ry-gray-900); margin-bottom:.5rem; }
-        .benefit-desc { font-size:.84rem; line-height:1.65; color:var(--ry-gray-600); }
-
-        /* Who Can Join */
-        .mem-eligibility { background:var(--ry-dark-bg); padding:5.5rem 0; position:relative; overflow:hidden; }
-        .mem-eligibility::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse 70% 80% at 50% 50%,rgba(229,37,37,.08) 0%,transparent 60%); }
-        .mem-eligibility .container { position:relative; z-index:1; max-width:1200px; margin:0 auto; padding:0 1.5rem; }
-        .mem-eligibility .sec-title { color:#FFF; }
-        .mem-eligibility .sec-eyebrow { color:var(--ry-amber); }
-        .eligibility-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:1.4rem; margin-top:3.5rem; }
-        .eligibility-card { background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.1); border-radius:10px; padding:1.8rem; display:flex; gap:1.2rem; align-items:flex-start; transition:background .25s ease,border-color .25s ease; }
-        .eligibility-card:hover { background:rgba(229,37,37,.07); border-color:rgba(229,37,37,.3); }
-        .elig-icon { width:44px; height:44px; flex-shrink:0; background:rgba(229,37,37,.12); border-radius:9px; display:flex; align-items:center; justify-content:center; color:var(--ry-crimson); font-size:1.1rem; }
-        .elig-title { font-size:.96rem; font-weight:700; color:#FFF; margin-bottom:.35rem; }
-        .elig-desc { font-size:.83rem; line-height:1.65; color:rgba(255,255,255,.6); }
-        .elig-tags { display:flex; flex-wrap:wrap; gap:6px; margin-top:.8rem; }
-        .elig-tag { padding:.28rem .72rem; background:rgba(229,37,37,.15); border:1px solid rgba(229,37,37,.3); border-radius:50px; font-size:.72rem; font-weight:600; color:rgba(229,37,37,.9); }
-
-        /* Application Form */
-        .mem-apply { background:var(--ry-platinum); padding:5.5rem 0; }
-        .mem-apply .container { max-width:860px; margin:0 auto; padding:0 1.5rem; }
-        .apply-form-card { background:#FFF; clip-path:polygon(22px 0,100% 0,100% calc(100% - 22px),calc(100% - 22px) 100%,0 100%,0 22px); box-shadow:0 24px 64px rgba(0,0,0,.09); padding:3rem 3.5rem; }
-        .apply-form-header { margin-bottom:2.5rem; }
-        .apply-form-eyebrow { font-size:.75rem; font-weight:700; text-transform:uppercase; letter-spacing:.1em; color:var(--ry-crimson); margin-bottom:.5rem; }
-        .apply-form-title { font-family:var(--font-serif); font-size:1.9rem; font-weight:700; color:var(--ry-gray-900); line-height:1.25; }
-        .apply-form-sub { font-size:.9rem; color:var(--ry-gray-600); margin-top:.5rem; line-height:1.6; }
-        .apply-fields { display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-bottom:1.2rem; }
-        .apply-field-group { display:flex; flex-direction:column; gap:5px; }
-        .apply-field-group.full { grid-column:1/-1; }
-        .apply-label { font-size:.78rem; font-weight:600; color:var(--ry-gray-900); text-transform:uppercase; letter-spacing:.06em; }
-        .apply-input { padding:.78rem 1rem; border:1.5px solid rgba(16,18,23,.1); border-radius:7px; font-family:var(--font-sans); font-size:.9rem; color:var(--ry-gray-900); background:var(--ry-platinum); outline:none; transition:border-color .2s; }
-        .apply-input:focus { border-color:var(--ry-crimson); background:#FFF; box-shadow:0 0 0 3px rgba(229,37,37,.08); }
-        .apply-select { appearance:none; -webkit-appearance:none; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%234B5262' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat:no-repeat; background-position:right 12px center; padding-right:2.2rem; }
-        .interest-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:.7rem; margin-top:.5rem; }
-        .interest-check { display:flex; align-items:center; gap:9px; cursor:pointer; font-size:.85rem; color:var(--ry-gray-600); }
-        .interest-check input { width:16px; height:16px; accent-color:var(--ry-crimson); cursor:pointer; }
-        .apply-submit { width:100%; padding:1.05rem 2rem; background:var(--ry-crimson-gradient); color:#FFF; border:none; border-radius:7px; font-family:var(--font-sans); font-size:1rem; font-weight:700; cursor:pointer; transition:all .3s cubic-bezier(.16,1,.3,1); box-shadow:0 8px 24px rgba(229,37,37,.3); display:flex; align-items:center; justify-content:center; gap:10px; margin-top:1.8rem; }
-        .apply-submit:hover { transform:translateY(-2px); box-shadow:0 14px 32px rgba(229,37,37,.42); }
-        .apply-disclaimer { text-align:center; font-size:.78rem; color:var(--ry-gray-600); margin-top:.85rem; line-height:1.6; }
-
-        /* Testimonials */
-        .mem-stories { background:#FFF; padding:5.5rem 0; }
-        .mem-stories .container { max-width:1200px; margin:0 auto; padding:0 1.5rem; }
-        .stories-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.4rem; margin-top:3.5rem; }
-        .story-card { background:var(--ry-platinum); border:1px solid rgba(16,18,23,.07); clip-path:polygon(18px 0,100% 0,100% 100%,0 100%,0 18px); padding:1.8rem; display:flex; flex-direction:column; gap:1rem; }
-        .story-quote { font-family:var(--font-serif); font-size:1.1rem; line-height:1.6; color:var(--ry-gray-900); font-style:italic; flex:1; }
-        .story-quote::before { content:'\201C'; font-size:2.5rem; color:var(--ry-crimson); line-height:.6; display:block; margin-bottom:.4rem; font-style:normal; }
-        .story-author { display:flex; align-items:center; gap:10px; padding-top:.7rem; border-top:1px solid rgba(16,18,23,.06); }
-        .story-avatar { width:38px; height:38px; background:var(--ry-crimson); border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:.9rem; color:#FFF; font-family:var(--font-serif); flex-shrink:0; }
-        .story-name { font-size:.88rem; font-weight:700; color:var(--ry-gray-900); }
-        .story-role { font-size:.76rem; color:var(--ry-gray-600); }
-
-        /* Bottom CTA */
-        .mem-bottom-cta { background:var(--ry-dark-bg); padding:5rem 0; text-align:center; position:relative; overflow:hidden; }
-        .mem-bottom-cta::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse 70% 80% at 50% 50%,rgba(229,37,37,.1) 0%,transparent 60%); }
-        .mem-bottom-cta .container { position:relative; z-index:1; max-width:680px; margin:0 auto; padding:0 1.5rem; }
-        .mem-bottom-cta h2 { font-family:var(--font-serif); font-size:clamp(1.7rem,3.5vw,2.8rem); color:#FFF; margin-bottom:.9rem; }
-        .mem-bottom-cta p { font-size:1rem; color:rgba(255,255,255,.65); margin-bottom:2rem; }
-        .cta-btn-row { display:flex; gap:14px; justify-content:center; flex-wrap:wrap; }
-        .btn-amber-solid { padding:.9rem 2.2rem; background:var(--ry-amber-gradient); color:#1A0A00; border:none; border-radius:50px; font-family:var(--font-sans); font-size:.95rem; font-weight:700; cursor:pointer; text-decoration:none; transition:all .3s ease; box-shadow:0 8px 24px rgba(229,152,25,.3); display:inline-flex; align-items:center; gap:8px; }
-        .btn-amber-solid:hover { transform:translateY(-2px); box-shadow:0 14px 32px rgba(229,152,25,.5); }
-        .btn-outline-white { padding:.9rem 2.2rem; background:transparent; color:#FFF; border:1.5px solid rgba(255,255,255,.35); border-radius:50px; font-family:var(--font-sans); font-size:.95rem; font-weight:600; cursor:pointer; text-decoration:none; transition:all .3s ease; display:inline-flex; align-items:center; gap:8px; }
-        .btn-outline-white:hover { background:rgba(255,255,255,.1); border-color:rgba(255,255,255,.6); }
-
-        /* Dark mode */
-        body.dark-theme .mem-tiers { background:#0E111A; }
-        body.dark-theme .tier-card { background:#12141A; border-color:var(--ry-dark-border); }
-        body.dark-theme .tier-title, body.dark-theme .tier-price-num, body.dark-theme .benefit-title, body.dark-theme .story-name, body.dark-theme .apply-form-title, body.dark-theme .sec-title { color:#FFF; }
-        body.dark-theme .tier-name, body.dark-theme .tier-desc, body.dark-theme .tier-perk, body.dark-theme .tier-price-period, body.dark-theme .benefit-desc, body.dark-theme .story-role, body.dark-theme .apply-form-sub, body.dark-theme .apply-disclaimer { color:rgba(255,255,255,.55); }
-        body.dark-theme .mem-benefits { background:#0E111A; }
-        body.dark-theme .benefit-card { background:#12141A; border-color:var(--ry-dark-border); }
-        body.dark-theme .mem-stories { background:#0E111A; }
-        body.dark-theme .story-card { background:#12141A; border-color:var(--ry-dark-border); }
-        body.dark-theme .story-quote { color:rgba(255,255,255,.85); }
-        body.dark-theme .story-author { border-top-color:rgba(255,255,255,.08); }
-        body.dark-theme .mem-apply { background:#0E111A; }
-        body.dark-theme .apply-form-card { background:#12141A; border:1px solid var(--ry-dark-border); }
-        body.dark-theme .apply-label { color:rgba(255,255,255,.85); }
-        body.dark-theme .apply-input { background:#1A1D27; border-color:var(--ry-dark-border); color:#FFF; }
-        body.dark-theme .apply-input:focus { background:#1F2233; border-color:var(--ry-crimson); }
-        body.dark-theme .interest-check { color:rgba(255,255,255,.6); }
-        body.dark-theme .tier-card.featured { border-color:var(--ry-crimson); box-shadow:0 12px 40px rgba(229,37,37,.2); }
-
-        @media (max-width:1024px) {
-            .mem-hero .container { grid-template-columns:1fr; gap:2.5rem; }
-            .tiers-grid { grid-template-columns:1fr 1fr; }
+        
+        /* ---- HERO SECTION ---- */
+        .mem-hero {
+            position: relative;
+            padding: clamp(155px, 17vh, 185px) 0 clamp(4.5rem, 8vh, 6.5rem);
+            background: #08090C;
+            overflow: hidden;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
         }
-        @media (max-width:768px) {
-            .tiers-grid, .benefits-grid, .stories-grid { grid-template-columns:1fr; }
-            .eligibility-grid { grid-template-columns:1fr; }
-            .apply-fields { grid-template-columns:1fr; }
-            .interest-grid { grid-template-columns:1fr; }
-            .apply-form-card { padding:2rem 1.5rem; }
+        .mem-hero-bg {
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse 65% 75% at 15% 35%, rgba(229, 37, 37, 0.22) 0%, transparent 65%),
+                        radial-gradient(ellipse 55% 65% at 85% 65%, rgba(229, 152, 25, 0.14) 0%, transparent 60%),
+                        url('assets/workshop.png') center/cover no-repeat;
+            opacity: 0.22;
+            z-index: 0;
+        }
+        .mem-hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(170deg, rgba(8, 9, 12, 0.98) 0%, rgba(8, 9, 12, 0.88) 50%, rgba(229, 37, 37, 0.1) 100%);
+            z-index: 1;
+        }
+        .mem-hero-grid {
+            position: absolute;
+            inset: 0;
+            background-image: linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+                              linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+            background-size: 52px 52px;
+            z-index: 1;
+            pointer-events: none;
+        }
+        .mem-hero .container {
+            position: relative;
+            z-index: 2;
+            max-width: 1240px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: clamp(2.5rem, 5vw, 4.5rem);
+            align-items: center;
+        }
+        .mem-hero-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.16em;
+            color: var(--ry-amber);
+            margin-bottom: 1.2rem;
+        }
+        .mem-hero-eyebrow .eyebrow-square {
+            width: 8px;
+            height: 8px;
+            border-radius: 2px;
+            background: linear-gradient(135deg, var(--ry-amber) 0%, #F5A623 100%);
+            box-shadow: 0 2px 8px rgba(229, 152, 25, 0.5);
+            display: inline-block;
+            flex-shrink: 0;
+        }
+        .mem-hero-title {
+            font-family: var(--font-serif);
+            font-size: clamp(2.3rem, 4.8vw, 3.85rem);
+            font-weight: 800;
+            line-height: 1.12;
+            color: #FFFFFF;
+            letter-spacing: -0.025em;
+            margin-bottom: 1.3rem;
+        }
+        .mem-hero-title .gradient-line {
+            background: linear-gradient(135deg, #FF4040 0%, var(--ry-amber) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .mem-hero-sub {
+            font-size: 1.05rem;
+            line-height: 1.75;
+            color: rgba(255, 255, 255, 0.72);
+            margin-bottom: 2.2rem;
+            max-width: 580px;
+        }
+        .mem-hero-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.2rem;
+        }
+        .mem-hero-stat {
+            position: relative;
+            background: rgba(255, 255, 255, 0.035);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            clip-path: polygon(14px 0, 100% 0, 100% calc(100% - 14px), calc(100% - 14px) 100%, 0 100%, 0 14px);
+            padding: 1.15rem 1rem;
+            text-align: center;
+            backdrop-filter: blur(12px);
+            transition: all 0.3s ease;
+        }
+        .mem-hero-stat:hover {
+            border-color: rgba(229, 37, 37, 0.4);
+            transform: translateY(-2px);
+            background: rgba(229, 37, 37, 0.06);
+        }
+        .mem-hero-stat-num {
+            font-family: var(--font-serif);
+            font-size: clamp(1.5rem, 2.2vw, 1.85rem);
+            font-weight: 800;
+            color: #FFFFFF;
+            margin-bottom: 0.2rem;
+            letter-spacing: -0.02em;
+        }
+        .mem-hero-stat:nth-child(1) .mem-hero-stat-num { color: var(--ry-amber); }
+        .mem-hero-stat:nth-child(2) .mem-hero-stat-num { color: #FF4040; }
+        .mem-hero-stat:nth-child(3) .mem-hero-stat-num { color: #52B788; }
+        .mem-hero-stat-label {
+            font-size: 0.74rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.09em;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* Quick Join Chassis on Hero Right */
+        .mem-quick-chassis {
+            position: relative;
+            padding: 2px;
+            background: linear-gradient(145deg, rgba(229, 37, 37, 0.6) 0%, rgba(229, 152, 25, 0.45) 50%, rgba(255, 255, 255, 0.12) 100%);
+            clip-path: polygon(24px 0, 100% 0, 100% calc(100% - 24px), calc(100% - 24px) 100%, 0 100%, 0 24px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 35px rgba(229, 37, 37, 0.15);
+        }
+        .mem-quick-card {
+            position: relative;
+            background: #0E1118;
+            clip-path: polygon(23px 0, 100% 0, 100% calc(100% - 23px), calc(100% - 23px) 100%, 0 100%, 0 23px);
+            padding: clamp(1.8rem, 3.5vw, 2.3rem);
+            backdrop-filter: blur(20px);
+        }
+        .mem-quick-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--ry-amber);
+            background: rgba(229, 152, 25, 0.12);
+            border: 1px solid rgba(229, 152, 25, 0.28);
+            padding: 0.25rem 0.65rem;
+            clip-path: polygon(6px 0, 100% 0, 100% calc(100% - 6px), calc(100% - 6px) 100%, 0 100%, 0 6px);
+            margin-bottom: 0.75rem;
+        }
+        .mem-quick-card-title {
+            font-family: var(--font-serif);
+            font-size: 1.45rem;
+            font-weight: 700;
+            color: #FFFFFF;
+            margin-bottom: 0.45rem;
+        }
+        .mem-quick-card-sub {
+            font-size: 0.86rem;
+            line-height: 1.55;
+            color: rgba(255, 255, 255, 0.65);
+            margin-bottom: 1.4rem;
+        }
+        .mem-quick-field {
+            width: 100%;
+            padding: 0.82rem 1.05rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            border-radius: 6px;
+            font-family: var(--font-sans);
+            font-size: 0.9rem;
+            color: #FFFFFF;
+            outline: none;
+            margin-bottom: 0.78rem;
+            transition: all 0.25s ease;
+            box-sizing: border-box;
+        }
+        .mem-quick-field::placeholder { color: rgba(255, 255, 255, 0.4); }
+        .mem-quick-field:focus {
+            border-color: var(--ry-amber);
+            background: rgba(255, 255, 255, 0.08);
+            box-shadow: 0 0 0 3px rgba(229, 152, 25, 0.18);
+        }
+        .mem-quick-select {
+            appearance: none;
+            -webkit-appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23E59819' stroke-width='1.8' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 14px center;
+            padding-right: 2.4rem;
+            cursor: pointer;
+        }
+        .mem-quick-select option {
+            background: #11141D;
+            color: #FFFFFF;
+            padding: 8px;
+        }
+        .mem-quick-btn {
+            width: 100%;
+            padding: 0.95rem 1.6rem;
+            background: var(--ry-amber-gradient);
+            color: #101217;
+            border: none;
+            border-radius: 6px;
+            font-family: var(--font-sans);
+            font-size: 0.96rem;
+            font-weight: 700;
+            letter-spacing: 0.03em;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 8px 24px rgba(229, 152, 25, 0.35);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 9px;
+            margin-top: 0.6rem;
+        }
+        .mem-quick-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 14px 34px rgba(229, 152, 25, 0.5);
+            filter: brightness(1.05);
+        }
+
+        /* ---- COMMON SECTION HEADINGS ---- */
+        .sec-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+            color: var(--ry-amber);
+            margin-bottom: 0.65rem;
+        }
+        .sec-eyebrow .eyebrow-square {
+            width: 8px;
+            height: 8px;
+            border-radius: 2px;
+            background: linear-gradient(135deg, var(--ry-amber) 0%, var(--ry-amber-hover) 100%);
+            box-shadow: 0 2px 6px rgba(229, 152, 25, 0.4);
+            display: inline-block;
+            flex-shrink: 0;
+        }
+        .sec-title {
+            font-family: var(--font-serif);
+            font-size: clamp(1.85rem, 3.2vw, 2.5rem);
+            font-weight: 800;
+            color: #101217;
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+        }
+        .sec-desc-lead {
+            font-size: 0.98rem;
+            line-height: 1.68;
+            color: #555D6E;
+            margin-top: 0.75rem;
+        }
+        .section-header-center {
+            text-align: center;
+            max-width: 660px;
+            margin: 0 auto clamp(2.5rem, 5vh, 3.8rem);
+        }
+
+        /* ---- MEMBERSHIP TIERS SECTION ---- */
+        .mem-tiers {
+            position: relative;
+            background: #F8FAFC;
+            padding: clamp(4.5rem, 8vh, 6.5rem) 0;
+            transition: background 0.35s ease;
+        }
+        .mem-tiers .container {
+            max-width: 1240px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        .tiers-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: clamp(1.4rem, 2.5vw, 2rem);
+            align-items: stretch;
+        }
+
+        /* Tier Card Chassis */
+        .tier-chassis {
+            position: relative;
+            padding: 2px;
+            clip-path: polygon(22px 0, 100% 0, 100% calc(100% - 22px), calc(100% - 22px) 100%, 0 100%, 0 22px);
+            background: rgba(16, 18, 23, 0.1);
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+            display: flex;
+        }
+        .tier-chassis:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 22px 50px rgba(0, 0, 0, 0.12);
+        }
+        .tier-chassis.tier-chassis-amber {
+            background: linear-gradient(145deg, rgba(229, 152, 25, 0.5) 0%, rgba(16, 18, 23, 0.08) 70%);
+        }
+        .tier-chassis.tier-chassis-amber:hover {
+            background: linear-gradient(145deg, rgba(229, 152, 25, 0.9) 0%, rgba(229, 152, 25, 0.25) 100%);
+            box-shadow: 0 24px 55px rgba(229, 152, 25, 0.18);
+        }
+        .tier-chassis.tier-chassis-featured {
+            background: linear-gradient(145deg, #FF2E2E 0%, #B31414 60%, rgba(229, 152, 25, 0.8) 100%);
+            box-shadow: 0 16px 45px rgba(229, 37, 37, 0.2);
+            transform: scale(1.02);
+            z-index: 2;
+        }
+        .tier-chassis.tier-chassis-featured:hover {
+            transform: scale(1.02) translateY(-7px);
+            box-shadow: 0 26px 65px rgba(229, 37, 37, 0.32);
+        }
+        .tier-chassis.tier-chassis-sage {
+            background: linear-gradient(145deg, rgba(55, 104, 86, 0.6) 0%, rgba(16, 18, 23, 0.08) 70%);
+        }
+        .tier-chassis.tier-chassis-sage:hover {
+            background: linear-gradient(145deg, rgba(55, 104, 86, 0.95) 0%, rgba(55, 104, 86, 0.3) 100%);
+            box-shadow: 0 24px 55px rgba(55, 104, 86, 0.2);
+        }
+
+        .tier-card {
+            width: 100%;
+            background: #FFFFFF;
+            clip-path: polygon(21px 0, 100% 0, 100% calc(100% - 21px), calc(100% - 21px) 100%, 0 100%, 0 21px);
+            padding: clamp(2rem, 3.2vw, 2.5rem);
+            display: flex;
+            flex-direction: column;
+            gap: 1.4rem;
+            position: relative;
+            box-sizing: border-box;
+        }
+        .tier-featured-badge {
+            position: absolute;
+            top: 0;
+            right: 24px;
+            background: var(--ry-crimson-gradient);
+            color: #FFFFFF;
+            font-size: 0.72rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            padding: 0.38rem 0.95rem;
+            clip-path: polygon(0 0, 100% 0, calc(100% - 8px) 100%, 8px 100%);
+            box-shadow: 0 4px 14px rgba(229, 37, 37, 0.4);
+        }
+        .tier-icon-wrap {
+            width: 54px;
+            height: 54px;
+            clip-path: polygon(10px 0, calc(100% - 10px) 0, 100% 10px, 100% calc(100% - 10px), calc(100% - 10px) 100%, 10px 100%, 0 calc(100% - 10px), 0 10px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.35rem;
+            margin-bottom: 0.2rem;
+        }
+        .tier-icon-associate {
+            background: rgba(229, 152, 25, 0.14);
+            color: var(--ry-amber);
+            border: 1px solid rgba(229, 152, 25, 0.3);
+        }
+        .tier-icon-member {
+            background: rgba(229, 37, 37, 0.12);
+            color: var(--ry-crimson);
+            border: 1px solid rgba(229, 37, 37, 0.3);
+        }
+        .tier-icon-core {
+            background: rgba(55, 104, 86, 0.14);
+            color: #376856;
+            border: 1px solid rgba(55, 104, 86, 0.3);
+        }
+        .tier-name {
+            font-size: 0.76rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+            color: #64748B;
+            margin-bottom: 0.3rem;
+        }
+        .tier-title {
+            font-family: var(--font-serif);
+            font-size: 1.55rem;
+            font-weight: 800;
+            color: #101217;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.015em;
+        }
+        .tier-price {
+            display: flex;
+            align-items: baseline;
+            gap: 6px;
+            margin-bottom: 0.6rem;
+        }
+        .tier-price-num {
+            font-family: var(--font-serif);
+            font-size: 2.15rem;
+            font-weight: 800;
+            color: #101217;
+            letter-spacing: -0.03em;
+        }
+        .tier-price-period {
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: #64748B;
+        }
+        .tier-free {
+            font-family: var(--font-serif);
+            font-size: 2.15rem;
+            font-weight: 800;
+            color: #376856;
+            letter-spacing: -0.02em;
+        }
+        .tier-desc {
+            font-size: 0.9rem;
+            line-height: 1.65;
+            color: #555D6E;
+            padding-top: 0.75rem;
+            border-top: 1px solid rgba(16, 18, 23, 0.08);
+        }
+        .tier-perks {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            flex: 1;
+        }
+        .tier-perk {
+            display: flex;
+            align-items: flex-start;
+            gap: 11px;
+            font-size: 0.88rem;
+            color: #334155;
+            line-height: 1.5;
+        }
+        .tier-perk i {
+            margin-top: 0.2rem;
+            flex-shrink: 0;
+            font-size: 0.85rem;
+        }
+        .tier-chassis-amber .tier-perk i { color: var(--ry-amber); }
+        .tier-chassis-featured .tier-perk i { color: var(--ry-crimson); }
+        .tier-chassis-sage .tier-perk i { color: #376856; }
+        .tier-perk.disabled {
+            opacity: 0.45;
+            text-decoration: line-through;
+        }
+        .tier-perk.disabled i {
+            color: #94A3B8 !important;
+            text-decoration: none;
+        }
+        .tier-cta {
+            width: 100%;
+            padding: 0.95rem 1.5rem;
+            color: #FFFFFF;
+            border: none;
+            clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
+            font-family: var(--font-sans);
+            font-size: 0.94rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 9px;
+            text-align: center;
+            box-sizing: border-box;
+        }
+        .tier-cta.crimson-cta {
+            background: var(--ry-crimson-gradient);
+            box-shadow: 0 8px 24px rgba(229, 37, 37, 0.35);
+        }
+        .tier-cta.crimson-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 14px 34px rgba(229, 37, 37, 0.48);
+            filter: brightness(1.05);
+        }
+        .tier-cta.amber-cta {
+            background: var(--ry-amber-gradient);
+            color: #101217;
+            box-shadow: 0 8px 24px rgba(229, 152, 25, 0.3);
+        }
+        .tier-cta.amber-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 14px 34px rgba(229, 152, 25, 0.45);
+            filter: brightness(1.05);
+        }
+        .tier-cta.sage-cta {
+            background: linear-gradient(135deg, #376856 0%, #274E40 100%);
+            color: #FFFFFF;
+            box-shadow: 0 8px 24px rgba(55, 104, 86, 0.3);
+        }
+        .tier-cta.sage-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 14px 34px rgba(55, 104, 86, 0.45);
+            filter: brightness(1.08);
+        }
+
+        /* ---- BENEFITS SECTION ---- */
+        .mem-benefits {
+            position: relative;
+            background: #FFFFFF;
+            padding: clamp(4.5rem, 8vh, 6.5rem) 0;
+            transition: background 0.35s ease;
+        }
+        .mem-benefits .container {
+            max-width: 1240px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: clamp(1.3rem, 2.2vw, 1.8rem);
+        }
+        .benefit-chassis {
+            position: relative;
+            padding: 1.5px;
+            clip-path: polygon(18px 0, 100% 0, 100% calc(100% - 18px), calc(100% - 18px) 100%, 0 100%, 0 18px);
+            background: rgba(16, 18, 23, 0.08);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            display: flex;
+        }
+        .benefit-chassis:hover {
+            transform: translateY(-5px);
+            background: linear-gradient(135deg, rgba(229, 37, 37, 0.5) 0%, rgba(229, 152, 25, 0.35) 100%);
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+        }
+        .benefit-card {
+            width: 100%;
+            padding: clamp(1.8rem, 2.8vw, 2.2rem);
+            background: #F8FAFC;
+            clip-path: polygon(17px 0, 100% 0, 100% calc(100% - 17px), calc(100% - 17px) 100%, 0 100%, 0 17px);
+            transition: background 0.3s ease;
+            box-sizing: border-box;
+        }
+        .benefit-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(229, 37, 37, 0.1);
+            border: 1px solid rgba(229, 37, 37, 0.22);
+            clip-path: polygon(9px 0, calc(100% - 9px) 0, 100% 9px, 100% calc(100% - 9px), calc(100% - 9px) 100%, 9px 100%, 0 calc(100% - 9px), 0 9px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--ry-crimson);
+            font-size: 1.3rem;
+            margin-bottom: 1.25rem;
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+        .benefit-chassis:nth-child(even) .benefit-icon {
+            background: rgba(229, 152, 25, 0.12);
+            border-color: rgba(229, 152, 25, 0.28);
+            color: var(--ry-amber);
+        }
+        .benefit-chassis:hover .benefit-icon {
+            transform: scale(1.1) rotate(-3deg);
+        }
+        .benefit-title {
+            font-family: var(--font-serif);
+            font-size: 1.18rem;
+            font-weight: 700;
+            color: #101217;
+            margin-bottom: 0.55rem;
+            letter-spacing: -0.01em;
+        }
+        .benefit-desc {
+            font-size: 0.88rem;
+            line-height: 1.7;
+            color: #555D6E;
+        }
+
+        /* ---- WHO CAN JOIN (ELIGIBILITY) SECTION ---- */
+        .mem-eligibility {
+            position: relative;
+            background: #08090C;
+            padding: clamp(4.5rem, 8vh, 6.5rem) 0;
+            overflow: hidden;
+        }
+        .mem-eligibility-bg {
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse 70% 80% at 50% 45%, rgba(229, 37, 37, 0.14) 0%, transparent 65%);
+            z-index: 0;
+        }
+        .mem-eligibility-grid-lines {
+            position: absolute;
+            inset: 0;
+            background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                              linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 48px 48px;
+            z-index: 0;
+            pointer-events: none;
+        }
+        .mem-eligibility .container {
+            position: relative;
+            z-index: 1;
+            max-width: 1240px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        .mem-eligibility .sec-title { color: #FFFFFF; }
+        .mem-eligibility .sec-desc-lead { color: rgba(255, 255, 255, 0.65); }
+        .eligibility-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: clamp(1.4rem, 2.5vw, 1.8rem);
+        }
+        .eligibility-chassis {
+            position: relative;
+            padding: 1.5px;
+            clip-path: polygon(20px 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%, 0 20px);
+            background: rgba(255, 255, 255, 0.08);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            display: flex;
+        }
+        .eligibility-chassis:hover {
+            transform: translateY(-4px);
+            background: linear-gradient(135deg, rgba(229, 37, 37, 0.65) 0%, rgba(229, 152, 25, 0.4) 100%);
+            box-shadow: 0 16px 45px rgba(0, 0, 0, 0.5), 0 0 30px rgba(229, 37, 37, 0.15);
+        }
+        .eligibility-card {
+            width: 100%;
+            background: #0E1118;
+            clip-path: polygon(19px 0, 100% 0, 100% calc(100% - 19px), calc(100% - 19px) 100%, 0 100%, 0 19px);
+            padding: clamp(1.8rem, 2.8vw, 2.2rem);
+            display: flex;
+            gap: 1.4rem;
+            align-items: flex-start;
+            box-sizing: border-box;
+        }
+        .elig-icon {
+            width: 52px;
+            height: 52px;
+            flex-shrink: 0;
+            background: rgba(229, 37, 37, 0.14);
+            border: 1px solid rgba(229, 37, 37, 0.28);
+            clip-path: polygon(10px 0, calc(100% - 10px) 0, 100% 10px, 100% calc(100% - 10px), calc(100% - 10px) 100%, 10px 100%, 0 calc(100% - 10px), 0 10px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #FF4040;
+            font-size: 1.25rem;
+            transition: transform 0.3s ease;
+        }
+        .eligibility-chassis:nth-child(2) .elig-icon {
+            background: rgba(229, 152, 25, 0.14);
+            border-color: rgba(229, 152, 25, 0.3);
+            color: var(--ry-amber);
+        }
+        .eligibility-chassis:nth-child(3) .elig-icon {
+            background: rgba(55, 104, 86, 0.18);
+            border-color: rgba(55, 104, 86, 0.35);
+            color: #52B788;
+        }
+        .eligibility-chassis:hover .elig-icon {
+            transform: scale(1.08);
+        }
+        .elig-title {
+            font-family: var(--font-serif);
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #FFFFFF;
+            margin-bottom: 0.45rem;
+            letter-spacing: -0.01em;
+        }
+        .elig-desc {
+            font-size: 0.88rem;
+            line-height: 1.68;
+            color: rgba(255, 255, 255, 0.65);
+        }
+        .elig-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 1rem;
+        }
+        .elig-tag {
+            padding: 0.32rem 0.78rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            clip-path: polygon(6px 0, 100% 0, 100% calc(100% - 6px), calc(100% - 6px) 100%, 0 100%, 0 6px);
+            font-size: 0.74rem;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            color: rgba(255, 255, 255, 0.85);
+            transition: all 0.25s ease;
+        }
+        .eligibility-chassis:hover .elig-tag {
+            border-color: rgba(229, 37, 37, 0.35);
+            background: rgba(229, 37, 37, 0.1);
+            color: #FFB3B3;
+        }
+
+        /* ---- FULL APPLICATION FORM SECTION ---- */
+        .mem-apply {
+            position: relative;
+            background: #F8FAFC;
+            padding: clamp(4.5rem, 8vh, 6.5rem) 0;
+            transition: background 0.35s ease;
+        }
+        .mem-apply .container {
+            max-width: 920px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        .apply-form-chassis {
+            position: relative;
+            padding: 2px;
+            clip-path: polygon(26px 0, 100% 0, 100% calc(100% - 26px), calc(100% - 26px) 100%, 0 100%, 0 26px);
+            background: linear-gradient(145deg, rgba(229, 37, 37, 0.45) 0%, rgba(229, 152, 25, 0.3) 50%, rgba(16, 18, 23, 0.12) 100%);
+            box-shadow: 0 24px 70px rgba(0, 0, 0, 0.08);
+        }
+        .apply-form-card {
+            background: #FFFFFF;
+            clip-path: polygon(25px 0, 100% 0, 100% calc(100% - 25px), calc(100% - 25px) 100%, 0 100%, 0 25px);
+            padding: clamp(2.4rem, 4.5vw, 3.8rem);
+            box-sizing: border-box;
+        }
+        .apply-form-header {
+            margin-bottom: 2.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid rgba(16, 18, 23, 0.08);
+        }
+        .apply-form-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.78rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+            color: var(--ry-crimson);
+            margin-bottom: 0.5rem;
+        }
+        .apply-form-title {
+            font-family: var(--font-serif);
+            font-size: clamp(1.85rem, 3.2vw, 2.35rem);
+            font-weight: 800;
+            color: #101217;
+            line-height: 1.22;
+            letter-spacing: -0.02em;
+        }
+        .apply-form-sub {
+            font-size: 0.94rem;
+            color: #555D6E;
+            margin-top: 0.6rem;
+            line-height: 1.65;
+        }
+        .apply-fields {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.25rem;
+            margin-bottom: 1.5rem;
+        }
+        .apply-field-group {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+        .apply-field-group.full { grid-column: 1 / -1; }
+        .apply-label {
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: #1E293B;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        .apply-input {
+            padding: 0.85rem 1.05rem;
+            border: 1.5px solid rgba(16, 18, 23, 0.12);
+            border-radius: 6px;
+            font-family: var(--font-sans);
+            font-size: 0.92rem;
+            color: #101217;
+            background: #F8FAFC;
+            outline: none;
+            transition: all 0.25s ease;
+            box-sizing: border-box;
+            width: 100%;
+        }
+        .apply-input::placeholder { color: #94A3B8; }
+        .apply-input:focus {
+            border-color: var(--ry-crimson);
+            background: #FFFFFF;
+            box-shadow: 0 0 0 3.5px rgba(229, 37, 37, 0.12);
+        }
+        .apply-select {
+            appearance: none;
+            -webkit-appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%234B5262' stroke-width='1.8' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 14px center;
+            padding-right: 2.4rem;
+            cursor: pointer;
+        }
+        .interest-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.8rem;
+            margin-top: 0.65rem;
+        }
+        .interest-check-tile {
+            display: flex;
+            align-items: center;
+            gap: 11px;
+            padding: 0.75rem 1rem;
+            background: #F8FAFC;
+            border: 1.5px solid rgba(16, 18, 23, 0.08);
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.88rem;
+            font-weight: 500;
+            color: #334155;
+            transition: all 0.25s ease;
+            user-select: none;
+        }
+        .interest-check-tile:hover {
+            border-color: rgba(229, 37, 37, 0.35);
+            background: rgba(229, 37, 37, 0.04);
+            color: var(--ry-crimson);
+        }
+        .interest-check-tile input {
+            width: 17px;
+            height: 17px;
+            accent-color: var(--ry-crimson);
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+        .apply-submit {
+            width: 100%;
+            padding: 1.1rem 2.2rem;
+            background: var(--ry-crimson-gradient);
+            color: #FFFFFF;
+            border: none;
+            clip-path: polygon(12px 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%, 0 12px);
+            font-family: var(--font-sans);
+            font-size: 1.02rem;
+            font-weight: 700;
+            letter-spacing: 0.03em;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 10px 28px rgba(229, 37, 37, 0.35);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 11px;
+            margin-top: 2rem;
+        }
+        .apply-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 16px 36px rgba(229, 37, 37, 0.48);
+            filter: brightness(1.05);
+        }
+        .apply-disclaimer {
+            text-align: center;
+            font-size: 0.82rem;
+            color: #64748B;
+            margin-top: 1.1rem;
+            line-height: 1.65;
+        }
+
+        /* ---- TESTIMONIALS (MEMBER STORIES) ---- */
+        .mem-stories {
+            position: relative;
+            background: #FFFFFF;
+            padding: clamp(4.5rem, 8vh, 6.5rem) 0;
+            transition: background 0.35s ease;
+        }
+        .mem-stories .container {
+            max-width: 1240px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        .stories-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: clamp(1.4rem, 2.5vw, 2rem);
+        }
+        .story-chassis {
+            position: relative;
+            padding: 1.5px;
+            clip-path: polygon(20px 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%, 0 20px);
+            background: rgba(16, 18, 23, 0.08);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            display: flex;
+        }
+        .story-chassis:hover {
+            transform: translateY(-5px);
+            background: linear-gradient(135deg, rgba(229, 37, 37, 0.5) 0%, rgba(229, 152, 25, 0.35) 100%);
+            box-shadow: 0 18px 45px rgba(0, 0, 0, 0.09);
+        }
+        .story-card {
+            width: 100%;
+            background: #F8FAFC;
+            clip-path: polygon(19px 0, 100% 0, 100% calc(100% - 19px), calc(100% - 19px) 100%, 0 100%, 0 19px);
+            padding: clamp(2rem, 3vw, 2.4rem);
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+            box-sizing: border-box;
+        }
+        .story-quote-icon {
+            font-size: 2.2rem;
+            color: var(--ry-crimson);
+            line-height: 1;
+            margin-bottom: -0.5rem;
+        }
+        .story-quote {
+            font-family: var(--font-serif);
+            font-size: 1.1rem;
+            line-height: 1.68;
+            color: #101217;
+            font-style: italic;
+            flex: 1;
+        }
+        .story-author {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(16, 18, 23, 0.08);
+        }
+        .story-avatar-frame {
+            width: 46px;
+            height: 46px;
+            position: relative;
+            padding: 2px;
+            clip-path: polygon(10px 0, calc(100% - 10px) 0, 100% 10px, 100% calc(100% - 10px), calc(100% - 10px) 100%, 10px 100%, 0 calc(100% - 10px), 0 10px);
+            background: linear-gradient(135deg, var(--ry-crimson) 0%, var(--ry-amber) 100%);
+            flex-shrink: 0;
+        }
+        .story-avatar-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            clip-path: polygon(9px 0, calc(100% - 9px) 0, 100% 9px, 100% calc(100% - 9px), calc(100% - 9px) 100%, 9px 100%, 0 calc(100% - 9px), 0 9px);
+        }
+        .story-name {
+            font-family: var(--font-serif);
+            font-size: 0.98rem;
+            font-weight: 700;
+            color: #101217;
+        }
+        .story-role {
+            font-size: 0.78rem;
+            line-height: 1.4;
+            color: #64748B;
+            margin-top: 0.15rem;
+        }
+
+        /* ---- BOTTOM CALL TO ACTION ---- */
+        .mem-bottom-cta {
+            position: relative;
+            background: #08090C;
+            padding: clamp(5rem, 9vh, 7rem) 0;
+            text-align: center;
+            overflow: hidden;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+        }
+        .mem-bottom-cta-bg {
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse 75% 85% at 50% 50%, rgba(229, 37, 37, 0.16) 0%, transparent 65%),
+                        radial-gradient(ellipse 60% 70% at 85% 85%, rgba(229, 152, 25, 0.1) 0%, transparent 60%);
+            z-index: 0;
+        }
+        .mem-bottom-cta .container {
+            position: relative;
+            z-index: 1;
+            max-width: 740px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        .mem-bottom-cta h2 {
+            font-family: var(--font-serif);
+            font-size: clamp(2rem, 3.8vw, 3rem);
+            font-weight: 800;
+            color: #FFFFFF;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+        .mem-bottom-cta p {
+            font-size: 1.05rem;
+            line-height: 1.75;
+            color: rgba(255, 255, 255, 0.72);
+            margin-bottom: 2.2rem;
+        }
+        .cta-btn-row {
+            display: flex;
+            gap: 14px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .btn-amber-chamfer {
+            padding: 0.95rem 2.2rem;
+            background: var(--ry-amber-gradient);
+            color: #101217;
+            border: none;
+            clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
+            font-family: var(--font-sans);
+            font-size: 0.96rem;
+            font-weight: 700;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 8px 24px rgba(229, 152, 25, 0.35);
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+        }
+        .btn-amber-chamfer:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 14px 34px rgba(229, 152, 25, 0.5);
+            filter: brightness(1.05);
+        }
+        .btn-outline-white-chamfer {
+            padding: 0.95rem 2.2rem;
+            background: transparent;
+            color: #FFFFFF;
+            border: 1.5px solid rgba(255, 255, 255, 0.3);
+            clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
+            font-family: var(--font-sans);
+            font-size: 0.96rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+        }
+        .btn-outline-white-chamfer:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.65);
+            transform: translateY(-2px);
+        }
+
+        /* =====================================================
+           DARK THEME OVERRIDES (100% Contrast & Color Fidelity)
+           ===================================================== */
+        body:not(.light-theme) .mem-tiers,
+        body.dark-theme .mem-tiers {
+            background: #0B0D13;
+        }
+        body:not(.light-theme) .mem-tiers .sec-title,
+        body.dark-theme .mem-tiers .sec-title {
+            color: #FFFFFF;
+        }
+        body:not(.light-theme) .mem-tiers .sec-desc-lead,
+        body.dark-theme .mem-tiers .sec-desc-lead {
+            color: rgba(255, 255, 255, 0.65);
+        }
+        body:not(.light-theme) .tier-chassis,
+        body.dark-theme .tier-chassis {
+            background: rgba(255, 255, 255, 0.08);
+        }
+        body:not(.light-theme) .tier-chassis.tier-chassis-amber,
+        body.dark-theme .tier-chassis.tier-chassis-amber {
+            background: linear-gradient(145deg, rgba(229, 152, 25, 0.6) 0%, rgba(255, 255, 255, 0.06) 70%);
+        }
+        body:not(.light-theme) .tier-chassis.tier-chassis-sage,
+        body.dark-theme .tier-chassis.tier-chassis-sage {
+            background: linear-gradient(145deg, rgba(55, 104, 86, 0.7) 0%, rgba(255, 255, 255, 0.06) 70%);
+        }
+        body:not(.light-theme) .tier-card,
+        body.dark-theme .tier-card {
+            background: #11141D;
+        }
+        body:not(.light-theme) .tier-title,
+        body.dark-theme .tier-title,
+        body:not(.light-theme) .tier-price-num,
+        body.dark-theme .tier-price-num {
+            color: #FFFFFF;
+        }
+        body:not(.light-theme) .tier-name,
+        body.dark-theme .tier-name,
+        body:not(.light-theme) .tier-price-period,
+        body.dark-theme .tier-price-period,
+        body:not(.light-theme) .tier-desc,
+        body.dark-theme .tier-desc {
+            color: rgba(255, 255, 255, 0.6);
+            border-top-color: rgba(255, 255, 255, 0.08);
+        }
+        body:not(.light-theme) .tier-perk,
+        body.dark-theme .tier-perk {
+            color: rgba(255, 255, 255, 0.85);
+        }
+        body:not(.light-theme) .tier-free,
+        body.dark-theme .tier-free {
+            color: #52B788;
+        }
+
+        /* Benefits Dark Theme */
+        body:not(.light-theme) .mem-benefits,
+        body.dark-theme .mem-benefits {
+            background: #08090C;
+        }
+        body:not(.light-theme) .mem-benefits .sec-title,
+        body.dark-theme .mem-benefits .sec-title {
+            color: #FFFFFF;
+        }
+        body:not(.light-theme) .mem-benefits .sec-desc-lead,
+        body.dark-theme .mem-benefits .sec-desc-lead {
+            color: rgba(255, 255, 255, 0.65);
+        }
+        body:not(.light-theme) .benefit-chassis,
+        body.dark-theme .benefit-chassis {
+            background: rgba(255, 255, 255, 0.08);
+        }
+        body:not(.light-theme) .benefit-card,
+        body.dark-theme .benefit-card {
+            background: #11141D;
+        }
+        body:not(.light-theme) .benefit-title,
+        body.dark-theme .benefit-title {
+            color: #FFFFFF;
+        }
+        body:not(.light-theme) .benefit-desc,
+        body.dark-theme .benefit-desc {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* Application Form Dark Theme */
+        body:not(.light-theme) .mem-apply,
+        body.dark-theme .mem-apply {
+            background: #0B0D13;
+        }
+        body:not(.light-theme) .apply-form-chassis,
+        body.dark-theme .apply-form-chassis {
+            background: linear-gradient(145deg, rgba(229, 37, 37, 0.5) 0%, rgba(229, 152, 25, 0.35) 50%, rgba(255, 255, 255, 0.1) 100%);
+            box-shadow: 0 24px 70px rgba(0, 0, 0, 0.4);
+        }
+        body:not(.light-theme) .apply-form-card,
+        body.dark-theme .apply-form-card {
+            background: #11141D;
+        }
+        body:not(.light-theme) .apply-form-header,
+        body.dark-theme .apply-form-header {
+            border-bottom-color: rgba(255, 255, 255, 0.08);
+        }
+        body:not(.light-theme) .apply-form-title,
+        body.dark-theme .apply-form-title {
+            color: #FFFFFF;
+        }
+        body:not(.light-theme) .apply-form-sub,
+        body.dark-theme .apply-form-sub,
+        body:not(.light-theme) .apply-disclaimer,
+        body.dark-theme .apply-disclaimer {
+            color: rgba(255, 255, 255, 0.6);
+        }
+        body:not(.light-theme) .apply-label,
+        body.dark-theme .apply-label {
+            color: rgba(255, 255, 255, 0.88);
+        }
+        body:not(.light-theme) .apply-input,
+        body.dark-theme .apply-input {
+            background: #171B26;
+            border-color: rgba(255, 255, 255, 0.12);
+            color: #FFFFFF;
+        }
+        body:not(.light-theme) .apply-input::placeholder,
+        body.dark-theme .apply-input::placeholder {
+            color: rgba(255, 255, 255, 0.35);
+        }
+        body:not(.light-theme) .apply-input:focus,
+        body.dark-theme .apply-input:focus {
+            background: #1D2230;
+            border-color: var(--ry-crimson);
+            box-shadow: 0 0 0 3.5px rgba(229, 37, 37, 0.2);
+        }
+        body:not(.light-theme) .apply-select option,
+        body.dark-theme .apply-select option {
+            background: #171B26;
+            color: #FFFFFF;
+        }
+        body:not(.light-theme) .interest-check-tile,
+        body.dark-theme .interest-check-tile {
+            background: #171B26;
+            border-color: rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.85);
+        }
+        body:not(.light-theme) .interest-check-tile:hover,
+        body.dark-theme .interest-check-tile:hover {
+            background: rgba(229, 37, 37, 0.12);
+            border-color: rgba(229, 37, 37, 0.45);
+            color: #FFB3B3;
+        }
+
+        /* Stories Dark Theme */
+        body:not(.light-theme) .mem-stories,
+        body.dark-theme .mem-stories {
+            background: #08090C;
+        }
+        body:not(.light-theme) .mem-stories .sec-title,
+        body.dark-theme .mem-stories .sec-title {
+            color: #FFFFFF;
+        }
+        body:not(.light-theme) .mem-stories .sec-desc-lead,
+        body.dark-theme .mem-stories .sec-desc-lead {
+            color: rgba(255, 255, 255, 0.65);
+        }
+        body:not(.light-theme) .story-chassis,
+        body.dark-theme .story-chassis {
+            background: rgba(255, 255, 255, 0.08);
+        }
+        body:not(.light-theme) .story-card,
+        body.dark-theme .story-card {
+            background: #11141D;
+        }
+        body:not(.light-theme) .story-quote,
+        body.dark-theme .story-quote {
+            color: rgba(255, 255, 255, 0.9);
+        }
+        body:not(.light-theme) .story-author,
+        body.dark-theme .story-author {
+            border-top-color: rgba(255, 255, 255, 0.08);
+        }
+        body:not(.light-theme) .story-name,
+        body.dark-theme .story-name {
+            color: #FFFFFF;
+        }
+        body:not(.light-theme) .story-role,
+        body.dark-theme .story-role {
+            color: rgba(255, 255, 255, 0.55);
+        }
+
+        /* Pulse Divider Theme Handling */
+        .section-pulse-divider {
+            position: relative;
+            width: 100%;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            pointer-events: none;
+            z-index: 10;
+        }
+        body.light-theme .section-pulse-divider {
+            --pulse-divider-color: rgba(16, 18, 23, 0.2);
+        }
+        body:not(.light-theme) .section-pulse-divider,
+        body.dark-theme .section-pulse-divider {
+            --pulse-divider-color: rgba(255, 255, 255, 0.2);
+        }
+        .section-pulse-divider .pulse-marker {
+            width: 8px;
+            height: 8px;
+            background: var(--ry-crimson);
+            box-shadow: 0 0 10px rgba(229, 37, 37, 0.7);
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+        }
+        .section-pulse-divider .pulse-line {
+            flex: 1;
+            height: 1px;
+            background-color: var(--pulse-divider-color);
+        }
+        .section-pulse-divider .pulse-peak-svg {
+            width: 38px;
+            height: 20px;
+            stroke: var(--ry-crimson);
+            stroke-width: 1.6;
+            flex-shrink: 0;
+            margin: 0 4px;
+        }
+
+        /* ---- RESPONSIVE BREAKPOINTS ---- */
+        @media (max-width: 1024px) {
+            .mem-hero .container {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            .tiers-grid {
+                grid-template-columns: 1fr;
+                max-width: 580px;
+                margin: 0 auto;
+            }
+            .tier-chassis.tier-chassis-featured {
+                transform: none;
+            }
+            .tier-chassis.tier-chassis-featured:hover {
+                transform: translateY(-7px);
+            }
+            .benefits-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .stories-grid {
+                grid-template-columns: 1fr;
+                max-width: 600px;
+                margin: 0 auto;
+            }
+        }
+        @media (max-width: 768px) {
+            .mem-hero {
+                padding-top: 140px;
+            }
+            .mem-hero-stats {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 0.6rem;
+            }
+            .mem-hero-stat {
+                padding: 0.85rem 0.5rem;
+            }
+            .mem-hero-stat-num {
+                font-size: 1.35rem;
+            }
+            .benefits-grid,
+            .eligibility-grid {
+                grid-template-columns: 1fr;
+            }
+            .apply-fields {
+                grid-template-columns: 1fr;
+            }
+            .interest-grid {
+                grid-template-columns: 1fr;
+            }
+            .apply-form-card {
+                padding: 1.8rem 1.3rem;
+            }
+            .cta-btn-row {
+                flex-direction: column;
+            }
+            .btn-amber-chamfer,
+            .btn-outline-white-chamfer {
+                width: 100%;
+                justify-content: center;
+                box-sizing: border-box;
+            }
         }
     </style>
 </head>
@@ -237,29 +1414,49 @@
             <h1 class="mem-hero-title font-serif">Be Part of Nepal's <span class="gradient-line">Robotics Revolution</span></h1>
             <p class="mem-hero-sub">Join a community of passionate youth engineers, mentors, and innovators building Nepal's technological future together through hands-on robotics and STEAM education.</p>
             <div class="mem-hero-stats">
-                <div class="mem-hero-stat"><div class="mem-hero-stat-num">120+</div><div class="mem-hero-stat-label">Active Members</div></div>
-                <div class="mem-hero-stat"><div class="mem-hero-stat-num">7</div><div class="mem-hero-stat-label">Provinces</div></div>
-                <div class="mem-hero-stat"><div class="mem-hero-stat-num">2021</div><div class="mem-hero-stat-label">Founded</div></div>
+                <div class="mem-hero-stat">
+                    <div class="mem-hero-stat-num">120+</div>
+                    <div class="mem-hero-stat-label">Active Members</div>
+                </div>
+                <div class="mem-hero-stat">
+                    <div class="mem-hero-stat-num">7</div>
+                    <div class="mem-hero-stat-label">Provinces</div>
+                </div>
+                <div class="mem-hero-stat">
+                    <div class="mem-hero-stat-num">2021</div>
+                    <div class="mem-hero-stat-label">Founded</div>
+                </div>
             </div>
         </div>
         <div>
-            <div class="mem-quick-card">
-                <div class="mem-quick-card-title font-serif">Quick Application</div>
-                <div class="mem-quick-card-sub">Express interest in 60 seconds. Our team will contact you within 2 business days.</div>
-                <input type="text" class="mem-quick-field" placeholder="Full Name" id="quickName" autocomplete="name">
-                <input type="email" class="mem-quick-field" placeholder="Email Address" id="quickEmail" autocomplete="email">
-                <input type="tel" class="mem-quick-field" placeholder="Phone Number (+977...)" id="quickPhone">
-                <select class="mem-quick-field mem-quick-select" id="quickTier" aria-label="Membership Tier">
-                    <option value="" disabled selected>Select Membership Tier</option>
-                    <option value="associate">Associate Member (Free)</option>
-                    <option value="member">General Member (NPR 500/yr)</option>
-                    <option value="core">Core Member (NPR 1,500/yr)</option>
-                </select>
-                <button class="mem-quick-btn" onclick="submitQuick()"><i class="fa-light fa-paper-plane-top"></i> Send Application</button>
+            <div class="mem-quick-chassis">
+                <div class="mem-quick-card">
+                    <div class="mem-quick-badge"><i class="fa-light fa-bolt"></i> FAST-TRACK</div>
+                    <div class="mem-quick-card-title font-serif">Quick Application</div>
+                    <div class="mem-quick-card-sub">Express interest in 60 seconds. Our recruitment team contacts you within 2 business days.</div>
+                    <input type="text" class="mem-quick-field" placeholder="Full Name" id="quickName" autocomplete="name">
+                    <input type="email" class="mem-quick-field" placeholder="Email Address" id="quickEmail" autocomplete="email">
+                    <input type="tel" class="mem-quick-field" placeholder="Phone Number (+977...)" id="quickPhone">
+                    <select class="mem-quick-field mem-quick-select" id="quickTier" aria-label="Membership Tier">
+                        <option value="" disabled selected>Select Membership Tier</option>
+                        <option value="associate">Associate Member (Free)</option>
+                        <option value="member">General Member (NPR 500/yr)</option>
+                        <option value="core">Core Member (NPR 1,500/yr)</option>
+                    </select>
+                    <button class="mem-quick-btn" onclick="submitQuick()"><i class="fa-light fa-paper-plane-top"></i> Send Application</button>
+                </div>
             </div>
         </div>
     </div>
 </section>
+
+<!-- PULSE DIVIDER 1 -->
+<div class="section-pulse-divider" aria-hidden="true">
+    <div class="pulse-marker"></div>
+    <div class="pulse-line pulse-left"></div>
+    <svg class="pulse-peak-svg" viewBox="0 0 38 20" fill="none" xmlns="http://www.w3.org/2000/svg"><polyline points="0,18 19,4 38,18" /></svg>
+    <div class="pulse-line pulse-right"></div>
+</div>
 
 <!-- MEMBERSHIP TIERS -->
 <section class="mem-tiers" aria-label="Membership Plans">
@@ -267,76 +1464,91 @@
         <div class="section-header-center">
             <div class="sec-eyebrow"><span class="eyebrow-square" aria-hidden="true"></span><span>Membership Plans</span></div>
             <h2 class="sec-title font-serif">Choose Your <span class="text-gradient-crimson">Level of Engagement</span></h2>
+            <p class="sec-desc-lead">Join students, mentors, and engineers across Nepal. Pick the pathway tailored to your learning goals and project ambitions.</p>
         </div>
         <div class="tiers-grid">
 
             <!-- Tier 1: Associate -->
-            <div class="tier-card">
-                <div class="tier-icon tier-icon-associate"><i class="fa-light fa-user"></i></div>
-                <div>
-                    <div class="tier-name">Tier 1</div>
-                    <div class="tier-title font-serif">Associate Member</div>
-                    <div class="tier-price"><span class="tier-free">Free</span></div>
-                    <div class="tier-desc">Perfect for students exploring robotics who want access to our community events and open resources.</div>
+            <div class="tier-chassis tier-chassis-amber">
+                <div class="tier-card">
+                    <div class="tier-icon-wrap tier-icon-associate"><i class="fa-light fa-user"></i></div>
+                    <div>
+                        <div class="tier-name">Tier 01</div>
+                        <h3 class="tier-title font-serif">Associate Member</h3>
+                        <div class="tier-price"><span class="tier-free">Free</span></div>
+                        <div class="tier-desc">Perfect for students exploring robotics who want access to our community events and open resources.</div>
+                    </div>
+                    <div class="tier-perks">
+                        <div class="tier-perk"><i class="fa-light fa-check"></i><span>Access to RoboYuwa community Discord</span></div>
+                        <div class="tier-perk"><i class="fa-light fa-check"></i><span>Monthly e-newsletter &amp; updates</span></div>
+                        <div class="tier-perk"><i class="fa-light fa-check"></i><span>Attend open public events &amp; webinars</span></div>
+                        <div class="tier-perk"><i class="fa-light fa-check"></i><span>Access to free learning resources</span></div>
+                        <div class="tier-perk disabled"><i class="fa-light fa-xmark"></i><span>Competition subsidies</span></div>
+                        <div class="tier-perk disabled"><i class="fa-light fa-xmark"></i><span>Hardware kit access</span></div>
+                        <div class="tier-perk disabled"><i class="fa-light fa-xmark"></i><span>Mentorship pairing</span></div>
+                    </div>
+                    <a href="#apply" class="tier-cta amber-cta"><i class="fa-light fa-user-plus"></i> Join Free</a>
                 </div>
-                <div class="tier-perks">
-                    <div class="tier-perk"><i class="fa-light fa-check"></i><span>Access to RoboYuwa community Discord</span></div>
-                    <div class="tier-perk"><i class="fa-light fa-check"></i><span>Monthly e-newsletter &amp; updates</span></div>
-                    <div class="tier-perk"><i class="fa-light fa-check"></i><span>Attend open public events</span></div>
-                    <div class="tier-perk"><i class="fa-light fa-check"></i><span>Access to free learning resources</span></div>
-                    <div class="tier-perk disabled"><i class="fa-light fa-xmark"></i><span>Competition subsidies</span></div>
-                    <div class="tier-perk disabled"><i class="fa-light fa-xmark"></i><span>Hardware kit access</span></div>
-                    <div class="tier-perk disabled"><i class="fa-light fa-xmark"></i><span>Mentorship pairing</span></div>
-                </div>
-                <a href="#apply" class="tier-cta amber-cta"><i class="fa-light fa-user-plus"></i> Join Free</a>
             </div>
 
             <!-- Tier 2: General Member (Featured) -->
-            <div class="tier-card featured">
-                <div class="tier-featured-badge">Most Popular</div>
-                <div class="tier-icon tier-icon-member"><i class="fa-light fa-id-badge"></i></div>
-                <div>
-                    <div class="tier-name">Tier 2</div>
-                    <div class="tier-title font-serif">General Member</div>
-                    <div class="tier-price"><span class="tier-price-num">NPR 500</span><span class="tier-price-period">/ year</span></div>
-                    <div class="tier-desc">Full membership with access to bootcamps, competitions, and subsidized hardware kits for active builders.</div>
+            <div class="tier-chassis tier-chassis-featured">
+                <div class="tier-card">
+                    <div class="tier-featured-badge">Most Popular</div>
+                    <div class="tier-icon-wrap tier-icon-member"><i class="fa-light fa-id-badge"></i></div>
+                    <div>
+                        <div class="tier-name">Tier 02</div>
+                        <h3 class="tier-title font-serif">General Member</h3>
+                        <div class="tier-price"><span class="tier-price-num">NPR 500</span><span class="tier-price-period">/ year</span></div>
+                        <div class="tier-desc">Full membership with access to bootcamps, competitions, and subsidized hardware kits for active builders.</div>
+                    </div>
+                    <div class="tier-perks">
+                        <div class="tier-perk"><i class="fa-light fa-check"></i><span>All Associate Member benefits</span></div>
+                        <div class="tier-perk"><i class="fa-light fa-check"></i><span>Priority registration for STEAM bootcamps</span></div>
+                        <div class="tier-perk"><i class="fa-light fa-check"></i><span>50% subsidy on competition entry fees</span></div>
+                        <div class="tier-perk"><i class="fa-light fa-check"></i><span>Access to subsidized hardware kits</span></div>
+                        <div class="tier-perk"><i class="fa-light fa-check"></i><span>1-on-1 mentor pairing</span></div>
+                        <div class="tier-perk"><i class="fa-light fa-check"></i><span>Official RoboYuwa Member Certificate</span></div>
+                        <div class="tier-perk disabled"><i class="fa-light fa-xmark"></i><span>Core R&amp;D project access</span></div>
+                    </div>
+                    <a href="#apply" class="tier-cta crimson-cta"><i class="fa-light fa-arrow-right"></i> Join as Member</a>
                 </div>
-                <div class="tier-perks">
-                    <div class="tier-perk"><i class="fa-light fa-check"></i><span>All Associate Member benefits</span></div>
-                    <div class="tier-perk"><i class="fa-light fa-check"></i><span>Priority registration for STEAM bootcamps</span></div>
-                    <div class="tier-perk"><i class="fa-light fa-check"></i><span>50% subsidy on competition entry fees</span></div>
-                    <div class="tier-perk"><i class="fa-light fa-check"></i><span>Access to subsidized hardware kits</span></div>
-                    <div class="tier-perk"><i class="fa-light fa-check"></i><span>1-on-1 mentor pairing</span></div>
-                    <div class="tier-perk"><i class="fa-light fa-check"></i><span>RoboYuwa Member Certificate</span></div>
-                    <div class="tier-perk disabled"><i class="fa-light fa-xmark"></i><span>Core R&amp;D project access</span></div>
-                </div>
-                <a href="#apply" class="tier-cta"><i class="fa-light fa-arrow-right"></i> Join as Member</a>
             </div>
 
             <!-- Tier 3: Core Member -->
-            <div class="tier-card">
-                <div class="tier-icon tier-icon-core"><i class="fa-light fa-stars"></i></div>
-                <div>
-                    <div class="tier-name">Tier 3</div>
-                    <div class="tier-title font-serif">Core Member</div>
-                    <div class="tier-price"><span class="tier-price-num">NPR 1,500</span><span class="tier-price-period">/ year</span></div>
-                    <div class="tier-desc">For dedicated innovators who want to lead projects, contribute to open R&amp;D, and shape RoboYuwa's direction.</div>
+            <div class="tier-chassis tier-chassis-sage">
+                <div class="tier-card">
+                    <div class="tier-icon-wrap tier-icon-core"><i class="fa-light fa-stars"></i></div>
+                    <div>
+                        <div class="tier-name">Tier 03</div>
+                        <h3 class="tier-title font-serif">Core Member</h3>
+                        <div class="tier-price"><span class="tier-price-num">NPR 1,500</span><span class="tier-price-period">/ year</span></div>
+                        <div class="tier-desc">For dedicated innovators who want to lead projects, contribute to open R&amp;D, and shape RoboYuwa's direction.</div>
+                    </div>
+                    <div class="tier-perks">
+                        <div class="tier-perk"><i class="fa-light fa-check"></i><span>All General Member benefits</span></div>
+                        <div class="tier-perk"><i class="fa-light fa-check"></i><span>Lead open-source R&amp;D projects</span></div>
+                        <div class="tier-perk"><i class="fa-light fa-check"></i><span>Full competition fee subsidy</span></div>
+                        <div class="tier-perk"><i class="fa-light fa-check"></i><span>Free hardware kit per semester</span></div>
+                        <div class="tier-perk"><i class="fa-light fa-check"></i><span>Voting rights in General Assembly</span></div>
+                        <div class="tier-perk"><i class="fa-light fa-check"></i><span>Access to RADAR Planning Committee</span></div>
+                        <div class="tier-perk"><i class="fa-light fa-check"></i><span>Listed on RoboYuwa Member Registry</span></div>
+                    </div>
+                    <a href="#apply" class="tier-cta sage-cta"><i class="fa-light fa-rocket-launch"></i> Join as Core Member</a>
                 </div>
-                <div class="tier-perks">
-                    <div class="tier-perk"><i class="fa-light fa-check"></i><span>All General Member benefits</span></div>
-                    <div class="tier-perk"><i class="fa-light fa-check"></i><span>Lead open-source R&amp;D projects</span></div>
-                    <div class="tier-perk"><i class="fa-light fa-check"></i><span>Full competition fee subsidy</span></div>
-                    <div class="tier-perk"><i class="fa-light fa-check"></i><span>Free hardware kit per semester</span></div>
-                    <div class="tier-perk"><i class="fa-light fa-check"></i><span>Voting rights in General Assembly</span></div>
-                    <div class="tier-perk"><i class="fa-light fa-check"></i><span>Access to RADAR Planning Committee</span></div>
-                    <div class="tier-perk"><i class="fa-light fa-check"></i><span>Listed on RoboYuwa Member Registry</span></div>
-                </div>
-                <a href="#apply" class="tier-cta sage-cta"><i class="fa-light fa-rocket-launch"></i> Join as Core Member</a>
             </div>
 
         </div>
     </div>
 </section>
+
+<!-- PULSE DIVIDER 2 -->
+<div class="section-pulse-divider" aria-hidden="true">
+    <div class="pulse-marker"></div>
+    <div class="pulse-line pulse-left"></div>
+    <svg class="pulse-peak-svg" viewBox="0 0 38 20" fill="none" xmlns="http://www.w3.org/2000/svg"><polyline points="0,18 19,4 38,18" /></svg>
+    <div class="pulse-line pulse-right"></div>
+</div>
 
 <!-- MEMBER BENEFITS -->
 <section class="mem-benefits" aria-label="Member Benefits">
@@ -344,160 +1556,325 @@
         <div class="section-header-center">
             <div class="sec-eyebrow"><span class="eyebrow-square" aria-hidden="true"></span><span>Why Join</span></div>
             <h2 class="sec-title font-serif">What You <span class="text-gradient-crimson">Gain as a Member</span></h2>
+            <p class="sec-desc-lead">RoboYuwa provides end-to-end support for aspiring robotics engineers, researchers, and tech pioneers across Nepal.</p>
         </div>
         <div class="benefits-grid">
-            <div class="benefit-card">
-                <div class="benefit-icon"><i class="fa-light fa-microchip"></i></div>
-                <div class="benefit-title">Hands-On Hardware Labs</div>
-                <div class="benefit-desc">Get direct access to PCB fabrication, microcontroller labs, 3D printing, and our full electronics component library.</div>
+            <div class="benefit-chassis">
+                <div class="benefit-card">
+                    <div class="benefit-icon"><i class="fa-light fa-microchip"></i></div>
+                    <h3 class="benefit-title">Hands-On Hardware Labs</h3>
+                    <div class="benefit-desc">Get direct access to PCB fabrication, microcontroller labs, 3D printing, and our comprehensive electronics component library.</div>
+                </div>
             </div>
-            <div class="benefit-card">
-                <div class="benefit-icon"><i class="fa-light fa-trophy"></i></div>
-                <div class="benefit-title">Competition Pathways</div>
-                <div class="benefit-desc">Subsidized entry to WRO, RoboCup, national hackathons, and RADAR — RoboYuwa's flagship annual innovation event.</div>
+            <div class="benefit-chassis">
+                <div class="benefit-card">
+                    <div class="benefit-icon"><i class="fa-light fa-trophy"></i></div>
+                    <h3 class="benefit-title">Competition Pathways</h3>
+                    <div class="benefit-desc">Subsidized entry to WRO, RoboCup, national hackathons, and RADAR — RoboYuwa's flagship annual innovation summit.</div>
+                </div>
             </div>
-            <div class="benefit-card">
-                <div class="benefit-icon"><i class="fa-light fa-chalkboard-teacher"></i></div>
-                <div class="benefit-title">Expert Mentorship</div>
-                <div class="benefit-desc">Get paired with industry-experienced mentors from robotics engineering, embedded systems, and software development.</div>
+            <div class="benefit-chassis">
+                <div class="benefit-card">
+                    <div class="benefit-icon"><i class="fa-light fa-chalkboard-teacher"></i></div>
+                    <h3 class="benefit-title">Expert Mentorship</h3>
+                    <div class="benefit-desc">Get paired 1-on-1 with industry-experienced mentors across robotics engineering, embedded systems, and software.</div>
+                </div>
             </div>
-            <div class="benefit-card">
-                <div class="benefit-icon"><i class="fa-light fa-network-wired"></i></div>
-                <div class="benefit-title">National Network</div>
-                <div class="benefit-desc">Connect with 120+ innovators across Nepal's 7 provinces through regional chapter meetups and Discord communities.</div>
+            <div class="benefit-chassis">
+                <div class="benefit-card">
+                    <div class="benefit-icon"><i class="fa-light fa-network-wired"></i></div>
+                    <h3 class="benefit-title">National Network</h3>
+                    <div class="benefit-desc">Connect with 120+ innovators across Nepal's 7 provinces through regional chapter workshops, hack nights, and Discord forums.</div>
+                </div>
             </div>
-            <div class="benefit-card">
-                <div class="benefit-icon"><i class="fa-light fa-file-certificate"></i></div>
-                <div class="benefit-title">Certified Recognition</div>
-                <div class="benefit-desc">Earn official RoboYuwa participation certificates, participation letters, and open-source project contribution credits.</div>
+            <div class="benefit-chassis">
+                <div class="benefit-card">
+                    <div class="benefit-icon"><i class="fa-light fa-file-certificate"></i></div>
+                    <h3 class="benefit-title">Certified Recognition</h3>
+                    <div class="benefit-desc">Earn official RoboYuwa credential certificates, project recommendation letters, and verifiable open hardware contribution credits.</div>
+                </div>
             </div>
-            <div class="benefit-card">
-                <div class="benefit-icon"><i class="fa-light fa-globe-asia"></i></div>
-                <div class="benefit-title">Global Exposure</div>
-                <div class="benefit-desc">Represent Nepal in international robotics competitions, world championships, and collaborative research exchanges.</div>
+            <div class="benefit-chassis">
+                <div class="benefit-card">
+                    <div class="benefit-icon"><i class="fa-light fa-globe-asia"></i></div>
+                    <h3 class="benefit-title">Global Exposure</h3>
+                    <div class="benefit-desc">Represent Nepal in international robotics championships, world STEM forums, and collaborative global research partnerships.</div>
+                </div>
             </div>
         </div>
     </div>
 </section>
 
+<!-- PULSE DIVIDER 3 -->
+<div class="section-pulse-divider" aria-hidden="true">
+    <div class="pulse-marker"></div>
+    <div class="pulse-line pulse-left"></div>
+    <svg class="pulse-peak-svg" viewBox="0 0 38 20" fill="none" xmlns="http://www.w3.org/2000/svg"><polyline points="0,18 19,4 38,18" /></svg>
+    <div class="pulse-line pulse-right"></div>
+</div>
+
 <!-- WHO CAN JOIN -->
 <section class="mem-eligibility" aria-label="Who Can Join">
+    <div class="mem-eligibility-bg"></div>
+    <div class="mem-eligibility-grid-lines" aria-hidden="true"></div>
     <div class="container">
         <div class="section-header-center">
-            <div class="sec-eyebrow"><span class="eyebrow-square" aria-hidden="true"></span><span>Eligibility</span></div>
+            <div class="sec-eyebrow"><span class="eyebrow-square" aria-hidden="true"></span><span>Eligibility Criteria</span></div>
             <h2 class="sec-title font-serif">Who Can <span class="text-gradient-crimson">Join RoboYuwa?</span></h2>
+            <p class="sec-desc-lead">Our ecosystem welcomes curious minds at every stage of their technical journey.</p>
         </div>
         <div class="eligibility-grid">
-            <div class="eligibility-card">
-                <div class="elig-icon"><i class="fa-light fa-graduation-cap"></i></div>
-                <div>
-                    <div class="elig-title">School Students (Grade 6–12)</div>
-                    <div class="elig-desc">Any student with curiosity for robotics and technology. No prior experience required — just passion and willingness to learn hands-on.</div>
-                    <div class="elig-tags"><span class="elig-tag">Grade 6–12</span><span class="elig-tag">All Nepal</span><span class="elig-tag">No Experience Needed</span></div>
+            <div class="eligibility-chassis">
+                <div class="eligibility-card">
+                    <div class="elig-icon"><i class="fa-light fa-graduation-cap"></i></div>
+                    <div>
+                        <h3 class="elig-title">School Students (Grade 6–12)</h3>
+                        <div class="elig-desc">Any student with curiosity for robotics and technology. No prior experience required — just passion and willingness to learn hands-on.</div>
+                        <div class="elig-tags"><span class="elig-tag">Grade 6–12</span><span class="elig-tag">All Nepal</span><span class="elig-tag">Zero Barrier</span></div>
+                    </div>
                 </div>
             </div>
-            <div class="eligibility-card">
-                <div class="elig-icon"><i class="fa-light fa-user-graduate"></i></div>
-                <div>
-                    <div class="elig-title">College &amp; University Students</div>
-                    <div class="elig-desc">Undergraduate and graduate students in engineering, computer science, electronics, and related fields seeking applied project experience.</div>
-                    <div class="elig-tags"><span class="elig-tag">BSc / BE</span><span class="elig-tag">MSc</span><span class="elig-tag">CSIT / IT</span></div>
+            <div class="eligibility-chassis">
+                <div class="eligibility-card">
+                    <div class="elig-icon"><i class="fa-light fa-user-graduate"></i></div>
+                    <div>
+                        <h3 class="elig-title">College &amp; University Students</h3>
+                        <div class="elig-desc">Undergraduate and graduate students in engineering, computer science, electronics, and related fields seeking applied project experience.</div>
+                        <div class="elig-tags"><span class="elig-tag">BSc / BE</span><span class="elig-tag">CSIT / IT</span><span class="elig-tag">Applied R&amp;D</span></div>
+                    </div>
                 </div>
             </div>
-            <div class="eligibility-card">
-                <div class="elig-icon"><i class="fa-light fa-person-chalkboard"></i></div>
-                <div>
-                    <div class="elig-title">Teachers &amp; STEM Educators</div>
-                    <div class="elig-desc">School teachers and STEM educators who want to integrate robotics into their curriculum and receive professional development training.</div>
-                    <div class="elig-tags"><span class="elig-tag">Faculty</span><span class="elig-tag">School Teachers</span><span class="elig-tag">Trainers</span></div>
+            <div class="eligibility-chassis">
+                <div class="eligibility-card">
+                    <div class="elig-icon"><i class="fa-light fa-person-chalkboard"></i></div>
+                    <div>
+                        <h3 class="elig-title">Teachers &amp; STEM Educators</h3>
+                        <div class="elig-desc">School teachers and STEM educators who want to integrate robotics into their curriculum and receive professional development training.</div>
+                        <div class="elig-tags"><span class="elig-tag">Faculty</span><span class="elig-tag">Educators</span><span class="elig-tag">Trainer Access</span></div>
+                    </div>
                 </div>
             </div>
-            <div class="eligibility-card">
-                <div class="elig-icon"><i class="fa-light fa-briefcase"></i></div>
-                <div>
-                    <div class="elig-title">Industry Mentors &amp; Professionals</div>
-                    <div class="elig-desc">Working engineers, developers, and researchers who want to give back by mentoring Nepal's next generation of technology innovators.</div>
-                    <div class="elig-tags"><span class="elig-tag">Engineers</span><span class="elig-tag">Developers</span><span class="elig-tag">Researchers</span></div>
+            <div class="eligibility-chassis">
+                <div class="eligibility-card">
+                    <div class="elig-icon"><i class="fa-light fa-briefcase"></i></div>
+                    <div>
+                        <h3 class="elig-title">Industry Mentors &amp; Professionals</h3>
+                        <div class="elig-desc">Working engineers, developers, and researchers who want to give back by mentoring Nepal's next generation of technology innovators.</div>
+                        <div class="elig-tags"><span class="elig-tag">Engineers</span><span class="elig-tag">Researchers</span><span class="elig-tag">Mentorship</span></div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
+
+<!-- PULSE DIVIDER 4 -->
+<div class="section-pulse-divider" aria-hidden="true">
+    <div class="pulse-marker"></div>
+    <div class="pulse-line pulse-left"></div>
+    <svg class="pulse-peak-svg" viewBox="0 0 38 20" fill="none" xmlns="http://www.w3.org/2000/svg"><polyline points="0,18 19,4 38,18" /></svg>
+    <div class="pulse-line pulse-right"></div>
+</div>
 
 <!-- APPLICATION FORM -->
 <section class="mem-apply" id="apply" aria-label="Apply for Membership">
     <div class="container">
-        <div class="apply-form-card">
-            <div class="apply-form-header">
-                <div class="apply-form-eyebrow">Full Application</div>
-                <h2 class="apply-form-title font-serif">Apply for Membership</h2>
-                <p class="apply-form-sub">Fill in your details below. Our team reviews applications within 5 business days and will reach out to you to complete onboarding.</p>
-            </div>
-            <div class="apply-fields">
-                <div class="apply-field-group"><label class="apply-label" for="appFirstName">First Name *</label><input type="text" class="apply-input" id="appFirstName" placeholder="Ram" autocomplete="given-name" required></div>
-                <div class="apply-field-group"><label class="apply-label" for="appLastName">Last Name *</label><input type="text" class="apply-input" id="appLastName" placeholder="Sharma" autocomplete="family-name" required></div>
-                <div class="apply-field-group"><label class="apply-label" for="appEmail">Email Address *</label><input type="email" class="apply-input" id="appEmail" placeholder="ram@example.com" autocomplete="email" required></div>
-                <div class="apply-field-group"><label class="apply-label" for="appPhone">Phone Number *</label><input type="tel" class="apply-input" id="appPhone" placeholder="+977 9800000000" required></div>
-                <div class="apply-field-group"><label class="apply-label" for="appDOB">Date of Birth</label><input type="date" class="apply-input" id="appDOB"></div>
-                <div class="apply-field-group"><label class="apply-label" for="appGender">Gender</label><select class="apply-input apply-select" id="appGender" aria-label="Gender"><option value="" disabled selected>Select</option><option>Male</option><option>Female</option><option>Other</option><option>Prefer not to say</option></select></div>
-                <div class="apply-field-group full"><label class="apply-label" for="appInstitution">School / College / Institution *</label><input type="text" class="apply-input" id="appInstitution" placeholder="e.g. Tribhuvan University, Kirtipur" required></div>
-                <div class="apply-field-group"><label class="apply-label" for="appCategory">Applicant Category *</label><select class="apply-input apply-select" id="appCategory" required aria-label="Applicant Category"><option value="" disabled selected>Select Category</option><option>School Student (Grade 6–8)</option><option>School Student (Grade 9–12)</option><option>Undergraduate Student</option><option>Graduate Student</option><option>Teacher / Educator</option><option>Industry Professional</option></select></div>
-                <div class="apply-field-group"><label class="apply-label" for="appTier">Membership Tier *</label><select class="apply-input apply-select" id="appTier" required aria-label="Membership Tier"><option value="" disabled selected>Select Tier</option><option>Associate Member (Free)</option><option>General Member (NPR 500/yr)</option><option>Core Member (NPR 1,500/yr)</option></select></div>
-                <div class="apply-field-group full"><label class="apply-label" for="appProvince">Province *</label><select class="apply-input apply-select" id="appProvince" required aria-label="Province"><option value="" disabled selected>Select Province</option><option>Koshi Province (1)</option><option>Madhesh Province (2)</option><option>Bagmati Province (3)</option><option>Gandaki Province (4)</option><option>Lumbini Province (5)</option><option>Karnali Province (6)</option><option>Sudurpashchim Province (7)</option></select></div>
-                <div class="apply-field-group full">
-                    <div class="apply-label" style="margin-bottom:.6rem">Areas of Interest</div>
-                    <div class="interest-grid">
-                        <label class="interest-check"><input type="checkbox"> Microcontroller Programming</label>
-                        <label class="interest-check"><input type="checkbox"> PCB Design &amp; Fabrication</label>
-                        <label class="interest-check"><input type="checkbox"> Combat Robotics</label>
-                        <label class="interest-check"><input type="checkbox"> Soccer Robotics (WRO)</label>
-                        <label class="interest-check"><input type="checkbox"> Open Source R&amp;D Projects</label>
-                        <label class="interest-check"><input type="checkbox"> Outreach &amp; Community Programs</label>
-                        <label class="interest-check"><input type="checkbox"> Creative Media &amp; Documentation</label>
-                        <label class="interest-check"><input type="checkbox"> Competitive Hackathons</label>
+        <div class="apply-form-chassis">
+            <div class="apply-form-card">
+                <div class="apply-form-header">
+                    <div class="apply-form-eyebrow"><span class="eyebrow-square" aria-hidden="true"></span><span>Official Membership Portal</span></div>
+                    <h2 class="apply-form-title font-serif">Apply for Membership</h2>
+                    <p class="apply-form-sub">Fill in your information below. Our admissions board reviews applications within 5 business days and contacts you for onboarding.</p>
+                </div>
+                <div class="apply-fields">
+                    <div class="apply-field-group">
+                        <label class="apply-label" for="appFirstName">First Name *</label>
+                        <input type="text" class="apply-input" id="appFirstName" placeholder="Ram" autocomplete="given-name" required>
+                    </div>
+                    <div class="apply-field-group">
+                        <label class="apply-label" for="appLastName">Last Name *</label>
+                        <input type="text" class="apply-input" id="appLastName" placeholder="Sharma" autocomplete="family-name" required>
+                    </div>
+                    <div class="apply-field-group">
+                        <label class="apply-label" for="appEmail">Email Address *</label>
+                        <input type="email" class="apply-input" id="appEmail" placeholder="ram@example.com" autocomplete="email" required>
+                    </div>
+                    <div class="apply-field-group">
+                        <label class="apply-label" for="appPhone">Phone Number *</label>
+                        <input type="tel" class="apply-input" id="appPhone" placeholder="+977 9800000000" required>
+                    </div>
+                    <div class="apply-field-group">
+                        <label class="apply-label" for="appDOB">Date of Birth</label>
+                        <input type="date" class="apply-input" id="appDOB">
+                    </div>
+                    <div class="apply-field-group">
+                        <label class="apply-label" for="appGender">Gender</label>
+                        <select class="apply-input apply-select" id="appGender" aria-label="Gender">
+                            <option value="" disabled selected>Select Gender</option>
+                            <option>Male</option>
+                            <option>Female</option>
+                            <option>Other</option>
+                            <option>Prefer not to say</option>
+                        </select>
+                    </div>
+                    <div class="apply-field-group full">
+                        <label class="apply-label" for="appInstitution">School / College / Institution *</label>
+                        <input type="text" class="apply-input" id="appInstitution" placeholder="e.g. Tribhuvan University, Pulchowk Campus" required>
+                    </div>
+                    <div class="apply-field-group">
+                        <label class="apply-label" for="appCategory">Applicant Category *</label>
+                        <select class="apply-input apply-select" id="appCategory" required aria-label="Applicant Category">
+                            <option value="" disabled selected>Select Category</option>
+                            <option>School Student (Grade 6–8)</option>
+                            <option>School Student (Grade 9–12)</option>
+                            <option>Undergraduate Student</option>
+                            <option>Graduate Student</option>
+                            <option>Teacher / Educator</option>
+                            <option>Industry Professional</option>
+                        </select>
+                    </div>
+                    <div class="apply-field-group">
+                        <label class="apply-label" for="appTier">Membership Tier *</label>
+                        <select class="apply-input apply-select" id="appTier" required aria-label="Membership Tier">
+                            <option value="" disabled selected>Select Tier</option>
+                            <option value="associate">Associate Member (Free)</option>
+                            <option value="member">General Member (NPR 500/yr)</option>
+                            <option value="core">Core Member (NPR 1,500/yr)</option>
+                        </select>
+                    </div>
+                    <div class="apply-field-group full">
+                        <label class="apply-label" for="appProvince">Province *</label>
+                        <select class="apply-input apply-select" id="appProvince" required aria-label="Province">
+                            <option value="" disabled selected>Select Province</option>
+                            <option>Koshi Province (1)</option>
+                            <option>Madhesh Province (2)</option>
+                            <option>Bagmati Province (3)</option>
+                            <option>Gandaki Province (4)</option>
+                            <option>Lumbini Province (5)</option>
+                            <option>Karnali Province (6)</option>
+                            <option>Sudurpashchim Province (7)</option>
+                        </select>
+                    </div>
+                    <div class="apply-field-group full">
+                        <div class="apply-label" style="margin-bottom:0.6rem">Areas of Technical Interest</div>
+                        <div class="interest-grid">
+                            <label class="interest-check-tile"><input type="checkbox"> <span>Microcontroller Programming</span></label>
+                            <label class="interest-check-tile"><input type="checkbox"> <span>PCB Design &amp; Fabrication</span></label>
+                            <label class="interest-check-tile"><input type="checkbox"> <span>Combat Robotics</span></label>
+                            <label class="interest-check-tile"><input type="checkbox"> <span>Soccer Robotics (WRO)</span></label>
+                            <label class="interest-check-tile"><input type="checkbox"> <span>Open Source R&amp;D Projects</span></label>
+                            <label class="interest-check-tile"><input type="checkbox"> <span>Outreach &amp; Community Programs</span></label>
+                            <label class="interest-check-tile"><input type="checkbox"> <span>Creative Media &amp; Documentation</span></label>
+                            <label class="interest-check-tile"><input type="checkbox"> <span>Competitive Hackathons</span></label>
+                        </div>
+                    </div>
+                    <div class="apply-field-group full">
+                        <label class="apply-label" for="appMotivation">Why Do You Want to Join? *</label>
+                        <textarea class="apply-input" id="appMotivation" rows="3" style="resize:vertical;min-height:90px" placeholder="Tell us briefly why you want to join RoboYuwa and what technical aspirations you hope to achieve..." required></textarea>
+                    </div>
+                    <div class="apply-field-group full">
+                        <label class="apply-label" for="appRef">How Did You Hear About Us?</label>
+                        <select class="apply-input apply-select" id="appRef" aria-label="Referral source">
+                            <option value="" disabled selected>Select Source</option>
+                            <option>Social Media (Instagram / Facebook / LinkedIn)</option>
+                            <option>School / Teacher Recommendation</option>
+                            <option>Friend / Senior Colleague</option>
+                            <option>RoboYuwa Event / Bootcamp / Workshop</option>
+                            <option>News / Media / Web Search</option>
+                            <option>Other</option>
+                        </select>
                     </div>
                 </div>
-                <div class="apply-field-group full"><label class="apply-label" for="appMotivation">Why Do You Want to Join? *</label><textarea class="apply-input" id="appMotivation" rows="3" style="resize:vertical;min-height:80px" placeholder="Tell us briefly why you want to join RoboYuwa and what you hope to achieve..." required></textarea></div>
-                <div class="apply-field-group full"><label class="apply-label" for="appRef">How Did You Hear About Us?</label><select class="apply-input apply-select" id="appRef" aria-label="Referral source"><option value="" disabled selected>Select</option><option>Social Media (Instagram / Facebook)</option><option>School / Teacher Recommendation</option><option>Friend / Colleague</option><option>RoboYuwa Event / Bootcamp</option><option>News / Media</option><option>Other</option></select></div>
+                <button class="apply-submit" id="applySubmitBtn" onclick="submitApplication()"><i class="fa-light fa-paper-plane-top"></i> Submit Membership Application</button>
+                <div class="apply-disclaimer">By submitting, you agree to RoboYuwa's <a href="terms-of-service.html" style="color:var(--ry-crimson);text-decoration:underline;">Terms of Service</a> and <a href="privacy-policy.html" style="color:var(--ry-crimson);text-decoration:underline;">Privacy Policy</a>. Applications are approved per executive board review.</div>
             </div>
-            <button class="apply-submit" id="applySubmitBtn" onclick="submitApplication()"><i class="fa-light fa-paper-plane-top"></i> Submit Membership Application</button>
-            <div class="apply-disclaimer">By submitting, you agree to RoboYuwa's <a href="terms-of-service.html" style="color:var(--ry-crimson)">Terms of Service</a> and <a href="privacy-policy.html" style="color:var(--ry-crimson)">Privacy Policy</a>. Membership is subject to review and approval by the RoboYuwa Executive Board.</div>
         </div>
     </div>
 </section>
+
+<!-- PULSE DIVIDER 5 -->
+<div class="section-pulse-divider" aria-hidden="true">
+    <div class="pulse-marker"></div>
+    <div class="pulse-line pulse-left"></div>
+    <svg class="pulse-peak-svg" viewBox="0 0 38 20" fill="none" xmlns="http://www.w3.org/2000/svg"><polyline points="0,18 19,4 38,18" /></svg>
+    <div class="pulse-line pulse-right"></div>
+</div>
 
 <!-- MEMBER STORIES -->
 <section class="mem-stories" aria-label="Member Testimonials">
     <div class="container">
         <div class="section-header-center">
-            <div class="sec-eyebrow"><span class="eyebrow-square" aria-hidden="true"></span><span>Our Members</span></div>
+            <div class="sec-eyebrow"><span class="eyebrow-square" aria-hidden="true"></span><span>Member Experiences</span></div>
             <h2 class="sec-title font-serif">Voices from Our <span class="text-gradient-crimson">Community</span></h2>
+            <p class="sec-desc-lead">Hear how being part of RoboYuwa accelerated projects and technical careers across Nepal.</p>
         </div>
         <div class="stories-grid">
-            <div class="story-card">
-                <div class="story-quote">&ldquo;Joining RoboYuwa transformed my understanding of engineering. I went from knowing nothing about circuits to designing custom motor drivers and building a full combat bot in 3 months.&rdquo;</div>
-                <div class="story-author"><div class="story-avatar" style="overflow:hidden; padding:0;"><img src="assets/testomonials/Imagerecorrected.jpg.jpeg" alt="Aayush Shrestha" style="width:100%;height:100%;object-fit:cover;object-position:center 15%;"></div><div><div class="story-name">Aayush Shrestha</div><div class="story-role">BE Electronics, Kathmandu &mdash; Hardware Lead &amp; Core Member</div></div></div>
+            <div class="story-chassis">
+                <div class="story-card">
+                    <div class="story-quote-icon font-serif">&ldquo;</div>
+                    <div class="story-quote">Joining RoboYuwa transformed my understanding of engineering. I went from knowing nothing about circuits to designing custom motor drivers and building a full combat bot in 3 months.</div>
+                    <div class="story-author">
+                        <div class="story-avatar-frame">
+                            <img src="assets/testomonials/Imagerecorrected.jpg.jpeg" alt="Aayush Shrestha" class="story-avatar-img" style="object-position:center 15%;">
+                        </div>
+                        <div>
+                            <div class="story-name">Aayush Shrestha</div>
+                            <div class="story-role">BE Electronics, Kathmandu &mdash; Hardware Lead &amp; Core Member</div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="story-card">
-                <div class="story-quote">&ldquo;The mentorship and hardware access alone is worth everything. Through RoboYuwa's research-first bootcamps, I mastered autonomous line-followers and mentored 80+ school students.&rdquo;</div>
-                <div class="story-author"><div class="story-avatar" style="overflow:hidden; padding:0;"><img src="assets/testomonials/WhatsApp Image 2026-08-16 at 12.03.08 PM.jpeg" alt="Sujan Adhikari" style="width:100%;height:100%;object-fit:cover;object-position:center 15%;"></div><div><div class="story-name">Sujan Adhikari</div><div class="story-role">BSc CSIT, Lalitpur &mdash; Embedded Systems Fellow</div></div></div>
+            <div class="story-chassis">
+                <div class="story-card">
+                    <div class="story-quote-icon font-serif">&ldquo;</div>
+                    <div class="story-quote">The mentorship and hardware access alone is worth everything. Through RoboYuwa's research-first bootcamps, I mastered autonomous line-followers and mentored 80+ school students.</div>
+                    <div class="story-author">
+                        <div class="story-avatar-frame">
+                            <img src="assets/testomonials/WhatsApp Image 2026-08-16 at 12.03.08 PM.jpeg" alt="Sujan Adhikari" class="story-avatar-img" style="object-position:center 15%;">
+                        </div>
+                        <div>
+                            <div class="story-name">Sujan Adhikari</div>
+                            <div class="story-role">BSc CSIT, Lalitpur &mdash; Embedded Systems Fellow</div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="story-card">
-                <div class="story-quote">&ldquo;RoboYuwa provided the incubator, precision workstation tools, and teamwork that propelled our autonomous robotics prototype to a national hackathon championship.&rdquo;</div>
-                <div class="story-author"><div class="story-avatar" style="overflow:hidden; padding:0;"><img src="assets/testomonials/file_000000006f808208bcf2706a3c296078.png" alt="Kshitiz Dahal" style="width:100%;height:100%;object-fit:cover;object-position:center 20%;"></div><div><div class="story-name">Kshitiz Dahal</div><div class="story-role">BE Mechanical, Pokhara &mdash; Autonomous Robotics Lead</div></div></div>
+            <div class="story-chassis">
+                <div class="story-card">
+                    <div class="story-quote-icon font-serif">&ldquo;</div>
+                    <div class="story-quote">RoboYuwa provided the incubator, precision workstation tools, and teamwork that propelled our autonomous robotics prototype to a national hackathon championship.</div>
+                    <div class="story-author">
+                        <div class="story-avatar-frame">
+                            <img src="assets/testomonials/file_000000006f808208bcf2706a3c296078.png" alt="Kshitiz Dahal" class="story-avatar-img" style="object-position:center 20%;">
+                        </div>
+                        <div>
+                            <div class="story-name">Kshitiz Dahal</div>
+                            <div class="story-role">BE Mechanical, Pokhara &mdash; Autonomous Robotics Lead</div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </section>
 
+<!-- PULSE DIVIDER 6 -->
+<div class="section-pulse-divider" aria-hidden="true">
+    <div class="pulse-marker"></div>
+    <div class="pulse-line pulse-left"></div>
+    <svg class="pulse-peak-svg" viewBox="0 0 38 20" fill="none" xmlns="http://www.w3.org/2000/svg"><polyline points="0,18 19,4 38,18" /></svg>
+    <div class="pulse-line pulse-right"></div>
+</div>
+
 <!-- BOTTOM CTA -->
 <section class="mem-bottom-cta" aria-label="Join Now CTA">
+    <div class="mem-bottom-cta-bg"></div>
     <div class="container">
         <h2 class="font-serif">Ready to Build <span class="text-gradient-crimson">Nepal's Tech Future?</span></h2>
         <p>Join 120+ innovators in Nepal's fastest-growing youth robotics community. Applications are reviewed year-round.</p>
         <div class="cta-btn-row">
-            <a href="#apply" class="btn-amber-solid"><i class="fa-light fa-id-badge"></i> Apply for Membership</a>
-            <a href="donate.html" class="btn-outline-white"><i class="fa-light fa-heart"></i> Support Our Mission</a>
+            <a href="#apply" class="btn-amber-chamfer"><i class="fa-light fa-id-badge"></i> Apply for Membership</a>
+            <a href="donate.html" class="btn-outline-white-chamfer"><i class="fa-light fa-heart"></i> Support Our Mission</a>
         </div>
     </div>
 </section>

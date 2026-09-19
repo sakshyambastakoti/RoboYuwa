@@ -23,13 +23,13 @@
         .donate-page .initiatives-showcase-section {
             position: relative;
             width: 100%;
-            height: 100dvh;
-            min-height: 640px;
+            min-height: 100vh;
+            min-height: 100dvh;
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: flex-start;
             align-items: center;
-            padding: clamp(96px, 12vh, 120px) 0 clamp(20px, 2.5vh, 32px);
+            padding: clamp(145px, 17vh, 180px) 0 clamp(40px, 5vh, 64px);
             background: #FFFFFF;
             overflow: hidden;
             box-sizing: border-box;
@@ -44,14 +44,14 @@
         .donate-page .initiatives-container {
             width: 100%;
             max-width: 1200px;
-            margin: 0 auto;
+            margin: auto auto;
             padding: 0 1.5rem;
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: flex-start;
             align-items: center;
-            flex: 1;
-            min-height: 0;
+            position: relative;
+            z-index: 2;
         }
 
         .donate-page .initiatives-header {
@@ -166,7 +166,7 @@
             .donate-page .initiatives-showcase-section {
                 height: auto;
                 min-height: auto;
-                padding: 110px 0 2.5rem;
+                padding: 150px 0 3rem;
             }
             .donate-page .initiatives-gallery-grid {
                 grid-template-columns: 1fr;
@@ -176,6 +176,12 @@
             .donate-page .frame-diagonal-1,
             .donate-page .frame-diagonal-2 {
                 height: 260px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .donate-page .initiatives-showcase-section {
+                padding: 110px 0 2.5rem;
             }
         }
 

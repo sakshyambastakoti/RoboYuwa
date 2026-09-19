@@ -733,14 +733,23 @@ body.dark-theme .section-pulse-divider {
     align-items: center;
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.8s ease;
+    transition: opacity 1.1s cubic-bezier(0.4, 0, 0.2, 1),
+                visibility 1.1s ease;
     z-index: 1;
+    will-change: opacity;
 }
 
 .hero-slide.active {
     opacity: 1;
     visibility: visible;
     z-index: 2;
+}
+
+/* Slide-out: outgoing slide fades down slightly */
+.hero-slide.exiting {
+    opacity: 0;
+    z-index: 1;
+    transition: opacity 0.9s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hero-bg {
@@ -758,17 +767,75 @@ body.dark-theme .section-pulse-divider {
     top: 0;
     left: clamp(25px, 6vw, 90px);
     width: 100%;
-    height: 100%;
+    height: 110%;
+    top: -5%;
     object-fit: cover;
     object-position: 86% center;
-    opacity: 0.85;
-    filter: brightness(0.9);
-    transform: scale(1.04);
-    transition: transform 7s ease-out, opacity 0.5s ease;
+    opacity: 0.88;
+    filter: brightness(0.85);
+    transform: scale(1.08);
+    transition: transform 8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                opacity 1.2s ease,
+                filter 1.2s ease;
+    will-change: transform;
 }
 
 .hero-slide.active .hero-bg img {
-    transform: scale(1);
+    transform: scale(1.01);
+    filter: brightness(0.92);
+}
+
+/* Hero Progress Bar */
+.hero-progress-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    width: 0%;
+    background: linear-gradient(90deg, var(--ry-crimson) 0%, var(--ry-amber) 100%);
+    z-index: 20;
+    border-radius: 0 2px 2px 0;
+    transition: width 0.1s linear;
+    box-shadow: 0 0 12px rgba(229, 37, 37, 0.7);
+}
+
+.hero-progress-bar.animating {
+    transition: width 6.5s linear;
+    width: 100%;
+}
+
+/* Slide Dot Indicators */
+.hero-dot-nav {
+    position: absolute;
+    bottom: 2.4rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 0.6rem;
+    z-index: 20;
+    align-items: center;
+}
+
+.hero-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 9999px;
+    background: rgba(255, 255, 255, 0.35);
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero-dot.active {
+    width: 28px;
+    background: #ffffff;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+}
+
+.hero-dot:hover:not(.active) {
+    background: rgba(255, 255, 255, 0.65);
+    transform: scale(1.2);
 }
 
 .hero-bg .overlay {

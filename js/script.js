@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // ==========================================================================
-    // Hero Slider Carousel (Reference Circular Arrows & Impact Card Sync)
+    // Hero Slider Carousel (Cinematic - Progress Bar, Dot Nav, Swipe & Ken Burns)
     // ==========================================================================
     const heroSlides = document.querySelectorAll('.hero-slide');
     const sliderPrevBtn = document.getElementById('sliderPrevBtn');
@@ -54,31 +54,62 @@ document.addEventListener('DOMContentLoaded', () => {
     const impactLabel = document.getElementById('impactCardLabel');
     const impactValue = document.getElementById('impactCardValue');
     const heroSlider = document.getElementById('heroSlider');
+    const progressBar = document.getElementById('heroProgressBar');
+    const heroDots = document.querySelectorAll('.hero-dot');
 
     let currentSlide = 0;
     let slideTimer = null;
     const slideDuration = 6500; // 6.5s auto advance
 
+    // -- Progress bar helpers --
+    function resetProgressBar() {
+        if (!progressBar) return;
+        progressBar.classList.remove('animating');
+        progressBar.style.width = '0%';
+    }
+
+    function startProgressBar() {
+        if (!progressBar) return;
+        // Force reflow so the width reset registers
+        void progressBar.offsetWidth;
+        progressBar.classList.add('animating');
+    }
+
+    // -- Dot nav helpers --
+    function updateDots(index) {
+        heroDots.forEach((dot, i) => {
+            dot.classList.toggle('active', i === index);
+        });
+    }
+
     function showSlide(index) {
         if (!heroSlides.length) return;
 
-        // Wrap index around
+        const prevSlideIndex = currentSlide;
         currentSlide = (index + heroSlides.length) % heroSlides.length;
 
         heroSlides.forEach((slide, idx) => {
             const isActive = idx === currentSlide;
+            const wasActive = idx === prevSlideIndex;
+
+            // Add exiting class to old slide for smooth fade-out
+            if (wasActive && idx !== currentSlide) {
+                slide.classList.add('exiting');
+                setTimeout(() => slide.classList.remove('exiting'), 1000);
+            }
+
             slide.classList.toggle('active', isActive);
 
-            // Trigger smooth content animation on entering active slide
             if (isActive) {
+                // Re-trigger text animations
                 const animatedElements = slide.querySelectorAll('.hero-eyebrow, .title-line, .hero-desc, .hero-actions');
                 animatedElements.forEach((el) => {
                     el.style.animation = 'none';
-                    void el.offsetWidth; // Trigger reflow
+                    void el.offsetWidth;
                     el.style.animation = '';
                 });
 
-                // Update bottom-right Sage Green Impact Card
+                // Update Impact Card stats
                 const statLabel = slide.getAttribute('data-stat-label');
                 const statVal = slide.getAttribute('data-stat-val');
                 if (impactLabel && statLabel) {
@@ -97,15 +128,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
         });
+
+        // Sync dot indicators
+        updateDots(currentSlide);
+
+        // Restart progress bar
+        resetProgressBar();
+        setTimeout(startProgressBar, 30);
     }
 
-    function nextSlide() {
-        showSlide(currentSlide + 1);
-    }
-
-    function prevSlide() {
-        showSlide(currentSlide - 1);
-    }
+    function nextSlide() { showSlide(currentSlide + 1); }
+    function prevSlide() { showSlide(currentSlide - 1); }
 
     function startAutoSlide() {
         stopAutoSlide();
@@ -119,36 +152,54 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    if (sliderNextBtn && sliderPrevBtn && heroSlides.length > 1) {
-        sliderNextBtn.addEventListener('click', () => {
-            nextSlide();
-            startAutoSlide();
+    if (heroSlides.length > 1) {
+        // Arrow buttons
+        if (sliderNextBtn) sliderNextBtn.addEventListener('click', () => { nextSlide(); startAutoSlide(); });
+        if (sliderPrevBtn) sliderPrevBtn.addEventListener('click', () => { prevSlide(); startAutoSlide(); });
+
+        // Dot nav click
+        heroDots.forEach((dot) => {
+            dot.addEventListener('click', () => {
+                const target = parseInt(dot.getAttribute('data-dot'), 10);
+                showSlide(target);
+                startAutoSlide();
+            });
         });
 
-        sliderPrevBtn.addEventListener('click', () => {
-            prevSlide();
-            startAutoSlide();
-        });
-
+        // Pause on hover
         if (heroSlider) {
-            heroSlider.addEventListener('mouseenter', stopAutoSlide);
-            heroSlider.addEventListener('mouseleave', startAutoSlide);
+            heroSlider.addEventListener('mouseenter', () => { stopAutoSlide(); resetProgressBar(); });
+            heroSlider.addEventListener('mouseleave', () => { startAutoSlide(); startProgressBar(); });
             heroSlider.addEventListener('touchstart', stopAutoSlide, { passive: true });
         }
 
-        // Keyboard navigation for carousel
-        document.addEventListener('keydown', (e) => {
-            if (window.scrollY < window.innerHeight) {
-                if (e.key === 'ArrowRight') {
-                    nextSlide();
-                    startAutoSlide();
-                } else if (e.key === 'ArrowLeft') {
-                    prevSlide();
+        // Touch/swipe support
+        let touchStartX = 0;
+        let touchEndX = 0;
+        if (heroSlider) {
+            heroSlider.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+            }, { passive: true });
+            heroSlider.addEventListener('touchend', (e) => {
+                touchEndX = e.changedTouches[0].screenX;
+                const diff = touchStartX - touchEndX;
+                if (Math.abs(diff) > 50) {
+                    diff > 0 ? nextSlide() : prevSlide();
                     startAutoSlide();
                 }
+            }, { passive: true });
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (window.scrollY < window.innerHeight) {
+                if (e.key === 'ArrowRight') { nextSlide(); startAutoSlide(); }
+                else if (e.key === 'ArrowLeft') { prevSlide(); startAutoSlide(); }
             }
         });
 
+        // Kick off
+        showSlide(0);
         startAutoSlide();
     }
 

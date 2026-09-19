@@ -5665,11 +5665,14 @@ body.light-theme .exec-submit-btn:hover {
     object-fit: cover;
     object-position: center 25%;
     display: block;
-    transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+    filter: grayscale(100%);
+    transition: filter 0.5s ease, transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.contact-chamfer-media:hover img {
+.contact-chamfer-media:hover img,
+.contact-chamfer-wrapper:hover .contact-chamfer-media img {
     transform: scale(1.04);
+    filter: grayscale(0%);
 }
 
 /* Right Column: Chamfered Form Card with Brand Accents */

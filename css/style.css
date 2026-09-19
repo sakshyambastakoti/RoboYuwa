@@ -8011,20 +8011,115 @@ body:not(.light-theme) .team-hero-ref {
     background: var(--ry-dark-bg);
 }
 
-/* Team Directory & Grid Section */
-.team-directory-section {
+/* Team Dedicated Sections (Advisory, Executive, Department Heads) */
+.team-section {
     position: relative;
-    padding: clamp(60px, 7vw, 90px) 0 clamp(80px, 9vw, 110px);
+    padding: clamp(60px, 7vw, 95px) 0 clamp(75px, 8vw, 110px);
     background: #FFFFFF;
+    transition: background 0.35s ease;
 }
 
-body:not(.light-theme) .team-directory-section {
+body:not(.light-theme) .team-section {
     background: var(--ry-dark-bg);
 }
 
-.team-directory-section .team-filter-nav {
+.team-section.alt-bg {
+    background: #F8FAFC;
+}
+
+body:not(.light-theme) .team-section.alt-bg {
+    background: #0B0D13;
+}
+
+.team-sec-header {
+    text-align: center;
+    max-width: 740px;
+    margin: 0 auto clamp(2.8rem, 5vw, 4.2rem);
+}
+
+.team-sec-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.82rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--ry-amber);
+    margin-bottom: 0.7rem;
+}
+
+.team-sec-title {
+    font-family: var(--font-serif);
+    font-size: clamp(2rem, 3.5vw, 2.75rem);
+    font-weight: 800;
+    color: #0F172A;
+    line-height: 1.18;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.85rem;
+}
+
+body:not(.light-theme) .team-sec-title {
+    color: #FFFFFF;
+}
+
+.team-sec-desc {
+    font-size: 1.02rem;
+    line-height: 1.68;
+    color: #555D6E;
+    margin: 0 auto;
+}
+
+body:not(.light-theme) .team-sec-desc {
+    color: rgba(255, 255, 255, 0.72);
+}
+
+/* 2-Column Centered Cards Grid for Advisory Board */
+.team-grid-advisory {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 420px));
     justify-content: center;
-    margin-bottom: clamp(2.5rem, 5vw, 3.8rem);
+    gap: 3.5rem 3rem;
+    margin: 0 auto;
+    max-width: 900px;
+}
+
+@media (max-width: 768px) {
+    .team-grid-advisory {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* 5-Card Layout for Executive and Department Heads */
+.team-grid-5 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3.5rem 2.5rem;
+}
+
+@media (min-width: 1024px) {
+    .team-grid-5 {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 3.5rem 2.5rem;
+    }
+    .team-grid-5 .team-card-ref {
+        width: calc((100% - 5rem) / 3);
+        max-width: 380px;
+    }
+}
+
+@media (max-width: 991px) and (min-width: 641px) {
+    .team-grid-5 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .team-grid-5 {
+        grid-template-columns: 1fr;
+    }
 }
 
 .team-hero-grid {

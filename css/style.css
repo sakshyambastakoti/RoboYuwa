@@ -3672,6 +3672,7 @@ body.light-theme .hamburger::after {
 }
 
 @media (max-width: 991px) {
+
     .nav-links,
     body .nav-links,
     body.light-theme .nav-links,
@@ -6603,8 +6604,8 @@ body.dark-theme .charter-card-pill {
     box-sizing: border-box;
     padding: clamp(100px, 12vh, 130px) 0 clamp(24px, 3.5vh, 40px);
     background: radial-gradient(circle at 85% 20%, rgba(229, 152, 25, 0.05) 0%, transparent 45%),
-                radial-gradient(circle at 10% 80%, rgba(229, 37, 37, 0.03) 0%, transparent 35%),
-                #FFFFFF;
+        radial-gradient(circle at 10% 80%, rgba(229, 37, 37, 0.03) 0%, transparent 35%),
+        #FFFFFF;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -6613,8 +6614,8 @@ body.dark-theme .charter-card-pill {
 
 body:not(.light-theme) .about-hero-ref {
     background: radial-gradient(circle at 85% 20%, rgba(229, 152, 25, 0.08) 0%, transparent 45%),
-                radial-gradient(circle at 12% 85%, rgba(229, 37, 37, 0.06) 0%, transparent 40%),
-                var(--ry-dark-bg);
+        radial-gradient(circle at 12% 85%, rgba(229, 37, 37, 0.06) 0%, transparent 40%),
+        var(--ry-dark-bg);
 }
 
 .about-hero-container {
@@ -6898,7 +6899,8 @@ body:not(.light-theme) .circular-text-svg text {
 .about-deck-manifesto,
 .about-deck-stats {
     position: relative;
-    padding: 1.5px; /* Creates crisp continuous border along angled chamfer */
+    padding: 1.5px;
+    /* Creates crisp continuous border along angled chamfer */
     transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), filter 0.35s ease, background 0.35s ease;
 }
 
@@ -7257,13 +7259,11 @@ body.dark-theme .feature-content-body {
     background: rgba(0, 0, 0, 0.04);
     border-left: 2.5px solid rgba(229, 152, 25, 0.4);
     padding: 0.9rem 1.4rem;
-    clip-path: polygon(
-        0 0,
-        calc(100% - 14px) 0,
-        100% 14px,
-        100% 100%,
-        0 100%
-    );
+    clip-path: polygon(0 0,
+            calc(100% - 14px) 0,
+            100% 14px,
+            100% 100%,
+            0 100%);
     transition: border-color 0.25s ease, background 0.25s ease, transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -7446,6 +7446,7 @@ body.dark-theme .collage-overlap-frame {
     .feature-content-grid--flip .feature-checklist-column {
         order: 1;
     }
+
     .feature-content-grid--flip .about-collage-wrap {
         order: 2;
     }
@@ -7581,12 +7582,10 @@ body.dark-theme .how-work-lead {
     width: 100%;
     min-height: 520px;
     height: 100%;
-    clip-path: polygon(
-        0 32px, 3px 20px, 10px 10px, 20px 3px, 32px 0,
-        calc(100% - 90px) 0, 100% 90px,
-        100% calc(100% - 32px), calc(100% - 3px) calc(100% - 20px), calc(100% - 10px) calc(100% - 10px), calc(100% - 20px) calc(100% - 3px), calc(100% - 32px) 100%,
-        90px 100%, 0 calc(100% - 90px)
-    );
+    clip-path: polygon(0 32px, 3px 20px, 10px 10px, 20px 3px, 32px 0,
+            calc(100% - 90px) 0, 100% 90px,
+            100% calc(100% - 32px), calc(100% - 3px) calc(100% - 20px), calc(100% - 10px) calc(100% - 10px), calc(100% - 20px) calc(100% - 3px), calc(100% - 32px) 100%,
+            90px 100%, 0 calc(100% - 90px));
     filter: drop-shadow(0 16px 36px rgba(0, 0, 0, 0.08));
     overflow: hidden;
     background: #0E1118;
@@ -7624,14 +7623,12 @@ body.dark-theme .how-work-visual-frame {
     position: relative;
     background: rgba(0, 0, 0, 0.07);
     padding: 1.5px;
-    clip-path: polygon(
-        42px 0,
-        calc(100% - 22px) 0, calc(100% - 13px) 2.5px, calc(100% - 5px) 9px, 100% 22px,
-        100% calc(100% - 42px),
-        calc(100% - 42px) 100%,
-        22px 100%, 9px calc(100% - 5px), 2.5px calc(100% - 13px), 0 calc(100% - 22px),
-        0 42px
-    );
+    clip-path: polygon(42px 0,
+            calc(100% - 22px) 0, calc(100% - 13px) 2.5px, calc(100% - 5px) 9px, 100% 22px,
+            100% calc(100% - 42px),
+            calc(100% - 42px) 100%,
+            22px 100%, 9px calc(100% - 5px), 2.5px calc(100% - 13px), 0 calc(100% - 22px),
+            0 42px);
     filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.03));
     transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), filter 0.3s ease, background 0.3s ease;
 }
@@ -7651,14 +7648,12 @@ body.dark-theme .why-trust-card {
 .why-trust-card-inner {
     background: #FAF8F5;
     padding: clamp(1.6rem, 2.6vh, 2.2rem) clamp(1.8rem, 2.8vw, 2.5rem);
-    clip-path: polygon(
-        42px 0,
-        calc(100% - 22px) 0, calc(100% - 13px) 2.5px, calc(100% - 5px) 9px, 100% 22px,
-        100% calc(100% - 42px),
-        calc(100% - 42px) 100%,
-        22px 100%, 9px calc(100% - 5px), 2.5px calc(100% - 13px), 0 calc(100% - 22px),
-        0 42px
-    );
+    clip-path: polygon(42px 0,
+            calc(100% - 22px) 0, calc(100% - 13px) 2.5px, calc(100% - 5px) 9px, 100% 22px,
+            100% calc(100% - 42px),
+            calc(100% - 42px) 100%,
+            22px 100%, 9px calc(100% - 5px), 2.5px calc(100% - 13px), 0 calc(100% - 22px),
+            0 42px);
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -7719,12 +7714,10 @@ body.dark-theme .why-trust-card-desc {
 
 @media (max-width: 640px) {
     .how-work-visual-frame {
-        clip-path: polygon(
-            0 22px, 2px 14px, 7px 7px, 14px 2px, 22px 0,
-            calc(100% - 60px) 0, 100% 60px,
-            100% calc(100% - 22px), calc(100% - 2px) calc(100% - 14px), calc(100% - 7px) calc(100% - 7px), calc(100% - 14px) calc(100% - 2px), calc(100% - 22px) 100%,
-            60px 100%, 0 calc(100% - 60px)
-        );
+        clip-path: polygon(0 22px, 2px 14px, 7px 7px, 14px 2px, 22px 0,
+                calc(100% - 60px) 0, 100% 60px,
+                100% calc(100% - 22px), calc(100% - 2px) calc(100% - 14px), calc(100% - 7px) calc(100% - 7px), calc(100% - 14px) calc(100% - 2px), calc(100% - 22px) 100%,
+                60px 100%, 0 calc(100% - 60px));
         min-height: 300px;
         height: 300px;
     }
@@ -7736,14 +7729,12 @@ body.dark-theme .why-trust-card-desc {
 
     .why-trust-card,
     .why-trust-card-inner {
-        clip-path: polygon(
-            30px 0,
-            calc(100% - 16px) 0, 100% 16px,
-            100% calc(100% - 30px),
-            calc(100% - 30px) 100%,
-            16px 100%, 0 calc(100% - 16px),
-            0 30px
-        );
+        clip-path: polygon(30px 0,
+                calc(100% - 16px) 0, 100% 16px,
+                100% calc(100% - 30px),
+                calc(100% - 30px) 100%,
+                16px 100%, 0 calc(100% - 16px),
+                0 30px);
     }
 
     .why-trust-card:hover {
@@ -8104,6 +8095,7 @@ body:not(.light-theme) .team-sec-desc {
         justify-content: center;
         gap: 3.5rem 2.5rem;
     }
+
     .team-grid-5 .team-card-ref {
         width: calc((100% - 5rem) / 3);
         max-width: 380px;

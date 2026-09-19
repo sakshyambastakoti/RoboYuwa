@@ -495,6 +495,7 @@ strong {
     .nav-links ul {
         gap: 1.15rem;
     }
+
     .nav-links a.nav-item {
         font-size: 0.9rem;
     }
@@ -4891,10 +4892,12 @@ body.light-theme .exec-submit-btn:hover {
     .charter-showcase-section {
         padding: 4.5rem 0;
     }
+
     .charter-top-row {
         grid-template-columns: 1fr;
         gap: 2rem;
     }
+
     .charter-pillars-row {
         grid-template-columns: 1fr;
         gap: 1.5rem;
@@ -6610,8 +6613,13 @@ body:not(.light-theme) .circular-text-svg text {
 }
 
 @keyframes spinCircle {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 /* -------------------------------------------------------------
@@ -6995,8 +7003,15 @@ body:not(.light-theme) .video-banner-container {
 }
 
 @keyframes playPulse {
-    0% { transform: scale(0.9); opacity: 1; }
-    100% { transform: scale(1.65); opacity: 0; }
+    0% {
+        transform: scale(0.9);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1.65);
+        opacity: 0;
+    }
 }
 
 /* -------------------------------------------------------------
@@ -7061,6 +7076,7 @@ body:not(.light-theme) .about-cta-content p {
 
 /* Responsive Breakpoints */
 @media (max-width: 1024px) {
+
     .about-hero-grid,
     .about-feature-grid {
         grid-template-columns: 1fr;
@@ -7354,14 +7370,12 @@ body:not(.light-theme) .team-filter-btn.active {
     width: 100%;
     height: 420px;
     background: #F3F4F6;
-    clip-path: polygon(
-        46px 0%, 
-        100% 0%, 
-        100% calc(100% - 46px), 
-        calc(100% - 46px) 100%, 
-        0% 100%, 
-        0% 46px
-    );
+    clip-path: polygon(46px 0%,
+            100% 0%,
+            100% calc(100% - 46px),
+            calc(100% - 46px) 100%,
+            0% 100%,
+            0% 46px);
     border-radius: 24px;
     overflow: hidden;
     margin-bottom: 1.5rem;
@@ -7597,10 +7611,12 @@ body:not(.light-theme) .gov-deliverable-pill {
         grid-template-columns: 1fr;
         gap: 2rem;
     }
+
     .team-grid-ref {
         grid-template-columns: repeat(2, 1fr);
         gap: 2.5rem 1.8rem;
     }
+
     .gov-matrix-grid {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -7610,13 +7626,16 @@ body:not(.light-theme) .gov-deliverable-pill {
     .team-hero-ref {
         padding: 130px 0 50px;
     }
+
     .team-grid-ref {
         grid-template-columns: 1fr;
         gap: 2.5rem;
     }
+
     .team-card-frame {
         height: 350px;
     }
+
     .gov-matrix-grid {
         grid-template-columns: 1fr;
     }
@@ -8297,16 +8316,20 @@ body:not(.light-theme) .syllabus-table th {
         grid-template-columns: 1fr;
         gap: 2rem;
     }
+
     .prog-stats-ribbon {
         grid-template-columns: repeat(2, 1fr);
         gap: 1.5rem;
     }
+
     .prog-grid-ref {
         grid-template-columns: repeat(2, 1fr);
     }
+
     .curriculum-phase-grid {
         grid-template-columns: repeat(2, 1fr);
     }
+
     .resource-alloc-grid {
         grid-template-columns: 1fr;
     }
@@ -8316,16 +8339,20 @@ body:not(.light-theme) .syllabus-table th {
     .prog-hero-ref {
         padding: 130px 0 50px;
     }
+
     .prog-stats-ribbon {
         grid-template-columns: 1fr;
         padding: 1.5rem;
     }
+
     .prog-grid-ref {
         grid-template-columns: 1fr;
     }
+
     .curriculum-phase-grid {
         grid-template-columns: 1fr;
     }
+
     .syllabus-modal-dialog {
         padding: 1.5rem;
     }
@@ -8346,7 +8373,7 @@ body:not(.light-theme) .syllabus-table th {
 .legal-hero-bg {
     position: absolute;
     inset: 0;
-    background: 
+    background:
         radial-gradient(ellipse 65% 70% at 85% 30%, rgba(229, 37, 37, 0.14) 0%, transparent 60%),
         radial-gradient(ellipse 50% 60% at 15% 75%, rgba(229, 152, 25, 0.08) 0%, transparent 55%),
         url('../assets/workshop.png') center/cover no-repeat;
@@ -8364,7 +8391,7 @@ body:not(.light-theme) .syllabus-table th {
 .legal-hero-grid {
     position: absolute;
     inset: 0;
-    background-image: 
+    background-image:
         linear-gradient(rgba(229, 37, 37, 0.05) 1px, transparent 1px),
         linear-gradient(90deg, rgba(229, 37, 37, 0.05) 1px, transparent 1px);
     background-size: 48px 48px;
@@ -8476,9 +8503,11 @@ body:not(.light-theme) .syllabus-table th {
     0% {
         box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.6);
     }
+
     70% {
         box-shadow: 0 0 0 8px rgba(34, 197, 94, 0);
     }
+
     100% {
         box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
     }
@@ -8505,6 +8534,7 @@ body:not(.light-theme) .syllabus-table th {
     overflow-x: auto;
     scrollbar-width: none;
 }
+
 .legal-nav-container::-webkit-scrollbar {
     display: none;
 }
@@ -8663,6 +8693,7 @@ body:not(.light-theme) .syllabus-table th {
 .legal-toc-list::-webkit-scrollbar {
     width: 4px;
 }
+
 .legal-toc-list::-webkit-scrollbar-thumb {
     background: rgba(16, 18, 23, 0.15);
     border-radius: 4px;
@@ -9033,14 +9064,17 @@ body:not(.light-theme) .syllabus-table th {
     font-weight: 700;
     text-transform: uppercase;
 }
+
 .cookie-badge.necessary {
     background: rgba(229, 37, 37, 0.12);
     color: var(--ry-crimson);
 }
+
 .cookie-badge.analytics {
     background: rgba(229, 152, 25, 0.14);
     color: #b4710b;
 }
+
 .cookie-badge.functional {
     background: rgba(55, 104, 86, 0.14);
     color: var(--ry-sage);
@@ -9194,18 +9228,22 @@ body:not(.light-theme) .syllabus-table th {
         grid-template-columns: 1fr;
         gap: 2rem;
     }
+
     .legal-sidebar {
         position: relative;
         top: 0;
     }
+
     .legal-toc-list {
         max-height: 260px;
     }
+
     .legal-seal-card {
         flex-direction: column;
         text-align: center;
         gap: 1.2rem;
     }
+
     .legal-seal-meta {
         justify-content: center;
     }
@@ -9215,18 +9253,23 @@ body:not(.light-theme) .syllabus-table th {
     .legal-hero {
         padding: 130px 0 50px;
     }
+
     .legal-hero-title {
         font-size: 2.1rem;
     }
+
     .legal-card {
         padding: 1.6rem 1.25rem;
     }
+
     .legal-card-title {
         font-size: 1.25rem;
     }
+
     .legal-summary-card {
         padding: 1.4rem 1.25rem;
     }
+
     .legal-nav-container {
         padding: 0 1rem;
     }
@@ -9234,6 +9277,7 @@ body:not(.light-theme) .syllabus-table th {
 
 /* Print Optimization */
 @media print {
+
     .header,
     .footer,
     .legal-nav-strip,
@@ -9297,11 +9341,9 @@ body:not(.light-theme) .syllabus-table th {
         color: #000000 !important;
         border: 1px solid #CCCCCC !important;
     }
-    .legal-seal-desc, .legal-seal-meta {
+
+    .legal-seal-desc,
+    .legal-seal-meta {
         color: #333333 !important;
     }
 }
-
-
-
-

@@ -7078,32 +7078,207 @@ body:not(.light-theme) .stat-sub-label {
 /* -------------------------------------------------------------
    Feature Sections: Mission, Vision, History (Image 2 & 3)
    ------------------------------------------------------------- */
+/* ==========================================================================
+   Feature Sections — Unified Elegant Design System
+   (Mission, Vision, History — matching How We Work aesthetic)
+   ========================================================================== */
+
 .about-feature-section {
     position: relative;
-    padding: 110px 0;
+    padding: clamp(4.5rem, 8vh, 7rem) 0 clamp(4.5rem, 8vh, 7.5rem);
     background: #FFFFFF;
+    transition: background 0.35s ease;
 }
 
-body:not(.light-theme) .about-feature-section {
+body:not(.light-theme) .about-feature-section,
+body.dark-theme .about-feature-section {
     background: var(--ry-dark-bg);
 }
 
 .about-feature-section.alt-bg {
-    background: #FAFCFE;
+    background: #F8FAFC;
 }
 
-body:not(.light-theme) .about-feature-section.alt-bg {
+body:not(.light-theme) .about-feature-section.alt-bg,
+body.dark-theme .about-feature-section.alt-bg {
     background: #0B0D12;
 }
 
-.about-feature-grid {
+/* ---- Split Header Row (same pattern as How We Work) ---- */
+.feature-header-row {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 5.5rem;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: clamp(2rem, 4vw, 4.5rem);
+    align-items: end;
+    margin-bottom: clamp(2.5rem, 5vh, 4rem);
+}
+
+.feature-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    font-family: var(--font-sans);
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 1.6px;
+    color: #555D6E;
+    text-transform: uppercase;
+    margin-bottom: 0.85rem;
+}
+
+body:not(.light-theme) .feature-eyebrow,
+body.dark-theme .feature-eyebrow {
+    color: #CBD5E1;
+}
+
+.feature-eyebrow .eyebrow-square {
+    width: 11px;
+    height: 11px;
+    border-radius: 2px;
+    background: linear-gradient(135deg, var(--ry-amber) 0%, var(--ry-amber-hover) 100%);
+    box-shadow: 0 2px 8px rgba(229, 152, 25, 0.45);
+    display: inline-block;
+    flex-shrink: 0;
+}
+
+.feature-section-title {
+    font-family: var(--font-serif);
+    font-size: clamp(2.2rem, 3.8vw, 3.4rem);
+    font-weight: 700;
+    color: #101217;
+    line-height: 1.12;
+    letter-spacing: -0.025em;
+    margin: 0;
+}
+
+body:not(.light-theme) .feature-section-title,
+body.dark-theme .feature-section-title {
+    color: #FFFFFF;
+}
+
+.feature-header-lead {
+    font-family: var(--font-sans);
+    font-size: clamp(1rem, 1.1vw, 1.12rem);
+    line-height: 1.75;
+    color: #525968;
+    margin: 0;
+}
+
+body:not(.light-theme) .feature-header-lead,
+body.dark-theme .feature-header-lead {
+    color: #94A3B8;
+}
+
+/* ---- 2-Column Grid ---- */
+.feature-content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    gap: clamp(2.5rem, 5vw, 5.5rem);
     align-items: center;
 }
 
-/* Overlapping Dual-Image Collage matching Reference Images 2 & 3 (Chamfer Shape matching Home Page) */
+/* Flip variant: content on left, image on right */
+.feature-content-grid--flip {
+    grid-template-columns: 1.1fr 1fr;
+}
+
+/* ---- Feature Content Body ---- */
+.feature-content-body {
+    font-family: var(--font-sans);
+    font-size: clamp(0.97rem, 1.02vw, 1.05rem);
+    line-height: 1.8;
+    color: #475569;
+    margin-bottom: 1.8rem;
+}
+
+body:not(.light-theme) .feature-content-body,
+body.dark-theme .feature-content-body {
+    color: rgba(255, 255, 255, 0.72);
+}
+
+/* ---- Feature Checklist Column ---- */
+.feature-checklist-column {
+    display: flex;
+    flex-direction: column;
+}
+
+/* ---- Chamfer Check Card Items ---- */
+.feature-checklist-stack {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+}
+
+.feature-check-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: rgba(0, 0, 0, 0.04);
+    border-left: 2.5px solid rgba(229, 152, 25, 0.4);
+    padding: 0.9rem 1.4rem;
+    clip-path: polygon(
+        0 0,
+        calc(100% - 14px) 0,
+        100% 14px,
+        100% 100%,
+        0 100%
+    );
+    transition: border-color 0.25s ease, background 0.25s ease, transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+body:not(.light-theme) .feature-check-card,
+body.dark-theme .feature-check-card {
+    background: rgba(255, 255, 255, 0.04);
+    border-left-color: rgba(229, 152, 25, 0.3);
+}
+
+.feature-check-card:hover {
+    background: rgba(229, 152, 25, 0.07);
+    border-left-color: var(--ry-amber);
+    transform: translateX(5px);
+}
+
+.fcc-icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: rgba(229, 152, 25, 0.14);
+    color: #D4840D;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.78rem;
+    flex-shrink: 0;
+    transition: background 0.25s ease;
+}
+
+body:not(.light-theme) .fcc-icon,
+body.dark-theme .fcc-icon {
+    background: rgba(229, 152, 25, 0.18);
+    color: #F5A623;
+}
+
+.feature-check-card:hover .fcc-icon {
+    background: rgba(229, 152, 25, 0.22);
+}
+
+.fcc-text {
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1E293B;
+    line-height: 1.4;
+}
+
+body:not(.light-theme) .fcc-text,
+body.dark-theme .fcc-text {
+    color: #E2E8F0;
+}
+
+/* ---- Keep old collage styles and add selectors ---- */
 .about-collage-wrap {
     position: relative;
     width: 100%;
@@ -7130,12 +7305,14 @@ body:not(.light-theme) .about-feature-section.alt-bg {
     filter: drop-shadow(0 28px 65px rgba(0, 0, 0, 0.18));
 }
 
-body:not(.light-theme) .collage-main-frame {
+body:not(.light-theme) .collage-main-frame,
+body.dark-theme .collage-main-frame {
     box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55);
     filter: drop-shadow(0 24px 60px rgba(0, 0, 0, 0.55));
 }
 
-body:not(.light-theme) .about-collage-wrap:hover .collage-main-frame {
+body:not(.light-theme) .about-collage-wrap:hover .collage-main-frame,
+body.dark-theme .about-collage-wrap:hover .collage-main-frame {
     filter: drop-shadow(0 32px 75px rgba(229, 152, 25, 0.22));
 }
 
@@ -7153,7 +7330,7 @@ body:not(.light-theme) .about-collage-wrap:hover .collage-main-frame {
     transform: scale(1.06);
 }
 
-/* Floating Overlapping Secondary Image Frame (Chamfer Cut with Clean Border) */
+/* Floating Overlapping Secondary Image Frame */
 .collage-overlap-frame {
     position: absolute;
     width: 60%;
@@ -7174,7 +7351,8 @@ body:not(.light-theme) .about-collage-wrap:hover .collage-main-frame {
     filter: drop-shadow(0 28px 65px rgba(229, 152, 25, 0.25));
 }
 
-body:not(.light-theme) .collage-overlap-frame {
+body:not(.light-theme) .collage-overlap-frame,
+body.dark-theme .collage-overlap-frame {
     background: #12141A;
     box-shadow: 0 24px 60px rgba(0, 0, 0, 0.7);
     filter: drop-shadow(0 24px 60px rgba(0, 0, 0, 0.7));
@@ -7213,71 +7391,62 @@ body:not(.light-theme) .collage-overlap-frame {
     border-radius: 18px 0 18px 18px;
 }
 
-/* Content Column */
-.section-bold-title {
-    font-family: var(--font-serif);
-    font-size: clamp(2.2rem, 3.8vw, 3.2rem);
-    font-weight: 700;
-    color: #0F172A;
-    line-height: 1.15;
-    letter-spacing: -0.02em;
-    margin-bottom: 1.4rem;
+/* ---- Responsive ---- */
+@media (max-width: 991px) {
+    .feature-header-row {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+
+    .feature-content-grid,
+    .feature-content-grid--flip {
+        grid-template-columns: 1fr;
+        gap: 3.5rem;
+    }
+
+    /* On mobile, flip brings image below text — reset order */
+    .feature-content-grid--flip .feature-checklist-column {
+        order: 1;
+    }
+    .feature-content-grid--flip .about-collage-wrap {
+        order: 2;
+    }
+
+    .about-collage-wrap {
+        max-width: 100%;
+    }
 }
 
-body:not(.light-theme) .section-bold-title {
-    color: #FFFFFF;
-}
+@media (max-width: 640px) {
+    .collage-main-frame {
+        width: 90%;
+        height: 320px;
+        clip-path: polygon(36px 0%, 100% 0%, 100% 100%, 0% 100%, 0% 36px);
+        border-radius: 0 18px 18px 18px;
+    }
 
-.section-lead-paragraph {
-    font-size: 1.05rem;
-    line-height: 1.8;
-    color: #475569;
-    margin-bottom: 2.2rem;
-}
+    .about-collage-wrap.pos-left .collage-main-frame {
+        clip-path: polygon(0% 0%, calc(100% - 36px) 0%, 100% 36px, 100% 100%, 0% 100%);
+        border-radius: 18px 0 18px 18px;
+    }
 
-body:not(.light-theme) .section-lead-paragraph {
-    color: rgba(255, 255, 255, 0.78);
-}
+    .collage-overlap-frame {
+        width: 60%;
+        height: 210px;
+        bottom: -20px;
+        clip-path: polygon(28px 0%, 100% 0%, 100% 100%, 0% 100%, 0% 28px);
+        border-radius: 0 14px 14px 14px;
+        padding: 4px;
+    }
 
-/* Feature Checklist with double-tick / checkmark */
-.about-feature-checklist {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 1.15rem;
-}
+    .about-collage-wrap.pos-left .collage-overlap-frame {
+        clip-path: polygon(0% 0%, calc(100% - 28px) 0%, 100% 28px, 100% 100%, 0% 100%);
+        border-radius: 14px 0 14px 14px;
+    }
 
-.about-feature-checklist li {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    font-size: 1.05rem;
-    font-weight: 600;
-    color: #1E293B;
-}
-
-body:not(.light-theme) .about-feature-checklist li {
-    color: #E2E8F0;
-}
-
-.checklist-icon {
-    width: 28px;
-    height: 28px;
-    border-radius: 50%;
-    background: rgba(39, 174, 96, 0.14);
-    color: #27AE60;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.85rem;
-    flex-shrink: 0;
-}
-
-body:not(.light-theme) .checklist-icon {
-    background: rgba(46, 204, 113, 0.18);
-    color: #2ECC71;
+    .feature-check-card:hover {
+        transform: none;
+    }
 }
 
 /* -------------------------------------------------------------

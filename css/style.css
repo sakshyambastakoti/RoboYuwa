@@ -376,6 +376,11 @@ body.dark-theme .section-pulse-divider {
     left: 0;
     width: 100%;
     z-index: 1000;
+    background-color: rgba(10, 12, 16, 0.96);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
     transition: background-color 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
 }
 
@@ -3437,226 +3442,179 @@ body.light-theme {
     color: #0F172A;
 }
 
-/* Light Header (Scoped strictly to Contact page) */
-body.light-theme.contact-page .header {
-    background-color: rgba(255, 255, 255, 0.94);
-    backdrop-filter: blur(16px);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
-}
-
-body.light-theme.contact-page .top-bar {
-    background-color: rgba(248, 250, 252, 0.95);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-    color: #475569;
-}
-
-body.light-theme.contact-page .top-info .info-item {
-    color: #475569;
-}
-
-body.light-theme.contact-page .top-info .info-item:hover {
-    color: var(--ry-amber);
-}
-
-body.light-theme.contact-page .top-social-link {
-    color: #64748B;
-}
-
-body.light-theme.contact-page .top-social-link:hover {
-    color: #0F172A;
-    background: rgba(0, 0, 0, 0.08);
-}
-
-body.light-theme.contact-page .brand-name {
-    color: #0F172A !important;
-}
-
-body.light-theme.contact-page .brand-tagline {
-    color: #64748B;
-}
-
-body.light-theme.contact-page .nav-links a.nav-item {
-    color: #334155;
-}
-
-body.light-theme.contact-page .nav-links a.nav-item:hover,
-body.light-theme.contact-page .nav-links a.nav-item.active {
-    color: var(--ry-amber);
-}
-
-body.light-theme.contact-page .nav-search-btn,
-body.light-theme.contact-page .theme-toggle-btn {
-    background: rgba(0, 0, 0, 0.06);
-    border-color: rgba(0, 0, 0, 0.14);
-    color: #1E293B;
-}
-
-body.light-theme.contact-page .nav-search-btn:hover,
-body.light-theme.contact-page .theme-toggle-btn:hover {
-    background: rgba(0, 0, 0, 0.1);
-    border-color: rgba(0, 0, 0, 0.25);
-    color: var(--ry-amber);
-}
-
-/* Guarantee Header & Top Bar over the Hero Section ALWAYS remain original high-contrast dark with white text */
-body:has(.hero) .top-bar,
-body.light-theme:has(.hero) .top-bar {
-    background-color: rgba(10, 10, 10, 0.75) !important;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
-    color: rgba(255, 255, 255, 0.9) !important;
-}
-
-body:has(.hero) .top-info .info-item,
-body.light-theme:has(.hero) .top-info .info-item {
-    color: rgba(255, 255, 255, 0.85) !important;
-}
-
-body:has(.hero) .top-info .info-item i,
-body.light-theme:has(.hero) .top-info .info-item i {
-    color: var(--ry-amber) !important;
-}
-
-body:has(.hero) .top-social-link,
-body.light-theme:has(.hero) .top-social-link {
-    color: #FFFFFF !important;
-    background: transparent !important;
-}
-
-body:has(.hero) .top-social-link:hover,
-body.light-theme:has(.hero) .top-social-link:hover {
-    color: var(--ry-amber) !important;
-    background: rgba(255, 255, 255, 0.15) !important;
-}
-
-body:has(.hero) .navbar,
-body.light-theme:has(.hero) .navbar {
-    background-color: transparent !important;
-}
-
-body:has(.hero) .header.scrolled,
-body.light-theme:has(.hero) .header.scrolled {
-    background-color: rgba(12, 12, 14, 0.94) !important;
-    backdrop-filter: blur(16px) !important;
-    border-bottom: 1px solid #222631 !important;
-}
-
-body:has(.hero) .brand-name,
-body.light-theme:has(.hero) .brand-name {
-    color: #FFFFFF !important;
-}
-
-body:has(.hero) .brand-tagline,
-body.light-theme:has(.hero) .brand-tagline {
-    color: rgba(255, 255, 255, 0.7) !important;
-}
-
-body:has(.hero) .nav-links a.nav-item,
-body.light-theme:has(.hero) .nav-links a.nav-item {
-    color: rgba(255, 255, 255, 0.92) !important;
-}
-
-body:has(.hero) .nav-links a.nav-item:hover,
-body:has(.hero) .nav-links a.nav-item.active,
-body.light-theme:has(.hero) .nav-links a.nav-item:hover,
-body.light-theme:has(.hero) .nav-links a.nav-item.active {
-    color: var(--ry-amber) !important;
-}
-
-body:has(.hero) .nav-search-btn,
-body.light-theme:has(.hero) .nav-search-btn {
-    color: #FFFFFF !important;
-    border-color: rgba(255, 255, 255, 0.2) !important;
-    background: rgba(255, 255, 255, 0.08) !important;
-}
-
-body:has(.hero) .nav-search-btn:hover,
-body.light-theme:has(.hero) .nav-search-btn:hover {
-    background: rgba(255, 255, 255, 0.25) !important;
-    border-color: rgba(255, 255, 255, 0.6) !important;
-    color: #FFFFFF !important;
-}
-
 /* ==========================================================================
-   Constant Black Header & Navbar for About Page (Never changes to white in Light Mode)
+   Universal Constant Black Header & Navbar (All Pages, Light & Dark Themes)
+   The navigation bar ALWAYS remains sleek, executive black with white typography
+   and amber accents. It NEVER turns white on any page or theme.
    ========================================================================== */
-.about-page .header,
+.header,
+header.header,
+body .header,
+body.light-theme .header,
+body.dark-theme .header,
+body.contact-page .header,
+body.about-page .header,
+body.donate-page .header,
+body.membership-page .header,
+body.team-page .header,
+body.light-theme.contact-page .header,
 body.light-theme.about-page .header,
-body.about-page .header {
-    background-color: rgba(12, 12, 14, 0.96) !important;
+body.light-theme.donate-page .header,
+body.light-theme.membership-page .header,
+body.light-theme.team-page .header,
+body.light-theme:has(.hero) .header,
+body.light-theme:has(.contact-exec-wrapper) .header {
+    background-color: rgba(10, 12, 16, 0.96) !important;
     backdrop-filter: blur(16px) !important;
     -webkit-backdrop-filter: blur(16px) !important;
     border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35) !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4) !important;
 }
 
-.about-page .top-bar,
-body.light-theme.about-page .top-bar {
-    background-color: rgba(8, 9, 12, 0.85) !important;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+.header.scrolled,
+body .header.scrolled,
+body.light-theme .header.scrolled,
+body.dark-theme .header.scrolled {
+    background-color: rgba(8, 10, 14, 0.98) !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.55) !important;
+}
+
+.top-bar,
+body .top-bar,
+body.light-theme .top-bar,
+body.dark-theme .top-bar,
+body.light-theme.contact-page .top-bar,
+body.light-theme.about-page .top-bar,
+body.light-theme:has(.hero) .top-bar {
+    background-color: rgba(6, 7, 10, 0.92) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07) !important;
     color: rgba(255, 255, 255, 0.9) !important;
 }
 
-.about-page .top-info .info-item,
-body.light-theme.about-page .top-info .info-item {
+.top-info .info-item,
+body .top-info .info-item,
+body.light-theme .top-info .info-item,
+body.dark-theme .top-info .info-item {
     color: rgba(255, 255, 255, 0.85) !important;
 }
 
-.about-page .top-social-link,
-body.light-theme.about-page .top-social-link {
+.top-info .info-item:hover,
+body.light-theme .top-info .info-item:hover,
+body.dark-theme .top-info .info-item:hover {
+    color: var(--ry-amber) !important;
+}
+
+.top-info .info-item i,
+body.light-theme .top-info .info-item i,
+body.dark-theme .top-info .info-item i {
+    color: var(--ry-amber) !important;
+}
+
+.top-social-link,
+body .top-social-link,
+body.light-theme .top-social-link,
+body.dark-theme .top-social-link {
     color: rgba(255, 255, 255, 0.8) !important;
     background: transparent !important;
 }
 
-.about-page .top-social-link:hover,
-body.light-theme.about-page .top-social-link:hover {
-    color: var(--ry-amber) !important;
+.top-social-link:hover,
+body.light-theme .top-social-link:hover,
+body.dark-theme .top-social-link:hover {
+    color: #FFFFFF !important;
     background: rgba(255, 255, 255, 0.15) !important;
 }
 
-.about-page .navbar,
-body.light-theme.about-page .navbar {
+.navbar,
+body .navbar,
+body.light-theme .navbar,
+body.dark-theme .navbar {
     background-color: transparent !important;
 }
 
-.about-page .brand-name,
-body.light-theme.about-page .brand-name {
+.brand-name,
+body .brand-name,
+body.light-theme .brand-name,
+body.dark-theme .brand-name {
     color: #FFFFFF !important;
 }
 
-.about-page .brand-tagline,
-body.light-theme.about-page .brand-tagline {
+.brand-tagline,
+body .brand-tagline,
+body.light-theme .brand-tagline,
+body.dark-theme .brand-tagline {
     color: var(--amber-500) !important;
 }
 
-.about-page .nav-links a.nav-item,
-body.light-theme.about-page .nav-links a.nav-item {
+.nav-links a.nav-item,
+body .nav-links a.nav-item,
+body.light-theme .nav-links a.nav-item,
+body.dark-theme .nav-links a.nav-item {
     color: rgba(255, 255, 255, 0.92) !important;
 }
 
-.about-page .nav-links a.nav-item:hover,
-.about-page .nav-links a.nav-item.active,
-body.light-theme.about-page .nav-links a.nav-item:hover,
-body.light-theme.about-page .nav-links a.nav-item.active {
+.nav-links a.nav-item:hover,
+.nav-links a.nav-item.active,
+body .nav-links a.nav-item:hover,
+body .nav-links a.nav-item.active,
+body.light-theme .nav-links a.nav-item:hover,
+body.light-theme .nav-links a.nav-item.active,
+body.dark-theme .nav-links a.nav-item:hover,
+body.dark-theme .nav-links a.nav-item.active {
     color: var(--ry-amber) !important;
 }
 
-.about-page .nav-search-btn,
-.about-page .theme-toggle-btn,
-body.light-theme.about-page .nav-search-btn,
-body.light-theme.about-page .theme-toggle-btn {
+.nav-links a.nav-item::after {
+    background-color: var(--ry-amber) !important;
+}
+
+.nav-search-btn,
+.theme-toggle-btn,
+body .nav-search-btn,
+body .theme-toggle-btn,
+body.light-theme .nav-search-btn,
+body.light-theme .theme-toggle-btn,
+body.dark-theme .nav-search-btn,
+body.dark-theme .theme-toggle-btn {
     color: #FFFFFF !important;
     border-color: rgba(255, 255, 255, 0.2) !important;
     background: rgba(255, 255, 255, 0.08) !important;
 }
 
-.about-page .nav-search-btn:hover,
-.about-page .theme-toggle-btn:hover,
-body.light-theme.about-page .nav-search-btn:hover,
-body.light-theme.about-page .theme-toggle-btn:hover {
+.nav-search-btn:hover,
+.theme-toggle-btn:hover,
+body .nav-search-btn:hover,
+body .theme-toggle-btn:hover,
+body.light-theme .nav-search-btn:hover,
+body.light-theme .theme-toggle-btn:hover,
+body.dark-theme .nav-search-btn:hover,
+body.dark-theme .theme-toggle-btn:hover {
     background: rgba(255, 255, 255, 0.22) !important;
     border-color: rgba(255, 255, 255, 0.5) !important;
     color: #FFFFFF !important;
+}
+
+.hamburger,
+.hamburger::before,
+.hamburger::after,
+body .hamburger,
+body .hamburger::before,
+body .hamburger::after,
+body.light-theme .hamburger,
+body.light-theme .hamburger::before,
+body.light-theme .hamburger::after {
+    background-color: #FFFFFF !important;
+}
+
+@media (max-width: 991px) {
+    .nav-links,
+    body .nav-links,
+    body.light-theme .nav-links,
+    body.dark-theme .nav-links {
+        background-color: rgba(10, 12, 16, 0.98) !important;
+        border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+        box-shadow: 0 16px 32px rgba(0, 0, 0, 0.6) !important;
+    }
 }
 
 /* ==========================================================================

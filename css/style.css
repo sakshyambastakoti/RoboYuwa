@@ -8498,92 +8498,195 @@ body.dark-theme .team-social-link {
     border-bottom: 1px solid rgba(0, 0, 0, 0.06);
 }
 
-body:not(.light-theme) .team-governance-section {
-    background: #0C0E14;
-    border-top-color: rgba(255, 255, 255, 0.08);
-    border-bottom-color: rgba(255, 255, 255, 0.08);
-}
+/* ==========================================================================
+   Cross-Functional Governance Matrix (Interdepartmental Synergies & Workflows)
+   ========================================================================== */
 
 .gov-matrix-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    margin-top: 3.5rem;
+    gap: 2.5rem 2rem;
 }
 
+/* Dual-Layer Chamfered Card Chassis (Matching Other Pages) */
 .gov-matrix-card {
-    background: #FFFFFF;
-    border: 1px solid rgba(0, 0, 0, 0.07);
-    border-radius: 20px;
-    padding: 2.2rem;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+    position: relative;
+    padding: 2px;
+    clip-path: polygon(22px 0, 100% 0, 100% calc(100% - 22px), calc(100% - 22px) 100%, 0 100%, 0 22px);
+    background: #B9C4D1;
     display: flex;
-    flex-direction: column;
-    gap: 1.1rem;
-    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), background 0.35s ease, box-shadow 0.35s ease;
 }
 
-body:not(.light-theme) .gov-matrix-card {
-    background: #131620;
-    border-color: rgba(255, 255, 255, 0.08);
-    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+body:not(.light-theme) .gov-matrix-card,
+body.dark-theme .gov-matrix-card {
+    background: rgba(255, 255, 255, 0.16);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
 }
 
 .gov-matrix-card:hover {
-    transform: translateY(-5px);
-    border-color: var(--ry-amber);
-    box-shadow: 0 18px 40px rgba(229, 152, 25, 0.15);
+    transform: translateY(-7px);
+    background: linear-gradient(135deg, var(--ry-crimson) 0%, var(--ry-amber) 100%);
+    box-shadow: 0 22px 55px rgba(229, 37, 37, 0.2);
 }
 
+body:not(.light-theme) .gov-matrix-card:hover,
+body.dark-theme .gov-matrix-card:hover {
+    background: linear-gradient(135deg, var(--ry-crimson) 0%, var(--ry-amber) 100%);
+    box-shadow: 0 24px 60px rgba(229, 37, 37, 0.3);
+}
+
+/* Inner Card Container */
+.gov-matrix-inner {
+    width: 100%;
+    background: #FFFFFF;
+    clip-path: polygon(20px 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%, 0 20px);
+    padding: clamp(1.8rem, 2.3vw, 2.3rem);
+    display: flex;
+    flex-direction: column;
+    gap: 1.15rem;
+    box-sizing: border-box;
+    transition: background 0.35s ease;
+}
+
+body:not(.light-theme) .gov-matrix-inner,
+body.dark-theme .gov-matrix-inner {
+    background: #11141E;
+}
+
+.gov-card-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 0.2rem;
+}
+
+/* Octagonal Icon Box */
+.gov-icon-oct {
+    width: 44px;
+    height: 44px;
+    background: rgba(229, 152, 25, 0.1);
+    color: var(--ry-amber);
+    border: 1px solid rgba(229, 152, 25, 0.28);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.15rem;
+    clip-path: polygon(10px 0, calc(100% - 10px) 0, 100% 10px, 100% calc(100% - 10px), calc(100% - 10px) 100%, 10px 100%, 0 calc(100% - 10px), 0 10px);
+    transition: all 0.35s ease;
+    flex-shrink: 0;
+}
+
+body:not(.light-theme) .gov-icon-oct,
+body.dark-theme .gov-icon-oct {
+    background: rgba(229, 152, 25, 0.15);
+    border-color: rgba(229, 152, 25, 0.35);
+    color: #FBBF24;
+}
+
+.gov-matrix-card:hover .gov-icon-oct {
+    background: var(--ry-amber);
+    color: #FFFFFF;
+    transform: rotate(45deg);
+    border-color: var(--ry-amber);
+    box-shadow: 0 4px 14px rgba(229, 152, 25, 0.4);
+}
+
+.gov-matrix-card:hover .gov-icon-oct i {
+    transform: rotate(-45deg);
+    transition: transform 0.35s ease;
+}
+
+.gov-icon-oct i {
+    transition: transform 0.35s ease;
+}
+
+/* Synergy Pod Pill */
 .gov-synergy-badge {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
-    font-size: 0.78rem;
+    gap: 6px;
+    font-size: 0.76rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.08em;
     color: var(--ry-amber);
+    background: rgba(229, 152, 25, 0.09);
+    padding: 0.35rem 0.8rem;
+    border-radius: 9999px;
+    border: 1px solid rgba(229, 152, 25, 0.22);
+}
+
+body:not(.light-theme) .gov-synergy-badge,
+body.dark-theme .gov-synergy-badge {
+    background: rgba(229, 152, 25, 0.14);
+    color: #FBBF24;
+    border-color: rgba(229, 152, 25, 0.3);
 }
 
 .gov-card-title {
-    font-size: 1.25rem;
-    font-weight: 700;
+    font-family: var(--font-serif);
+    font-size: 1.32rem;
+    font-weight: 800;
     color: #0F172A;
-    line-height: 1.3;
+    line-height: 1.25;
+    letter-spacing: -0.015em;
+    margin: 0;
 }
 
-body:not(.light-theme) .gov-card-title {
+body:not(.light-theme) .gov-card-title,
+body.dark-theme .gov-card-title {
     color: #FFFFFF;
 }
 
 .gov-card-desc {
-    font-size: 0.95rem;
-    line-height: 1.65;
-    color: #64748B;
+    font-size: 0.92rem;
+    line-height: 1.66;
+    color: #555D6E;
+    margin: 0;
+    flex-grow: 1;
 }
 
-body:not(.light-theme) .gov-card-desc {
-    color: rgba(255, 255, 255, 0.72);
+body:not(.light-theme) .gov-card-desc,
+body.dark-theme .gov-card-desc {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.gov-card-footer {
+    padding-top: 1rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.07);
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+}
+
+body:not(.light-theme) .gov-card-footer,
+body.dark-theme .gov-card-footer {
+    border-top-color: rgba(255, 255, 255, 0.08);
 }
 
 .gov-deliverable-pill {
-    margin-top: auto;
     display: inline-flex;
     align-items: center;
-    gap: 6px;
+    gap: 7px;
     font-size: 0.8rem;
     font-weight: 600;
-    color: #27AE60;
-    background: rgba(39, 174, 96, 0.1);
-    padding: 0.4rem 0.8rem;
-    border-radius: 8px;
+    color: #10B981;
+    background: rgba(16, 185, 129, 0.08);
+    border: 1px solid rgba(16, 185, 129, 0.22);
+    padding: 0.38rem 0.85rem;
+    border-radius: 9999px;
     width: fit-content;
 }
 
-body:not(.light-theme) .gov-deliverable-pill {
-    background: rgba(46, 204, 113, 0.15);
-    color: #2ECC71;
+body:not(.light-theme) .gov-deliverable-pill,
+body.dark-theme .gov-deliverable-pill {
+    background: rgba(16, 185, 129, 0.14);
+    color: #34D399;
+    border-color: rgba(52, 211, 153, 0.3);
 }
 
 /* Responsive Rules */

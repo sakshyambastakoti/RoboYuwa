@@ -716,22 +716,66 @@
         </div>
     </section>
 
-    <!-- High-Impact Call to Action -->
-    <section class="cta section-padding" style="background: linear-gradient(135deg, #0A0C10 0%, #151922 100%); color: white; text-align: center; border-top: 1px solid rgba(229, 152, 25, 0.2); position: relative; overflow: hidden;">
-        <div class="container reveal">
-            <span class="team-card-dept-tag" style="position: static; display: inline-block; margin-bottom: 1.2rem; background: rgba(229, 152, 25, 0.15); color: var(--ry-amber); border: 1px solid rgba(229, 152, 25, 0.3);">
-                Join The Movement
-            </span>
-            <h2 class="font-serif" style="color: white; font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 800; margin-bottom: 1rem;">
-                Be Part of Nepal's Robotics Revolution
-            </h2>
-            <p style="color: rgba(255,255,255,0.8); font-size: 1.1rem; margin-bottom: 2.2rem; max-width: 650px; margin-left: auto; margin-right: auto; line-height: 1.7;">
-                Whether you are a passionate student robotics builder, an academic mentor, or an institutional sponsor, there is an impactful place for you at RoboYuwa.
-            </p>
-            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-                <a href="membership.html" class="btn btn-pill-amber" style="padding: 0.85rem 2.2rem; font-size: 1rem;">Become a Member</a>
-                <a href="contact.html" class="btn-outline-pill" style="border-color: rgba(255,255,255,0.3); color: white;">Partner With Us</a>
+    <!-- Call To Action Section (Matching Home Page: Chamfered Card + Watermark Corner Badges + Brand Typography) -->
+    <section id="cta" class="cta-showcase-section" aria-label="Call to Action">
+        <div class="container cta-container">
+            <div class="cta-chamfer-card reveal">
+
+                <!-- Top-Right Watermark Badges (3 Chamfered Badges) -->
+                <div class="cta-badge-group top-right" aria-hidden="true">
+                    <span class="cta-oct-badge"></span>
+                    <span class="cta-oct-badge"></span>
+                    <span class="cta-oct-badge"></span>
+                </div>
+
+                <!-- Bottom-Left Watermark Badges (3 Chamfered Badges) -->
+                <div class="cta-badge-group bottom-left" aria-hidden="true">
+                    <span class="cta-oct-badge"></span>
+                    <span class="cta-oct-badge"></span>
+                    <span class="cta-oct-badge"></span>
+                </div>
+
+                <!-- Card Content -->
+                <div class="cta-card-content">
+                    <!-- Eyebrow: Amber Square + "Join The Movement" -->
+                    <div class="cta-eyebrow">
+                        <span class="eyebrow-square" aria-hidden="true"></span>
+                        <span>Join The Movement</span>
+                    </div>
+
+                    <!-- Main Title: Playfair Display Serif with Crimson Gradient Accent -->
+                    <h2 class="cta-main-title font-serif">
+                        Be Part of Nepal's <span class="text-gradient-crimson">Robotics Revolution</span>
+                    </h2>
+
+                    <!-- Subtitle / Narrative Copy -->
+                    <p class="cta-subtitle">
+                        Whether you are a passionate student robotics builder, an academic mentor, or an institutional sponsor, there is an impactful place for you at RoboYuwa. Connect with our leadership team today.
+                    </p>
+
+                    <!-- Dual Buttons Group: Membership (Amber) + Partner (Frosted) -->
+                    <div class="cta-btn-group">
+                        <a href="membership.html" class="btn-cta-primary">
+                            <i class="fa-solid fa-id-card" style="margin-right: 8px;"></i>
+                            <span>Become a Member</span>
+                        </a>
+                        <a href="contact.html" class="btn-cta-secondary">
+                            <i class="fa-solid fa-handshake" style="margin-right: 8px;"></i>
+                            <span>Partner With Us</span>
+                        </a>
+                    </div>
+                </div>
+
             </div>
+        </div>
+
+        <!-- Section Pulse Divider Line -->
+        <div class="section-pulse-divider" aria-hidden="true">
+            <div class="pulse-line pulse-left"></div>
+            <svg class="pulse-peak-svg" viewBox="0 0 38 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <polyline points="0,18 19,4 38,18" />
+            </svg>
+            <div class="pulse-line pulse-right"></div>
         </div>
     </section>
 </main>

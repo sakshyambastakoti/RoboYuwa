@@ -1165,47 +1165,10 @@
             color: rgba(255, 255, 255, 0.55);
         }
 
-        /* Pulse Divider Theme Handling */
-        .section-pulse-divider {
-            position: relative;
-            width: 100%;
-            height: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-            pointer-events: none;
-            z-index: 10;
-        }
-        body.light-theme .section-pulse-divider {
-            --pulse-divider-color: rgba(16, 18, 23, 0.2);
-        }
-        body:not(.light-theme) .section-pulse-divider,
-        body.dark-theme .section-pulse-divider {
-            --pulse-divider-color: rgba(255, 255, 255, 0.2);
-        }
-        .section-pulse-divider .pulse-marker {
-            width: 8px;
-            height: 8px;
-            background: var(--ry-crimson);
-            box-shadow: 0 0 10px rgba(229, 37, 37, 0.7);
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
-        }
-        .section-pulse-divider .pulse-line {
-            flex: 1;
-            height: 1px;
-            background-color: var(--pulse-divider-color);
-        }
-        .section-pulse-divider .pulse-peak-svg {
-            width: 38px;
-            height: 20px;
-            stroke: var(--ry-crimson);
-            stroke-width: 1.6;
-            flex-shrink: 0;
-            margin: 0 4px;
+        /* Pulse Divider: Ensure crisp solid black on light sections, luminous on dark sections */
+        .mem-hero .section-pulse-divider,
+        .mem-eligibility .section-pulse-divider {
+            --pulse-divider-color: rgba(255, 255, 255, 0.35);
         }
 
         /* ---- RESPONSIVE BREAKPOINTS ---- */
@@ -1354,15 +1317,17 @@
             </div>
         </div>
     </div>
-</section>
 
-<!-- PULSE DIVIDER 1 -->
-<div class="section-pulse-divider" aria-hidden="true">
-    <div class="pulse-marker"></div>
-    <div class="pulse-line pulse-left"></div>
-    <svg class="pulse-peak-svg" viewBox="0 0 38 20" fill="none" xmlns="http://www.w3.org/2000/svg"><polyline points="0,18 19,4 38,18" /></svg>
-    <div class="pulse-line pulse-right"></div>
-</div>
+    <!-- Section Pulse Divider Line -->
+    <div class="section-pulse-divider" aria-hidden="true">
+        <div class="pulse-marker"></div>
+        <div class="pulse-line pulse-left"></div>
+        <svg class="pulse-peak-svg" viewBox="0 0 38 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <polyline points="0,18 19,4 38,18" />
+        </svg>
+        <div class="pulse-line pulse-right"></div>
+    </div>
+</section>
 
 <!-- MEMBERSHIP TIERS -->
 <section class="mem-tiers" aria-label="Membership Plans">
@@ -1446,15 +1411,17 @@
 
         </div>
     </div>
-</section>
 
-<!-- PULSE DIVIDER 2 -->
-<div class="section-pulse-divider" aria-hidden="true">
-    <div class="pulse-marker"></div>
-    <div class="pulse-line pulse-left"></div>
-    <svg class="pulse-peak-svg" viewBox="0 0 38 20" fill="none" xmlns="http://www.w3.org/2000/svg"><polyline points="0,18 19,4 38,18" /></svg>
-    <div class="pulse-line pulse-right"></div>
-</div>
+    <!-- Section Pulse Divider Line (Left Side Peak) -->
+    <div class="section-pulse-divider pulse-left-side" aria-hidden="true">
+        <div class="pulse-marker"></div>
+        <div class="pulse-line pulse-left"></div>
+        <svg class="pulse-peak-svg" viewBox="0 0 38 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <polyline points="0,18 19,4 38,18" />
+        </svg>
+        <div class="pulse-line pulse-right"></div>
+    </div>
+</section>
 
 <!-- MEMBER BENEFITS -->
 <section class="mem-benefits" aria-label="Member Benefits">
@@ -1509,15 +1476,17 @@
             </div>
         </div>
     </div>
-</section>
 
-<!-- PULSE DIVIDER 3 -->
-<div class="section-pulse-divider" aria-hidden="true">
-    <div class="pulse-marker"></div>
-    <div class="pulse-line pulse-left"></div>
-    <svg class="pulse-peak-svg" viewBox="0 0 38 20" fill="none" xmlns="http://www.w3.org/2000/svg"><polyline points="0,18 19,4 38,18" /></svg>
-    <div class="pulse-line pulse-right"></div>
-</div>
+    <!-- Section Pulse Divider Line -->
+    <div class="section-pulse-divider" aria-hidden="true">
+        <div class="pulse-marker"></div>
+        <div class="pulse-line pulse-left"></div>
+        <svg class="pulse-peak-svg" viewBox="0 0 38 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <polyline points="0,18 19,4 38,18" />
+        </svg>
+        <div class="pulse-line pulse-right"></div>
+    </div>
+</section>
 
 <!-- WHO CAN JOIN -->
 <section class="mem-eligibility" aria-label="Who Can Join">
@@ -1572,15 +1541,17 @@
             </div>
         </div>
     </div>
-</section>
 
-<!-- PULSE DIVIDER 4 -->
-<div class="section-pulse-divider" aria-hidden="true">
-    <div class="pulse-marker"></div>
-    <div class="pulse-line pulse-left"></div>
-    <svg class="pulse-peak-svg" viewBox="0 0 38 20" fill="none" xmlns="http://www.w3.org/2000/svg"><polyline points="0,18 19,4 38,18" /></svg>
-    <div class="pulse-line pulse-right"></div>
-</div>
+    <!-- Section Pulse Divider Line (Left Side Peak) -->
+    <div class="section-pulse-divider pulse-left-side" aria-hidden="true">
+        <div class="pulse-marker"></div>
+        <div class="pulse-line pulse-left"></div>
+        <svg class="pulse-peak-svg" viewBox="0 0 38 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <polyline points="0,18 19,4 38,18" />
+        </svg>
+        <div class="pulse-line pulse-right"></div>
+    </div>
+</section>
 
 <!-- APPLICATION FORM -->
 <section class="mem-apply" id="apply" aria-label="Apply for Membership">
@@ -1696,15 +1667,17 @@
             </div>
         </div>
     </div>
-</section>
 
-<!-- PULSE DIVIDER 5 -->
-<div class="section-pulse-divider" aria-hidden="true">
-    <div class="pulse-marker"></div>
-    <div class="pulse-line pulse-left"></div>
-    <svg class="pulse-peak-svg" viewBox="0 0 38 20" fill="none" xmlns="http://www.w3.org/2000/svg"><polyline points="0,18 19,4 38,18" /></svg>
-    <div class="pulse-line pulse-right"></div>
-</div>
+    <!-- Section Pulse Divider Line -->
+    <div class="section-pulse-divider" aria-hidden="true">
+        <div class="pulse-marker"></div>
+        <div class="pulse-line pulse-left"></div>
+        <svg class="pulse-peak-svg" viewBox="0 0 38 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <polyline points="0,18 19,4 38,18" />
+        </svg>
+        <div class="pulse-line pulse-right"></div>
+    </div>
+</section>
 
 <!-- MEMBER STORIES -->
 <section class="mem-stories" aria-label="Member Testimonials">
@@ -1762,15 +1735,17 @@
             </div>
         </div>
     </div>
-</section>
 
-<!-- PULSE DIVIDER 6 -->
-<div class="section-pulse-divider" aria-hidden="true">
-    <div class="pulse-marker"></div>
-    <div class="pulse-line pulse-left"></div>
-    <svg class="pulse-peak-svg" viewBox="0 0 38 20" fill="none" xmlns="http://www.w3.org/2000/svg"><polyline points="0,18 19,4 38,18" /></svg>
-    <div class="pulse-line pulse-right"></div>
-</div>
+    <!-- Section Pulse Divider Line (Left Side Peak) -->
+    <div class="section-pulse-divider pulse-left-side" aria-hidden="true">
+        <div class="pulse-marker"></div>
+        <div class="pulse-line pulse-left"></div>
+        <svg class="pulse-peak-svg" viewBox="0 0 38 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <polyline points="0,18 19,4 38,18" />
+        </svg>
+        <div class="pulse-line pulse-right"></div>
+    </div>
+</section>
 
 <!-- Call To Action Section (Matching Home Page: Chamfered Card + Watermark Corner Badges + Brand Typography) -->
 <section id="cta" class="cta-showcase-section" aria-label="Call to Action">

@@ -3578,6 +3578,88 @@ body.light-theme:has(.hero) .nav-search-btn:hover {
 }
 
 /* ==========================================================================
+   Constant Black Header & Navbar for About Page (Never changes to white in Light Mode)
+   ========================================================================== */
+.about-page .header,
+body.light-theme.about-page .header,
+body.about-page .header {
+    background-color: rgba(12, 12, 14, 0.96) !important;
+    backdrop-filter: blur(16px) !important;
+    -webkit-backdrop-filter: blur(16px) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35) !important;
+}
+
+.about-page .top-bar,
+body.light-theme.about-page .top-bar {
+    background-color: rgba(8, 9, 12, 0.85) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+    color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.about-page .top-info .info-item,
+body.light-theme.about-page .top-info .info-item {
+    color: rgba(255, 255, 255, 0.85) !important;
+}
+
+.about-page .top-social-link,
+body.light-theme.about-page .top-social-link {
+    color: rgba(255, 255, 255, 0.8) !important;
+    background: transparent !important;
+}
+
+.about-page .top-social-link:hover,
+body.light-theme.about-page .top-social-link:hover {
+    color: var(--ry-amber) !important;
+    background: rgba(255, 255, 255, 0.15) !important;
+}
+
+.about-page .navbar,
+body.light-theme.about-page .navbar {
+    background-color: transparent !important;
+}
+
+.about-page .brand-name,
+body.light-theme.about-page .brand-name {
+    color: #FFFFFF !important;
+}
+
+.about-page .brand-tagline,
+body.light-theme.about-page .brand-tagline {
+    color: var(--amber-500) !important;
+}
+
+.about-page .nav-links a.nav-item,
+body.light-theme.about-page .nav-links a.nav-item {
+    color: rgba(255, 255, 255, 0.92) !important;
+}
+
+.about-page .nav-links a.nav-item:hover,
+.about-page .nav-links a.nav-item.active,
+body.light-theme.about-page .nav-links a.nav-item:hover,
+body.light-theme.about-page .nav-links a.nav-item.active {
+    color: var(--ry-amber) !important;
+}
+
+.about-page .nav-search-btn,
+.about-page .theme-toggle-btn,
+body.light-theme.about-page .nav-search-btn,
+body.light-theme.about-page .theme-toggle-btn {
+    color: #FFFFFF !important;
+    border-color: rgba(255, 255, 255, 0.2) !important;
+    background: rgba(255, 255, 255, 0.08) !important;
+}
+
+.about-page .nav-search-btn:hover,
+.about-page .theme-toggle-btn:hover,
+body.light-theme.about-page .nav-search-btn:hover,
+body.light-theme.about-page .theme-toggle-btn:hover {
+    background: rgba(255, 255, 255, 0.22) !important;
+    border-color: rgba(255, 255, 255, 0.5) !important;
+    color: #FFFFFF !important;
+}
+
+/* ==========================================================================
    Light / Dark Theme Toggle Icon Switch States
    Default / Light: Show Moon Icon (Amber), Hide Sun Icon
    Dark Theme: Show Sun Icon (Amber), Hide Moon Icon

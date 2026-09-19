@@ -7078,4 +7078,460 @@ body:not(.light-theme) .about-cta-content p {
     }
 }
 
+/* ==========================================================================
+   OUR TEAM PAGE REDESIGN (Reference Architecture)
+   ========================================================================== */
+
+/* Hero Section */
+.team-hero-ref {
+    position: relative;
+    padding: 170px 0 70px;
+    background: #FFFFFF;
+    overflow: hidden;
+}
+
+body:not(.light-theme) .team-hero-ref {
+    background: var(--ry-dark-bg);
+}
+
+.team-hero-grid {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 4rem;
+    align-items: flex-end;
+    margin-bottom: 3.5rem;
+}
+
+.team-hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.88rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: #64748B;
+    margin-bottom: 1.2rem;
+}
+
+body:not(.light-theme) .team-hero-eyebrow {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.eyebrow-square-ref {
+    width: 14px;
+    height: 14px;
+    background: var(--ry-amber);
+    background: linear-gradient(135deg, #F5A623 0%, #D48813 100%);
+    border-radius: 4px;
+    display: inline-block;
+    flex-shrink: 0;
+    box-shadow: 0 2px 8px rgba(229, 152, 25, 0.4);
+}
+
+.team-ref-title {
+    font-size: clamp(2.5rem, 4.8vw, 4.2rem);
+    font-weight: 800;
+    line-height: 1.08;
+    color: #0F172A;
+    letter-spacing: -0.025em;
+}
+
+body:not(.light-theme) .team-ref-title {
+    color: #FFFFFF;
+}
+
+.team-ref-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.4rem;
+}
+
+.team-ref-lead {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #475569;
+}
+
+body:not(.light-theme) .team-ref-lead {
+    color: rgba(255, 255, 255, 0.78);
+}
+
+.btn-ref-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.75rem 1.8rem;
+    border-radius: 9999px;
+    font-size: 0.92rem;
+    font-weight: 600;
+    border: 1.5px solid #CBD5E1;
+    color: #1E293B;
+    background: transparent;
+    text-decoration: none;
+    transition: all 0.25s ease;
+}
+
+body:not(.light-theme) .btn-ref-pill {
+    border-color: rgba(255, 255, 255, 0.22);
+    color: #FFFFFF;
+}
+
+.btn-ref-pill:hover {
+    border-color: var(--ry-amber);
+    background: rgba(229, 152, 25, 0.08);
+    color: var(--ry-amber);
+    transform: translateY(-2px);
+}
+
+/* Category Filter Tabs */
+.team-filter-nav {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    margin-bottom: 4rem;
+}
+
+body:not(.light-theme) .team-filter-nav {
+    border-bottom-color: rgba(255, 255, 255, 0.08);
+}
+
+.team-filter-btn {
+    padding: 0.65rem 1.5rem;
+    border-radius: 9999px;
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: #64748B;
+    background: #F1F5F9;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    outline: none;
+}
+
+body:not(.light-theme) .team-filter-btn {
+    background: #141720;
+    color: rgba(255, 255, 255, 0.7);
+    border-color: rgba(255, 255, 255, 0.06);
+}
+
+.team-filter-btn:hover {
+    color: #0F172A;
+    background: #E2E8F0;
+}
+
+body:not(.light-theme) .team-filter-btn:hover {
+    color: #FFFFFF;
+    background: #1C212E;
+}
+
+.team-filter-btn.active {
+    background: var(--ry-amber);
+    background: linear-gradient(135deg, #F5A623 0%, #D48813 100%);
+    color: #FFFFFF;
+    box-shadow: 0 4px 14px rgba(229, 152, 25, 0.35);
+}
+
+body:not(.light-theme) .team-filter-btn.active {
+    background: linear-gradient(135deg, #F5A623 0%, #D48813 100%);
+    color: #FFFFFF;
+}
+
+/* Team Grid & Chamfered Cards matching Reference */
+.team-grid-ref {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3.5rem 2.5rem;
+    margin-bottom: 6rem;
+}
+
+.team-card-ref {
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+}
+
+.team-card-ref.hidden {
+    display: none;
+}
+
+/* Chamfered Image Container matching Reference Cutout */
+.team-card-frame {
+    position: relative;
+    width: 100%;
+    height: 420px;
+    background: #F3F4F6;
+    clip-path: polygon(
+        46px 0%, 
+        100% 0%, 
+        100% calc(100% - 46px), 
+        calc(100% - 46px) 100%, 
+        0% 100%, 
+        0% 46px
+    );
+    border-radius: 24px;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+body:not(.light-theme) .team-card-frame {
+    background: #141722;
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.45);
+}
+
+.team-card-ref:hover .team-card-frame {
+    transform: translateY(-6px);
+    box-shadow: 0 22px 50px rgba(0, 0, 0, 0.16);
+}
+
+body:not(.light-theme) .team-card-ref:hover .team-card-frame {
+    box-shadow: 0 24px 55px rgba(229, 152, 25, 0.22);
+}
+
+.team-card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 15%;
+    display: block;
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.team-card-ref:hover .team-card-img {
+    transform: scale(1.04);
+}
+
+/* Optional Department Badge in Corner */
+.team-card-dept-tag {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(8px);
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 0.35rem 0.75rem;
+    border-radius: 9999px;
+    color: #1E293B;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    z-index: 2;
+}
+
+body:not(.light-theme) .team-card-dept-tag {
+    background: rgba(21, 24, 33, 0.9);
+    color: #E2E8F0;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Card Content: Name, Role, Bio summary, Socials */
+.team-card-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.team-card-name {
+    font-size: 1.65rem;
+    font-weight: 800;
+    color: #0F172A;
+    line-height: 1.15;
+    margin-bottom: 0.35rem;
+    letter-spacing: -0.02em;
+}
+
+body:not(.light-theme) .team-card-name {
+    color: #FFFFFF;
+}
+
+.team-card-role {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #64748B;
+    margin-bottom: 0.85rem;
+}
+
+body:not(.light-theme) .team-card-role {
+    color: #94A3B8;
+}
+
+.team-card-responsibilities {
+    font-size: 0.88rem;
+    line-height: 1.6;
+    color: #64748B;
+    margin-bottom: 1.1rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+body:not(.light-theme) .team-card-responsibilities {
+    color: rgba(255, 255, 255, 0.68);
+}
+
+/* Social Icon Strip matching Reference */
+.team-card-socials {
+    display: flex;
+    align-items: center;
+    gap: 0.95rem;
+}
+
+.team-social-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #475569;
+    font-size: 1.1rem;
+    text-decoration: none;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+body:not(.light-theme) .team-social-link {
+    color: #94A3B8;
+}
+
+.team-social-link:hover {
+    color: var(--ry-amber);
+    transform: translateY(-2px);
+}
+
+/* -------------------------------------------------------------
+   Interdepartmental Collaboration Matrix & Governance (From Docs)
+   ------------------------------------------------------------- */
+.team-governance-section {
+    padding: 100px 0;
+    background: #F8FAFC;
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+body:not(.light-theme) .team-governance-section {
+    background: #0C0E14;
+    border-top-color: rgba(255, 255, 255, 0.08);
+    border-bottom-color: rgba(255, 255, 255, 0.08);
+}
+
+.gov-matrix-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 3.5rem;
+}
+
+.gov-matrix-card {
+    background: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.07);
+    border-radius: 20px;
+    padding: 2.2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+body:not(.light-theme) .gov-matrix-card {
+    background: #131620;
+    border-color: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+}
+
+.gov-matrix-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--ry-amber);
+    box-shadow: 0 18px 40px rgba(229, 152, 25, 0.15);
+}
+
+.gov-synergy-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--ry-amber);
+}
+
+.gov-card-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #0F172A;
+    line-height: 1.3;
+}
+
+body:not(.light-theme) .gov-card-title {
+    color: #FFFFFF;
+}
+
+.gov-card-desc {
+    font-size: 0.95rem;
+    line-height: 1.65;
+    color: #64748B;
+}
+
+body:not(.light-theme) .gov-card-desc {
+    color: rgba(255, 255, 255, 0.72);
+}
+
+.gov-deliverable-pill {
+    margin-top: auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #27AE60;
+    background: rgba(39, 174, 96, 0.1);
+    padding: 0.4rem 0.8rem;
+    border-radius: 8px;
+    width: fit-content;
+}
+
+body:not(.light-theme) .gov-deliverable-pill {
+    background: rgba(46, 204, 113, 0.15);
+    color: #2ECC71;
+}
+
+/* Responsive Rules */
+@media (max-width: 1024px) {
+    .team-hero-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    .team-grid-ref {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2.5rem 1.8rem;
+    }
+    .gov-matrix-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .team-hero-ref {
+        padding: 130px 0 50px;
+    }
+    .team-grid-ref {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+    .team-card-frame {
+        height: 350px;
+    }
+    .gov-matrix-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
 

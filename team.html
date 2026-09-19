@@ -12,50 +12,6 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600;1,700&display=swap"
         rel="stylesheet">
-    <style>
-        /* Specific Styles for About Page to complement global css */
-        .page-header {
-            padding: 160px 0 80px;
-            background: var(--black);
-            color: var(--white);
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .page-header-bg {
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: linear-gradient(135deg, rgba(209, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.9) 100%), url('assets/group photo.jpeg') center/cover;
-            opacity: 0.4;
-            z-index: 0;
-        }
-
-        .page-header .container {
-            position: relative;
-            z-index: 1;
-        }
-        
-        .page-header h1 {
-            color: var(--white);
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            margin-bottom: 1rem;
-        }
-        
-        .page-header p {
-            font-size: 1.2rem;
-            color: var(--gray-300);
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .about-story {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: var(--text-light);
-            margin-bottom: 2rem;
-        }
-    </style>
     <script src="https://zenithkandel.com.np/fontawesome/zenith-icons.js"></script>
 </head>
 <body>
@@ -141,244 +97,455 @@
         </div>
     </header>
 
-    <!-- Page Header -->
-    <section class="page-header">
-        <div class="page-header-bg"></div>
-        <div class="container fade-in-up">
-            <h1>Meet Our Team</h1>
-            <p>The dedicated individuals driving innovation and empowering youth at RoboYuwa across all departments.</p>
-        </div>
-    </section>
-
-    <!-- Team Section -->
-    <section class="team section-padding bg-light">
+    <!-- Main Team Hero Section (Reference Design) -->
+    <section class="team-hero-ref" id="teamHero">
         <div class="container">
-
-            <!-- Executive Members -->
-            <div class="team-category reveal delay-1">
-                <div class="section-title text-center" style="margin-bottom: 3rem;">
-                    <h2>Executive Members</h2>
-                    <div class="divider center"></div>
-                    <p class="mt-3">The core leadership driving RoboYuwa's vision and mission forward.</p>
+            <!-- Top Split Header matching Reference Image -->
+            <div class="team-hero-grid reveal">
+                <div class="team-ref-left">
+                    <div class="team-hero-eyebrow">
+                        <span class="eyebrow-square-ref" aria-hidden="true"></span>
+                        <span>Our Team</span>
+                    </div>
+                    <h1 class="team-ref-title font-serif">Meet the Experts Behind RoboYuwa</h1>
                 </div>
-                <div class="team-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
-                    
-                    <div class="team-card text-center" style="background: white; border-radius: 12px; padding: 2rem; box-shadow: var(--shadow-sm);">
-                        <div class="team-avatar" style="width:120px; height:120px; margin: 0 auto 1.5rem; border-radius: 50%; overflow: hidden; background: var(--gray-100);">
-                            <img src="assets/president.png" alt="Selina Baidya" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.outerHTML=`<i class='fa-duotone fa-user' style='font-size: 4rem; color: var(--primary-color); display: flex; align-items: center; justify-content: center; height: 100%;'></i>`">
-                        </div>
-                        <h3>Selina Baidya</h3>
-                        <p style="color: var(--primary-color); font-weight: 600; margin-bottom: 0.5rem;">President</p>
-                        <p style="font-size: 0.9rem; color: var(--gray-600);"><a href="mailto:vaidyaselina55@gmail.com" style="color:inherit;">vaidyaselina55@gmail.com</a></p>
-                        <p style="font-size: 0.9rem; color: var(--gray-600);">+977 9818909622</p>
-                    </div>
-
-                    <div class="team-card text-center" style="background: white; border-radius: 12px; padding: 2rem; box-shadow: var(--shadow-sm);">
-                        <div class="team-avatar" style="width:120px; height:120px; margin: 0 auto 1.5rem; border-radius: 50%; overflow: hidden; background: var(--gray-100);">
-                            <img src="assets/vice preseident.png" alt="Chandrahant Shah" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.outerHTML=`<i class='fa-duotone fa-user' style='font-size: 4rem; color: var(--primary-color); display: flex; align-items: center; justify-content: center; height: 100%;'></i>`">
-                        </div>
-                        <h3>Chandrahant Shah</h3>
-                        <p style="color: var(--primary-color); font-weight: 600; margin-bottom: 0.5rem;">Vice President</p>
-                        <p style="font-size: 0.9rem; color: var(--gray-600);"><a href="mailto:cshah9616@gmail.com" style="color:inherit;">cshah9616@gmail.com</a></p>
-                        <p style="font-size: 0.9rem; color: var(--gray-600);">+977 981-6842701</p>
-                    </div>
-
-                    <div class="team-card text-center" style="background: white; border-radius: 12px; padding: 2rem; box-shadow: var(--shadow-sm);">
-                        <div class="team-avatar" style="width:120px; height:120px; margin: 0 auto 1.5rem; border-radius: 50%; overflow: hidden; background: var(--gray-100);">
-                            <img src="assets/seceratiy.png" alt="Saroj Japrel" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.outerHTML=`<i class='fa-duotone fa-user' style='font-size: 4rem; color: var(--primary-color); display: flex; align-items: center; justify-content: center; height: 100%;'></i>`">
-                        </div>
-                        <h3>Saroj Japrel</h3>
-                        <p style="color: var(--primary-color); font-weight: 600; margin-bottom: 0.5rem;">Secretary</p>
-                        <p style="font-size: 0.9rem; color: var(--gray-600);"><a href="mailto:sarojjaprel22@gmail.com" style="color:inherit;">sarojjaprel22@gmail.com</a></p>
-                        <p style="font-size: 0.9rem; color: var(--gray-600);">+977 9824667937</p>
-                    </div>
-
-                    <div class="team-card text-center" style="background: white; border-radius: 12px; padding: 2rem; box-shadow: var(--shadow-sm);">
-                        <div class="team-avatar" style="width:120px; height:120px; margin: 0 auto 1.5rem; border-radius: 50%; overflow: hidden; background: var(--gray-100);">
-                            <img src="assets/joint secertiy.png" alt="Prashna Simkhada" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.outerHTML=`<i class='fa-duotone fa-user' style='font-size: 4rem; color: var(--primary-color); display: flex; align-items: center; justify-content: center; height: 100%;'></i>`">
-                        </div>
-                        <h3>Prashna Simkhada</h3>
-                        <p style="color: var(--primary-color); font-weight: 600; margin-bottom: 0.5rem;">Joint Secretary</p>
-                        <p style="font-size: 0.9rem; color: var(--gray-600);"><a href="mailto:prashnasimkhada2.0@gmail.com" style="color:inherit;">prashnasimkhada2.0@gmail.com</a> 
-                        <p style="font-size: 0.9rem; color: var(--gray-600);">+977 986-1823895</p>
-                    </div>
-
-                    <div class="team-card text-center" style="background: white; border-radius: 12px; padding: 2rem; box-shadow: var(--shadow-sm);">
-                        <div class="team-avatar" style="width:120px; height:120px; margin: 0 auto 1.5rem; border-radius: 50%; overflow: hidden; background: var(--gray-100);">
-                            <img src="assets/tressure.png" alt="Aman Yadav" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.outerHTML=`<i class='fa-duotone fa-user' style='font-size: 4rem; color: var(--primary-color); display: flex; align-items: center; justify-content: center; height: 100%;'></i>`">
-                        </div>
-                        <h3>Aman Yadav</h3>
-                        <p style="color: var(--primary-color); font-weight: 600; margin-bottom: 0.5rem;">Treasurer</p>
-                        <p style="font-size: 0.9rem; color: var(--gray-600);"><a href="mailto:6093aman@gmail.com" style="color:inherit;">6093aman@gmail.com</a></p>
-                        <p style="font-size: 0.9rem; color: var(--gray-600);">+977 9749469420</p>
-                    </div>
-
+                <div class="team-ref-right">
+                    <p class="team-ref-lead">
+                        Empowering Nepal's youth through robotics, open-source hardware, and hands-on STEM education. Our multidisciplinary leadership unites engineering pioneers, legal strategists, creative designers, and visionary youth advocates across all seven provinces.
+                    </p>
+                    <a href="#teamGrid" class="btn-ref-pill">
+                        <span>Meet All Members</span>
+                        <i class="fa-solid fa-arrow-down" aria-hidden="true" style="font-size: 0.8rem;"></i>
+                    </a>
                 </div>
             </div>
 
-            <!-- Department Heads -->
-            <div class="team-category mt-5 reveal delay-2" style="padding-top: 4rem;">
-                <div class="section-title text-center" style="margin-bottom: 3rem;">
-                    <h2>Department Heads</h2>
-                    <div class="divider center"></div>
-                    <p class="mt-3">The specialized leaders coordinating operations across our key departments.</p>
-                </div>
-                <div class="team-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
-                    
-                    <div class="team-card text-center" style="background: white; border-radius: 12px; padding: 2rem; box-shadow: var(--shadow-sm);">
-                        <div class="team-avatar" style="width:120px; height:120px; margin: 0 auto 1.5rem; border-radius: 50%; overflow: hidden; background: var(--gray-100);">
-                            <img src="assets/outreachhead.png" alt="Supriya Silwal" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.outerHTML=`<i class='fa-duotone fa-user' style='font-size: 4rem; color: var(--primary-color); display: flex; align-items: center; justify-content: center; height: 100%;'></i>`">
-                        </div>
-                        <h3>Supriya Silwal</h3>
-                        <p style="color: var(--primary-color); font-weight: 600; margin-bottom: 0.5rem;">Outreach Head</p>
-                        <p style="font-size: 0.9rem; color: var(--gray-600);"><a href="mailto:supriyasilwal.08@gmail.com" style="color:inherit;">supriyasilwal.08@gmail.com</a></p>
-                        <p style="font-size: 0.9rem; color: var(--gray-600);">+977 9840341004</p>
-                    </div>
-
-                    <div class="team-card text-center" style="background: white; border-radius: 12px; padding: 2rem; box-shadow: var(--shadow-sm);">
-                        <div class="team-avatar" style="width:120px; height:120px; margin: 0 auto 1.5rem; border-radius: 50%; overflow: hidden; background: var(--gray-100);">
-                            <img src="assets/event.png" alt="Pranaya KC" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.outerHTML=`<i class='fa-duotone fa-user' style='font-size: 4rem; color: var(--primary-color); display: flex; align-items: center; justify-content: center; height: 100%;'></i>`">
-                        </div>
-                        <h3>Pranaya KC</h3>
-                        <p style="color: var(--primary-color); font-weight: 600; margin-bottom: 0.5rem;">Event Planner &amp; Management Head</p>
-                        <p style="font-size: 0.9rem; color: var(--gray-600);"><a href="mailto:pranayakhatri82@gmail.com" style="color:inherit;">pranayakhatri82@gmail.com</a></p>
-                        <p style="font-size: 0.9rem; color: var(--gray-600);">+977 9762895743</p>
-                    </div>
-
-                    <div class="team-card text-center" style="background: white; border-radius: 12px; padding: 2rem; box-shadow: var(--shadow-sm);">
-                        <div class="team-avatar" style="width:120px; height:120px; margin: 0 auto 1.5rem; border-radius: 50%; overflow: hidden; background: var(--gray-100);">
-                            <img src="assets/reserch.jpg" alt="Sakshyam Bastakoti" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.outerHTML=`<i class='fa-duotone fa-user' style='font-size: 4rem; color: var(--primary-color); display: flex; align-items: center; justify-content: center; height: 100%;'></i>`">
-                        </div>
-                        <h3>Sakshyam Bastakoti</h3>
-                        <p style="color: var(--primary-color); font-weight: 600; margin-bottom: 0.5rem;">Research &amp; Technical Head</p>
-                        <p style="font-size: 0.9rem; color: var(--gray-600);"><a href="mailto:sakshyamxeetri@gmail.com" style="color:inherit;">sakshyamxeetri@gmail.com</a></p>
-                        <p style="font-size: 0.9rem; color: var(--gray-600);">+977 9764320750</p>
-                    </div>
-
-                    <div class="team-card text-center" style="background: white; border-radius: 12px; padding: 2rem; box-shadow: var(--shadow-sm);">
-                        <div class="team-avatar" style="width:120px; height:120px; margin: 0 auto 1.5rem; border-radius: 50%; overflow: hidden; background: var(--gray-100);">
-                            <img src="assets/leagal head.png" alt="Pranjali Pudel" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.outerHTML=`<i class='fa-duotone fa-user' style='font-size: 4rem; color: var(--primary-color); display: flex; align-items: center; justify-content: center; height: 100%;'></i>`">
-                        </div>
-                        <h3>Pranjali Pudel</h3>
-                        <p style="color: var(--primary-color); font-weight: 600; margin-bottom: 0.5rem;">Legalities Head</p>
-                        <p style="font-size: 0.9rem; color: var(--gray-600);"><a href="mailto:poudelpranjali38@gmail.com" style="color:inherit;">poudelpranjali38@gmail.com</a></p>
-                        <p style="font-size: 0.9rem; color: var(--gray-600);">+977 986-0984019</p>
-                    </div>
-
-                    <div class="team-card text-center" style="background: white; border-radius: 12px; padding: 2rem; box-shadow: var(--shadow-sm);">
-                        <div class="team-avatar" style="width:120px; height:120px; margin: 0 auto 1.5rem; border-radius: 50%; overflow: hidden; background: var(--gray-100);">
-                            <img src="assets/creative head.png" alt="Arshia Joshi" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.outerHTML=`<i class='fa-duotone fa-user' style='font-size: 4rem; color: var(--primary-color); display: flex; align-items: center; justify-content: center; height: 100%;'></i>`">
-                        </div>
-                        <h3>Arshia Joshi</h3>
-                        <p style="color: var(--primary-color); font-weight: 600; margin-bottom: 0.5rem;">Creative Head</p>
-                        <p style="font-size: 0.9rem; color: var(--gray-600);"><a href="mailto:joshi.arshia12@gmail.com" style="color:inherit;">joshi.arshia12@gmail.com</a></p>
-                        <p style="font-size: 0.9rem; color: var(--gray-600);">+977 986-4266802</p>
-                    </div>
-
-                </div>
+            <!-- Team Category Filter Navigation -->
+            <div class="team-filter-nav reveal delay-1" id="teamFilterNav" role="tablist" aria-label="Team category filters">
+                <button type="button" class="team-filter-btn active" data-filter="all" role="tab" aria-selected="true">
+                    All Leaders (12)
+                </button>
+                <button type="button" class="team-filter-btn" data-filter="executive" role="tab" aria-selected="false">
+                    Executive Board (5)
+                </button>
+                <button type="button" class="team-filter-btn" data-filter="department" role="tab" aria-selected="false">
+                    Department Heads (5)
+                </button>
+                <button type="button" class="team-filter-btn" data-filter="advisory" role="tab" aria-selected="false">
+                    Advisory Board (2)
+                </button>
             </div>
 
-            <!-- Advisors -->
-            <div class="team-category mt-5 reveal delay-3" style="padding-top: 4rem;">
-                <div class="section-title text-center" style="margin-bottom: 3rem;">
-                    <h2>Advisory Board</h2>
-                    <div class="divider center"></div>
-                    <p class="mt-3">Our guiding committee of experienced mentors and strategic experts.</p>
-                </div>
-                <div class="team-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
-                    
-                    <div class="team-card text-center" style="background: white; border-radius: 12px; padding: 2rem; box-shadow: var(--shadow-sm);">
-                        <div class="team-avatar" style="width:120px; height:120px; margin: 0 auto 1.5rem; border-radius: 50%; overflow: hidden; background: var(--gray-100);">
-                            <img src="assets/jitendra adivisor.png" alt="Jitendra Khatri" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.outerHTML=`<i class='fa-duotone fa-user' style='font-size: 4rem; color: var(--primary-color); display: flex; align-items: center; justify-content: center; height: 100%;'></i>`">
+            <!-- 3-Column Chamfered Cards Grid matching Reference Cutout -->
+            <div class="team-grid-ref" id="teamGrid">
+
+                <!-- 01: Selina Baidya (President) -->
+                <article class="team-card-ref reveal" data-category="executive">
+                    <div class="team-card-frame">
+                        <span class="team-card-dept-tag">Executive Board</span>
+                        <img src="assets/president.png" alt="Selina Baidya - President of RoboYuwa" class="team-card-img" loading="lazy" decoding="async" onerror="this.src='assets/roboyuwa-logo-BLCCIWUS.jpg'" />
+                    </div>
+                    <div class="team-card-info">
+                        <h3 class="team-card-name">Selina Baidya</h3>
+                        <p class="team-card-role">President &amp; Founder</p>
+                        <p class="team-card-responsibilities">
+                            Chief executive officer steering constitutional governance, high-level institutional partnerships, national STEM alliances, and presiding over general assembly meetings.
+                        </p>
+                        <div class="team-card-socials" aria-label="Social links for Selina Baidya">
+                            <a href="https://www.facebook.com/profile.php?id=61563808928659" target="_blank" rel="noopener noreferrer" class="team-social-link" aria-label="Facebook Profile"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="team-social-link" aria-label="X (Twitter) Profile"><i class="fa-brands fa-x-twitter"></i></a>
+                            <a href="https://www.instagram.com/robo__yuwa/" target="_blank" rel="noopener noreferrer" class="team-social-link" aria-label="Instagram Profile"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="https://www.linkedin.com/company/roboyuwa/posts/?feedView=all" target="_blank" rel="noopener noreferrer" class="team-social-link" aria-label="LinkedIn Profile"><i class="fa-brands fa-linkedin-in"></i></a>
+                            <a href="mailto:vaidyaselina55@gmail.com" class="team-social-link" aria-label="Email Selina Baidya" title="vaidyaselina55@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+                            <a href="tel:+9779818909622" class="team-social-link" aria-label="Phone" title="+977 9818909622"><i class="fa-solid fa-phone"></i></a>
                         </div>
-                        <h3>Jitendra Khatri</h3>
-                        <p style="color: var(--primary-color); font-weight: 600; margin-bottom: 0.5rem;">Advisor</p>
-                        <p style="font-size: 0.9rem; color: var(--gray-600);"><a href="mailto:jeetendra.khatri200@gmail.com" style="color:inherit;">jeetendra.khatri200@gmail.com</a></p>
-                        <p style="font-size: 0.9rem; color: var(--gray-600);">+1 682-408-6203</p>
                     </div>
+                </article>
 
-                    <div class="team-card text-center" style="background: white; border-radius: 12px; padding: 2rem; box-shadow: var(--shadow-sm);">
-                        <div class="team-avatar" style="width:120px; height:120px; margin: 0 auto 1.5rem; border-radius: 50%; overflow: hidden; background: var(--gray-100);">
-                            <img src="assets/advsior.png" alt="Prasamsa Sharma" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.outerHTML=`<i class='fa-duotone fa-user' style='font-size: 4rem; color: var(--primary-color); display: flex; align-items: center; justify-content: center; height: 100%;'></i>`">
+                <!-- 02: Chandrahant Shah (Vice President) -->
+                <article class="team-card-ref reveal delay-1" data-category="executive">
+                    <div class="team-card-frame">
+                        <span class="team-card-dept-tag">Executive Board</span>
+                        <img src="assets/vice preseident.png" alt="Chandrahant Shah - Vice President of RoboYuwa" class="team-card-img" loading="lazy" decoding="async" onerror="this.src='assets/roboyuwa-logo-BLCCIWUS.jpg'" />
+                    </div>
+                    <div class="team-card-info">
+                        <h3 class="team-card-name">Chandrahant Shah</h3>
+                        <p class="team-card-role">Vice President</p>
+                        <p class="team-card-responsibilities">
+                            Supervises cross-departmental operations, coordinates province-wide initiatives, ensures policy adherence, and fulfills presidential duties in executive delegation.
+                        </p>
+                        <div class="team-card-socials" aria-label="Social links for Chandrahant Shah">
+                            <a href="https://www.facebook.com/profile.php?id=61563808928659" target="_blank" rel="noopener noreferrer" class="team-social-link" aria-label="Facebook Profile"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="team-social-link" aria-label="X (Twitter) Profile"><i class="fa-brands fa-x-twitter"></i></a>
+                            <a href="https://www.instagram.com/robo__yuwa/" target="_blank" rel="noopener noreferrer" class="team-social-link" aria-label="Instagram Profile"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="https://www.linkedin.com/company/roboyuwa/posts/?feedView=all" target="_blank" rel="noopener noreferrer" class="team-social-link" aria-label="LinkedIn Profile"><i class="fa-brands fa-linkedin-in"></i></a>
+                            <a href="mailto:cshah9616@gmail.com" class="team-social-link" aria-label="Email Chandrahant Shah" title="cshah9616@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+                            <a href="tel:+9779816842701" class="team-social-link" aria-label="Phone" title="+977 981-6842701"><i class="fa-solid fa-phone"></i></a>
                         </div>
-                        <h3>Prasamsa Sharma</h3>
-                        <p style="color: var(--primary-color); font-weight: 600; margin-bottom: 0.5rem;">Advisor</p>
-                        <p style="font-size: 0.9rem; color: var(--gray-600);">N/A</p>
-                        <p style="font-size: 0.9rem; color: var(--gray-600);">+977 980-3663183</p>
                     </div>
+                </article>
 
-                </div>
+                <!-- 03: Saroj Japrel (Secretary) -->
+                <article class="team-card-ref reveal delay-2" data-category="executive">
+                    <div class="team-card-frame">
+                        <span class="team-card-dept-tag">Executive Board</span>
+                        <img src="assets/seceratiy.png" alt="Saroj Japrel - Secretary of RoboYuwa" class="team-card-img" loading="lazy" decoding="async" onerror="this.src='assets/roboyuwa-logo-BLCCIWUS.jpg'" />
+                    </div>
+                    <div class="team-card-info">
+                        <h3 class="team-card-name">Saroj Japrel</h3>
+                        <p class="team-card-role">General Secretary</p>
+                        <p class="team-card-responsibilities">
+                            Manages statutory institutional documentation, official meeting records, executive communications, and coordinates official filings with regulatory bodies.
+                        </p>
+                        <div class="team-card-socials" aria-label="Social links for Saroj Japrel">
+                            <a href="https://www.facebook.com/profile.php?id=61563808928659" target="_blank" rel="noopener noreferrer" class="team-social-link" aria-label="Facebook Profile"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="team-social-link" aria-label="X (Twitter) Profile"><i class="fa-brands fa-x-twitter"></i></a>
+                            <a href="https://www.instagram.com/robo__yuwa/" target="_blank" rel="noopener noreferrer" class="team-social-link" aria-label="Instagram Profile"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="https://www.linkedin.com/company/roboyuwa/posts/?feedView=all" target="_blank" rel="noopener noreferrer" class="team-social-link" aria-label="LinkedIn Profile"><i class="fa-brands fa-linkedin-in"></i></a>
+                            <a href="mailto:sarojjaprel22@gmail.com" class="team-social-link" aria-label="Email Saroj Japrel" title="sarojjaprel22@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+                            <a href="tel:+9779824667937" class="team-social-link" aria-label="Phone" title="+977 9824667937"><i class="fa-solid fa-phone"></i></a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 04: Prashna Simkhada (Joint Secretary) -->
+                <article class="team-card-ref reveal" data-category="executive">
+                    <div class="team-card-frame">
+                        <span class="team-card-dept-tag">Executive Board</span>
+                        <img src="assets/joint secertiy.png" alt="Prashna Simkhada - Joint Secretary of RoboYuwa" class="team-card-img" loading="lazy" decoding="async" onerror="this.src='assets/roboyuwa-logo-BLCCIWUS.jpg'" />
+                    </div>
+                    <div class="team-card-info">
+                        <h3 class="team-card-name">Prashna Simkhada</h3>
+                        <p class="team-card-role">Joint Secretary</p>
+                        <p class="team-card-responsibilities">
+                            Maintains the official central membership directory, coordinates inter-club initiatives, and supports secretarial logistics and archive digitization.
+                        </p>
+                        <div class="team-card-socials" aria-label="Social links for Prashna Simkhada">
+                            <a href="https://www.facebook.com/profile.php?id=61563808928659" target="_blank" rel="noopener noreferrer" class="team-social-link" aria-label="Facebook Profile"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="team-social-link" aria-label="X (Twitter) Profile"><i class="fa-brands fa-x-twitter"></i></a>
+                            <a href="https://www.instagram.com/robo__yuwa/" target="_blank" rel="noopener noreferrer" class="team-social-link" aria-label="Instagram Profile"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="https://www.linkedin.com/company/roboyuwa/posts/?feedView=all" target="_blank" rel="noopener noreferrer" class="team-social-link" aria-label="LinkedIn Profile"><i class="fa-brands fa-linkedin-in"></i></a>
+                            <a href="mailto:prashnasimkhada2.0@gmail.com" class="team-social-link" aria-label="Email Prashna Simkhada" title="prashnasimkhada2.0@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+                            <a href="tel:+9779861823895" class="team-social-link" aria-label="Phone" title="+977 986-1823895"><i class="fa-solid fa-phone"></i></a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 05: Aman Yadav (Treasurer) -->
+                <article class="team-card-ref reveal delay-1" data-category="executive">
+                    <div class="team-card-frame">
+                        <span class="team-card-dept-tag">Executive Board</span>
+                        <img src="assets/tressure.png" alt="Aman Yadav - Treasurer of RoboYuwa" class="team-card-img" loading="lazy" decoding="async" onerror="this.src='assets/roboyuwa-logo-BLCCIWUS.jpg'" />
+                    </div>
+                    <div class="team-card-info">
+                        <h3 class="team-card-name">Aman Yadav</h3>
+                        <p class="team-card-role">Treasurer</p>
+                        <p class="team-card-responsibilities">
+                            Supervises financial governance, fiscal audit transparency, 51% board approval compliance, joint bank mandates, and capital appropriations for technical labs.
+                        </p>
+                        <div class="team-card-socials" aria-label="Social links for Aman Yadav">
+                            <a href="https://www.facebook.com/profile.php?id=61563808928659" target="_blank" rel="noopener noreferrer" class="team-social-link" aria-label="Facebook Profile"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="team-social-link" aria-label="X (Twitter) Profile"><i class="fa-brands fa-x-twitter"></i></a>
+                            <a href="https://www.instagram.com/robo__yuwa/" target="_blank" rel="noopener noreferrer" class="team-social-link" aria-label="Instagram Profile"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="https://www.linkedin.com/company/roboyuwa/posts/?feedView=all" target="_blank" rel="noopener noreferrer" class="team-social-link" aria-label="LinkedIn Profile"><i class="fa-brands fa-linkedin-in"></i></a>
+                            <a href="mailto:6093aman@gmail.com" class="team-social-link" aria-label="Email Aman Yadav" title="6093aman@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+                            <a href="tel:+9779749469420" class="team-social-link" aria-label="Phone" title="+977 9749469420"><i class="fa-solid fa-phone"></i></a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 06: Sakshyam Bastakoti (Head of R&D) -->
+                <article class="team-card-ref reveal delay-2" data-category="department">
+                    <div class="team-card-frame">
+                        <span class="team-card-dept-tag">R&amp;D &amp; Tech</span>
+                        <img src="assets/reserch.jpg" alt="Sakshyam Bastakoti - Head of Research & Development" class="team-card-img" loading="lazy" decoding="async" onerror="this.src='assets/roboyuwa-logo-BLCCIWUS.jpg'" />
+                    </div>
+                    <div class="team-card-info">
+                        <h3 class="team-card-name">Sakshyam Bastakoti</h3>
+                        <p class="team-card-role">Head of Research &amp; Technical Development</p>
+                        <p class="team-card-responsibilities">
+                            Leads hardware engineering, autonomous robotics research, Technoxian competition builds, hands-on STEM curricula, and technical web platform architecture.
+                        </p>
+                        <div class="team-card-socials" aria-label="Social links for Sakshyam Bastakoti">
+                            <a href="https://www.facebook.com/profile.php?id=61563808928659" target="_blank" rel="noopener noreferrer" class="team-social-link" aria-label="Facebook Profile"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="team-social-link" aria-label="X (Twitter) Profile"><i class="fa-brands fa-x-twitter"></i></a>
+                            <a href="https://www.instagram.com/robo__yuwa/" target="_blank" rel="noopener noreferrer" class="team-social-link" aria-label="Instagram Profile"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="https://www.linkedin.com/company/roboyuwa/posts/?feedView=all" target="_blank" rel="noopener noreferrer" class="team-social-link" aria-label="LinkedIn Profile"><i class="fa-brands fa-linkedin-in"></i></a>
+                            <a href="mailto:sakshyamxeetri@gmail.com" class="team-social-link" aria-label="Email Sakshyam Bastakoti" title="sakshyamxeetri@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+                            <a href="tel:+9779764320750" class="team-social-link" aria-label="Phone" title="+977 9764320750"><i class="fa-solid fa-phone"></i></a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 07: Supriya Silwal (Head of Outreach) -->
+                <article class="team-card-ref reveal" data-category="department">
+                    <div class="team-card-frame">
+                        <span class="team-card-dept-tag">Outreach &amp; PR</span>
+                        <img src="assets/outreachhead.png" alt="Supriya Silwal - Head of Outreach & PR" class="team-card-img" loading="lazy" decoding="async" onerror="this.src='assets/roboyuwa-logo-BLCCIWUS.jpg'" />
+                    </div>
+                    <div class="team-card-info">
+                        <h3 class="team-card-name">Supriya Silwal</h3>
+                        <p class="team-card-role">Head of Outreach &amp; Public Relations</p>
+                        <p class="team-card-responsibilities">
+                            Directs nation-wide school STEM tours across 7 provinces, institutional sponsor alliances, press releases, community outreach, and stakeholder partnerships.
+                        </p>
+                        <div class="team-card-socials" aria-label="Social links for Supriya Silwal">
+                            <a href="https://www.facebook.com/profile.php?id=61563808928659" target="_blank" rel="noopener noreferrer" class="team-social-link" aria-label="Facebook Profile"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="team-social-link" aria-label="X (Twitter) Profile"><i class="fa-brands fa-x-twitter"></i></a>
+                            <a href="https://www.instagram.com/robo__yuwa/" target="_blank" rel="noopener noreferrer" class="team-social-link" aria-label="Instagram Profile"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="https://www.linkedin.com/company/roboyuwa/posts/?feedView=all" target="_blank" rel="noopener noreferrer" class="team-social-link" aria-label="LinkedIn Profile"><i class="fa-brands fa-linkedin-in"></i></a>
+                            <a href="mailto:supriyasilwal.08@gmail.com" class="team-social-link" aria-label="Email Supriya Silwal" title="supriyasilwal.08@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+                            <a href="tel:+9779840341004" class="team-social-link" aria-label="Phone" title="+977 9840341004"><i class="fa-solid fa-phone"></i></a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 08: Pranaya KC (Head of Events) -->
+                <article class="team-card-ref reveal delay-1" data-category="department">
+                    <div class="team-card-frame">
+                        <span class="team-card-dept-tag">Event Operations</span>
+                        <img src="assets/event.png" alt="Pranaya KC - Head of Event Management" class="team-card-img" loading="lazy" decoding="async" onerror="this.src='assets/roboyuwa-logo-BLCCIWUS.jpg'" />
+                    </div>
+                    <div class="team-card-info">
+                        <h3 class="team-card-name">Pranaya KC</h3>
+                        <p class="team-card-role">Head of Event Planning &amp; Management</p>
+                        <p class="team-card-responsibilities">
+                            Orchestrates high-energy robotics hackathons, hardware bootcamps, arena venue operations, competition referee protocols, and timeline synchronization.
+                        </p>
+                        <div class="team-card-socials" aria-label="Social links for Pranaya KC">
+                            <a href="https://www.facebook.com/profile.php?id=61563808928659" target="_blank" rel="noopener noreferrer" class="team-social-link" aria-label="Facebook Profile"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="team-social-link" aria-label="X (Twitter) Profile"><i class="fa-brands fa-x-twitter"></i></a>
+                            <a href="https://www.instagram.com/robo__yuwa/" target="_blank" rel="noopener noreferrer" class="team-social-link" aria-label="Instagram Profile"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="https://www.linkedin.com/company/roboyuwa/posts/?feedView=all" target="_blank" rel="noopener noreferrer" class="team-social-link" aria-label="LinkedIn Profile"><i class="fa-brands fa-linkedin-in"></i></a>
+                            <a href="mailto:pranayakhatri82@gmail.com" class="team-social-link" aria-label="Email Pranaya KC" title="pranayakhatri82@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+                            <a href="tel:+9779762895743" class="team-social-link" aria-label="Phone" title="+977 9762895743"><i class="fa-solid fa-phone"></i></a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 09: Pranjali Pudel (Head of Legalities) -->
+                <article class="team-card-ref reveal delay-2" data-category="department">
+                    <div class="team-card-frame">
+                        <span class="team-card-dept-tag">Legal &amp; Compliance</span>
+                        <img src="assets/leagal head.png" alt="Pranjali Pudel - Head of Legal & Compliance" class="team-card-img" loading="lazy" decoding="async" onerror="this.src='assets/roboyuwa-logo-BLCCIWUS.jpg'" />
+                    </div>
+                    <div class="team-card-info">
+                        <h3 class="team-card-name">Pranjali Pudel</h3>
+                        <p class="team-card-role">Head of Legal &amp; Compliance</p>
+                        <p class="team-card-responsibilities">
+                            Formulates collaborative institutional MoUs, oversees regulatory compliance with non-profit statutes, policy drafting, and ethical standards protection.
+                        </p>
+                        <div class="team-card-socials" aria-label="Social links for Pranjali Pudel">
+                            <a href="https://www.facebook.com/profile.php?id=61563808928659" target="_blank" rel="noopener noreferrer" class="team-social-link" aria-label="Facebook Profile"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="team-social-link" aria-label="X (Twitter) Profile"><i class="fa-brands fa-x-twitter"></i></a>
+                            <a href="https://www.instagram.com/robo__yuwa/" target="_blank" rel="noopener noreferrer" class="team-social-link" aria-label="Instagram Profile"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="https://www.linkedin.com/company/roboyuwa/posts/?feedView=all" target="_blank" rel="noopener noreferrer" class="team-social-link" aria-label="LinkedIn Profile"><i class="fa-brands fa-linkedin-in"></i></a>
+                            <a href="mailto:poudelpranjali38@gmail.com" class="team-social-link" aria-label="Email Pranjali Pudel" title="poudelpranjali38@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+                            <a href="tel:+9779860984019" class="team-social-link" aria-label="Phone" title="+977 986-0984019"><i class="fa-solid fa-phone"></i></a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 10: Arshia Joshi (Creative Head) -->
+                <article class="team-card-ref reveal" data-category="department">
+                    <div class="team-card-frame">
+                        <span class="team-card-dept-tag">Creative &amp; Media</span>
+                        <img src="assets/creative head.png" alt="Arshia Joshi - Creative Head of RoboYuwa" class="team-card-img" loading="lazy" decoding="async" onerror="this.src='assets/roboyuwa-logo-BLCCIWUS.jpg'" />
+                    </div>
+                    <div class="team-card-info">
+                        <h3 class="team-card-name">Arshia Joshi</h3>
+                        <p class="team-card-role">Head of Creative &amp; Media</p>
+                        <p class="team-card-responsibilities">
+                            Spearheads brand identity aesthetics, multimedia visual campaigns, graphic publications, digital content creation, and UI/UX design direction.
+                        </p>
+                        <div class="team-card-socials" aria-label="Social links for Arshia Joshi">
+                            <a href="https://www.facebook.com/profile.php?id=61563808928659" target="_blank" rel="noopener noreferrer" class="team-social-link" aria-label="Facebook Profile"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="team-social-link" aria-label="X (Twitter) Profile"><i class="fa-brands fa-x-twitter"></i></a>
+                            <a href="https://www.instagram.com/robo__yuwa/" target="_blank" rel="noopener noreferrer" class="team-social-link" aria-label="Instagram Profile"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="https://www.linkedin.com/company/roboyuwa/posts/?feedView=all" target="_blank" rel="noopener noreferrer" class="team-social-link" aria-label="LinkedIn Profile"><i class="fa-brands fa-linkedin-in"></i></a>
+                            <a href="mailto:joshi.arshia12@gmail.com" class="team-social-link" aria-label="Email Arshia Joshi" title="joshi.arshia12@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+                            <a href="tel:+9779864266802" class="team-social-link" aria-label="Phone" title="+977 986-4266802"><i class="fa-solid fa-phone"></i></a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 11: Er. Jitendra Khatri (Technical Advisor) -->
+                <article class="team-card-ref reveal delay-1" data-category="advisory">
+                    <div class="team-card-frame">
+                        <span class="team-card-dept-tag">Advisory Board</span>
+                        <img src="assets/jitendra adivisor.png" alt="Er. Jitendra Khatri - Technical & Academic Advisor" class="team-card-img" loading="lazy" decoding="async" onerror="this.src='assets/roboyuwa-logo-BLCCIWUS.jpg'" />
+                    </div>
+                    <div class="team-card-info">
+                        <h3 class="team-card-name">Er. Jitendra Khatri</h3>
+                        <p class="team-card-role">Technical &amp; Academic Advisor</p>
+                        <p class="team-card-responsibilities">
+                            Mentors high-tech robotics hardware systems, academic STEM curriculum integration, global robotics tournaments, and engineering research excellence.
+                        </p>
+                        <div class="team-card-socials" aria-label="Social links for Er. Jitendra Khatri">
+                            <a href="https://www.facebook.com/profile.php?id=61563808928659" target="_blank" rel="noopener noreferrer" class="team-social-link" aria-label="Facebook Profile"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="team-social-link" aria-label="X (Twitter) Profile"><i class="fa-brands fa-x-twitter"></i></a>
+                            <a href="https://www.instagram.com/robo__yuwa/" target="_blank" rel="noopener noreferrer" class="team-social-link" aria-label="Instagram Profile"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="https://www.linkedin.com/company/roboyuwa/posts/?feedView=all" target="_blank" rel="noopener noreferrer" class="team-social-link" aria-label="LinkedIn Profile"><i class="fa-brands fa-linkedin-in"></i></a>
+                            <a href="mailto:jeetendra.khatri200@gmail.com" class="team-social-link" aria-label="Email Er. Jitendra Khatri" title="jeetendra.khatri200@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+                            <a href="tel:+16824086203" class="team-social-link" aria-label="Phone" title="+1 682-408-6203"><i class="fa-solid fa-phone"></i></a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 12: Adv. Prasamsa Sharma (Strategic & Legal Advisor) -->
+                <article class="team-card-ref reveal delay-2" data-category="advisory">
+                    <div class="team-card-frame">
+                        <span class="team-card-dept-tag">Advisory Board</span>
+                        <img src="assets/advsior.png" alt="Adv. Prasamsa Sharma - Strategic & Legal Advisor" class="team-card-img" loading="lazy" decoding="async" onerror="this.src='assets/roboyuwa-logo-BLCCIWUS.jpg'" />
+                    </div>
+                    <div class="team-card-info">
+                        <h3 class="team-card-name">Adv. Prasamsa Sharma</h3>
+                        <p class="team-card-role">Strategic &amp; Legal Advisor</p>
+                        <p class="team-card-responsibilities">
+                            Provides senior legal counsel on youth policy advocacy, NGO statutory governance, donor alignment strategies, and long-term organizational development.
+                        </p>
+                        <div class="team-card-socials" aria-label="Social links for Adv. Prasamsa Sharma">
+                            <a href="https://www.facebook.com/profile.php?id=61563808928659" target="_blank" rel="noopener noreferrer" class="team-social-link" aria-label="Facebook Profile"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="team-social-link" aria-label="X (Twitter) Profile"><i class="fa-brands fa-x-twitter"></i></a>
+                            <a href="https://www.instagram.com/robo__yuwa/" target="_blank" rel="noopener noreferrer" class="team-social-link" aria-label="Instagram Profile"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="https://www.linkedin.com/company/roboyuwa/posts/?feedView=all" target="_blank" rel="noopener noreferrer" class="team-social-link" aria-label="LinkedIn Profile"><i class="fa-brands fa-linkedin-in"></i></a>
+                            <a href="mailto:roboyuwa@gmail.com" class="team-social-link" aria-label="Email Adv. Prasamsa Sharma" title="roboyuwa@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+                            <a href="tel:+9779803663183" class="team-social-link" aria-label="Phone" title="+977 980-3663183"><i class="fa-solid fa-phone"></i></a>
+                        </div>
+                    </div>
+                </article>
+
             </div>
-
-            <!-- Clubs & Departments -->
-            <div class="team-category mt-5 reveal delay-4" style="padding-top: 4rem;">
-                <div class="section-title text-center" style="margin-bottom: 3rem;">
-                    <h2>Clubs &amp; Departments</h2>
-                    <div class="divider center"></div>
-                    <p class="mt-3">The vibrant community of youth volunteers executing projects across specific domains.</p>
-                </div>
-                
-                <div class="departments-wrapper" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
-                    
-                    <div class="dept-card" style="background: white; padding: 2rem; border-radius: 12px; box-shadow: var(--shadow-sm); border: 1px solid var(--gray-100);">
-                        <h3 style="color: var(--black); border-bottom: 2px solid var(--primary-color); padding-bottom: 0.5rem; margin-bottom: 1rem;">Outreach</h3>
-                        <p style="color: var(--text-light); font-size: 0.95rem; margin-bottom: 1.5rem;">Handles external relations, sponsorships, social media presence, and event promotions.</p>
-                        <h4 style="font-size: 1rem; color: var(--primary-color); margin-bottom: 0.8rem;">Department Members</h4>
-                        <ul style="list-style: none; padding: 0; line-height: 1.8; color: var(--gray-700);">
-                            <li>&bull; Currently Recruiting</li>
-                        </ul>
-                    </div>
-
-                    <div class="dept-card" style="background: white; padding: 2rem; border-radius: 12px; box-shadow: var(--shadow-sm); border: 1px solid var(--gray-100);">
-                        <h3 style="color: var(--black); border-bottom: 2px solid var(--primary-color); padding-bottom: 0.5rem; margin-bottom: 1rem;">Event Planner &amp; Management</h3>
-                        <p style="color: var(--text-light); font-size: 0.95rem; margin-bottom: 1.5rem;">Takes care of seamless execution, logistics, scheduling, and on-ground management of events.</p>
-                        <h4 style="font-size: 1rem; color: var(--primary-color); margin-bottom: 0.8rem;">Department Members</h4>
-                        <ul style="list-style: none; padding: 0; line-height: 1.8; color: var(--gray-700);">
-                            <li>&bull; Currently Recruiting</li>
-                        </ul>
-                    </div>
-
-                    <div class="dept-card" style="background: white; padding: 2rem; border-radius: 12px; box-shadow: var(--shadow-sm); border: 1px solid var(--gray-100);">
-                        <h3 style="color: var(--black); border-bottom: 2px solid var(--primary-color); padding-bottom: 0.5rem; margin-bottom: 1rem;">Research &amp; Technical</h3>
-                        <p style="color: var(--text-light); font-size: 0.95rem; margin-bottom: 1.5rem;">Focuses on core engineering, prototyping, coding, and continuous R&amp;D for innovations.</p>
-                        <h4 style="font-size: 1rem; color: var(--primary-color); margin-bottom: 0.8rem;">Department Members</h4>
-                        <ul style="list-style: none; padding: 0; line-height: 1.8; color: var(--gray-700);">
-                            <li>&bull; Currently Recruiting</li>
-                        </ul>
-                    </div>
-
-                    <div class="dept-card" style="background: white; padding: 2rem; border-radius: 12px; box-shadow: var(--shadow-sm); border: 1px solid var(--gray-100);">
-                        <h3 style="color: var(--black); border-bottom: 2px solid var(--primary-color); padding-bottom: 0.5rem; margin-bottom: 1rem;">Legalities</h3>
-                        <p style="color: var(--text-light); font-size: 0.95rem; margin-bottom: 1.5rem;">Manages budgeting, compliance, legal paperwork, policy enforcement, and transparency.</p>
-                        <h4 style="font-size: 1rem; color: var(--primary-color); margin-bottom: 0.8rem;">Department Members</h4>
-                        <ul style="list-style: none; padding: 0; line-height: 1.8; color: var(--gray-700);">
-                            <li>&bull; Currently Recruiting</li>
-                        </ul>
-                    </div>
-
-                    <div class="dept-card" style="background: white; padding: 2rem; border-radius: 12px; box-shadow: var(--shadow-sm); border: 1px solid var(--gray-100);">
-                        <h3 style="color: var(--black); border-bottom: 2px solid var(--primary-color); padding-bottom: 0.5rem; margin-bottom: 1rem;">iCreative</h3>
-                        <p style="color: var(--text-light); font-size: 0.95rem; margin-bottom: 1.5rem;">Handles creative media, content creation, brand design, and visual strategies.</p>
-                        <h4 style="font-size: 1rem; color: var(--primary-color); margin-bottom: 0.8rem;">Department Members</h4>
-                        <ul style="list-style: none; padding: 0; line-height: 1.8; color: var(--gray-700);">
-                            <li>&bull; Currently Recruiting</li>
-                        </ul>
-                    </div>
-
-                </div>
-            </div>
-
         </div>
     </section>
 
-    <!-- Call to Action -->
-    <section class="cta section-padding" style="background: var(--primary-gradient); color: white; text-align: center;">
+    <!-- Interdepartmental Collaboration Matrix & Governance (From Official Documentation) -->
+    <section class="team-governance-section" id="teamGovernance">
+        <div class="container">
+            <div class="section-title text-center reveal">
+                <div class="team-hero-eyebrow" style="justify-content: center;">
+                    <span class="eyebrow-square-ref" aria-hidden="true"></span>
+                    <span>Cross-Functional Matrix</span>
+                </div>
+                <h2 class="font-serif" style="font-size: clamp(2rem, 3.5vw, 2.8rem); font-weight: 800; margin-bottom: 1rem;">
+                    Interdepartmental Synergies &amp; Workflows
+                </h2>
+                <div class="divider center"></div>
+                <p style="max-width: 720px; margin: 1.2rem auto 0; font-size: 1.05rem; line-height: 1.7; color: var(--text-light);">
+                    As established in the RoboYuwa Constitution and Departmental Charter, no team operates in isolation. Specialized cross-departmental synergy pods ensure seamless execution from hardware labs to national arenas.
+                </p>
+            </div>
+
+            <div class="gov-matrix-grid">
+                <!-- Matrix 1: Tech + Outreach -->
+                <div class="gov-matrix-card reveal">
+                    <div class="gov-synergy-badge">
+                        <i class="fa-solid fa-microchip" aria-hidden="true"></i>
+                        <span>Tech &amp; Outreach Pod</span>
+                    </div>
+                    <h3 class="gov-card-title">School Workshops &amp; Lab Rollouts</h3>
+                    <p class="gov-card-desc">
+                        Research &amp; Technical prototypes hands-on modular kits, while Outreach coordinates with municipal schools and community youth hubs across all 7 provinces.
+                    </p>
+                    <span class="gov-deliverable-pill">
+                        <i class="fa-regular fa-check-circle" aria-hidden="true"></i> 150+ School Sessions
+                    </span>
+                </div>
+
+                <!-- Matrix 2: Event + Tech -->
+                <div class="gov-matrix-card reveal delay-1">
+                    <div class="gov-synergy-badge">
+                        <i class="fa-solid fa-trophy" aria-hidden="true"></i>
+                        <span>Event &amp; Tech Pod</span>
+                    </div>
+                    <h3 class="gov-card-title">Combat Arenas &amp; Hackathons</h3>
+                    <p class="gov-card-desc">
+                        Event Operations synchronizes venue timelines, crowd safety, and judging panels, while R&amp;D provisions the combat ring, electronic telemetry, and obstacle timing sensors.
+                    </p>
+                    <span class="gov-deliverable-pill">
+                        <i class="fa-regular fa-check-circle" aria-hidden="true"></i> Live Telemetry &amp; Arenas
+                    </span>
+                </div>
+
+                <!-- Matrix 3: Legal + Outreach -->
+                <div class="gov-matrix-card reveal delay-2">
+                    <div class="gov-synergy-badge">
+                        <i class="fa-solid fa-file-contract" aria-hidden="true"></i>
+                        <span>Legal &amp; Outreach Pod</span>
+                    </div>
+                    <h3 class="gov-card-title">Institutional MoUs &amp; Sponsorships</h3>
+                    <p class="gov-card-desc">
+                        Outreach leads corporate and educational liaisons, while Legal &amp; Compliance drafts non-profit agreements, IP ownership policies, and statutory compliance files.
+                    </p>
+                    <span class="gov-deliverable-pill">
+                        <i class="fa-regular fa-check-circle" aria-hidden="true"></i> 100% Vetted Contracts
+                    </span>
+                </div>
+
+                <!-- Matrix 4: Creative + Event -->
+                <div class="gov-matrix-card reveal">
+                    <div class="gov-synergy-badge">
+                        <i class="fa-solid fa-palette" aria-hidden="true"></i>
+                        <span>Creative &amp; Event Pod</span>
+                    </div>
+                    <h3 class="gov-card-title">Immersive Stagecraft &amp; Media</h3>
+                    <p class="gov-card-desc">
+                        Creative &amp; Media produces high-definition visual keynotes, arena branding, and 4K livestream broadcasts, giving national exposure to youth engineering talent.
+                    </p>
+                    <span class="gov-deliverable-pill">
+                        <i class="fa-regular fa-check-circle" aria-hidden="true"></i> 4K Live Broadcasts
+                    </span>
+                </div>
+
+                <!-- Matrix 5: Executive Board + Advisors -->
+                <div class="gov-matrix-card reveal delay-1">
+                    <div class="gov-synergy-badge">
+                        <i class="fa-solid fa-shield-check" aria-hidden="true"></i>
+                        <span>Executive &amp; Governance</span>
+                    </div>
+                    <h3 class="gov-card-title">Constitutional Oversight &amp; Audits</h3>
+                    <p class="gov-card-desc">
+                        Strict 51% Executive Board majority vote required for financial disbursements over NPR 5,000, validated by independent chartered auditors and legal advisors.
+                    </p>
+                    <span class="gov-deliverable-pill">
+                        <i class="fa-regular fa-check-circle" aria-hidden="true"></i> Dual-Signature Mandate
+                    </span>
+                </div>
+
+                <!-- Matrix 6: Tech + Creative -->
+                <div class="gov-matrix-card reveal delay-2">
+                    <div class="gov-synergy-badge">
+                        <i class="fa-solid fa-laptop-code" aria-hidden="true"></i>
+                        <span>Tech &amp; Media Pod</span>
+                    </div>
+                    <h3 class="gov-card-title">Interactive Portals &amp; Simulators</h3>
+                    <p class="gov-card-desc">
+                        Technical engineering collaborates directly with visual design to publish open-source schematics, web simulators, and interactive hardware tutorials for youth nationwide.
+                    </p>
+                    <span class="gov-deliverable-pill">
+                        <i class="fa-regular fa-check-circle" aria-hidden="true"></i> Open-Source Hubs
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- High-Impact Call to Action -->
+    <section class="cta section-padding" style="background: linear-gradient(135deg, #0A0C10 0%, #151922 100%); color: white; text-align: center; border-top: 1px solid rgba(229, 152, 25, 0.2); position: relative; overflow: hidden;">
         <div class="container reveal">
-            <h2 style="color: white; margin-bottom: 1rem;">Be Part of the Journey</h2>
-            <p style="color: rgba(255,255,255,0.9); font-size: 1.1rem; margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">
-                We are constantly looking for passionate members, volunteers, and partners to help us build an innovative future. 
+            <span class="team-card-dept-tag" style="position: static; display: inline-block; margin-bottom: 1.2rem; background: rgba(229, 152, 25, 0.15); color: var(--ry-amber); border: 1px solid rgba(229, 152, 25, 0.3);">
+                Join The Movement
+            </span>
+            <h2 class="font-serif" style="color: white; font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 800; margin-bottom: 1rem;">
+                Be Part of Nepal's Robotics Revolution
+            </h2>
+            <p style="color: rgba(255,255,255,0.8); font-size: 1.1rem; margin-bottom: 2.2rem; max-width: 650px; margin-left: auto; margin-right: auto; line-height: 1.7;">
+                Whether you are a passionate student robotics builder, an academic mentor, or an institutional sponsor, there is an impactful place for you at RoboYuwa.
             </p>
-            <a href="mailto:roboyuwa@gmail.com" class="btn btn-secondary">Get Involved Today</a>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="membership.html" class="btn btn-pill-amber" style="padding: 0.85rem 2.2rem; font-size: 1rem;">Become a Member</a>
+                <a href="contact.html" class="btn-ref-pill" style="border-color: rgba(255,255,255,0.3); color: white;">Partner With Us</a>
+            </div>
         </div>
     </section>
     <!-- Footer (Executive High-Tech Minimalist Layout) -->

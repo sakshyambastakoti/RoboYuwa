@@ -642,4 +642,44 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+
+    // ==========================================================================
+    // Team Page Category Filtering Logic
+    // ==========================================================================
+    const teamFilterNav = document.getElementById('teamFilterNav');
+    if (teamFilterNav) {
+        const filterBtns = teamFilterNav.querySelectorAll('.team-filter-btn');
+        const teamCards = document.querySelectorAll('.team-card-ref');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const filter = btn.getAttribute('data-filter');
+
+                // Update active state on buttons
+                filterBtns.forEach(b => {
+                    b.classList.remove('active');
+                    b.setAttribute('aria-selected', 'false');
+                });
+                btn.classList.add('active');
+                btn.setAttribute('aria-selected', 'true');
+
+                // Filter cards with smooth fade transition
+                teamCards.forEach(card => {
+                    const cardCategory = card.getAttribute('data-category');
+                    if (filter === 'all' || cardCategory === filter) {
+                        card.classList.remove('hidden');
+                        card.classList.add('visible');
+                        card.style.opacity = '0';
+                        card.style.transform = 'translateY(12px)';
+                        setTimeout(() => {
+                            card.style.opacity = '1';
+                            card.style.transform = 'translateY(0)';
+                        }, 20);
+                    } else {
+                        card.classList.add('hidden');
+                    }
+                });
+            });
+        });
+    }
 });

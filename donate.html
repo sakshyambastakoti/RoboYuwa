@@ -179,132 +179,6 @@
             }
         }
 
-        /* ---- QR Pay Box ---- */
-        .qr-pay-box {
-            background: #0E111A;
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-left: 3px solid var(--ry-amber);
-            clip-path: polygon(20px 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%, 0 20px);
-            padding: 1.3rem 1.5rem;
-        }
-
-        body.light-theme .qr-pay-box {
-            background: #0E111A;
-        }
-
-        .qr-pay-header {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-family: var(--font-sans);
-            font-size: 0.78rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: var(--ry-amber);
-            margin-bottom: 1.1rem;
-        }
-
-        .qr-pay-body {
-            display: grid;
-            grid-template-columns: 130px 1fr;
-            gap: 1.2rem;
-            align-items: start;
-        }
-
-        /* QR image wrapper */
-        .qr-img-wrap {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .qr-img {
-            width: 120px;
-            height: 120px;
-            object-fit: cover;
-            display: block;
-            border-radius: 10px;
-            border: 3px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-            transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease;
-        }
-
-        .qr-img:hover {
-            transform: scale(1.06);
-            box-shadow: 0 8px 32px rgba(229, 152, 25, 0.35);
-        }
-
-        .qr-scan-label {
-            font-family: var(--font-sans);
-            font-size: 0.68rem;
-            font-weight: 600;
-            color: rgba(255, 255, 255, 0.45);
-            text-align: center;
-            line-height: 1.4;
-        }
-
-        /* Bank detail rows inside QR box */
-        .qr-bank-details {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .qr-bank-details .bank-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            padding: 0.35rem 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-        }
-
-        .qr-bank-details .bank-row:last-of-type {
-            border-bottom: none;
-        }
-
-        .bank-label {
-            font-family: var(--font-sans);
-            font-size: 0.72rem;
-            color: rgba(255, 255, 255, 0.42);
-            font-weight: 500;
-        }
-
-        .bank-val {
-            font-family: var(--font-sans);
-            font-size: 0.8rem;
-            font-weight: 600;
-            color: #FFFFFF;
-            text-align: right;
-            max-width: 55%;
-        }
-
-        .qr-tip {
-            font-family: var(--font-sans);
-            font-size: 0.72rem;
-            line-height: 1.5;
-            color: rgba(255, 255, 255, 0.38);
-            margin-top: 0.7rem;
-            display: flex;
-            align-items: flex-start;
-            gap: 6px;
-        }
-
-        .qr-tip i {
-            color: var(--ry-amber);
-            flex-shrink: 0;
-            margin-top: 2px;
-        }
-
-        @media (max-width: 500px) {
-            .qr-pay-body {
-                grid-template-columns: 1fr;
-            }
-            .qr-img-wrap {
-                flex-direction: row;
-                gap: 1rem;
-            }
-        }
 
         /* ---- Impact Stats Strip ---- */
 
@@ -364,12 +238,21 @@
             color: #64748B;
         }
 
-        /* ---- Donate Main Section ---- */
+        /* ---- Donate Main Section (Single-Screen Viewport Fit on Desktop) ---- */
         .donate-main-section {
             position: relative;
-            padding: clamp(4.5rem, 8vh, 7rem) 0 clamp(4.5rem, 8vh, 7.5rem);
+            min-height: 100vh;
+            min-height: 100dvh;
+            height: 100vh;
+            height: 100dvh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: clamp(1.2rem, 2.2vh, 2.2rem) 0 clamp(1.6rem, 2.6vh, 2.4rem);
             background: #FFFFFF;
             transition: background 0.35s ease;
+            box-sizing: border-box;
+            overflow: hidden;
         }
 
         body:not(.light-theme) .donate-main-section,
@@ -377,26 +260,38 @@
             background: #090B0F;
         }
 
+        .donate-main-section .container {
+            max-width: 1380px;
+            width: 93%;
+            margin: 0 auto;
+            height: calc(100% - 16px);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-sizing: border-box;
+        }
+
         /* Split Header */
         .donate-main-header {
             display: grid;
-            grid-template-columns: 1.15fr 0.85fr;
-            gap: clamp(2rem, 4vw, 4.5rem);
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(1.4rem, 2.4vw, 2.5rem);
             align-items: end;
-            margin-bottom: clamp(2.5rem, 5vh, 4rem);
+            margin-bottom: clamp(0.5rem, 1vh, 0.9rem);
+            flex-shrink: 0;
         }
 
         .donate-main-eyebrow {
             display: inline-flex;
             align-items: center;
-            gap: 9px;
+            gap: 8px;
             font-family: var(--font-sans);
-            font-size: 0.82rem;
+            font-size: 0.76rem;
             font-weight: 700;
-            letter-spacing: 1.6px;
+            letter-spacing: 1.4px;
             color: #555D6E;
             text-transform: uppercase;
-            margin-bottom: 0.85rem;
+            margin-bottom: 0.25rem;
         }
 
         body:not(.light-theme) .donate-main-eyebrow,
@@ -405,18 +300,18 @@
         }
 
         .donate-main-eyebrow .eyebrow-square {
-            width: 11px;
-            height: 11px;
+            width: 9px;
+            height: 9px;
             border-radius: 2px;
             background: linear-gradient(135deg, var(--ry-amber) 0%, var(--ry-amber-hover) 100%);
-            box-shadow: 0 2px 8px rgba(229, 152, 25, 0.45);
+            box-shadow: 0 2px 6px rgba(229, 152, 25, 0.45);
             display: inline-block;
             flex-shrink: 0;
         }
 
         .donate-main-title {
             font-family: var(--font-serif);
-            font-size: clamp(2.2rem, 3.8vw, 3.4rem);
+            font-size: clamp(1.75rem, 2.5vw, 2.4rem);
             font-weight: 700;
             color: #101217;
             line-height: 1.12;
@@ -431,8 +326,8 @@
 
         .donate-main-lead {
             font-family: var(--font-sans);
-            font-size: clamp(1rem, 1.1vw, 1.1rem);
-            line-height: 1.75;
+            font-size: clamp(0.82rem, 0.92vw, 0.9rem);
+            line-height: 1.5;
             color: #525968;
             margin: 0;
         }
@@ -442,72 +337,91 @@
             color: #94A3B8;
         }
 
-        /* ---- Donate 2-Col Grid ---- */
+        /* ---- Donate 2-Col Grid (Equal 1fr 1fr with 1fr Row Lock) ---- */
         .donate-content-grid {
             display: grid;
-            grid-template-columns: 1.18fr 1fr;
-            gap: clamp(2rem, 4vw, 3.8rem);
-            align-items: start;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr;
+            gap: clamp(1.4rem, 2.4vw, 2.5rem);
+            align-items: stretch;
+            flex: 1;
+            min-height: 0;
         }
 
-        /* ---- Donation Form Card (Chamfer) ---- */
-        .donate-form-chamfer {
+        /* ---- Dual Chamfered Cards (Left Form & Right Impact Match Exactly) ---- */
+        .donate-form-chamfer,
+        .donate-impact-chamfer {
             position: relative;
-            background: rgba(229, 37, 37, 0.12);
-            padding: 1.5px;
+            background: linear-gradient(135deg, rgba(229, 37, 37, 0.38) 0%, rgba(229, 152, 25, 0.3) 50%, rgba(229, 37, 37, 0.22) 100%);
+            padding: 2px;
             clip-path: polygon(
-                52px 0,
-                calc(100% - 22px) 0, 100% 22px,
-                100% calc(100% - 52px),
-                calc(100% - 52px) 100%,
-                22px 100%, 0 calc(100% - 22px),
-                0 52px
+                28px 0,
+                calc(100% - 16px) 0, 100% 16px,
+                100% calc(100% - 28px),
+                calc(100% - 28px) 100%,
+                16px 100%, 0 calc(100% - 16px),
+                0 28px
             );
-            filter: drop-shadow(0 16px 48px rgba(0, 0, 0, 0.07));
-            transition: filter 0.3s ease;
+            filter: drop-shadow(0 14px 34px rgba(0, 0, 0, 0.08));
+            transition: filter 0.3s ease, transform 0.3s ease;
+            height: 100%;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
         }
 
         body:not(.light-theme) .donate-form-chamfer,
-        body.dark-theme .donate-form-chamfer {
-            background: rgba(229, 37, 37, 0.25);
-            filter: drop-shadow(0 20px 56px rgba(0, 0, 0, 0.55));
+        body.dark-theme .donate-form-chamfer,
+        body:not(.light-theme) .donate-impact-chamfer,
+        body.dark-theme .donate-impact-chamfer {
+            background: linear-gradient(135deg, rgba(229, 37, 37, 0.5) 0%, rgba(229, 152, 25, 0.38) 50%, rgba(229, 37, 37, 0.3) 100%);
+            filter: drop-shadow(0 18px 42px rgba(0, 0, 0, 0.6));
         }
 
-        .donate-form-inner {
-            background: #FDFCFB;
-            padding: clamp(2rem, 3vh, 2.8rem) clamp(1.8rem, 2.8vw, 2.6rem);
+        .donate-form-inner,
+        .donate-impact-inner {
+            background: #FFFFFF;
+            padding: clamp(0.9rem, 1.6vh, 1.4rem) clamp(1.1rem, 1.8vw, 1.6rem);
             clip-path: polygon(
-                52px 0,
-                calc(100% - 22px) 0, 100% 22px,
-                100% calc(100% - 52px),
-                calc(100% - 52px) 100%,
-                22px 100%, 0 calc(100% - 22px),
-                0 52px
+                27px 0,
+                calc(100% - 15px) 0, 100% 15px,
+                100% calc(100% - 27px),
+                calc(100% - 27px) 100%,
+                15px 100%, 0 calc(100% - 15px),
+                0 27px
             );
+            height: 100%;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         body:not(.light-theme) .donate-form-inner,
-        body.dark-theme .donate-form-inner {
-            background: #11141D;
+        body.dark-theme .donate-form-inner,
+        body:not(.light-theme) .donate-impact-inner,
+        body.dark-theme .donate-impact-inner {
+            background: #10131C;
         }
 
+        /* Left Card Content */
         .form-inner-eyebrow {
             font-family: var(--font-sans);
-            font-size: 0.74rem;
+            font-size: 0.68rem;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.1em;
             color: var(--ry-crimson);
-            margin-bottom: 0.45rem;
+            margin-bottom: 0.12rem;
         }
 
         .form-inner-title {
             font-family: var(--font-serif);
-            font-size: clamp(1.4rem, 1.8vw, 1.75rem);
+            font-size: clamp(1.2rem, 1.45vw, 1.42rem);
             font-weight: 700;
             color: #101217;
-            margin-bottom: 1.6rem;
-            padding-bottom: 1.2rem;
+            margin-bottom: clamp(0.4rem, 0.8vh, 0.65rem);
+            padding-bottom: clamp(0.28rem, 0.55vh, 0.42rem);
             border-bottom: 1px solid rgba(16, 18, 23, 0.08);
         }
 
@@ -520,12 +434,12 @@
         .form-field-label {
             display: block;
             font-family: var(--font-sans);
-            font-size: 0.78rem;
+            font-size: 0.68rem;
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 0.07em;
+            letter-spacing: 0.08em;
             color: #1E293B;
-            margin-bottom: 0.55rem;
+            margin-bottom: 0.22rem;
         }
 
         body:not(.light-theme) .form-field-label,
@@ -533,63 +447,21 @@
             color: rgba(255, 255, 255, 0.85);
         }
 
-        /* Frequency Tabs */
-        .freq-tabs {
-            display: flex;
-            background: rgba(0, 0, 0, 0.05);
-            border: 1.5px solid rgba(16, 18, 23, 0.1);
-            clip-path: polygon(10px 0, 100% 0, 100% 100%, 0 100%, 0 10px);
-            padding: 3px;
-            margin-bottom: 1.6rem;
-            gap: 3px;
-        }
-
-        body:not(.light-theme) .freq-tabs,
-        body.dark-theme .freq-tabs {
-            background: rgba(255, 255, 255, 0.05);
-            border-color: rgba(255, 255, 255, 0.1);
-        }
-
-        .freq-tab {
-            flex: 1;
-            padding: 0.65rem 0.5rem;
-            background: transparent;
-            border: none;
-            font-family: var(--font-sans);
-            font-size: 0.85rem;
-            font-weight: 600;
-            color: #64748B;
-            cursor: pointer;
-            transition: all 0.22s ease;
-            clip-path: polygon(8px 0, 100% 0, 100% 100%, 0 100%, 0 8px);
-        }
-
-        .freq-tab.active {
-            background: var(--ry-crimson);
-            color: #FFFFFF;
-            box-shadow: 0 3px 12px rgba(229, 37, 37, 0.3);
-        }
-
-        body:not(.light-theme) .freq-tab,
-        body.dark-theme .freq-tab {
-            color: rgba(255, 255, 255, 0.55);
-        }
-
         /* Amount Grid */
         .amount-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 8px;
-            margin-bottom: 1rem;
+            gap: 6px;
+            margin-bottom: clamp(0.35rem, 0.7vh, 0.55rem);
         }
 
         .amount-btn {
-            padding: 0.75rem 0.5rem;
-            background: rgba(0, 0, 0, 0.04);
+            padding: clamp(0.42rem, 0.75vh, 0.52rem) 0.35rem;
+            background: rgba(0, 0, 0, 0.035);
             border: 1.5px solid rgba(16, 18, 23, 0.1);
-            clip-path: polygon(10px 0, 100% 0, 100% 100%, 0 100%, 0 10px);
+            clip-path: polygon(6px 0, 100% 0, 100% 100%, 0 100%, 0 6px);
             font-family: var(--font-sans);
-            font-size: 0.9rem;
+            font-size: clamp(0.78rem, 0.86vw, 0.84rem);
             font-weight: 700;
             color: #1E293B;
             cursor: pointer;
@@ -609,37 +481,38 @@
             background: var(--ry-crimson);
             border-color: var(--ry-crimson);
             color: #FFFFFF;
-            box-shadow: 0 4px 16px rgba(229, 37, 37, 0.3);
+            box-shadow: 0 3px 12px rgba(229, 37, 37, 0.3);
         }
 
         /* Custom Amount Input */
         .amount-custom-wrap {
             position: relative;
-            margin-bottom: 1.6rem;
+            margin-bottom: clamp(0.4rem, 0.8vh, 0.65rem);
         }
 
         .amount-currency-prefix {
             position: absolute;
-            left: 14px;
+            left: 11px;
             top: 50%;
             transform: translateY(-50%);
-            font-size: 1rem;
+            font-size: 0.82rem;
             font-weight: 700;
             color: #64748B;
         }
 
         .amount-custom-input {
             width: 100%;
-            padding: 0.85rem 0.9rem 0.85rem 2.2rem;
+            padding: clamp(0.38rem, 0.7vh, 0.46rem) 0.75rem clamp(0.38rem, 0.7vh, 0.46rem) 2rem;
             border: 1.5px solid rgba(16, 18, 23, 0.12);
-            clip-path: polygon(10px 0, 100% 0, 100% 100%, 0 100%, 0 10px);
+            clip-path: polygon(6px 0, 100% 0, 100% 100%, 0 100%, 0 6px);
             font-family: var(--font-sans);
-            font-size: 1rem;
+            font-size: 0.86rem;
             font-weight: 600;
             color: #1E293B;
             background: rgba(0, 0, 0, 0.03);
             outline: none;
             transition: border-color 0.2s ease, background 0.2s ease;
+            box-sizing: border-box;
         }
 
         body:not(.light-theme) .amount-custom-input,
@@ -652,26 +525,21 @@
         .amount-custom-input:focus {
             border-color: var(--ry-crimson);
             background: #FFFFFF;
-            box-shadow: 0 0 0 3px rgba(229, 37, 37, 0.1);
-        }
-
-        body:not(.light-theme) .amount-custom-input:focus,
-        body.dark-theme .amount-custom-input:focus {
-            background: rgba(255, 255, 255, 0.06);
+            box-shadow: 0 0 0 2px rgba(229, 37, 37, 0.1);
         }
 
         /* Donor Fields */
         .donor-fields {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 12px;
-            margin-bottom: 1.2rem;
+            gap: clamp(4px, 0.7vh, 6px);
+            margin-bottom: clamp(0.35rem, 0.7vh, 0.55rem);
         }
 
         .field-group {
             display: flex;
             flex-direction: column;
-            gap: 5px;
+            gap: 2px;
         }
 
         .field-group.full-width {
@@ -679,16 +547,16 @@
         }
 
         .field-input {
-            padding: 0.75rem 0.9rem;
+            padding: clamp(0.36rem, 0.65vh, 0.46rem) 0.65rem;
             border: 1.5px solid rgba(16, 18, 23, 0.1);
-            clip-path: polygon(8px 0, 100% 0, 100% 100%, 0 100%, 0 8px);
+            clip-path: polygon(5px 0, 100% 0, 100% 100%, 0 100%, 0 5px);
             font-family: var(--font-sans);
-            font-size: 0.9rem;
+            font-size: 0.8rem;
             color: #1E293B;
             background: rgba(0, 0, 0, 0.03);
             outline: none;
             transition: border-color 0.2s ease, background 0.2s ease;
-            resize: vertical;
+            box-sizing: border-box;
         }
 
         body:not(.light-theme) .field-input,
@@ -701,7 +569,7 @@
         .field-input:focus {
             border-color: var(--ry-crimson);
             background: #FFFFFF;
-            box-shadow: 0 0 0 3px rgba(229, 37, 37, 0.08);
+            box-shadow: 0 0 0 2px rgba(229, 37, 37, 0.08);
         }
 
         body:not(.light-theme) .field-input:focus,
@@ -712,11 +580,11 @@
         .anon-check {
             display: flex;
             align-items: center;
-            gap: 9px;
-            margin-bottom: 1.5rem;
+            gap: 6px;
+            margin-bottom: clamp(0.4rem, 0.8vh, 0.6rem);
             cursor: pointer;
             font-family: var(--font-sans);
-            font-size: 0.85rem;
+            font-size: 0.74rem;
             color: #64748B;
         }
 
@@ -726,45 +594,45 @@
         }
 
         .anon-check input {
-            width: 17px;
-            height: 17px;
+            width: 13px;
+            height: 13px;
             accent-color: var(--ry-crimson);
             cursor: pointer;
         }
 
         .donate-submit-btn {
             width: 100%;
-            padding: 1rem 2rem;
+            padding: clamp(0.56rem, 1vh, 0.72rem) 1.2rem;
             background: linear-gradient(135deg, #E52525 0%, #C41515 100%);
             color: #FFFFFF;
             border: none;
-            clip-path: polygon(14px 0, 100% 0, 100% calc(100% - 14px), calc(100% - 14px) 100%, 0 100%, 0 14px);
+            clip-path: polygon(8px 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%, 0 8px);
             font-family: var(--font-sans);
-            font-size: 1rem;
+            font-size: clamp(0.86rem, 0.95vw, 0.92rem);
             font-weight: 700;
-            letter-spacing: 0.04em;
+            letter-spacing: 0.03em;
             cursor: pointer;
             transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-            box-shadow: 0 8px 28px rgba(229, 37, 37, 0.35);
+            box-shadow: 0 5px 18px rgba(229, 37, 37, 0.32);
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
+            gap: 7px;
         }
 
         .donate-submit-btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 14px 36px rgba(229, 37, 37, 0.48);
+            box-shadow: 0 9px 24px rgba(229, 37, 37, 0.45);
         }
 
         .secure-note {
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 7px;
-            margin-top: 0.9rem;
+            gap: 5px;
+            margin-top: clamp(0.25rem, 0.5vh, 0.4rem);
             font-family: var(--font-sans);
-            font-size: 0.75rem;
+            font-size: 0.66rem;
             color: #94A3B8;
         }
 
@@ -772,28 +640,22 @@
             color: #27AE60;
         }
 
-        /* ---- Impact Right Column ---- */
-        .donate-impact-col {
-            display: flex;
-            flex-direction: column;
-            gap: 1.2rem;
-        }
-
-        .impact-col-header {
-            margin-bottom: 0.4rem;
+        /* ---- Right Card: Impact Header & Tiers ---- */
+        .impact-card-header {
+            margin-bottom: clamp(0.25rem, 0.6vh, 0.45rem);
         }
 
         .impact-col-eyebrow {
             display: inline-flex;
             align-items: center;
-            gap: 9px;
+            gap: 6px;
             font-family: var(--font-sans);
-            font-size: 0.78rem;
+            font-size: 0.68rem;
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 1.4px;
+            letter-spacing: 1.2px;
             color: #D4840D;
-            margin-bottom: 0.6rem;
+            margin-bottom: 0.15rem;
         }
 
         body:not(.light-theme) .impact-col-eyebrow,
@@ -803,11 +665,11 @@
 
         .impact-col-title {
             font-family: var(--font-serif);
-            font-size: clamp(1.6rem, 2.5vw, 2.1rem);
+            font-size: clamp(1.2rem, 1.45vw, 1.42rem);
             font-weight: 700;
             color: #101217;
-            line-height: 1.25;
-            margin-bottom: 0.7rem;
+            line-height: 1.18;
+            margin-bottom: 0.25rem;
         }
 
         body:not(.light-theme) .impact-col-title,
@@ -817,9 +679,10 @@
 
         .impact-col-desc {
             font-family: var(--font-sans);
-            font-size: 0.95rem;
-            line-height: 1.7;
+            font-size: clamp(0.74rem, 0.84vw, 0.82rem);
+            line-height: 1.45;
             color: #525968;
+            margin: 0;
         }
 
         body:not(.light-theme) .impact-col-desc,
@@ -827,50 +690,59 @@
             color: #94A3B8;
         }
 
-        /* Impact Tier Chamfer Cards */
+        /* 2x2 Impact Tiers Grid */
+        .impact-tiers-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(6px, 1vh, 9px);
+            margin: clamp(0.35rem, 0.8vh, 0.65rem) 0;
+        }
+
         .impact-tier {
             display: flex;
             align-items: center;
-            gap: 1.1rem;
-            background: rgba(0, 0, 0, 0.04);
-            border-left: 2.5px solid rgba(229, 37, 37, 0.35);
-            padding: 1.1rem 1.3rem;
-            clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 0 100%);
+            gap: 0.6rem;
+            background: rgba(0, 0, 0, 0.035);
+            border: 1px solid rgba(16, 18, 23, 0.06);
+            border-left: 3px solid var(--ry-crimson);
+            padding: clamp(0.42rem, 0.8vh, 0.58rem) clamp(0.5rem, 0.7vw, 0.7rem);
+            clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 0 100%);
             transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
         }
 
         body:not(.light-theme) .impact-tier,
         body.dark-theme .impact-tier {
             background: rgba(255, 255, 255, 0.04);
-            border-left-color: rgba(229, 37, 37, 0.25);
+            border-color: rgba(255, 255, 255, 0.08);
+            border-left-color: var(--ry-crimson);
         }
 
         .impact-tier:hover {
-            transform: translateX(5px);
+            transform: translateX(3px);
             background: rgba(229, 37, 37, 0.05);
             border-left-color: var(--ry-crimson);
         }
 
         .tier-badge {
             flex-shrink: 0;
-            min-width: 64px;
-            padding: 0.5rem 0.65rem;
+            min-width: 46px;
+            padding: 0.3rem 0.38rem;
             background: linear-gradient(135deg, #E52525 0%, #C41515 100%);
             color: #FFFFFF;
             font-family: var(--font-serif);
-            font-size: 0.95rem;
+            font-size: 0.66rem;
             font-weight: 700;
             text-align: center;
-            clip-path: polygon(8px 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%, 0 8px);
-            line-height: 1.3;
+            line-height: 1.15;
+            clip-path: polygon(4px 0, 100% 0, 100% calc(100% - 4px), calc(100% - 4px) 100%, 0 100%, 0 4px);
         }
 
         .tier-info-title {
             font-family: var(--font-sans);
-            font-size: 0.92rem;
+            font-size: clamp(0.74rem, 0.84vw, 0.8rem);
             font-weight: 700;
-            color: #1E293B;
-            margin-bottom: 0.2rem;
+            color: #101217;
+            margin-bottom: 1px;
         }
 
         body:not(.light-theme) .tier-info-title,
@@ -880,66 +752,164 @@
 
         .tier-info-desc {
             font-family: var(--font-sans);
-            font-size: 0.8rem;
-            line-height: 1.55;
+            font-size: clamp(0.63rem, 0.72vw, 0.68rem);
+            line-height: 1.3;
             color: #64748B;
         }
 
         body:not(.light-theme) .tier-info-desc,
         body.dark-theme .tier-info-desc {
-            color: rgba(255, 255, 255, 0.5);
+            color: rgba(255, 255, 255, 0.45);
         }
 
-        /* Bank Transfer Box */
-        .bank-transfer-box {
-            background: #0E111A;
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-left: 3px solid var(--ry-amber);
-            clip-path: polygon(16px 0, 100% 0, 100% calc(100% - 16px), calc(100% - 16px) 100%, 0 100%, 0 16px);
-            padding: 1.3rem 1.5rem;
+        /* ---- QR Pay Box (Anchored at Bottom of Right Card) ---- */
+        .qr-pay-box {
+            background: #0B0E17;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-left: 3.5px solid var(--ry-amber);
+            clip-path: polygon(12px 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%, 0 12px);
+            padding: clamp(0.6rem, 1.1vh, 0.85rem) clamp(0.8rem, 1.2vw, 1.05rem);
+            width: 100%;
+            box-sizing: border-box;
+            margin-top: auto;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
         }
 
-        body.light-theme .bank-transfer-box {
-            background: #0E111A;
+        body.light-theme .qr-pay-box {
+            background: #0B0E17;
         }
 
-        .bank-header {
-            font-family: var(--font-sans);
-            font-size: 0.76rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: var(--ry-amber);
-            margin-bottom: 1rem;
+        .qr-pay-header {
             display: flex;
             align-items: center;
-            gap: 7px;
+            justify-content: space-between;
+            font-family: var(--font-sans);
+            font-size: clamp(0.68rem, 0.78vw, 0.74rem);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--ry-amber);
+            margin-bottom: clamp(0.35rem, 0.7vh, 0.55rem);
         }
 
-        .bank-row {
+        .qr-pay-body {
+            display: grid;
+            grid-template-columns: 88px 1fr;
+            gap: clamp(0.7rem, 1.2vw, 1.1rem);
+            align-items: center;
+        }
+
+        .qr-img-wrap {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.25rem;
+        }
+
+        .qr-img {
+            width: 82px;
+            height: 82px;
+            object-fit: contain;
+            background: #FFFFFF;
+            padding: 4px;
+            border-radius: 6px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.45);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .qr-img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 18px rgba(229, 152, 25, 0.4);
+        }
+
+        .qr-scan-label {
+            font-family: var(--font-sans);
+            font-size: 0.58rem;
+            color: rgba(255, 255, 255, 0.55);
+            text-align: center;
+            letter-spacing: 0.02em;
+            white-space: nowrap;
+        }
+
+        .qr-bank-details {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .qr-bank-details .bank-row {
             display: flex;
             justify-content: space-between;
             align-items: baseline;
-            padding: 0.4rem 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding: clamp(0.14rem, 0.32vh, 0.22rem) 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.07);
         }
 
-        .bank-row:last-child {
+        .qr-bank-details .bank-row:last-of-type {
             border-bottom: none;
         }
 
         .bank-label {
             font-family: var(--font-sans);
-            font-size: 0.75rem;
-            color: rgba(255, 255, 255, 0.45);
+            font-size: clamp(0.62rem, 0.72vw, 0.67rem);
+            color: rgba(255, 255, 255, 0.48);
             font-weight: 500;
         }
 
         .bank-val {
             font-family: var(--font-sans);
-            font-size: 0.84rem;
+            font-size: clamp(0.68rem, 0.78vw, 0.74rem);
             font-weight: 600;
             color: #FFFFFF;
+            text-align: right;
+            max-width: 62%;
+        }
+
+        @media (max-width: 991px), (max-height: 680px) {
+            .donate-main-section {
+                height: auto;
+                min-height: auto;
+                padding: 3rem 0 4rem;
+                overflow: visible;
+            }
+            .donate-main-section .container {
+                height: auto;
+            }
+            .donate-main-header {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            .donate-content-grid {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto auto;
+                gap: 2rem;
+            }
+            .impact-tiers-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .donate-form-chamfer,
+            .donate-impact-chamfer {
+                height: auto;
+            }
+            .donate-form-inner,
+            .donate-impact-inner {
+                height: auto;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .impact-tiers-grid {
+                grid-template-columns: 1fr;
+            }
+            .amount-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .donor-fields {
+                grid-template-columns: 1fr;
+            }
+            .qr-pay-body {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
         }
 
         /* ---- Donor Wall Section ---- */
@@ -1273,10 +1243,8 @@
             color: rgba(255, 255, 255, 0.5);
         }
 
-        /* ---- Responsive ---- */
+        /* ---- Responsive Global Elements ---- */
         @media (max-width: 991px) {
-            .donate-main-header { grid-template-columns: 1fr; gap: 1.25rem; }
-            .donate-content-grid { grid-template-columns: 1fr; gap: 3rem; }
             .donate-impact-strip-grid { grid-template-columns: repeat(2, 1fr); }
             .donate-impact-stat { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.07); }
             body.light-theme .donate-impact-stat { border-bottom-color: rgba(0,0,0,0.08); }
@@ -1284,9 +1252,6 @@
         }
 
         @media (max-width: 640px) {
-            .donate-hero-ref { padding: 120px 0 60px; }
-            .donor-fields { grid-template-columns: 1fr; }
-            .amount-grid { grid-template-columns: repeat(2, 1fr); }
             .donor-cards-grid { grid-template-columns: 1fr; }
         }
     </style>
@@ -1507,7 +1472,7 @@
                             <input type="number" class="amount-custom-input" id="customAmountInput" value="1000" min="100" aria-label="Custom donation amount in NPR">
                         </div>
 
-                        <label class="form-field-label" style="margin-bottom:.7rem">Your Information</label>
+                        <label class="form-field-label">Your Information</label>
                         <div class="donor-fields">
                             <div class="field-group">
                                 <label class="form-field-label" for="donorFirstName">First Name</label>
@@ -1517,17 +1482,17 @@
                                 <label class="form-field-label" for="donorLastName">Last Name</label>
                                 <input type="text" class="field-input" id="donorLastName" placeholder="Sharma" autocomplete="family-name" required>
                             </div>
-                            <div class="field-group full-width">
+                            <div class="field-group">
                                 <label class="form-field-label" for="donorEmail">Email Address</label>
                                 <input type="email" class="field-input" id="donorEmail" placeholder="ram@example.com" autocomplete="email" required>
                             </div>
-                            <div class="field-group full-width">
+                            <div class="field-group">
                                 <label class="form-field-label" for="donorPhone">Phone (Optional)</label>
                                 <input type="tel" class="field-input" id="donorPhone" placeholder="+977 9800000000">
                             </div>
                             <div class="field-group full-width">
                                 <label class="form-field-label" for="donorMessage">Message (Optional)</label>
-                                <textarea class="field-input" id="donorMessage" rows="2" placeholder="A message of encouragement for RoboYuwa's youth..." style="min-height:64px"></textarea>
+                                <input type="text" class="field-input" id="donorMessage" placeholder="A message of encouragement for RoboYuwa's youth...">
                             </div>
                         </div>
 
@@ -1547,67 +1512,73 @@
                     </div>
                 </div>
 
-                <!-- Right: Impact Tiers + Bank Details -->
-                <div class="donate-impact-col">
-                    <div class="impact-col-header">
-                        <div class="impact-col-eyebrow">Where Your Money Goes</div>
-                        <h3 class="impact-col-title font-serif">Every Rupee Directly <span class="text-gradient-crimson">Impacts a Life</span></h3>
-                        <p class="impact-col-desc">Here's exactly what your donation unlocks for Nepal's youth engineers — 100% goes to programmes, never overhead.</p>
-                    </div>
+                <!-- Right: Impact Tiers (2x2 Grid) + QR Pay Details (Matching Chamfer Card) -->
+                <div class="donate-impact-chamfer">
+                    <div class="donate-impact-inner">
+                        <div class="impact-card-header">
+                            <div class="impact-col-eyebrow">
+                                <span class="eyebrow-square" aria-hidden="true"></span>
+                                <span>Where Your Money Goes</span>
+                            </div>
+                            <h3 class="impact-col-title font-serif">Every Rupee Directly <span class="text-gradient-crimson">Impacts a Life</span></h3>
+                            <p class="impact-col-desc">Here's exactly what your donation unlocks for Nepal's youth engineers — 100% goes to programmes, never overhead.</p>
+                        </div>
 
-                    <div class="impact-tier">
-                        <div class="tier-badge">NPR<br>500</div>
-                        <div>
-                            <div class="tier-info-title">Starter Spark</div>
-                            <div class="tier-info-desc">Covers entry-level sensor components and workshop materials for one student participant.</div>
-                        </div>
-                    </div>
-                    <div class="impact-tier">
-                        <div class="tier-badge">NPR<br>1,000</div>
-                        <div>
-                            <div class="tier-info-title">Workshop Seat</div>
-                            <div class="tier-info-desc">Fully funds one student's participation in a hands-on STEAM bootcamp session.</div>
-                        </div>
-                    </div>
-                    <div class="impact-tier">
-                        <div class="tier-badge">NPR<br>5,000</div>
-                        <div>
-                            <div class="tier-info-title">Hardware Kit</div>
-                            <div class="tier-info-desc">Funds a complete Arduino / microcontroller kit for a grassroots district school team.</div>
-                        </div>
-                    </div>
-                    <div class="impact-tier">
-                        <div class="tier-badge">NPR<br>25,000</div>
-                        <div>
-                            <div class="tier-info-title">Lab Sponsor</div>
-                            <div class="tier-info-desc">Establishes a mini robotics lab with PCB tools, sensors, and chassis for a full class batch.</div>
-                        </div>
-                    </div>
-
-                    <!-- QR Code Pay Section -->
-                    <div class="qr-pay-box">
-                        <div class="qr-pay-header">
-                            <i class="fa-light fa-qrcode"></i>
-                            <span>Scan &amp; Pay Directly</span>
-                        </div>
-                        <div class="qr-pay-body">
-                            <!-- QR Image -->
-                            <div class="qr-img-wrap">
-                                <img src="assets/bank_qr_roboyuwa.jpg"
-                                     alt="RoboYuwa Nepal — Nepal Investment Mega Bank QR Code for direct bank transfer"
-                                     class="qr-img" loading="lazy">
-                                <div class="qr-scan-label">
-                                    <i class="fa-light fa-camera" style="margin-right:5px"></i>Scan with your banking app
+                        <div class="impact-tiers-grid">
+                            <div class="impact-tier">
+                                <div class="tier-badge">NPR<br>500</div>
+                                <div>
+                                    <div class="tier-info-title">Starter Spark</div>
+                                    <div class="tier-info-desc">Sensor parts for one student.</div>
                                 </div>
                             </div>
-                            <!-- Bank Details -->  
-                            <div class="qr-bank-details">
-                                <div class="bank-row"><span class="bank-label">Account Name</span><span class="bank-val">RoboYuwa Nepal</span></div>
-                                <div class="bank-row"><span class="bank-label">Bank</span><span class="bank-val">Nepal Investment Mega Bank</span></div>
-                                <div class="bank-row"><span class="bank-label">Account No.</span><span class="bank-val">080760010XXXX</span></div>
-                                <div class="bank-row"><span class="bank-label">PAN No.</span><span class="bank-val">6XXXXXXX</span></div>
-                                <div class="bank-row"><span class="bank-label">Reference</span><span class="bank-val">DONATION-[Your Name]</span></div>
-                                <p class="qr-tip"><i class="fa-light fa-circle-info"></i> Screenshot the QR or note account details, then pay via mobile banking or counter deposit.</p>
+                            <div class="impact-tier">
+                                <div class="tier-badge">NPR<br>1,000</div>
+                                <div>
+                                    <div class="tier-info-title">Workshop Seat</div>
+                                    <div class="tier-info-desc">Fully funds one bootcamp seat.</div>
+                                </div>
+                            </div>
+                            <div class="impact-tier">
+                                <div class="tier-badge">NPR<br>5,000</div>
+                                <div>
+                                    <div class="tier-info-title">Hardware Kit</div>
+                                    <div class="tier-info-desc">Full Arduino microcontroller kit.</div>
+                                </div>
+                            </div>
+                            <div class="impact-tier">
+                                <div class="tier-badge">NPR<br>25,000</div>
+                                <div>
+                                    <div class="tier-info-title">Lab Sponsor</div>
+                                    <div class="tier-info-desc">Mini robotics lab with PCB tools.</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- QR Code Pay Section -->
+                        <div class="qr-pay-box">
+                            <div class="qr-pay-header">
+                                <i class="fa-light fa-qrcode"></i>
+                                <span>Direct Bank Transfer &bull; Scan &amp; Pay</span>
+                            </div>
+                            <div class="qr-pay-body">
+                                <!-- QR Image -->
+                                <div class="qr-img-wrap">
+                                    <img src="assets/bank_qr_roboyuwa.jpg"
+                                         alt="RoboYuwa Nepal — Nepal Investment Mega Bank QR Code for direct bank transfer"
+                                         class="qr-img" loading="lazy">
+                                    <div class="qr-scan-label">
+                                        <i class="fa-light fa-camera" style="margin-right:3px"></i>Scan via banking app
+                                    </div>
+                                </div>
+                                <!-- Bank Details -->  
+                                <div class="qr-bank-details">
+                                    <div class="bank-row"><span class="bank-label">Account Name</span><span class="bank-val">RoboYuwa Nepal</span></div>
+                                    <div class="bank-row"><span class="bank-label">Bank</span><span class="bank-val">Nepal Investment Mega Bank</span></div>
+                                    <div class="bank-row"><span class="bank-label">Account No.</span><span class="bank-val">080760010XXXX</span></div>
+                                    <div class="bank-row"><span class="bank-label">PAN No.</span><span class="bank-val">6XXXXXXX</span></div>
+                                    <div class="bank-row"><span class="bank-label">Reference</span><span class="bank-val">DONATION-[Name]</span></div>
+                                </div>
                             </div>
                         </div>
                     </div>

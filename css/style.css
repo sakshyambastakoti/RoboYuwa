@@ -225,13 +225,34 @@ strong {
     align-items: flex-end;
     pointer-events: none;
     z-index: 8;
-    --pulse-divider-color: var(--ry-gray-900, #101217);
+    --pulse-divider-color: rgba(15, 23, 42, 0.18);
+}
+
+body:not(.light-theme) .section-pulse-divider {
+    --pulse-divider-color: rgba(255, 255, 255, 0.18);
+}
+
+body.light-theme .section-pulse-divider {
+    --pulse-divider-color: rgba(15, 23, 42, 0.18);
 }
 
 .section-pulse-divider.divider-top {
     bottom: auto;
     top: 0;
     transform: rotate(180deg);
+}
+
+/* Left Vertical Accent Notch Marker */
+.section-pulse-divider .pulse-marker {
+    position: absolute;
+    left: clamp(2rem, 6vw, 5rem);
+    bottom: -6px;
+    width: 3.5px;
+    height: 14px;
+    background-color: var(--pulse-divider-color);
+    border-radius: 1px;
+    z-index: 2;
+    transition: background-color 0.3s ease;
 }
 
 .section-pulse-divider .pulse-line {
@@ -278,7 +299,7 @@ strong {
 
 /* Subtle Variant */
 .section-pulse-divider.pulse-subtle {
-    --pulse-divider-color: rgba(16, 18, 23, 0.25);
+    --pulse-divider-color: rgba(16, 18, 23, 0.15);
 }
 
 @media (max-width: 768px) {
@@ -6918,6 +6939,7 @@ body:not(.light-theme) .stat-sub-label {
    Feature Sections: Mission, Vision, History (Image 2 & 3)
    ------------------------------------------------------------- */
 .about-feature-section {
+    position: relative;
     padding: 110px 0;
     background: #FFFFFF;
 }
@@ -7122,6 +7144,7 @@ body:not(.light-theme) .checklist-icon {
    How We Work (Video Showcase Banner matching Image 3)
    ------------------------------------------------------------- */
 .how-we-work-section {
+    position: relative;
     padding: 110px 0 120px;
     background: #F8FAFC;
     text-align: center;

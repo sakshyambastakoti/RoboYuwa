@@ -8280,49 +8280,79 @@ body:not(.light-theme) .team-filter-btn.active {
     margin-bottom: 6rem;
 }
 
+/* Dual-Layer Chamfered Card Chassis for Team Members (Matching Other Pages) */
 .team-card-ref {
+    position: relative;
+    padding: 2px;
+    clip-path: polygon(24px 0, 100% 0, 100% calc(100% - 24px), calc(100% - 24px) 100%, 0 100%, 0 24px);
+    background: #B9C4D1;
     display: flex;
-    flex-direction: column;
-    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), background 0.35s ease, box-shadow 0.35s ease;
+}
+
+body:not(.light-theme) .team-card-ref,
+body.dark-theme .team-card-ref {
+    background: rgba(255, 255, 255, 0.16);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.team-card-ref:hover {
+    transform: translateY(-7px);
+    background: linear-gradient(135deg, var(--ry-crimson) 0%, var(--ry-amber) 100%);
+    box-shadow: 0 22px 55px rgba(229, 37, 37, 0.18);
+}
+
+body:not(.light-theme) .team-card-ref:hover,
+body.dark-theme .team-card-ref:hover {
+    background: linear-gradient(135deg, var(--ry-crimson) 0%, var(--ry-amber) 100%);
+    box-shadow: 0 24px 60px rgba(229, 37, 37, 0.28);
 }
 
 .team-card-ref.hidden {
     display: none;
 }
 
-/* Chamfered Image Container matching Reference Cutout */
+/* Inner Card Container */
+.team-card-inner {
+    width: 100%;
+    background: #FFFFFF;
+    clip-path: polygon(22px 0, 100% 0, 100% calc(100% - 22px), calc(100% - 22px) 100%, 0 100%, 0 22px);
+    padding: clamp(1.2rem, 1.8vw, 1.5rem);
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    transition: background 0.35s ease;
+}
+
+body:not(.light-theme) .team-card-inner,
+body.dark-theme .team-card-inner {
+    background: #11141E;
+}
+
+/* Chamfered Image Container inside the card */
 .team-card-frame {
     position: relative;
     width: 100%;
-    height: 420px;
+    height: 330px;
     background: #F3F4F6;
-    clip-path: polygon(46px 0%,
-            100% 0%,
-            100% calc(100% - 46px),
-            calc(100% - 46px) 100%,
-            0% 100%,
-            0% 46px);
-    border-radius: 24px;
+    clip-path: polygon(20px 0%, 100% 0%, 100% 100%, 0% 100%, 0% 20px);
+    border-radius: 0 16px 16px 16px;
     overflow: hidden;
-    margin-bottom: 1.5rem;
-    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+    margin-bottom: 1.3rem;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     display: flex;
     align-items: flex-end;
     justify-content: center;
 }
 
-body:not(.light-theme) .team-card-frame {
-    background: #141722;
-    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.45);
+body:not(.light-theme) .team-card-frame,
+body.dark-theme .team-card-frame {
+    background: #161A26;
 }
 
 .team-card-ref:hover .team-card-frame {
-    transform: translateY(-6px);
-    box-shadow: 0 22px 50px rgba(0, 0, 0, 0.16);
-}
-
-body:not(.light-theme) .team-card-ref:hover .team-card-frame {
-    box-shadow: 0 24px 55px rgba(229, 152, 25, 0.22);
+    transform: translateY(-3px);
 }
 
 .team-card-img {
@@ -8335,102 +8365,127 @@ body:not(.light-theme) .team-card-ref:hover .team-card-frame {
 }
 
 .team-card-ref:hover .team-card-img {
-    transform: scale(1.04);
+    transform: scale(1.05);
 }
 
-/* Optional Department Badge in Corner */
+/* Department Badge */
 .team-card-dept-tag {
     position: absolute;
-    top: 18px;
-    right: 18px;
-    background: rgba(255, 255, 255, 0.92);
+    top: 14px;
+    right: 14px;
+    background: rgba(255, 255, 255, 0.94);
     backdrop-filter: blur(8px);
-    font-size: 0.72rem;
+    font-size: 0.7rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.08em;
-    padding: 0.35rem 0.75rem;
+    padding: 0.32rem 0.75rem;
     border-radius: 9999px;
     color: #1E293B;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     z-index: 2;
 }
 
-body:not(.light-theme) .team-card-dept-tag {
-    background: rgba(21, 24, 33, 0.9);
+body:not(.light-theme) .team-card-dept-tag,
+body.dark-theme .team-card-dept-tag {
+    background: rgba(18, 21, 30, 0.94);
     color: #E2E8F0;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
-/* Card Content: Name, Role, Bio summary, Socials */
+/* Card Content Info */
 .team-card-info {
     display: flex;
     flex-direction: column;
+    flex-grow: 1;
 }
 
 .team-card-name {
-    font-size: 1.65rem;
+    font-family: var(--font-serif);
+    font-size: 1.45rem;
     font-weight: 800;
     color: #0F172A;
-    line-height: 1.15;
-    margin-bottom: 0.35rem;
-    letter-spacing: -0.02em;
+    line-height: 1.18;
+    margin-bottom: 0.3rem;
+    letter-spacing: -0.015em;
 }
 
-body:not(.light-theme) .team-card-name {
+body:not(.light-theme) .team-card-name,
+body.dark-theme .team-card-name {
     color: #FFFFFF;
 }
 
 .team-card-role {
-    font-size: 0.95rem;
-    font-weight: 500;
-    color: #64748B;
-    margin-bottom: 0.85rem;
+    font-size: 0.82rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--ry-amber);
+    margin-bottom: 0.75rem;
 }
 
-body:not(.light-theme) .team-card-role {
-    color: #94A3B8;
+body:not(.light-theme) .team-card-role,
+body.dark-theme .team-card-role {
+    color: #FBBF24;
 }
 
 .team-card-responsibilities {
     font-size: 0.88rem;
     line-height: 1.6;
-    color: #64748B;
-    margin-bottom: 1.1rem;
+    color: #555D6E;
+    margin-bottom: 1.25rem;
+    flex-grow: 1;
     display: -webkit-box;
-    -webkit-line-clamp: 2;
+    -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
 
-body:not(.light-theme) .team-card-responsibilities {
-    color: rgba(255, 255, 255, 0.68);
+body:not(.light-theme) .team-card-responsibilities,
+body.dark-theme .team-card-responsibilities {
+    color: rgba(255, 255, 255, 0.7);
 }
 
-/* Social Icon Strip matching Reference */
+/* Social Icon Strip */
 .team-card-socials {
     display: flex;
     align-items: center;
-    gap: 0.95rem;
+    gap: 0.85rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.07);
+    margin-top: auto;
+}
+
+body:not(.light-theme) .team-card-socials,
+body.dark-theme .team-card-socials {
+    border-top-color: rgba(255, 255, 255, 0.08);
 }
 
 .team-social-link {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: #F1F5F9;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     color: #475569;
-    font-size: 1.1rem;
+    font-size: 0.9rem;
     text-decoration: none;
-    transition: color 0.2s ease, transform 0.2s ease;
+    transition: all 0.25s ease;
 }
 
-body:not(.light-theme) .team-social-link {
-    color: #94A3B8;
+body:not(.light-theme) .team-social-link,
+body.dark-theme .team-social-link {
+    background: #181C28;
+    color: rgba(255, 255, 255, 0.7);
 }
 
 .team-social-link:hover {
-    color: var(--ry-amber);
+    background: var(--ry-amber);
+    color: #FFFFFF;
     transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(229, 152, 25, 0.35);
 }
 
 /* -------------------------------------------------------------

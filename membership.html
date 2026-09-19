@@ -1755,22 +1755,7 @@
 </div>
 
 <script src="js/script.js"></script>
-<script>
-
-    function submitApplication() {
-        const firstName = document.getElementById('appFirstName').value.trim();
-        const email = document.getElementById('appEmail').value.trim();
-        const tier = document.getElementById('appTier').value;
-        if (!firstName || !email || !tier) { alert('Please fill in all required (*) fields before submitting.'); return; }
-        const btn = document.getElementById('applySubmitBtn');
-        btn.innerHTML = '<i class="fa-light fa-spinner fa-spin"></i> Submitting Application...';
-        btn.disabled = true;
-        setTimeout(() => {
-            btn.innerHTML = '<i class="fa-light fa-circle-check"></i> Application Submitted! We\'ll be in touch within 5 days.';
-            btn.style.background = 'linear-gradient(135deg,#376856,#274E40)';
-            setTimeout(() => { btn.innerHTML = '<i class="fa-light fa-paper-plane-top"></i> Submit Membership Application'; btn.style.background=''; btn.disabled=false; }, 5000);
-        }, 2000);
-    }
-</script>
+<script src="js/formspree.js"></script>
+<!-- Membership application submission is handled by js/formspree.js -->
 </body>
 </html>

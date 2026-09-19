@@ -442,28 +442,8 @@ document.addEventListener('DOMContentLoaded', () => {
     allRevealElements.forEach((el) => observer.observe(el));
 
     // ==========================================================================
-    // Footer Newsletter & Back-to-Top Handlers
+    // Footer Newsletter — handled by js/formspree.js
     // ==========================================================================
-    const newsletterForm = document.getElementById('footerNewsletterForm');
-    if (newsletterForm) {
-        newsletterForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const emailInput = document.getElementById('newsletterEmailInput');
-            const submitBtn = document.getElementById('newsletterSubmitBtn');
-            if (emailInput && emailInput.value) {
-                const originalHtml = submitBtn.innerHTML;
-                submitBtn.disabled = true;
-                submitBtn.innerHTML = '<i class="fa-solid fa-check"></i>';
-                submitBtn.style.background = '#10b981';
-                emailInput.value = '';
-                setTimeout(() => {
-                    submitBtn.innerHTML = originalHtml;
-                    submitBtn.style.background = '';
-                    submitBtn.disabled = false;
-                }, 3000);
-            }
-        });
-    }
 
     const backToTopBtn = document.getElementById('backToTopBtn');
     if (backToTopBtn) {
@@ -477,56 +457,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ==========================================================================
-    // Executive Contact Form Submission Handler
+    // Executive Contact Form — handled by js/formspree.js
     // ==========================================================================
-    const execContactForm = document.getElementById('executiveContactForm');
-    const contactFormStatus = document.getElementById('contactFormStatus');
-    const execSubmitBtn = document.getElementById('execSubmitBtn');
-
-    if (execContactForm) {
-        execContactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-
-            const projectType = document.getElementById('projectType');
-            const firstName = document.getElementById('firstName');
-            const lastName = document.getElementById('lastName');
-            const emailAddr = document.getElementById('emailAddr');
-            const messageText = document.getElementById('messageText');
-
-            if (!projectType?.value || !firstName?.value || !lastName?.value || !emailAddr?.value || !messageText?.value) {
-                if (contactFormStatus) {
-                    contactFormStatus.className = 'form-status-msg error';
-                    contactFormStatus.textContent = 'Please fill in all required fields before submitting.';
-                }
-                return;
-            }
-
-            if (execSubmitBtn) {
-                const origBtnHtml = execSubmitBtn.innerHTML;
-                execSubmitBtn.disabled = true;
-                execSubmitBtn.innerHTML = '<span>TRANSMITTING...</span> <i class="fa-solid fa-spinner fa-spin"></i>';
-
-                setTimeout(() => {
-                    execContactForm.reset();
-                    execSubmitBtn.disabled = false;
-                    execSubmitBtn.innerHTML = '<span>SENT</span> <i class="fa-solid fa-check" style="color: #34D399;"></i>';
-
-                    if (contactFormStatus) {
-                        contactFormStatus.className = 'form-status-msg success';
-                        contactFormStatus.textContent = 'Thank you! Your message has been routed to our leadership team. We will be in touch shortly.';
-                    }
-
-                    setTimeout(() => {
-                        execSubmitBtn.innerHTML = origBtnHtml;
-                        if (contactFormStatus) {
-                            contactFormStatus.className = 'form-status-msg';
-                            contactFormStatus.textContent = '';
-                        }
-                    }, 5000);
-                }, 750);
-            }
-        });
-    }
 
     // ==========================================================================
     // Testimonials Showcase Slider (Reference Design Controller)
@@ -634,63 +566,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ==========================================================================
-    // Home Contact Form Submission Handler (Matching Reference Design)
+    // Home Contact Form — handled by js/formspree.js
     // ==========================================================================
-    const homeContactForm = document.getElementById('homeContactForm');
-    const homeContactStatus = document.getElementById('homeContactStatus');
-    const homeContactSubmitBtn = document.getElementById('homeContactSubmitBtn');
-
-    if (homeContactForm) {
-        homeContactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-
-            const fullName = document.getElementById('homeContactName');
-            const email = document.getElementById('homeContactEmail');
-            const message = document.getElementById('homeContactMessage');
-            const terms = document.getElementById('homeContactTerms');
-
-            if (!fullName?.value.trim() || !email?.value.trim() || !message?.value.trim()) {
-                if (homeContactStatus) {
-                    homeContactStatus.className = 'form-status-msg error';
-                    homeContactStatus.textContent = 'Please complete all required fields before submitting.';
-                }
-                return;
-            }
-
-            if (terms && !terms.checked) {
-                if (homeContactStatus) {
-                    homeContactStatus.className = 'form-status-msg error';
-                    homeContactStatus.textContent = 'Please agree to the terms of service to continue.';
-                }
-                return;
-            }
-
-            if (homeContactSubmitBtn) {
-                const originalHtml = homeContactSubmitBtn.innerHTML;
-                homeContactSubmitBtn.disabled = true;
-                homeContactSubmitBtn.innerHTML = '<span>Sending...</span> <i class="fa-solid fa-spinner fa-spin"></i>';
-
-                setTimeout(() => {
-                    homeContactForm.reset();
-                    homeContactSubmitBtn.disabled = false;
-                    homeContactSubmitBtn.innerHTML = '<span>Sent!</span> <i class="fa-solid fa-check" style="color: #10B981;"></i>';
-
-                    if (homeContactStatus) {
-                        homeContactStatus.className = 'form-status-msg success';
-                        homeContactStatus.textContent = 'Thank you! Your message has been received. Our team will reach out to you shortly.';
-                    }
-
-                    setTimeout(() => {
-                        homeContactSubmitBtn.innerHTML = originalHtml;
-                        if (homeContactStatus) {
-                            homeContactStatus.className = 'form-status-msg';
-                            homeContactStatus.textContent = '';
-                        }
-                    }, 5000);
-                }, 800);
-            }
-        });
-    }
 
     // ==========================================================================
     // Light / Dark Theme Controller (Universal Across All Pages)

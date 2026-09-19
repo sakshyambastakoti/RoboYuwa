@@ -16,232 +16,7 @@
            ROBOYUWA MEMBERSHIP PAGE - BRAND DESIGN SYSTEM
            ===================================================== */
         
-        /* ---- HERO SECTION ---- */
-        .mem-hero {
-            position: relative;
-            padding: clamp(155px, 17vh, 185px) 0 clamp(4.5rem, 8vh, 6.5rem);
-            background: #08090C;
-            overflow: hidden;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-        }
-        .mem-hero-bg {
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(ellipse 65% 75% at 15% 35%, rgba(229, 37, 37, 0.22) 0%, transparent 65%),
-                        radial-gradient(ellipse 55% 65% at 85% 65%, rgba(229, 152, 25, 0.14) 0%, transparent 60%),
-                        url('assets/workshop.png') center/cover no-repeat;
-            opacity: 0.22;
-            z-index: 0;
-        }
-        .mem-hero-overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(170deg, rgba(8, 9, 12, 0.98) 0%, rgba(8, 9, 12, 0.88) 50%, rgba(229, 37, 37, 0.1) 100%);
-            z-index: 1;
-        }
-        .mem-hero-grid {
-            position: absolute;
-            inset: 0;
-            background-image: linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
-                              linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
-            background-size: 52px 52px;
-            z-index: 1;
-            pointer-events: none;
-        }
-        .mem-hero .container {
-            position: relative;
-            z-index: 2;
-            max-width: 1240px;
-            margin: 0 auto;
-            padding: 0 1.5rem;
-            display: grid;
-            grid-template-columns: 1.15fr 0.85fr;
-            gap: clamp(2.5rem, 5vw, 4.5rem);
-            align-items: center;
-        }
-        .mem-hero-eyebrow {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 0.8rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.16em;
-            color: var(--ry-amber);
-            margin-bottom: 1.2rem;
-        }
-        .mem-hero-eyebrow .eyebrow-square {
-            width: 8px;
-            height: 8px;
-            border-radius: 2px;
-            background: linear-gradient(135deg, var(--ry-amber) 0%, #F5A623 100%);
-            box-shadow: 0 2px 8px rgba(229, 152, 25, 0.5);
-            display: inline-block;
-            flex-shrink: 0;
-        }
-        .mem-hero-title {
-            font-family: var(--font-serif);
-            font-size: clamp(2.3rem, 4.8vw, 3.85rem);
-            font-weight: 800;
-            line-height: 1.12;
-            color: #FFFFFF;
-            letter-spacing: -0.025em;
-            margin-bottom: 1.3rem;
-        }
-        .mem-hero-title .gradient-line {
-            background: linear-gradient(135deg, #FF4040 0%, var(--ry-amber) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        .mem-hero-sub {
-            font-size: 1.05rem;
-            line-height: 1.75;
-            color: rgba(255, 255, 255, 0.72);
-            margin-bottom: 2.2rem;
-            max-width: 580px;
-        }
-        .mem-hero-stats {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.2rem;
-        }
-        .mem-hero-stat {
-            position: relative;
-            background: rgba(255, 255, 255, 0.035);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            clip-path: polygon(14px 0, 100% 0, 100% calc(100% - 14px), calc(100% - 14px) 100%, 0 100%, 0 14px);
-            padding: 1.15rem 1rem;
-            text-align: center;
-            backdrop-filter: blur(12px);
-            transition: all 0.3s ease;
-        }
-        .mem-hero-stat:hover {
-            border-color: rgba(229, 37, 37, 0.4);
-            transform: translateY(-2px);
-            background: rgba(229, 37, 37, 0.06);
-        }
-        .mem-hero-stat-num {
-            font-family: var(--font-serif);
-            font-size: clamp(1.5rem, 2.2vw, 1.85rem);
-            font-weight: 800;
-            color: #FFFFFF;
-            margin-bottom: 0.2rem;
-            letter-spacing: -0.02em;
-        }
-        .mem-hero-stat:nth-child(1) .mem-hero-stat-num { color: var(--ry-amber); }
-        .mem-hero-stat:nth-child(2) .mem-hero-stat-num { color: #FF4040; }
-        .mem-hero-stat:nth-child(3) .mem-hero-stat-num { color: #52B788; }
-        .mem-hero-stat-label {
-            font-size: 0.74rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.09em;
-            color: rgba(255, 255, 255, 0.6);
-        }
 
-        /* Quick Join Chassis on Hero Right */
-        .mem-quick-chassis {
-            position: relative;
-            padding: 2px;
-            background: linear-gradient(145deg, rgba(229, 37, 37, 0.6) 0%, rgba(229, 152, 25, 0.45) 50%, rgba(255, 255, 255, 0.12) 100%);
-            clip-path: polygon(24px 0, 100% 0, 100% calc(100% - 24px), calc(100% - 24px) 100%, 0 100%, 0 24px);
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 35px rgba(229, 37, 37, 0.15);
-        }
-        .mem-quick-card {
-            position: relative;
-            background: #0E1118;
-            clip-path: polygon(23px 0, 100% 0, 100% calc(100% - 23px), calc(100% - 23px) 100%, 0 100%, 0 23px);
-            padding: clamp(1.8rem, 3.5vw, 2.3rem);
-            backdrop-filter: blur(20px);
-        }
-        .mem-quick-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 7px;
-            font-size: 0.72rem;
-            font-weight: 700;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-            color: var(--ry-amber);
-            background: rgba(229, 152, 25, 0.12);
-            border: 1px solid rgba(229, 152, 25, 0.28);
-            padding: 0.25rem 0.65rem;
-            clip-path: polygon(6px 0, 100% 0, 100% calc(100% - 6px), calc(100% - 6px) 100%, 0 100%, 0 6px);
-            margin-bottom: 0.75rem;
-        }
-        .mem-quick-card-title {
-            font-family: var(--font-serif);
-            font-size: 1.45rem;
-            font-weight: 700;
-            color: #FFFFFF;
-            margin-bottom: 0.45rem;
-        }
-        .mem-quick-card-sub {
-            font-size: 0.86rem;
-            line-height: 1.55;
-            color: rgba(255, 255, 255, 0.65);
-            margin-bottom: 1.4rem;
-        }
-        .mem-quick-field {
-            width: 100%;
-            padding: 0.82rem 1.05rem;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.14);
-            border-radius: 6px;
-            font-family: var(--font-sans);
-            font-size: 0.9rem;
-            color: #FFFFFF;
-            outline: none;
-            margin-bottom: 0.78rem;
-            transition: all 0.25s ease;
-            box-sizing: border-box;
-        }
-        .mem-quick-field::placeholder { color: rgba(255, 255, 255, 0.4); }
-        .mem-quick-field:focus {
-            border-color: var(--ry-amber);
-            background: rgba(255, 255, 255, 0.08);
-            box-shadow: 0 0 0 3px rgba(229, 152, 25, 0.18);
-        }
-        .mem-quick-select {
-            appearance: none;
-            -webkit-appearance: none;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23E59819' stroke-width='1.8' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
-            background-repeat: no-repeat;
-            background-position: right 14px center;
-            padding-right: 2.4rem;
-            cursor: pointer;
-        }
-        .mem-quick-select option {
-            background: #11141D;
-            color: #FFFFFF;
-            padding: 8px;
-        }
-        .mem-quick-btn {
-            width: 100%;
-            padding: 0.95rem 1.6rem;
-            background: var(--ry-amber-gradient);
-            color: #101217;
-            border: none;
-            border-radius: 6px;
-            font-family: var(--font-sans);
-            font-size: 0.96rem;
-            font-weight: 700;
-            letter-spacing: 0.03em;
-            cursor: pointer;
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-            box-shadow: 0 8px 24px rgba(229, 152, 25, 0.35);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 9px;
-            margin-top: 0.6rem;
-        }
-        .mem-quick-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 14px 34px rgba(229, 152, 25, 0.5);
-            filter: brightness(1.05);
-        }
 
         /* ---- COMMON SECTION HEADINGS ---- */
         .sec-eyebrow {
@@ -1168,10 +943,6 @@
 
         /* ---- RESPONSIVE BREAKPOINTS ---- */
         @media (max-width: 1024px) {
-            .mem-hero .container {
-                grid-template-columns: 1fr;
-                gap: 3rem;
-            }
             .tiers-grid {
                 grid-template-columns: 1fr;
                 max-width: 580px;
@@ -1193,19 +964,6 @@
             }
         }
         @media (max-width: 768px) {
-            .mem-hero {
-                padding-top: 140px;
-            }
-            .mem-hero-stats {
-                grid-template-columns: repeat(3, 1fr);
-                gap: 0.6rem;
-            }
-            .mem-hero-stat {
-                padding: 0.85rem 0.5rem;
-            }
-            .mem-hero-stat-num {
-                font-size: 1.35rem;
-            }
             .benefits-grid,
             .eligibility-grid {
                 grid-template-columns: 1fr;
@@ -1267,65 +1025,116 @@
     </div>
 </header>
 
-<!-- HERO -->
-<section class="mem-hero" aria-label="Membership Hero">
-    <div class="mem-hero-bg"></div>
-    <div class="mem-hero-overlay"></div>
-    <div class="mem-hero-grid" aria-hidden="true"></div>
-    <div class="container">
-        <div class="mem-hero-left">
-            <div class="mem-hero-eyebrow"><span class="eyebrow-square" aria-hidden="true"></span><span>Join RoboYuwa</span></div>
-            <h1 class="mem-hero-title font-serif">Be Part of Nepal's <span class="gradient-line">Robotics Revolution</span></h1>
-            <p class="mem-hero-sub">Join a community of passionate youth engineers, mentors, and innovators building Nepal's technological future together through hands-on robotics and STEAM education.</p>
-            <div class="mem-hero-stats">
-                <div class="mem-hero-stat">
-                    <div class="mem-hero-stat-num">120+</div>
-                    <div class="mem-hero-stat-label">Active Members</div>
+<main>
+    <!-- =====================================================================
+         1. HERO SECTION & INTEGRATED MANIFESTO DECK (Fits in Single Screen Frame)
+         ===================================================================== -->
+    <section class="about-hero-ref" aria-label="Membership Introduction">
+        <div class="container about-hero-container">
+            <!-- Top Split: Headline & Narrative (Left) + Visual Showcase (Right) -->
+            <div class="about-hero-grid">
+                <!-- Left: Headline & Narrative -->
+                <div class="about-ref-left reveal">
+                    <span class="about-hero-eyebrow font-serif-italic">Join Nepal's Next-Gen Robotics Movement</span>
+                    <h1 class="about-ref-title font-serif">
+                        Innovate, Build &amp; Excel <span class="text-gradient-crimson">Together</span>
+                    </h1>
+                    <p class="about-ref-lead">
+                        Become part of Nepal's premier youth robotics ecosystem. As a RoboYuwa member, you gain hands-on access to hardware labs, rapid prototyping components, national robotics hackathons, and direct mentorship from seasoned engineers across all 7 provinces.
+                    </p>
+                    <div class="about-ref-hero-actions">
+                        <a href="#plans" class="btn btn-pill-crimson">
+                            <span>Explore Plans</span>
+                            <i class="fa-solid fa-arrow-down" aria-hidden="true"></i>
+                        </a>
+                        <a href="#apply" class="btn-outline-clean">
+                            <span>Apply For Membership</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                        </a>
+                    </div>
                 </div>
-                <div class="mem-hero-stat">
-                    <div class="mem-hero-stat-num">7</div>
-                    <div class="mem-hero-stat-label">Provinces</div>
+
+                <!-- Right: Large Chamfered Visual + Rotating Circular Badge -->
+                <div class="about-ref-right reveal delay-1">
+                    <div class="about-ref-visual-frame">
+                        <div class="about-ref-visual-media">
+                            <img src="assets/competetion.png" alt="RoboYuwa youth robotics members showcasing custom built robots at competition"
+                                class="about-ref-visual-img" style="object-position: center 20%;" loading="eager" decoding="async">
+                        </div>
+
+                        <!-- Rotating Circular Badge with Curving Text & Gold Arrow -->
+                        <div class="about-circular-badge-wrap" aria-hidden="true"
+                            title="RoboYuwa Nepal &bull; Membership &bull; Est. 2024">
+                            <svg class="circular-text-svg" viewBox="0 0 160 160">
+                                <path id="badgeCirclePath"
+                                    d="M 80, 80 m -58, 0 a 58,58 0 1,1 116,0 a 58,58 0 1,1 -116,0" fill="none" />
+                                <text class="circular-text">
+                                    <textPath href="#badgeCirclePath" textLength="345" lengthAdjust="spacing">
+                                        &bull; ROBOYUWA &bull; MEMBERSHIP &bull; INNOVATION &bull;
+                                    </textPath>
+                                </text>
+                            </svg>
+                            <div class="circular-badge-center">
+                                <i class="fa-solid fa-arrow-up-right"></i>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="mem-hero-stat">
-                    <div class="mem-hero-stat-num">2021</div>
-                    <div class="mem-hero-stat-label">Founded</div>
+            </div>
+
+            <!-- Bottom Deck: Integrated Manifesto & 4-Metric Counters -->
+            <div class="about-hero-deck reveal delay-2">
+                <!-- Manifesto Card (Left) -->
+                <div class="about-deck-manifesto">
+                    <div class="deck-card-inner">
+                        <div class="manifesto-eyebrow">
+                            <span class="eyebrow-square" aria-hidden="true"></span>
+                            <span>Our Membership Promise</span>
+                            <span class="manifesto-eyebrow-line" aria-hidden="true"></span>
+                        </div>
+                        <p class="manifesto-statement font-serif">
+                            At RoboYuwa, membership is an active launchpad for engineering leadership. We connect aspiring innovators with <span class="manifesto-highlight">hands-on robotics labs</span>, <span class="manifesto-faded">collaborative competition teams, subsidized hardware kits, and peer mentorship to transform creative concepts into impactful technology.</span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 4-Metric Impact Counters (Right) -->
+                <div class="about-deck-stats">
+                    <div class="deck-card-inner">
+                        <div class="about-stat-item">
+                            <div class="stat-big-num font-serif">120+</div>
+                            <div class="stat-sub-label">Active Members</div>
+                        </div>
+                        <div class="about-stat-item">
+                            <div class="stat-big-num font-serif">3</div>
+                            <div class="stat-sub-label">Membership Tiers</div>
+                        </div>
+                        <div class="about-stat-item">
+                            <div class="stat-big-num font-serif">15+</div>
+                            <div class="stat-sub-label">Hardware Projects</div>
+                        </div>
+                        <div class="about-stat-item">
+                            <div class="stat-big-num font-serif">7</div>
+                            <div class="stat-sub-label">Provinces Connected</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div>
-            <div class="mem-quick-chassis">
-                <div class="mem-quick-card">
-                    <div class="mem-quick-badge"><i class="fa-light fa-bolt"></i> FAST-TRACK</div>
-                    <div class="mem-quick-card-title font-serif">Quick Application</div>
-                    <div class="mem-quick-card-sub">Express interest in 60 seconds. Our recruitment team contacts you within 2 business days.</div>
-                    <input type="text" class="mem-quick-field" placeholder="Full Name" id="quickName" autocomplete="name">
-                    <input type="email" class="mem-quick-field" placeholder="Email Address" id="quickEmail" autocomplete="email">
-                    <input type="tel" class="mem-quick-field" placeholder="Phone Number (+977...)" id="quickPhone">
-                    <select class="mem-quick-field mem-quick-select" id="quickTier" aria-label="Membership Tier">
-                        <option value="" disabled selected>Select Membership Tier</option>
-                        <option value="associate">Associate Member (Free)</option>
-                        <option value="member">General Member (NPR 500/yr)</option>
-                        <option value="core">Core Member (NPR 1,500/yr)</option>
-                    </select>
-                    <button class="mem-quick-btn" onclick="submitQuick()"><i class="fa-light fa-paper-plane-top"></i> Send Application</button>
-                </div>
-            </div>
+
+        <!-- Section Pulse Divider Line -->
+        <div class="section-pulse-divider" aria-hidden="true">
+            <div class="pulse-marker"></div>
+            <div class="pulse-line pulse-left"></div>
+            <svg class="pulse-peak-svg" viewBox="0 0 38 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <polyline points="0,18 19,4 38,18" />
+            </svg>
+            <div class="pulse-line pulse-right"></div>
         </div>
-    </div>
+    </section>
 
-    <!-- Section Pulse Divider Line -->
-    <div class="section-pulse-divider" aria-hidden="true">
-        <div class="pulse-marker"></div>
-        <div class="pulse-line pulse-left"></div>
-        <svg class="pulse-peak-svg" viewBox="0 0 38 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <polyline points="0,18 19,4 38,18" />
-        </svg>
-        <div class="pulse-line pulse-right"></div>
-    </div>
-</section>
-
-<!-- MEMBERSHIP TIERS -->
-<section class="mem-tiers" aria-label="Membership Plans">
+    <!-- MEMBERSHIP TIERS -->
+    <section class="mem-tiers" id="plans" aria-label="Membership Plans">
     <div class="container">
         <div class="section-header-center">
             <div class="sec-eyebrow"><span class="eyebrow-square" aria-hidden="true"></span><span>Membership Plans</span></div>
@@ -1795,6 +1604,7 @@
         </div>
     </div>
 </section>
+</main>
 
 <footer class="footer" id="footer">
     <div class="footer-top-accent" aria-hidden="true"></div>
@@ -1880,21 +1690,6 @@
 
 <script src="js/script.js"></script>
 <script>
-    function submitQuick() {
-        const name = document.getElementById('quickName').value.trim();
-        const email = document.getElementById('quickEmail').value.trim();
-        const tier = document.getElementById('quickTier').value;
-        if (!name || !email || !tier) { alert('Please fill in Name, Email, and Tier to proceed.'); return; }
-        const btn = document.querySelector('.mem-quick-btn');
-        btn.innerHTML = '<i class="fa-light fa-spinner fa-spin"></i> Sending...';
-        btn.disabled = true;
-        setTimeout(() => {
-            btn.innerHTML = '<i class="fa-light fa-circle-check"></i> Application Received!';
-            btn.style.background = 'linear-gradient(135deg,#376856,#274E40)';
-            btn.style.color = '#FFF';
-            setTimeout(() => { btn.innerHTML = '<i class="fa-light fa-paper-plane-top"></i> Send Application'; btn.style.background=''; btn.style.color=''; btn.disabled=false; }, 3500);
-        }, 1600);
-    }
 
     function submitApplication() {
         const firstName = document.getElementById('appFirstName').value.trim();

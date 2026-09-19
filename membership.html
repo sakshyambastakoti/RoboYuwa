@@ -312,22 +312,23 @@
         }
         .benefit-chassis {
             position: relative;
-            padding: 1.5px;
+            padding: 2px;
             clip-path: polygon(18px 0, 100% 0, 100% calc(100% - 18px), calc(100% - 18px) 100%, 0 100%, 0 18px);
-            background: rgba(16, 18, 23, 0.08);
+            background: #B9C4D1;
             transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
             display: flex;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.04);
         }
         .benefit-chassis:hover {
             transform: translateY(-5px);
-            background: linear-gradient(135deg, rgba(229, 37, 37, 0.5) 0%, rgba(229, 152, 25, 0.35) 100%);
-            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+            background: linear-gradient(135deg, var(--ry-crimson) 0%, var(--ry-amber) 100%);
+            box-shadow: 0 16px 40px rgba(229, 37, 37, 0.16);
         }
         .benefit-card {
             width: 100%;
             padding: clamp(1.8rem, 2.8vw, 2.2rem);
-            background: #F8FAFC;
-            clip-path: polygon(17px 0, 100% 0, 100% calc(100% - 17px), calc(100% - 17px) 100%, 0 100%, 0 17px);
+            background: #FFFFFF;
+            clip-path: polygon(16px 0, 100% 0, 100% calc(100% - 16px), calc(100% - 16px) 100%, 0 100%, 0 16px);
             transition: background 0.3s ease;
             box-sizing: border-box;
         }
@@ -821,7 +822,7 @@
         }
         body:not(.light-theme) .benefit-chassis,
         body.dark-theme .benefit-chassis {
-            background: rgba(255, 255, 255, 0.08);
+            background: rgba(255, 255, 255, 0.18);
         }
         body:not(.light-theme) .benefit-card,
         body.dark-theme .benefit-card {

@@ -96,29 +96,118 @@
         </div>
     </header>
 
-    <!-- Main Team Hero Section (Reference Design) -->
-    <section class="team-hero-ref" id="teamHero">
-        <div class="container">
-            <!-- Top Split Header matching Reference Image -->
-            <div class="team-hero-grid reveal">
-                <div class="team-ref-left">
-                    <div class="team-hero-eyebrow">
-                        <span class="eyebrow-square-ref" aria-hidden="true"></span>
-                        <span>Our Team</span>
-                    </div>
-                    <h1 class="team-ref-title font-serif">Meet the Experts Behind RoboYuwa</h1>
-                </div>
-                <div class="team-ref-right">
-                    <p class="team-ref-lead">
+<main>
+    <!-- =====================================================================
+         1. HERO SECTION & INTEGRATED MANIFESTO DECK (Fits in Single Screen Frame)
+         ===================================================================== -->
+    <section class="about-hero-ref" id="teamHero" aria-label="Leadership & Team Introduction">
+        <div class="container about-hero-container">
+            <!-- Top Split: Headline & Narrative (Left) + Visual Showcase (Right) -->
+            <div class="about-hero-grid">
+                <!-- Left: Headline & Narrative -->
+                <div class="about-ref-left reveal">
+                    <span class="about-hero-eyebrow font-serif-italic">Meet Nepal's Youth Technology Pioneers</span>
+                    <h1 class="about-ref-title font-serif">
+                        The Leaders Behind <span class="text-gradient-crimson">RoboYuwa</span>
+                    </h1>
+                    <p class="about-ref-lead">
                         Empowering Nepal's youth through robotics, open-source hardware, and hands-on STEM education. Our multidisciplinary leadership unites engineering pioneers, legal strategists, creative designers, and visionary youth advocates across all seven provinces.
                     </p>
-                    <a href="#teamGrid" class="btn-outline-pill">
-                        <span>Meet All Members</span>
-                        <i class="fa-solid fa-arrow-down" aria-hidden="true" style="font-size: 0.8rem;"></i>
-                    </a>
+                    <div class="about-ref-hero-actions">
+                        <a href="#teamDirectory" class="btn btn-pill-crimson">
+                            <span>Meet The Leaders</span>
+                            <i class="fa-solid fa-arrow-down" aria-hidden="true"></i>
+                        </a>
+                        <a href="membership.html" class="btn-outline-clean">
+                            <span>Join As Member</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right: Large Chamfered Visual + Rotating Circular Badge -->
+                <div class="about-ref-right reveal delay-1">
+                    <div class="about-ref-visual-frame">
+                        <div class="about-ref-visual-media">
+                            <img src="assets/group photo.jpeg" alt="RoboYuwa executive leadership and core team members in Nepal"
+                                class="about-ref-visual-img" style="object-position: center 30%;" loading="eager" decoding="async">
+                        </div>
+
+                        <!-- Rotating Circular Badge with Curving Text & Gold Arrow -->
+                        <div class="about-circular-badge-wrap" aria-hidden="true"
+                            title="RoboYuwa Nepal &bull; Leadership &bull; Est. 2024">
+                            <svg class="circular-text-svg" viewBox="0 0 160 160">
+                                <path id="badgeCirclePath"
+                                    d="M 80, 80 m -58, 0 a 58,58 0 1,1 116,0 a 58,58 0 1,1 -116,0" fill="none" />
+                                <text class="circular-text">
+                                    <textPath href="#badgeCirclePath" textLength="345" lengthAdjust="spacing">
+                                        &bull; ROBOYUWA &bull; LEADERSHIP &bull; NEPAL &bull;
+                                    </textPath>
+                                </text>
+                            </svg>
+                            <div class="circular-badge-center">
+                                <i class="fa-solid fa-arrow-up-right"></i>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
+            <!-- Bottom Deck: Integrated Manifesto & 4-Metric Counters -->
+            <div class="about-hero-deck reveal delay-2">
+                <!-- Manifesto Card (Left) -->
+                <div class="about-deck-manifesto">
+                    <div class="deck-card-inner">
+                        <div class="manifesto-eyebrow">
+                            <span class="eyebrow-square" aria-hidden="true"></span>
+                            <span>Our Leadership Commitment</span>
+                            <span class="manifesto-eyebrow-line" aria-hidden="true"></span>
+                        </div>
+                        <p class="manifesto-statement font-serif">
+                            At RoboYuwa, leadership is driven by service, innovation, and integrity. We govern with <span class="manifesto-highlight">constitutional transparency</span>, <span class="manifesto-faded">fostering equal access to hands-on hardware engineering, national competitions, and community mentorship for every young mind in Nepal.</span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 4-Metric Impact Counters (Right) -->
+                <div class="about-deck-stats">
+                    <div class="deck-card-inner">
+                        <div class="about-stat-item">
+                            <div class="stat-big-num font-serif">12</div>
+                            <div class="stat-sub-label">Leaders &amp; Board</div>
+                        </div>
+                        <div class="about-stat-item">
+                            <div class="stat-big-num font-serif">5</div>
+                            <div class="stat-sub-label">Executive Officers</div>
+                        </div>
+                        <div class="about-stat-item">
+                            <div class="stat-big-num font-serif">5</div>
+                            <div class="stat-sub-label">Department Heads</div>
+                        </div>
+                        <div class="about-stat-item">
+                            <div class="stat-big-num font-serif">7</div>
+                            <div class="stat-sub-label">Provinces Represented</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section Pulse Divider Line -->
+        <div class="section-pulse-divider" aria-hidden="true">
+            <div class="pulse-line pulse-left"></div>
+            <svg class="pulse-peak-svg" viewBox="0 0 38 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <polyline points="0,18 19,4 38,18" />
+            </svg>
+            <div class="pulse-line pulse-right"></div>
+        </div>
+    </section>
+
+    <!-- =====================================================================
+         2. TEAM DIRECTORY & MEMBERS GRID
+         ===================================================================== -->
+    <section class="team-directory-section" id="teamDirectory" aria-label="RoboYuwa Team Directory">
+        <div class="container">
             <!-- Team Category Filter Navigation -->
             <div class="team-filter-nav reveal delay-1" id="teamFilterNav" role="tablist" aria-label="Team category filters">
                 <button type="button" class="team-filter-btn active" data-filter="all" role="tab" aria-selected="true">
@@ -547,6 +636,7 @@
             </div>
         </div>
     </section>
+</main>
     <!-- Footer (Executive High-Tech Minimalist Layout) -->
     <footer class="footer" id="footer">
         <!-- Tri-Color Brand Top Accent Line -->

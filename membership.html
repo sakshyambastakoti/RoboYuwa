@@ -371,21 +371,25 @@
         /* ---- WHO CAN JOIN (ELIGIBILITY) SECTION ---- */
         .mem-eligibility {
             position: relative;
-            background: #08090C;
-            padding: clamp(4.5rem, 8vh, 6.5rem) 0;
+            background: radial-gradient(circle at 15% 20%, rgba(229, 152, 25, 0.12) 0%, transparent 45%),
+                        radial-gradient(circle at 85% 75%, rgba(229, 37, 37, 0.06) 0%, transparent 40%),
+                        linear-gradient(180deg, #FFFDF8 0%, #FFF8EC 50%, #FFFDF9 100%);
+            padding: clamp(5rem, 8.5vh, 7rem) 0;
             overflow: hidden;
+            transition: background 0.35s ease;
         }
         .mem-eligibility-bg {
             position: absolute;
             inset: 0;
-            background: radial-gradient(ellipse 70% 80% at 50% 45%, rgba(229, 37, 37, 0.14) 0%, transparent 65%);
+            background: radial-gradient(ellipse 70% 80% at 50% 30%, rgba(229, 152, 25, 0.14) 0%, transparent 60%);
             z-index: 0;
+            pointer-events: none;
         }
         .mem-eligibility-grid-lines {
             position: absolute;
             inset: 0;
-            background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-                              linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-image: linear-gradient(rgba(229, 152, 25, 0.08) 1px, transparent 1px),
+                              linear-gradient(90deg, rgba(229, 152, 25, 0.08) 1px, transparent 1px);
             background-size: 48px 48px;
             z-index: 0;
             pointer-events: none;
@@ -397,97 +401,119 @@
             margin: 0 auto;
             padding: 0 1.5rem;
         }
-        .mem-eligibility .sec-title { color: #FFFFFF; }
-        .mem-eligibility .sec-desc-lead { color: rgba(255, 255, 255, 0.65); }
+        .mem-eligibility .sec-eyebrow {
+            color: #8D5B06;
+            font-weight: 700;
+        }
+        .mem-eligibility .sec-title {
+            color: #0F172A;
+            font-family: var(--font-serif);
+            font-size: clamp(2rem, 3.5vw, 2.75rem);
+            font-weight: 800;
+        }
+        .mem-eligibility .sec-desc-lead {
+            color: #475569;
+            font-size: 1.05rem;
+            max-width: 620px;
+            margin: 0.75rem auto 0;
+        }
         .eligibility-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: clamp(1.4rem, 2.5vw, 1.8rem);
+            gap: clamp(1.4rem, 2.5vw, 2rem);
         }
         .eligibility-chassis {
             position: relative;
-            padding: 1.5px;
-            clip-path: polygon(20px 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%, 0 20px);
-            background: rgba(255, 255, 255, 0.08);
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            padding: 2px;
+            clip-path: polygon(22px 0, 100% 0, 100% calc(100% - 22px), calc(100% - 22px) 100%, 0 100%, 0 22px);
+            background: linear-gradient(145deg, rgba(229, 152, 25, 0.45) 0%, rgba(229, 37, 37, 0.25) 50%, rgba(15, 23, 42, 0.12) 100%);
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
             display: flex;
+            box-shadow: 0 10px 30px rgba(229, 152, 25, 0.08), 0 2px 8px rgba(0, 0, 0, 0.03);
         }
         .eligibility-chassis:hover {
-            transform: translateY(-4px);
-            background: linear-gradient(135deg, rgba(229, 37, 37, 0.65) 0%, rgba(229, 152, 25, 0.4) 100%);
-            box-shadow: 0 16px 45px rgba(0, 0, 0, 0.5), 0 0 30px rgba(229, 37, 37, 0.15);
+            transform: translateY(-6px);
+            background: linear-gradient(135deg, var(--ry-amber) 0%, var(--ry-crimson) 100%);
+            box-shadow: 0 20px 48px rgba(229, 152, 25, 0.22), 0 4px 14px rgba(229, 37, 37, 0.12);
         }
         .eligibility-card {
             width: 100%;
-            background: #0E1118;
-            clip-path: polygon(19px 0, 100% 0, 100% calc(100% - 19px), calc(100% - 19px) 100%, 0 100%, 0 19px);
-            padding: clamp(1.8rem, 2.8vw, 2.2rem);
+            background: #FFFFFF;
+            clip-path: polygon(20px 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%, 0 20px);
+            padding: clamp(2rem, 3vw, 2.5rem);
             display: flex;
-            gap: 1.4rem;
+            gap: 1.5rem;
             align-items: flex-start;
             box-sizing: border-box;
+            transition: background 0.35s ease;
         }
         .elig-icon {
-            width: 52px;
-            height: 52px;
+            width: 54px;
+            height: 54px;
             flex-shrink: 0;
-            background: rgba(229, 37, 37, 0.14);
-            border: 1px solid rgba(229, 37, 37, 0.28);
-            clip-path: polygon(10px 0, calc(100% - 10px) 0, 100% 10px, 100% calc(100% - 10px), calc(100% - 10px) 100%, 10px 100%, 0 calc(100% - 10px), 0 10px);
+            background: rgba(229, 152, 25, 0.12);
+            border: 1.5px solid rgba(229, 152, 25, 0.32);
+            clip-path: polygon(11px 0, calc(100% - 11px) 0, 100% 11px, 100% calc(100% - 11px), calc(100% - 11px) 100%, 11px 100%, 0 calc(100% - 11px), 0 11px);
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #FF4040;
-            font-size: 1.25rem;
-            transition: transform 0.3s ease;
+            color: #B46E06;
+            font-size: 1.35rem;
+            transition: transform 0.35s ease, background 0.35s ease, border-color 0.35s ease;
         }
         .eligibility-chassis:nth-child(2) .elig-icon {
-            background: rgba(229, 152, 25, 0.14);
-            border-color: rgba(229, 152, 25, 0.3);
-            color: var(--ry-amber);
+            background: rgba(229, 37, 37, 0.1);
+            border-color: rgba(229, 37, 37, 0.28);
+            color: var(--ry-crimson);
         }
         .eligibility-chassis:nth-child(3) .elig-icon {
-            background: rgba(55, 104, 86, 0.18);
-            border-color: rgba(55, 104, 86, 0.35);
-            color: #52B788;
+            background: rgba(55, 104, 86, 0.12);
+            border-color: rgba(55, 104, 86, 0.3);
+            color: #2C6B52;
+        }
+        .eligibility-chassis:nth-child(4) .elig-icon {
+            background: rgba(30, 58, 138, 0.08);
+            border-color: rgba(30, 58, 138, 0.24);
+            color: #1E3A8A;
         }
         .eligibility-chassis:hover .elig-icon {
-            transform: scale(1.08);
+            transform: scale(1.1) rotate(-3deg);
         }
         .elig-title {
             font-family: var(--font-serif);
-            font-size: 1.2rem;
+            font-size: 1.25rem;
             font-weight: 700;
-            color: #FFFFFF;
-            margin-bottom: 0.45rem;
+            color: #0F172A;
+            margin-bottom: 0.5rem;
             letter-spacing: -0.01em;
+            line-height: 1.25;
         }
         .elig-desc {
-            font-size: 0.88rem;
+            font-size: 0.92rem;
             line-height: 1.68;
-            color: rgba(255, 255, 255, 0.65);
+            color: #475569;
         }
         .elig-tags {
             display: flex;
             flex-wrap: wrap;
             gap: 8px;
-            margin-top: 1rem;
+            margin-top: 1.15rem;
         }
         .elig-tag {
-            padding: 0.32rem 0.78rem;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.12);
+            padding: 0.34rem 0.82rem;
+            background: rgba(229, 152, 25, 0.08);
+            border: 1px solid rgba(229, 152, 25, 0.22);
             clip-path: polygon(6px 0, 100% 0, 100% calc(100% - 6px), calc(100% - 6px) 100%, 0 100%, 0 6px);
-            font-size: 0.74rem;
+            font-size: 0.76rem;
             font-weight: 700;
-            letter-spacing: 0.04em;
-            color: rgba(255, 255, 255, 0.85);
+            letter-spacing: 0.03em;
+            color: #8D5B06;
             transition: all 0.25s ease;
         }
         .eligibility-chassis:hover .elig-tag {
-            border-color: rgba(229, 37, 37, 0.35);
-            background: rgba(229, 37, 37, 0.1);
-            color: #FFB3B3;
+            border-color: rgba(229, 37, 37, 0.32);
+            background: rgba(229, 37, 37, 0.08);
+            color: var(--ry-crimson);
         }
 
         /* ---- FULL APPLICATION FORM SECTION ---- */
@@ -837,6 +863,49 @@
         body:not(.light-theme) .benefit-desc,
         body.dark-theme .benefit-desc {
             color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* Eligibility Criteria Dark Theme */
+        body:not(.light-theme) .mem-eligibility,
+        body.dark-theme .mem-eligibility {
+            background: radial-gradient(circle at 15% 20%, rgba(229, 152, 25, 0.1) 0%, transparent 45%),
+                        radial-gradient(circle at 85% 75%, rgba(229, 37, 37, 0.08) 0%, transparent 40%),
+                        #0B0E17;
+        }
+        body:not(.light-theme) .mem-eligibility .sec-eyebrow,
+        body.dark-theme .mem-eligibility .sec-eyebrow {
+            color: #F5A623;
+        }
+        body:not(.light-theme) .mem-eligibility .sec-title,
+        body.dark-theme .mem-eligibility .sec-title {
+            color: #FFFFFF;
+        }
+        body:not(.light-theme) .mem-eligibility .sec-desc-lead,
+        body.dark-theme .mem-eligibility .sec-desc-lead {
+            color: rgba(255, 255, 255, 0.68);
+        }
+        body:not(.light-theme) .eligibility-chassis,
+        body.dark-theme .eligibility-chassis {
+            background: linear-gradient(145deg, rgba(229, 152, 25, 0.5) 0%, rgba(229, 37, 37, 0.3) 50%, rgba(255, 255, 255, 0.1) 100%);
+            box-shadow: 0 16px 45px rgba(0, 0, 0, 0.5);
+        }
+        body:not(.light-theme) .eligibility-card,
+        body.dark-theme .eligibility-card {
+            background: #111522;
+        }
+        body:not(.light-theme) .elig-title,
+        body.dark-theme .elig-title {
+            color: #FFFFFF;
+        }
+        body:not(.light-theme) .elig-desc,
+        body.dark-theme .elig-desc {
+            color: rgba(255, 255, 255, 0.68);
+        }
+        body:not(.light-theme) .elig-tag,
+        body.dark-theme .elig-tag {
+            background: rgba(255, 255, 255, 0.06);
+            border-color: rgba(255, 255, 255, 0.15);
+            color: rgba(255, 255, 255, 0.85);
         }
 
         /* Application Form Dark Theme */

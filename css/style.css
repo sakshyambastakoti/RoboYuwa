@@ -8011,6 +8011,22 @@ body:not(.light-theme) .team-hero-ref {
     background: var(--ry-dark-bg);
 }
 
+/* Team Directory & Grid Section */
+.team-directory-section {
+    position: relative;
+    padding: clamp(60px, 7vw, 90px) 0 clamp(80px, 9vw, 110px);
+    background: #FFFFFF;
+}
+
+body:not(.light-theme) .team-directory-section {
+    background: var(--ry-dark-bg);
+}
+
+.team-directory-section .team-filter-nav {
+    justify-content: center;
+    margin-bottom: clamp(2.5rem, 5vw, 3.8rem);
+}
+
 .team-hero-grid {
     display: grid;
     grid-template-columns: 1.15fr 0.85fr;

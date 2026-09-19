@@ -243,17 +243,9 @@ body.dark-theme .section-pulse-divider {
     transform: rotate(180deg);
 }
 
-/* Left Vertical Accent Notch Marker */
+/* Left Vertical Accent Notch Marker (Disabled/Hidden) */
 .section-pulse-divider .pulse-marker {
-    position: absolute;
-    left: clamp(2rem, 6vw, 5rem);
-    bottom: -6px;
-    width: 3.5px;
-    height: 14px;
-    background-color: var(--pulse-divider-color);
-    border-radius: 1px;
-    z-index: 2;
-    transition: background-color 0.3s ease;
+    display: none !important;
 }
 
 .section-pulse-divider .pulse-line {

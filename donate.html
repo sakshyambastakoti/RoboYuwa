@@ -16,88 +16,135 @@
            DONATE PAGE — Aligned with RoboYuwa Design System
            ===================================================================== */
 
-        /* ---- Hero ---- */
+        /* ====================================================================
+           DONATE HERO — White / Light Design (matches reference image)
+           ==================================================================== */
+        /* ============================================================
+           DONATE HERO — Full single-screen fit (100dvh)
+           ============================================================ */
         .donate-hero-ref {
             position: relative;
             width: 100%;
-            min-height: 100vh;
+            height: 100dvh;           /* fills exactly one screen */
+            min-height: 560px;        /* safety floor */
             display: flex;
-            align-items: center;
+            flex-direction: column;
+            justify-content: flex-start;
+            background: #FAFBFC;
+            padding-top: var(--navbar-total-height, 92px);
             overflow: hidden;
-            background: #08090C;
-            padding: 140px 0 80px;
+            transition: background 0.35s ease;
+            box-sizing: border-box;
         }
 
-        .donate-hero-bg-img {
+        body:not(.light-theme) .donate-hero-ref,
+        body.dark-theme .donate-hero-ref {
+            background: #090B0F;
+        }
+
+        /* Dot-grid texture */
+        .donate-hero-ref::before {
+            content: '';
             position: absolute;
             inset: 0;
-            background: url('assets/workshop (2).png') center / cover no-repeat;
-            opacity: 0.12;
+            background-image: radial-gradient(circle, rgba(0,0,0,0.055) 1px, transparent 1px);
+            background-size: 28px 28px;
             z-index: 0;
-            transition: opacity 0.4s ease;
+            pointer-events: none;
         }
 
-        .donate-hero-overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(135deg, rgba(8,9,12,0.97) 0%, rgba(8,9,12,0.82) 60%, rgba(163,16,16,0.18) 100%);
-            z-index: 1;
+        body:not(.light-theme) .donate-hero-ref::before,
+        body.dark-theme .donate-hero-ref::before {
+            background-image: radial-gradient(circle, rgba(255,255,255,0.04) 1px, transparent 1px);
         }
 
-        .donate-hero-grid-lines {
+        /* Bottom warm glow */
+        .donate-hero-ref::after {
+            content: '';
             position: absolute;
-            inset: 0;
-            background-image:
-                linear-gradient(rgba(229,37,37,0.06) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(229,37,37,0.06) 1px, transparent 1px);
-            background-size: 54px 54px;
-            z-index: 1;
-            opacity: 0.55;
+            bottom: 0; left: 50%;
+            transform: translateX(-50%);
+            width: 80%; height: 35%;
+            background: radial-gradient(ellipse 80% 100% at 50% 100%, rgba(229,152,25,0.09) 0%, transparent 70%);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        body:not(.light-theme) .donate-hero-ref::after,
+        body.dark-theme .donate-hero-ref::after {
+            background: radial-gradient(ellipse 80% 100% at 50% 100%, rgba(229,37,37,0.13) 0%, transparent 70%);
         }
 
         .donate-hero-ref .container {
             position: relative;
             z-index: 2;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
         }
 
-        .donate-hero-inner {
-            max-width: 760px;
-        }
-
-        .donate-hero-eyebrow {
-            display: inline-flex;
+        /* ---- Breadcrumb ---- */
+        .donate-breadcrumb {
+            display: flex;
             align-items: center;
-            gap: 9px;
+            justify-content: center;
+            gap: 7px;
             font-family: var(--font-sans);
-            font-size: 0.82rem;
-            font-weight: 700;
-            letter-spacing: 1.6px;
-            color: var(--ry-amber);
-            text-transform: uppercase;
-            margin-bottom: 1.2rem;
+            font-size: 0.78rem;
+            font-weight: 500;
+            color: #94A3B8;
+            margin-bottom: clamp(0.55rem, 1.2vh, 1.1rem);
+            flex-shrink: 0;
         }
 
-        .donate-hero-eyebrow .eyebrow-square {
-            width: 10px;
-            height: 10px;
-            border-radius: 2px;
-            background: linear-gradient(135deg, var(--ry-amber) 0%, var(--ry-amber-hover) 100%);
-            box-shadow: 0 2px 8px rgba(229, 152, 25, 0.45);
-            display: inline-block;
+        .donate-breadcrumb a {
+            color: #94A3B8;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .donate-breadcrumb a:hover { color: var(--ry-crimson); }
+
+        .donate-breadcrumb .bc-sep { color: #CBD5E1; }
+
+        .donate-breadcrumb .bc-current {
+            color: #1E293B;
+            font-weight: 600;
+        }
+
+        body:not(.light-theme) .donate-breadcrumb .bc-current,
+        body.dark-theme .donate-breadcrumb .bc-current {
+            color: #E2E8F0;
+        }
+
+        /* ---- Hero Text Block (centered) ---- */
+        .donate-hero-text-center {
+            text-align: center;
+            max-width: 680px;
+            margin: 0 auto;
             flex-shrink: 0;
         }
 
         .donate-hero-title {
             font-family: var(--font-serif);
-            font-size: clamp(2.6rem, 5.5vw, 4.5rem);
+            font-size: clamp(1.9rem, 3.8vw, 3.4rem);
             font-weight: 800;
-            line-height: 1.1;
-            color: #FFFFFF;
-            letter-spacing: -0.025em;
-            margin-bottom: 1.4rem;
+            line-height: 1.12;
+            color: #101217;
+            letter-spacing: -0.03em;
+            margin-bottom: clamp(0.55rem, 1.2vh, 1rem);
         }
 
-        .donate-hero-title .gradient-line {
+        body:not(.light-theme) .donate-hero-title,
+        body.dark-theme .donate-hero-title { color: #FFFFFF; }
+
+        .donate-hero-title .hero-title-muted {
+            color: #D48813;
+            -webkit-text-fill-color: #D48813;
+        }
+
+        body:not(.light-theme) .donate-hero-title .hero-title-muted,
+        body.dark-theme .donate-hero-title .hero-title-muted {
             background: linear-gradient(135deg, #FF4040 0%, #E59819 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -106,46 +153,258 @@
 
         .donate-hero-sub {
             font-family: var(--font-sans);
-            font-size: clamp(1rem, 1.2vw, 1.18rem);
-            line-height: 1.75;
-            color: rgba(255, 255, 255, 0.7);
-            max-width: 600px;
-            margin-bottom: 2.2rem;
+            font-size: clamp(0.88rem, 1vw, 1rem);
+            line-height: 1.7;
+            color: #64748B;
+            margin-bottom: clamp(0.9rem, 1.8vh, 1.5rem);
+            max-width: 560px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        .donate-hero-trust-badges {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-        }
+        body:not(.light-theme) .donate-hero-sub,
+        body.dark-theme .donate-hero-sub { color: rgba(255,255,255,0.62); }
 
-        .donate-trust-badge {
+        /* ---- CTA Button ---- */
+        .donate-hero-cta-btn {
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            padding: 7px 16px;
-            background: rgba(255, 255, 255, 0.06);
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            clip-path: polygon(12px 0, 100% 0, 100% 100%, 0 100%, 0 12px);
+            padding: 0.72rem 2.2rem;
+            background: linear-gradient(135deg, var(--ry-amber) 0%, #D48813 100%);
+            color: #FFFFFF;
+            font-family: var(--font-sans);
+            font-size: 0.92rem;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+            border: none;
+            border-radius: 50px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: transform 0.3s cubic-bezier(0.16,1,0.3,1), box-shadow 0.3s ease;
+            box-shadow: 0 6px 22px rgba(229, 152, 25, 0.4);
+            margin-bottom: clamp(1rem, 2.2vh, 2rem);
+        }
+
+        .donate-hero-cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 36px rgba(229, 152, 25, 0.55);
+        }
+
+        /* ---- 3-Image Staggered Row ---- */
+        .donate-hero-image-row {
+            display: grid;
+            grid-template-columns: 1fr 1.35fr 1fr;
+            gap: 1rem;
+            align-items: end;
+            flex: 1;          /* takes remaining vertical space */
+            min-height: 0;    /* allows flex child to shrink */
+            position: relative;
+            z-index: 1;
+        }
+
+        .dhi-frame {
+            position: relative;
+            overflow: hidden;
+            height: 100%;     /* fills the flex row's remaining height */
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), filter 0.5s ease;
+        }
+
+        /* Left: lower by 10% of its own height */
+        .dhi-frame.dhi-left {
+            clip-path: polygon(44px 0%, 100% 0%, 100% 100%, 0% 100%, 0% 44px);
+            border-radius: 0 18px 18px 18px;
+            margin-top: 12%;
+        }
+
+        /* Centre: tallest, no margin */
+        .dhi-frame.dhi-center {
+            clip-path: polygon(
+                50px 0%, calc(100% - 50px) 0%,
+                100% 50px, 100% 100%,
+                0% 100%, 0% 50px
+            );
+            border-radius: 18px;
+        }
+
+        /* Right: lower by 10% */
+        .dhi-frame.dhi-right {
+            clip-path: polygon(0% 0%, calc(100% - 44px) 0%, 100% 44px, 100% 100%, 0% 100%);
+            border-radius: 18px 0 18px 18px;
+            margin-top: 12%;
+        }
+
+        .dhi-frame:hover {
+            transform: translateY(-6px) scale(1.015);
+            filter: drop-shadow(0 16px 40px rgba(229, 152, 25, 0.2));
+        }
+
+        .dhi-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .dhi-frame:hover img { transform: scale(1.06); }
+
+        .dhi-frame::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, transparent 55%, rgba(229,152,25,0.1) 100%);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        @media (max-width: 768px) {
+            .donate-hero-ref {
+                height: auto;
+                padding-bottom: 2rem;
+            }
+            .donate-hero-ref .container {
+                height: auto;
+            }
+            .donate-hero-image-row {
+                grid-template-columns: 1fr;
+                gap: 0.8rem;
+                flex: none;
+            }
+            .dhi-frame { height: 220px; }
+            .dhi-frame.dhi-left,
+            .dhi-frame.dhi-right { margin-top: 0; }
+        }
+
+        /* ---- QR Pay Box ---- */
+        .qr-pay-box {
+            background: #0E111A;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-left: 3px solid var(--ry-amber);
+            clip-path: polygon(20px 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%, 0 20px);
+            padding: 1.3rem 1.5rem;
+        }
+
+        body.light-theme .qr-pay-box {
+            background: #0E111A;
+        }
+
+        .qr-pay-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-family: var(--font-sans);
+            font-size: 0.78rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--ry-amber);
+            margin-bottom: 1.1rem;
+        }
+
+        .qr-pay-body {
+            display: grid;
+            grid-template-columns: 130px 1fr;
+            gap: 1.2rem;
+            align-items: start;
+        }
+
+        /* QR image wrapper */
+        .qr-img-wrap {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .qr-img {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            display: block;
+            border-radius: 10px;
+            border: 3px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease;
+        }
+
+        .qr-img:hover {
+            transform: scale(1.06);
+            box-shadow: 0 8px 32px rgba(229, 152, 25, 0.35);
+        }
+
+        .qr-scan-label {
+            font-family: var(--font-sans);
+            font-size: 0.68rem;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.45);
+            text-align: center;
+            line-height: 1.4;
+        }
+
+        /* Bank detail rows inside QR box */
+        .qr-bank-details {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .qr-bank-details .bank-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            padding: 0.35rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .qr-bank-details .bank-row:last-of-type {
+            border-bottom: none;
+        }
+
+        .bank-label {
+            font-family: var(--font-sans);
+            font-size: 0.72rem;
+            color: rgba(255, 255, 255, 0.42);
+            font-weight: 500;
+        }
+
+        .bank-val {
             font-family: var(--font-sans);
             font-size: 0.8rem;
             font-weight: 600;
-            color: rgba(255, 255, 255, 0.82);
-            backdrop-filter: blur(8px);
-            transition: background 0.25s ease, border-color 0.25s ease;
+            color: #FFFFFF;
+            text-align: right;
+            max-width: 55%;
         }
 
-        .donate-trust-badge i {
+        .qr-tip {
+            font-family: var(--font-sans);
+            font-size: 0.72rem;
+            line-height: 1.5;
+            color: rgba(255, 255, 255, 0.38);
+            margin-top: 0.7rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 6px;
+        }
+
+        .qr-tip i {
             color: var(--ry-amber);
-            font-size: 0.78rem;
+            flex-shrink: 0;
+            margin-top: 2px;
         }
 
-        .donate-trust-badge:hover {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: rgba(229, 152, 25, 0.35);
+        @media (max-width: 500px) {
+            .qr-pay-body {
+                grid-template-columns: 1fr;
+            }
+            .qr-img-wrap {
+                flex-direction: row;
+                gap: 1rem;
+            }
         }
 
         /* ---- Impact Stats Strip ---- */
+
         .donate-impact-strip {
             background: #0D0F15;
             border-top: 1px solid rgba(255, 255, 255, 0.07);
@@ -1183,35 +1442,47 @@
          1. HERO SECTION
          ===================================================================== -->
     <section class="donate-hero-ref" aria-label="Donate to RoboYuwa">
-        <div class="donate-hero-bg-img" aria-hidden="true"></div>
-        <div class="donate-hero-overlay" aria-hidden="true"></div>
-        <div class="donate-hero-grid-lines" aria-hidden="true"></div>
         <div class="container">
-            <div class="donate-hero-inner">
-                <div class="donate-hero-eyebrow">
-                    <span class="eyebrow-square" aria-hidden="true"></span>
-                    <span>Support RoboYuwa</span>
-                </div>
+
+            <!-- Breadcrumb -->
+            <div class="donate-breadcrumb">
+                <i class="fa-light fa-house" style="font-size:0.75rem"></i>
+                <a href="index.html">Home</a>
+                <span class="bc-sep">/</span>
+                <span class="bc-current">Donate</span>
+            </div>
+
+            <!-- Centered Headline + CTA -->
+            <div class="donate-hero-text-center reveal">
                 <h1 class="donate-hero-title font-serif">
-                    Fuel Nepal's <span class="gradient-line">Next Generation</span><br>of Innovators
+                    Fuel Nepal's <span class="hero-title-muted">Next Generation</span><br>of Innovators
                 </h1>
                 <p class="donate-hero-sub">
                     Every contribution directly funds STEAM bootcamps, hardware kits, and scholarship pathways for underserved youth across all 7 provinces of Nepal.
                 </p>
-                <div class="donate-hero-trust-badges">
-                    <span class="donate-trust-badge"><i class="fa-light fa-shield-check"></i> 100% Transparent PAN Billing</span>
-                    <span class="donate-trust-badge"><i class="fa-light fa-scroll"></i> SWC Registered NGO</span>
-                    <span class="donate-trust-badge"><i class="fa-light fa-hand-holding-heart"></i> Youth-First Impact</span>
+                <a href="#donateFormCard" class="donate-hero-cta-btn">
+                    <i class="fa-light fa-heart"></i>
+                    <span>Donate Now</span>
+                </a>
+            </div>
+
+            <!-- 3 Staggered Chamfer Images -->
+            <div class="donate-hero-image-row reveal delay-1">
+                <!-- Left Image -->
+                <div class="dhi-frame dhi-left">
+                    <img src="assets/workshop.png" alt="RoboYuwa students in a hands-on workshop" loading="eager">
+                </div>
+
+                <!-- Centre Image (tallest) -->
+                <div class="dhi-frame dhi-center">
+                    <img src="assets/workshop (2).png" alt="Young engineers collaborating at a RoboYuwa bootcamp" loading="eager">
+                </div>
+
+                <!-- Right Image -->
+                <div class="dhi-frame dhi-right">
+                    <img src="assets/world robotics competion.png" alt="RoboYuwa team at a national robotics competition" loading="eager">
                 </div>
             </div>
-        </div>
-
-        <!-- Section Pulse Divider -->
-        <div class="section-pulse-divider" aria-hidden="true" style="position:absolute;bottom:0;left:0;right:0;">
-            <div class="pulse-marker"></div>
-            <div class="pulse-line pulse-left"></div>
-            <svg class="pulse-peak-svg" viewBox="0 0 38 20" fill="none" xmlns="http://www.w3.org/2000/svg"><polyline points="0,18 19,4 38,18" /></svg>
-            <div class="pulse-line pulse-right"></div>
         </div>
     </section>
 
@@ -1272,12 +1543,6 @@
                         <div class="form-inner-eyebrow">Make a Donation</div>
                         <h3 class="form-inner-title font-serif">Choose Your Amount</h3>
 
-                        <label class="form-field-label" style="margin-bottom:.55rem">Donation Frequency</label>
-                        <div class="freq-tabs" role="tablist" aria-label="Donation frequency">
-                            <button class="freq-tab active" role="tab" aria-selected="true" onclick="setFreq(this)">One-Time</button>
-                            <button class="freq-tab" role="tab" aria-selected="false" onclick="setFreq(this)">Monthly</button>
-                            <button class="freq-tab" role="tab" aria-selected="false" onclick="setFreq(this)">Annual</button>
-                        </div>
 
                         <label class="form-field-label">Select Amount (NPR)</label>
                         <div class="amount-grid" role="group" aria-label="Preset donation amounts">
@@ -1370,13 +1635,32 @@
                         </div>
                     </div>
 
-                    <div class="bank-transfer-box">
-                        <div class="bank-header"><i class="fa-light fa-building-columns"></i> Bank Transfer Details</div>
-                        <div class="bank-row"><span class="bank-label">Account Name</span><span class="bank-val">RoboYuwa Nepal</span></div>
-                        <div class="bank-row"><span class="bank-label">Bank</span><span class="bank-val">Nepal Investment Mega Bank</span></div>
-                        <div class="bank-row"><span class="bank-label">Account No.</span><span class="bank-val">080760010XXXX</span></div>
-                        <div class="bank-row"><span class="bank-label">PAN No.</span><span class="bank-val">6XXXXXXX</span></div>
-                        <div class="bank-row"><span class="bank-label">Reference</span><span class="bank-val">DONATION-[Your Name]</span></div>
+                    <!-- QR Code Pay Section -->
+                    <div class="qr-pay-box">
+                        <div class="qr-pay-header">
+                            <i class="fa-light fa-qrcode"></i>
+                            <span>Scan &amp; Pay Directly</span>
+                        </div>
+                        <div class="qr-pay-body">
+                            <!-- QR Image -->
+                            <div class="qr-img-wrap">
+                                <img src="assets/bank_qr_roboyuwa.jpg"
+                                     alt="RoboYuwa Nepal — Nepal Investment Mega Bank QR Code for direct bank transfer"
+                                     class="qr-img" loading="lazy">
+                                <div class="qr-scan-label">
+                                    <i class="fa-light fa-camera" style="margin-right:5px"></i>Scan with your banking app
+                                </div>
+                            </div>
+                            <!-- Bank Details -->  
+                            <div class="qr-bank-details">
+                                <div class="bank-row"><span class="bank-label">Account Name</span><span class="bank-val">RoboYuwa Nepal</span></div>
+                                <div class="bank-row"><span class="bank-label">Bank</span><span class="bank-val">Nepal Investment Mega Bank</span></div>
+                                <div class="bank-row"><span class="bank-label">Account No.</span><span class="bank-val">080760010XXXX</span></div>
+                                <div class="bank-row"><span class="bank-label">PAN No.</span><span class="bank-val">6XXXXXXX</span></div>
+                                <div class="bank-row"><span class="bank-label">Reference</span><span class="bank-val">DONATION-[Your Name]</span></div>
+                                <p class="qr-tip"><i class="fa-light fa-circle-info"></i> Screenshot the QR or note account details, then pay via mobile banking or counter deposit.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

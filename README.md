@@ -14,7 +14,8 @@ Static website for RoboYuwa, a youth-driven NGO in Nepal focused on robotics, re
 
 - `index.html`
 - `about.html`
-- `programs.html`
+- `membership.html`
+- `donate.html`
 - `team.html`
 - `contact.html`
 

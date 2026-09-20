@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta name="google-site-verification" content="MkuQVyF0wc08H00SCw7nkHp0nyXMAp4l_eoOkSgNd4I" />
     <link rel="icon" type="image/jpeg" href="assets/roboyuwa-logo-BLCCIWUS.jpg" />
     <title>Donate | RoboYuwa | Fuel Youth Innovation in Nepal</title>
@@ -451,12 +451,16 @@
         }
 
         .amount-btn {
-            padding: clamp(0.42rem, 0.75vh, 0.52rem) 0.35rem;
+            padding: clamp(0.5rem, 0.9vh, 0.65rem) 0.4rem;
+            min-height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             background: rgba(0, 0, 0, 0.035);
             border: 1.5px solid rgba(16, 18, 23, 0.1);
             clip-path: polygon(6px 0, 100% 0, 100% 100%, 0 100%, 0 6px);
             font-family: var(--font-sans);
-            font-size: clamp(0.78rem, 0.86vw, 0.84rem);
+            font-size: clamp(0.82rem, 0.88vw, 0.88rem);
             font-weight: 700;
             color: #1E293B;
             cursor: pointer;
@@ -943,13 +947,34 @@
             }
             .amount-grid {
                 grid-template-columns: repeat(3, 1fr);
+                gap: 8px;
             }
             .donor-fields {
                 grid-template-columns: 1fr;
+                gap: 8px;
+            }
+            .field-input,
+            .amount-custom-input {
+                font-size: 1rem;
+                min-height: 44px;
+                padding: 0.65rem 0.85rem;
+            }
+            .amount-custom-input {
+                padding-left: 2.2rem;
+            }
+            .donate-submit-btn {
+                min-height: 48px;
+                font-size: 1rem;
             }
             .qr-pay-body {
                 grid-template-columns: 1fr;
                 text-align: center;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .amount-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
         }
 
@@ -1338,6 +1363,9 @@
                     <li><a href="team.html" class="nav-item">Our Team</a></li>
                     <li><a href="contact.html" class="nav-item">Contact</a></li>
                 </ul>
+                <div class="nav-mobile-cta">
+                    <a href="donate.html" class="btn btn-pill-amber">Donate Now</a>
+                </div>
             </nav>
             <div class="nav-actions">
                 <button class="nav-search-btn" id="openSearchBtn" aria-label="Search" title="Search website"><i class="fa-light fa-magnifying-glass"></i></button>

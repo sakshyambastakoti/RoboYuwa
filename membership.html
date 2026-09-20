@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta name="google-site-verification" content="MkuQVyF0wc08H00SCw7nkHp0nyXMAp4l_eoOkSgNd4I" />
     <link rel="icon" type="image/jpeg" href="assets/roboyuwa-logo-BLCCIWUS.jpg" />
     <title>Membership | RoboYuwa | Join Nepal's Premier Youth Robotics Community</title>
@@ -599,7 +599,8 @@
             border: 1.5px solid rgba(16, 18, 23, 0.12);
             border-radius: 6px;
             font-family: var(--font-sans);
-            font-size: 0.92rem;
+            font-size: 1rem;
+            min-height: 46px;
             color: #101217;
             background: #F8FAFC;
             outline: none;
@@ -633,6 +634,7 @@
             align-items: center;
             gap: 11px;
             padding: 0.75rem 1rem;
+            min-height: 44px;
             background: #F8FAFC;
             border: 1.5px solid rgba(16, 18, 23, 0.08);
             border-radius: 6px;
@@ -1050,7 +1052,30 @@
             .apply-form-card {
                 padding: 1.8rem 1.3rem;
             }
+        }
 
+        @media (max-width: 576px) {
+            .mem-tiers,
+            .mem-benefits,
+            .mem-eligibility,
+            .mem-apply,
+            .mem-stories {
+                padding: 3.5rem 0;
+            }
+            .sec-title {
+                font-size: clamp(1.6rem, 5.5vw, 2.1rem);
+            }
+            .apply-form-card {
+                padding: 1.4rem 1rem;
+            }
+            .tier-card {
+                padding: 1.8rem 1.25rem;
+            }
+            .apply-submit {
+                width: 100%;
+                justify-content: center;
+                min-height: 48px;
+            }
         }
     </style>
 </head>
@@ -1092,6 +1117,9 @@
                     <li><a href="team.html" class="nav-item">Our Team</a></li>
                     <li><a href="contact.html" class="nav-item">Contact</a></li>
                 </ul>
+                <div class="nav-mobile-cta">
+                    <a href="donate.html" class="btn btn-pill-amber">Donate Now</a>
+                </div>
             </nav>
             <div class="nav-actions">
                 <button class="nav-search-btn" id="openSearchBtn" aria-label="Search"><i class="fa-light fa-magnifying-glass"></i></button>

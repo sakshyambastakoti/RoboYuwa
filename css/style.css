@@ -101,6 +101,10 @@ ul {
     list-style: none;
 }
 
+picture {
+    display: contents;
+}
+
 img {
     max-width: 100%;
     height: auto;
@@ -9555,9 +9559,42 @@ body:not(.light-theme) .syllabus-table th {
     background:
         radial-gradient(ellipse 65% 70% at 85% 30%, rgba(229, 37, 37, 0.14) 0%, transparent 60%),
         radial-gradient(ellipse 50% 60% at 15% 75%, rgba(229, 152, 25, 0.08) 0%, transparent 55%),
-        url('../assets/workshop.png') center/cover no-repeat;
+        url('../assets/optimized/bg-workshop-1047w.jpg') center/cover no-repeat;
+    background-image:
+        radial-gradient(ellipse 65% 70% at 85% 30%, rgba(229, 37, 37, 0.14) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 60% at 15% 75%, rgba(229, 152, 25, 0.08) 0%, transparent 55%),
+        -webkit-image-set(
+            url('../assets/optimized/bg-workshop-1047w.avif') type('image/avif'),
+            url('../assets/optimized/bg-workshop-1047w.webp') type('image/webp'),
+            url('../assets/optimized/bg-workshop-1047w.jpg') type('image/jpeg')
+        );
+    background-image:
+        radial-gradient(ellipse 65% 70% at 85% 30%, rgba(229, 37, 37, 0.14) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 60% at 15% 75%, rgba(229, 152, 25, 0.08) 0%, transparent 55%),
+        image-set(
+            url('../assets/optimized/bg-workshop-1047w.avif') type('image/avif'),
+            url('../assets/optimized/bg-workshop-1047w.webp') type('image/webp'),
+            url('../assets/optimized/bg-workshop-1047w.jpg') type('image/jpeg')
+        );
     opacity: 0.18;
     z-index: 0;
+}
+
+@media (max-width: 768px) {
+    .legal-hero-bg {
+        background:
+            radial-gradient(ellipse 65% 70% at 85% 30%, rgba(229, 37, 37, 0.14) 0%, transparent 60%),
+            radial-gradient(ellipse 50% 60% at 15% 75%, rgba(229, 152, 25, 0.08) 0%, transparent 55%),
+            url('../assets/optimized/bg-workshop-768w.jpg') center/cover no-repeat;
+        background-image:
+            radial-gradient(ellipse 65% 70% at 85% 30%, rgba(229, 37, 37, 0.14) 0%, transparent 60%),
+            radial-gradient(ellipse 50% 60% at 15% 75%, rgba(229, 152, 25, 0.08) 0%, transparent 55%),
+            image-set(
+                url('../assets/optimized/bg-workshop-768w.avif') type('image/avif'),
+                url('../assets/optimized/bg-workshop-768w.webp') type('image/webp'),
+                url('../assets/optimized/bg-workshop-768w.jpg') type('image/jpeg')
+            );
+    }
 }
 
 .legal-hero-overlay {

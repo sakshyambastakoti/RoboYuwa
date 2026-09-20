@@ -10454,6 +10454,1331 @@ body:not(.light-theme) .syllabus-table th {
     }
 }
 
+/* ==========================================================================
+   COMPREHENSIVE MOBILE RESPONSIVENESS OVERHAUL
+   RoboYuwa — All Pages, All Breakpoints
+   Strategy: Consolidated responsive block for maintainability.
+   ========================================================================== */
+
+/* -------------------------------------------------------------
+   Global Base Fixes (Applied at all sizes)
+   ------------------------------------------------------------- */
+
+/* Prevent iOS tap highlight */
+a, button, input, select, textarea, [role="button"] {
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* Ensure minimum touch targets on all interactive elements */
+.btn, .btn-primary, .btn-secondary, .btn-primary-outline,
+.btn-pill-amber, .btn-pill-crimson, .btn-hero-pill, .btn-hero-ghost,
+.btn-cta-primary, .btn-cta-secondary, .btn-brand-submit,
+.btn-about-contact, .btn-ref-pill,
+.slider-arrow, .testi-nav-btn, .testi-dot, .hero-dot,
+.team-filter-btn, .legal-nav-tab, .btn-nav-action,
+.nav-search-btn, .theme-toggle-btn, .mobile-toggle,
+.top-social-link, .team-social-link {
+    touch-action: manipulation;
+}
+
+/* Prevent fixed-width overflow globally */
+.container, .about-showcase-container, .initiatives-container,
+.charter-container, .testimonials-container, .cta-container,
+.home-contact-container, .legal-main .container,
+.contact-exec-container {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+/* Fluid images and media */
+img, video, svg, iframe, object, embed {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Fix hero title-line nowrap causing overflow - make responsive */
+.title-line {
+    white-space: normal;
+}
+
+/* Ensure smooth scrolling with reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+    .hero-marquee .marquee-track {
+        animation: none !important;
+    }
+    .impactCardFloat {
+        animation: none !important;
+    }
+}
+
+/* Safe area padding for notched devices */
+.header {
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+}
+
+.footer {
+    padding-bottom: env(safe-area-inset-bottom);
+}
+
+/* Use dvh where supported for hero height */
+@supports (height: 100dvh) {
+    .hero {
+        height: 100dvh;
+    }
+}
+
+/* -------------------------------------------------------------
+   Breakpoint: max-width 1200px (Narrow Desktop / Wide Tablet)
+   ------------------------------------------------------------- */
+@media (max-width: 1200px) {
+    .hero-container {
+        padding: 0 clamp(1.5rem, 5vw, 5rem);
+    }
+
+    .hero-slider-nav {
+        right: 3%;
+    }
+
+    .hero-impact-card {
+        padding: 1.1rem 2rem 1.1rem 1.6rem;
+    }
+
+    .impact-card-value {
+        font-size: 1.95rem;
+    }
+}
+
+/* -------------------------------------------------------------
+   Breakpoint: max-width 1024px (Tablets Landscape)
+   ------------------------------------------------------------- */
+@media (max-width: 1024px) {
+    .hero-slider-nav {
+        right: 2%;
+        gap: 0.6rem;
+    }
+
+    .slider-arrow {
+        width: 46px;
+        height: 46px;
+        font-size: 1rem;
+    }
+
+    .hero-impact-card {
+        padding: 1rem 1.8rem 1rem 1.4rem;
+        gap: 1rem;
+    }
+
+    .impact-card-label {
+        font-size: 0.76rem;
+    }
+
+    .impact-card-value {
+        font-size: 1.75rem;
+    }
+
+    /* Reduce section padding globally */
+    .section-padding {
+        padding: 4rem 0;
+    }
+}
+
+/* -------------------------------------------------------------
+   Breakpoint: max-width 768px (Tablets Portrait / Large Phones)
+   Major mobile transition point — hamburger menu shown
+   ------------------------------------------------------------- */
+@media (max-width: 768px) {
+
+    /* ---- Hero Section Overhaul ---- */
+    .hero {
+        min-height: 100vh;
+        min-height: 100dvh;
+    }
+
+    .hero-bg img {
+        left: 0;
+        object-position: 60% center;
+    }
+
+    .hero-bg .overlay {
+        background: linear-gradient(180deg,
+            rgba(6, 7, 10, 0.85) 0%,
+            rgba(6, 7, 10, 0.65) 30%,
+            rgba(6, 7, 10, 0.55) 50%,
+            rgba(6, 7, 10, 0.75) 100%);
+    }
+
+    .hero-content {
+        max-width: 100%;
+        padding-top: 90px;
+        padding-bottom: 100px;
+    }
+
+    .hero-eyebrow {
+        font-size: clamp(1.1rem, 4vw, 1.4rem);
+    }
+
+    .hero-title {
+        font-size: clamp(1.65rem, 6.5vw, 2.4rem);
+        line-height: 1.15;
+    }
+
+    .title-line {
+        display: inline;
+    }
+
+    .hero-desc {
+        font-size: 0.95rem;
+        line-height: 1.65;
+        max-width: 100%;
+        margin-bottom: 1.6rem;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+        width: 100%;
+    }
+
+    .btn-hero-pill {
+        padding: 0.82rem 1.8rem;
+        font-size: 0.95rem;
+        width: auto;
+    }
+
+    .btn-hero-ghost {
+        padding: 0.78rem 1.6rem;
+        font-size: 0.92rem;
+    }
+
+    /* Hero Slider Nav — Move to bottom-left on mobile */
+    .hero-slider-nav {
+        right: auto;
+        left: 1.5rem;
+        top: auto;
+        bottom: 55px;
+        transform: none;
+        gap: 0.5rem;
+    }
+
+    .slider-arrow {
+        width: 42px;
+        height: 42px;
+        font-size: 0.95rem;
+    }
+
+    /* Hero Impact Card — scale down */
+    .hero-impact-card {
+        bottom: 42px;
+        padding: 0.75rem 1.2rem 0.75rem 0.9rem;
+        border-top-left-radius: 16px;
+        gap: 0.7rem;
+    }
+
+    .impact-card-icon {
+        width: 32px;
+        height: 32px;
+    }
+
+    .impact-gift-svg {
+        width: 30px;
+        height: 30px;
+    }
+
+    .impact-card-label {
+        font-size: 0.68rem;
+        letter-spacing: 0.5px;
+    }
+
+    .impact-card-value {
+        font-size: 1.4rem;
+    }
+
+    /* Hero Marquee — smaller text */
+    .hero-marquee .marquee-item {
+        font-size: 0.72rem;
+        letter-spacing: 1px;
+    }
+
+    .hero-marquee .marquee-icon {
+        font-size: 0.9rem;
+    }
+
+    .hero-marquee .marquee-track {
+        gap: 1.2rem;
+        padding-right: 1.2rem;
+    }
+
+    /* ---- Navigation Enhancements ---- */
+    .nav-container {
+        gap: 0.8rem;
+    }
+
+    .logo-img, .logo img {
+        height: 40px;
+        width: 40px;
+    }
+
+    .brand-name {
+        font-size: 1.25rem;
+    }
+
+    .brand-tagline {
+        font-size: 0.62rem;
+        letter-spacing: 0.8px;
+    }
+
+    .nav-actions {
+        gap: 0.6rem;
+    }
+
+    .nav-actions .btn-pill-amber {
+        padding: 0.45rem 1rem;
+        font-size: 0.82rem;
+    }
+
+    .nav-search-btn,
+    .theme-toggle-btn {
+        width: 36px;
+        height: 36px;
+        font-size: 0.9rem;
+    }
+
+    /* Nav links dropdown — ensure full width and good spacing */
+    .nav-links.active {
+        max-height: 500px;
+        padding: 1.2rem 1.5rem 1.5rem;
+    }
+
+    .nav-links ul {
+        gap: 0.3rem;
+    }
+
+    .nav-links a.nav-item {
+        font-size: 1.05rem;
+        padding: 0.65rem 0;
+        display: block;
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+    }
+
+    /* ---- Global Section Adjustments ---- */
+    .section-padding {
+        padding: 3.5rem 0;
+    }
+
+    .section-title {
+        margin-bottom: 2rem;
+    }
+
+    /* ---- About Showcase (Home Page) ---- */
+    .about-showcase-section {
+        padding: clamp(3.5rem, 6vh, 5rem) 0;
+    }
+
+    .about-collage-grid {
+        max-width: 100%;
+    }
+
+    .card-top-left { height: 220px; }
+    .card-bottom-left { height: 165px; }
+    .card-top-right { height: 180px; }
+    .card-bottom-right { height: 200px; }
+
+    .about-dual-features {
+        grid-template-columns: 1fr;
+        gap: 1.4rem;
+    }
+
+    .about-stats-ribbon {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+        padding: 1.6rem;
+    }
+
+    /* ---- Initiatives Gallery (Home Page) ---- */
+    .initiatives-gallery-grid {
+        grid-template-columns: 1fr;
+        max-width: 480px;
+        gap: 1.6rem;
+    }
+
+    /* ---- Charter Section (Home Page) ---- */
+    .charter-top-row {
+        grid-template-columns: 1fr;
+        gap: 1.8rem;
+    }
+
+    .charter-pillars-row {
+        grid-template-columns: 1fr;
+        gap: 1.4rem;
+    }
+
+    .charter-card-inner {
+        min-height: auto;
+    }
+
+    /* ---- Testimonials ---- */
+    .testi-card-inner {
+        grid-template-columns: 1fr;
+        gap: 1.8rem;
+        padding: 2rem 1.6rem;
+    }
+
+    .testi-photo-frame {
+        max-width: 260px;
+        height: 260px;
+        margin: 0 auto;
+    }
+
+    .testi-showcase-card {
+        clip-path: polygon(40px 0%, 100% 0%, 100% 100%, 0% 100%, 0% 40px);
+    }
+
+    /* ---- CTA Section ---- */
+    .cta-chamfer-card {
+        padding: 2.5rem 1.6rem;
+    }
+
+    /* ---- Home Contact Grid ---- */
+    .home-contact-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .contact-chamfer-media {
+        min-height: 300px;
+        max-height: 380px;
+    }
+
+    /* ---- Contact Exec (Contact Page) ---- */
+    .contact-exec-wrapper {
+        padding-top: 100px;
+        padding-bottom: 4rem;
+    }
+
+    .contact-exec-container {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .contact-top-statement {
+        text-align: left;
+    }
+
+    .contact-top-statement p {
+        margin-left: 0;
+        max-width: 100%;
+    }
+
+    .contact-orbit-deco {
+        width: 260px;
+        height: 260px;
+        right: -60px;
+        top: 50%;
+        opacity: 0.4;
+    }
+
+    .contact-ambient-glow {
+        width: 400px;
+        height: 400px;
+    }
+
+    .exec-form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    /* ---- About Split Screen (About Page) ---- */
+    .about-split-screen {
+        grid-template-columns: 1fr;
+        height: auto;
+        min-height: auto;
+    }
+
+    .about-split-media {
+        height: 48vh;
+        min-height: 320px;
+        border-right: none;
+        border-bottom: 2px solid #14171E;
+    }
+
+    .about-split-content {
+        height: auto;
+        padding: 2.5rem 1.5rem;
+    }
+
+    /* ---- Team Page ---- */
+    .team-hero-ref {
+        padding: 120px 0 50px;
+    }
+
+    .team-hero-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        margin-bottom: 2.5rem;
+    }
+
+    .team-grid-ref {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem 1.5rem;
+        margin-bottom: 4rem;
+    }
+
+    .team-filter-nav {
+        gap: 0.5rem;
+        margin-bottom: 2.5rem;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        flex-wrap: nowrap;
+        padding-bottom: 1.2rem;
+        scrollbar-width: none;
+    }
+
+    .team-filter-nav::-webkit-scrollbar {
+        display: none;
+    }
+
+    .team-filter-btn {
+        flex-shrink: 0;
+        padding: 0.55rem 1.2rem;
+        font-size: 0.85rem;
+    }
+
+    .gov-matrix-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.8rem 1.4rem;
+    }
+
+    .team-governance-section {
+        padding: 60px 0;
+    }
+
+    /* ---- Programs Page ---- */
+    .prog-hero-ref {
+        padding: 120px 0 50px;
+    }
+
+    .prog-hero-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    /* ---- Legal Pages ---- */
+    .legal-hero {
+        padding: 120px 0 50px;
+    }
+
+    .legal-grid {
+        grid-template-columns: 1fr;
+        gap: 1.8rem;
+    }
+
+    .legal-sidebar {
+        position: relative;
+        top: 0;
+    }
+
+    .legal-toc-list {
+        max-height: 240px;
+    }
+
+    .legal-nav-container {
+        padding: 0 1rem;
+    }
+
+    .legal-nav-quick-actions {
+        display: none;
+    }
+
+    /* ---- Footer ---- */
+    .footer-main-container {
+        padding-top: 3rem;
+        padding-bottom: 2rem;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+
+    .footer-newsletter-box {
+        max-width: 100%;
+    }
+
+    .footer-bottom-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.2rem;
+        margin-top: 2.5rem;
+        padding-top: 1.5rem;
+    }
+
+    .footer-bottom-nav {
+        flex-wrap: wrap;
+        gap: 0.8rem 1rem;
+    }
+
+    /* ---- Key Objectives ---- */
+    .objectives-chamfer-grid {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+    }
+
+    .chamfer-card .card-inner {
+        min-height: auto;
+    }
+
+    /* ---- About Redesign Feature Sections ---- */
+    .feature-split-grid,
+    .feature-content-grid {
+        grid-template-columns: 1fr !important;
+        gap: 2rem;
+    }
+
+    .feature-split-grid.reverse {
+        direction: ltr;
+    }
+
+    .feature-split-grid.reverse > * {
+        direction: ltr;
+    }
+}
+
+/* -------------------------------------------------------------
+   Breakpoint: max-width 576px (Standard Mobile Phones)
+   ------------------------------------------------------------- */
+@media (max-width: 576px) {
+
+    /* ---- Hero Final Mobile Polish ---- */
+    .hero {
+        min-height: 100vh;
+        min-height: 100dvh;
+    }
+
+    .hero-container {
+        padding: 0 1.2rem;
+    }
+
+    .hero-content {
+        padding-top: 80px;
+        padding-bottom: 90px;
+    }
+
+    .hero-eyebrow {
+        font-size: 1rem;
+        margin-bottom: 0.4rem;
+    }
+
+    .hero-title {
+        font-size: clamp(1.5rem, 7vw, 2rem);
+        margin-bottom: 1rem;
+    }
+
+    .hero-desc {
+        font-size: 0.9rem;
+        line-height: 1.6;
+        margin-bottom: 1.4rem;
+    }
+
+    .hero-actions {
+        gap: 0.85rem;
+    }
+
+    .btn-hero-pill {
+        padding: 0.78rem 1.6rem;
+        font-size: 0.9rem;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .btn-hero-ghost {
+        padding: 0.72rem 1.4rem;
+        font-size: 0.88rem;
+        width: 100%;
+        justify-content: center;
+    }
+
+    /* Hide hero slider nav arrows on small phones — rely on swipe/auto */
+    .hero-slider-nav {
+        display: none;
+    }
+
+    /* Hide hero impact card on very small screens */
+    .hero-impact-card {
+        display: none;
+    }
+
+    /* Marquee smaller */
+    .hero-marquee {
+        padding: 0.6rem 0;
+    }
+
+    .hero-marquee .marquee-item {
+        font-size: 0.65rem;
+        gap: 0.5rem;
+    }
+
+    .hero-marquee .marquee-icon {
+        font-size: 0.8rem;
+    }
+
+    .hero-marquee .marquee-track {
+        gap: 1rem;
+        padding-right: 1rem;
+    }
+
+    /* ---- Global Section Spacing ---- */
+    .section-padding {
+        padding: 3rem 0;
+    }
+
+    .container {
+        width: 92%;
+    }
+
+    /* ---- Typography Scaling ---- */
+    h1 { font-size: clamp(1.8rem, 6vw, 2.5rem); }
+    h2 { font-size: clamp(1.5rem, 5vw, 2rem); }
+    h3 { font-size: clamp(1.1rem, 3.5vw, 1.35rem); }
+
+    p {
+        font-size: 0.95rem;
+    }
+
+    /* ---- About Showcase (Home) ---- */
+    .about-showcase-section {
+        padding: 3rem 0;
+    }
+
+    .about-collage-grid {
+        gap: 10px;
+    }
+
+    .card-top-left { height: 170px; }
+    .card-bottom-left { height: 130px; }
+    .card-top-right { height: 145px; }
+    .card-bottom-right { height: 160px; }
+
+    .about-showcase-title {
+        font-size: 1.75rem;
+    }
+
+    .about-stats-ribbon {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+        padding: 1.3rem;
+    }
+
+    .stat-ribbon-item {
+        gap: 12px;
+    }
+
+    .ribbon-icon {
+        font-size: 1.5rem;
+    }
+
+    .ribbon-number {
+        font-size: 1.3rem;
+    }
+
+    /* ---- About Showcase Action Button ---- */
+    .about-showcase-action .btn-ref-pill,
+    .btn-about-contact {
+        width: 100%;
+        justify-content: center;
+    }
+
+    /* ---- Initiatives Section ---- */
+    .initiatives-showcase-section {
+        min-height: auto;
+        padding: 3rem 0;
+    }
+
+    .frame-diagonal-1,
+    .frame-diagonal-2 {
+        height: 250px;
+    }
+
+    .initiatives-gallery-grid {
+        max-width: 100%;
+    }
+
+    .play-icon-circle {
+        width: 48px;
+        height: 48px;
+        font-size: 1rem;
+    }
+
+    /* ---- Charter Section ---- */
+    .charter-showcase-section {
+        padding: 3.5rem 0;
+    }
+
+    .charter-quote-card {
+        clip-path: polygon(18px 0, 100% 0, 100% calc(100% - 18px), calc(100% - 18px) 100%, 0 100%, 0 18px);
+        padding: 1.5rem;
+    }
+
+    .charter-card.chamfer-top-left {
+        clip-path: polygon(28px 0%, 100% 0%, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0% 100%, 0% 28px);
+    }
+
+    .charter-card.chamfer-top-right {
+        clip-path: polygon(0% 0%, calc(100% - 28px) 0%, 100% 28px, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0% 100%);
+    }
+
+    .charter-card-inner {
+        padding: 1.5rem 1.2rem 1.4rem;
+        min-height: auto;
+    }
+
+    /* ---- Testimonials ---- */
+    .testimonials-showcase-section {
+        padding: 3.5rem 0;
+    }
+
+    .testi-main-title {
+        font-size: 1.8rem;
+    }
+
+    .testi-showcase-card {
+        clip-path: polygon(35px 0%, 100% 0%, 100% 100%, 0% 100%, 0% 35px);
+    }
+
+    .testi-card-inner {
+        padding: 1.6rem 1.2rem;
+    }
+
+    .testi-photo-frame {
+        max-width: 220px;
+        height: 220px;
+        clip-path: polygon(32px 0%, 100% 0%, 100% 100%, 0% 100%, 0% 32px);
+    }
+
+    .testi-quote {
+        font-size: 0.92rem;
+        line-height: 1.6;
+        margin-bottom: 1.4rem;
+    }
+
+    .testi-author-name {
+        font-size: 1.15rem;
+    }
+
+    .testi-stars {
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
+    }
+
+    /* ---- CTA Section ---- */
+    .cta-showcase-section {
+        padding: 2rem 0;
+    }
+
+    .cta-chamfer-card {
+        padding: 2.2rem 1.2rem;
+        clip-path: polygon(25px 0%,
+                100% 0%,
+                100% calc(100% - 25px),
+                calc(100% - 25px) 100%,
+                0% 100%,
+                0% 25px);
+    }
+
+    .cta-badge-group {
+        display: none;
+    }
+
+    .cta-main-title {
+        font-size: 1.75rem;
+    }
+
+    .cta-btn-group {
+        flex-direction: column;
+        width: 100%;
+        gap: 0.75rem;
+    }
+
+    .btn-cta-primary,
+    .btn-cta-secondary {
+        width: 100%;
+        padding: 0.72rem 1.4rem;
+        justify-content: center;
+    }
+
+    /* ---- Home Contact Section ---- */
+    .home-contact-section {
+        padding: 3rem 0;
+    }
+
+    .home-contact-title,
+    .home-contact-section .contact-main-title {
+        font-size: 1.8rem;
+    }
+
+    .contact-card-wrapper {
+        clip-path: polygon(35px 0%, 100% 0%, 100% 100%, 0% 100%, 0% 35px);
+        border-radius: 0 16px 16px 16px;
+    }
+
+    .contact-form-card {
+        padding: 1.5rem 1.2rem;
+        clip-path: inherit;
+        border-radius: inherit;
+    }
+
+    .contact-chamfer-media {
+        clip-path: polygon(35px 0%, 100% 0%, 100% 100%, 0% 100%, 0% 35px);
+        min-height: 260px;
+        max-height: 340px;
+    }
+
+    .contact-card-title {
+        font-size: 1.35rem;
+    }
+
+    /* ---- Contact Exec (Contact Page) ---- */
+    .contact-exec-wrapper {
+        padding-top: 85px;
+        padding-bottom: 3.5rem;
+    }
+
+    .contact-exec-wrapper .contact-main-title {
+        font-size: clamp(2rem, 7vw, 2.5rem);
+        margin-bottom: 2rem;
+    }
+
+    .contact-sub-title {
+        font-size: 1.15rem;
+        letter-spacing: 1.2px;
+    }
+
+    .contact-hub-cities {
+        font-size: 1rem;
+    }
+
+    .contact-direct-strip .direct-item {
+        font-size: 0.95rem;
+    }
+
+    .exec-form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .contact-orbit-deco {
+        display: none;
+    }
+
+    /* ---- About Split Screen (About Page) ---- */
+    .about-split-media {
+        height: 42vh;
+        min-height: 280px;
+    }
+
+    .about-sharp-banner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        padding: 10px 14px;
+    }
+
+    .about-sharp-metrics {
+        flex-direction: column;
+        gap: 0.7rem;
+    }
+
+    .about-sharp-actions {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .btn-sharp {
+        width: 100%;
+        justify-content: center;
+    }
+
+    /* ---- Team Page ---- */
+    .team-hero-ref {
+        padding: 100px 0 40px;
+    }
+
+    .team-ref-title {
+        font-size: clamp(2rem, 7vw, 2.8rem);
+    }
+
+    .team-grid-ref {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .team-card-frame {
+        height: 320px;
+    }
+
+    .team-card-name {
+        font-size: 1.3rem;
+    }
+
+    .team-grid-advisory {
+        grid-template-columns: 1fr;
+    }
+
+    .team-grid-5 {
+        grid-template-columns: 1fr;
+    }
+
+    .gov-matrix-grid {
+        grid-template-columns: 1fr;
+        gap: 1.4rem;
+    }
+
+    .team-governance-section {
+        padding: 50px 0;
+    }
+
+    .gov-matrix-inner {
+        padding: 1.5rem;
+    }
+
+    /* ---- Programs Page ---- */
+    .prog-hero-ref {
+        padding: 100px 0 40px;
+    }
+
+    .prog-stats-ribbon {
+        grid-template-columns: 1fr;
+        padding: 1.3rem;
+    }
+
+    .prog-grid-ref {
+        grid-template-columns: 1fr;
+    }
+
+    .curriculum-phase-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* ---- Legal Pages ---- */
+    .legal-hero {
+        padding: 100px 0 40px;
+    }
+
+    .legal-hero-title {
+        font-size: 1.9rem;
+    }
+
+    .legal-card {
+        padding: 1.4rem 1.1rem;
+    }
+
+    .legal-card-title {
+        font-size: 1.2rem;
+    }
+
+    .legal-summary-card {
+        padding: 1.3rem 1.1rem;
+    }
+
+    .legal-seal-card {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+        padding: 1.6rem;
+    }
+
+    .legal-seal-meta {
+        justify-content: center;
+    }
+
+    /* ---- Footer ---- */
+    .footer-back-to-top {
+        width: 40px;
+        height: 40px;
+        font-size: 0.85rem;
+    }
+
+    /* ---- Modals ---- */
+    .modal-backdrop {
+        padding: 1rem;
+    }
+
+    .search-modal-dialog {
+        padding: 1.6rem;
+    }
+
+    .search-modal-header input {
+        font-size: 1.05rem;
+    }
+}
+
+/* -------------------------------------------------------------
+   Breakpoint: max-width 420px (Small Mobile Phones)
+   ------------------------------------------------------------- */
+@media (max-width: 420px) {
+
+    /* ---- Hero Extra Small ---- */
+    .hero-container {
+        padding: 0 1rem;
+    }
+
+    .hero-content {
+        padding-top: 70px;
+    }
+
+    .hero-title {
+        font-size: clamp(1.35rem, 6.5vw, 1.75rem);
+    }
+
+    .hero-eyebrow {
+        font-size: 0.92rem;
+    }
+
+    .hero-desc {
+        font-size: 0.85rem;
+    }
+
+    .btn-hero-pill {
+        font-size: 0.88rem;
+        padding: 0.75rem 1.4rem;
+    }
+
+    .btn-hero-ghost {
+        font-size: 0.85rem;
+        padding: 0.7rem 1.2rem;
+    }
+
+    /* ---- Nav tiny screens ---- */
+    .brand-name {
+        font-size: 1.15rem;
+    }
+
+    .brand-tagline {
+        font-size: 0.58rem;
+    }
+
+    .nav-actions .btn-pill-amber {
+        padding: 0.4rem 0.85rem;
+        font-size: 0.78rem;
+    }
+
+    .nav-search-btn,
+    .theme-toggle-btn {
+        width: 34px;
+        height: 34px;
+        font-size: 0.85rem;
+    }
+
+    /* ---- Sections Extra Small ---- */
+    .section-padding {
+        padding: 2.5rem 0;
+    }
+
+    .container {
+        width: 94%;
+    }
+
+    /* About Showcase */
+    .about-showcase-title {
+        font-size: 1.55rem;
+    }
+
+    .card-top-left { height: 150px; }
+    .card-bottom-left { height: 115px; }
+    .card-top-right { height: 125px; }
+    .card-bottom-right { height: 140px; }
+
+    /* Initiatives */
+    .frame-diagonal-1,
+    .frame-diagonal-2 {
+        height: 220px;
+    }
+
+    .initiatives-main-title {
+        font-size: 1.6rem;
+    }
+
+    /* Charter */
+    .charter-main-title {
+        font-size: 1.5rem;
+    }
+
+    /* Testimonials */
+    .testi-main-title {
+        font-size: 1.55rem;
+    }
+
+    .testi-photo-frame {
+        max-width: 190px;
+        height: 190px;
+    }
+
+    /* CTA */
+    .cta-main-title {
+        font-size: 1.5rem;
+    }
+
+    /* Contact Exec */
+    .contact-exec-wrapper .contact-main-title {
+        font-size: 1.8rem;
+    }
+
+    /* Team */
+    .team-ref-title {
+        font-size: 1.8rem;
+    }
+
+    .team-card-frame {
+        height: 280px;
+    }
+
+    /* Legal */
+    .legal-hero-title {
+        font-size: 1.65rem;
+    }
+
+    /* Footer */
+    .footer-brand-desc {
+        font-size: 0.82rem;
+    }
+}
+
+/* -------------------------------------------------------------
+   Breakpoint: max-width 360px (Extra Small Phones)
+   ------------------------------------------------------------- */
+@media (max-width: 360px) {
+    .hero-title {
+        font-size: 1.3rem;
+    }
+
+    .hero-eyebrow {
+        font-size: 0.85rem;
+    }
+
+    .hero-desc {
+        font-size: 0.82rem;
+    }
+
+    .nav-actions .btn-pill-amber {
+        display: none;
+    }
+
+    .logo-img, .logo img {
+        height: 36px;
+        width: 36px;
+    }
+
+    .brand-name {
+        font-size: 1.1rem;
+    }
+
+    .brand-tagline {
+        display: none;
+    }
+
+    .about-showcase-title {
+        font-size: 1.4rem;
+    }
+
+    .card-top-left { height: 130px; }
+    .card-bottom-left { height: 100px; }
+    .card-top-right { height: 110px; }
+    .card-bottom-right { height: 120px; }
+}
+
+/* -------------------------------------------------------------
+   Landscape Orientation: Short Height Phones
+   ------------------------------------------------------------- */
+@media (orientation: landscape) and (max-height: 500px) {
+    .hero {
+        min-height: 100vh;
+        min-height: 100dvh;
+        height: auto;
+    }
+
+    .hero-content {
+        padding-top: 80px;
+        padding-bottom: 70px;
+    }
+
+    .hero-title {
+        font-size: clamp(1.5rem, 4vw, 2.2rem);
+    }
+
+    .hero-eyebrow {
+        font-size: 1rem;
+        margin-bottom: 0.3rem;
+    }
+
+    .hero-desc {
+        font-size: 0.88rem;
+        margin-bottom: 1rem;
+    }
+
+    .hero-actions {
+        flex-direction: row;
+        gap: 1rem;
+    }
+
+    .btn-hero-pill,
+    .btn-hero-ghost {
+        width: auto;
+    }
+
+    .hero-marquee {
+        padding: 0.5rem 0;
+    }
+
+    .hero-impact-card {
+        display: none;
+    }
+
+    .hero-slider-nav {
+        display: none;
+    }
+
+    .about-split-screen {
+        grid-template-columns: 1fr 1fr;
+        height: auto;
+        min-height: auto;
+    }
+
+    .about-split-media {
+        height: 100%;
+        min-height: 300px;
+        border-right: 2px solid #14171E;
+        border-bottom: none;
+    }
+
+    .team-hero-ref,
+    .prog-hero-ref,
+    .legal-hero {
+        padding-top: 90px;
+        padding-bottom: 30px;
+    }
+
+    .contact-exec-wrapper {
+        padding-top: 90px;
+    }
+}
+
+/* -------------------------------------------------------------
+   Medium Landscape (Tablets in landscape)
+   ------------------------------------------------------------- */
+@media (orientation: landscape) and (min-width: 769px) and (max-width: 1024px) {
+    .hero {
+        min-height: 100vh;
+    }
+
+    .hero-content {
+        padding-top: 80px;
+        max-width: 55%;
+    }
+}
+
 /* Print Optimization */
 @media print {
 

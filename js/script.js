@@ -1,13 +1,27 @@
 // ============================================================
-//  Clean URL: Remove /index.html from address bar
+//  Clean URL: Remove .html, /index.html & trailing slashes
 // ============================================================
-(function cleanIndexUrl() {
+(function cleanHtmlUrls() {
     try {
         if (window.location.protocol.startsWith('http')) {
-            const pathname = window.location.pathname;
+            let pathname = window.location.pathname;
+            let changed = false;
             if (pathname.endsWith('/index.html') || pathname === '/index.html') {
-                const cleanPath = pathname.replace(/\/index\.html$/, '/') || '/';
-                window.history.replaceState(null, '', cleanPath + window.location.search + window.location.hash);
+                pathname = pathname.replace(/\/index\.html$/, '') || '/';
+                changed = true;
+            } else if (pathname.endsWith('/index') || pathname === '/index') {
+                pathname = pathname.replace(/\/index$/, '') || '/';
+                changed = true;
+            } else if (pathname.endsWith('.html')) {
+                pathname = pathname.replace(/\.html$/, '');
+                changed = true;
+            }
+            if (pathname.length > 1 && pathname.endsWith('/')) {
+                pathname = pathname.slice(0, -1);
+                changed = true;
+            }
+            if (changed) {
+                window.history.replaceState(null, '', pathname + window.location.search + window.location.hash);
             }
         }
     } catch (e) {

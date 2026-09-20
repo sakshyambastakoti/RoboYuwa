@@ -11,6 +11,45 @@
       "source": "/index",
       "destination": "/",
       "permanent": true
+    },
+    {
+      "source": "/:page.html",
+      "destination": "/:page",
+      "permanent": true
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/about",
+      "destination": "/about/index.html"
+    },
+    {
+      "source": "/contact",
+      "destination": "/contact/index.html"
+    },
+    {
+      "source": "/membership",
+      "destination": "/membership/index.html"
+    },
+    {
+      "source": "/team",
+      "destination": "/team/index.html"
+    },
+    {
+      "source": "/donate",
+      "destination": "/donate/index.html"
+    },
+    {
+      "source": "/privacy-policy",
+      "destination": "/privacy-policy/index.html"
+    },
+    {
+      "source": "/terms-of-service",
+      "destination": "/terms-of-service/index.html"
+    },
+    {
+      "source": "/cookie-policy",
+      "destination": "/cookie-policy/index.html"
     }
   ],
   "headers": [

@@ -1,18 +1,2020 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="refresh" content="0; url=/donate">
-    <link rel="canonical" href="https://roboyuwa.org.np/donate">
-    <title>RoboYuwa - Redirecting to /donate...</title>
-    <!--
-        ROBOYUWA CLEAN URL ARCHITECTURE:
-        This page uses clean extensionless URLs (/donate).
-        The canonical editable page file is located at: donate/index.html
-    -->
-    <script>window.location.replace('/donate');</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="google-site-verification" content="MkuQVyF0wc08H00SCw7nkHp0nyXMAp4l_eoOkSgNd4I" />
+    <link rel="icon" type="image/jpeg" href="/assets/roboyuwa-logo-BLCCIWUS.jpg" />
+    <title>Donate | RoboYuwa | Fuel Youth Innovation in Nepal</title>
+    <meta name="description" content="Support RoboYuwa's mission to democratize robotics education across Nepal. Your donation funds STEAM bootcamps, hardware kits, and youth engineering scholarships.">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600;1,700&display=swap" rel="stylesheet">
+    <script src="https://zenithkandel.com.np/fontawesome/zenith-icons.js"></script>
+    <style>
+        /* =====================================================================
+           DONATE PAGE — Aligned with RoboYuwa Design System
+           ===================================================================== */
+
+        /* ============================================================
+           DONATE HERO SHOWCASE — Exact Finish Matching Home Page Reference
+           (Single-Screen Frame Fit: 100dvh)
+           ============================================================ */
+        .donate-page .initiatives-showcase-section {
+            position: relative;
+            width: 100%;
+            min-height: 100vh;
+            min-height: 100dvh;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            padding: clamp(145px, 17vh, 180px) 0 clamp(40px, 5vh, 64px);
+            background: #FFFFFF;
+            overflow: hidden;
+            box-sizing: border-box;
+            transition: background 0.35s ease;
+        }
+
+        body:not(.light-theme) .donate-page .initiatives-showcase-section,
+        body.dark-theme .donate-page .initiatives-showcase-section {
+            background: #08090C !important;
+        }
+
+        .donate-page .initiatives-container {
+            width: 100%;
+            max-width: 1200px;
+            margin: auto auto;
+            padding: 0 1.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .donate-page .initiatives-header {
+            text-align: center;
+            max-width: 760px;
+            margin: 0 auto clamp(0.6rem, 1.6vh, 1.4rem);
+            flex-shrink: 0;
+        }
+
+        .donate-page .initiatives-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            font-family: var(--font-sans);
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 1.6px;
+            color: #525968;
+            text-transform: uppercase;
+            margin-bottom: clamp(0.35rem, 0.8vh, 0.65rem);
+        }
+
+        body:not(.light-theme) .donate-page .initiatives-eyebrow,
+        body.dark-theme .donate-page .initiatives-eyebrow {
+            color: #CBD5E1 !important;
+        }
+
+        .donate-page .initiatives-main-title {
+            font-family: var(--font-serif);
+            font-size: clamp(2rem, 3.2vw, 3.1rem);
+            font-weight: 700;
+            color: #101217;
+            line-height: 1.16;
+            letter-spacing: -0.02em;
+            margin-bottom: clamp(0.35rem, 0.8vh, 0.6rem);
+            text-shadow: none !important;
+            text-transform: none !important;
+            filter: none !important;
+        }
+
+        body:not(.light-theme) .donate-page .initiatives-main-title,
+        body.dark-theme .donate-page .initiatives-main-title {
+            color: #FFFFFF !important;
+        }
+
+        .donate-page .initiatives-subtitle {
+            font-family: var(--font-sans);
+            font-size: clamp(0.86rem, 1vw, 0.98rem);
+            line-height: 1.58;
+            color: #525968;
+            max-width: 680px;
+            margin: 0 auto clamp(0.6rem, 1.4vh, 1.2rem);
+        }
+
+        body:not(.light-theme) .donate-page .initiatives-subtitle,
+        body.dark-theme .donate-page .initiatives-subtitle {
+            color: #94A3B8 !important;
+        }
+
+        .donate-page .initiatives-action-wrap {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .donate-page .btn-initiatives-action {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #E59819 0%, #D4840D 100%);
+            color: #FFFFFF !important;
+            font-family: var(--font-sans);
+            font-size: 0.92rem;
+            font-weight: 600;
+            padding: 0.68rem 2.2rem;
+            border-radius: 12px;
+            text-decoration: none;
+            box-shadow: 0 4px 16px rgba(229, 152, 25, 0.3);
+            transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+            border: none;
+            cursor: pointer;
+        }
+
+        .donate-page .btn-initiatives-action:hover {
+            background: linear-gradient(135deg, #F0A526 0%, #E59819 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(229, 152, 25, 0.45);
+            color: #FFFFFF !important;
+        }
+
+        .donate-page .initiatives-gallery-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.35fr 1fr;
+            gap: clamp(1rem, 2vw, 1.8rem);
+            align-items: center;
+            max-width: 1180px;
+            width: 100%;
+            margin: 0 auto;
+            flex: 1;
+            min-height: 0;
+        }
+
+        .donate-page .frame-diagonal-1 {
+            height: clamp(240px, 30vh, 320px);
+        }
+
+        .donate-page .frame-diagonal-2 {
+            height: clamp(300px, 38vh, 395px);
+        }
+
+        @media (max-width: 991px) {
+            .donate-page .initiatives-showcase-section {
+                height: auto;
+                min-height: auto;
+                padding: 150px 0 3rem;
+            }
+            .donate-page .initiatives-gallery-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+                flex: none;
+            }
+            .donate-page .frame-diagonal-1,
+            .donate-page .frame-diagonal-2 {
+                height: 260px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .donate-page .initiatives-showcase-section {
+                padding: 110px 0 2.5rem;
+            }
+        }
+
+
+        /* ---- Impact Stats Strip ---- */
+
+        .donate-impact-strip {
+            background: #0D0F15;
+            border-top: 1px solid rgba(255, 255, 255, 0.07);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+            padding: 2rem 0;
+        }
+
+        body.light-theme .donate-impact-strip {
+            background: #F0F4F8;
+            border-color: rgba(0,0,0,0.08);
+        }
+
+        .donate-impact-strip-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        .donate-impact-stat {
+            text-align: center;
+            padding: 0.75rem 1.25rem;
+            border-right: 1px solid rgba(255, 255, 255, 0.07);
+        }
+
+        body.light-theme .donate-impact-stat {
+            border-right-color: rgba(0,0,0,0.08);
+        }
+
+        .donate-impact-stat:last-child {
+            border-right: none;
+        }
+
+        .donate-impact-num {
+            font-family: var(--font-serif);
+            font-size: clamp(1.6rem, 2.5vw, 2.4rem);
+            font-weight: 800;
+            background: linear-gradient(135deg, #FF4040 0%, #E59819 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1;
+            margin-bottom: 0.35rem;
+        }
+
+        .donate-impact-label {
+            font-family: var(--font-sans);
+            font-size: 0.74rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: rgba(255, 255, 255, 0.45);
+        }
+
+        body.light-theme .donate-impact-label {
+            color: #64748B;
+        }
+
+        /* ---- Donate Main Section ---- */
+        .donate-main-section {
+            position: relative;
+            padding: clamp(3.5rem, 6vh, 5.5rem) 0 clamp(4rem, 7vh, 6rem);
+            background: #FFFFFF;
+            transition: background 0.35s ease;
+            box-sizing: border-box;
+            overflow: visible;
+        }
+
+        body:not(.light-theme) .donate-main-section,
+        body.dark-theme .donate-main-section {
+            background: #090B0F;
+        }
+
+        .donate-main-section .container {
+            max-width: 1380px;
+            width: 93%;
+            margin: 0 auto;
+            box-sizing: border-box;
+        }
+
+        /* Split Header */
+        .donate-main-header {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(1.4rem, 2.4vw, 2.5rem);
+            align-items: end;
+            margin-bottom: clamp(1.6rem, 3vh, 2.5rem);
+            flex-shrink: 0;
+        }
+
+        .donate-main-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-family: var(--font-sans);
+            font-size: 0.76rem;
+            font-weight: 700;
+            letter-spacing: 1.4px;
+            color: #555D6E;
+            text-transform: uppercase;
+            margin-bottom: 0.25rem;
+        }
+
+        body:not(.light-theme) .donate-main-eyebrow,
+        body.dark-theme .donate-main-eyebrow {
+            color: #CBD5E1;
+        }
+
+        .donate-main-eyebrow .eyebrow-square {
+            width: 9px;
+            height: 9px;
+            border-radius: 2px;
+            background: linear-gradient(135deg, var(--ry-amber) 0%, var(--ry-amber-hover) 100%);
+            box-shadow: 0 2px 6px rgba(229, 152, 25, 0.45);
+            display: inline-block;
+            flex-shrink: 0;
+        }
+
+        .donate-main-title {
+            font-family: var(--font-serif);
+            font-size: clamp(1.75rem, 2.5vw, 2.4rem);
+            font-weight: 700;
+            color: #101217;
+            line-height: 1.12;
+            letter-spacing: -0.025em;
+            margin: 0;
+        }
+
+        body:not(.light-theme) .donate-main-title,
+        body.dark-theme .donate-main-title {
+            color: #FFFFFF;
+        }
+
+        .donate-main-lead {
+            font-family: var(--font-sans);
+            font-size: clamp(0.82rem, 0.92vw, 0.9rem);
+            line-height: 1.5;
+            color: #525968;
+            margin: 0;
+        }
+
+        body:not(.light-theme) .donate-main-lead,
+        body.dark-theme .donate-main-lead {
+            color: #94A3B8;
+        }
+
+        /* ---- Donate 2-Col Grid ---- */
+        .donate-content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(1.5rem, 2.5vw, 2.6rem);
+            align-items: stretch;
+        }
+
+        /* ---- Dual Chamfered Cards (Left Form & Right Impact Match Exactly) ---- */
+        .donate-form-chamfer,
+        .donate-impact-chamfer {
+            position: relative;
+            background: linear-gradient(135deg, rgba(229, 37, 37, 0.38) 0%, rgba(229, 152, 25, 0.3) 50%, rgba(229, 37, 37, 0.22) 100%);
+            padding: 2px;
+            clip-path: polygon(
+                28px 0,
+                calc(100% - 16px) 0, 100% 16px,
+                100% calc(100% - 28px),
+                calc(100% - 28px) 100%,
+                16px 100%, 0 calc(100% - 16px),
+                0 28px
+            );
+            filter: drop-shadow(0 14px 34px rgba(0, 0, 0, 0.08));
+            transition: filter 0.3s ease, transform 0.3s ease;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+        }
+
+        body:not(.light-theme) .donate-form-chamfer,
+        body.dark-theme .donate-form-chamfer,
+        body:not(.light-theme) .donate-impact-chamfer,
+        body.dark-theme .donate-impact-chamfer {
+            background: linear-gradient(135deg, rgba(229, 37, 37, 0.5) 0%, rgba(229, 152, 25, 0.38) 50%, rgba(229, 37, 37, 0.3) 100%);
+            filter: drop-shadow(0 18px 42px rgba(0, 0, 0, 0.6));
+        }
+
+        .donate-form-inner,
+        .donate-impact-inner {
+            background: #FFFFFF;
+            padding: clamp(1.4rem, 2.2vh, 1.9rem) clamp(1.4rem, 2vw, 1.9rem);
+            clip-path: polygon(
+                27px 0,
+                calc(100% - 15px) 0, 100% 15px,
+                100% calc(100% - 27px),
+                calc(100% - 27px) 100%,
+                15px 100%, 0 calc(100% - 15px),
+                0 27px
+            );
+            height: 100%;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .donate-impact-inner {
+            gap: clamp(0.9rem, 1.5vh, 1.3rem);
+        }
+
+        body:not(.light-theme) .donate-form-inner,
+        body.dark-theme .donate-form-inner,
+        body:not(.light-theme) .donate-impact-inner,
+        body.dark-theme .donate-impact-inner {
+            background: #10131C;
+        }
+
+        /* Left Card Content */
+        .form-inner-eyebrow {
+            font-family: var(--font-sans);
+            font-size: 0.68rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--ry-crimson);
+            margin-bottom: 0.12rem;
+        }
+
+        .form-inner-title {
+            font-family: var(--font-serif);
+            font-size: clamp(1.2rem, 1.45vw, 1.42rem);
+            font-weight: 700;
+            color: #101217;
+            margin-bottom: clamp(0.4rem, 0.8vh, 0.65rem);
+            padding-bottom: clamp(0.28rem, 0.55vh, 0.42rem);
+            border-bottom: 1px solid rgba(16, 18, 23, 0.08);
+        }
+
+        body:not(.light-theme) .form-inner-title,
+        body.dark-theme .form-inner-title {
+            color: #FFFFFF;
+            border-bottom-color: rgba(255, 255, 255, 0.08);
+        }
+
+        .form-field-label {
+            display: block;
+            font-family: var(--font-sans);
+            font-size: 0.68rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #1E293B;
+            margin-bottom: 0.22rem;
+        }
+
+        body:not(.light-theme) .form-field-label,
+        body.dark-theme .form-field-label {
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        /* Amount Grid */
+        .amount-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 6px;
+            margin-bottom: clamp(0.35rem, 0.7vh, 0.55rem);
+        }
+
+        .amount-btn {
+            padding: clamp(0.5rem, 0.9vh, 0.65rem) 0.4rem;
+            min-height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 0, 0, 0.035);
+            border: 1.5px solid rgba(16, 18, 23, 0.1);
+            clip-path: polygon(6px 0, 100% 0, 100% 100%, 0 100%, 0 6px);
+            font-family: var(--font-sans);
+            font-size: clamp(0.82rem, 0.88vw, 0.88rem);
+            font-weight: 700;
+            color: #1E293B;
+            cursor: pointer;
+            text-align: center;
+            transition: all 0.22s ease;
+        }
+
+        body:not(.light-theme) .amount-btn,
+        body.dark-theme .amount-btn {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.82);
+        }
+
+        .amount-btn:hover,
+        .amount-btn.active {
+            background: var(--ry-crimson);
+            border-color: var(--ry-crimson);
+            color: #FFFFFF;
+            box-shadow: 0 3px 12px rgba(229, 37, 37, 0.3);
+        }
+
+        /* Custom Amount Input */
+        .amount-custom-wrap {
+            position: relative;
+            margin-bottom: clamp(0.4rem, 0.8vh, 0.65rem);
+        }
+
+        .amount-currency-prefix {
+            position: absolute;
+            left: 11px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 0.82rem;
+            font-weight: 700;
+            color: #64748B;
+        }
+
+        .amount-custom-input {
+            width: 100%;
+            padding: clamp(0.38rem, 0.7vh, 0.46rem) 0.75rem clamp(0.38rem, 0.7vh, 0.46rem) 2rem;
+            border: 1.5px solid rgba(16, 18, 23, 0.12);
+            clip-path: polygon(6px 0, 100% 0, 100% 100%, 0 100%, 0 6px);
+            font-family: var(--font-sans);
+            font-size: 0.86rem;
+            font-weight: 600;
+            color: #1E293B;
+            background: rgba(0, 0, 0, 0.03);
+            outline: none;
+            transition: border-color 0.2s ease, background 0.2s ease;
+            box-sizing: border-box;
+        }
+
+        body:not(.light-theme) .amount-custom-input,
+        body.dark-theme .amount-custom-input {
+            background: rgba(255, 255, 255, 0.04);
+            border-color: rgba(255, 255, 255, 0.1);
+            color: #FFFFFF;
+        }
+
+        .amount-custom-input:focus {
+            border-color: var(--ry-crimson);
+            background: #FFFFFF;
+            box-shadow: 0 0 0 2px rgba(229, 37, 37, 0.1);
+        }
+
+        /* Donor Fields */
+        .donor-fields {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(4px, 0.7vh, 6px);
+            margin-bottom: clamp(0.35rem, 0.7vh, 0.55rem);
+        }
+
+        .field-group {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .field-group.full-width {
+            grid-column: 1 / -1;
+        }
+
+        .field-input {
+            padding: clamp(0.36rem, 0.65vh, 0.46rem) 0.65rem;
+            border: 1.5px solid rgba(16, 18, 23, 0.1);
+            clip-path: polygon(5px 0, 100% 0, 100% 100%, 0 100%, 0 5px);
+            font-family: var(--font-sans);
+            font-size: 0.8rem;
+            color: #1E293B;
+            background: rgba(0, 0, 0, 0.03);
+            outline: none;
+            transition: border-color 0.2s ease, background 0.2s ease;
+            box-sizing: border-box;
+        }
+
+        body:not(.light-theme) .field-input,
+        body.dark-theme .field-input {
+            background: rgba(255, 255, 255, 0.04);
+            border-color: rgba(255, 255, 255, 0.1);
+            color: #FFFFFF;
+        }
+
+        .field-input:focus {
+            border-color: var(--ry-crimson);
+            background: #FFFFFF;
+            box-shadow: 0 0 0 2px rgba(229, 37, 37, 0.08);
+        }
+
+        body:not(.light-theme) .field-input:focus,
+        body.dark-theme .field-input:focus {
+            background: rgba(255, 255, 255, 0.06);
+        }
+
+        .anon-check {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-bottom: clamp(0.4rem, 0.8vh, 0.6rem);
+            cursor: pointer;
+            font-family: var(--font-sans);
+            font-size: 0.74rem;
+            color: #64748B;
+        }
+
+        body:not(.light-theme) .anon-check,
+        body.dark-theme .anon-check {
+            color: rgba(255, 255, 255, 0.55);
+        }
+
+        .anon-check input {
+            width: 13px;
+            height: 13px;
+            accent-color: var(--ry-crimson);
+            cursor: pointer;
+        }
+
+        .donate-submit-btn {
+            width: 100%;
+            padding: clamp(0.56rem, 1vh, 0.72rem) 1.2rem;
+            background: linear-gradient(135deg, #E52525 0%, #C41515 100%);
+            color: #FFFFFF;
+            border: none;
+            clip-path: polygon(8px 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%, 0 8px);
+            font-family: var(--font-sans);
+            font-size: clamp(0.86rem, 0.95vw, 0.92rem);
+            font-weight: 700;
+            letter-spacing: 0.03em;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 5px 18px rgba(229, 37, 37, 0.32);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 7px;
+        }
+
+        .donate-submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 9px 24px rgba(229, 37, 37, 0.45);
+        }
+
+        .secure-note {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            margin-top: clamp(0.25rem, 0.5vh, 0.4rem);
+            font-family: var(--font-sans);
+            font-size: 0.66rem;
+            color: #94A3B8;
+        }
+
+        .secure-note i {
+            color: #27AE60;
+        }
+
+        /* ---- Right Card: Impact Header & Tiers ---- */
+        .impact-card-header {
+            margin-bottom: clamp(0.25rem, 0.6vh, 0.45rem);
+        }
+
+        .impact-col-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-family: var(--font-sans);
+            font-size: 0.68rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            color: #D4840D;
+            margin-bottom: 0.15rem;
+        }
+
+        body:not(.light-theme) .impact-col-eyebrow,
+        body.dark-theme .impact-col-eyebrow {
+            color: var(--ry-amber);
+        }
+
+        .impact-col-title {
+            font-family: var(--font-serif);
+            font-size: clamp(1.2rem, 1.45vw, 1.42rem);
+            font-weight: 700;
+            color: #101217;
+            line-height: 1.18;
+            margin-bottom: 0.25rem;
+        }
+
+        body:not(.light-theme) .impact-col-title,
+        body.dark-theme .impact-col-title {
+            color: #FFFFFF;
+        }
+
+        .impact-col-desc {
+            font-family: var(--font-sans);
+            font-size: clamp(0.74rem, 0.84vw, 0.82rem);
+            line-height: 1.45;
+            color: #525968;
+            margin: 0;
+        }
+
+        body:not(.light-theme) .impact-col-desc,
+        body.dark-theme .impact-col-desc {
+            color: #94A3B8;
+        }
+
+        /* 2x2 Impact Tiers Grid */
+        .impact-tiers-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(10px, 1.2vh, 14px);
+            margin: clamp(0.4rem, 0.8vh, 0.65rem) 0;
+        }
+
+        .impact-tier {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: rgba(0, 0, 0, 0.035);
+            border: 1px solid rgba(16, 18, 23, 0.06);
+            border-left: 3.5px solid var(--ry-crimson);
+            padding: clamp(0.65rem, 1.1vh, 0.82rem) clamp(0.65rem, 0.9vw, 0.85rem);
+            clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 0 100%);
+            transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+        }
+
+        body:not(.light-theme) .impact-tier,
+        body.dark-theme .impact-tier {
+            background: rgba(255, 255, 255, 0.04);
+            border-color: rgba(255, 255, 255, 0.08);
+            border-left-color: var(--ry-crimson);
+        }
+
+        .impact-tier:hover {
+            transform: translateX(3px);
+            background: rgba(229, 37, 37, 0.05);
+            border-left-color: var(--ry-crimson);
+        }
+
+        .tier-badge {
+            flex-shrink: 0;
+            min-width: 50px;
+            padding: 0.35rem 0.42rem;
+            background: linear-gradient(135deg, #E52525 0%, #C41515 100%);
+            color: #FFFFFF;
+            font-family: var(--font-serif);
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-align: center;
+            line-height: 1.15;
+            clip-path: polygon(4px 0, 100% 0, 100% calc(100% - 4px), calc(100% - 4px) 100%, 0 100%, 0 4px);
+        }
+
+        .tier-info-title {
+            font-family: var(--font-sans);
+            font-size: clamp(0.78rem, 0.88vw, 0.84rem);
+            font-weight: 700;
+            color: #101217;
+            margin-bottom: 2px;
+        }
+
+        body:not(.light-theme) .tier-info-title,
+        body.dark-theme .tier-info-title {
+            color: #FFFFFF;
+        }
+
+        .tier-info-desc {
+            font-family: var(--font-sans);
+            font-size: clamp(0.68rem, 0.76vw, 0.74rem);
+            line-height: 1.35;
+            color: #64748B;
+        }
+
+        body:not(.light-theme) .tier-info-desc,
+        body.dark-theme .tier-info-desc {
+            color: rgba(255, 255, 255, 0.55);
+        }
+
+        /* Direct Impact Assurance Bar */
+        .impact-guarantee-bar {
+            display: flex;
+            flex-direction: column;
+            gap: 7px;
+            padding: 0.65rem 0.85rem;
+            background: rgba(229, 152, 25, 0.06);
+            border: 1px dashed rgba(229, 152, 25, 0.32);
+            border-radius: 6px;
+        }
+
+        body:not(.light-theme) .impact-guarantee-bar,
+        body.dark-theme .impact-guarantee-bar {
+            background: rgba(229, 152, 25, 0.08);
+            border-color: rgba(229, 152, 25, 0.28);
+        }
+
+        .guarantee-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-family: var(--font-sans);
+            font-size: 0.74rem;
+            color: #475569;
+            line-height: 1.35;
+        }
+
+        body:not(.light-theme) .guarantee-item,
+        body.dark-theme .guarantee-item {
+            color: #CBD5E1;
+        }
+
+        .guarantee-item i {
+            color: var(--ry-amber);
+            font-size: 0.88rem;
+            flex-shrink: 0;
+        }
+
+        .guarantee-item strong {
+            color: #1E293B;
+        }
+
+        body:not(.light-theme) .guarantee-item strong,
+        body.dark-theme .guarantee-item strong {
+            color: #FFFFFF;
+        }
+
+        /* ---- QR Pay Box (Anchored at Bottom of Right Card) ---- */
+        .qr-pay-box {
+            background: #0B0E17;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-left: 3.5px solid var(--ry-amber);
+            clip-path: polygon(12px 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%, 0 12px);
+            padding: clamp(0.75rem, 1.2vh, 0.95rem) clamp(0.85rem, 1.2vw, 1.1rem);
+            width: 100%;
+            box-sizing: border-box;
+            margin-top: auto;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+        }
+
+        body.light-theme .qr-pay-box {
+            background: #0B0E17;
+        }
+
+        .qr-pay-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-family: var(--font-sans);
+            font-size: clamp(0.68rem, 0.78vw, 0.74rem);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--ry-amber);
+            margin-bottom: clamp(0.35rem, 0.7vh, 0.55rem);
+        }
+
+        .qr-pay-body {
+            display: grid;
+            grid-template-columns: 124px 1fr;
+            gap: clamp(1rem, 1.6vw, 1.5rem);
+            align-items: center;
+        }
+
+        .qr-img-wrap {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.35rem;
+            flex-shrink: 0;
+        }
+
+        .qr-img {
+            width: 114px;
+            height: 114px;
+            object-fit: contain;
+            background: #FFFFFF;
+            padding: 5px;
+            border-radius: 8px;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.45);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .qr-img:hover {
+            transform: scale(1.04);
+            box-shadow: 0 6px 20px rgba(229, 152, 25, 0.4);
+        }
+
+        .qr-scan-label {
+            font-family: var(--font-sans);
+            font-size: 0.64rem;
+            color: rgba(255, 255, 255, 0.65);
+            text-align: center;
+            letter-spacing: 0.02em;
+            white-space: nowrap;
+        }
+
+        .qr-bank-details {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+            min-width: 0;
+        }
+
+        .qr-bank-details .bank-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            padding: clamp(0.18rem, 0.38vh, 0.26rem) 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+            gap: 0.6rem;
+        }
+
+        .qr-bank-details .bank-row:last-of-type {
+            border-bottom: none;
+        }
+
+        .bank-label {
+            font-family: var(--font-sans);
+            font-size: clamp(0.66rem, 0.74vw, 0.7rem);
+            color: rgba(255, 255, 255, 0.5);
+            font-weight: 500;
+            white-space: nowrap;
+        }
+
+        .bank-val {
+            font-family: var(--font-sans);
+            font-size: clamp(0.72rem, 0.8vw, 0.78rem);
+            font-weight: 600;
+            color: #FFFFFF;
+            text-align: right;
+            white-space: nowrap;
+        }
+
+        @media (max-width: 991px) {
+            .donate-main-section {
+                padding: 3rem 0 4rem;
+            }
+            .donate-main-header {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+                margin-bottom: 1.8rem;
+            }
+            .donate-content-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .impact-tiers-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .donate-form-chamfer,
+            .donate-impact-chamfer {
+                height: auto;
+            }
+            .donate-form-inner,
+            .donate-impact-inner {
+                height: auto;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .impact-tiers-grid {
+                grid-template-columns: 1fr;
+            }
+            .amount-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 8px;
+            }
+            .donor-fields {
+                grid-template-columns: 1fr;
+                gap: 8px;
+            }
+            .field-input,
+            .amount-custom-input {
+                font-size: 1rem;
+                min-height: 44px;
+                padding: 0.65rem 0.85rem;
+            }
+            .amount-custom-input {
+                padding-left: 2.2rem;
+            }
+            .donate-submit-btn {
+                min-height: 48px;
+                font-size: 1rem;
+            }
+            .qr-pay-body {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .amount-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* ---- Donor Wall Section ---- */
+        .donor-wall-section {
+            position: relative;
+            padding: clamp(4.5rem, 8vh, 7rem) 0;
+            background: #F8FAFC;
+            transition: background 0.35s ease;
+        }
+
+        body:not(.light-theme) .donor-wall-section,
+        body.dark-theme .donor-wall-section {
+            background: #0B0D12;
+        }
+
+        .donor-wall-header {
+            text-align: center;
+            max-width: 620px;
+            margin: 0 auto clamp(2.5rem, 4vh, 3.5rem);
+        }
+
+        .donor-wall-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            font-family: var(--font-sans);
+            font-size: 0.82rem;
+            font-weight: 700;
+            letter-spacing: 1.6px;
+            color: #555D6E;
+            text-transform: uppercase;
+            margin-bottom: 0.85rem;
+        }
+
+        body:not(.light-theme) .donor-wall-eyebrow,
+        body.dark-theme .donor-wall-eyebrow {
+            color: #CBD5E1;
+        }
+
+        .donor-wall-eyebrow .eyebrow-square {
+            width: 10px;
+            height: 10px;
+            border-radius: 2px;
+            background: linear-gradient(135deg, var(--ry-amber) 0%, var(--ry-amber-hover) 100%);
+            box-shadow: 0 2px 8px rgba(229, 152, 25, 0.45);
+            display: inline-block;
+        }
+
+        .donor-wall-title {
+            font-family: var(--font-serif);
+            font-size: clamp(1.8rem, 3vw, 2.6rem);
+            font-weight: 700;
+            color: #101217;
+            line-height: 1.2;
+            margin: 0;
+        }
+
+        body:not(.light-theme) .donor-wall-title,
+        body.dark-theme .donor-wall-title {
+            color: #FFFFFF;
+        }
+
+        .donor-cards-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.4rem;
+        }
+
+        .donor-card {
+            position: relative;
+            background: rgba(229, 37, 37, 0.08);
+            padding: 1.5px;
+            clip-path: polygon(22px 0, 100% 0, 100% calc(100% - 22px), calc(100% - 22px) 100%, 0 100%, 0 22px);
+            filter: drop-shadow(0 6px 18px rgba(0, 0, 0, 0.04));
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), filter 0.3s ease;
+        }
+
+        body:not(.light-theme) .donor-card,
+        body.dark-theme .donor-card {
+            background: rgba(255, 255, 255, 0.08);
+            filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.45));
+        }
+
+        .donor-card:hover {
+            transform: translateY(-5px);
+            filter: drop-shadow(0 14px 36px rgba(229, 37, 37, 0.15));
+        }
+
+        .donor-card-inner {
+            background: #FDFCFB;
+            padding: 1.4rem 1.5rem;
+            clip-path: polygon(22px 0, 100% 0, 100% calc(100% - 22px), calc(100% - 22px) 100%, 0 100%, 0 22px);
+        }
+
+        body:not(.light-theme) .donor-card-inner,
+        body.dark-theme .donor-card-inner {
+            background: #12151F;
+        }
+
+        .donor-card-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.85rem;
+        }
+
+        .donor-avatar {
+            width: 44px;
+            height: 44px;
+            background: linear-gradient(135deg, #E52525 0%, #C41515 100%);
+            clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-serif);
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: #FFFFFF;
+        }
+
+        .donor-amount {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--ry-crimson);
+        }
+
+        .donor-name {
+            font-family: var(--font-sans);
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: #1E293B;
+            margin-bottom: 0.25rem;
+        }
+
+        body:not(.light-theme) .donor-name,
+        body.dark-theme .donor-name {
+            color: #FFFFFF;
+        }
+
+        .donor-note {
+            font-family: var(--font-sans);
+            font-size: 0.8rem;
+            line-height: 1.55;
+            color: #64748B;
+            font-style: italic;
+        }
+
+        body:not(.light-theme) .donor-note,
+        body.dark-theme .donor-note {
+            color: rgba(255, 255, 255, 0.45);
+        }
+
+        .donor-date {
+            font-family: var(--font-sans);
+            font-size: 0.72rem;
+            color: rgba(75, 82, 98, 0.55);
+            margin-top: 0.65rem;
+        }
+
+        body:not(.light-theme) .donor-date,
+        body.dark-theme .donor-date {
+            color: rgba(255, 255, 255, 0.3);
+        }
+
+        /* ---- FAQ Section ---- */
+        .donate-faq-section {
+            padding: clamp(4.5rem, 8vh, 7rem) 0;
+            background: #FFFFFF;
+            transition: background 0.35s ease;
+        }
+
+        body:not(.light-theme) .donate-faq-section,
+        body.dark-theme .donate-faq-section {
+            background: #090B0F;
+        }
+
+        .faq-inner-wrap {
+            max-width: 860px;
+            margin: 0 auto;
+        }
+
+        .faq-section-header {
+            text-align: center;
+            margin-bottom: clamp(2rem, 4vh, 3rem);
+        }
+
+        .faq-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            font-family: var(--font-sans);
+            font-size: 0.82rem;
+            font-weight: 700;
+            letter-spacing: 1.6px;
+            color: #555D6E;
+            text-transform: uppercase;
+            margin-bottom: 0.85rem;
+        }
+
+        body:not(.light-theme) .faq-eyebrow,
+        body.dark-theme .faq-eyebrow {
+            color: #CBD5E1;
+        }
+
+        .faq-eyebrow .eyebrow-square {
+            width: 10px;
+            height: 10px;
+            border-radius: 2px;
+            background: linear-gradient(135deg, var(--ry-amber) 0%, var(--ry-amber-hover) 100%);
+            display: inline-block;
+        }
+
+        .faq-section-title {
+            font-family: var(--font-serif);
+            font-size: clamp(1.8rem, 3vw, 2.6rem);
+            font-weight: 700;
+            color: #101217;
+        }
+
+        body:not(.light-theme) .faq-section-title,
+        body.dark-theme .faq-section-title {
+            color: #FFFFFF;
+        }
+
+        .faq-list {
+            display: flex;
+            flex-direction: column;
+            border: 1px solid rgba(16, 18, 23, 0.08);
+            clip-path: polygon(22px 0, 100% 0, 100% calc(100% - 22px), calc(100% - 22px) 100%, 0 100%, 0 22px);
+            overflow: hidden;
+            background: #FDFCFB;
+        }
+
+        body:not(.light-theme) .faq-list,
+        body.dark-theme .faq-list {
+            background: #11141D;
+            border-color: rgba(255, 255, 255, 0.08);
+        }
+
+        .faq-item {
+            border-bottom: 1px solid rgba(16, 18, 23, 0.08);
+        }
+
+        body:not(.light-theme) .faq-item,
+        body.dark-theme .faq-item {
+            border-bottom-color: rgba(255, 255, 255, 0.07);
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-question {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 1.5rem;
+            background: transparent;
+            border: none;
+            text-align: left;
+            font-family: var(--font-sans);
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #1E293B;
+            cursor: pointer;
+            gap: 1rem;
+            transition: background 0.2s ease;
+        }
+
+        body:not(.light-theme) .faq-question,
+        body.dark-theme .faq-question {
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        .faq-question:hover {
+            background: rgba(229, 37, 37, 0.04);
+        }
+
+        .faq-question.open {
+            color: var(--ry-crimson);
+        }
+
+        .faq-toggle-icon {
+            flex-shrink: 0;
+            width: 26px;
+            height: 26px;
+            background: rgba(0, 0, 0, 0.06);
+            clip-path: polygon(6px 0, 100% 0, 100% calc(100% - 6px), calc(100% - 6px) 100%, 0 100%, 0 6px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.72rem;
+            color: #64748B;
+            transition: all 0.25s ease;
+        }
+
+        body:not(.light-theme) .faq-toggle-icon,
+        body.dark-theme .faq-toggle-icon {
+            background: rgba(255, 255, 255, 0.06);
+            color: rgba(255, 255, 255, 0.55);
+        }
+
+        .faq-question.open .faq-toggle-icon {
+            background: var(--ry-crimson);
+            color: #FFFFFF;
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .faq-answer.open {
+            max-height: 220px;
+        }
+
+        .faq-answer-inner {
+            padding: 0 1.5rem 1.3rem;
+            font-family: var(--font-sans);
+            font-size: 0.9rem;
+            line-height: 1.75;
+            color: #64748B;
+        }
+
+        body:not(.light-theme) .faq-answer-inner,
+        body.dark-theme .faq-answer-inner {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* ---- Responsive Global Elements ---- */
+        @media (max-width: 991px) {
+            .donate-impact-strip-grid { grid-template-columns: repeat(2, 1fr); }
+            .donate-impact-stat { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.07); }
+            body.light-theme .donate-impact-stat { border-bottom-color: rgba(0,0,0,0.08); }
+            .donor-cards-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 640px) {
+            .donor-cards-grid { grid-template-columns: 1fr; }
+        }
+    </style>
 </head>
-<body>
-    <p>Redirecting to <a href="/donate">/donate</a>...</p>
+
+<body class="donate-page">
+<script>(function(){try{const t=localStorage.getItem('roboyuwa-theme');if(t==='light'){document.body.classList.add('light-theme');}else{document.body.classList.add('dark-theme');}}catch(e){document.body.classList.add('dark-theme');}})()</script>
+
+<!-- ===== HEADER ===== -->
+<header class="header" id="header">
+    <div class="top-bar">
+        <div class="container top-bar-container">
+            <div class="top-info">
+                <a href="tel:+9779749464658" class="info-item"><i class="fa-light fa-phone"></i><span>+977 9749464658</span></a>
+                <a href="mailto:roboyuwa@gmail.com" class="info-item"><i class="fa-light fa-envelope"></i><span>roboyuwa@gmail.com</span></a>
+                <span class="info-item"><i class="fa-light fa-clock"></i><span>Mon-Fri / 9:00 AM - 6:00 PM</span></span>
+            </div>
+            <div class="top-socials">
+                <a href="https://www.facebook.com/profile.php?id=61563808928659" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="top-social-link"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter" class="top-social-link"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="https://www.instagram.com/robo__yuwa/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="top-social-link"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/company/roboyuwa/posts/?feedView=all" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="top-social-link"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube" class="top-social-link"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="/" class="logo">
+                <picture class="logo-picture">
+            <source type="image/avif" srcset="/assets/optimized/roboyuwa-logo-80w.avif 80w, /assets/optimized/roboyuwa-logo-150w.avif 150w, /assets/optimized/roboyuwa-logo-300w.avif 300w" sizes="48px">
+            <source type="image/webp" srcset="/assets/optimized/roboyuwa-logo-80w.webp 80w, /assets/optimized/roboyuwa-logo-150w.webp 150w, /assets/optimized/roboyuwa-logo-300w.webp 300w" sizes="48px">
+            <img src="/assets/optimized/roboyuwa-logo-150w.jpg" srcset="/assets/optimized/roboyuwa-logo-80w.jpg 80w, /assets/optimized/roboyuwa-logo-150w.jpg 150w, /assets/optimized/roboyuwa-logo-300w.jpg 300w" sizes="48px" alt="RoboYuwa Logo" class="logo-img" width="48" height="48" loading="eager" fetchpriority="high" decoding="async" />
+          </picture>
+                <div class="logo-text"><span class="brand-name font-serif">RoboYuwa</span><span class="brand-tagline">Youth Innovation &amp; Robotics</span></div>
+            </a>
+            <button class="mobile-toggle" aria-label="Toggle Navigation" aria-expanded="false" aria-controls="nav-links"><span class="hamburger"></span></button>
+            <nav id="nav-links" class="nav-links">
+                <ul>
+                    <li><a href="/" class="nav-item">Home</a></li>
+                    <li><a href="/about" class="nav-item">About Us</a></li>
+                    <li><a href="/membership" class="nav-item">Membership</a></li>
+                    <li><a href="/team" class="nav-item">Our Team</a></li>
+                    <li><a href="/contact" class="nav-item">Contact</a></li>
+                </ul>
+                <div class="nav-mobile-cta">
+                    <a href="/donate" class="btn btn-pill-amber">Donate Now</a>
+                </div>
+            </nav>
+            <div class="nav-actions">
+                <button class="nav-search-btn" id="openSearchBtn" aria-label="Search" title="Search website"><i class="fa-light fa-magnifying-glass"></i></button>
+                <button class="theme-toggle-btn" id="themeToggleBtn" aria-label="Toggle light or dark theme" title="Toggle Light/Dark Theme"><i class="fa-solid fa-sun theme-icon-sun"></i><i class="fa-solid fa-moon theme-icon-moon"></i></button>
+                <a href="/donate" class="btn btn-pill-amber">Donate</a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<main>
+
+    <!-- =====================================================================
+         1. HERO SECTION
+         ===================================================================== -->
+    <section id="initiatives" class="initiatives-showcase-section" aria-label="RoboYuwa Major Initiatives">
+        <div class="container initiatives-container">
+          
+          <!-- Centered Header & Narrative -->
+          <div class="initiatives-header reveal">
+            <!-- Eyebrow: Amber Square + "Major Initiatives" -->
+            <div class="initiatives-eyebrow">
+              <span class="eyebrow-square" aria-hidden="true"></span>
+              <span>Major Initiatives</span>
+            </div>
+            <!-- Main Title: Serif with Crimson Gradient Accent -->
+            <h1 class="initiatives-main-title font-serif">
+              Pioneering Robotics, <span class="text-gradient-crimson">Shaping Futures</span>
+            </h1>
+
+            <!-- Subtitle Narrative -->
+            <p class="initiatives-subtitle">
+              At RoboYuwa, every initiative begins with purpose and is driven by passion. We don't just teach technology &mdash; we ignite curiosity, mentor future engineers, and build real-world robotic solutions that empower youth and communities across Nepal.
+            </p>
+
+            <!-- Centered Action Button -->
+            <div class="initiatives-action-wrap">
+              <a href="#donateFormCard" class="btn-initiatives-action">
+                <span>Explore Initiatives</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- 3-Frame Chamfered Photo Gallery Showcase -->
+          <div class="initiatives-gallery-grid reveal delay-1">
+            
+            <!-- Left Frame: RoboLearn Initiative (Top-Left & Bottom-Right Chamfers) -->
+            <div class="init-gallery-col left-col">
+              <div class="init-chamfer-frame frame-diagonal-1">
+                <picture>
+                        <source type="image/avif" srcset="/assets/optimized/donate-roblearn-500w.avif 500w, /assets/optimized/donate-roblearn-768w.avif 768w, /assets/optimized/donate-roblearn-1000w.avif 1000w" sizes="(max-width: 768px) 100vw, 33vw">
+                        <source type="image/webp" srcset="/assets/optimized/donate-roblearn-500w.webp 500w, /assets/optimized/donate-roblearn-768w.webp 768w, /assets/optimized/donate-roblearn-1000w.webp 1000w" sizes="(max-width: 768px) 100vw, 33vw">
+                        <img src="/assets/optimized/donate-roblearn-768w.jpg" srcset="/assets/optimized/donate-roblearn-500w.jpg 500w, /assets/optimized/donate-roblearn-768w.jpg 768w, /assets/optimized/donate-roblearn-1000w.jpg 1000w" sizes="(max-width: 768px) 100vw, 33vw" width="1000" height="952" alt="RoboLearn Initiative workshop" loading="lazy" decoding="async" />
+                      </picture>
+                <div class="init-frame-overlay">
+                  <span class="init-frame-badge">RoboLearn Initiative</span>
+                  <p class="init-frame-desc">Grassroots STEM &amp; hands-on school labs</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Center Frame: InnovatYouth Summit (Top-Right & Bottom-Left Chamfers with Play Button + Offset Backing Card) -->
+            <div class="init-gallery-col center-col">
+              <div class="init-center-wrapper">
+                <!-- Decorative Backing Offset Frame -->
+                <div class="init-backing-frame" aria-hidden="true"></div>
+                
+                <!-- Main Hero Frame -->
+                <div class="init-chamfer-frame frame-diagonal-2">
+                  <picture>
+                        <source type="image/avif" srcset="/assets/optimized/donate-innovatyouth-500w.avif 500w, /assets/optimized/donate-innovatyouth-768w.avif 768w, /assets/optimized/donate-innovatyouth-1000w.avif 1000w" sizes="(max-width: 768px) 100vw, 33vw">
+                        <source type="image/webp" srcset="/assets/optimized/donate-innovatyouth-500w.webp 500w, /assets/optimized/donate-innovatyouth-768w.webp 768w, /assets/optimized/donate-innovatyouth-1000w.webp 1000w" sizes="(max-width: 768px) 100vw, 33vw">
+                        <img src="/assets/optimized/donate-innovatyouth-768w.jpg" srcset="/assets/optimized/donate-innovatyouth-500w.jpg 500w, /assets/optimized/donate-innovatyouth-768w.jpg 768w, /assets/optimized/donate-innovatyouth-1000w.jpg 1000w" sizes="(max-width: 768px) 100vw, 33vw" width="1000" height="750" alt="InnovaYouth Labs hands-on mentorship" loading="lazy" decoding="async" />
+                      </picture>
+
+                  <div class="init-frame-overlay center-overlay">
+                    <span class="init-frame-badge highlight">InnovatYouth Summit</span>
+                    <p class="init-frame-desc">National youth engineering solutions &amp; innovation arena</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Frame: RoboEmpower & Competitions (Top-Left & Bottom-Right Chamfers) -->
+            <div class="init-gallery-col right-col">
+              <div class="init-chamfer-frame frame-diagonal-1">
+                <picture>
+                        <source type="image/avif" srcset="/assets/optimized/donate-roboempower-500w.avif 500w, /assets/optimized/donate-roboempower-768w.avif 768w, /assets/optimized/donate-roboempower-1000w.avif 1000w" sizes="(max-width: 768px) 100vw, 33vw">
+                        <source type="image/webp" srcset="/assets/optimized/donate-roboempower-500w.webp 500w, /assets/optimized/donate-roboempower-768w.webp 768w, /assets/optimized/donate-roboempower-1000w.webp 1000w" sizes="(max-width: 768px) 100vw, 33vw">
+                        <img src="/assets/optimized/donate-roboempower-768w.jpg" srcset="/assets/optimized/donate-roboempower-500w.jpg 500w, /assets/optimized/donate-roboempower-768w.jpg 768w, /assets/optimized/donate-roboempower-1000w.jpg 1000w" sizes="(max-width: 768px) 100vw, 33vw" width="1000" height="750" alt="RoboEmpower tech drive and community robotics" loading="lazy" decoding="async" />
+                      </picture>
+                <div class="init-frame-overlay">
+                  <span class="init-frame-badge">RoboEmpower</span>
+                  <p class="init-frame-desc">Hardware prototyping &amp; national championships</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- Section Pulse Divider Line (Matching Reference Image) -->
+        <div class="section-pulse-divider" aria-hidden="true">
+          <div class="pulse-line pulse-left"></div>
+          <svg class="pulse-peak-svg" viewBox="0 0 38 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <polyline points="0,18 19,4 38,18" />
+          </svg>
+          <div class="pulse-line pulse-right"></div>
+        </div>
+    </section>
+
+    <!-- =====================================================================
+         2. IMPACT STATS STRIP
+         ===================================================================== -->
+    <div class="donate-impact-strip" aria-label="Impact Statistics">
+        <div class="container">
+            <div class="donate-impact-strip-grid">
+                <div class="donate-impact-stat">
+                    <div class="donate-impact-num">NPR 200K+</div>
+                    <div class="donate-impact-label">Funds Raised</div>
+                </div>
+                <div class="donate-impact-stat">
+                    <div class="donate-impact-num">10+</div>
+                    <div class="donate-impact-label">STEAM Bootcamps Funded</div>
+                </div>
+                <div class="donate-impact-stat">
+                    <div class="donate-impact-num">150+</div>
+                    <div class="donate-impact-label">Youth Empowered</div>
+                </div>
+                <div class="donate-impact-stat">
+                    <div class="donate-impact-num">7</div>
+                    <div class="donate-impact-label">Provinces Covered</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- =====================================================================
+         3. DONATION FORM + IMPACT TIERS
+         ===================================================================== -->
+    <section class="donate-main-section" aria-label="Donation Form and Impact">
+        <div class="container">
+
+            <!-- Split Header -->
+            <div class="donate-main-header reveal">
+                <div>
+                    <div class="donate-main-eyebrow">
+                        <span class="eyebrow-square" aria-hidden="true"></span>
+                        <span>Make a Difference</span>
+                    </div>
+                    <h2 class="donate-main-title font-serif">
+                        Choose Your <span class="text-gradient-crimson">Impact Level</span>
+                    </h2>
+                </div>
+                <p class="donate-main-lead">
+                    RoboYuwa maintains 100% fiscal transparency. Every rupee you donate goes directly to hardware kits, bootcamps, and scholarships for Nepal's young engineers.
+                </p>
+            </div>
+
+            <!-- 2-Column Grid -->
+            <div class="donate-content-grid reveal delay-1">
+
+                <!-- Left: Donation Form -->
+                <div class="donate-form-chamfer" id="donateFormCard">
+                    <div class="donate-form-inner">
+                        <div class="form-inner-eyebrow">Make a Donation</div>
+                        <h3 class="form-inner-title font-serif">Choose Your Amount</h3>
+
+
+                        <label class="form-field-label">Select Amount (NPR)</label>
+                        <div class="amount-grid" role="group" aria-label="Preset donation amounts">
+                            <button class="amount-btn" onclick="setAmount(500,this)">NPR 500</button>
+                            <button class="amount-btn active" onclick="setAmount(1000,this)">NPR 1,000</button>
+                            <button class="amount-btn" onclick="setAmount(2500,this)">NPR 2,500</button>
+                            <button class="amount-btn" onclick="setAmount(5000,this)">NPR 5,000</button>
+                            <button class="amount-btn" onclick="setAmount(10000,this)">NPR 10,000</button>
+                            <button class="amount-btn" onclick="setAmount('custom',this)">Custom</button>
+                        </div>
+                        <div class="amount-custom-wrap">
+                            <span class="amount-currency-prefix">&#x20A8;</span>
+                            <input type="number" class="amount-custom-input" id="customAmountInput" value="1000" min="100" aria-label="Custom donation amount in NPR">
+                        </div>
+
+                        <label class="form-field-label">Your Information</label>
+                        <div class="donor-fields">
+                            <div class="field-group">
+                                <label class="form-field-label" for="donorFirstName">First Name</label>
+                                <input type="text" class="field-input" id="donorFirstName" placeholder="Ram" autocomplete="given-name" required>
+                            </div>
+                            <div class="field-group">
+                                <label class="form-field-label" for="donorLastName">Last Name</label>
+                                <input type="text" class="field-input" id="donorLastName" placeholder="Sharma" autocomplete="family-name" required>
+                            </div>
+                            <div class="field-group">
+                                <label class="form-field-label" for="donorEmail">Email Address</label>
+                                <input type="email" class="field-input" id="donorEmail" placeholder="ram@example.com" autocomplete="email" required>
+                            </div>
+                            <div class="field-group">
+                                <label class="form-field-label" for="donorPhone">Phone (Optional)</label>
+                                <input type="tel" class="field-input" id="donorPhone" placeholder="+977 9800000000">
+                            </div>
+                            <div class="field-group full-width">
+                                <label class="form-field-label" for="donorMessage">Message (Optional)</label>
+                                <input type="text" class="field-input" id="donorMessage" placeholder="A message of encouragement for RoboYuwa's youth...">
+                            </div>
+                        </div>
+
+                        <label class="anon-check" for="anonCheck">
+                            <input type="checkbox" id="anonCheck">
+                            <span>Keep my donation anonymous</span>
+                        </label>
+
+                        <button class="donate-submit-btn" id="donateSubmitBtn" type="button" onclick="submitDonation()">
+                            <i class="fa-light fa-heart"></i>
+                            <span>Donate Now &mdash; NPR <span id="donateAmountDisplay">1,000</span></span>
+                        </button>
+                        <div class="secure-note">
+                            <i class="fa-light fa-lock"></i>
+                            <span>Secured &amp; Verified &middot; 100% PAN Audited &middot; SWC Registered</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Impact Tiers (2x2 Grid) + QR Pay Details (Matching Chamfer Card) -->
+                <div class="donate-impact-chamfer">
+                    <div class="donate-impact-inner">
+                        <div class="impact-card-header">
+                            <div class="impact-col-eyebrow">
+                                <span class="eyebrow-square" aria-hidden="true"></span>
+                                <span>Where Your Money Goes</span>
+                            </div>
+                            <h3 class="impact-col-title font-serif">Every Rupee Directly <span class="text-gradient-crimson">Impacts a Life</span></h3>
+                            <p class="impact-col-desc">Here's exactly what your donation unlocks for Nepal's youth engineers — 100% goes to programmes, never overhead.</p>
+                        </div>
+
+                        <div class="impact-tiers-grid">
+                            <div class="impact-tier">
+                                <div class="tier-badge">NPR<br>500</div>
+                                <div>
+                                    <div class="tier-info-title">Starter Spark</div>
+                                    <div class="tier-info-desc">Sensor parts for one student.</div>
+                                </div>
+                            </div>
+                            <div class="impact-tier">
+                                <div class="tier-badge">NPR<br>1,000</div>
+                                <div>
+                                    <div class="tier-info-title">Workshop Seat</div>
+                                    <div class="tier-info-desc">Fully funds one bootcamp seat.</div>
+                                </div>
+                            </div>
+                            <div class="impact-tier">
+                                <div class="tier-badge">NPR<br>5,000</div>
+                                <div>
+                                    <div class="tier-info-title">Hardware Kit</div>
+                                    <div class="tier-info-desc">Full Arduino microcontroller kit.</div>
+                                </div>
+                            </div>
+                            <div class="impact-tier">
+                                <div class="tier-badge">NPR<br>25,000</div>
+                                <div>
+                                    <div class="tier-info-title">Lab Sponsor</div>
+                                    <div class="tier-info-desc">Mini robotics lab with PCB tools.</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Direct Impact Assurance Bar -->
+                        <div class="impact-guarantee-bar">
+                            <div class="guarantee-item">
+                                <i class="fa-light fa-shield-check"></i>
+                                <span><strong>100% Direct Impact:</strong> Zero administrative deduction from your contribution</span>
+                            </div>
+                            <div class="guarantee-item">
+                                <i class="fa-light fa-receipt"></i>
+                                <span><strong>Audited &amp; Certified:</strong> Official fiscal compliance registered with SWC Nepal</span>
+                            </div>
+                        </div>
+
+                        <!-- QR Code Pay Section -->
+                        <div class="qr-pay-box">
+                            <div class="qr-pay-header">
+                                <i class="fa-light fa-qrcode"></i>
+                                <span>Direct Bank Transfer &bull; Scan &amp; Pay</span>
+                            </div>
+                            <div class="qr-pay-body">
+                                <!-- QR Image -->
+                                <div class="qr-img-wrap">
+                                    <picture>
+                          <source type="image/avif" srcset="/assets/optimized/bank-qr-roboyuwa-350w.avif 350w, /assets/optimized/bank-qr-roboyuwa-500w.avif 500w, /assets/optimized/bank-qr-roboyuwa-800w.avif 800w" sizes="(max-width: 480px) 280px, 320px">
+                          <source type="image/webp" srcset="/assets/optimized/bank-qr-roboyuwa-350w.webp 350w, /assets/optimized/bank-qr-roboyuwa-500w.webp 500w, /assets/optimized/bank-qr-roboyuwa-800w.webp 800w" sizes="(max-width: 480px) 280px, 320px">
+                          <img src="/assets/optimized/bank-qr-roboyuwa-500w.jpg" srcset="/assets/optimized/bank-qr-roboyuwa-350w.jpg 350w, /assets/optimized/bank-qr-roboyuwa-500w.jpg 500w, /assets/optimized/bank-qr-roboyuwa-800w.jpg 800w" sizes="(max-width: 480px) 280px, 320px" alt="RoboYuwa Official Bank QR Code - Laxmi Sunrise Bank Account: 08908003112" class="qr-img" width="320" height="320" loading="lazy" decoding="async" />
+                        </picture>
+                                    <div class="qr-scan-label">
+                                        <i class="fa-light fa-camera" style="margin-right:3px"></i>Scan via banking app
+                                    </div>
+                                </div>
+                                <!-- Bank Details -->  
+                                <div class="qr-bank-details">
+                                    <div class="bank-row"><span class="bank-label">Account Name</span><span class="bank-val">RoboYuwa Nepal</span></div>
+                                    <div class="bank-row"><span class="bank-label">Bank</span><span class="bank-val">Nepal Investment Mega Bank</span></div>
+                                    <div class="bank-row"><span class="bank-label">Account No.</span><span class="bank-val">080760010XXXX</span></div>
+                                    <div class="bank-row"><span class="bank-label">PAN No.</span><span class="bank-val">6XXXXXXX</span></div>
+                                    <div class="bank-row"><span class="bank-label">Reference</span><span class="bank-val">DONATION-[Name]</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pulse Divider -->
+        <div class="section-pulse-divider" aria-hidden="true">
+            <div class="pulse-line pulse-left"></div>
+            <svg class="pulse-peak-svg" viewBox="0 0 38 20" fill="none" xmlns="http://www.w3.org/2000/svg"><polyline points="0,18 19,4 38,18" /></svg>
+            <div class="pulse-line pulse-right"></div>
+        </div>
+    </section>
+
+    <!-- =====================================================================
+         4. DONOR WALL
+         ===================================================================== -->
+    <section class="donor-wall-section" aria-label="Recent Donors">
+        <div class="container">
+            <div class="donor-wall-header reveal">
+                <div class="donor-wall-eyebrow">
+                    <span class="eyebrow-square" aria-hidden="true"></span>
+                    <span>Community Champions</span>
+                </div>
+                <h2 class="donor-wall-title font-serif">Our <span class="text-gradient-crimson">Generous Donors</span></h2>
+            </div>
+            <div class="donor-cards-grid reveal delay-1">
+                <div class="donor-card">
+                    <div class="donor-card-inner">
+                        <div class="donor-card-top"><div class="donor-avatar">SR</div><div class="donor-amount">NPR 25,000</div></div>
+                        <div class="donor-name">Sagar Regmi</div>
+                        <div class="donor-note">"Education in robotics is the greatest gift we can give Nepal's next generation."</div>
+                        <div class="donor-date">September 2026</div>
+                    </div>
+                </div>
+                <div class="donor-card">
+                    <div class="donor-card-inner">
+                        <div class="donor-card-top"><div class="donor-avatar">AP</div><div class="donor-amount">NPR 10,000</div></div>
+                        <div class="donor-name">Anita Pradhan</div>
+                        <div class="donor-note">"Proud to support Nepal's young engineers! Keep building the future."</div>
+                        <div class="donor-date">August 2026</div>
+                    </div>
+                </div>
+                <div class="donor-card">
+                    <div class="donor-card-inner">
+                        <div class="donor-card-top"><div class="donor-avatar">BT</div><div class="donor-amount">NPR 5,000</div></div>
+                        <div class="donor-name">Bijay Thapa</div>
+                        <div class="donor-note">"Every robot built by a child here is a step towards Nepal's tech future."</div>
+                        <div class="donor-date">July 2026</div>
+                    </div>
+                </div>
+                <div class="donor-card">
+                    <div class="donor-card-inner">
+                        <div class="donor-card-top"><div class="donor-avatar">KS</div><div class="donor-amount">NPR 15,000</div></div>
+                        <div class="donor-name">Kavya Shrestha</div>
+                        <div class="donor-note">"Inspiring work! Robotics education is exactly what Nepal's youth needs."</div>
+                        <div class="donor-date">September 2026</div>
+                    </div>
+                </div>
+                <div class="donor-card">
+                    <div class="donor-card-inner">
+                        <div class="donor-card-top"><div class="donor-avatar"><i class="fa-light fa-user-secret" style="font-size:.85rem"></i></div><div class="donor-amount">NPR 2,500</div></div>
+                        <div class="donor-name">Anonymous</div>
+                        <div class="donor-note">"Wishing the RoboYuwa team every success in your bootcamps and competitions."</div>
+                        <div class="donor-date">August 2026</div>
+                    </div>
+                </div>
+                <div class="donor-card">
+                    <div class="donor-card-inner">
+                        <div class="donor-card-top"><div class="donor-avatar">MB</div><div class="donor-amount">NPR 50,000</div></div>
+                        <div class="donor-name">MindBridge Tech Pvt.</div>
+                        <div class="donor-note">"Corporate sponsors for the RADAR 2026 Innovation Hackathon lab setup."</div>
+                        <div class="donor-date">July 2026</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pulse Divider -->
+        <div class="section-pulse-divider pulse-left-side" aria-hidden="true">
+            <div class="pulse-line pulse-left"></div>
+            <svg class="pulse-peak-svg" viewBox="0 0 38 20" fill="none" xmlns="http://www.w3.org/2000/svg"><polyline points="0,18 19,4 38,18" /></svg>
+            <div class="pulse-line pulse-right"></div>
+        </div>
+    </section>
+
+    <!-- =====================================================================
+         5. FAQ SECTION
+         ===================================================================== -->
+    <section class="donate-faq-section" aria-label="Donation FAQ">
+        <div class="container">
+            <div class="faq-inner-wrap">
+                <div class="faq-section-header reveal">
+                    <div class="faq-eyebrow">
+                        <span class="eyebrow-square" aria-hidden="true"></span>
+                        <span>Questions</span>
+                    </div>
+                    <h2 class="faq-section-title font-serif">Frequently Asked <span class="text-gradient-crimson">Questions</span></h2>
+                </div>
+                <div class="faq-list reveal delay-1">
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false" aria-controls="faq-a1">
+                            Is RoboYuwa a registered NGO?
+                            <span class="faq-toggle-icon"><i class="fa-light fa-chevron-down"></i></span>
+                        </button>
+                        <div class="faq-answer" id="faq-a1">
+                            <div class="faq-answer-inner">Yes. RoboYuwa is a legally registered organization under the Association Registration Act of Nepal and operates under Social Welfare Council (SWC) oversight. All transactions are documented with full PAN billing under RoboYuwa's legal name.</div>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false" aria-controls="faq-a2">
+                            How is my donation used?
+                            <span class="faq-toggle-icon"><i class="fa-light fa-chevron-down"></i></span>
+                        </button>
+                        <div class="faq-answer" id="faq-a2">
+                            <div class="faq-answer-inner">100% of donations go directly toward hardware kits, bootcamp logistics, competition fees, mentor stipends, and outreach scholarships. Our Treasurer progressively audits all expenditures with verified PAN-stamped invoices.</div>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false" aria-controls="faq-a3">
+                            Can I donate in USD or other currencies?
+                            <span class="faq-toggle-icon"><i class="fa-light fa-chevron-down"></i></span>
+                        </button>
+                        <div class="faq-answer" id="faq-a3">
+                            <div class="faq-answer-inner">Currently we accept donations in NPR. For international donors wishing to contribute in USD or other currencies, please contact roboyuwa@gmail.com and our team will arrange the appropriate transfer pathway.</div>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false" aria-controls="faq-a4">
+                            Will I receive a donation receipt?
+                            <span class="faq-toggle-icon"><i class="fa-light fa-chevron-down"></i></span>
+                        </button>
+                        <div class="faq-answer" id="faq-a4">
+                            <div class="faq-answer-inner">Yes. Upon confirmation of your donation, we will email you an official PAN-stamped receipt from RoboYuwa Nepal within 3 business days, which can be used for your tax records.</div>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false" aria-controls="faq-a5">
+                            Can corporations or institutions donate?
+                            <span class="faq-toggle-icon"><i class="fa-light fa-chevron-down"></i></span>
+                        </button>
+                        <div class="faq-answer" id="faq-a5">
+                            <div class="faq-answer-inner">Absolutely. We welcome institutional and corporate sponsorships. Contact us to discuss CSR partnership tiers, naming rights on hardware kits or lab setups, and co-branding for events like RADAR.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================================
+         6. BOTTOM CTA (Matching homepage chamfer card)
+         ===================================================================== -->
+    <section id="cta" class="cta-showcase-section" aria-label="Other Ways to Help">
+        <div class="container cta-container">
+            <div class="cta-chamfer-card reveal">
+                <!-- Top-Right Watermark Badges -->
+                <div class="cta-badge-group top-right" aria-hidden="true">
+                    <span class="cta-oct-badge"></span>
+                    <span class="cta-oct-badge"></span>
+                    <span class="cta-oct-badge"></span>
+                </div>
+                <!-- Bottom-Left Watermark Badges -->
+                <div class="cta-badge-group bottom-left" aria-hidden="true">
+                    <span class="cta-oct-badge"></span>
+                    <span class="cta-oct-badge"></span>
+                    <span class="cta-oct-badge"></span>
+                </div>
+                <div class="cta-card-content">
+                    <div class="cta-eyebrow">
+                        <span class="eyebrow-square" aria-hidden="true"></span>
+                        <span>Other Ways to Help</span>
+                    </div>
+                    <h2 class="cta-main-title font-serif">
+                        Not Ready to Donate? <span class="text-gradient-crimson">Support Us</span> Another Way
+                    </h2>
+                    <p class="cta-subtitle">
+                        Volunteer as a STEM mentor, partner your institution, or become a RoboYuwa Member to support Nepal's youth robotics mission.
+                    </p>
+                    <div class="cta-btn-group">
+                        <a href="/membership" class="btn-cta-primary">
+                            <i class="fa-solid fa-id-card" style="margin-right:8px"></i>
+                            <span>Become a Member</span>
+                        </a>
+                        <a href="/contact" class="btn-cta-secondary">
+                            <span>Partner With Us</span>
+                            <i class="fa-solid fa-arrow-right" style="margin-left:8px"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer" id="footer">
+    <div class="footer-top-accent" aria-hidden="true"></div>
+    <div class="container footer-main-container">
+        <div class="footer-grid">
+            <div class="footer-col footer-col-brand">
+                <a href="/" class="footer-logo-badge" aria-label="RoboYuwa Home">
+                    <picture class="footer-logo-picture">
+                        <source type="image/avif" srcset="/assets/optimized/roboyuwa-logo-80w.avif 80w, /assets/optimized/roboyuwa-logo-150w.avif 150w, /assets/optimized/roboyuwa-logo-300w.avif 300w" sizes="52px">
+                        <source type="image/webp" srcset="/assets/optimized/roboyuwa-logo-80w.webp 80w, /assets/optimized/roboyuwa-logo-150w.webp 150w, /assets/optimized/roboyuwa-logo-300w.webp 300w" sizes="52px">
+                        <img src="/assets/optimized/roboyuwa-logo-150w.jpg" srcset="/assets/optimized/roboyuwa-logo-80w.jpg 80w, /assets/optimized/roboyuwa-logo-150w.jpg 150w, /assets/optimized/roboyuwa-logo-300w.jpg 300w" sizes="52px" alt="RoboYuwa Logo" class="footer-logo-circle" width="52" height="52" loading="lazy" decoding="async" />
+                      </picture>
+                </a>
+                <p class="footer-mission-text">Nepal's premier youth-driven robotics and STEM organization empowering students across all 7 provinces with hands-on hardware engineering, research, and innovation.</p>
+                <div class="footer-social-boxes" aria-label="Social Media Profiles">
+                    <a href="https://www.facebook.com/profile.php?id=61563808928659" target="_blank" rel="noopener noreferrer" class="social-box-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-box-btn" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="https://www.instagram.com/robo__yuwa/" target="_blank" rel="noopener noreferrer" class="social-box-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/company/roboyuwa/posts/?feedView=all" target="_blank" rel="noopener noreferrer" class="social-box-btn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-box-btn" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-col footer-col-nav">
+                <h4 class="footer-col-header">NAVIGATION</h4>
+                <div class="footer-title-bar" aria-hidden="true"></div>
+                <ul class="footer-clean-links">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about">About Us</a></li>
+                    <li><a href="/donate">Support &amp; Donate</a></li>
+                    <li><a href="/membership">Membership</a></li>
+                    <li><a href="/team">Our Team</a></li>
+                    <li><a href="/contact">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-col footer-col-nav">
+                <h4 class="footer-col-header">GET INVOLVED</h4>
+                <div class="footer-title-bar" aria-hidden="true"></div>
+                <ul class="footer-clean-links">
+                    <li><a href="/membership">Become a Member</a></li>
+                    <li><a href="/donate">Support &amp; Donate</a></li>
+                    <li><a href="/about">RoboLearn Curriculum</a></li>
+                    <li><a href="/about">STEAM Bootcamps</a></li>
+                    <li><a href="/about">Competitions &amp; Hackathons</a></li>
+                    <li><a href="/contact">Institutional Partnership</a></li>
+                </ul>
+            </div>
+            <div class="footer-col footer-col-newsletter">
+                <h4 class="footer-col-header">EXECUTIVE NEWSLETTER</h4>
+                <div class="footer-title-bar" aria-hidden="true"></div>
+                <p class="footer-newsletter-intro">Subscribe to our monthly digest of student innovations, robotics workshops across Nepal, and STEM updates.</p>
+                <form class="footer-newsletter-box" onsubmit="return false">
+                    <input type="email" class="newsletter-dark-input" placeholder="your.email@roboyuwa.org" required autocomplete="email" aria-label="Email address">
+                    <button type="submit" class="newsletter-dark-btn" aria-label="Subscribe"><i class="fa-solid fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom-bar">
+            <div class="footer-bottom-copy">
+                <p class="footer-copy-line1">&copy; 2026 RoboYuwa Nepal. Youth-Led Robotics &amp; STEM Empowerment.</p>
+                <p class="footer-copy-line2">Building world-class engineering and technological excellence across Nepal.</p>
+                <p class="footer-copy-dev">Developed by <a href="https://sakshyambastakoti.com.np" target="_blank" rel="noopener noreferrer" class="developer-link">Sakshyam Bastakoti <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></p>
+            </div>
+            <div class="footer-bottom-nav">
+                <a href="/privacy-policy">Privacy Policy</a>
+                <a href="/terms-of-service">Terms of Service</a>
+                <a href="/cookie-policy">Cookie Policy</a>
+                <span class="footer-bar-sep" aria-hidden="true">|</span>
+                <a href="#header" class="footer-back-to-top" id="backToTopBtn" aria-label="Back to top"><i class="fa-solid fa-chevron-up"></i><span>TOP</span></a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Search Modal -->
+<div class="modal-backdrop" id="searchModal" aria-hidden="true" role="dialog" aria-label="Search RoboYuwa">
+    <div class="search-modal-dialog">
+        <button class="modal-close" id="closeSearchModal" aria-label="Close search">&times;</button>
+        <div class="search-modal-header">
+            <i class="fa-light fa-magnifying-glass search-icon"></i>
+            <input type="search" id="siteSearchInput" placeholder="Search programs, workshops, research, team..." aria-label="Search query" autocomplete="off">
+        </div>
+        <div class="search-quick-tags">
+            <span>Popular:</span>
+            <a href="/about" class="search-tag">RoboLearn</a>
+            <a href="/about" class="search-tag">Our Vision</a>
+            <a href="/team" class="search-tag">Executive Board</a>
+            <a href="/donate" class="search-tag">Donate</a>
+            <a href="/membership" class="search-tag">Membership</a>
+        </div>
+    </div>
+</div>
+
+<script src="/js/script.js"></script>
+<script src="/js/formspree.js"></script>
+<script>
+    function setAmount(val, btn) {
+        document.querySelectorAll('.amount-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        if (val !== 'custom') {
+            document.getElementById('customAmountInput').value = val;
+            updateDisplay();
+        } else {
+            document.getElementById('customAmountInput').focus();
+        }
+    }
+    function setFreq(btn) {
+        document.querySelectorAll('.freq-tab').forEach(b => { b.classList.remove('active'); b.setAttribute('aria-selected','false'); });
+        btn.classList.add('active'); btn.setAttribute('aria-selected','true');
+    }
+    function updateDisplay() {
+        const v = parseInt(document.getElementById('customAmountInput').value) || 0;
+        document.getElementById('donateAmountDisplay').textContent = v.toLocaleString('en-IN');
+    }
+    document.getElementById('customAmountInput').addEventListener('input', function() {
+        updateDisplay();
+        document.querySelectorAll('.amount-btn').forEach(b => b.classList.remove('active'));
+    });
+    function submitDonation() {
+        const amount = parseInt(document.getElementById('customAmountInput').value) || 0;
+        if (amount < 100) { alert('Minimum donation is NPR 100.'); return; }
+        const btn = document.getElementById('donateSubmitBtn');
+        btn.innerHTML = '<i class="fa-light fa-spinner fa-spin"></i> Processing...';
+        btn.disabled = true;
+        setTimeout(() => {
+            btn.innerHTML = '<i class="fa-light fa-circle-check"></i> Thank You for Your Generosity!';
+            btn.style.background = 'linear-gradient(135deg,#376856,#274E40)';
+            setTimeout(() => {
+                btn.innerHTML = '<i class="fa-light fa-heart"></i><span>Donate Now &mdash; NPR <span id="donateAmountDisplay">' + amount.toLocaleString('en-IN') + '</span></span>';
+                btn.style.background = '';
+                btn.disabled = false;
+            }, 3500);
+        }, 1800);
+    }
+    function toggleFaq(btn) {
+        const isOpen = btn.classList.contains('open');
+        document.querySelectorAll('.faq-question').forEach(q => {
+            q.classList.remove('open'); q.setAttribute('aria-expanded','false');
+            const id = q.getAttribute('aria-controls');
+            if (id) document.getElementById(id).classList.remove('open');
+        });
+        if (!isOpen) {
+            btn.classList.add('open'); btn.setAttribute('aria-expanded','true');
+            const id = btn.getAttribute('aria-controls');
+            if (id) document.getElementById(id).classList.add('open');
+        }
+    }
+    updateDisplay();
+</script>
 </body>
 </html>

@@ -1,4 +1,21 @@
 // ============================================================
+//  Clean URL: Remove /index.html from address bar
+// ============================================================
+(function cleanIndexUrl() {
+    try {
+        if (window.location.protocol.startsWith('http')) {
+            const pathname = window.location.pathname;
+            if (pathname.endsWith('/index.html') || pathname === '/index.html') {
+                const cleanPath = pathname.replace(/\/index\.html$/, '/') || '/';
+                window.history.replaceState(null, '', cleanPath + window.location.search + window.location.hash);
+            }
+        }
+    } catch (e) {
+        // Fallback gracefully
+    }
+})();
+
+// ============================================================
 //  Rounded Favicon Generator (canvas clip with border-radius)
 // ============================================================
 (function applyRoundedFavicon() {
@@ -400,8 +417,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         navItems.forEach(item => {
             const href = item.getAttribute('href');
-            if (href && (href.startsWith('#') || href === 'index.html')) {
-                const target = href === 'index.html' ? 'home' : href.replace('#', '');
+            if (href && (href.startsWith('#') || href === 'index.html' || href === '/')) {
+                const target = (href === 'index.html' || href === '/') ? 'home' : href.replace('#', '');
                 item.classList.toggle('active', target === currentId);
             }
         });
@@ -413,7 +430,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Smooth scroll to top when on home page and clicking logo or Home nav link
     const isHomePage = !!document.getElementById('home') || window.location.pathname.endsWith('index.html') || window.location.pathname.endsWith('/') || window.location.pathname === '';
     if (isHomePage) {
-        document.querySelectorAll('.logo, .nav-links a[href="index.html"], .nav-links a[href="#home"]').forEach(link => {
+        document.querySelectorAll('.logo, .nav-links a[href="index.html"], .nav-links a[href="/"], .nav-links a[href="#home"]').forEach(link => {
             link.addEventListener('click', (e) => {
                 if (window.location.pathname.endsWith('index.html') || window.location.pathname.endsWith('/') || !window.location.pathname.includes('.html')) {
                     if (window.scrollY > 20) {

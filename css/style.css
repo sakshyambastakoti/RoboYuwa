@@ -3607,6 +3607,7 @@ body.donate-page .header,
 body.membership-page .header,
 body.team-page .header,
 body.legal-page .header,
+body.error-page .header,
 body.light-theme:not(.home-page):not(:has(.hero)) .header,
 body.light-theme.contact-page .header,
 body.light-theme.about-page .header,
@@ -3614,6 +3615,7 @@ body.light-theme.donate-page .header,
 body.light-theme.membership-page .header,
 body.light-theme.team-page .header,
 body.light-theme.legal-page .header,
+body.light-theme.error-page .header,
 body.light-theme:has(.contact-exec-wrapper) .header {
     background-color: rgba(10, 12, 16, 0.96) !important;
     backdrop-filter: blur(16px) !important;
@@ -3629,7 +3631,9 @@ body.donate-page .header.scrolled,
 body.membership-page .header.scrolled,
 body.team-page .header.scrolled,
 body.legal-page .header.scrolled,
-body.light-theme:not(.home-page):not(:has(.hero)) .header.scrolled {
+body.error-page .header.scrolled,
+body.light-theme:not(.home-page):not(:has(.hero)) .header.scrolled,
+body.light-theme.error-page .header.scrolled {
     background-color: rgba(8, 10, 14, 0.98) !important;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.55) !important;
 }
@@ -3641,7 +3645,9 @@ body.donate-page .top-bar,
 body.membership-page .top-bar,
 body.team-page .top-bar,
 body.legal-page .top-bar,
-body.light-theme:not(.home-page):not(:has(.hero)) .top-bar {
+body.error-page .top-bar,
+body.light-theme:not(.home-page):not(:has(.hero)) .top-bar,
+body.light-theme.error-page .top-bar {
     background-color: rgba(6, 7, 10, 0.92) !important;
     border-bottom: 1px solid rgba(255, 255, 255, 0.07) !important;
     color: rgba(255, 255, 255, 0.9) !important;

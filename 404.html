@@ -32,12 +32,12 @@
             align-items: center;
             justify-content: center;
             position: relative;
-            padding: 140px 1.5rem 80px;
+            padding: clamp(150px, 18vh, 180px) 1.5rem 80px;
             text-align: center;
             background: radial-gradient(circle at 50% 35%, rgba(229, 37, 37, 0.08) 0%, rgba(13, 20, 18, 0.98) 70%);
             overflow: hidden;
         }
-        .body.light-theme .error-hero-section {
+        body.light-theme .error-hero-section {
             background: radial-gradient(circle at 50% 35%, rgba(229, 37, 37, 0.05) 0%, rgba(248, 250, 252, 0.98) 70%);
         }
         .error-card-inner {
@@ -45,21 +45,6 @@
             margin: 0 auto;
             position: relative;
             z-index: 2;
-        }
-        .error-badge-glitch {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 6px 18px;
-            border-radius: 999px;
-            background: rgba(229, 37, 37, 0.12);
-            border: 1px solid rgba(229, 37, 37, 0.35);
-            color: #ef4444;
-            font-size: 0.85rem;
-            font-weight: 600;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            margin-bottom: 20px;
         }
         .error-big-number {
             font-family: var(--font-serif);
@@ -99,6 +84,16 @@
             justify-content: center;
             align-items: center;
             margin-bottom: 40px;
+        }
+        body.light-theme .btn-hero-ghost {
+            color: #0f172a;
+            border-color: rgba(15, 23, 42, 0.25);
+            background: rgba(15, 23, 42, 0.04);
+        }
+        body.light-theme .btn-hero-ghost:hover {
+            background: rgba(15, 23, 42, 0.08);
+            border-color: rgba(15, 23, 42, 0.5);
+            color: #0f172a;
         }
         .error-quick-routes {
             padding-top: 24px;
@@ -235,9 +230,6 @@
     <!-- Main 404 Hero Showcase -->
     <main class="error-hero-section">
         <div class="error-card-inner">
-            <div class="error-badge-glitch">
-                <i class="fa-solid fa-triangle-exclamation"></i> Telemetry Error
-            </div>
             <div class="error-big-number">404</div>
             <h1 class="error-title">Circuit Connection Lost</h1>
             <p class="error-lead">
@@ -269,8 +261,11 @@
 
     <!-- Global Executive Footer -->
     <footer class="footer" id="footer">
-        <div class="container footer-container">
-            <div class="footer-top-grid">
+        <!-- Tri-Color Brand Top Accent Line -->
+        <div class="footer-top-accent" aria-hidden="true"></div>
+
+        <div class="container footer-main-container">
+            <div class="footer-grid">
                 <!-- Column 1: Organization & Identity -->
                 <div class="footer-col footer-col-brand">
                     <a href="/" class="footer-logo-badge" aria-label="RoboYuwa Home">

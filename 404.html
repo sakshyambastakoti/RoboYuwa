@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="robots" content="noindex, follow">
+    <link rel="icon" type="image/jpeg" href="/assets/roboyuwa-logo-BLCCIWUS.jpg" />
+    <title>404: Circuit Not Found | RoboYuwa</title>
+    <meta name="description" content="The requested page could not be located on RoboYuwa. Explore our robotics programs, membership, or return to mission control.">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://zenithkandel.com.np" crossorigin />
+    <link rel="dns-prefetch" href="https://zenithkandel.com.np" />
+    <script src="https://zenithkandel.com.np/fontawesome/zenith-icons.js"></script>
+    <style>
+        .error-hero-section {
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 140px 1.5rem 80px;
+            text-align: center;
+            background: radial-gradient(circle at 50% 35%, rgba(229, 37, 37, 0.08) 0%, rgba(13, 20, 18, 0.98) 70%);
+            overflow: hidden;
+        }
+        .body.light-theme .error-hero-section {
+            background: radial-gradient(circle at 50% 35%, rgba(229, 37, 37, 0.05) 0%, rgba(248, 250, 252, 0.98) 70%);
+        }
+        .error-card-inner {
+            max-width: 680px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        .error-badge-glitch {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 18px;
+            border-radius: 999px;
+            background: rgba(229, 37, 37, 0.12);
+            border: 1px solid rgba(229, 37, 37, 0.35);
+            color: #ef4444;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+        .error-big-number {
+            font-family: var(--font-serif);
+            font-size: clamp(5.5rem, 14vw, 9.5rem);
+            font-weight: 800;
+            line-height: 1;
+            margin: 0 0 10px;
+            letter-spacing: -0.04em;
+            background: linear-gradient(135deg, #f87171 0%, #ef4444 45%, #f59e0b 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 0 25px rgba(239, 68, 68, 0.3));
+        }
+        .error-title {
+            font-family: var(--font-serif);
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            font-weight: 700;
+            margin: 0 0 16px;
+            color: #f1f5f9;
+        }
+        body.light-theme .error-title {
+            color: #0f172a;
+        }
+        .error-lead {
+            font-size: 1.05rem;
+            line-height: 1.65;
+            color: #94a3b8;
+            margin-bottom: 36px;
+        }
+        body.light-theme .error-lead {
+            color: #475569;
+        }
+        .error-actions-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+        .error-quick-routes {
+            padding-top: 24px;
+            border-top: 1px solid rgba(148, 163, 184, 0.15);
+        }
+        .error-quick-title {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: #64748b;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+        .error-route-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+        .error-route-tag {
+            padding: 6px 14px;
+            border-radius: 6px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            color: #cbd5e1;
+            font-size: 0.88rem;
+            text-decoration: none;
+            transition: all 0.25s ease;
+        }
+        body.light-theme .error-route-tag {
+            background: #f1f5f9;
+            border-color: #e2e8f0;
+            color: #334155;
+        }
+        .error-route-tag:hover {
+            background: rgba(239, 68, 68, 0.15);
+            border-color: rgba(239, 68, 68, 0.4);
+            color: #f87171;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body class="error-page">
+  <script>
+    (function() {
+      try {
+        if (localStorage.getItem('roboyuwa-theme') === 'dark') {
+          document.body.classList.add('dark-theme');
+        } else {
+          document.body.classList.add('light-theme');
+        }
+      } catch (e) {}
+    })();
+  </script>
+
+    <!-- Header (Top Utility Bar + Transparent Navbar) -->
+    <header class="header" id="header">
+        <div class="top-bar">
+            <div class="container top-bar-container">
+                <div class="top-info">
+                    <a href="tel:+9779749464658" class="info-item">
+                        <i class="fa-light fa-phone"></i>
+                        <span>+977 9749464658</span>
+                    </a>
+                    <a href="mailto:roboyuwa@gmail.com" class="info-item">
+                        <i class="fa-light fa-envelope"></i>
+                        <span>roboyuwa@gmail.com</span>
+                    </a>
+                    <span class="info-item">
+                        <i class="fa-light fa-clock"></i>
+                        <span>Mon-Fri / 9:00 AM - 6:00 PM</span>
+                    </span>
+                </div>
+                <div class="top-socials">
+                    <a href="https://www.facebook.com/profile.php?id=61563808928659" target="_blank" rel="noopener noreferrer"
+                        aria-label="Facebook" class="top-social-link">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                    <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter"
+                        class="top-social-link">
+                        <i class="fa-brands fa-x-twitter"></i>
+                    </a>
+                    <a href="https://www.instagram.com/robo__yuwa/" target="_blank" rel="noopener noreferrer"
+                        aria-label="Instagram" class="top-social-link">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/company/roboyuwa/posts/?feedView=all" target="_blank"
+                        rel="noopener noreferrer" aria-label="LinkedIn" class="top-social-link">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube"
+                        class="top-social-link">
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Navigation Bar -->
+        <div class="navbar" id="navbar">
+            <div class="container nav-container">
+                <a href="/" class="logo">
+                    <picture class="logo-picture">
+                        <source type="image/avif" srcset="/assets/optimized/roboyuwa-logo-80w.avif 80w, /assets/optimized/roboyuwa-logo-150w.avif 150w, /assets/optimized/roboyuwa-logo-300w.avif 300w" sizes="48px">
+                        <source type="image/webp" srcset="/assets/optimized/roboyuwa-logo-80w.webp 80w, /assets/optimized/roboyuwa-logo-150w.webp 150w, /assets/optimized/roboyuwa-logo-300w.webp 300w" sizes="48px">
+                        <img src="/assets/optimized/roboyuwa-logo-150w.jpg" srcset="/assets/optimized/roboyuwa-logo-80w.jpg 80w, /assets/optimized/roboyuwa-logo-150w.jpg 150w, /assets/optimized/roboyuwa-logo-300w.jpg 300w" sizes="48px" alt="RoboYuwa Logo" class="logo-img" width="48" height="48" loading="eager" fetchpriority="high" decoding="async" />
+                    </picture>
+                    <div class="logo-text">
+                        <span class="brand-name font-serif">RoboYuwa</span>
+                        <span class="brand-tagline">Youth Innovation &amp; Robotics</span>
+                    </div>
+                </a>
+                <button class="mobile-toggle" aria-label="Toggle Navigation" aria-expanded="false" aria-controls="nav-links">
+                    <span class="hamburger"></span>
+                </button>
+                <nav id="nav-links" class="nav-links">
+                    <ul>
+                        <li><a href="/" class="nav-item">Home</a></li>
+                        <li><a href="/about" class="nav-item">About Us</a></li>
+                        <li><a href="/membership" class="nav-item">Membership</a></li>
+                        <li><a href="/team" class="nav-item">Our Team</a></li>
+                        <li><a href="/contact" class="nav-item">Contact</a></li>
+                    </ul>
+                    <div class="nav-mobile-cta">
+                        <a href="/donate" class="btn btn-pill-amber">Donate Now</a>
+                    </div>
+                </nav>
+                <div class="nav-actions">
+                    <button class="nav-search-btn" id="openSearchBtn" aria-label="Search" title="Search website">
+                        <i class="fa-light fa-magnifying-glass"></i>
+                    </button>
+                    <button class="theme-toggle-btn" id="themeToggleBtn" aria-label="Toggle light or dark theme" title="Toggle Light/Dark Theme">
+                        <i class="fa-solid fa-sun theme-icon-sun"></i>
+                        <i class="fa-solid fa-moon theme-icon-moon"></i>
+                    </button>
+                    <a href="/donate" class="btn btn-pill-amber">Donate</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main 404 Hero Showcase -->
+    <main class="error-hero-section">
+        <div class="error-card-inner">
+            <div class="error-badge-glitch">
+                <i class="fa-solid fa-triangle-exclamation"></i> Telemetry Error
+            </div>
+            <div class="error-big-number">404</div>
+            <h1 class="error-title">Circuit Connection Lost</h1>
+            <p class="error-lead">
+                The coordinates or robotic module you requested could not be located in our system. The page may have been moved, renamed, or temporarily de-energized for research calibrations.
+            </p>
+            <div class="error-actions-group">
+                <a href="/" class="btn btn-hero-pill">
+                    <i class="fa-solid fa-house" style="margin-right:8px;"></i> Return to Mission Control
+                </a>
+                <a href="/about" class="btn-hero-ghost">
+                    <i class="fa-solid fa-microchip" style="margin-right:8px;"></i> Explore About Us
+                </a>
+                <a href="/contact" class="btn-hero-ghost">
+                    <i class="fa-solid fa-paper-plane" style="margin-right:8px;"></i> Contact Support
+                </a>
+            </div>
+            <div class="error-quick-routes">
+                <div class="error-quick-title">Quick Navigation Paths</div>
+                <div class="error-route-tags">
+                    <a href="/about" class="error-route-tag">RoboLearn Curriculum</a>
+                    <a href="/about" class="error-route-tag">InnovatYouth Summit</a>
+                    <a href="/membership" class="error-route-tag">Membership Application</a>
+                    <a href="/team" class="error-route-tag">Leadership &amp; Advisors</a>
+                    <a href="/donate" class="error-route-tag">Support &amp; Donate</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Global Executive Footer -->
+    <footer class="footer" id="footer">
+        <div class="container footer-container">
+            <div class="footer-top-grid">
+                <!-- Column 1: Organization & Identity -->
+                <div class="footer-col footer-col-brand">
+                    <a href="/" class="footer-logo-badge" aria-label="RoboYuwa Home">
+                        <picture class="footer-logo-picture">
+                            <source type="image/avif" srcset="/assets/optimized/roboyuwa-logo-80w.avif 80w, /assets/optimized/roboyuwa-logo-150w.avif 150w, /assets/optimized/roboyuwa-logo-300w.avif 300w" sizes="52px">
+                            <source type="image/webp" srcset="/assets/optimized/roboyuwa-logo-80w.webp 80w, /assets/optimized/roboyuwa-logo-150w.webp 150w, /assets/optimized/roboyuwa-logo-300w.webp 300w" sizes="52px">
+                            <img src="/assets/optimized/roboyuwa-logo-150w.jpg" srcset="/assets/optimized/roboyuwa-logo-80w.jpg 80w, /assets/optimized/roboyuwa-logo-150w.jpg 150w, /assets/optimized/roboyuwa-logo-300w.jpg 300w" sizes="52px" alt="RoboYuwa Logo" class="footer-logo-circle" width="52" height="52" loading="lazy" decoding="async" />
+                        </picture>
+                    </a>
+                    <p class="footer-mission-text">
+                        Nepal's premier youth-driven robotics and STEM organization empowering students across all 7 provinces with hands-on hardware engineering, research, and innovation.
+                    </p>
+                    <div class="footer-social-boxes" aria-label="Social Media Profiles">
+                        <a href="https://www.facebook.com/profile.php?id=61563808928659" target="_blank" rel="noopener noreferrer" class="social-box-btn" aria-label="RoboYuwa Facebook">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-box-btn" aria-label="RoboYuwa Twitter/X">
+                            <i class="fa-brands fa-x-twitter"></i>
+                        </a>
+                        <a href="https://www.instagram.com/robo__yuwa/" target="_blank" rel="noopener noreferrer" class="social-box-btn" aria-label="RoboYuwa Instagram">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/company/roboyuwa/posts/?feedView=all" target="_blank" rel="noopener noreferrer" class="social-box-btn" aria-label="RoboYuwa LinkedIn">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-box-btn" aria-label="RoboYuwa YouTube">
+                            <i class="fa-brands fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Column 2: Navigation -->
+                <div class="footer-col footer-col-nav">
+                    <h4 class="footer-col-header">NAVIGATION</h4>
+                    <div class="footer-title-bar" aria-hidden="true"></div>
+                    <ul class="footer-clean-links">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/about">About Us</a></li>
+                        <li><a href="/donate">Support &amp; Donate</a></li>
+                        <li><a href="/membership">Membership</a></li>
+                        <li><a href="/team">Our Team</a></li>
+                        <li><a href="/contact">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Get Involved Shortcuts -->
+                <div class="footer-col footer-col-nav">
+                    <h4 class="footer-col-header">GET INVOLVED</h4>
+                    <div class="footer-title-bar" aria-hidden="true"></div>
+                    <ul class="footer-clean-links">
+                        <li><a href="/membership">Become a Member</a></li>
+                        <li><a href="/donate">Support &amp; Donate</a></li>
+                        <li><a href="/about">RoboLearn Curriculum</a></li>
+                        <li><a href="/about">STEAM Bootcamps</a></li>
+                        <li><a href="/about">Competitions &amp; Hackathons</a></li>
+                        <li><a href="/contact">Institutional Partnership</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: Executive Newsletter -->
+                <div class="footer-col footer-col-newsletter">
+                    <h4 class="footer-col-header">EXECUTIVE NEWSLETTER</h4>
+                    <div class="footer-title-bar" aria-hidden="true"></div>
+                    <p class="footer-newsletter-intro">
+                        Subscribe to our monthly digest of student innovations, robotics workshops across Nepal, and STEM updates.
+                    </p>
+                    <form class="footer-newsletter-box" id="footerNewsletterForm">
+                        <input type="email" class="newsletter-dark-input" id="newsletterEmailInput" placeholder="your.email@roboyuwa.org" required autocomplete="email" aria-label="Email address" />
+                        <button type="submit" class="newsletter-dark-btn" id="newsletterSubmitBtn" aria-label="Subscribe to newsletter">
+                            <i class="fa-solid fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Sub-Footer / Bottom Bar -->
+            <div class="footer-bottom-bar">
+                <div class="footer-bottom-copy">
+                    <p class="footer-copy-line1">&copy; 2026 RoboYuwa Nepal. Youth-Led Robotics &amp; STEM Empowerment.</p>
+                    <p class="footer-copy-line2">Building world-class engineering and technological excellence across Nepal.</p>
+                    <p class="footer-copy-dev">
+                        Developed by <a href="https://sakshyambastakoti.com.np" target="_blank" rel="noopener noreferrer" class="developer-link">Sakshyam Bastakoti <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+                    </p>
+                </div>
+                <div class="footer-bottom-nav">
+                    <a href="/privacy-policy">Privacy Policy</a>
+                    <a href="/terms-of-service">Terms of Service</a>
+                    <a href="/cookie-policy">Cookie Policy</a>
+                    <span class="footer-bar-sep" aria-hidden="true">|</span>
+                    <a href="#header" class="footer-back-to-top" id="backToTopBtn" aria-label="Scroll back to top">
+                        <i class="fa-solid fa-chevron-up"></i>
+                        <span>TOP</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Quick Search Modal -->
+    <div class="modal-backdrop" id="searchModal" aria-hidden="true" role="dialog" aria-label="Search RoboYuwa">
+        <div class="search-modal-dialog">
+            <button class="modal-close" id="closeSearchModal" aria-label="Close search">&times;</button>
+            <div class="search-modal-header">
+                <i class="fa-light fa-magnifying-glass search-icon"></i>
+                <input type="search" id="siteSearchInput" placeholder="Search programs, workshops, research, team..."
+                    aria-label="Search query" autocomplete="off" />
+            </div>
+            <div class="search-quick-tags">
+                <span>Popular:</span>
+                <a href="/about" class="search-tag">RoboLearn</a>
+                <a href="/about" class="search-tag">InnovatYouth</a>
+                <a href="/about" class="search-tag">Our Vision</a>
+                <a href="/membership" class="search-tag">Membership</a>
+                <a href="/team" class="search-tag">Advisors &amp; Leads</a>
+                <a href="/contact" class="search-tag">Partner With Us</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/script.js"></script>
+    <script src="/js/formspree.js"></script>
+</body>
+</html>

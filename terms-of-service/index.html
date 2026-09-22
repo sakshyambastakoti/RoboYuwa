@@ -30,6 +30,27 @@
       <link rel="preconnect" href="https://zenithkandel.com.np" crossorigin />
   <link rel="dns-prefetch" href="https://zenithkandel.com.np" />
   <script src="https://zenithkandel.com.np/fontawesome/zenith-icons.js"></script>
+  <!-- Structured Data: BreadcrumbList (M2) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://robo-yuwa.vercel.app/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Terms of Service",
+        "item": "https://robo-yuwa.vercel.app/terms-of-service"
+      }
+    ]
+  }
+  </script>
 </head>
 <body class="legal-page">
   <script>
@@ -68,10 +89,6 @@
                         aria-label="Facebook" class="top-social-link">
                         <i class="fa-brands fa-facebook-f"></i>
                     </a>
-                    <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter"
-                        class="top-social-link">
-                        <i class="fa-brands fa-x-twitter"></i>
-                    </a>
                     <a href="https://www.instagram.com/robo__yuwa/" target="_blank" rel="noopener noreferrer"
                         aria-label="Instagram" class="top-social-link">
                         <i class="fa-brands fa-instagram"></i>
@@ -79,10 +96,6 @@
                     <a href="https://www.linkedin.com/company/roboyuwa/posts/?feedView=all" target="_blank"
                         rel="noopener noreferrer" aria-label="LinkedIn" class="top-social-link">
                         <i class="fa-brands fa-linkedin-in"></i>
-                    </a>
-                    <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube"
-                        class="top-social-link">
-                        <i class="fa-brands fa-youtube"></i>
                     </a>
                 </div>
             </div>
@@ -641,17 +654,11 @@
                         <a href="https://www.facebook.com/profile.php?id=61563808928659" target="_blank" rel="noopener noreferrer" class="social-box-btn" aria-label="RoboYuwa Facebook">
                             <i class="fa-brands fa-facebook-f"></i>
                         </a>
-                        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-box-btn" aria-label="RoboYuwa Twitter/X">
-                            <i class="fa-brands fa-x-twitter"></i>
-                        </a>
                         <a href="https://www.instagram.com/robo__yuwa/" target="_blank" rel="noopener noreferrer" class="social-box-btn" aria-label="RoboYuwa Instagram">
                             <i class="fa-brands fa-instagram"></i>
                         </a>
                         <a href="https://www.linkedin.com/company/roboyuwa/posts/?feedView=all" target="_blank" rel="noopener noreferrer" class="social-box-btn" aria-label="RoboYuwa LinkedIn">
                             <i class="fa-brands fa-linkedin-in"></i>
-                        </a>
-                        <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-box-btn" aria-label="RoboYuwa YouTube">
-                            <i class="fa-brands fa-youtube"></i>
                         </a>
                     </div>
                 </div>
@@ -691,7 +698,7 @@
                     <p class="footer-newsletter-intro">
                         Subscribe to our monthly digest of student innovations, robotics workshops across Nepal, and STEM updates.
                     </p>
-                    <form class="footer-newsletter-box" id="footerNewsletterForm" onsubmit="return false;">
+                    <form class="footer-newsletter-box" id="footerNewsletterForm">
                         <input type="email" class="newsletter-dark-input" id="newsletterEmailInput" placeholder="your.email@roboyuwa.org" required autocomplete="email" aria-label="Email address" />
                         <button type="submit" class="newsletter-dark-btn" id="newsletterSubmitBtn" aria-label="Subscribe to newsletter">
                             <i class="fa-solid fa-paper-plane"></i>

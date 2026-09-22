@@ -29,6 +29,27 @@
   <link rel="dns-prefetch" href="https://zenithkandel.com.np" />
   <script src="https://zenithkandel.com.np/fontawesome/zenith-icons.js"></script>
     <link rel="stylesheet" href="/css/donate.css">
+  <!-- Structured Data: BreadcrumbList (M2) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://robo-yuwa.vercel.app/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Donate",
+        "item": "https://robo-yuwa.vercel.app/donate"
+      }
+    ]
+  }
+  </script>
 </head>
 
 <body class="donate-page">
@@ -56,10 +77,8 @@
             </div>
             <div class="top-socials">
                 <a href="https://www.facebook.com/profile.php?id=61563808928659" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="top-social-link"><i class="fa-brands fa-facebook-f"></i></a>
-                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter" class="top-social-link"><i class="fa-brands fa-x-twitter"></i></a>
                 <a href="https://www.instagram.com/robo__yuwa/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="top-social-link"><i class="fa-brands fa-instagram"></i></a>
                 <a href="https://www.linkedin.com/company/roboyuwa/posts/?feedView=all" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="top-social-link"><i class="fa-brands fa-linkedin-in"></i></a>
-                <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube" class="top-social-link"><i class="fa-brands fa-youtube"></i></a>
             </div>
         </div>
     </div>
@@ -603,10 +622,8 @@
                 <p class="footer-mission-text">Nepal's premier youth-driven robotics and STEM organization empowering students across all 7 provinces with hands-on hardware engineering, research, and innovation.</p>
                 <div class="footer-social-boxes" aria-label="Social Media Profiles">
                     <a href="https://www.facebook.com/profile.php?id=61563808928659" target="_blank" rel="noopener noreferrer" class="social-box-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-box-btn" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
                     <a href="https://www.instagram.com/robo__yuwa/" target="_blank" rel="noopener noreferrer" class="social-box-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
                     <a href="https://www.linkedin.com/company/roboyuwa/posts/?feedView=all" target="_blank" rel="noopener noreferrer" class="social-box-btn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-                    <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-box-btn" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
                 </div>
             </div>
             <div class="footer-col footer-col-nav">
@@ -637,7 +654,7 @@
                 <h4 class="footer-col-header">EXECUTIVE NEWSLETTER</h4>
                 <div class="footer-title-bar" aria-hidden="true"></div>
                 <p class="footer-newsletter-intro">Subscribe to our monthly digest of student innovations, robotics workshops across Nepal, and STEM updates.</p>
-                <form class="footer-newsletter-box" onsubmit="return false">
+                <form class="footer-newsletter-box">
                     <input type="email" class="newsletter-dark-input" placeholder="your.email@roboyuwa.org" required autocomplete="email" aria-label="Email address">
                     <button type="submit" class="newsletter-dark-btn" aria-label="Subscribe"><i class="fa-solid fa-paper-plane"></i></button>
                 </form>

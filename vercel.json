@@ -1,6 +1,16 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
+  "rewrites": [
+    {
+      "source": "/sakshyam-bastakoti.jpg",
+      "destination": "/assets/optimized/sakshyam-bastakoti-roboyuwa-600w.jpg"
+    },
+    {
+      "source": "/sakshyam-bastakoti-photo.jpg",
+      "destination": "/assets/optimized/sakshyam-bastakoti-roboyuwa-600w.jpg"
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",

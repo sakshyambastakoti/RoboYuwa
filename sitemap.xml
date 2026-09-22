@@ -1,10 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://robo-yuwa.vercel.app/</loc>
     <lastmod>2026-09-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://robo-yuwa.vercel.app/assets/optimized/sakshyam-bastakoti-roboyuwa-600w.jpg</image:loc>
+      <image:title>Sakshyam Bastakoti - Head of R&amp;D and Web Platform Architect at RoboYuwa (Royuwa)</image:title>
+      <image:caption>Sakshyam Bastakoti photo - RoboYuwa (Royuwa) youth robotics organization Nepal</image:caption>
+      <image:geo_location>Kathmandu, Nepal</image:geo_location>
+    </image:image>
   </url>
   <url>
     <loc>https://robo-yuwa.vercel.app/about</loc>
@@ -27,8 +34,20 @@
   <url>
     <loc>https://robo-yuwa.vercel.app/team</loc>
     <lastmod>2026-09-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+    <image:image>
+      <image:loc>https://robo-yuwa.vercel.app/assets/optimized/sakshyam-bastakoti-roboyuwa-600w.jpg</image:loc>
+      <image:title>Sakshyam Bastakoti photo - Head of Research &amp; Technical Development at RoboYuwa (Royuwa)</image:title>
+      <image:caption>Official portrait photo of Sakshyam Bastakoti, Head of Research and Technical Development at RoboYuwa (Royuwa) Nepal</image:caption>
+      <image:geo_location>Kathmandu, Nepal</image:geo_location>
+    </image:image>
+    <image:image>
+      <image:loc>https://robo-yuwa.vercel.app/assets/sakshyam-bastakoti-roboyuwa.jpg</image:loc>
+      <image:title>Sakshyam Bastakoti - RoboYuwa Royuwa Research and Development</image:title>
+      <image:caption>Sakshyam Bastakoti portrait photograph - RoboYuwa (Royuwa)</image:caption>
+      <image:geo_location>Kathmandu, Nepal</image:geo_location>
+    </image:image>
   </url>
   <url>
     <loc>https://robo-yuwa.vercel.app/contact</loc>

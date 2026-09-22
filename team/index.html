@@ -15,12 +15,16 @@
     <meta property="og:title" content="Our Team | RoboYuwa | Empowering Youth Through Innovation" />
     <meta property="og:description" content="Meet the dedicated team, department heads, advisors, and members driving RoboYuwa's mission of empowering youth through robotics and innovation." />
     <meta property="og:image" content="https://robo-yuwa.vercel.app/assets/roboyuwa-logo-BLCCIWUS.jpg" />
+    <meta property="og:image" content="https://robo-yuwa.vercel.app/assets/optimized/sakshyam-bastakoti-roboyuwa-600w.jpg" />
+    <meta property="og:image:alt" content="Sakshyam Bastakoti photo - Head of Research &amp; Technical Development at RoboYuwa (Royuwa)" />
+    <meta property="og:image:width" content="600" />
+    <meta property="og:image:height" content="782" />
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:url" content="https://robo-yuwa.vercel.app/team" />
     <meta name="twitter:title" content="Our Team | RoboYuwa | Empowering Youth Through Innovation" />
     <meta name="twitter:description" content="Meet the dedicated team, department heads, advisors, and members driving RoboYuwa's mission of empowering youth through robotics and innovation." />
-    <meta name="twitter:image" content="https://robo-yuwa.vercel.app/assets/roboyuwa-logo-BLCCIWUS.jpg" />
+    <meta name="twitter:image" content="https://robo-yuwa.vercel.app/assets/optimized/sakshyam-bastakoti-roboyuwa-600w.jpg" />
     <link rel="stylesheet" href="/css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -30,23 +34,93 @@
       <link rel="preconnect" href="https://zenithkandel.com.np" crossorigin />
   <link rel="dns-prefetch" href="https://zenithkandel.com.np" />
   <script src="https://zenithkandel.com.np/fontawesome/zenith-icons.js"></script>
-  <!-- Structured Data: BreadcrumbList (M2) -->
+  <!-- Structured Data: BreadcrumbList, Organization & Sakshyam Bastakoti Entity (Person + ImageObject) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
+    "@graph": [
       {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": "https://robo-yuwa.vercel.app/"
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://robo-yuwa.vercel.app/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Our Team",
+            "item": "https://robo-yuwa.vercel.app/team"
+          }
+        ]
       },
       {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "Our Team",
-        "item": "https://robo-yuwa.vercel.app/team"
+        "@type": "Organization",
+        "@id": "https://robo-yuwa.vercel.app/#organization",
+        "name": "RoboYuwa",
+        "alternateName": [
+          "Royuwa",
+          "Robo Yuwa",
+          "RoboYuwa Nepal",
+          "रोबो युवा"
+        ],
+        "url": "https://robo-yuwa.vercel.app/",
+        "logo": "https://robo-yuwa.vercel.app/assets/roboyuwa-logo-BLCCIWUS.jpg",
+        "description": "RoboYuwa (Royuwa) is a youth-driven NGO focused on robotics, technology, research, and innovation in Nepal."
+      },
+      {
+        "@type": "Person",
+        "@id": "https://robo-yuwa.vercel.app/team#sakshyam-bastakoti",
+        "name": "Sakshyam Bastakoti",
+        "alternateName": [
+          "Sakshyam",
+          "Sakshyam Bastakoti Royuwa",
+          "Sakshyam Bastakoti RoboYuwa",
+          "सक्षम बास्तोकोटी"
+        ],
+        "jobTitle": "Head of Research & Technical Development",
+        "worksFor": {
+          "@id": "https://robo-yuwa.vercel.app/#organization"
+        },
+        "url": "https://sakshyambastakoti.com.np",
+        "sameAs": [
+          "https://sakshyambastakoti.com.np",
+          "https://robo-yuwa.vercel.app/team#sakshyam-bastakoti",
+          "https://github.com/sakxam-xeetri"
+        ],
+        "description": "Sakshyam Bastakoti is the Head of Research & Technical Development and Lead Web Platform Architect at RoboYuwa (Royuwa), leading robotics engineering, STEM curriculum development, and technical innovation in Nepal.",
+        "knowsAbout": [
+          "Robotics",
+          "Autonomous Hardware",
+          "STEM Education",
+          "Web Architecture",
+          "Artificial Intelligence",
+          "RoboYuwa"
+        ],
+        "image": {
+          "@type": "ImageObject",
+          "@id": "https://robo-yuwa.vercel.app/assets/optimized/sakshyam-bastakoti-roboyuwa-600w.jpg#primaryimage",
+          "url": "https://robo-yuwa.vercel.app/assets/optimized/sakshyam-bastakoti-roboyuwa-600w.jpg",
+          "contentUrl": "https://robo-yuwa.vercel.app/assets/optimized/sakshyam-bastakoti-roboyuwa-600w.jpg",
+          "name": "Sakshyam Bastakoti Photo",
+          "caption": "Sakshyam Bastakoti photo - Head of Research & Technical Development at RoboYuwa (Royuwa)",
+          "description": "Official portrait photograph of Sakshyam Bastakoti, Head of Research & Technical Development at RoboYuwa (Royuwa) youth robotics organization Nepal.",
+          "width": "600",
+          "height": "782",
+          "encodingFormat": "image/jpeg",
+          "representativeOfPage": false,
+          "creator": {
+            "@type": "Person",
+            "name": "Sakshyam Bastakoti"
+          },
+          "copyrightHolder": {
+            "@type": "Organization",
+            "name": "RoboYuwa"
+          },
+          "acquireLicensePage": "https://robo-yuwa.vercel.app/team#sakshyam-bastakoti"
+        }
       }
     ]
   }
@@ -484,21 +558,38 @@
             <div class="team-grid-5">
 
                 <!-- 01: Sakshyam Bastakoti (Head of R&D) -->
-                <article class="team-card-ref reveal" data-category="department">
+                <article class="team-card-ref reveal" data-category="department" id="sakshyam-bastakoti" itemscope itemtype="https://schema.org/Person">
+                    <meta itemprop="name" content="Sakshyam Bastakoti">
+                    <meta itemprop="jobTitle" content="Head of Research &amp; Technical Development">
+                    <meta itemprop="worksFor" content="RoboYuwa">
+                    <link itemprop="sameAs" href="https://sakshyambastakoti.com.np">
                     <div class="team-card-inner">
                         <div class="team-card-frame">
-                            <picture>
-                <source type="image/avif" srcset="/assets/optimized/team-rd-head-sakshyam-400w.avif 400w, /assets/optimized/team-rd-head-sakshyam-600w.avif 600w" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 300px">
-                <source type="image/webp" srcset="/assets/optimized/team-rd-head-sakshyam-400w.webp 400w, /assets/optimized/team-rd-head-sakshyam-600w.webp 600w" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 300px">
-                <img src="/assets/optimized/team-rd-head-sakshyam-600w.jpg" srcset="/assets/optimized/team-rd-head-sakshyam-400w.jpg 400w, /assets/optimized/team-rd-head-sakshyam-600w.jpg 600w" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 300px" alt="Sakshyam Bastakoti - Head of Research & Development" class="team-card-img" width="600" height="782" loading="lazy" decoding="async" onerror="this.src='/assets/optimized/roboyuwa-logo-150w.jpg'" />
-              </picture>
+                            <figure class="team-card-figure" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+                                <picture>
+                                    <source type="image/avif" srcset="/assets/optimized/sakshyam-bastakoti-roboyuwa-400w.avif 400w, /assets/optimized/sakshyam-bastakoti-roboyuwa-600w.avif 600w" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 300px">
+                                    <source type="image/webp" srcset="/assets/optimized/sakshyam-bastakoti-roboyuwa-400w.webp 400w, /assets/optimized/sakshyam-bastakoti-roboyuwa-600w.webp 600w" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 300px">
+                                    <img src="/assets/optimized/sakshyam-bastakoti-roboyuwa-600w.jpg" srcset="/assets/optimized/sakshyam-bastakoti-roboyuwa-400w.jpg 400w, /assets/optimized/sakshyam-bastakoti-roboyuwa-600w.jpg 600w" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 300px" alt="Sakshyam Bastakoti photo - Head of Research &amp; Technical Development at RoboYuwa (Royuwa), Nepal" title="Sakshyam Bastakoti - Head of Research &amp; Technical Development, RoboYuwa (Royuwa)" class="team-card-img" width="600" height="782" loading="lazy" decoding="async" itemprop="contentUrl" onerror="this.src='/assets/optimized/roboyuwa-logo-150w.jpg'" />
+                                </picture>
+                                <figcaption class="sr-only">Sakshyam Bastakoti photo - Head of Research &amp; Technical Development at RoboYuwa (Royuwa)</figcaption>
+                                <meta itemprop="name" content="Sakshyam Bastakoti Photo - RoboYuwa">
+                                <meta itemprop="caption" content="Sakshyam Bastakoti photo - Head of Research &amp; Technical Development at RoboYuwa (Royuwa)">
+                                <meta itemprop="description" content="Portrait photograph of Sakshyam Bastakoti, Head of Research &amp; Technical Development at RoboYuwa (Royuwa).">
+                            </figure>
                         </div>
                         <div class="team-card-info">
-                            <h3 class="team-card-name">Sakshyam Bastakoti</h3>
-                            <p class="team-card-role">Head of Research &amp; Technical Development</p>
-                            <p class="team-card-responsibilities">
-                                Leads hardware engineering, autonomous robotics research, Technoxian competition builds, hands-on STEM curricula, and technical web platform architecture.
+                            <h3 class="team-card-name" itemprop="name">Sakshyam Bastakoti</h3>
+                            <p class="team-card-role" itemprop="jobTitle">Head of Research &amp; Technical Development</p>
+                            <p class="team-card-responsibilities" itemprop="description">
+                                Leads hardware engineering, autonomous robotics research, Technoxian competition builds, hands-on STEM curricula, and technical web platform architecture at RoboYuwa (Royuwa).
                             </p>
+                            <div class="team-card-action">
+                                <a href="https://sakshyambastakoti.com.np" target="_blank" rel="noopener noreferrer" class="team-card-website-btn" itemprop="url" title="Sakshyam Bastakoti Portfolio &amp; Website" aria-label="Visit Sakshyam Bastakoti Website">
+                                    <i class="fa-solid fa-globe" aria-hidden="true"></i>
+                                    <span>sakshyambastakoti.com.np</span>
+                                    <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </article>
@@ -866,7 +957,7 @@
                     <p class="footer-copy-line1">&copy; 2026 RoboYuwa Nepal. Youth-Led Robotics &amp; STEM Empowerment.</p>
                     <p class="footer-copy-line2">Building world-class engineering and technological excellence across Nepal.</p>
                     <p class="footer-copy-dev">
-                        Developed by <a href="https://sakshyambastakoti.com.np" target="_blank" rel="noopener noreferrer" class="developer-link">Sakshyam Bastakoti <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+                        Developed by <a href="https://sakshyambastakoti.com.np" target="_blank" rel="noopener noreferrer" class="developer-link" title="Sakshyam Bastakoti — Head of Research &amp; Technical Development at RoboYuwa (Royuwa)" itemprop="author">Sakshyam Bastakoti <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
                     </p>
                 </div>
                 <div class="footer-bottom-nav">

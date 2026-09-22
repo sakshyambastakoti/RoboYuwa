@@ -28,12 +28,26 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600;1,700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap"
     rel="stylesheet" />
+    <link rel="preconnect" href="https://zenithkandel.com.np" crossorigin />
+  <link rel="dns-prefetch" href="https://zenithkandel.com.np" />
   <script src="https://zenithkandel.com.np/fontawesome/zenith-icons.js"></script>
 </head>
 
 <body class="home-page">
+  <script>
+    (function() {
+      try {
+        if (localStorage.getItem('roboyuwa-theme') === 'dark') {
+          document.body.classList.add('dark-theme');
+        } else {
+          document.body.classList.add('light-theme');
+        }
+      } catch (e) {}
+    })();
+  </script>
+
   <!-- Header (Top Utility Bar + Transparent Navbar) -->
   <header class="header" id="header">
     <div class="top-bar">

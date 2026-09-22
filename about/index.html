@@ -27,12 +27,26 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600;1,700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap"
         rel="stylesheet">
-    <script src="https://zenithkandel.com.np/fontawesome/zenith-icons.js"></script>
+      <link rel="preconnect" href="https://zenithkandel.com.np" crossorigin />
+  <link rel="dns-prefetch" href="https://zenithkandel.com.np" />
+  <script src="https://zenithkandel.com.np/fontawesome/zenith-icons.js"></script>
 </head>
 
 <body class="about-page">
+  <script>
+    (function() {
+      try {
+        if (localStorage.getItem('roboyuwa-theme') === 'dark') {
+          document.body.classList.add('dark-theme');
+        } else {
+          document.body.classList.add('light-theme');
+        }
+      } catch (e) {}
+    })();
+  </script>
+
 
     <!-- Header (Top Utility Bar + Transparent Navbar) -->
     <header class="header" id="header">
@@ -155,7 +169,11 @@
                     <div class="about-ref-right reveal delay-1">
                         <div class="about-ref-visual-frame">
                             <div class="about-ref-visual-media">
-                                <img src="/assets/world robotics competion.png" alt="RoboYuwa youth members preparing robotics competition robots" class="about-ref-visual-img" loading="eager" fetchpriority="high" decoding="async" />
+                                <picture>
+                                    <source type="image/avif" srcset="/assets/optimized/world-robotics-competition-500w.avif 500w, /assets/optimized/world-robotics-competition-768w.avif 768w, /assets/optimized/world-robotics-competition-1000w.avif 998w" sizes="(max-width: 768px) 100vw, 550px">
+                                    <source type="image/webp" srcset="/assets/optimized/world-robotics-competition-500w.webp 500w, /assets/optimized/world-robotics-competition-768w.webp 768w, /assets/optimized/world-robotics-competition-1000w.webp 998w" sizes="(max-width: 768px) 100vw, 550px">
+                                    <img src="/assets/optimized/world-robotics-competition-1000w.png" srcset="/assets/optimized/world-robotics-competition-500w.png 500w, /assets/optimized/world-robotics-competition-768w.png 768w, /assets/optimized/world-robotics-competition-1000w.png 998w" sizes="(max-width: 768px) 100vw, 550px" width="998" height="986" alt="RoboYuwa youth members preparing robotics competition robots" class="about-ref-visual-img" loading="eager" fetchpriority="high" decoding="async" />
+                                </picture>
                             </div>
 
                             <!-- Rotating Circular Badge with Curving Text & Gold Arrow -->

@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /doc/
+Disallow: /.env
+
+Sitemap: https://robo-yuwa.vercel.app/sitemap.xml
